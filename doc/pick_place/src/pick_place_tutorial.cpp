@@ -1,50 +1,13 @@
-/*********************************************************************
- * Software License Agreement (BSD License)
- *
- *  Copyright (c) 2012, Willow Garage, Inc.
- *  All rights reserved.
- *
- *  Redistribution and use in source and binary forms, with or without
- *  modification, are permitted provided that the following conditions
- *  are met:
- *
- *   * Redistributions of source code must retain the above copyright
- *     notice, this list of conditions and the following disclaimer.
- *   * Redistributions in binary form must reproduce the above
- *     copyright notice, this list of conditions and the following
- *     disclaimer in the documentation and/or other materials provided
- *     with the distribution.
- *   * Neither the name of Willow Garage nor the names of its
- *     contributors may be used to endorse or promote products derived
- *     from this software without specific prior written permission.
- *
- *  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- *  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- *  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
- *  FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- *  COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
- *  INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
- *  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
- *  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
- *  CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
- *  LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- *  ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- *  POSSIBILITY OF SUCH DAMAGE.
- *********************************************************************/
-
-/* Author: Ioan Sucan, Ridhwan Luthra*/
-
 // ROS
-#include <ros/ros.h>
-
+#include <rclcpp/rclcpp.hpp>
 // MoveIt
 #include <moveit/planning_scene_interface/planning_scene_interface.h>
 #include <moveit/move_group_interface/move_group_interface.h>
-
+#include <moveit_msgs/msg/place_location.hpp>
 // TF2
 #include <tf2_geometry_msgs/tf2_geometry_msgs.h>
 
-void openGripper(trajectory_msgs::JointTrajectory& posture)
+void openGripper(trajectory_msgs::msg::JointTrajectory& posture)
 {
   // BEGIN_SUB_TUTORIAL open_gripper
   /* Add both finger joints of panda robot. */
@@ -57,11 +20,11 @@ void openGripper(trajectory_msgs::JointTrajectory& posture)
   posture.points[0].positions.resize(2);
   posture.points[0].positions[0] = 0.04;
   posture.points[0].positions[1] = 0.04;
-  posture.points[0].time_from_start = ros::Duration(0.5);
-  // END_SUB_TUTORIAL
+  posture.points[0].time_from_start = rclcpp::Duration(0.5);
+  // END_SUB_TUTORIAL  
 }
 
-void closedGripper(trajectory_msgs::JointTrajectory& posture)
+void closeGripper(trajectory_msgs::msg::JointTrajectory& posture)
 {
   // BEGIN_SUB_TUTORIAL closed_gripper
   /* Add both finger joints of panda robot. */
@@ -74,7 +37,7 @@ void closedGripper(trajectory_msgs::JointTrajectory& posture)
   posture.points[0].positions.resize(2);
   posture.points[0].positions[0] = 0.00;
   posture.points[0].positions[1] = 0.00;
-  posture.points[0].time_from_start = ros::Duration(0.5);
+  posture.points[0].time_from_start = rclcpp::Duration(0.5);
   // END_SUB_TUTORIAL
 }
 
@@ -83,7 +46,7 @@ void pick(moveit::planning_interface::MoveGroupInterface& move_group)
   // BEGIN_SUB_TUTORIAL pick1
   // Create a vector of grasps to be attempted, currently only creating single grasp.
   // This is essentially useful when using a grasp generator to generate and test multiple grasps.
-  std::vector<moveit_msgs::Grasp> grasps;
+  std::vector<moveit_msgs::msg::Grasp> grasps;
   grasps.resize(1);
 
   // Setting grasp pose
@@ -126,15 +89,16 @@ void pick(moveit::planning_interface::MoveGroupInterface& move_group)
   // BEGIN_SUB_TUTORIAL pick2
   // Setting posture of eef during grasp
   // +++++++++++++++++++++++++++++++++++
-  closedGripper(grasps[0].grasp_posture);
+  closeGripper(grasps[0].grasp_posture);
   // END_SUB_TUTORIAL
 
   // BEGIN_SUB_TUTORIAL pick3
   // Set support surface as table1.
   move_group.setSupportSurfaceName("table1");
   // Call pick to pick up the object using the grasps given
-  move_group.pick("object", grasps);
-  // END_SUB_TUTORIAL
+  // TODO(vatanaksoytezer): Change this
+  // move_group.pick("object", grasps);
+  // END_SUB_TUTORIAL  
 }
 
 void place(moveit::planning_interface::MoveGroupInterface& group)
@@ -145,7 +109,7 @@ void place(moveit::planning_interface::MoveGroupInterface& group)
   // |br|
   // Ideally, you would create a vector of place locations to be attempted although in this example, we only create
   // a single place location.
-  std::vector<moveit_msgs::PlaceLocation> place_location;
+  std::vector<moveit_msgs::msg::PlaceLocation> place_location;
   place_location.resize(1);
 
   // Setting place location pose
@@ -186,7 +150,7 @@ void place(moveit::planning_interface::MoveGroupInterface& group)
   // Set support surface as table2.
   group.setSupportSurfaceName("table2");
   // Call place to place the object using the place locations given.
-  group.place("object", place_location);
+  // group.place("object", place_location);
   // END_SUB_TUTORIAL
 }
 
@@ -197,7 +161,7 @@ void addCollisionObjects(moveit::planning_interface::PlanningSceneInterface& pla
   // Creating Environment
   // ^^^^^^^^^^^^^^^^^^^^
   // Create vector to hold 3 collision objects.
-  std::vector<moveit_msgs::CollisionObject> collision_objects;
+  std::vector<moveit_msgs::msg::CollisionObject> collision_objects;
   collision_objects.resize(3);
 
   // Add the first table where the cube will originally be kept.
@@ -273,49 +237,29 @@ void addCollisionObjects(moveit::planning_interface::PlanningSceneInterface& pla
 
 int main(int argc, char** argv)
 {
-  ros::init(argc, argv, "panda_arm_pick_place");
-  ros::NodeHandle nh;
-  ros::AsyncSpinner spinner(1);
-  spinner.start();
+  rclcpp::init(argc, argv);
+  rclcpp::NodeOptions node_options;
+  node_options.automatically_declare_parameters_from_overrides(true);
+  rclcpp::Node::SharedPtr node = rclcpp::Node::make_shared("panda_arm_pick_place", "", node_options);
+  rclcpp::executors::SingleThreadedExecutor executor;
+  executor.add_node(node);
+  std::thread([&executor]() { executor.spin(); }).detach();
 
-  ros::WallDuration(1.0).sleep();
-  moveit::planning_interface::PlanningSceneInterface planning_scene_interface;
-  moveit::planning_interface::MoveGroupInterface group("panda_arm");
+  rclcpp::sleep_for(std::chrono::seconds(1));  moveit::planning_interface::PlanningSceneInterface planning_scene_interface;
+  moveit::planning_interface::MoveGroupInterface group(node, "panda_arm");
   group.setPlanningTime(45.0);
 
   addCollisionObjects(planning_scene_interface);
 
   // Wait a bit for ROS things to initialize
-  ros::WallDuration(1.0).sleep();
+  rclcpp::sleep_for(std::chrono::seconds(1));
 
   pick(group);
 
-  ros::WallDuration(1.0).sleep();
+  rclcpp::sleep_for(std::chrono::seconds(1));
 
   place(group);
 
-  ros::waitForShutdown();
+  rclcpp::shutdown();
   return 0;
 }
-
-// BEGIN_TUTORIAL
-// CALL_SUB_TUTORIAL table1
-// CALL_SUB_TUTORIAL table2
-// CALL_SUB_TUTORIAL object
-//
-// Pick Pipeline
-// ^^^^^^^^^^^^^
-// CALL_SUB_TUTORIAL pick1
-// openGripper function
-// """"""""""""""""""""
-// CALL_SUB_TUTORIAL open_gripper
-// CALL_SUB_TUTORIAL pick2
-// closedGripper function
-// """"""""""""""""""""""
-// CALL_SUB_TUTORIAL closed_gripper
-// CALL_SUB_TUTORIAL pick3
-//
-// Place Pipeline
-// ^^^^^^^^^^^^^^
-// CALL_SUB_TUTORIAL place
-// END_TUTORIAL
