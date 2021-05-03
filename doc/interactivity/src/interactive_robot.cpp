@@ -40,6 +40,8 @@
 #include <tf2_eigen/tf2_eigen.h>
 #include <moveit/robot_state/conversions.h>
 
+static const rclcpp::Logger LOGGER = rclcpp::get_logger("interactive_robot");
+
 // default world object position is just in front and left of Panda robot.
 const Eigen::Isometry3d
     InteractiveRobot::DEFAULT_WORLD_OBJECT_POSE_(Eigen::Isometry3d(Eigen::Translation3d(0.25, -0.5, 0.5)));
@@ -48,7 +50,7 @@ const Eigen::Isometry3d
 const double InteractiveRobot::WORLD_BOX_SIZE_ = 0.15;
 
 // minimum delay between calls to callback function
-const ros::Duration InteractiveRobot::min_delay_(0.01);
+const rclcpp::Duration InteractiveRobot::min_delay_(0.01);
 
 InteractiveRobot::InteractiveRobot(const std::string& robot_description, const std::string& robot_topic,
                                    const std::string& marker_topic, const std::string& imarker_topic)
@@ -69,7 +71,7 @@ InteractiveRobot::InteractiveRobot(const std::string& robot_description, const s
   robot_model_ = rm_loader_.getModel();
   if (!robot_model_)
   {
-    ROS_ERROR("Could not load robot description");
+    RCLCPP_ERROR_STREAM(LOGGER, "Could not load robot description");
     throw RobotLoadException();
   }
 
@@ -77,7 +79,7 @@ InteractiveRobot::InteractiveRobot(const std::string& robot_description, const s
   robot_state_.reset(new moveit::core::RobotState(robot_model_));
   if (!robot_state_)
   {
-    ROS_ERROR("Could not get RobotState from Model");
+    RCLCPP_ERROR(LOGGER, "Could not get RobotState from Model");
     throw RobotLoadException();
   }
   robot_state_->setToDefaultValues();
@@ -115,7 +117,7 @@ InteractiveRobot::~InteractiveRobot()
 
 // callback called when marker moves.  Moves right hand to new marker pose.
 void InteractiveRobot::movedRobotMarkerCallback(InteractiveRobot* robot,
-                                                const visualization_msgs::InteractiveMarkerFeedbackConstPtr& feedback)
+                                                const visualization_msgs::msg::InteractiveMarkerFeedback& feedback)
 {
   Eigen::Isometry3d pose;
   tf2::fromMsg(feedback->pose, pose);
@@ -124,7 +126,7 @@ void InteractiveRobot::movedRobotMarkerCallback(InteractiveRobot* robot,
 
 // callback called when marker moves.  Moves world object to new pose.
 void InteractiveRobot::movedWorldMarkerCallback(InteractiveRobot* robot,
-                                                const visualization_msgs::InteractiveMarkerFeedbackConstPtr& feedback)
+                                                const visualization_msgs::msg::InteractiveMarkerFeedback& feedback)
 {
   Eigen::Isometry3d pose;
   tf2::fromMsg(feedback->pose, pose);
@@ -206,14 +208,14 @@ void InteractiveRobot::scheduleUpdate()
 /* callback called when it is time to publish */
 void InteractiveRobot::updateCallback(const ros::TimerEvent& /*event*/)
 {
-  ros::Time tbegin = ros::Time::now();
+  rclcpp::Time tbegin = ros::Time::now();
   publish_timer_.stop();
 
   // do the actual calculations and publishing
   updateAll();
 
   // measure time spent in callback for rate limiting
-  ros::Time tend = ros::Time::now();
+  rclcpp::Time tend = ros::Time::now();
   average_callback_duration_ = (average_callback_duration_ + (tend - tbegin)) * 0.5;
   last_callback_time_ = tend;
   schedule_request_count_ = 0;
@@ -242,7 +244,7 @@ void InteractiveRobot::setGroup(const std::string& name)
   const moveit::core::JointModelGroup* group = robot_state_->getJointModelGroup(name);
   if (!group)
   {
-    ROS_ERROR_STREAM("No joint group named " << name);
+    RCLCPP_ERROR_STREAM(LOGGER, "No joint group named " << name);
     if (!group_)
       throw RobotLoadException();
   }
@@ -271,7 +273,7 @@ void InteractiveRobot::setGroupPose(const Eigen::Isometry3d& pose)
 /* publish robot pose to rviz */
 void InteractiveRobot::publishRobotState()
 {
-  moveit_msgs::DisplayRobotState msg;
+  moveit_msgs::msg::DisplayRobotState msg;
   moveit::core::robotStateToRobotStateMsg(*robot_state_, msg.state);
   robot_state_publisher_.publish(msg);
 }
@@ -286,9 +288,9 @@ void InteractiveRobot::setWorldObjectPose(const Eigen::Isometry3d& pose)
 /* publish world object position to rviz */
 void InteractiveRobot::publishWorldState()
 {
-  visualization_msgs::Marker marker;
+  visualization_msgs::msg::Marker marker;
   marker.header.frame_id = "/panda_link0";
-  marker.header.stamp = ros::Time::now();
+  marker.header.stamp = rclcpp::Time::now();
   marker.ns = "world_box";
   marker.id = 0;
   marker.type = visualization_msgs::Marker::CUBE;
@@ -300,7 +302,7 @@ void InteractiveRobot::publishWorldState()
   marker.color.g = 1.0f;
   marker.color.b = 0.0f;
   marker.color.a = 0.4f;
-  marker.lifetime = ros::Duration();
+  marker.lifetime = rclcpp::Duration();
   marker.pose = tf2::toMsg(desired_world_object_pose_);
   world_state_publisher_.publish(marker);
 }

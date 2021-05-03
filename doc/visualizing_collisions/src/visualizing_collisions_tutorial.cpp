@@ -36,7 +36,7 @@
 
 // This code goes with the Collision Contact Visualization tutorial
 
-#include <ros/ros.h>
+#include <rclcpp/rclcpp.hpp>
 #include "interactivity/interactive_robot.h"
 #include "interactivity/pose_string.h"
 
@@ -47,37 +47,40 @@
 #include <moveit/collision_detection_fcl/collision_env_fcl.h>
 #include <moveit/collision_detection/collision_tools.h>
 
+static const rclcpp::Logger LOGGER = rclcpp::get_logger("visualizing_collisions_tutorial");
+
 planning_scene::PlanningScene* g_planning_scene = nullptr;
 shapes::ShapePtr g_world_cube_shape;
-ros::Publisher* g_marker_array_publisher = nullptr;
-visualization_msgs::MarkerArray g_collision_points;
+std::shared_ptr<rclcpp::Publisher<visualization_msgs::msg::MarkerArray, std::allocator<void>>> g_marker_array_publisher =
+    nullptr;
+visualization_msgs::msg::MarkerArray g_collision_points;
 
 void help()
 {
-  ROS_INFO("#####################################################");
-  ROS_INFO("RVIZ SETUP");
-  ROS_INFO("----------");
-  ROS_INFO("  Global options:");
-  ROS_INFO("    FixedFrame = /panda_link0");
-  ROS_INFO("  Add a RobotState display:");
-  ROS_INFO("    RobotDescription = robot_description");
-  ROS_INFO("    RobotStateTopic  = interactive_robot_state");
-  ROS_INFO("  Add a Marker display:");
-  ROS_INFO("    MarkerTopic = interactive_robot_markers");
-  ROS_INFO("  Add an InteractiveMarker display:");
-  ROS_INFO("    UpdateTopic = interactive_robot_imarkers/update");
-  ROS_INFO("  Add a MarkerArray display:");
-  ROS_INFO("    MarkerTopic = interactive_robot_marray");
-  ROS_INFO("#####################################################");
+  RCLCPP_INFO(LOGGER, "#####################################################");
+  RCLCPP_INFO(LOGGER, "RVIZ SETUP");
+  RCLCPP_INFO(LOGGER, "----------");
+  RCLCPP_INFO(LOGGER, "  Global options:");
+  RCLCPP_INFO(LOGGER, "    FixedFrame = /panda_link0");
+  RCLCPP_INFO(LOGGER, "  Add a RobotState display:");
+  RCLCPP_INFO(LOGGER, "    RobotDescription = robot_description");
+  RCLCPP_INFO(LOGGER, "    RobotStateTopic  = interactive_robot_state");
+  RCLCPP_INFO(LOGGER, "  Add a Marker display:");
+  RCLCPP_INFO(LOGGER, "    MarkerTopic = interactive_robot_markers");
+  RCLCPP_INFO(LOGGER, "  Add an InteractiveMarker display:");
+  RCLCPP_INFO(LOGGER, "    UpdateTopic = interactive_robot_imarkers/update");
+  RCLCPP_INFO(LOGGER, "  Add a MarkerArray display:");
+  RCLCPP_INFO(LOGGER, "    MarkerTopic = interactive_robot_marray");
+  RCLCPP_INFO(LOGGER, "#####################################################");
 }
 
-void publishMarkers(visualization_msgs::MarkerArray& markers)
+void publishMarkers(visualization_msgs::msg::MarkerArray& markers)
 {
   // delete old markers
   if (!g_collision_points.markers.empty())
   {
     for (auto& marker : g_collision_points.markers)
-      marker.action = visualization_msgs::Marker::DELETE;
+      marker.action = visualization_msgs::msg::Marker::DELETE;
 
     g_marker_array_publisher->publish(g_collision_points);
   }
@@ -129,38 +132,46 @@ void computeCollisionContactPoints(InteractiveRobot& robot)
   // for how.
   if (c_res.collision)
   {
-    ROS_INFO("COLLIDING contact_point_count=%d", (int)c_res.contact_count);
+    RCLCPP_INFO_STREAM(LOGGER, "COLLIDING contact_point_count=%d" << (int)c_res.contact_count);
     if (c_res.contact_count > 0)
     {
-      std_msgs::ColorRGBA color;
+      std_msgs::msg::ColorRGBA color;
       color.r = 1.0;
       color.g = 0.0;
       color.b = 1.0;
       color.a = 0.5;
-      visualization_msgs::MarkerArray markers;
+      visualization_msgs::msg::MarkerArray markers;
 
       /* Get the contact ponts and display them as markers */
       collision_detection::getCollisionMarkersFromContacts(markers, "panda_link0", c_res.contacts, color,
-                                                           ros::Duration(),  // remain until deleted
-                                                           0.01);            // radius
+                                                           rclcpp::Duration(),  // remain until deleted
+                                                           0.01);               // radius
       publishMarkers(markers);
     }
   }
   // END_SUB_TUTORIAL
   else
   {
-    ROS_INFO("Not colliding");
+    RCLCPP_INFO(LOGGER, "Not colliding");
 
     // delete the old collision point markers
-    visualization_msgs::MarkerArray empty_marker_array;
+    visualization_msgs::msg::MarkerArray empty_marker_array;
     publishMarkers(empty_marker_array);
   }
 }
 
 int main(int argc, char** argv)
 {
-  ros::init(argc, argv, "visualizing_collisions_tutorial");
-  ros::NodeHandle nh;
+  rclcpp::init(argc, argv);
+  rclcpp::NodeOptions node_options;
+  node_options.automatically_declare_parameters_from_overrides(true);
+  auto node = rclcpp::Node::make_shared("visualizing_collisions_tutorial", node_options);
+
+  // We spin up a SingleThreadedExecutor for the current state monitor to get information
+  // about the robot's state.
+  rclcpp::executors::SingleThreadedExecutor executor;
+  executor.add_node(node);
+  std::thread([&executor]() { executor.spin(); }).detach();
 
   // BEGIN_TUTORIAL
   //
@@ -186,17 +197,17 @@ int main(int argc, char** argv)
 
   // Create a marker array publisher for publishing contact points
   g_marker_array_publisher =
-      new ros::Publisher(nh.advertise<visualization_msgs::MarkerArray>("interactive_robot_marray", 100));
+      node->create_publisher<visualization_msgs::msg::MarkerArray>("interactive_robot_marray", 100);
+  // new ros::Publisher(nh.advertise<visualization_msgs::MarkerArray>("interactive_robot_marray", 100));
 
   robot.setUserCallback(computeCollisionContactPoints);
 
   help();
 
-  ros::spin();
+  rclcpp::spin(node);
 
   delete g_planning_scene;
-  delete g_marker_array_publisher;
 
-  ros::shutdown();
+  rclcpp::shutdown();
   return 0;
 }

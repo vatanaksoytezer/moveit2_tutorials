@@ -39,11 +39,11 @@
 #ifndef MOVEIT_TUTORIALS_INTERACTIVITY_SRC_INTERACTIVE_ROBOT_H_
 #define MOVEIT_TUTORIALS_INTERACTIVITY_SRC_INTERACTIVE_ROBOT_H_
 
-#include <ros/ros.h>
+#include <rclcpp/rclcpp.hpp>
 #include <moveit/robot_model_loader/robot_model_loader.h>
 #include <moveit/robot_model/robot_model.h>
 #include <moveit/robot_state/robot_state.h>
-#include <moveit_msgs/DisplayRobotState.h>
+#include <moveit_msgs/msg/display_robot_state.hpp>
 
 #include <utility>
 
@@ -119,11 +119,11 @@ private:
 
   /* callback called when marker moves.  Moves right hand to new marker pose. */
   static void movedRobotMarkerCallback(InteractiveRobot* robot,
-                                       const visualization_msgs::InteractiveMarkerFeedbackConstPtr& feedback);
+                                       const visualization_msgs::msg::InteractiveMarkerFeedback& feedback);
 
   /* callback called when marker moves.  Moves world object to new pose. */
   static void movedWorldMarkerCallback(InteractiveRobot* robot,
-                                       const visualization_msgs::InteractiveMarkerFeedbackConstPtr& feedback);
+                                       const visualization_msgs::msg::InteractiveMarkerFeedback& feedback);
 
   /* marker publishers */
   ros::NodeHandle nh_;
@@ -151,11 +151,11 @@ private:
   boost::function<void(InteractiveRobot& robot)> user_callback_;
 
   /* timer info for rate limiting */
-  ros::Timer publish_timer_;
-  ros::Time init_time_;
-  ros::Time last_callback_time_;
-  ros::Duration average_callback_duration_;
-  static const ros::Duration min_delay_;
+  rclcpp::TimerBase publish_timer_;
+  rclcpp::Time init_time_;
+  rclcpp::Time last_callback_time_;
+  rclcpp::Duration average_callback_duration_;
+  static const rclcpp::Duration min_delay_;
   int schedule_request_count_;
 };
 
