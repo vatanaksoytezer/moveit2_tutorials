@@ -954,7 +954,30 @@ by the following service client:</p>
 <p>and send the diffs to the planning scene via a service call:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span> <span class="n">request</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">moveit_msgs</span><span class="o">::</span><span class="n">srv</span><span class="o">::</span><span class="n">ApplyPlanningScene</span><span class="o">::</span><span class="n">Request</span><span class="o">&gt;</span><span class="p">();</span>
 <span class="n">request</span><span class="o">-&gt;</span><span class="n">scene</span> <span class="o">=</span> <span class="n">planning_scene</span><span class="p">;</span>
-<span class="n">planning_scene_diff_client</span><span class="o">-&gt;</span><span class="n">async_send_request</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+<span class="n">std</span><span class="o">::</span><span class="n">shared_future</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">moveit_msgs</span><span class="o">::</span><span class="n">srv</span><span class="o">::</span><span class="n">ApplyPlanningScene_Response</span><span class="o">&gt;&gt;</span> <span class="n">response_future</span><span class="p">;</span>
+<span class="n">response_future</span> <span class="o">=</span> <span class="n">planning_scene_diff_client</span><span class="o">-&gt;</span><span class="n">async_send_request</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>wait for the service to respond</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">seconds</span> <span class="nf">wait_time</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">std</span><span class="o">::</span><span class="n">future_status</span> <span class="n">fs</span> <span class="o">=</span> <span class="n">response_future</span><span class="p">.</span><span class="n">wait_for</span><span class="p">(</span><span class="n">wait_time</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">fs</span> <span class="o">==</span> <span class="n">std</span><span class="o">::</span><span class="n">future_status</span><span class="o">::</span><span class="n">timeout</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">RCLCPP_ERROR</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span> <span class="s">&quot;Service timed out.&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">moveit_msgs</span><span class="o">::</span><span class="n">srv</span><span class="o">::</span><span class="n">ApplyPlanningScene_Response</span><span class="o">&gt;</span> <span class="n">planning_response</span><span class="p">;</span>
+  <span class="n">planning_response</span> <span class="o">=</span> <span class="n">response_future</span><span class="p">.</span><span class="n">get</span><span class="p">();</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">planning_response</span><span class="o">-&gt;</span><span class="n">success</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span> <span class="s">&quot;Service successfully added object.&quot;</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">else</span>
+  <span class="p">{</span>
+    <span class="n">RCLCPP_ERROR</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span> <span class="s">&quot;Service failed to add object.&quot;</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Note that this does not continue until we are sure the diff has been applied.</p>
