@@ -98,8 +98,9 @@
           
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/getting_started.html">Getting Started</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../getting_started/getting_started.html#install-ros2-and-colcon">Install ROS2 and Colcon</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../getting_started/getting_started.html#create-a-colcon-workspace-and-download-moveit2-source">Create A Colcon Workspace and Download MoveIt2 Source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/getting_started.html#install-ros-2-and-colcon">Install ROS 2 and Colcon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/getting_started.html#create-a-colcon-workspace-and-download-moveit-2-source">Create A Colcon Workspace and Download MoveIt 2 Source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/getting_started.html#download-moveit-2-tutorials-source">Download MoveIt 2 Tutorials Source</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../getting_started/getting_started.html#build-your-colcon-workspace">Build your Colcon Workspace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../getting_started/getting_started.html#next-step">Next Step</a></li>
 </ul>
@@ -874,22 +875,22 @@ This tutorial uses the <strong>RvizVisualToolsGui</strong> panel to step through
 <p>MoveIt operates on sets of joints called “planning groups” and stores them in an object called
 the <cite>JointModelGroup</cite>. Throughout MoveIt the terms “planning group” and “joint model group”
 are used interchangably.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">static</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">PLANNING_GROUP</span> <span class="o">=</span> <span class="s">&quot;panda_arm&quot;</span><span class="p">;</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">PLANNING_GROUP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;panda_arm&quot;</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 <p>The <a class="reference external" href="http://docs.ros.org/noetic/api/moveit_ros_planning_interface/html/classmoveit_1_1planning__interface_1_1MoveGroupInterface.html">MoveGroupInterface</a> class can be easily
 setup using just the name of the planning group you would like to control and plan for.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">moveit</span><span class="o">::</span><span class="n">planning_interface</span><span class="o">::</span><span class="n">MoveGroupInterface</span> <span class="nf">move_group</span><span class="p">(</span><span class="n">move_group_node</span><span class="p">,</span> <span class="n">PLANNING_GROUP</span><span class="p">);</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">moveit</span><span class="o">::</span><span class="n">planning_interface</span><span class="o">::</span><span class="n">MoveGroupInterface</span><span class="w"> </span><span class="nf">move_group</span><span class="p">(</span><span class="n">move_group_node</span><span class="p">,</span><span class="w"> </span><span class="n">PLANNING_GROUP</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>We will use the <a class="reference external" href="http://docs.ros.org/noetic/api/moveit_ros_planning_interface/html/classmoveit_1_1planning__interface_1_1PlanningSceneInterface.html">PlanningSceneInterface</a>
 class to add and remove collision objects in our “virtual world” scene</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">moveit</span><span class="o">::</span><span class="n">planning_interface</span><span class="o">::</span><span class="n">PlanningSceneInterface</span> <span class="n">planning_scene_interface</span><span class="p">;</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">moveit</span><span class="o">::</span><span class="n">planning_interface</span><span class="o">::</span><span class="n">PlanningSceneInterface</span><span class="w"> </span><span class="n">planning_scene_interface</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Raw pointers are frequently used to refer to the planning group for improved performance.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">const</span> <span class="n">moveit</span><span class="o">::</span><span class="n">core</span><span class="o">::</span><span class="n">JointModelGroup</span><span class="o">*</span> <span class="n">joint_model_group</span> <span class="o">=</span>
-    <span class="n">move_group</span><span class="p">.</span><span class="n">getCurrentState</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">getJointModelGroup</span><span class="p">(</span><span class="n">PLANNING_GROUP</span><span class="p">);</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">const</span><span class="w"> </span><span class="n">moveit</span><span class="o">::</span><span class="n">core</span><span class="o">::</span><span class="n">JointModelGroup</span><span class="o">*</span><span class="w"> </span><span class="n">joint_model_group</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
+<span class="w">    </span><span class="n">move_group</span><span class="p">.</span><span class="n">getCurrentState</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">getJointModelGroup</span><span class="p">(</span><span class="n">PLANNING_GROUP</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -898,48 +899,48 @@ class to add and remove collision objects in our “virtual world” scene</p>
 <p>MoveitVisualTools has not been ported to ROS2 yet so we make use of RvizVisualTools for visualization.
 The package MoveItVisualTools provides many capabilities for visualizing objects, robots,
 and trajectories in RViz as well as debugging tools such as step-by-step introspection of a script.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="nn">rvt</span> <span class="o">=</span> <span class="nn">rviz_visual_tools</span><span class="p">;</span>
-<span class="n">rviz_visual_tools</span><span class="o">::</span><span class="n">RvizVisualTools</span> <span class="nf">visual_tools</span><span class="p">(</span><span class="s">&quot;panda_link0&quot;</span><span class="p">,</span> <span class="s">&quot;move_group_tutorial&quot;</span><span class="p">,</span> <span class="n">move_group_node</span><span class="p">);</span>
-<span class="cm">/* moveit_visual_tools::MoveItVisualTools visual_tools(&quot;panda_link0&quot;); */</span>
-<span class="n">visual_tools</span><span class="p">.</span><span class="n">deleteAllMarkers</span><span class="p">();</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span><span class="w"> </span><span class="nn">rvt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nn">rviz_visual_tools</span><span class="p">;</span><span class="w"></span>
+<span class="n">rviz_visual_tools</span><span class="o">::</span><span class="n">RvizVisualTools</span><span class="w"> </span><span class="nf">visual_tools</span><span class="p">(</span><span class="s">&quot;panda_link0&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;move_group_tutorial&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">move_group_node</span><span class="p">);</span><span class="w"></span>
+<span class="cm">/* moveit_visual_tools::MoveItVisualTools visual_tools(&quot;panda_link0&quot;); */</span><span class="w"></span>
+<span class="n">visual_tools</span><span class="p">.</span><span class="n">deleteAllMarkers</span><span class="p">();</span><span class="w"></span>
 
-<span class="cm">/* Remote control is an introspection tool that allows users to step through a high level script */</span>
-<span class="cm">/* via buttons and keyboard shortcuts in RViz */</span>
-<span class="cm">/* visual_tools.loadRemoteControl(); */</span>
+<span class="cm">/* Remote control is an introspection tool that allows users to step through a high level script */</span><span class="w"></span>
+<span class="cm">/* via buttons and keyboard shortcuts in RViz */</span><span class="w"></span>
+<span class="cm">/* visual_tools.loadRemoteControl(); */</span><span class="w"></span>
 </pre></div>
 </div>
 <p>RViz provides many types of markers, in this demo we will use text, cylinders, and spheres</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Eigen</span><span class="o">::</span><span class="n">Isometry3d</span> <span class="n">text_pose</span> <span class="o">=</span> <span class="n">Eigen</span><span class="o">::</span><span class="n">Isometry3d</span><span class="o">::</span><span class="n">Identity</span><span class="p">();</span>
-<span class="n">text_pose</span><span class="p">.</span><span class="n">translation</span><span class="p">().</span><span class="n">z</span><span class="p">()</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>
-<span class="n">visual_tools</span><span class="p">.</span><span class="n">publishText</span><span class="p">(</span><span class="n">text_pose</span><span class="p">,</span> <span class="s">&quot;MoveGroupInterface_Demo&quot;</span><span class="p">,</span> <span class="n">rvt</span><span class="o">::</span><span class="n">WHITE</span><span class="p">,</span> <span class="n">rvt</span><span class="o">::</span><span class="n">XLARGE</span><span class="p">);</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Eigen</span><span class="o">::</span><span class="n">Isometry3d</span><span class="w"> </span><span class="n">text_pose</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Isometry3d</span><span class="o">::</span><span class="n">Identity</span><span class="p">();</span><span class="w"></span>
+<span class="n">text_pose</span><span class="p">.</span><span class="n">translation</span><span class="p">().</span><span class="n">z</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="p">;</span><span class="w"></span>
+<span class="n">visual_tools</span><span class="p">.</span><span class="n">publishText</span><span class="p">(</span><span class="n">text_pose</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;MoveGroupInterface_Demo&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rvt</span><span class="o">::</span><span class="n">WHITE</span><span class="p">,</span><span class="w"> </span><span class="n">rvt</span><span class="o">::</span><span class="n">XLARGE</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Batch publishing is used to reduce the number of messages being sent to RViz for large visualizations</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">visual_tools</span><span class="p">.</span><span class="n">trigger</span><span class="p">();</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">visual_tools</span><span class="p">.</span><span class="n">trigger</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="getting-basic-information">
 <h3>Getting Basic Information<a class="headerlink" href="#getting-basic-information" title="Permalink to this headline">¶</a></h3>
 <p>We can print the name of the reference frame for this robot.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span> <span class="s">&quot;Planning frame: %s&quot;</span><span class="p">,</span> <span class="n">move_group</span><span class="p">.</span><span class="n">getPlanningFrame</span><span class="p">().</span><span class="n">c_str</span><span class="p">());</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Planning frame: %s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">move_group</span><span class="p">.</span><span class="n">getPlanningFrame</span><span class="p">().</span><span class="n">c_str</span><span class="p">());</span><span class="w"></span>
 </pre></div>
 </div>
 <p>We can also print the name of the end-effector link for this group.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span> <span class="s">&quot;End effector link: %s&quot;</span><span class="p">,</span> <span class="n">move_group</span><span class="p">.</span><span class="n">getEndEffectorLink</span><span class="p">().</span><span class="n">c_str</span><span class="p">());</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;End effector link: %s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">move_group</span><span class="p">.</span><span class="n">getEndEffectorLink</span><span class="p">().</span><span class="n">c_str</span><span class="p">());</span><span class="w"></span>
 </pre></div>
 </div>
 <p>We can get a list of all the groups in the robot:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span> <span class="s">&quot;Available Planning Groups:&quot;</span><span class="p">);</span>
-<span class="n">std</span><span class="o">::</span><span class="n">copy</span><span class="p">(</span><span class="n">move_group</span><span class="p">.</span><span class="n">getJointModelGroupNames</span><span class="p">().</span><span class="n">begin</span><span class="p">(),</span> <span class="n">move_group</span><span class="p">.</span><span class="n">getJointModelGroupNames</span><span class="p">().</span><span class="n">end</span><span class="p">(),</span>
-          <span class="n">std</span><span class="o">::</span><span class="n">ostream_iterator</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="p">,</span> <span class="s">&quot;, &quot;</span><span class="p">));</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Available Planning Groups:&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">std</span><span class="o">::</span><span class="n">copy</span><span class="p">(</span><span class="n">move_group</span><span class="p">.</span><span class="n">getJointModelGroupNames</span><span class="p">().</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">move_group</span><span class="p">.</span><span class="n">getJointModelGroupNames</span><span class="p">().</span><span class="n">end</span><span class="p">(),</span><span class="w"></span>
+<span class="w">          </span><span class="n">std</span><span class="o">::</span><span class="n">ostream_iterator</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;, &quot;</span><span class="p">));</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="start-the-demo">
 <h3>Start the demo<a class="headerlink" href="#start-the-demo" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;Enter&#39; to start the demo&quot;</span><span class="p">);</span>
-<span class="cm">/* visual_tools.prompt(&quot;Press &#39;next&#39; in the RvizVisualToolsGui window to start the demo&quot;); */</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;Enter&#39; to start the demo&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="cm">/* visual_tools.prompt(&quot;Press &#39;next&#39; in the RvizVisualToolsGui window to start the demo&quot;); */</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -947,35 +948,35 @@ and trajectories in RViz as well as debugging tools such as step-by-step introsp
 <span id="move-group-interface-planning-to-pose-goal"></span><h3>Planning to a Pose goal<a class="headerlink" href="#planning-to-a-pose-goal" title="Permalink to this headline">¶</a></h3>
 <p>We can plan a motion for this group to a desired pose for the
 end-effector.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Pose</span> <span class="n">target_pose1</span><span class="p">;</span>
-<span class="n">target_pose1</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">w</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>
-<span class="n">target_pose1</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="mf">0.28</span><span class="p">;</span>
-<span class="n">target_pose1</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="mf">-0.2</span><span class="p">;</span>
-<span class="n">target_pose1</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">z</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">;</span>
-<span class="n">move_group</span><span class="p">.</span><span class="n">setPoseTarget</span><span class="p">(</span><span class="n">target_pose1</span><span class="p">);</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Pose</span><span class="w"> </span><span class="n">target_pose1</span><span class="p">;</span><span class="w"></span>
+<span class="n">target_pose1</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">w</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="p">;</span><span class="w"></span>
+<span class="n">target_pose1</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.28</span><span class="p">;</span><span class="w"></span>
+<span class="n">target_pose1</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">-0.2</span><span class="p">;</span><span class="w"></span>
+<span class="n">target_pose1</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="p">;</span><span class="w"></span>
+<span class="n">move_group</span><span class="p">.</span><span class="n">setPoseTarget</span><span class="p">(</span><span class="n">target_pose1</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Now, we call the planner to compute the plan and visualize it.
 Note that we are just planning, not asking move_group
 to actually move the robot.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">moveit</span><span class="o">::</span><span class="n">planning_interface</span><span class="o">::</span><span class="n">MoveGroupInterface</span><span class="o">::</span><span class="n">Plan</span> <span class="n">my_plan</span><span class="p">;</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">moveit</span><span class="o">::</span><span class="n">planning_interface</span><span class="o">::</span><span class="n">MoveGroupInterface</span><span class="o">::</span><span class="n">Plan</span><span class="w"> </span><span class="n">my_plan</span><span class="p">;</span><span class="w"></span>
 
-<span class="kt">bool</span> <span class="n">success</span> <span class="o">=</span> <span class="p">(</span><span class="n">move_group</span><span class="p">.</span><span class="n">plan</span><span class="p">(</span><span class="n">my_plan</span><span class="p">)</span> <span class="o">==</span> <span class="n">moveit</span><span class="o">::</span><span class="n">planning_interface</span><span class="o">::</span><span class="n">MoveItErrorCode</span><span class="o">::</span><span class="n">SUCCESS</span><span class="p">);</span>
+<span class="kt">bool</span><span class="w"> </span><span class="n">success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">move_group</span><span class="p">.</span><span class="n">plan</span><span class="p">(</span><span class="n">my_plan</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">moveit</span><span class="o">::</span><span class="n">planning_interface</span><span class="o">::</span><span class="n">MoveItErrorCode</span><span class="o">::</span><span class="n">SUCCESS</span><span class="p">);</span><span class="w"></span>
 
-<span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span> <span class="s">&quot;Visualizing plan 1 (pose goal) %s&quot;</span><span class="p">,</span> <span class="n">success</span> <span class="o">?</span> <span class="s">&quot;&quot;</span> <span class="o">:</span> <span class="s">&quot;FAILED&quot;</span><span class="p">);</span>
+<span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Visualizing plan 1 (pose goal) %s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">success</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;FAILED&quot;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="visualizing-plans">
 <h3>Visualizing plans<a class="headerlink" href="#visualizing-plans" title="Permalink to this headline">¶</a></h3>
 <p>We can also visualize the plan as a line with markers in RViz.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span> <span class="s">&quot;Visualizing plan 1 as trajectory line&quot;</span><span class="p">);</span>
-<span class="n">visual_tools</span><span class="p">.</span><span class="n">publishAxisLabeled</span><span class="p">(</span><span class="n">target_pose1</span><span class="p">,</span> <span class="s">&quot;pose1&quot;</span><span class="p">);</span>
-<span class="n">visual_tools</span><span class="p">.</span><span class="n">publishText</span><span class="p">(</span><span class="n">text_pose</span><span class="p">,</span> <span class="s">&quot;Pose_Goal&quot;</span><span class="p">,</span> <span class="n">rvt</span><span class="o">::</span><span class="n">WHITE</span><span class="p">,</span> <span class="n">rvt</span><span class="o">::</span><span class="n">XLARGE</span><span class="p">);</span>
-<span class="cm">/* visual_tools.publishTrajectoryLine(my_plan.trajectory_, joint_model_group); */</span>
-<span class="n">visual_tools</span><span class="p">.</span><span class="n">trigger</span><span class="p">();</span>
-<span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;Enter&#39; to continue the demo&quot;</span><span class="p">);</span>
-<span class="cm">/* visual_tools.prompt(&quot;Press &#39;next&#39; in the RvizVisualToolsGui window to continue the demo&quot;); */</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Visualizing plan 1 as trajectory line&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">visual_tools</span><span class="p">.</span><span class="n">publishAxisLabeled</span><span class="p">(</span><span class="n">target_pose1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;pose1&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">visual_tools</span><span class="p">.</span><span class="n">publishText</span><span class="p">(</span><span class="n">text_pose</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Pose_Goal&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rvt</span><span class="o">::</span><span class="n">WHITE</span><span class="p">,</span><span class="w"> </span><span class="n">rvt</span><span class="o">::</span><span class="n">XLARGE</span><span class="p">);</span><span class="w"></span>
+<span class="cm">/* visual_tools.publishTrajectoryLine(my_plan.trajectory_, joint_model_group); */</span><span class="w"></span>
+<span class="n">visual_tools</span><span class="p">.</span><span class="n">trigger</span><span class="p">();</span><span class="w"></span>
+<span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;Enter&#39; to continue the demo&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="cm">/* visual_tools.prompt(&quot;Press &#39;next&#39; in the RvizVisualToolsGui window to continue the demo&quot;); */</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -988,8 +989,8 @@ and so the robot will try to move to that goal. We will
 not use that function in this tutorial since it is
 a blocking function and requires a controller to be active
 and report success on execution of a trajectory.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cm">/* Uncomment below line when working with a real robot */</span>
-<span class="cm">/* move_group.move(); */</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cm">/* Uncomment below line when working with a real robot */</span><span class="w"></span>
+<span class="cm">/* move_group.move(); */</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -999,39 +1000,39 @@ and report success on execution of a trajectory.</p>
 pose target we set above.</p>
 <p>To start, we’ll create an pointer that references the current robot’s state.
 RobotState is the object that contains all the current position/velocity/acceleration data.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">moveit</span><span class="o">::</span><span class="n">core</span><span class="o">::</span><span class="n">RobotStatePtr</span> <span class="n">current_state</span> <span class="o">=</span> <span class="n">move_group</span><span class="p">.</span><span class="n">getCurrentState</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">moveit</span><span class="o">::</span><span class="n">core</span><span class="o">::</span><span class="n">RobotStatePtr</span><span class="w"> </span><span class="n">current_state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">move_group</span><span class="p">.</span><span class="n">getCurrentState</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Next get the current set of joint values for the group.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">joint_group_positions</span><span class="p">;</span>
-<span class="n">current_state</span><span class="o">-&gt;</span><span class="n">copyJointGroupPositions</span><span class="p">(</span><span class="n">joint_model_group</span><span class="p">,</span> <span class="n">joint_group_positions</span><span class="p">);</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">joint_group_positions</span><span class="p">;</span><span class="w"></span>
+<span class="n">current_state</span><span class="o">-&gt;</span><span class="n">copyJointGroupPositions</span><span class="p">(</span><span class="n">joint_model_group</span><span class="p">,</span><span class="w"> </span><span class="n">joint_group_positions</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Now, let’s modify one of the joints, plan to the new joint space goal and visualize the plan.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">joint_group_positions</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">-1.0</span><span class="p">;</span>  <span class="c1">// radians</span>
-<span class="n">move_group</span><span class="p">.</span><span class="n">setJointValueTarget</span><span class="p">(</span><span class="n">joint_group_positions</span><span class="p">);</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">joint_group_positions</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">-1.0</span><span class="p">;</span><span class="w">  </span><span class="c1">// radians</span>
+<span class="n">move_group</span><span class="p">.</span><span class="n">setJointValueTarget</span><span class="p">(</span><span class="n">joint_group_positions</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>We lower the allowed maximum velocity and acceleration to 5% of their maximum.
 The default values are 10% (0.1).
 Set your preferred defaults in the joint_limits.yaml file of your robot’s moveit_config
 or set explicit factors in your code if you need your robot to move faster.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span>  <span class="n">move_group</span><span class="p">.</span><span class="n">setMaxVelocityScalingFactor</span><span class="p">(</span><span class="mf">0.05</span><span class="p">);</span>
-  <span class="n">move_group</span><span class="p">.</span><span class="n">setMaxAccelerationScalingFactor</span><span class="p">(</span><span class="mf">0.05</span><span class="p">);</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="n">move_group</span><span class="p">.</span><span class="n">setMaxVelocityScalingFactor</span><span class="p">(</span><span class="mf">0.05</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">move_group</span><span class="p">.</span><span class="n">setMaxAccelerationScalingFactor</span><span class="p">(</span><span class="mf">0.05</span><span class="p">);</span><span class="w"></span>
 
-  <span class="n">success</span> <span class="o">=</span> <span class="p">(</span><span class="n">move_group</span><span class="p">.</span><span class="n">plan</span><span class="p">(</span><span class="n">my_plan</span><span class="p">)</span> <span class="o">==</span> <span class="n">moveit</span><span class="o">::</span><span class="n">planning_interface</span><span class="o">::</span><span class="n">MoveItErrorCode</span><span class="o">::</span><span class="n">SUCCESS</span><span class="p">);</span>
-  <span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span> <span class="s">&quot;Visualizing plan 2 (joint space goal) %s&quot;</span><span class="p">,</span> <span class="n">success</span> <span class="o">?</span> <span class="s">&quot;&quot;</span> <span class="o">:</span> <span class="s">&quot;FAILED&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="n">success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">move_group</span><span class="p">.</span><span class="n">plan</span><span class="p">(</span><span class="n">my_plan</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">moveit</span><span class="o">::</span><span class="n">planning_interface</span><span class="o">::</span><span class="n">MoveItErrorCode</span><span class="o">::</span><span class="n">SUCCESS</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Visualizing plan 2 (joint space goal) %s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">success</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;FAILED&quot;</span><span class="p">);</span><span class="w"></span>
 
 
-<span class="n">Visualize</span> <span class="n">the</span> <span class="n">plan</span> <span class="n">in</span> <span class="n">RViz</span>
+<span class="n">Visualize</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">plan</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">RViz</span><span class="w"></span>
 </pre></div>
 </div>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">visual_tools</span><span class="p">.</span><span class="n">deleteAllMarkers</span><span class="p">();</span>
-<span class="n">visual_tools</span><span class="p">.</span><span class="n">publishText</span><span class="p">(</span><span class="n">text_pose</span><span class="p">,</span> <span class="s">&quot;Joint_Space_Goal&quot;</span><span class="p">,</span> <span class="n">rvt</span><span class="o">::</span><span class="n">WHITE</span><span class="p">,</span> <span class="n">rvt</span><span class="o">::</span><span class="n">XLARGE</span><span class="p">);</span>
-<span class="cm">/* visual_tools.publishTrajectoryLine(my_plan.trajectory_, joint_model_group); */</span>
-<span class="n">visual_tools</span><span class="p">.</span><span class="n">trigger</span><span class="p">();</span>
-<span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;Enter&#39; to continue the demo&quot;</span><span class="p">);</span>
-<span class="cm">/* visual_tools.prompt(&quot;Press &#39;next&#39; in the RvizVisualToolsGui window to continue the demo&quot;); */</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">visual_tools</span><span class="p">.</span><span class="n">deleteAllMarkers</span><span class="p">();</span><span class="w"></span>
+<span class="n">visual_tools</span><span class="p">.</span><span class="n">publishText</span><span class="p">(</span><span class="n">text_pose</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Joint_Space_Goal&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rvt</span><span class="o">::</span><span class="n">WHITE</span><span class="p">,</span><span class="w"> </span><span class="n">rvt</span><span class="o">::</span><span class="n">XLARGE</span><span class="p">);</span><span class="w"></span>
+<span class="cm">/* visual_tools.publishTrajectoryLine(my_plan.trajectory_, joint_model_group); */</span><span class="w"></span>
+<span class="n">visual_tools</span><span class="p">.</span><span class="n">trigger</span><span class="p">();</span><span class="w"></span>
+<span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;Enter&#39; to continue the demo&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="cm">/* visual_tools.prompt(&quot;Press &#39;next&#39; in the RvizVisualToolsGui window to continue the demo&quot;); */</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1040,20 +1041,20 @@ or set explicit factors in your code if you need your robot to move faster.</p>
 <p>Path constraints can easily be specified for a link on the robot.
 Let’s specify a path constraint and a pose goal for our group.
 First define the path constraint.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">moveit_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">OrientationConstraint</span> <span class="n">ocm</span><span class="p">;</span>
-<span class="n">ocm</span><span class="p">.</span><span class="n">link_name</span> <span class="o">=</span> <span class="s">&quot;panda_link7&quot;</span><span class="p">;</span>
-<span class="n">ocm</span><span class="p">.</span><span class="n">header</span><span class="p">.</span><span class="n">frame_id</span> <span class="o">=</span> <span class="s">&quot;panda_link0&quot;</span><span class="p">;</span>
-<span class="n">ocm</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">w</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>
-<span class="n">ocm</span><span class="p">.</span><span class="n">absolute_x_axis_tolerance</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">;</span>
-<span class="n">ocm</span><span class="p">.</span><span class="n">absolute_y_axis_tolerance</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">;</span>
-<span class="n">ocm</span><span class="p">.</span><span class="n">absolute_z_axis_tolerance</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">;</span>
-<span class="n">ocm</span><span class="p">.</span><span class="n">weight</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">moveit_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">OrientationConstraint</span><span class="w"> </span><span class="n">ocm</span><span class="p">;</span><span class="w"></span>
+<span class="n">ocm</span><span class="p">.</span><span class="n">link_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;panda_link7&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="n">ocm</span><span class="p">.</span><span class="n">header</span><span class="p">.</span><span class="n">frame_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;panda_link0&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="n">ocm</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">w</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="p">;</span><span class="w"></span>
+<span class="n">ocm</span><span class="p">.</span><span class="n">absolute_x_axis_tolerance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.1</span><span class="p">;</span><span class="w"></span>
+<span class="n">ocm</span><span class="p">.</span><span class="n">absolute_y_axis_tolerance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.1</span><span class="p">;</span><span class="w"></span>
+<span class="n">ocm</span><span class="p">.</span><span class="n">absolute_z_axis_tolerance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.1</span><span class="p">;</span><span class="w"></span>
+<span class="n">ocm</span><span class="p">.</span><span class="n">weight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Now, set it as the path constraint for the group.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">moveit_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Constraints</span> <span class="n">test_constraints</span><span class="p">;</span>
-<span class="n">test_constraints</span><span class="p">.</span><span class="n">orientation_constraints</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">ocm</span><span class="p">);</span>
-<span class="n">move_group</span><span class="p">.</span><span class="n">setPathConstraints</span><span class="p">(</span><span class="n">test_constraints</span><span class="p">);</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">moveit_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Constraints</span><span class="w"> </span><span class="n">test_constraints</span><span class="p">;</span><span class="w"></span>
+<span class="n">test_constraints</span><span class="p">.</span><span class="n">orientation_constraints</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">ocm</span><span class="p">);</span><span class="w"></span>
+<span class="n">move_group</span><span class="p">.</span><span class="n">setPathConstraints</span><span class="p">(</span><span class="n">test_constraints</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1073,42 +1074,42 @@ increase planning time considerably.</p>
 Note that this will only work if the current state already
 satisfies the path constraints. So we need to set the start
 state to a new pose.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">moveit</span><span class="o">::</span><span class="n">core</span><span class="o">::</span><span class="n">RobotState</span> <span class="nf">start_state</span><span class="p">(</span><span class="o">*</span><span class="n">move_group</span><span class="p">.</span><span class="n">getCurrentState</span><span class="p">());</span>
-<span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Pose</span> <span class="n">start_pose2</span><span class="p">;</span>
-<span class="n">start_pose2</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">w</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>
-<span class="n">start_pose2</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="mf">0.55</span><span class="p">;</span>
-<span class="n">start_pose2</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="mf">-0.05</span><span class="p">;</span>
-<span class="n">start_pose2</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">z</span> <span class="o">=</span> <span class="mf">0.8</span><span class="p">;</span>
-<span class="n">start_state</span><span class="p">.</span><span class="n">setFromIK</span><span class="p">(</span><span class="n">joint_model_group</span><span class="p">,</span> <span class="n">start_pose2</span><span class="p">);</span>
-<span class="n">move_group</span><span class="p">.</span><span class="n">setStartState</span><span class="p">(</span><span class="n">start_state</span><span class="p">);</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">moveit</span><span class="o">::</span><span class="n">core</span><span class="o">::</span><span class="n">RobotState</span><span class="w"> </span><span class="nf">start_state</span><span class="p">(</span><span class="o">*</span><span class="n">move_group</span><span class="p">.</span><span class="n">getCurrentState</span><span class="p">());</span><span class="w"></span>
+<span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Pose</span><span class="w"> </span><span class="n">start_pose2</span><span class="p">;</span><span class="w"></span>
+<span class="n">start_pose2</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">w</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="p">;</span><span class="w"></span>
+<span class="n">start_pose2</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.55</span><span class="p">;</span><span class="w"></span>
+<span class="n">start_pose2</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">-0.05</span><span class="p">;</span><span class="w"></span>
+<span class="n">start_pose2</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.8</span><span class="p">;</span><span class="w"></span>
+<span class="n">start_state</span><span class="p">.</span><span class="n">setFromIK</span><span class="p">(</span><span class="n">joint_model_group</span><span class="p">,</span><span class="w"> </span><span class="n">start_pose2</span><span class="p">);</span><span class="w"></span>
+<span class="n">move_group</span><span class="p">.</span><span class="n">setStartState</span><span class="p">(</span><span class="n">start_state</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Now we will plan to the earlier pose target from the new
 start state that we have just created.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">move_group</span><span class="p">.</span><span class="n">setPoseTarget</span><span class="p">(</span><span class="n">target_pose1</span><span class="p">);</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">move_group</span><span class="p">.</span><span class="n">setPoseTarget</span><span class="p">(</span><span class="n">target_pose1</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Planning with constraints can be slow because every sample must call an inverse kinematics solver.
 Lets increase the planning time from the default 5 seconds to be sure the planner has enough time to succeed.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">move_group</span><span class="p">.</span><span class="n">setPlanningTime</span><span class="p">(</span><span class="mf">10.0</span><span class="p">);</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">move_group</span><span class="p">.</span><span class="n">setPlanningTime</span><span class="p">(</span><span class="mf">10.0</span><span class="p">);</span><span class="w"></span>
 
-<span class="n">success</span> <span class="o">=</span> <span class="p">(</span><span class="n">move_group</span><span class="p">.</span><span class="n">plan</span><span class="p">(</span><span class="n">my_plan</span><span class="p">)</span> <span class="o">==</span> <span class="n">moveit</span><span class="o">::</span><span class="n">planning_interface</span><span class="o">::</span><span class="n">MoveItErrorCode</span><span class="o">::</span><span class="n">SUCCESS</span><span class="p">);</span>
-<span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span> <span class="s">&quot;Visualizing plan 3 (constraints) %s&quot;</span><span class="p">,</span> <span class="n">success</span> <span class="o">?</span> <span class="s">&quot;&quot;</span> <span class="o">:</span> <span class="s">&quot;FAILED&quot;</span><span class="p">);</span>
+<span class="n">success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">move_group</span><span class="p">.</span><span class="n">plan</span><span class="p">(</span><span class="n">my_plan</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">moveit</span><span class="o">::</span><span class="n">planning_interface</span><span class="o">::</span><span class="n">MoveItErrorCode</span><span class="o">::</span><span class="n">SUCCESS</span><span class="p">);</span><span class="w"></span>
+<span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Visualizing plan 3 (constraints) %s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">success</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;FAILED&quot;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Visualize the plan in RViz</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">visual_tools</span><span class="p">.</span><span class="n">deleteAllMarkers</span><span class="p">();</span>
-<span class="n">visual_tools</span><span class="p">.</span><span class="n">publishAxisLabeled</span><span class="p">(</span><span class="n">start_pose2</span><span class="p">,</span> <span class="s">&quot;start&quot;</span><span class="p">);</span>
-<span class="n">visual_tools</span><span class="p">.</span><span class="n">publishAxisLabeled</span><span class="p">(</span><span class="n">target_pose1</span><span class="p">,</span> <span class="s">&quot;goal&quot;</span><span class="p">);</span>
-<span class="n">visual_tools</span><span class="p">.</span><span class="n">publishText</span><span class="p">(</span><span class="n">text_pose</span><span class="p">,</span> <span class="s">&quot;Constrained_Goal&quot;</span><span class="p">,</span> <span class="n">rvt</span><span class="o">::</span><span class="n">WHITE</span><span class="p">,</span> <span class="n">rvt</span><span class="o">::</span><span class="n">XLARGE</span><span class="p">);</span>
-<span class="cm">/* visual_tools.publishTrajectoryLine(my_plan.trajectory_, joint_model_group); */</span>
-<span class="n">visual_tools</span><span class="p">.</span><span class="n">trigger</span><span class="p">();</span>
-<span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;Enter&#39; to continue the demo&quot;</span><span class="p">);</span>
-<span class="cm">/* visual_tools.prompt(&quot;next step&quot;); */</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">visual_tools</span><span class="p">.</span><span class="n">deleteAllMarkers</span><span class="p">();</span><span class="w"></span>
+<span class="n">visual_tools</span><span class="p">.</span><span class="n">publishAxisLabeled</span><span class="p">(</span><span class="n">start_pose2</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;start&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">visual_tools</span><span class="p">.</span><span class="n">publishAxisLabeled</span><span class="p">(</span><span class="n">target_pose1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;goal&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">visual_tools</span><span class="p">.</span><span class="n">publishText</span><span class="p">(</span><span class="n">text_pose</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Constrained_Goal&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rvt</span><span class="o">::</span><span class="n">WHITE</span><span class="p">,</span><span class="w"> </span><span class="n">rvt</span><span class="o">::</span><span class="n">XLARGE</span><span class="p">);</span><span class="w"></span>
+<span class="cm">/* visual_tools.publishTrajectoryLine(my_plan.trajectory_, joint_model_group); */</span><span class="w"></span>
+<span class="n">visual_tools</span><span class="p">.</span><span class="n">trigger</span><span class="p">();</span><span class="w"></span>
+<span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;Enter&#39; to continue the demo&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="cm">/* visual_tools.prompt(&quot;next step&quot;); */</span><span class="w"></span>
 </pre></div>
 </div>
 <p>When done with the path constraint be sure to clear it.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">move_group</span><span class="p">.</span><span class="n">clearPathConstraints</span><span class="p">();</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">move_group</span><span class="p">.</span><span class="n">clearPathConstraints</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1118,21 +1119,21 @@ Lets increase the planning time from the default 5 seconds to be sure the planne
 for the end-effector to go through. Note that we are starting
 from the new start state above.  The initial pose (start state) does not
 need to be added to the waypoint list but adding it can help with visualizations</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Pose</span><span class="o">&gt;</span> <span class="n">waypoints</span><span class="p">;</span>
-<span class="n">waypoints</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">start_pose2</span><span class="p">);</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Pose</span><span class="o">&gt;</span><span class="w"> </span><span class="n">waypoints</span><span class="p">;</span><span class="w"></span>
+<span class="n">waypoints</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">start_pose2</span><span class="p">);</span><span class="w"></span>
 
-<span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Pose</span> <span class="n">target_pose3</span> <span class="o">=</span> <span class="n">start_pose2</span><span class="p">;</span>
+<span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Pose</span><span class="w"> </span><span class="n">target_pose3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">start_pose2</span><span class="p">;</span><span class="w"></span>
 
-<span class="n">target_pose3</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">z</span> <span class="o">-=</span> <span class="mf">0.2</span><span class="p">;</span>
-<span class="n">waypoints</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">target_pose3</span><span class="p">);</span>  <span class="c1">// down</span>
+<span class="n">target_pose3</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">z</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mf">0.2</span><span class="p">;</span><span class="w"></span>
+<span class="n">waypoints</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">target_pose3</span><span class="p">);</span><span class="w">  </span><span class="c1">// down</span>
 
-<span class="n">target_pose3</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">y</span> <span class="o">-=</span> <span class="mf">0.2</span><span class="p">;</span>
-<span class="n">waypoints</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">target_pose3</span><span class="p">);</span>  <span class="c1">// right</span>
+<span class="n">target_pose3</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mf">0.2</span><span class="p">;</span><span class="w"></span>
+<span class="n">waypoints</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">target_pose3</span><span class="p">);</span><span class="w">  </span><span class="c1">// right</span>
 
-<span class="n">target_pose3</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">z</span> <span class="o">+=</span> <span class="mf">0.2</span><span class="p">;</span>
-<span class="n">target_pose3</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">y</span> <span class="o">+=</span> <span class="mf">0.2</span><span class="p">;</span>
-<span class="n">target_pose3</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">-=</span> <span class="mf">0.2</span><span class="p">;</span>
-<span class="n">waypoints</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">target_pose3</span><span class="p">);</span>  <span class="c1">// up and left</span>
+<span class="n">target_pose3</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">z</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mf">0.2</span><span class="p">;</span><span class="w"></span>
+<span class="n">target_pose3</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mf">0.2</span><span class="p">;</span><span class="w"></span>
+<span class="n">target_pose3</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mf">0.2</span><span class="p">;</span><span class="w"></span>
+<span class="n">waypoints</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">target_pose3</span><span class="p">);</span><span class="w">  </span><span class="c1">// up and left</span>
 </pre></div>
 </div>
 <p>We want the Cartesian path to be interpolated at a resolution of 1 cm
@@ -1140,22 +1141,22 @@ which is why we will specify 0.01 as the max step in Cartesian
 translation.  We will specify the jump threshold as 0.0, effectively disabling it.
 Warning - disabling the jump threshold while operating real hardware can cause
 large unpredictable motions of redundant joints and could be a safety issue</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">moveit_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">RobotTrajectory</span> <span class="n">trajectory</span><span class="p">;</span>
-<span class="k">const</span> <span class="kt">double</span> <span class="n">jump_threshold</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
-<span class="k">const</span> <span class="kt">double</span> <span class="n">eef_step</span> <span class="o">=</span> <span class="mf">0.01</span><span class="p">;</span>
-<span class="kt">double</span> <span class="n">fraction</span> <span class="o">=</span> <span class="n">move_group</span><span class="p">.</span><span class="n">computeCartesianPath</span><span class="p">(</span><span class="n">waypoints</span><span class="p">,</span> <span class="n">eef_step</span><span class="p">,</span> <span class="n">jump_threshold</span><span class="p">,</span> <span class="n">trajectory</span><span class="p">);</span>
-<span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span> <span class="s">&quot;Visualizing plan 4 (Cartesian path) (%.2f%% acheived)&quot;</span><span class="p">,</span> <span class="n">fraction</span> <span class="o">*</span> <span class="mf">100.0</span><span class="p">);</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">moveit_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">RobotTrajectory</span><span class="w"> </span><span class="n">trajectory</span><span class="p">;</span><span class="w"></span>
+<span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">jump_threshold</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span><span class="w"></span>
+<span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">eef_step</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.01</span><span class="p">;</span><span class="w"></span>
+<span class="kt">double</span><span class="w"> </span><span class="n">fraction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">move_group</span><span class="p">.</span><span class="n">computeCartesianPath</span><span class="p">(</span><span class="n">waypoints</span><span class="p">,</span><span class="w"> </span><span class="n">eef_step</span><span class="p">,</span><span class="w"> </span><span class="n">jump_threshold</span><span class="p">,</span><span class="w"> </span><span class="n">trajectory</span><span class="p">);</span><span class="w"></span>
+<span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Visualizing plan 4 (Cartesian path) (%.2f%% acheived)&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">fraction</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">100.0</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Visualize the plan in RViz</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">visual_tools</span><span class="p">.</span><span class="n">deleteAllMarkers</span><span class="p">();</span>
-<span class="n">visual_tools</span><span class="p">.</span><span class="n">publishText</span><span class="p">(</span><span class="n">text_pose</span><span class="p">,</span> <span class="s">&quot;Cartesian_Path&quot;</span><span class="p">,</span> <span class="n">rvt</span><span class="o">::</span><span class="n">WHITE</span><span class="p">,</span> <span class="n">rvt</span><span class="o">::</span><span class="n">XLARGE</span><span class="p">);</span>
-<span class="n">visual_tools</span><span class="p">.</span><span class="n">publishPath</span><span class="p">(</span><span class="n">waypoints</span><span class="p">,</span> <span class="n">rvt</span><span class="o">::</span><span class="n">LIME_GREEN</span><span class="p">,</span> <span class="n">rvt</span><span class="o">::</span><span class="n">SMALL</span><span class="p">);</span>
-<span class="k">for</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">waypoints</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
-  <span class="n">visual_tools</span><span class="p">.</span><span class="n">publishAxisLabeled</span><span class="p">(</span><span class="n">waypoints</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">&quot;pt&quot;</span> <span class="o">+</span> <span class="n">std</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="n">rvt</span><span class="o">::</span><span class="n">SMALL</span><span class="p">);</span>
-<span class="n">visual_tools</span><span class="p">.</span><span class="n">trigger</span><span class="p">();</span>
-<span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;Enter&#39; to continue the demo&quot;</span><span class="p">);</span>
-<span class="cm">/* visual_tools.prompt(&quot;Press &#39;next&#39; in the RvizVisualToolsGui window to continue the demo&quot;); */</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">visual_tools</span><span class="p">.</span><span class="n">deleteAllMarkers</span><span class="p">();</span><span class="w"></span>
+<span class="n">visual_tools</span><span class="p">.</span><span class="n">publishText</span><span class="p">(</span><span class="n">text_pose</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Cartesian_Path&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rvt</span><span class="o">::</span><span class="n">WHITE</span><span class="p">,</span><span class="w"> </span><span class="n">rvt</span><span class="o">::</span><span class="n">XLARGE</span><span class="p">);</span><span class="w"></span>
+<span class="n">visual_tools</span><span class="p">.</span><span class="n">publishPath</span><span class="p">(</span><span class="n">waypoints</span><span class="p">,</span><span class="w"> </span><span class="n">rvt</span><span class="o">::</span><span class="n">LIME_GREEN</span><span class="p">,</span><span class="w"> </span><span class="n">rvt</span><span class="o">::</span><span class="n">SMALL</span><span class="p">);</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">waypoints</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="n">visual_tools</span><span class="p">.</span><span class="n">publishAxisLabeled</span><span class="p">(</span><span class="n">waypoints</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="s">&quot;pt&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">rvt</span><span class="o">::</span><span class="n">SMALL</span><span class="p">);</span><span class="w"></span>
+<span class="n">visual_tools</span><span class="p">.</span><span class="n">trigger</span><span class="p">();</span><span class="w"></span>
+<span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;Enter&#39; to continue the demo&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="cm">/* visual_tools.prompt(&quot;Press &#39;next&#39; in the RvizVisualToolsGui window to continue the demo&quot;); */</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Cartesian motions should often be slow, e.g. when approaching objects. The speed of cartesian
@@ -1163,90 +1164,90 @@ plans cannot currently be set through the maxVelocityScalingFactor, but requires
 the trajectory manually, as described <a class="reference external" href="https://groups.google.com/forum/#!topic/moveit-users/MOoFxy2exT4">here</a>.
 Pull requests are welcome.</p>
 <p>You can execute a trajectory like this.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cm">/* move_group.execute(trajectory); */</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cm">/* move_group.execute(trajectory); */</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="adding-objects-to-the-environment">
 <h3>Adding objects to the environment<a class="headerlink" href="#adding-objects-to-the-environment" title="Permalink to this headline">¶</a></h3>
 <p>First let’s plan to another simple goal with no objects in the way.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">move_group</span><span class="p">.</span><span class="n">setStartState</span><span class="p">(</span><span class="o">*</span><span class="n">move_group</span><span class="p">.</span><span class="n">getCurrentState</span><span class="p">());</span>
-<span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Pose</span> <span class="n">another_pose</span><span class="p">;</span>
-<span class="n">another_pose</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">w</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="n">another_pose</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="mf">-1.0</span><span class="p">;</span>
-<span class="n">another_pose</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="mf">0.7</span><span class="p">;</span>
-<span class="n">another_pose</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
-<span class="n">another_pose</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">z</span> <span class="o">=</span> <span class="mf">0.59</span><span class="p">;</span>
-<span class="n">move_group</span><span class="p">.</span><span class="n">setPoseTarget</span><span class="p">(</span><span class="n">another_pose</span><span class="p">);</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">move_group</span><span class="p">.</span><span class="n">setStartState</span><span class="p">(</span><span class="o">*</span><span class="n">move_group</span><span class="p">.</span><span class="n">getCurrentState</span><span class="p">());</span><span class="w"></span>
+<span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Pose</span><span class="w"> </span><span class="n">another_pose</span><span class="p">;</span><span class="w"></span>
+<span class="n">another_pose</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">w</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="n">another_pose</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">-1.0</span><span class="p">;</span><span class="w"></span>
+<span class="n">another_pose</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.7</span><span class="p">;</span><span class="w"></span>
+<span class="n">another_pose</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span><span class="w"></span>
+<span class="n">another_pose</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.59</span><span class="p">;</span><span class="w"></span>
+<span class="n">move_group</span><span class="p">.</span><span class="n">setPoseTarget</span><span class="p">(</span><span class="n">another_pose</span><span class="p">);</span><span class="w"></span>
 
-<span class="n">success</span> <span class="o">=</span> <span class="p">(</span><span class="n">move_group</span><span class="p">.</span><span class="n">plan</span><span class="p">(</span><span class="n">my_plan</span><span class="p">)</span> <span class="o">==</span> <span class="n">moveit</span><span class="o">::</span><span class="n">planning_interface</span><span class="o">::</span><span class="n">MoveItErrorCode</span><span class="o">::</span><span class="n">SUCCESS</span><span class="p">);</span>
-<span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span> <span class="s">&quot;Visualizing plan 5 (with no obstacles) %s&quot;</span><span class="p">,</span> <span class="n">success</span> <span class="o">?</span> <span class="s">&quot;&quot;</span> <span class="o">:</span> <span class="s">&quot;FAILED&quot;</span><span class="p">);</span>
+<span class="n">success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">move_group</span><span class="p">.</span><span class="n">plan</span><span class="p">(</span><span class="n">my_plan</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">moveit</span><span class="o">::</span><span class="n">planning_interface</span><span class="o">::</span><span class="n">MoveItErrorCode</span><span class="o">::</span><span class="n">SUCCESS</span><span class="p">);</span><span class="w"></span>
+<span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Visualizing plan 5 (with no obstacles) %s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">success</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;FAILED&quot;</span><span class="p">);</span><span class="w"></span>
 
-<span class="n">visual_tools</span><span class="p">.</span><span class="n">deleteAllMarkers</span><span class="p">();</span>
-<span class="n">visual_tools</span><span class="p">.</span><span class="n">publishText</span><span class="p">(</span><span class="n">text_pose</span><span class="p">,</span> <span class="s">&quot;Clear_Goal&quot;</span><span class="p">,</span> <span class="n">rvt</span><span class="o">::</span><span class="n">WHITE</span><span class="p">,</span> <span class="n">rvt</span><span class="o">::</span><span class="n">XLARGE</span><span class="p">);</span>
-<span class="n">visual_tools</span><span class="p">.</span><span class="n">publishAxisLabeled</span><span class="p">(</span><span class="n">another_pose</span><span class="p">,</span> <span class="s">&quot;goal&quot;</span><span class="p">);</span>
-<span class="cm">/* visual_tools.publishTrajectoryLine(my_plan.trajectory_, joint_model_group); */</span>
-<span class="n">visual_tools</span><span class="p">.</span><span class="n">trigger</span><span class="p">();</span>
-<span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;Enter&#39; to continue the demo&quot;</span><span class="p">);</span>
-<span class="cm">/* visual_tools.prompt(&quot;next step&quot;); */</span>
+<span class="n">visual_tools</span><span class="p">.</span><span class="n">deleteAllMarkers</span><span class="p">();</span><span class="w"></span>
+<span class="n">visual_tools</span><span class="p">.</span><span class="n">publishText</span><span class="p">(</span><span class="n">text_pose</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Clear_Goal&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rvt</span><span class="o">::</span><span class="n">WHITE</span><span class="p">,</span><span class="w"> </span><span class="n">rvt</span><span class="o">::</span><span class="n">XLARGE</span><span class="p">);</span><span class="w"></span>
+<span class="n">visual_tools</span><span class="p">.</span><span class="n">publishAxisLabeled</span><span class="p">(</span><span class="n">another_pose</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;goal&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="cm">/* visual_tools.publishTrajectoryLine(my_plan.trajectory_, joint_model_group); */</span><span class="w"></span>
+<span class="n">visual_tools</span><span class="p">.</span><span class="n">trigger</span><span class="p">();</span><span class="w"></span>
+<span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;Enter&#39; to continue the demo&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="cm">/* visual_tools.prompt(&quot;next step&quot;); */</span><span class="w"></span>
 </pre></div>
 </div>
 <p>The result may look like this:</p>
 <img alt="animation showing the arm moving relatively straight toward the goal" src="../../_images/move_group_interface_tutorial_clear_path.gif" />
 <p>Now let’s define a collision object ROS message for the robot to avoid.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">moveit_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">CollisionObject</span> <span class="n">collision_object</span><span class="p">;</span>
-<span class="n">collision_object</span><span class="p">.</span><span class="n">header</span><span class="p">.</span><span class="n">frame_id</span> <span class="o">=</span> <span class="n">move_group</span><span class="p">.</span><span class="n">getPlanningFrame</span><span class="p">();</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">moveit_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">CollisionObject</span><span class="w"> </span><span class="n">collision_object</span><span class="p">;</span><span class="w"></span>
+<span class="n">collision_object</span><span class="p">.</span><span class="n">header</span><span class="p">.</span><span class="n">frame_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">move_group</span><span class="p">.</span><span class="n">getPlanningFrame</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
 <p>The id of the object is used to identify it.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">collision_object</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="s">&quot;box1&quot;</span><span class="p">;</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">collision_object</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;box1&quot;</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Define a box to add to the world.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">shape_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">SolidPrimitive</span> <span class="n">primitive</span><span class="p">;</span>
-<span class="n">primitive</span><span class="p">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">primitive</span><span class="p">.</span><span class="n">BOX</span><span class="p">;</span>
-<span class="n">primitive</span><span class="p">.</span><span class="n">dimensions</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
-<span class="n">primitive</span><span class="p">.</span><span class="n">dimensions</span><span class="p">[</span><span class="n">primitive</span><span class="p">.</span><span class="n">BOX_X</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">;</span>
-<span class="n">primitive</span><span class="p">.</span><span class="n">dimensions</span><span class="p">[</span><span class="n">primitive</span><span class="p">.</span><span class="n">BOX_Y</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.5</span><span class="p">;</span>
-<span class="n">primitive</span><span class="p">.</span><span class="n">dimensions</span><span class="p">[</span><span class="n">primitive</span><span class="p">.</span><span class="n">BOX_Z</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">;</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">shape_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">SolidPrimitive</span><span class="w"> </span><span class="n">primitive</span><span class="p">;</span><span class="w"></span>
+<span class="n">primitive</span><span class="p">.</span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">primitive</span><span class="p">.</span><span class="n">BOX</span><span class="p">;</span><span class="w"></span>
+<span class="n">primitive</span><span class="p">.</span><span class="n">dimensions</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span><span class="w"></span>
+<span class="n">primitive</span><span class="p">.</span><span class="n">dimensions</span><span class="p">[</span><span class="n">primitive</span><span class="p">.</span><span class="n">BOX_X</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.1</span><span class="p">;</span><span class="w"></span>
+<span class="n">primitive</span><span class="p">.</span><span class="n">dimensions</span><span class="p">[</span><span class="n">primitive</span><span class="p">.</span><span class="n">BOX_Y</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.5</span><span class="p">;</span><span class="w"></span>
+<span class="n">primitive</span><span class="p">.</span><span class="n">dimensions</span><span class="p">[</span><span class="n">primitive</span><span class="p">.</span><span class="n">BOX_Z</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Define a pose for the box (specified relative to frame_id)</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Pose</span> <span class="n">box_pose</span><span class="p">;</span>
-<span class="n">box_pose</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">w</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>
-<span class="n">box_pose</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="mf">0.48</span><span class="p">;</span>
-<span class="n">box_pose</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
-<span class="n">box_pose</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">z</span> <span class="o">=</span> <span class="mf">0.25</span><span class="p">;</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Pose</span><span class="w"> </span><span class="n">box_pose</span><span class="p">;</span><span class="w"></span>
+<span class="n">box_pose</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">w</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="p">;</span><span class="w"></span>
+<span class="n">box_pose</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.48</span><span class="p">;</span><span class="w"></span>
+<span class="n">box_pose</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span><span class="w"></span>
+<span class="n">box_pose</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.25</span><span class="p">;</span><span class="w"></span>
 
-<span class="n">collision_object</span><span class="p">.</span><span class="n">primitives</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">primitive</span><span class="p">);</span>
-<span class="n">collision_object</span><span class="p">.</span><span class="n">primitive_poses</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">box_pose</span><span class="p">);</span>
-<span class="n">collision_object</span><span class="p">.</span><span class="n">operation</span> <span class="o">=</span> <span class="n">collision_object</span><span class="p">.</span><span class="n">ADD</span><span class="p">;</span>
+<span class="n">collision_object</span><span class="p">.</span><span class="n">primitives</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">primitive</span><span class="p">);</span><span class="w"></span>
+<span class="n">collision_object</span><span class="p">.</span><span class="n">primitive_poses</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">box_pose</span><span class="p">);</span><span class="w"></span>
+<span class="n">collision_object</span><span class="p">.</span><span class="n">operation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">collision_object</span><span class="p">.</span><span class="n">ADD</span><span class="p">;</span><span class="w"></span>
 
-<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">moveit_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">CollisionObject</span><span class="o">&gt;</span> <span class="n">collision_objects</span><span class="p">;</span>
-<span class="n">collision_objects</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">collision_object</span><span class="p">);</span>
+<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">moveit_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">CollisionObject</span><span class="o">&gt;</span><span class="w"> </span><span class="n">collision_objects</span><span class="p">;</span><span class="w"></span>
+<span class="n">collision_objects</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">collision_object</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Now, let’s add the collision object into the world
 (using a vector that could contain additional objects)</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span> <span class="s">&quot;Add an object into the world&quot;</span><span class="p">);</span>
-<span class="n">planning_scene_interface</span><span class="p">.</span><span class="n">addCollisionObjects</span><span class="p">(</span><span class="n">collision_objects</span><span class="p">);</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Add an object into the world&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">planning_scene_interface</span><span class="p">.</span><span class="n">addCollisionObjects</span><span class="p">(</span><span class="n">collision_objects</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Show text in RViz of status and wait for MoveGroup to receive and process the collision object message</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">visual_tools</span><span class="p">.</span><span class="n">publishText</span><span class="p">(</span><span class="n">text_pose</span><span class="p">,</span> <span class="s">&quot;Add_object&quot;</span><span class="p">,</span> <span class="n">rvt</span><span class="o">::</span><span class="n">WHITE</span><span class="p">,</span> <span class="n">rvt</span><span class="o">::</span><span class="n">XLARGE</span><span class="p">);</span>
-<span class="n">visual_tools</span><span class="p">.</span><span class="n">trigger</span><span class="p">();</span>
-<span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;Enter&#39; to continue once the collision object appears in RViz&quot;</span><span class="p">);</span>
-<span class="cm">/* visual_tools.prompt(&quot;Press &#39;next&#39; in the RvizVisualToolsGui window to once the collision object appears in RViz&quot;); */</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">visual_tools</span><span class="p">.</span><span class="n">publishText</span><span class="p">(</span><span class="n">text_pose</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Add_object&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rvt</span><span class="o">::</span><span class="n">WHITE</span><span class="p">,</span><span class="w"> </span><span class="n">rvt</span><span class="o">::</span><span class="n">XLARGE</span><span class="p">);</span><span class="w"></span>
+<span class="n">visual_tools</span><span class="p">.</span><span class="n">trigger</span><span class="p">();</span><span class="w"></span>
+<span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;Enter&#39; to continue once the collision object appears in RViz&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="cm">/* visual_tools.prompt(&quot;Press &#39;next&#39; in the RvizVisualToolsGui window to once the collision object appears in RViz&quot;); */</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Now when we plan a trajectory it will avoid the obstacle</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">success</span> <span class="o">=</span> <span class="p">(</span><span class="n">move_group</span><span class="p">.</span><span class="n">plan</span><span class="p">(</span><span class="n">my_plan</span><span class="p">)</span> <span class="o">==</span> <span class="n">moveit</span><span class="o">::</span><span class="n">planning_interface</span><span class="o">::</span><span class="n">MoveItErrorCode</span><span class="o">::</span><span class="n">SUCCESS</span><span class="p">);</span>
-<span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span> <span class="s">&quot;Visualizing plan 6 (pose goal move around cuboid) %s&quot;</span><span class="p">,</span> <span class="n">success</span> <span class="o">?</span> <span class="s">&quot;&quot;</span> <span class="o">:</span> <span class="s">&quot;FAILED&quot;</span><span class="p">);</span>
-<span class="n">visual_tools</span><span class="p">.</span><span class="n">publishText</span><span class="p">(</span><span class="n">text_pose</span><span class="p">,</span> <span class="s">&quot;Obstacle_Goal&quot;</span><span class="p">,</span> <span class="n">rvt</span><span class="o">::</span><span class="n">WHITE</span><span class="p">,</span> <span class="n">rvt</span><span class="o">::</span><span class="n">XLARGE</span><span class="p">);</span>
-<span class="cm">/* visual_tools.publishTrajectoryLine(my_plan.trajectory_, joint_model_group); */</span>
-<span class="n">visual_tools</span><span class="p">.</span><span class="n">trigger</span><span class="p">();</span>
-<span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;Enter&#39; to continue once the plan is complete&quot;</span><span class="p">);</span>
-<span class="cm">/* visual_tools.prompt(&quot;Press &#39;next&#39; in the RvizVisualToolsGui window once the plan is complete&quot;); */</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">move_group</span><span class="p">.</span><span class="n">plan</span><span class="p">(</span><span class="n">my_plan</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">moveit</span><span class="o">::</span><span class="n">planning_interface</span><span class="o">::</span><span class="n">MoveItErrorCode</span><span class="o">::</span><span class="n">SUCCESS</span><span class="p">);</span><span class="w"></span>
+<span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Visualizing plan 6 (pose goal move around cuboid) %s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">success</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;FAILED&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">visual_tools</span><span class="p">.</span><span class="n">publishText</span><span class="p">(</span><span class="n">text_pose</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Obstacle_Goal&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rvt</span><span class="o">::</span><span class="n">WHITE</span><span class="p">,</span><span class="w"> </span><span class="n">rvt</span><span class="o">::</span><span class="n">XLARGE</span><span class="p">);</span><span class="w"></span>
+<span class="cm">/* visual_tools.publishTrajectoryLine(my_plan.trajectory_, joint_model_group); */</span><span class="w"></span>
+<span class="n">visual_tools</span><span class="p">.</span><span class="n">trigger</span><span class="p">();</span><span class="w"></span>
+<span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;Enter&#39; to continue once the plan is complete&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="cm">/* visual_tools.prompt(&quot;Press &#39;next&#39; in the RvizVisualToolsGui window once the plan is complete&quot;); */</span><span class="w"></span>
 </pre></div>
 </div>
 <p>The result may look like this:</p>
@@ -1257,55 +1258,55 @@ Pull requests are welcome.</p>
 <p>You can attach objects to the robot, so that it moves with the robot geometry.
 This simulates picking up the object for the purpose of manipulating it.
 The motion planning should avoid collisions between the two objects as well.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">moveit_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">CollisionObject</span> <span class="n">object_to_attach</span><span class="p">;</span>
-<span class="n">object_to_attach</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="s">&quot;cylinder1&quot;</span><span class="p">;</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">moveit_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">CollisionObject</span><span class="w"> </span><span class="n">object_to_attach</span><span class="p">;</span><span class="w"></span>
+<span class="n">object_to_attach</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;cylinder1&quot;</span><span class="p">;</span><span class="w"></span>
 
-<span class="n">shape_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">SolidPrimitive</span> <span class="n">cylinder_primitive</span><span class="p">;</span>
-<span class="n">cylinder_primitive</span><span class="p">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">primitive</span><span class="p">.</span><span class="n">CYLINDER</span><span class="p">;</span>
-<span class="n">cylinder_primitive</span><span class="p">.</span><span class="n">dimensions</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-<span class="n">cylinder_primitive</span><span class="p">.</span><span class="n">dimensions</span><span class="p">[</span><span class="n">primitive</span><span class="p">.</span><span class="n">CYLINDER_HEIGHT</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.20</span><span class="p">;</span>
-<span class="n">cylinder_primitive</span><span class="p">.</span><span class="n">dimensions</span><span class="p">[</span><span class="n">primitive</span><span class="p">.</span><span class="n">CYLINDER_RADIUS</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.04</span><span class="p">;</span>
+<span class="n">shape_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">SolidPrimitive</span><span class="w"> </span><span class="n">cylinder_primitive</span><span class="p">;</span><span class="w"></span>
+<span class="n">cylinder_primitive</span><span class="p">.</span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">primitive</span><span class="p">.</span><span class="n">CYLINDER</span><span class="p">;</span><span class="w"></span>
+<span class="n">cylinder_primitive</span><span class="p">.</span><span class="n">dimensions</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span><span class="w"></span>
+<span class="n">cylinder_primitive</span><span class="p">.</span><span class="n">dimensions</span><span class="p">[</span><span class="n">primitive</span><span class="p">.</span><span class="n">CYLINDER_HEIGHT</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.20</span><span class="p">;</span><span class="w"></span>
+<span class="n">cylinder_primitive</span><span class="p">.</span><span class="n">dimensions</span><span class="p">[</span><span class="n">primitive</span><span class="p">.</span><span class="n">CYLINDER_RADIUS</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.04</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 <p>We define the frame/pose for this cylinder so that it appears in the gripper</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">object_to_attach</span><span class="p">.</span><span class="n">header</span><span class="p">.</span><span class="n">frame_id</span> <span class="o">=</span> <span class="n">move_group</span><span class="p">.</span><span class="n">getEndEffectorLink</span><span class="p">();</span>
-<span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Pose</span> <span class="n">grab_pose</span><span class="p">;</span>
-<span class="n">grab_pose</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">w</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>
-<span class="n">grab_pose</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">z</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">;</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">object_to_attach</span><span class="p">.</span><span class="n">header</span><span class="p">.</span><span class="n">frame_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">move_group</span><span class="p">.</span><span class="n">getEndEffectorLink</span><span class="p">();</span><span class="w"></span>
+<span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Pose</span><span class="w"> </span><span class="n">grab_pose</span><span class="p">;</span><span class="w"></span>
+<span class="n">grab_pose</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">w</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="p">;</span><span class="w"></span>
+<span class="n">grab_pose</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.2</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 <p>First, we add the object to the world (without using a vector)</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">object_to_attach</span><span class="p">.</span><span class="n">primitives</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">cylinder_primitive</span><span class="p">);</span>
-<span class="n">object_to_attach</span><span class="p">.</span><span class="n">primitive_poses</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">grab_pose</span><span class="p">);</span>
-<span class="n">object_to_attach</span><span class="p">.</span><span class="n">operation</span> <span class="o">=</span> <span class="n">object_to_attach</span><span class="p">.</span><span class="n">ADD</span><span class="p">;</span>
-<span class="n">planning_scene_interface</span><span class="p">.</span><span class="n">applyCollisionObject</span><span class="p">(</span><span class="n">object_to_attach</span><span class="p">);</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">object_to_attach</span><span class="p">.</span><span class="n">primitives</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">cylinder_primitive</span><span class="p">);</span><span class="w"></span>
+<span class="n">object_to_attach</span><span class="p">.</span><span class="n">primitive_poses</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">grab_pose</span><span class="p">);</span><span class="w"></span>
+<span class="n">object_to_attach</span><span class="p">.</span><span class="n">operation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">object_to_attach</span><span class="p">.</span><span class="n">ADD</span><span class="p">;</span><span class="w"></span>
+<span class="n">planning_scene_interface</span><span class="p">.</span><span class="n">applyCollisionObject</span><span class="p">(</span><span class="n">object_to_attach</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Then, we “attach” the object to the robot. It uses the frame_id to determine which robot link it is attached to
 and we also need to tell MoveIt that the object is allowed to be in collision with the finger links of the gripper.
 You could also use applyAttachedCollisionObject to attach an object to the robot directly.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span> <span class="s">&quot;Attach the object to the robot&quot;</span><span class="p">);</span>
-<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">touch_links</span><span class="p">;</span>
-<span class="n">touch_links</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="s">&quot;panda_rightfinger&quot;</span><span class="p">);</span>
-<span class="n">touch_links</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="s">&quot;panda_leftfinger&quot;</span><span class="p">);</span>
-<span class="n">move_group</span><span class="p">.</span><span class="n">attachObject</span><span class="p">(</span><span class="n">object_to_attach</span><span class="p">.</span><span class="n">id</span><span class="p">,</span> <span class="s">&quot;panda_hand&quot;</span><span class="p">,</span> <span class="n">touch_links</span><span class="p">);</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Attach the object to the robot&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">touch_links</span><span class="p">;</span><span class="w"></span>
+<span class="n">touch_links</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="s">&quot;panda_rightfinger&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">touch_links</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="s">&quot;panda_leftfinger&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">move_group</span><span class="p">.</span><span class="n">attachObject</span><span class="p">(</span><span class="n">object_to_attach</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;panda_hand&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">touch_links</span><span class="p">);</span><span class="w"></span>
 
-<span class="n">visual_tools</span><span class="p">.</span><span class="n">publishText</span><span class="p">(</span><span class="n">text_pose</span><span class="p">,</span> <span class="s">&quot;Object_attached_to_robot&quot;</span><span class="p">,</span> <span class="n">rvt</span><span class="o">::</span><span class="n">WHITE</span><span class="p">,</span> <span class="n">rvt</span><span class="o">::</span><span class="n">XLARGE</span><span class="p">);</span>
-<span class="n">visual_tools</span><span class="p">.</span><span class="n">trigger</span><span class="p">();</span>
+<span class="n">visual_tools</span><span class="p">.</span><span class="n">publishText</span><span class="p">(</span><span class="n">text_pose</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Object_attached_to_robot&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rvt</span><span class="o">::</span><span class="n">WHITE</span><span class="p">,</span><span class="w"> </span><span class="n">rvt</span><span class="o">::</span><span class="n">XLARGE</span><span class="p">);</span><span class="w"></span>
+<span class="n">visual_tools</span><span class="p">.</span><span class="n">trigger</span><span class="p">();</span><span class="w"></span>
 
-<span class="cm">/* Wait for MoveGroup to receive and process the attached collision object message */</span>
-<span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;Enter&#39; once the collision object attaches to the robot&quot;</span><span class="p">);</span>
-<span class="cm">/* visual_tools.prompt(&quot;Press &#39;next&#39; in the RvizVisualToolsGui window once the new object is attached to the robot&quot;); */</span>
+<span class="cm">/* Wait for MoveGroup to receive and process the attached collision object message */</span><span class="w"></span>
+<span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;Enter&#39; once the collision object attaches to the robot&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="cm">/* visual_tools.prompt(&quot;Press &#39;next&#39; in the RvizVisualToolsGui window once the new object is attached to the robot&quot;); */</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Replan, but now with the object in hand.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">move_group</span><span class="p">.</span><span class="n">setStartStateToCurrentState</span><span class="p">();</span>
-<span class="n">success</span> <span class="o">=</span> <span class="p">(</span><span class="n">move_group</span><span class="p">.</span><span class="n">plan</span><span class="p">(</span><span class="n">my_plan</span><span class="p">)</span> <span class="o">==</span> <span class="n">moveit</span><span class="o">::</span><span class="n">planning_interface</span><span class="o">::</span><span class="n">MoveItErrorCode</span><span class="o">::</span><span class="n">SUCCESS</span><span class="p">);</span>
-<span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span> <span class="s">&quot;Visualizing plan 7 (move around cuboid with cylinder) %s&quot;</span><span class="p">,</span> <span class="n">success</span> <span class="o">?</span> <span class="s">&quot;&quot;</span> <span class="o">:</span> <span class="s">&quot;FAILED&quot;</span><span class="p">);</span>
-<span class="cm">/* visual_tools.publishTrajectoryLine(my_plan.trajectory_, joint_model_group); */</span>
-<span class="n">visual_tools</span><span class="p">.</span><span class="n">trigger</span><span class="p">();</span>
-<span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;Enter&#39; once the plan is complete&quot;</span><span class="p">);</span>
-<span class="cm">/* visual_tools.prompt(&quot;Press &#39;next&#39; in the RvizVisualToolsGui window once the plan is complete&quot;); */</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">move_group</span><span class="p">.</span><span class="n">setStartStateToCurrentState</span><span class="p">();</span><span class="w"></span>
+<span class="n">success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">move_group</span><span class="p">.</span><span class="n">plan</span><span class="p">(</span><span class="n">my_plan</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">moveit</span><span class="o">::</span><span class="n">planning_interface</span><span class="o">::</span><span class="n">MoveItErrorCode</span><span class="o">::</span><span class="n">SUCCESS</span><span class="p">);</span><span class="w"></span>
+<span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Visualizing plan 7 (move around cuboid with cylinder) %s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">success</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;FAILED&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="cm">/* visual_tools.publishTrajectoryLine(my_plan.trajectory_, joint_model_group); */</span><span class="w"></span>
+<span class="n">visual_tools</span><span class="p">.</span><span class="n">trigger</span><span class="p">();</span><span class="w"></span>
+<span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;Enter&#39; once the plan is complete&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="cm">/* visual_tools.prompt(&quot;Press &#39;next&#39; in the RvizVisualToolsGui window once the plan is complete&quot;); */</span><span class="w"></span>
 </pre></div>
 </div>
 <p>The result may look something like this:</p>
@@ -1314,35 +1315,35 @@ You could also use applyAttachedCollisionObject to attach an object to the robot
 <div class="section" id="detaching-and-removing-objects">
 <h3>Detaching and Removing Objects<a class="headerlink" href="#detaching-and-removing-objects" title="Permalink to this headline">¶</a></h3>
 <p>Now, let’s detach the cylinder from the robot’s gripper.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span> <span class="s">&quot;Detach the object from the robot&quot;</span><span class="p">);</span>
-<span class="n">move_group</span><span class="p">.</span><span class="n">detachObject</span><span class="p">(</span><span class="n">object_to_attach</span><span class="p">.</span><span class="n">id</span><span class="p">);</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Detach the object from the robot&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">move_group</span><span class="p">.</span><span class="n">detachObject</span><span class="p">(</span><span class="n">object_to_attach</span><span class="p">.</span><span class="n">id</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Show text in RViz of status</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">visual_tools</span><span class="p">.</span><span class="n">deleteAllMarkers</span><span class="p">();</span>
-<span class="n">visual_tools</span><span class="p">.</span><span class="n">publishText</span><span class="p">(</span><span class="n">text_pose</span><span class="p">,</span> <span class="s">&quot;Object_detached_from_robot&quot;</span><span class="p">,</span> <span class="n">rvt</span><span class="o">::</span><span class="n">WHITE</span><span class="p">,</span> <span class="n">rvt</span><span class="o">::</span><span class="n">XLARGE</span><span class="p">);</span>
-<span class="n">visual_tools</span><span class="p">.</span><span class="n">trigger</span><span class="p">();</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">visual_tools</span><span class="p">.</span><span class="n">deleteAllMarkers</span><span class="p">();</span><span class="w"></span>
+<span class="n">visual_tools</span><span class="p">.</span><span class="n">publishText</span><span class="p">(</span><span class="n">text_pose</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Object_detached_from_robot&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rvt</span><span class="o">::</span><span class="n">WHITE</span><span class="p">,</span><span class="w"> </span><span class="n">rvt</span><span class="o">::</span><span class="n">XLARGE</span><span class="p">);</span><span class="w"></span>
+<span class="n">visual_tools</span><span class="p">.</span><span class="n">trigger</span><span class="p">();</span><span class="w"></span>
 
-<span class="cm">/* Wait for MoveGroup to receive and process the attached collision object message */</span>
-<span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;Enter&#39; once the collision object detaches from the robot&quot;</span><span class="p">);</span>
-<span class="cm">/* visual_tools.prompt(&quot;Press &#39;next&#39; in the RvizVisualToolsGui window once the new object is detached from the robot&quot;); */</span>
+<span class="cm">/* Wait for MoveGroup to receive and process the attached collision object message */</span><span class="w"></span>
+<span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;Enter&#39; once the collision object detaches from the robot&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="cm">/* visual_tools.prompt(&quot;Press &#39;next&#39; in the RvizVisualToolsGui window once the new object is detached from the robot&quot;); */</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Now, let’s remove the objects from the world.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span> <span class="s">&quot;Remove the objects from the world&quot;</span><span class="p">);</span>
-<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">object_ids</span><span class="p">;</span>
-<span class="n">object_ids</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">collision_object</span><span class="p">.</span><span class="n">id</span><span class="p">);</span>
-<span class="n">object_ids</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">object_to_attach</span><span class="p">.</span><span class="n">id</span><span class="p">);</span>
-<span class="n">planning_scene_interface</span><span class="p">.</span><span class="n">removeCollisionObjects</span><span class="p">(</span><span class="n">object_ids</span><span class="p">);</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Remove the objects from the world&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">object_ids</span><span class="p">;</span><span class="w"></span>
+<span class="n">object_ids</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">collision_object</span><span class="p">.</span><span class="n">id</span><span class="p">);</span><span class="w"></span>
+<span class="n">object_ids</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">object_to_attach</span><span class="p">.</span><span class="n">id</span><span class="p">);</span><span class="w"></span>
+<span class="n">planning_scene_interface</span><span class="p">.</span><span class="n">removeCollisionObjects</span><span class="p">(</span><span class="n">object_ids</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Show text in RViz of status</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">visual_tools</span><span class="p">.</span><span class="n">publishText</span><span class="p">(</span><span class="n">text_pose</span><span class="p">,</span> <span class="s">&quot;Objects_removed&quot;</span><span class="p">,</span> <span class="n">rvt</span><span class="o">::</span><span class="n">WHITE</span><span class="p">,</span> <span class="n">rvt</span><span class="o">::</span><span class="n">XLARGE</span><span class="p">);</span>
-<span class="n">visual_tools</span><span class="p">.</span><span class="n">trigger</span><span class="p">();</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">visual_tools</span><span class="p">.</span><span class="n">publishText</span><span class="p">(</span><span class="n">text_pose</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Objects_removed&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rvt</span><span class="o">::</span><span class="n">WHITE</span><span class="p">,</span><span class="w"> </span><span class="n">rvt</span><span class="o">::</span><span class="n">XLARGE</span><span class="p">);</span><span class="w"></span>
+<span class="n">visual_tools</span><span class="p">.</span><span class="n">trigger</span><span class="p">();</span><span class="w"></span>
 
-<span class="cm">/* Wait for MoveGroup to receive and process the attached collision object message */</span>
-<span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;Enter&#39; once the collision object disappears&quot;</span><span class="p">);</span>
-<span class="cm">/* visual_tools.prompt(&quot;Press &#39;next&#39; in the RvizVisualToolsGui window to once the collision object disapears&quot;); */</span>
+<span class="cm">/* Wait for MoveGroup to receive and process the attached collision object message */</span><span class="w"></span>
+<span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;Enter&#39; once the collision object disappears&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="cm">/* visual_tools.prompt(&quot;Press &#39;next&#39; in the RvizVisualToolsGui window to once the collision object disapears&quot;); */</span><span class="w"></span>
 </pre></div>
 </div>
 </div>

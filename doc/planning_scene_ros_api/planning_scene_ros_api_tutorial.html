@@ -98,8 +98,9 @@
           
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/getting_started.html">Getting Started</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../getting_started/getting_started.html#install-ros2-and-colcon">Install ROS2 and Colcon</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../getting_started/getting_started.html#create-a-colcon-workspace-and-download-moveit2-source">Create A Colcon Workspace and Download MoveIt2 Source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/getting_started.html#install-ros-2-and-colcon">Install ROS 2 and Colcon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/getting_started.html#create-a-colcon-workspace-and-download-moveit-2-source">Create A Colcon Workspace and Download MoveIt 2 Source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/getting_started.html#download-moveit-2-tutorials-source">Download MoveIt 2 Tutorials Source</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../getting_started/getting_started.html#build-your-colcon-workspace">Build your Colcon Workspace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../getting_started/getting_started.html#next-step">Next Step</a></li>
 </ul>
@@ -871,8 +872,8 @@ To install xterm please run the following command:</p>
 <h3>Visualization<a class="headerlink" href="#visualization" title="Permalink to this headline">¶</a></h3>
 <p>The package MoveItVisualTools provides many capabilities for visualizing objects, robots,
 and trajectories in RViz as well as debugging tools such as step-by-step introspection of a script.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">rviz_visual_tools</span><span class="o">::</span><span class="n">RvizVisualTools</span> <span class="nf">visual_tools</span><span class="p">(</span><span class="s">&quot;panda_link0&quot;</span><span class="p">,</span> <span class="s">&quot;planning_scene_ros_api_tutorial&quot;</span><span class="p">,</span> <span class="n">node</span><span class="p">);</span>
-<span class="n">visual_tools</span><span class="p">.</span><span class="n">deleteAllMarkers</span><span class="p">();</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">rviz_visual_tools</span><span class="o">::</span><span class="n">RvizVisualTools</span><span class="w"> </span><span class="nf">visual_tools</span><span class="p">(</span><span class="s">&quot;panda_link0&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;planning_scene_ros_api_tutorial&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">node</span><span class="p">);</span><span class="w"></span>
+<span class="n">visual_tools</span><span class="p">.</span><span class="n">deleteAllMarkers</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -887,14 +888,14 @@ scene desired by the user.</p>
 <h3>Advertise the required topic<a class="headerlink" href="#advertise-the-required-topic" title="Permalink to this headline">¶</a></h3>
 <p>We create a publisher and wait for subscribers.
 Note that this topic may need to be remapped in the launch file.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">rclcpp</span><span class="o">::</span><span class="n">Publisher</span><span class="o">&lt;</span><span class="n">moveit_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">PlanningScene</span><span class="o">&gt;::</span><span class="n">SharedPtr</span> <span class="n">planning_scene_diff_publisher</span> <span class="o">=</span>
-    <span class="n">node</span><span class="o">-&gt;</span><span class="n">create_publisher</span><span class="o">&lt;</span><span class="n">moveit_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">PlanningScene</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;planning_scene&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-<span class="k">while</span> <span class="p">(</span><span class="n">planning_scene_diff_publisher</span><span class="o">-&gt;</span><span class="n">get_subscription_count</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">)</span>
-<span class="p">{</span>
-  <span class="n">rclcpp</span><span class="o">::</span><span class="n">sleep_for</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="p">(</span><span class="mi">500</span><span class="p">));</span>
-<span class="p">}</span>
-<span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;Enter&#39; to continue the demo&quot;</span><span class="p">);</span>
-<span class="cm">/* visual_tools.prompt(&quot;Press &#39;next&#39; in the RvizVisualToolsGui window to continue the demo&quot;); */</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">rclcpp</span><span class="o">::</span><span class="n">Publisher</span><span class="o">&lt;</span><span class="n">moveit_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">PlanningScene</span><span class="o">&gt;::</span><span class="n">SharedPtr</span><span class="w"> </span><span class="n">planning_scene_diff_publisher</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
+<span class="w">    </span><span class="n">node</span><span class="o">-&gt;</span><span class="n">create_publisher</span><span class="o">&lt;</span><span class="n">moveit_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">PlanningScene</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;planning_scene&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">planning_scene_diff_publisher</span><span class="o">-&gt;</span><span class="n">get_subscription_count</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">rclcpp</span><span class="o">::</span><span class="n">sleep_for</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="p">(</span><span class="mi">500</span><span class="p">));</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;Enter&#39; to continue the demo&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="cm">/* visual_tools.prompt(&quot;Press &#39;next&#39; in the RvizVisualToolsGui window to continue the demo&quot;); */</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -903,38 +904,38 @@ Note that this topic may need to be remapped in the launch file.</p>
 <p>We will use this message to add or
 subtract the object from the world
 and to attach the object to the robot.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">moveit_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">AttachedCollisionObject</span> <span class="n">attached_object</span><span class="p">;</span>
-<span class="n">attached_object</span><span class="p">.</span><span class="n">link_name</span> <span class="o">=</span> <span class="s">&quot;panda_hand&quot;</span><span class="p">;</span>
-<span class="cm">/* The header must contain a valid TF frame*/</span>
-<span class="n">attached_object</span><span class="p">.</span><span class="n">object</span><span class="p">.</span><span class="n">header</span><span class="p">.</span><span class="n">frame_id</span> <span class="o">=</span> <span class="s">&quot;panda_hand&quot;</span><span class="p">;</span>
-<span class="cm">/* The id of the object */</span>
-<span class="n">attached_object</span><span class="p">.</span><span class="n">object</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="s">&quot;box&quot;</span><span class="p">;</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">moveit_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">AttachedCollisionObject</span><span class="w"> </span><span class="n">attached_object</span><span class="p">;</span><span class="w"></span>
+<span class="n">attached_object</span><span class="p">.</span><span class="n">link_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;panda_hand&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="cm">/* The header must contain a valid TF frame*/</span><span class="w"></span>
+<span class="n">attached_object</span><span class="p">.</span><span class="n">object</span><span class="p">.</span><span class="n">header</span><span class="p">.</span><span class="n">frame_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;panda_hand&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="cm">/* The id of the object */</span><span class="w"></span>
+<span class="n">attached_object</span><span class="p">.</span><span class="n">object</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;box&quot;</span><span class="p">;</span><span class="w"></span>
 
-<span class="cm">/* A default pose */</span>
-<span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Pose</span> <span class="n">pose</span><span class="p">;</span>
-<span class="n">pose</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">z</span> <span class="o">=</span> <span class="mf">0.11</span><span class="p">;</span>
-<span class="n">pose</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">w</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>
+<span class="cm">/* A default pose */</span><span class="w"></span>
+<span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Pose</span><span class="w"> </span><span class="n">pose</span><span class="p">;</span><span class="w"></span>
+<span class="n">pose</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.11</span><span class="p">;</span><span class="w"></span>
+<span class="n">pose</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">w</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="p">;</span><span class="w"></span>
 
-<span class="cm">/* Define a box to be attached */</span>
-<span class="n">shape_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">SolidPrimitive</span> <span class="n">primitive</span><span class="p">;</span>
-<span class="n">primitive</span><span class="p">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">primitive</span><span class="p">.</span><span class="n">BOX</span><span class="p">;</span>
-<span class="n">primitive</span><span class="p">.</span><span class="n">dimensions</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
-<span class="n">primitive</span><span class="p">.</span><span class="n">dimensions</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.075</span><span class="p">;</span>
-<span class="n">primitive</span><span class="p">.</span><span class="n">dimensions</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.075</span><span class="p">;</span>
-<span class="n">primitive</span><span class="p">.</span><span class="n">dimensions</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.075</span><span class="p">;</span>
+<span class="cm">/* Define a box to be attached */</span><span class="w"></span>
+<span class="n">shape_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">SolidPrimitive</span><span class="w"> </span><span class="n">primitive</span><span class="p">;</span><span class="w"></span>
+<span class="n">primitive</span><span class="p">.</span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">primitive</span><span class="p">.</span><span class="n">BOX</span><span class="p">;</span><span class="w"></span>
+<span class="n">primitive</span><span class="p">.</span><span class="n">dimensions</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span><span class="w"></span>
+<span class="n">primitive</span><span class="p">.</span><span class="n">dimensions</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.075</span><span class="p">;</span><span class="w"></span>
+<span class="n">primitive</span><span class="p">.</span><span class="n">dimensions</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.075</span><span class="p">;</span><span class="w"></span>
+<span class="n">primitive</span><span class="p">.</span><span class="n">dimensions</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.075</span><span class="p">;</span><span class="w"></span>
 
-<span class="n">attached_object</span><span class="p">.</span><span class="n">object</span><span class="p">.</span><span class="n">primitives</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">primitive</span><span class="p">);</span>
-<span class="n">attached_object</span><span class="p">.</span><span class="n">object</span><span class="p">.</span><span class="n">primitive_poses</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">pose</span><span class="p">);</span>
+<span class="n">attached_object</span><span class="p">.</span><span class="n">object</span><span class="p">.</span><span class="n">primitives</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">primitive</span><span class="p">);</span><span class="w"></span>
+<span class="n">attached_object</span><span class="p">.</span><span class="n">object</span><span class="p">.</span><span class="n">primitive_poses</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">pose</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Note that attaching an object to the robot requires
 the corresponding operation to be specified as an ADD operation.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">attached_object</span><span class="p">.</span><span class="n">object</span><span class="p">.</span><span class="n">operation</span> <span class="o">=</span> <span class="n">attached_object</span><span class="p">.</span><span class="n">object</span><span class="p">.</span><span class="n">ADD</span><span class="p">;</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">attached_object</span><span class="p">.</span><span class="n">object</span><span class="p">.</span><span class="n">operation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">attached_object</span><span class="p">.</span><span class="n">object</span><span class="p">.</span><span class="n">ADD</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Since we are attaching the object to the robot hand to simulate picking up the object,
 we want the collision checker to ignore collisions between the object and the robot hand.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">attached_object</span><span class="p">.</span><span class="n">touch_links</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="p">{</span> <span class="s">&quot;panda_hand&quot;</span><span class="p">,</span> <span class="s">&quot;panda_leftfinger&quot;</span><span class="p">,</span> <span class="s">&quot;panda_rightfinger&quot;</span> <span class="p">};</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">attached_object</span><span class="p">.</span><span class="n">touch_links</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="p">{</span><span class="w"> </span><span class="s">&quot;panda_hand&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;panda_leftfinger&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;panda_rightfinger&quot;</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -944,13 +945,13 @@ we want the collision checker to ignore collisions between the object and the ro
 the set of collision objects in the “world” part of the
 planning scene. Note that we are using only the “object”
 field of the attached_object message here.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span> <span class="s">&quot;Adding the object into the world at the location of the hand.&quot;</span><span class="p">);</span>
-<span class="n">moveit_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">PlanningScene</span> <span class="n">planning_scene</span><span class="p">;</span>
-<span class="n">planning_scene</span><span class="p">.</span><span class="n">world</span><span class="p">.</span><span class="n">collision_objects</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">attached_object</span><span class="p">.</span><span class="n">object</span><span class="p">);</span>
-<span class="n">planning_scene</span><span class="p">.</span><span class="n">is_diff</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-<span class="n">planning_scene_diff_publisher</span><span class="o">-&gt;</span><span class="n">publish</span><span class="p">(</span><span class="n">planning_scene</span><span class="p">);</span>
-<span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;Enter&#39; to continue the demo&quot;</span><span class="p">);</span>
-<span class="cm">/* visual_tools.prompt(&quot;Press &#39;next&#39; in the RvizVisualToolsGui window to continue the demo&quot;); */</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Adding the object into the world at the location of the hand.&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">moveit_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">PlanningScene</span><span class="w"> </span><span class="n">planning_scene</span><span class="p">;</span><span class="w"></span>
+<span class="n">planning_scene</span><span class="p">.</span><span class="n">world</span><span class="p">.</span><span class="n">collision_objects</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">attached_object</span><span class="p">.</span><span class="n">object</span><span class="p">);</span><span class="w"></span>
+<span class="n">planning_scene</span><span class="p">.</span><span class="n">is_diff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"></span>
+<span class="n">planning_scene_diff_publisher</span><span class="o">-&gt;</span><span class="n">publish</span><span class="p">(</span><span class="n">planning_scene</span><span class="p">);</span><span class="w"></span>
+<span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;Enter&#39; to continue the demo&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="cm">/* visual_tools.prompt(&quot;Press &#39;next&#39; in the RvizVisualToolsGui window to continue the demo&quot;); */</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -968,38 +969,38 @@ might not be applied yet (asynchronous update)</li>
 inserted for visualization purposes asynchronous updates do not pose a problem),
 it would be perfectly justified to replace the planning_scene_diff_publisher
 by the following service client:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">rclcpp</span><span class="o">::</span><span class="n">Client</span><span class="o">&lt;</span><span class="n">moveit_msgs</span><span class="o">::</span><span class="n">srv</span><span class="o">::</span><span class="n">ApplyPlanningScene</span><span class="o">&gt;::</span><span class="n">SharedPtr</span> <span class="n">planning_scene_diff_client</span> <span class="o">=</span>
-    <span class="n">node</span><span class="o">-&gt;</span><span class="n">create_client</span><span class="o">&lt;</span><span class="n">moveit_msgs</span><span class="o">::</span><span class="n">srv</span><span class="o">::</span><span class="n">ApplyPlanningScene</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;apply_planning_scene&quot;</span><span class="p">);</span>
-<span class="n">planning_scene_diff_client</span><span class="o">-&gt;</span><span class="n">wait_for_service</span><span class="p">();</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">rclcpp</span><span class="o">::</span><span class="n">Client</span><span class="o">&lt;</span><span class="n">moveit_msgs</span><span class="o">::</span><span class="n">srv</span><span class="o">::</span><span class="n">ApplyPlanningScene</span><span class="o">&gt;::</span><span class="n">SharedPtr</span><span class="w"> </span><span class="n">planning_scene_diff_client</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
+<span class="w">    </span><span class="n">node</span><span class="o">-&gt;</span><span class="n">create_client</span><span class="o">&lt;</span><span class="n">moveit_msgs</span><span class="o">::</span><span class="n">srv</span><span class="o">::</span><span class="n">ApplyPlanningScene</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;apply_planning_scene&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">planning_scene_diff_client</span><span class="o">-&gt;</span><span class="n">wait_for_service</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
 <p>and send the diffs to the planning scene via a service call:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span> <span class="n">request</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">moveit_msgs</span><span class="o">::</span><span class="n">srv</span><span class="o">::</span><span class="n">ApplyPlanningScene</span><span class="o">::</span><span class="n">Request</span><span class="o">&gt;</span><span class="p">();</span>
-<span class="n">request</span><span class="o">-&gt;</span><span class="n">scene</span> <span class="o">=</span> <span class="n">planning_scene</span><span class="p">;</span>
-<span class="n">std</span><span class="o">::</span><span class="n">shared_future</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">moveit_msgs</span><span class="o">::</span><span class="n">srv</span><span class="o">::</span><span class="n">ApplyPlanningScene_Response</span><span class="o">&gt;&gt;</span> <span class="n">response_future</span><span class="p">;</span>
-<span class="n">response_future</span> <span class="o">=</span> <span class="n">planning_scene_diff_client</span><span class="o">-&gt;</span><span class="n">async_send_request</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span><span class="w"> </span><span class="n">request</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">moveit_msgs</span><span class="o">::</span><span class="n">srv</span><span class="o">::</span><span class="n">ApplyPlanningScene</span><span class="o">::</span><span class="n">Request</span><span class="o">&gt;</span><span class="p">();</span><span class="w"></span>
+<span class="n">request</span><span class="o">-&gt;</span><span class="n">scene</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">planning_scene</span><span class="p">;</span><span class="w"></span>
+<span class="n">std</span><span class="o">::</span><span class="n">shared_future</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">moveit_msgs</span><span class="o">::</span><span class="n">srv</span><span class="o">::</span><span class="n">ApplyPlanningScene_Response</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">response_future</span><span class="p">;</span><span class="w"></span>
+<span class="n">response_future</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">planning_scene_diff_client</span><span class="o">-&gt;</span><span class="n">async_send_request</span><span class="p">(</span><span class="n">request</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>wait for the service to respond</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">seconds</span> <span class="nf">wait_time</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-<span class="n">std</span><span class="o">::</span><span class="n">future_status</span> <span class="n">fs</span> <span class="o">=</span> <span class="n">response_future</span><span class="p">.</span><span class="n">wait_for</span><span class="p">(</span><span class="n">wait_time</span><span class="p">);</span>
-<span class="k">if</span> <span class="p">(</span><span class="n">fs</span> <span class="o">==</span> <span class="n">std</span><span class="o">::</span><span class="n">future_status</span><span class="o">::</span><span class="n">timeout</span><span class="p">)</span>
-<span class="p">{</span>
-  <span class="n">RCLCPP_ERROR</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span> <span class="s">&quot;Service timed out.&quot;</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="k">else</span>
-<span class="p">{</span>
-  <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">moveit_msgs</span><span class="o">::</span><span class="n">srv</span><span class="o">::</span><span class="n">ApplyPlanningScene_Response</span><span class="o">&gt;</span> <span class="n">planning_response</span><span class="p">;</span>
-  <span class="n">planning_response</span> <span class="o">=</span> <span class="n">response_future</span><span class="p">.</span><span class="n">get</span><span class="p">();</span>
-  <span class="k">if</span> <span class="p">(</span><span class="n">planning_response</span><span class="o">-&gt;</span><span class="n">success</span><span class="p">)</span>
-  <span class="p">{</span>
-    <span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span> <span class="s">&quot;Service successfully added object.&quot;</span><span class="p">);</span>
-  <span class="p">}</span>
-  <span class="k">else</span>
-  <span class="p">{</span>
-    <span class="n">RCLCPP_ERROR</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span> <span class="s">&quot;Service failed to add object.&quot;</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">seconds</span><span class="w"> </span><span class="nf">wait_time</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="n">std</span><span class="o">::</span><span class="n">future_status</span><span class="w"> </span><span class="n">fs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">response_future</span><span class="p">.</span><span class="n">wait_for</span><span class="p">(</span><span class="n">wait_time</span><span class="p">);</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">fs</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">future_status</span><span class="o">::</span><span class="n">timeout</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">RCLCPP_ERROR</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Service timed out.&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="k">else</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">moveit_msgs</span><span class="o">::</span><span class="n">srv</span><span class="o">::</span><span class="n">ApplyPlanningScene_Response</span><span class="o">&gt;</span><span class="w"> </span><span class="n">planning_response</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">planning_response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">response_future</span><span class="p">.</span><span class="n">get</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">planning_response</span><span class="o">-&gt;</span><span class="n">success</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Service successfully added object.&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="k">else</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">RCLCPP_ERROR</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Service failed to add object.&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Note that this does not continue until we are sure the diff has been applied.</p>
@@ -1018,26 +1019,26 @@ collision checking.</p>
 </ul>
 </dd>
 </dl>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cm">/* First, define the REMOVE object message*/</span>
-<span class="n">moveit_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">CollisionObject</span> <span class="n">remove_object</span><span class="p">;</span>
-<span class="n">remove_object</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="s">&quot;box&quot;</span><span class="p">;</span>
-<span class="n">remove_object</span><span class="p">.</span><span class="n">header</span><span class="p">.</span><span class="n">frame_id</span> <span class="o">=</span> <span class="s">&quot;panda_hand&quot;</span><span class="p">;</span>
-<span class="n">remove_object</span><span class="p">.</span><span class="n">operation</span> <span class="o">=</span> <span class="n">remove_object</span><span class="p">.</span><span class="n">REMOVE</span><span class="p">;</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cm">/* First, define the REMOVE object message*/</span><span class="w"></span>
+<span class="n">moveit_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">CollisionObject</span><span class="w"> </span><span class="n">remove_object</span><span class="p">;</span><span class="w"></span>
+<span class="n">remove_object</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;box&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="n">remove_object</span><span class="p">.</span><span class="n">header</span><span class="p">.</span><span class="n">frame_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;panda_hand&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="n">remove_object</span><span class="p">.</span><span class="n">operation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">remove_object</span><span class="p">.</span><span class="n">REMOVE</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Note how we make sure that the diff message contains no other
 attached objects or collisions objects by clearing those fields
 first.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cm">/* Carry out the REMOVE + ATTACH operation */</span>
-<span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span> <span class="s">&quot;Attaching the object to the hand and removing it from the world.&quot;</span><span class="p">);</span>
-<span class="n">planning_scene</span><span class="p">.</span><span class="n">world</span><span class="p">.</span><span class="n">collision_objects</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
-<span class="n">planning_scene</span><span class="p">.</span><span class="n">world</span><span class="p">.</span><span class="n">collision_objects</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">remove_object</span><span class="p">);</span>
-<span class="n">planning_scene</span><span class="p">.</span><span class="n">robot_state</span><span class="p">.</span><span class="n">attached_collision_objects</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">attached_object</span><span class="p">);</span>
-<span class="n">planning_scene</span><span class="p">.</span><span class="n">robot_state</span><span class="p">.</span><span class="n">is_diff</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-<span class="n">planning_scene_diff_publisher</span><span class="o">-&gt;</span><span class="n">publish</span><span class="p">(</span><span class="n">planning_scene</span><span class="p">);</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cm">/* Carry out the REMOVE + ATTACH operation */</span><span class="w"></span>
+<span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Attaching the object to the hand and removing it from the world.&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">planning_scene</span><span class="p">.</span><span class="n">world</span><span class="p">.</span><span class="n">collision_objects</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span><span class="w"></span>
+<span class="n">planning_scene</span><span class="p">.</span><span class="n">world</span><span class="p">.</span><span class="n">collision_objects</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">remove_object</span><span class="p">);</span><span class="w"></span>
+<span class="n">planning_scene</span><span class="p">.</span><span class="n">robot_state</span><span class="p">.</span><span class="n">attached_collision_objects</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">attached_object</span><span class="p">);</span><span class="w"></span>
+<span class="n">planning_scene</span><span class="p">.</span><span class="n">robot_state</span><span class="p">.</span><span class="n">is_diff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"></span>
+<span class="n">planning_scene_diff_publisher</span><span class="o">-&gt;</span><span class="n">publish</span><span class="p">(</span><span class="n">planning_scene</span><span class="p">);</span><span class="w"></span>
 
-<span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;Enter&#39; to continue the demo&quot;</span><span class="p">);</span>
-<span class="cm">/* visual_tools.prompt(&quot;Press &#39;next&#39; in the RvizVisualToolsGui window to continue the demo&quot;); */</span>
+<span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;Enter&#39; to continue the demo&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="cm">/* visual_tools.prompt(&quot;Press &#39;next&#39; in the RvizVisualToolsGui window to continue the demo&quot;); */</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1051,28 +1052,28 @@ first.</p>
 </ul>
 </dd>
 </dl>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cm">/* First, define the DETACH object message*/</span>
-<span class="n">moveit_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">AttachedCollisionObject</span> <span class="n">detach_object</span><span class="p">;</span>
-<span class="n">detach_object</span><span class="p">.</span><span class="n">object</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="s">&quot;box&quot;</span><span class="p">;</span>
-<span class="n">detach_object</span><span class="p">.</span><span class="n">link_name</span> <span class="o">=</span> <span class="s">&quot;panda_hand&quot;</span><span class="p">;</span>
-<span class="n">detach_object</span><span class="p">.</span><span class="n">object</span><span class="p">.</span><span class="n">operation</span> <span class="o">=</span> <span class="n">attached_object</span><span class="p">.</span><span class="n">object</span><span class="p">.</span><span class="n">REMOVE</span><span class="p">;</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cm">/* First, define the DETACH object message*/</span><span class="w"></span>
+<span class="n">moveit_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">AttachedCollisionObject</span><span class="w"> </span><span class="n">detach_object</span><span class="p">;</span><span class="w"></span>
+<span class="n">detach_object</span><span class="p">.</span><span class="n">object</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;box&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="n">detach_object</span><span class="p">.</span><span class="n">link_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;panda_hand&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="n">detach_object</span><span class="p">.</span><span class="n">object</span><span class="p">.</span><span class="n">operation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">attached_object</span><span class="p">.</span><span class="n">object</span><span class="p">.</span><span class="n">REMOVE</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Note how we make sure that the diff message contains no other
 attached objects or collisions objects by clearing those fields
 first.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cm">/* Carry out the DETACH + ADD operation */</span>
-<span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span> <span class="s">&quot;Detaching the object from the robot and returning it to the world.&quot;</span><span class="p">);</span>
-<span class="n">planning_scene</span><span class="p">.</span><span class="n">robot_state</span><span class="p">.</span><span class="n">attached_collision_objects</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
-<span class="n">planning_scene</span><span class="p">.</span><span class="n">robot_state</span><span class="p">.</span><span class="n">attached_collision_objects</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">detach_object</span><span class="p">);</span>
-<span class="n">planning_scene</span><span class="p">.</span><span class="n">robot_state</span><span class="p">.</span><span class="n">is_diff</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-<span class="n">planning_scene</span><span class="p">.</span><span class="n">world</span><span class="p">.</span><span class="n">collision_objects</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
-<span class="n">planning_scene</span><span class="p">.</span><span class="n">world</span><span class="p">.</span><span class="n">collision_objects</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">attached_object</span><span class="p">.</span><span class="n">object</span><span class="p">);</span>
-<span class="n">planning_scene</span><span class="p">.</span><span class="n">is_diff</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-<span class="n">planning_scene_diff_publisher</span><span class="o">-&gt;</span><span class="n">publish</span><span class="p">(</span><span class="n">planning_scene</span><span class="p">);</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cm">/* Carry out the DETACH + ADD operation */</span><span class="w"></span>
+<span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Detaching the object from the robot and returning it to the world.&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">planning_scene</span><span class="p">.</span><span class="n">robot_state</span><span class="p">.</span><span class="n">attached_collision_objects</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span><span class="w"></span>
+<span class="n">planning_scene</span><span class="p">.</span><span class="n">robot_state</span><span class="p">.</span><span class="n">attached_collision_objects</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">detach_object</span><span class="p">);</span><span class="w"></span>
+<span class="n">planning_scene</span><span class="p">.</span><span class="n">robot_state</span><span class="p">.</span><span class="n">is_diff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"></span>
+<span class="n">planning_scene</span><span class="p">.</span><span class="n">world</span><span class="p">.</span><span class="n">collision_objects</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span><span class="w"></span>
+<span class="n">planning_scene</span><span class="p">.</span><span class="n">world</span><span class="p">.</span><span class="n">collision_objects</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">attached_object</span><span class="p">.</span><span class="n">object</span><span class="p">);</span><span class="w"></span>
+<span class="n">planning_scene</span><span class="p">.</span><span class="n">is_diff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"></span>
+<span class="n">planning_scene_diff_publisher</span><span class="o">-&gt;</span><span class="n">publish</span><span class="p">(</span><span class="n">planning_scene</span><span class="p">);</span><span class="w"></span>
 
-<span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;Enter&#39; to continue the demo&quot;</span><span class="p">);</span>
-<span class="cm">/* visual_tools.prompt(&quot;Press &#39;next&#39; in the RvizVisualToolsGui window to continue the demo&quot;); */</span>
+<span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;Enter&#39; to continue the demo&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="cm">/* visual_tools.prompt(&quot;Press &#39;next&#39; in the RvizVisualToolsGui window to continue the demo&quot;); */</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1083,11 +1084,11 @@ using the remove object message defined earlier.
 Note, also how we make sure that the diff message contains no other
 attached objects or collisions objects by clearing those fields
 first.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span> <span class="s">&quot;Removing the object from the world.&quot;</span><span class="p">);</span>
-<span class="n">planning_scene</span><span class="p">.</span><span class="n">robot_state</span><span class="p">.</span><span class="n">attached_collision_objects</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
-<span class="n">planning_scene</span><span class="p">.</span><span class="n">world</span><span class="p">.</span><span class="n">collision_objects</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
-<span class="n">planning_scene</span><span class="p">.</span><span class="n">world</span><span class="p">.</span><span class="n">collision_objects</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">remove_object</span><span class="p">);</span>
-<span class="n">planning_scene_diff_publisher</span><span class="o">-&gt;</span><span class="n">publish</span><span class="p">(</span><span class="n">planning_scene</span><span class="p">);</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Removing the object from the world.&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">planning_scene</span><span class="p">.</span><span class="n">robot_state</span><span class="p">.</span><span class="n">attached_collision_objects</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span><span class="w"></span>
+<span class="n">planning_scene</span><span class="p">.</span><span class="n">world</span><span class="p">.</span><span class="n">collision_objects</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span><span class="w"></span>
+<span class="n">planning_scene</span><span class="p">.</span><span class="n">world</span><span class="p">.</span><span class="n">collision_objects</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">remove_object</span><span class="p">);</span><span class="w"></span>
+<span class="n">planning_scene_diff_publisher</span><span class="o">-&gt;</span><span class="n">publish</span><span class="p">(</span><span class="n">planning_scene</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>

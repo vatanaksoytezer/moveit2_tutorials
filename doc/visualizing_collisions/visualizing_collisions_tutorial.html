@@ -98,8 +98,9 @@
           
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/getting_started.html">Getting Started</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../getting_started/getting_started.html#install-ros2-and-colcon">Install ROS2 and Colcon</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../getting_started/getting_started.html#create-a-colcon-workspace-and-download-moveit2-source">Create A Colcon Workspace and Download MoveIt2 Source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/getting_started.html#install-ros-2-and-colcon">Install ROS 2 and Colcon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/getting_started.html#create-a-colcon-workspace-and-download-moveit-2-source">Create A Colcon Workspace and Download MoveIt 2 Source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/getting_started.html#download-moveit-2-tutorials-source">Download MoveIt 2 Tutorials Source</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../getting_started/getting_started.html#build-your-colcon-workspace">Build your Colcon Workspace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../getting_started/getting_started.html#next-step">Next Step</a></li>
 </ul>
@@ -868,37 +869,37 @@ Move the right arm so it is in contact with the yellow cube (you may also move t
 object as a wrapper that combines a robot_model with the cube and an interactive marker. We also
 create a <a class="reference external" href="http://docs.ros.org/noetic/api/moveit_core/html/cpp/classplanning__scene_1_1PlanningScene.html">PlanningScene</a> for collision checking. If you haven’t already gone through the
 <a class="reference external" href="../planning_scene/planning_scene_tutorial.html">planning scene tutorial</a>, you go through that first.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">InteractiveRobot</span> <span class="n">robot</span><span class="p">;</span>
-<span class="cm">/* Create a PlanningScene */</span>
-<span class="n">g_planning_scene</span> <span class="o">=</span> <span class="k">new</span> <span class="n">planning_scene</span><span class="o">::</span><span class="n">PlanningScene</span><span class="p">(</span><span class="n">robot</span><span class="p">.</span><span class="n">robotModel</span><span class="p">());</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">InteractiveRobot</span><span class="w"> </span><span class="n">robot</span><span class="p">;</span><span class="w"></span>
+<span class="cm">/* Create a PlanningScene */</span><span class="w"></span>
+<span class="n">g_planning_scene</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">planning_scene</span><span class="o">::</span><span class="n">PlanningScene</span><span class="p">(</span><span class="n">robot</span><span class="p">.</span><span class="n">robotModel</span><span class="p">());</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Adding geometry to the PlanningScene</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Eigen</span><span class="o">::</span><span class="n">Isometry3d</span> <span class="n">world_cube_pose</span><span class="p">;</span>
-<span class="kt">double</span> <span class="n">world_cube_size</span><span class="p">;</span>
-<span class="n">robot</span><span class="p">.</span><span class="n">getWorldGeometry</span><span class="p">(</span><span class="n">world_cube_pose</span><span class="p">,</span> <span class="n">world_cube_size</span><span class="p">);</span>
-<span class="n">g_world_cube_shape</span><span class="p">.</span><span class="n">reset</span><span class="p">(</span><span class="k">new</span> <span class="n">shapes</span><span class="o">::</span><span class="n">Box</span><span class="p">(</span><span class="n">world_cube_size</span><span class="p">,</span> <span class="n">world_cube_size</span><span class="p">,</span> <span class="n">world_cube_size</span><span class="p">));</span>
-<span class="n">g_planning_scene</span><span class="o">-&gt;</span><span class="n">getWorldNonConst</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">addToObject</span><span class="p">(</span><span class="s">&quot;world_cube&quot;</span><span class="p">,</span> <span class="n">g_world_cube_shape</span><span class="p">,</span> <span class="n">world_cube_pose</span><span class="p">);</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Eigen</span><span class="o">::</span><span class="n">Isometry3d</span><span class="w"> </span><span class="n">world_cube_pose</span><span class="p">;</span><span class="w"></span>
+<span class="kt">double</span><span class="w"> </span><span class="n">world_cube_size</span><span class="p">;</span><span class="w"></span>
+<span class="n">robot</span><span class="p">.</span><span class="n">getWorldGeometry</span><span class="p">(</span><span class="n">world_cube_pose</span><span class="p">,</span><span class="w"> </span><span class="n">world_cube_size</span><span class="p">);</span><span class="w"></span>
+<span class="n">g_world_cube_shape</span><span class="p">.</span><span class="n">reset</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">shapes</span><span class="o">::</span><span class="n">Box</span><span class="p">(</span><span class="n">world_cube_size</span><span class="p">,</span><span class="w"> </span><span class="n">world_cube_size</span><span class="p">,</span><span class="w"> </span><span class="n">world_cube_size</span><span class="p">));</span><span class="w"></span>
+<span class="n">g_planning_scene</span><span class="o">-&gt;</span><span class="n">getWorldNonConst</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">addToObject</span><span class="p">(</span><span class="s">&quot;world_cube&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">g_world_cube_shape</span><span class="p">,</span><span class="w"> </span><span class="n">world_cube_pose</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="collision-requests">
 <h3>Collision Requests<a class="headerlink" href="#collision-requests" title="Permalink to this headline">¶</a></h3>
 <p>We will create a collision request for the Panda robot</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">collision_detection</span><span class="o">::</span><span class="n">CollisionRequest</span> <span class="n">c_req</span><span class="p">;</span>
-<span class="n">collision_detection</span><span class="o">::</span><span class="n">CollisionResult</span> <span class="n">c_res</span><span class="p">;</span>
-<span class="n">c_req</span><span class="p">.</span><span class="n">group_name</span> <span class="o">=</span> <span class="n">robot</span><span class="p">.</span><span class="n">getGroupName</span><span class="p">();</span>
-<span class="n">c_req</span><span class="p">.</span><span class="n">contacts</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-<span class="n">c_req</span><span class="p">.</span><span class="n">max_contacts</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
-<span class="n">c_req</span><span class="p">.</span><span class="n">max_contacts_per_pair</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
-<span class="n">c_req</span><span class="p">.</span><span class="n">verbose</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">collision_detection</span><span class="o">::</span><span class="n">CollisionRequest</span><span class="w"> </span><span class="n">c_req</span><span class="p">;</span><span class="w"></span>
+<span class="n">collision_detection</span><span class="o">::</span><span class="n">CollisionResult</span><span class="w"> </span><span class="n">c_res</span><span class="p">;</span><span class="w"></span>
+<span class="n">c_req</span><span class="p">.</span><span class="n">group_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">robot</span><span class="p">.</span><span class="n">getGroupName</span><span class="p">();</span><span class="w"></span>
+<span class="n">c_req</span><span class="p">.</span><span class="n">contacts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"></span>
+<span class="n">c_req</span><span class="p">.</span><span class="n">max_contacts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w"></span>
+<span class="n">c_req</span><span class="p">.</span><span class="n">max_contacts_per_pair</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"></span>
+<span class="n">c_req</span><span class="p">.</span><span class="n">verbose</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="checking-for-collisions">
 <h3>Checking for Collisions<a class="headerlink" href="#checking-for-collisions" title="Permalink to this headline">¶</a></h3>
 <p>We check for collisions between robot and itself or the world.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">g_planning_scene</span><span class="o">-&gt;</span><span class="n">checkCollision</span><span class="p">(</span><span class="n">c_req</span><span class="p">,</span> <span class="n">c_res</span><span class="p">,</span> <span class="o">*</span><span class="n">robot</span><span class="p">.</span><span class="n">robotState</span><span class="p">());</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">g_planning_scene</span><span class="o">-&gt;</span><span class="n">checkCollision</span><span class="p">(</span><span class="n">c_req</span><span class="p">,</span><span class="w"> </span><span class="n">c_res</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">robot</span><span class="p">.</span><span class="n">robotState</span><span class="p">());</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -912,25 +913,25 @@ iterate through <strong>c_res.contacts</strong> which is a std::map of contact p
 Look at the implementation of getCollisionMarkersFromContacts() in
 <a class="reference external" href="https://github.com/ros-planning/moveit/blob/noetic-devel/moveit_core/collision_detection/src/collision_tools.cpp">collision_tools.cpp</a>
 for how.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">c_res</span><span class="p">.</span><span class="n">collision</span><span class="p">)</span>
-<span class="p">{</span>
-  <span class="n">ROS_INFO</span><span class="p">(</span><span class="s">&quot;COLLIDING contact_point_count=%d&quot;</span><span class="p">,</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">c_res</span><span class="p">.</span><span class="n">contact_count</span><span class="p">);</span>
-  <span class="k">if</span> <span class="p">(</span><span class="n">c_res</span><span class="p">.</span><span class="n">contact_count</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
-  <span class="p">{</span>
-    <span class="n">std_msgs</span><span class="o">::</span><span class="n">ColorRGBA</span> <span class="n">color</span><span class="p">;</span>
-    <span class="n">color</span><span class="p">.</span><span class="n">r</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>
-    <span class="n">color</span><span class="p">.</span><span class="n">g</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
-    <span class="n">color</span><span class="p">.</span><span class="n">b</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>
-    <span class="n">color</span><span class="p">.</span><span class="n">a</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">;</span>
-    <span class="n">visualization_msgs</span><span class="o">::</span><span class="n">MarkerArray</span> <span class="n">markers</span><span class="p">;</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">c_res</span><span class="p">.</span><span class="n">collision</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">ROS_INFO</span><span class="p">(</span><span class="s">&quot;COLLIDING contact_point_count=%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">c_res</span><span class="p">.</span><span class="n">contact_count</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">c_res</span><span class="p">.</span><span class="n">contact_count</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">std_msgs</span><span class="o">::</span><span class="n">ColorRGBA</span><span class="w"> </span><span class="n">color</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">color</span><span class="p">.</span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">color</span><span class="p">.</span><span class="n">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">color</span><span class="p">.</span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">color</span><span class="p">.</span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">visualization_msgs</span><span class="o">::</span><span class="n">MarkerArray</span><span class="w"> </span><span class="n">markers</span><span class="p">;</span><span class="w"></span>
 
-    <span class="cm">/* Get the contact ponts and display them as markers */</span>
-    <span class="n">collision_detection</span><span class="o">::</span><span class="n">getCollisionMarkersFromContacts</span><span class="p">(</span><span class="n">markers</span><span class="p">,</span> <span class="s">&quot;panda_link0&quot;</span><span class="p">,</span> <span class="n">c_res</span><span class="p">.</span><span class="n">contacts</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span>
-                                                         <span class="n">ros</span><span class="o">::</span><span class="n">Duration</span><span class="p">(),</span>  <span class="c1">// remain until deleted</span>
-                                                         <span class="mf">0.01</span><span class="p">);</span>            <span class="c1">// radius</span>
-    <span class="n">publishMarkers</span><span class="p">(</span><span class="n">markers</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="cm">/* Get the contact ponts and display them as markers */</span><span class="w"></span>
+<span class="w">    </span><span class="n">collision_detection</span><span class="o">::</span><span class="n">getCollisionMarkersFromContacts</span><span class="p">(</span><span class="n">markers</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;panda_link0&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">c_res</span><span class="p">.</span><span class="n">contacts</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="p">,</span><span class="w"></span>
+<span class="w">                                                         </span><span class="n">ros</span><span class="o">::</span><span class="n">Duration</span><span class="p">(),</span><span class="w">  </span><span class="c1">// remain until deleted</span>
+<span class="w">                                                         </span><span class="mf">0.01</span><span class="p">);</span><span class="w">            </span><span class="c1">// radius</span>
+<span class="w">    </span><span class="n">publishMarkers</span><span class="p">(</span><span class="n">markers</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </div>

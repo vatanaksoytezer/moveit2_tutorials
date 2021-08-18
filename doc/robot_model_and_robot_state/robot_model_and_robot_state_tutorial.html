@@ -98,8 +98,9 @@
           
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/getting_started.html">Getting Started</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../getting_started/getting_started.html#install-ros2-and-colcon">Install ROS2 and Colcon</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../getting_started/getting_started.html#create-a-colcon-workspace-and-download-moveit2-source">Create A Colcon Workspace and Download MoveIt2 Source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/getting_started.html#install-ros-2-and-colcon">Install ROS 2 and Colcon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/getting_started.html#create-a-colcon-workspace-and-download-moveit-2-source">Create A Colcon Workspace and Download MoveIt 2 Source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/getting_started.html#download-moveit-2-tutorials-source">Download MoveIt 2 Tutorials Source</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../getting_started/getting_started.html#build-your-colcon-workspace">Build your Colcon Workspace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../getting_started/getting_started.html#next-step">Next Step</a></li>
 </ul>
@@ -915,9 +916,9 @@ classes.</p>
 object, which will look up
 the robot description on the ROS parameter server and construct a
 <a class="reference external" href="http://docs.ros.org/noetic/api/moveit_core/html/cpp/classmoveit_1_1core_1_1RobotModel.html">RobotModel</a> for us to use.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">robot_model_loader</span><span class="o">::</span><span class="n">RobotModelLoader</span> <span class="nf">robot_model_loader</span><span class="p">(</span><span class="s">&quot;robot_description&quot;</span><span class="p">);</span>
-<span class="k">const</span> <span class="n">moveit</span><span class="o">::</span><span class="n">core</span><span class="o">::</span><span class="n">RobotModelPtr</span><span class="o">&amp;</span> <span class="n">kinematic_model</span> <span class="o">=</span> <span class="n">robot_model_loader</span><span class="p">.</span><span class="n">getModel</span><span class="p">();</span>
-<span class="n">ROS_INFO</span><span class="p">(</span><span class="s">&quot;Model frame: %s&quot;</span><span class="p">,</span> <span class="n">kinematic_model</span><span class="o">-&gt;</span><span class="n">getModelFrame</span><span class="p">().</span><span class="n">c_str</span><span class="p">());</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">robot_model_loader</span><span class="o">::</span><span class="n">RobotModelLoader</span><span class="w"> </span><span class="nf">robot_model_loader</span><span class="p">(</span><span class="s">&quot;robot_description&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="k">const</span><span class="w"> </span><span class="n">moveit</span><span class="o">::</span><span class="n">core</span><span class="o">::</span><span class="n">RobotModelPtr</span><span class="o">&amp;</span><span class="w"> </span><span class="n">kinematic_model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">robot_model_loader</span><span class="p">.</span><span class="n">getModel</span><span class="p">();</span><span class="w"></span>
+<span class="n">ROS_INFO</span><span class="p">(</span><span class="s">&quot;Model frame: %s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">kinematic_model</span><span class="o">-&gt;</span><span class="n">getModelFrame</span><span class="p">().</span><span class="n">c_str</span><span class="p">());</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Using the <a class="reference external" href="http://docs.ros.org/noetic/api/moveit_core/html/cpp/classmoveit_1_1core_1_1RobotModel.html">RobotModel</a>, we can construct a
@@ -927,39 +928,39 @@ default values. We can then get a
 <a class="reference external" href="http://docs.ros.org/noetic/api/moveit_core/html/cpp/classmoveit_1_1core_1_1JointModelGroup.html">JointModelGroup</a>, which represents the robot
 model for a particular group, e.g. the “panda_arm” of the Panda
 robot.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">moveit</span><span class="o">::</span><span class="n">core</span><span class="o">::</span><span class="n">RobotStatePtr</span> <span class="nf">kinematic_state</span><span class="p">(</span><span class="k">new</span> <span class="n">moveit</span><span class="o">::</span><span class="n">core</span><span class="o">::</span><span class="n">RobotState</span><span class="p">(</span><span class="n">kinematic_model</span><span class="p">));</span>
-<span class="n">kinematic_state</span><span class="o">-&gt;</span><span class="n">setToDefaultValues</span><span class="p">();</span>
-<span class="k">const</span> <span class="n">moveit</span><span class="o">::</span><span class="n">core</span><span class="o">::</span><span class="n">JointModelGroup</span><span class="o">*</span> <span class="n">joint_model_group</span> <span class="o">=</span> <span class="n">kinematic_model</span><span class="o">-&gt;</span><span class="n">getJointModelGroup</span><span class="p">(</span><span class="s">&quot;panda_arm&quot;</span><span class="p">);</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">moveit</span><span class="o">::</span><span class="n">core</span><span class="o">::</span><span class="n">RobotStatePtr</span><span class="w"> </span><span class="nf">kinematic_state</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">moveit</span><span class="o">::</span><span class="n">core</span><span class="o">::</span><span class="n">RobotState</span><span class="p">(</span><span class="n">kinematic_model</span><span class="p">));</span><span class="w"></span>
+<span class="n">kinematic_state</span><span class="o">-&gt;</span><span class="n">setToDefaultValues</span><span class="p">();</span><span class="w"></span>
+<span class="k">const</span><span class="w"> </span><span class="n">moveit</span><span class="o">::</span><span class="n">core</span><span class="o">::</span><span class="n">JointModelGroup</span><span class="o">*</span><span class="w"> </span><span class="n">joint_model_group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">kinematic_model</span><span class="o">-&gt;</span><span class="n">getJointModelGroup</span><span class="p">(</span><span class="s">&quot;panda_arm&quot;</span><span class="p">);</span><span class="w"></span>
 
-<span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;&amp;</span> <span class="n">joint_names</span> <span class="o">=</span> <span class="n">joint_model_group</span><span class="o">-&gt;</span><span class="n">getVariableNames</span><span class="p">();</span>
+<span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">joint_names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">joint_model_group</span><span class="o">-&gt;</span><span class="n">getVariableNames</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="get-joint-values">
 <h3>Get Joint Values<a class="headerlink" href="#get-joint-values" title="Permalink to this headline">¶</a></h3>
 <p>We can retreive the current set of joint values stored in the state for the Panda arm.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">joint_values</span><span class="p">;</span>
-<span class="n">kinematic_state</span><span class="o">-&gt;</span><span class="n">copyJointGroupPositions</span><span class="p">(</span><span class="n">joint_model_group</span><span class="p">,</span> <span class="n">joint_values</span><span class="p">);</span>
-<span class="k">for</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">joint_names</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
-<span class="p">{</span>
-  <span class="n">ROS_INFO</span><span class="p">(</span><span class="s">&quot;Joint %s: %f&quot;</span><span class="p">,</span> <span class="n">joint_names</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">c_str</span><span class="p">(),</span> <span class="n">joint_values</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
-<span class="p">}</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">joint_values</span><span class="p">;</span><span class="w"></span>
+<span class="n">kinematic_state</span><span class="o">-&gt;</span><span class="n">copyJointGroupPositions</span><span class="p">(</span><span class="n">joint_model_group</span><span class="p">,</span><span class="w"> </span><span class="n">joint_values</span><span class="p">);</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">joint_names</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">ROS_INFO</span><span class="p">(</span><span class="s">&quot;Joint %s: %f&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">joint_names</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">c_str</span><span class="p">(),</span><span class="w"> </span><span class="n">joint_values</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="joint-limits">
 <h3>Joint Limits<a class="headerlink" href="#joint-limits" title="Permalink to this headline">¶</a></h3>
 <p>setJointGroupPositions() does not enforce joint limits by itself, but a call to enforceBounds() will do it.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cm">/* Set one joint in the Panda arm outside its joint limit */</span>
-<span class="n">joint_values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">5.57</span><span class="p">;</span>
-<span class="n">kinematic_state</span><span class="o">-&gt;</span><span class="n">setJointGroupPositions</span><span class="p">(</span><span class="n">joint_model_group</span><span class="p">,</span> <span class="n">joint_values</span><span class="p">);</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cm">/* Set one joint in the Panda arm outside its joint limit */</span><span class="w"></span>
+<span class="n">joint_values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5.57</span><span class="p">;</span><span class="w"></span>
+<span class="n">kinematic_state</span><span class="o">-&gt;</span><span class="n">setJointGroupPositions</span><span class="p">(</span><span class="n">joint_model_group</span><span class="p">,</span><span class="w"> </span><span class="n">joint_values</span><span class="p">);</span><span class="w"></span>
 
-<span class="cm">/* Check whether any joint is outside its joint limits */</span>
-<span class="n">ROS_INFO_STREAM</span><span class="p">(</span><span class="s">&quot;Current state is &quot;</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">kinematic_state</span><span class="o">-&gt;</span><span class="n">satisfiesBounds</span><span class="p">()</span> <span class="o">?</span> <span class="s">&quot;valid&quot;</span> <span class="o">:</span> <span class="s">&quot;not valid&quot;</span><span class="p">));</span>
+<span class="cm">/* Check whether any joint is outside its joint limits */</span><span class="w"></span>
+<span class="n">ROS_INFO_STREAM</span><span class="p">(</span><span class="s">&quot;Current state is &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">kinematic_state</span><span class="o">-&gt;</span><span class="n">satisfiesBounds</span><span class="p">()</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;valid&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;not valid&quot;</span><span class="p">));</span><span class="w"></span>
 
-<span class="cm">/* Enforce the joint limits for this state and check again*/</span>
-<span class="n">kinematic_state</span><span class="o">-&gt;</span><span class="n">enforceBounds</span><span class="p">();</span>
-<span class="n">ROS_INFO_STREAM</span><span class="p">(</span><span class="s">&quot;Current state is &quot;</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">kinematic_state</span><span class="o">-&gt;</span><span class="n">satisfiesBounds</span><span class="p">()</span> <span class="o">?</span> <span class="s">&quot;valid&quot;</span> <span class="o">:</span> <span class="s">&quot;not valid&quot;</span><span class="p">));</span>
+<span class="cm">/* Enforce the joint limits for this state and check again*/</span><span class="w"></span>
+<span class="n">kinematic_state</span><span class="o">-&gt;</span><span class="n">enforceBounds</span><span class="p">();</span><span class="w"></span>
+<span class="n">ROS_INFO_STREAM</span><span class="p">(</span><span class="s">&quot;Current state is &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">kinematic_state</span><span class="o">-&gt;</span><span class="n">satisfiesBounds</span><span class="p">()</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;valid&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;not valid&quot;</span><span class="p">));</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -969,12 +970,12 @@ robot.</p>
 values. Note that we would like to find the pose of the
 “panda_link8” which is the most distal link in the
 “panda_arm” group of the robot.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">kinematic_state</span><span class="o">-&gt;</span><span class="n">setToRandomPositions</span><span class="p">(</span><span class="n">joint_model_group</span><span class="p">);</span>
-<span class="k">const</span> <span class="n">Eigen</span><span class="o">::</span><span class="n">Isometry3d</span><span class="o">&amp;</span> <span class="n">end_effector_state</span> <span class="o">=</span> <span class="n">kinematic_state</span><span class="o">-&gt;</span><span class="n">getGlobalLinkTransform</span><span class="p">(</span><span class="s">&quot;panda_link8&quot;</span><span class="p">);</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">kinematic_state</span><span class="o">-&gt;</span><span class="n">setToRandomPositions</span><span class="p">(</span><span class="n">joint_model_group</span><span class="p">);</span><span class="w"></span>
+<span class="k">const</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Isometry3d</span><span class="o">&amp;</span><span class="w"> </span><span class="n">end_effector_state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">kinematic_state</span><span class="o">-&gt;</span><span class="n">getGlobalLinkTransform</span><span class="p">(</span><span class="s">&quot;panda_link8&quot;</span><span class="p">);</span><span class="w"></span>
 
-<span class="cm">/* Print end-effector pose. Remember that this is in the model frame */</span>
-<span class="n">ROS_INFO_STREAM</span><span class="p">(</span><span class="s">&quot;Translation: </span><span class="se">\n</span><span class="s">&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">end_effector_state</span><span class="p">.</span><span class="n">translation</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-<span class="n">ROS_INFO_STREAM</span><span class="p">(</span><span class="s">&quot;Rotation: </span><span class="se">\n</span><span class="s">&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">end_effector_state</span><span class="p">.</span><span class="n">rotation</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="cm">/* Print end-effector pose. Remember that this is in the model frame */</span><span class="w"></span>
+<span class="n">ROS_INFO_STREAM</span><span class="p">(</span><span class="s">&quot;Translation: </span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">end_effector_state</span><span class="p">.</span><span class="n">translation</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">ROS_INFO_STREAM</span><span class="p">(</span><span class="s">&quot;Rotation: </span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">end_effector_state</span><span class="p">.</span><span class="n">rotation</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -989,35 +990,35 @@ end_effector_state that we computed in the step above.</li>
 <li>The timeout: 0.1 s</li>
 </ul>
 </div></blockquote>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="n">timeout</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">;</span>
-<span class="kt">bool</span> <span class="n">found_ik</span> <span class="o">=</span> <span class="n">kinematic_state</span><span class="o">-&gt;</span><span class="n">setFromIK</span><span class="p">(</span><span class="n">joint_model_group</span><span class="p">,</span> <span class="n">end_effector_state</span><span class="p">,</span> <span class="n">timeout</span><span class="p">);</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">timeout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.1</span><span class="p">;</span><span class="w"></span>
+<span class="kt">bool</span><span class="w"> </span><span class="n">found_ik</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">kinematic_state</span><span class="o">-&gt;</span><span class="n">setFromIK</span><span class="p">(</span><span class="n">joint_model_group</span><span class="p">,</span><span class="w"> </span><span class="n">end_effector_state</span><span class="p">,</span><span class="w"> </span><span class="n">timeout</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Now, we can print out the IK solution (if found):</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">found_ik</span><span class="p">)</span>
-<span class="p">{</span>
-  <span class="n">kinematic_state</span><span class="o">-&gt;</span><span class="n">copyJointGroupPositions</span><span class="p">(</span><span class="n">joint_model_group</span><span class="p">,</span> <span class="n">joint_values</span><span class="p">);</span>
-  <span class="k">for</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">joint_names</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
-  <span class="p">{</span>
-    <span class="n">ROS_INFO</span><span class="p">(</span><span class="s">&quot;Joint %s: %f&quot;</span><span class="p">,</span> <span class="n">joint_names</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">c_str</span><span class="p">(),</span> <span class="n">joint_values</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-<span class="k">else</span>
-<span class="p">{</span>
-  <span class="n">ROS_INFO</span><span class="p">(</span><span class="s">&quot;Did not find IK solution&quot;</span><span class="p">);</span>
-<span class="p">}</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">found_ik</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">kinematic_state</span><span class="o">-&gt;</span><span class="n">copyJointGroupPositions</span><span class="p">(</span><span class="n">joint_model_group</span><span class="p">,</span><span class="w"> </span><span class="n">joint_values</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">joint_names</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">ROS_INFO</span><span class="p">(</span><span class="s">&quot;Joint %s: %f&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">joint_names</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">c_str</span><span class="p">(),</span><span class="w"> </span><span class="n">joint_values</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="k">else</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">ROS_INFO</span><span class="p">(</span><span class="s">&quot;Did not find IK solution&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="get-the-jacobian">
 <h3>Get the Jacobian<a class="headerlink" href="#get-the-jacobian" title="Permalink to this headline">¶</a></h3>
 <p>We can also get the Jacobian from the <a class="reference external" href="http://docs.ros.org/noetic/api/moveit_core/html/cpp/classmoveit_1_1core_1_1RobotState.html">RobotState</a>.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3d</span> <span class="nf">reference_point_position</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">);</span>
-<span class="n">Eigen</span><span class="o">::</span><span class="n">MatrixXd</span> <span class="n">jacobian</span><span class="p">;</span>
-<span class="n">kinematic_state</span><span class="o">-&gt;</span><span class="n">getJacobian</span><span class="p">(</span><span class="n">joint_model_group</span><span class="p">,</span>
-                             <span class="n">kinematic_state</span><span class="o">-&gt;</span><span class="n">getLinkModel</span><span class="p">(</span><span class="n">joint_model_group</span><span class="o">-&gt;</span><span class="n">getLinkModelNames</span><span class="p">().</span><span class="n">back</span><span class="p">()),</span>
-                             <span class="n">reference_point_position</span><span class="p">,</span> <span class="n">jacobian</span><span class="p">);</span>
-<span class="n">ROS_INFO_STREAM</span><span class="p">(</span><span class="s">&quot;Jacobian: </span><span class="se">\n</span><span class="s">&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">jacobian</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3d</span><span class="w"> </span><span class="nf">reference_point_position</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">);</span><span class="w"></span>
+<span class="n">Eigen</span><span class="o">::</span><span class="n">MatrixXd</span><span class="w"> </span><span class="n">jacobian</span><span class="p">;</span><span class="w"></span>
+<span class="n">kinematic_state</span><span class="o">-&gt;</span><span class="n">getJacobian</span><span class="p">(</span><span class="n">joint_model_group</span><span class="p">,</span><span class="w"></span>
+<span class="w">                             </span><span class="n">kinematic_state</span><span class="o">-&gt;</span><span class="n">getLinkModel</span><span class="p">(</span><span class="n">joint_model_group</span><span class="o">-&gt;</span><span class="n">getLinkModelNames</span><span class="p">().</span><span class="n">back</span><span class="p">()),</span><span class="w"></span>
+<span class="w">                             </span><span class="n">reference_point_position</span><span class="p">,</span><span class="w"> </span><span class="n">jacobian</span><span class="p">);</span><span class="w"></span>
+<span class="n">ROS_INFO_STREAM</span><span class="p">(</span><span class="s">&quot;Jacobian: </span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">jacobian</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>

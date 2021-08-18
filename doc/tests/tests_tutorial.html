@@ -97,8 +97,9 @@
           
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/getting_started.html">Getting Started</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../getting_started/getting_started.html#install-ros2-and-colcon">Install ROS2 and Colcon</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../getting_started/getting_started.html#create-a-colcon-workspace-and-download-moveit2-source">Create A Colcon Workspace and Download MoveIt2 Source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/getting_started.html#install-ros-2-and-colcon">Install ROS 2 and Colcon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/getting_started.html#create-a-colcon-workspace-and-download-moveit-2-source">Create A Colcon Workspace and Download MoveIt 2 Source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/getting_started.html#download-moveit-2-tutorials-source">Download MoveIt 2 Tutorials Source</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../getting_started/getting_started.html#build-your-colcon-workspace">Build your Colcon Workspace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../getting_started/getting_started.html#next-step">Next Step</a></li>
 </ul>
@@ -868,72 +869,72 @@ It takes two names: the name of the test case, also called a test suite, which i
 all related to the same component, and the name of the test.
 To actually check that your code does what is expected, you can add assertions.
 ASSERT will stop the test if it fails, and EXPECT will continue running, although the test will still fail.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">TEST</span><span class="p">(</span><span class="n">MyFirstTestCase</span><span class="p">,</span> <span class="n">TestName</span><span class="p">)</span>
-<span class="p">{</span>
-  <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="mi">4</span><span class="p">;</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">TEST</span><span class="p">(</span><span class="n">MyFirstTestCase</span><span class="p">,</span><span class="w"> </span><span class="n">TestName</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span><span class="w"></span>
 
-  <span class="n">ASSERT_NE</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span> <span class="cm">/* NE is &#39;not equal&#39; */</span>
-  <span class="n">EXPECT_EQ</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">54</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="w">  </span><span class="n">ASSERT_NE</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="cm">/* NE is &#39;not equal&#39; */</span><span class="w"></span>
+<span class="w">  </span><span class="n">EXPECT_EQ</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="mi">54</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>A Test Fixture loads the same data repeatedly for multiple tests, so common setup code doesn’t have to be duplicated.
 To make a test fixture, first make a class that derives from ::testing::Test.
 You can use either the constructor or SetUp to load the information.
 Let’s use MoveIt’s testing utilities to load a robot model.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyTestFixture</span> <span class="o">:</span> <span class="k">public</span> <span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">Test</span>
-<span class="p">{</span>
-  <span class="cm">/* Everything in the class can be protected:. */</span>
-<span class="k">protected</span><span class="o">:</span>
-  <span class="kt">void</span> <span class="n">SetUp</span><span class="p">()</span> <span class="k">override</span>
-  <span class="p">{</span>
-    <span class="n">robot_model_</span> <span class="o">=</span> <span class="n">moveit</span><span class="o">::</span><span class="n">core</span><span class="o">::</span><span class="n">loadTestingRobotModel</span><span class="p">(</span><span class="s">&quot;panda&quot;</span><span class="p">);</span>
-  <span class="p">}</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyTestFixture</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">Test</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="cm">/* Everything in the class can be protected:. */</span><span class="w"></span>
+<span class="k">protected</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">SetUp</span><span class="p">()</span><span class="w"> </span><span class="k">override</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">robot_model_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">moveit</span><span class="o">::</span><span class="n">core</span><span class="o">::</span><span class="n">loadTestingRobotModel</span><span class="p">(</span><span class="s">&quot;panda&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
 
-  <span class="cm">/* If you need to cleanup the resources any tests are using, you can do it in TearDown(). */</span>
-  <span class="kt">void</span> <span class="n">TearDown</span><span class="p">()</span> <span class="k">override</span>
-  <span class="p">{</span>
-  <span class="p">}</span>
+<span class="w">  </span><span class="cm">/* If you need to cleanup the resources any tests are using, you can do it in TearDown(). */</span><span class="w"></span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">TearDown</span><span class="p">()</span><span class="w"> </span><span class="k">override</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
 
-  <span class="n">moveit</span><span class="o">::</span><span class="n">core</span><span class="o">::</span><span class="n">RobotModelConstPtr</span> <span class="n">robot_model_</span><span class="p">;</span>
-<span class="p">};</span>
+<span class="w">  </span><span class="n">moveit</span><span class="o">::</span><span class="n">core</span><span class="o">::</span><span class="n">RobotModelConstPtr</span><span class="w"> </span><span class="n">robot_model_</span><span class="p">;</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
 </pre></div>
 </div>
 <p>To make a test that uses the data loaded by this fixture, use TEST_F.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">TEST_F</span><span class="p">(</span><span class="n">MyTestFixture</span><span class="p">,</span> <span class="n">InitOK</span><span class="p">)</span>
-<span class="p">{</span>
-  <span class="n">ASSERT_EQ</span><span class="p">(</span><span class="n">robot_model_</span><span class="o">-&gt;</span><span class="n">getURDF</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">getName</span><span class="p">(),</span> <span class="s">&quot;panda&quot;</span><span class="p">);</span>
-  <span class="n">ASSERT_EQ</span><span class="p">(</span><span class="n">robot_model_</span><span class="o">-&gt;</span><span class="n">getSRDF</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">getName</span><span class="p">(),</span> <span class="s">&quot;panda&quot;</span><span class="p">);</span>
-<span class="p">}</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">TEST_F</span><span class="p">(</span><span class="n">MyTestFixture</span><span class="p">,</span><span class="w"> </span><span class="n">InitOK</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">ASSERT_EQ</span><span class="p">(</span><span class="n">robot_model_</span><span class="o">-&gt;</span><span class="n">getURDF</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">getName</span><span class="p">(),</span><span class="w"> </span><span class="s">&quot;panda&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">ASSERT_EQ</span><span class="p">(</span><span class="n">robot_model_</span><span class="o">-&gt;</span><span class="n">getSRDF</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">getName</span><span class="p">(),</span><span class="w"> </span><span class="s">&quot;panda&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>MoveIt also provides a RobotModelBuilder class that helps you build simple robots with the link and joint structure
 that you need for a specific test.
 Let’s make a robot that has one branch, making a Y shape.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">TEST</span><span class="p">(</span><span class="n">MyFirstTestCase</span><span class="p">,</span> <span class="n">SimpleYRobot</span><span class="p">)</span>
-<span class="p">{</span>
-  <span class="n">moveit</span><span class="o">::</span><span class="n">core</span><span class="o">::</span><span class="n">RobotModelBuilder</span> <span class="nf">builder</span><span class="p">(</span><span class="s">&quot;one_robot&quot;</span><span class="p">,</span> <span class="s">&quot;base_link&quot;</span><span class="p">);</span>
-  <span class="n">builder</span><span class="p">.</span><span class="n">addChain</span><span class="p">(</span><span class="s">&quot;base_link-&gt;a&quot;</span><span class="p">,</span> <span class="s">&quot;continuous&quot;</span><span class="p">);</span>
-  <span class="n">builder</span><span class="p">.</span><span class="n">addChain</span><span class="p">(</span><span class="s">&quot;a-&gt;b-&gt;c&quot;</span><span class="p">,</span> <span class="s">&quot;fixed&quot;</span><span class="p">);</span>
-  <span class="n">builder</span><span class="p">.</span><span class="n">addChain</span><span class="p">(</span><span class="s">&quot;a-&gt;d&quot;</span><span class="p">,</span> <span class="s">&quot;fixed&quot;</span><span class="p">);</span>
-  <span class="n">builder</span><span class="p">.</span><span class="n">addChain</span><span class="p">(</span><span class="s">&quot;d-&gt;e&quot;</span><span class="p">,</span> <span class="s">&quot;continuous&quot;</span><span class="p">);</span>
-  <span class="n">builder</span><span class="p">.</span><span class="n">addVirtualJoint</span><span class="p">(</span><span class="s">&quot;odom&quot;</span><span class="p">,</span> <span class="s">&quot;base_link&quot;</span><span class="p">,</span> <span class="s">&quot;planar&quot;</span><span class="p">,</span> <span class="s">&quot;base_joint&quot;</span><span class="p">);</span>
-  <span class="n">builder</span><span class="p">.</span><span class="n">addGroup</span><span class="p">({},</span> <span class="p">{</span> <span class="s">&quot;base_joint&quot;</span> <span class="p">},</span> <span class="s">&quot;base_joint&quot;</span><span class="p">);</span>
-  <span class="n">ASSERT_TRUE</span><span class="p">(</span><span class="n">builder</span><span class="p">.</span><span class="n">isValid</span><span class="p">());</span>
-  <span class="n">moveit</span><span class="o">::</span><span class="n">core</span><span class="o">::</span><span class="n">RobotModelConstPtr</span> <span class="n">robot_model</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">build</span><span class="p">();</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">TEST</span><span class="p">(</span><span class="n">MyFirstTestCase</span><span class="p">,</span><span class="w"> </span><span class="n">SimpleYRobot</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">moveit</span><span class="o">::</span><span class="n">core</span><span class="o">::</span><span class="n">RobotModelBuilder</span><span class="w"> </span><span class="nf">builder</span><span class="p">(</span><span class="s">&quot;one_robot&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;base_link&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">builder</span><span class="p">.</span><span class="n">addChain</span><span class="p">(</span><span class="s">&quot;base_link-&gt;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;continuous&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">builder</span><span class="p">.</span><span class="n">addChain</span><span class="p">(</span><span class="s">&quot;a-&gt;b-&gt;c&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;fixed&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">builder</span><span class="p">.</span><span class="n">addChain</span><span class="p">(</span><span class="s">&quot;a-&gt;d&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;fixed&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">builder</span><span class="p">.</span><span class="n">addChain</span><span class="p">(</span><span class="s">&quot;d-&gt;e&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;continuous&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">builder</span><span class="p">.</span><span class="n">addVirtualJoint</span><span class="p">(</span><span class="s">&quot;odom&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;base_link&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;planar&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;base_joint&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">builder</span><span class="p">.</span><span class="n">addGroup</span><span class="p">({},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;base_joint&quot;</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="s">&quot;base_joint&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">ASSERT_TRUE</span><span class="p">(</span><span class="n">builder</span><span class="p">.</span><span class="n">isValid</span><span class="p">());</span><span class="w"></span>
+<span class="w">  </span><span class="n">moveit</span><span class="o">::</span><span class="n">core</span><span class="o">::</span><span class="n">RobotModelConstPtr</span><span class="w"> </span><span class="n">robot_model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">build</span><span class="p">();</span><span class="w"></span>
 
-  <span class="cm">/* Let&#39;s check that the link c is rigidly connected to link d, as it should be. */</span>
-  <span class="k">const</span> <span class="n">moveit</span><span class="o">::</span><span class="n">core</span><span class="o">::</span><span class="n">LinkTransformMap</span> <span class="n">transforms</span> <span class="o">=</span> <span class="n">robot_model</span><span class="o">-&gt;</span><span class="n">getLinkModel</span><span class="p">(</span><span class="s">&quot;c&quot;</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">getAssociatedFixedTransforms</span><span class="p">();</span>
-  <span class="k">auto</span> <span class="n">maybe_link_d</span> <span class="o">=</span> <span class="n">transforms</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">robot_model</span><span class="o">-&gt;</span><span class="n">getLinkModel</span><span class="p">(</span><span class="s">&quot;d&quot;</span><span class="p">));</span>
-  <span class="n">ASSERT_NE</span><span class="p">(</span><span class="n">maybe_link_d</span><span class="p">,</span> <span class="n">transforms</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
-<span class="p">}</span>
+<span class="w">  </span><span class="cm">/* Let&#39;s check that the link c is rigidly connected to link d, as it should be. */</span><span class="w"></span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">moveit</span><span class="o">::</span><span class="n">core</span><span class="o">::</span><span class="n">LinkTransformMap</span><span class="w"> </span><span class="n">transforms</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">robot_model</span><span class="o">-&gt;</span><span class="n">getLinkModel</span><span class="p">(</span><span class="s">&quot;c&quot;</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">getAssociatedFixedTransforms</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">maybe_link_d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">transforms</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">robot_model</span><span class="o">-&gt;</span><span class="n">getLinkModel</span><span class="p">(</span><span class="s">&quot;d&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="w">  </span><span class="n">ASSERT_NE</span><span class="p">(</span><span class="n">maybe_link_d</span><span class="p">,</span><span class="w"> </span><span class="n">transforms</span><span class="p">.</span><span class="n">end</span><span class="p">());</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kt">int</span> <span class="n">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span>
-<span class="p">{</span>
-  <span class="n">testing</span><span class="o">::</span><span class="n">InitGoogleTest</span><span class="p">(</span><span class="o">&amp;</span><span class="n">argc</span><span class="p">,</span> <span class="n">argv</span><span class="p">);</span>
-  <span class="k">return</span> <span class="n">RUN_ALL_TESTS</span><span class="p">();</span>
-<span class="p">}</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="o">**</span><span class="w"> </span><span class="n">argv</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">testing</span><span class="o">::</span><span class="n">InitGoogleTest</span><span class="p">(</span><span class="o">&amp;</span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">RUN_ALL_TESTS</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
