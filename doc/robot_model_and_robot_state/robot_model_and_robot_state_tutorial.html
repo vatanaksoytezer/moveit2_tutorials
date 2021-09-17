@@ -200,7 +200,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#the-launch-file">The Launch File</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#debugging-the-robot-state">Debugging the Robot State</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../planning_scene/planning_scene_tutorial.html">Planning Scene</a><ul>
@@ -811,17 +810,6 @@
     <li>Robot Model and Robot State</li>
   </ul>
   
-        <br />
-<div class="admonition note">
-<p class="first admonition-title">Warning: MoveIt 1 Tutorial</p>
-<p class="last">This is a tutorial from MoveIt 1 that has not yet been ported over to MoveIt2.
-    You can try using this tutorial for MoveIt 2 by replacing <code>catkin</code> with <code>colcon</code>.
-    </br></br>
-    <a href="https://github.com/ros-planning/moveit2_tutorials/blob/main/doc/robot_model_and_robot_state/robot_model_and_robot_state_tutorial.rst">Please update this tutorial for MoveIt 2</a>
-    and remove this warning.
-</p>
-</div>
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -850,53 +838,53 @@
 <div class="section" id="running-the-code">
 <h2>Running the Code<a class="headerlink" href="#running-the-code" title="Permalink to this headline">¶</a></h2>
 <p>All the code in this tutorial can be compiled and run from the
-<code class="docutils literal notranslate"><span class="pre">moveit_tutorials</span></code> package that you have as part of your MoveIt
+<code class="docutils literal notranslate"><span class="pre">moveit2_tutorials</span></code> package that you have as part of your MoveIt
 setup.</p>
-<p>Roslaunch the launch file to run the code directly from moveit_tutorials:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">roslaunch</span> <span class="n">moveit_tutorials</span> <span class="n">robot_model_and_robot_state_tutorial</span><span class="o">.</span><span class="n">launch</span>
+<p>Roslaunch the launch file to run the code directly from moveit2_tutorials:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ros2</span> <span class="n">launch</span> <span class="n">moveit2_tutorials</span> <span class="n">robot_model_and_robot_state_tutorial</span><span class="o">.</span><span class="n">launch</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="expected-output">
 <h2>Expected Output<a class="headerlink" href="#expected-output" title="Permalink to this headline">¶</a></h2>
 <p>The expected output will be in the following form. The numbers will not match since we are using random joint values:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ros</span><span class="o">.</span><span class="n">moveit_tutorials</span><span class="p">:</span> <span class="n">Model</span> <span class="n">frame</span><span class="p">:</span> <span class="o">/</span><span class="n">panda_link0</span>
-<span class="n">ros</span><span class="o">.</span><span class="n">moveit_tutorials</span><span class="p">:</span> <span class="n">Joint</span> <span class="n">panda_joint1</span><span class="p">:</span> <span class="mf">0.000000</span>
-<span class="n">ros</span><span class="o">.</span><span class="n">moveit_tutorials</span><span class="p">:</span> <span class="n">Joint</span> <span class="n">panda_joint2</span><span class="p">:</span> <span class="mf">0.000000</span>
-<span class="n">ros</span><span class="o">.</span><span class="n">moveit_tutorials</span><span class="p">:</span> <span class="n">Joint</span> <span class="n">panda_joint3</span><span class="p">:</span> <span class="mf">0.000000</span>
-<span class="n">ros</span><span class="o">.</span><span class="n">moveit_tutorials</span><span class="p">:</span> <span class="n">Joint</span> <span class="n">panda_joint4</span><span class="p">:</span> <span class="mf">0.000000</span>
-<span class="n">ros</span><span class="o">.</span><span class="n">moveit_tutorials</span><span class="p">:</span> <span class="n">Joint</span> <span class="n">panda_joint5</span><span class="p">:</span> <span class="mf">0.000000</span>
-<span class="n">ros</span><span class="o">.</span><span class="n">moveit_tutorials</span><span class="p">:</span> <span class="n">Joint</span> <span class="n">panda_joint6</span><span class="p">:</span> <span class="mf">0.000000</span>
-<span class="n">ros</span><span class="o">.</span><span class="n">moveit_tutorials</span><span class="p">:</span> <span class="n">Joint</span> <span class="n">panda_joint7</span><span class="p">:</span> <span class="mf">0.000000</span>
-<span class="n">ros</span><span class="o">.</span><span class="n">moveit_tutorials</span><span class="p">:</span> <span class="n">Current</span> <span class="n">state</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">valid</span>
-<span class="n">ros</span><span class="o">.</span><span class="n">moveit_tutorials</span><span class="p">:</span> <span class="n">Current</span> <span class="n">state</span> <span class="ow">is</span> <span class="n">valid</span>
-<span class="n">ros</span><span class="o">.</span><span class="n">moveit_tutorials</span><span class="p">:</span> <span class="n">Translation</span><span class="p">:</span>
-<span class="o">-</span><span class="mf">0.541498</span>
-<span class="o">-</span><span class="mf">0.592805</span>
- <span class="mf">0.400443</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span> <span class="p">[</span><span class="n">robot_model_and_state_tutorial</span><span class="p">]:</span> <span class="n">Model</span> <span class="n">frame</span><span class="p">:</span> <span class="n">world</span>
+<span class="o">...</span> <span class="p">[</span><span class="n">robot_model_and_state_tutorial</span><span class="p">]:</span> <span class="n">Joint</span> <span class="n">panda_joint1</span><span class="p">:</span> <span class="mf">0.000000</span>
+<span class="o">...</span> <span class="p">[</span><span class="n">robot_model_and_state_tutorial</span><span class="p">]:</span> <span class="n">Joint</span> <span class="n">panda_joint2</span><span class="p">:</span> <span class="mf">0.000000</span>
+<span class="o">...</span> <span class="p">[</span><span class="n">robot_model_and_state_tutorial</span><span class="p">]:</span> <span class="n">Joint</span> <span class="n">panda_joint3</span><span class="p">:</span> <span class="mf">0.000000</span>
+<span class="o">...</span> <span class="p">[</span><span class="n">robot_model_and_state_tutorial</span><span class="p">]:</span> <span class="n">Joint</span> <span class="n">panda_joint4</span><span class="p">:</span> <span class="mf">0.000000</span>
+<span class="o">...</span> <span class="p">[</span><span class="n">robot_model_and_state_tutorial</span><span class="p">]:</span> <span class="n">Joint</span> <span class="n">panda_joint5</span><span class="p">:</span> <span class="mf">0.000000</span>
+<span class="o">...</span> <span class="p">[</span><span class="n">robot_model_and_state_tutorial</span><span class="p">]:</span> <span class="n">Joint</span> <span class="n">panda_joint6</span><span class="p">:</span> <span class="mf">0.000000</span>
+<span class="o">...</span> <span class="p">[</span><span class="n">robot_model_and_state_tutorial</span><span class="p">]:</span> <span class="n">Joint</span> <span class="n">panda_joint7</span><span class="p">:</span> <span class="mf">0.000000</span>
+<span class="o">...</span> <span class="p">[</span><span class="n">robot_model_and_state_tutorial</span><span class="p">]:</span> <span class="n">Current</span> <span class="n">state</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">valid</span>
+<span class="o">...</span> <span class="p">[</span><span class="n">robot_model_and_state_tutorial</span><span class="p">]:</span> <span class="n">Current</span> <span class="n">state</span> <span class="ow">is</span> <span class="n">valid</span>
+<span class="o">...</span> <span class="p">[</span><span class="n">robot_model_and_state_tutorial</span><span class="p">]:</span> <span class="n">Translation</span><span class="p">:</span>
+<span class="o">-</span><span class="mf">0.368232</span>
+<span class="mf">0.645742</span>
+<span class="mf">0.752193</span>
 
-<span class="n">ros</span><span class="o">.</span><span class="n">moveit_tutorials</span><span class="p">:</span> <span class="n">Rotation</span><span class="p">:</span>
-<span class="o">-</span><span class="mf">0.395039</span>  <span class="mf">0.600666</span> <span class="o">-</span><span class="mf">0.695086</span>
- <span class="mf">0.299981</span> <span class="o">-</span><span class="mf">0.630807</span> <span class="o">-</span><span class="mf">0.715607</span>
-<span class="o">-</span><span class="mf">0.868306</span> <span class="o">-</span><span class="mf">0.491205</span> <span class="mf">0.0690048</span>
+<span class="o">...</span> <span class="p">[</span><span class="n">robot_model_and_state_tutorial</span><span class="p">]:</span> <span class="n">Rotation</span><span class="p">:</span>
+ <span class="mf">0.362374</span> <span class="o">-</span><span class="mf">0.925408</span>  <span class="o">-</span><span class="mf">0.11093</span>
+ <span class="mf">0.911735</span>  <span class="mf">0.327259</span>  <span class="mf">0.248275</span>
+ <span class="o">-</span><span class="mf">0.193453</span> <span class="o">-</span><span class="mf">0.191108</span>  <span class="mf">0.962317</span>
 
-<span class="n">ros</span><span class="o">.</span><span class="n">moveit_tutorials</span><span class="p">:</span> <span class="n">Joint</span> <span class="n">panda_joint1</span><span class="p">:</span> <span class="o">-</span><span class="mf">2.407308</span>
-<span class="n">ros</span><span class="o">.</span><span class="n">moveit_tutorials</span><span class="p">:</span> <span class="n">Joint</span> <span class="n">panda_joint2</span><span class="p">:</span> <span class="mf">1.555370</span>
-<span class="n">ros</span><span class="o">.</span><span class="n">moveit_tutorials</span><span class="p">:</span> <span class="n">Joint</span> <span class="n">panda_joint3</span><span class="p">:</span> <span class="o">-</span><span class="mf">2.102171</span>
-<span class="n">ros</span><span class="o">.</span><span class="n">moveit_tutorials</span><span class="p">:</span> <span class="n">Joint</span> <span class="n">panda_joint4</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.011156</span>
-<span class="n">ros</span><span class="o">.</span><span class="n">moveit_tutorials</span><span class="p">:</span> <span class="n">Joint</span> <span class="n">panda_joint5</span><span class="p">:</span> <span class="mf">1.100545</span>
-<span class="n">ros</span><span class="o">.</span><span class="n">moveit_tutorials</span><span class="p">:</span> <span class="n">Joint</span> <span class="n">panda_joint6</span><span class="p">:</span> <span class="mf">3.230793</span>
-<span class="n">ros</span><span class="o">.</span><span class="n">moveit_tutorials</span><span class="p">:</span> <span class="n">Joint</span> <span class="n">panda_joint7</span><span class="p">:</span> <span class="o">-</span><span class="mf">2.651568</span>
-<span class="n">ros</span><span class="o">.</span><span class="n">moveit_tutorials</span><span class="p">:</span> <span class="n">Jacobian</span><span class="p">:</span>
-    <span class="mf">0.592805</span>   <span class="o">-</span><span class="mf">0.0500638</span>    <span class="o">-</span><span class="mf">0.036041</span>     <span class="mf">0.366761</span>   <span class="o">-</span><span class="mf">0.0334361</span>     <span class="mf">0.128712</span> <span class="o">-</span><span class="mf">4.33681e-18</span>
-   <span class="o">-</span><span class="mf">0.541498</span>   <span class="o">-</span><span class="mf">0.0451907</span>    <span class="mf">0.0417049</span>    <span class="o">-</span><span class="mf">0.231187</span>    <span class="mf">0.0403683</span>   <span class="mf">0.00288573</span>  <span class="mf">3.46945e-18</span>
-           <span class="mi">0</span>    <span class="o">-</span><span class="mf">0.799172</span>    <span class="mf">0.0772022</span>    <span class="o">-</span><span class="mf">0.247151</span>    <span class="mf">0.0818336</span>    <span class="mf">0.0511662</span>            <span class="mi">0</span>
-           <span class="mi">0</span>     <span class="mf">0.670056</span>    <span class="o">-</span><span class="mf">0.742222</span>     <span class="mf">0.349402</span>    <span class="o">-</span><span class="mf">0.748556</span>    <span class="o">-</span><span class="mf">0.344057</span>    <span class="o">-</span><span class="mf">0.695086</span>
-           <span class="mi">0</span>     <span class="o">-</span><span class="mf">0.74231</span>    <span class="o">-</span><span class="mf">0.669976</span>    <span class="o">-</span><span class="mf">0.367232</span>    <span class="o">-</span><span class="mf">0.662737</span>     <span class="mf">0.415389</span>    <span class="o">-</span><span class="mf">0.715607</span>
-           <span class="mi">1</span>  <span class="mf">4.89669e-12</span>    <span class="mf">0.0154256</span>     <span class="mf">0.862009</span>     <span class="mf">0.021077</span>     <span class="mf">0.842067</span>    <span class="mf">0.0690048</span>
+<span class="o">...</span> <span class="p">[</span><span class="n">robot_model_and_state_tutorial</span><span class="p">]:</span> <span class="n">Joint</span> <span class="n">panda_joint1</span><span class="p">:</span> <span class="mf">2.263889</span>
+<span class="o">...</span> <span class="p">[</span><span class="n">robot_model_and_state_tutorial</span><span class="p">]:</span> <span class="n">Joint</span> <span class="n">panda_joint2</span><span class="p">:</span> <span class="mf">1.004608</span>
+<span class="o">...</span> <span class="p">[</span><span class="n">robot_model_and_state_tutorial</span><span class="p">]:</span> <span class="n">Joint</span> <span class="n">panda_joint3</span><span class="p">:</span> <span class="o">-</span><span class="mf">1.125652</span>
+<span class="o">...</span> <span class="p">[</span><span class="n">robot_model_and_state_tutorial</span><span class="p">]:</span> <span class="n">Joint</span> <span class="n">panda_joint4</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.278822</span>
+<span class="o">...</span> <span class="p">[</span><span class="n">robot_model_and_state_tutorial</span><span class="p">]:</span> <span class="n">Joint</span> <span class="n">panda_joint5</span><span class="p">:</span> <span class="o">-</span><span class="mf">2.150242</span>
+<span class="o">...</span> <span class="p">[</span><span class="n">robot_model_and_state_tutorial</span><span class="p">]:</span> <span class="n">Joint</span> <span class="n">panda_joint6</span><span class="p">:</span> <span class="mf">2.274891</span>
+<span class="o">...</span> <span class="p">[</span><span class="n">robot_model_and_state_tutorial</span><span class="p">]:</span> <span class="n">Joint</span> <span class="n">panda_joint7</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.774846</span>
+<span class="o">...</span> <span class="p">[</span><span class="n">robot_model_and_state_tutorial</span><span class="p">]:</span> <span class="n">Jacobian</span><span class="p">:</span>
+  <span class="o">-</span><span class="mf">0.645742</span>     <span class="o">-</span><span class="mf">0.26783</span>   <span class="o">-</span><span class="mf">0.0742358</span>    <span class="o">-</span><span class="mf">0.315413</span>    <span class="mf">0.0224927</span>    <span class="o">-</span><span class="mf">0.031807</span> <span class="o">-</span><span class="mf">2.77556e-17</span>
+  <span class="o">-</span><span class="mf">0.368232</span>     <span class="mf">0.322474</span>    <span class="mf">0.0285092</span>    <span class="o">-</span><span class="mf">0.364197</span>   <span class="mf">0.00993438</span>     <span class="mf">0.072356</span>  <span class="mf">2.77556e-17</span>
+          <span class="mi">0</span>    <span class="o">-</span><span class="mf">0.732023</span>    <span class="o">-</span><span class="mf">0.109128</span>     <span class="mf">0.218716</span>   <span class="mf">2.9777e-05</span>     <span class="o">-</span><span class="mf">0.11378</span> <span class="o">-</span><span class="mf">1.04083e-17</span>
+          <span class="mi">0</span>    <span class="o">-</span><span class="mf">0.769274</span>    <span class="o">-</span><span class="mf">0.539217</span>     <span class="mf">0.640569</span>     <span class="o">-</span><span class="mf">0.36792</span>     <span class="o">-</span><span class="mf">0.91475</span>     <span class="o">-</span><span class="mf">0.11093</span>
+          <span class="mi">0</span>    <span class="o">-</span><span class="mf">0.638919</span>      <span class="mf">0.64923</span>   <span class="o">-</span><span class="mf">0.0973283</span>     <span class="mf">0.831769</span>     <span class="o">-</span><span class="mf">0.40402</span>     <span class="mf">0.248275</span>
+          <span class="mi">1</span>  <span class="mf">4.89664e-12</span>     <span class="mf">0.536419</span>     <span class="mf">0.761708</span>     <span class="mf">0.415688</span>  <span class="o">-</span><span class="mf">0.00121099</span>     <span class="mf">0.962317</span>
 </pre></div>
 </div>
-<p><strong>Note:</strong> Don’t worry if your output has different ROS console format. You can customize your ROS console logger by following <a class="reference external" href="http://dav.ee/blog/notes/archives/898">this blog post</a>.</p>
+<p><strong>Note:</strong> Don’t worry if your output has different ROS console format.</p>
 </div>
 <div class="section" id="the-entire-code">
 <h2>The Entire Code<a class="headerlink" href="#the-entire-code" title="Permalink to this headline">¶</a></h2>
@@ -916,9 +904,9 @@ classes.</p>
 object, which will look up
 the robot description on the ROS parameter server and construct a
 <a class="reference external" href="http://docs.ros.org/noetic/api/moveit_core/html/cpp/classmoveit_1_1core_1_1RobotModel.html">RobotModel</a> for us to use.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">robot_model_loader</span><span class="o">::</span><span class="n">RobotModelLoader</span><span class="w"> </span><span class="nf">robot_model_loader</span><span class="p">(</span><span class="s">&quot;robot_description&quot;</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">robot_model_loader</span><span class="o">::</span><span class="n">RobotModelLoader</span><span class="w"> </span><span class="nf">robot_model_loader</span><span class="p">(</span><span class="n">node</span><span class="p">);</span><span class="w"></span>
 <span class="k">const</span><span class="w"> </span><span class="n">moveit</span><span class="o">::</span><span class="n">core</span><span class="o">::</span><span class="n">RobotModelPtr</span><span class="o">&amp;</span><span class="w"> </span><span class="n">kinematic_model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">robot_model_loader</span><span class="p">.</span><span class="n">getModel</span><span class="p">();</span><span class="w"></span>
-<span class="n">ROS_INFO</span><span class="p">(</span><span class="s">&quot;Model frame: %s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">kinematic_model</span><span class="o">-&gt;</span><span class="n">getModelFrame</span><span class="p">().</span><span class="n">c_str</span><span class="p">());</span><span class="w"></span>
+<span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Model frame: %s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">kinematic_model</span><span class="o">-&gt;</span><span class="n">getModelFrame</span><span class="p">().</span><span class="n">c_str</span><span class="p">());</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Using the <a class="reference external" href="http://docs.ros.org/noetic/api/moveit_core/html/cpp/classmoveit_1_1core_1_1RobotModel.html">RobotModel</a>, we can construct a
@@ -943,7 +931,7 @@ robot.</p>
 <span class="n">kinematic_state</span><span class="o">-&gt;</span><span class="n">copyJointGroupPositions</span><span class="p">(</span><span class="n">joint_model_group</span><span class="p">,</span><span class="w"> </span><span class="n">joint_values</span><span class="p">);</span><span class="w"></span>
 <span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">joint_names</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="n">ROS_INFO</span><span class="p">(</span><span class="s">&quot;Joint %s: %f&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">joint_names</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">c_str</span><span class="p">(),</span><span class="w"> </span><span class="n">joint_values</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span><span class="w"></span>
+<span class="w">  </span><span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Joint %s: %f&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">joint_names</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">c_str</span><span class="p">(),</span><span class="w"> </span><span class="n">joint_values</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
@@ -956,11 +944,11 @@ robot.</p>
 <span class="n">kinematic_state</span><span class="o">-&gt;</span><span class="n">setJointGroupPositions</span><span class="p">(</span><span class="n">joint_model_group</span><span class="p">,</span><span class="w"> </span><span class="n">joint_values</span><span class="p">);</span><span class="w"></span>
 
 <span class="cm">/* Check whether any joint is outside its joint limits */</span><span class="w"></span>
-<span class="n">ROS_INFO_STREAM</span><span class="p">(</span><span class="s">&quot;Current state is &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">kinematic_state</span><span class="o">-&gt;</span><span class="n">satisfiesBounds</span><span class="p">()</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;valid&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;not valid&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="n">RCLCPP_INFO_STREAM</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Current state is &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">kinematic_state</span><span class="o">-&gt;</span><span class="n">satisfiesBounds</span><span class="p">()</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;valid&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;not valid&quot;</span><span class="p">));</span><span class="w"></span>
 
 <span class="cm">/* Enforce the joint limits for this state and check again*/</span><span class="w"></span>
 <span class="n">kinematic_state</span><span class="o">-&gt;</span><span class="n">enforceBounds</span><span class="p">();</span><span class="w"></span>
-<span class="n">ROS_INFO_STREAM</span><span class="p">(</span><span class="s">&quot;Current state is &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">kinematic_state</span><span class="o">-&gt;</span><span class="n">satisfiesBounds</span><span class="p">()</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;valid&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;not valid&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="n">RCLCPP_INFO_STREAM</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Current state is &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">kinematic_state</span><span class="o">-&gt;</span><span class="n">satisfiesBounds</span><span class="p">()</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;valid&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;not valid&quot;</span><span class="p">));</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -974,8 +962,8 @@ values. Note that we would like to find the pose of the
 <span class="k">const</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Isometry3d</span><span class="o">&amp;</span><span class="w"> </span><span class="n">end_effector_state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">kinematic_state</span><span class="o">-&gt;</span><span class="n">getGlobalLinkTransform</span><span class="p">(</span><span class="s">&quot;panda_link8&quot;</span><span class="p">);</span><span class="w"></span>
 
 <span class="cm">/* Print end-effector pose. Remember that this is in the model frame */</span><span class="w"></span>
-<span class="n">ROS_INFO_STREAM</span><span class="p">(</span><span class="s">&quot;Translation: </span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">end_effector_state</span><span class="p">.</span><span class="n">translation</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="n">ROS_INFO_STREAM</span><span class="p">(</span><span class="s">&quot;Rotation: </span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">end_effector_state</span><span class="p">.</span><span class="n">rotation</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">RCLCPP_INFO_STREAM</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Translation: </span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">end_effector_state</span><span class="p">.</span><span class="n">translation</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">RCLCPP_INFO_STREAM</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Rotation: </span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">end_effector_state</span><span class="p">.</span><span class="n">rotation</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1000,12 +988,12 @@ end_effector_state that we computed in the step above.</li>
 <span class="w">  </span><span class="n">kinematic_state</span><span class="o">-&gt;</span><span class="n">copyJointGroupPositions</span><span class="p">(</span><span class="n">joint_model_group</span><span class="p">,</span><span class="w"> </span><span class="n">joint_values</span><span class="p">);</span><span class="w"></span>
 <span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">joint_names</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
 <span class="w">  </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">ROS_INFO</span><span class="p">(</span><span class="s">&quot;Joint %s: %f&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">joint_names</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">c_str</span><span class="p">(),</span><span class="w"> </span><span class="n">joint_values</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span><span class="w"></span>
+<span class="w">    </span><span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Joint %s: %f&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">joint_names</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">c_str</span><span class="p">(),</span><span class="w"> </span><span class="n">joint_values</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span><span class="w"></span>
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 <span class="k">else</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="n">ROS_INFO</span><span class="p">(</span><span class="s">&quot;Did not find IK solution&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Did not find IK solution&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
@@ -1018,7 +1006,7 @@ end_effector_state that we computed in the step above.</li>
 <span class="n">kinematic_state</span><span class="o">-&gt;</span><span class="n">getJacobian</span><span class="p">(</span><span class="n">joint_model_group</span><span class="p">,</span><span class="w"></span>
 <span class="w">                             </span><span class="n">kinematic_state</span><span class="o">-&gt;</span><span class="n">getLinkModel</span><span class="p">(</span><span class="n">joint_model_group</span><span class="o">-&gt;</span><span class="n">getLinkModelNames</span><span class="p">().</span><span class="n">back</span><span class="p">()),</span><span class="w"></span>
 <span class="w">                             </span><span class="n">reference_point_position</span><span class="p">,</span><span class="w"> </span><span class="n">jacobian</span><span class="p">);</span><span class="w"></span>
-<span class="n">ROS_INFO_STREAM</span><span class="p">(</span><span class="s">&quot;Jacobian: </span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">jacobian</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">RCLCPP_INFO_STREAM</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Jacobian: </span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">jacobian</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1032,28 +1020,65 @@ end_effector_state that we computed in the step above.</li>
 </ul>
 </dd>
 </dl>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">launch</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">include</span> <span class="n">file</span><span class="o">=</span><span class="s2">&quot;$(find panda_moveit_config)/launch/planning_context.launch&quot;</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">arg</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;load_robot_description&quot;</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;true&quot;</span><span class="o">/&gt;</span>
-  <span class="o">&lt;/</span><span class="n">include</span><span class="o">&gt;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">yaml</span>
+<span class="kn">from</span> <span class="nn">launch</span> <span class="kn">import</span> <span class="n">LaunchDescription</span>
+<span class="kn">from</span> <span class="nn">launch_ros.actions</span> <span class="kn">import</span> <span class="n">Node</span>
+<span class="kn">from</span> <span class="nn">launch.actions</span> <span class="kn">import</span> <span class="n">ExecuteProcess</span>
+<span class="kn">from</span> <span class="nn">ament_index_python.packages</span> <span class="kn">import</span> <span class="n">get_package_share_directory</span>
+<span class="kn">import</span> <span class="nn">xacro</span>
 
-  <span class="o">&lt;</span><span class="n">node</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;robot_model_and_robot_state_tutorial&quot;</span>
-        <span class="n">pkg</span><span class="o">=</span><span class="s2">&quot;moveit_tutorials&quot;</span>
-        <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;robot_model_and_robot_state_tutorial&quot;</span>
-        <span class="n">respawn</span><span class="o">=</span><span class="s2">&quot;false&quot;</span> <span class="n">output</span><span class="o">=</span><span class="s2">&quot;screen&quot;</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">rosparam</span> <span class="n">command</span><span class="o">=</span><span class="s2">&quot;load&quot;</span>
-              <span class="n">file</span><span class="o">=</span><span class="s2">&quot;$(find panda_moveit_config)/config/kinematics.yaml&quot;</span><span class="o">/&gt;</span>
-  <span class="o">&lt;/</span><span class="n">node</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">launch</span><span class="o">&gt;</span>
+
+<span class="k">def</span> <span class="nf">load_file</span><span class="p">(</span><span class="n">package_name</span><span class="p">,</span> <span class="n">file_path</span><span class="p">):</span>
+    <span class="n">package_path</span> <span class="o">=</span> <span class="n">get_package_share_directory</span><span class="p">(</span><span class="n">package_name</span><span class="p">)</span>
+    <span class="n">absolute_file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">package_path</span><span class="p">,</span> <span class="n">file_path</span><span class="p">)</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">absolute_file_path</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="k">except</span> <span class="ne">EnvironmentError</span><span class="p">:</span>  <span class="c1"># parent of IOError, OSError *and* WindowsError where available</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+
+<span class="k">def</span> <span class="nf">load_yaml</span><span class="p">(</span><span class="n">package_name</span><span class="p">,</span> <span class="n">file_path</span><span class="p">):</span>
+    <span class="n">package_path</span> <span class="o">=</span> <span class="n">get_package_share_directory</span><span class="p">(</span><span class="n">package_name</span><span class="p">)</span>
+    <span class="n">absolute_file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">package_path</span><span class="p">,</span> <span class="n">file_path</span><span class="p">)</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">absolute_file_path</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">yaml</span><span class="o">.</span><span class="n">safe_load</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">EnvironmentError</span><span class="p">:</span>  <span class="c1"># parent of IOError, OSError *and* WindowsError where available</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+
+<span class="k">def</span> <span class="nf">generate_launch_description</span><span class="p">():</span>
+    <span class="c1"># planning_context</span>
+    <span class="n">robot_description_config</span> <span class="o">=</span> <span class="n">load_file</span><span class="p">(</span>
+        <span class="s2">&quot;moveit_resources_panda_description&quot;</span><span class="p">,</span> <span class="s2">&quot;urdf/panda.urdf&quot;</span>
+    <span class="p">)</span>
+
+    <span class="n">robot_description_semantic_config</span> <span class="o">=</span> <span class="n">load_file</span><span class="p">(</span>
+        <span class="s2">&quot;moveit_resources_panda_moveit_config&quot;</span><span class="p">,</span> <span class="s2">&quot;config/panda.srdf&quot;</span>
+    <span class="p">)</span>
+
+    <span class="n">kinematics_yaml</span> <span class="o">=</span> <span class="n">load_yaml</span><span class="p">(</span>
+        <span class="s2">&quot;moveit_resources_panda_moveit_config&quot;</span><span class="p">,</span> <span class="s2">&quot;config/kinematics.yaml&quot;</span>
+    <span class="p">)</span>
+
+    <span class="n">tutorial_node</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span>
+        <span class="n">package</span><span class="o">=</span><span class="s2">&quot;moveit2_tutorials&quot;</span><span class="p">,</span>
+        <span class="n">executable</span><span class="o">=</span><span class="s2">&quot;robot_model_and_robot_state_tutorial&quot;</span><span class="p">,</span>
+        <span class="n">output</span><span class="o">=</span><span class="s2">&quot;screen&quot;</span><span class="p">,</span>
+        <span class="n">parameters</span><span class="o">=</span><span class="p">[</span>
+            <span class="p">{</span><span class="s2">&quot;robot_description&quot;</span><span class="p">:</span> <span class="n">robot_description_config</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;robot_description_semantic&quot;</span><span class="p">:</span> <span class="n">robot_description_semantic_config</span><span class="p">},</span>
+            <span class="n">kinematics_yaml</span><span class="p">,</span>
+        <span class="p">],</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">LaunchDescription</span><span class="p">([</span><span class="n">tutorial_node</span><span class="p">])</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="debugging-the-robot-state">
-<h2>Debugging the Robot State<a class="headerlink" href="#debugging-the-robot-state" title="Permalink to this headline">¶</a></h2>
-<p>To aid in debugging robot state, a command-line tool will help introspect your system:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rosrun</span> <span class="n">moveit_ros_planning</span> <span class="n">moveit_print_planning_model_info</span>
-</pre></div>
 </div>
 </div>
 </div>
