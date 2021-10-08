@@ -895,17 +895,15 @@ class to add and remove collision objects in our “virtual world” scene</p>
 </div>
 <div class="section" id="visualization">
 <h3>Visualization<a class="headerlink" href="#visualization" title="Permalink to this headline">¶</a></h3>
-<p>MoveitVisualTools has not been ported to ROS2 yet so we make use of RvizVisualTools for visualization.
-The package MoveItVisualTools provides many capabilities for visualizing objects, robots,
-and trajectories in RViz as well as debugging tools such as step-by-step introspection of a script.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span><span class="w"> </span><span class="nn">rvt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nn">rviz_visual_tools</span><span class="p">;</span><span class="w"></span>
-<span class="n">rviz_visual_tools</span><span class="o">::</span><span class="n">RvizVisualTools</span><span class="w"> </span><span class="nf">visual_tools</span><span class="p">(</span><span class="s">&quot;panda_link0&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;move_group_tutorial&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">move_group_node</span><span class="p">);</span><span class="w"></span>
-<span class="cm">/* moveit_visual_tools::MoveItVisualTools visual_tools(&quot;panda_link0&quot;); */</span><span class="w"></span>
+<span class="n">moveit_visual_tools</span><span class="o">::</span><span class="n">MoveItVisualTools</span><span class="w"> </span><span class="nf">visual_tools</span><span class="p">(</span><span class="n">move_group_node</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;panda_link0&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;move_group_tutorial&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                                                    </span><span class="n">move_group</span><span class="p">.</span><span class="n">getRobotModel</span><span class="p">());</span><span class="w"></span>
+
 <span class="n">visual_tools</span><span class="p">.</span><span class="n">deleteAllMarkers</span><span class="p">();</span><span class="w"></span>
 
 <span class="cm">/* Remote control is an introspection tool that allows users to step through a high level script */</span><span class="w"></span>
 <span class="cm">/* via buttons and keyboard shortcuts in RViz */</span><span class="w"></span>
-<span class="cm">/* visual_tools.loadRemoteControl(); */</span><span class="w"></span>
+<span class="n">visual_tools</span><span class="p">.</span><span class="n">loadRemoteControl</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
 <p>RViz provides many types of markers, in this demo we will use text, cylinders, and spheres</p>
@@ -938,8 +936,7 @@ and trajectories in RViz as well as debugging tools such as step-by-step introsp
 </div>
 <div class="section" id="start-the-demo">
 <h3>Start the demo<a class="headerlink" href="#start-the-demo" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;Enter&#39; to start the demo&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="cm">/* visual_tools.prompt(&quot;Press &#39;next&#39; in the RvizVisualToolsGui window to start the demo&quot;); */</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">visual_tools</span><span class="p">.</span><span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;next&#39; in the RvizVisualToolsGui window to start the demo&quot;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -972,10 +969,9 @@ to actually move the robot.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Visualizing plan 1 as trajectory line&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="n">visual_tools</span><span class="p">.</span><span class="n">publishAxisLabeled</span><span class="p">(</span><span class="n">target_pose1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;pose1&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="n">visual_tools</span><span class="p">.</span><span class="n">publishText</span><span class="p">(</span><span class="n">text_pose</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Pose_Goal&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rvt</span><span class="o">::</span><span class="n">WHITE</span><span class="p">,</span><span class="w"> </span><span class="n">rvt</span><span class="o">::</span><span class="n">XLARGE</span><span class="p">);</span><span class="w"></span>
-<span class="cm">/* visual_tools.publishTrajectoryLine(my_plan.trajectory_, joint_model_group); */</span><span class="w"></span>
+<span class="n">visual_tools</span><span class="p">.</span><span class="n">publishTrajectoryLine</span><span class="p">(</span><span class="n">my_plan</span><span class="p">.</span><span class="n">trajectory_</span><span class="p">,</span><span class="w"> </span><span class="n">joint_model_group</span><span class="p">);</span><span class="w"></span>
 <span class="n">visual_tools</span><span class="p">.</span><span class="n">trigger</span><span class="p">();</span><span class="w"></span>
-<span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;Enter&#39; to continue the demo&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="cm">/* visual_tools.prompt(&quot;Press &#39;next&#39; in the RvizVisualToolsGui window to continue the demo&quot;); */</span><span class="w"></span>
+<span class="n">visual_tools</span><span class="p">.</span><span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;next&#39; in the RvizVisualToolsGui window to continue the demo&quot;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1028,10 +1024,9 @@ or set explicit factors in your code if you need your robot to move faster.</p>
 </div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">visual_tools</span><span class="p">.</span><span class="n">deleteAllMarkers</span><span class="p">();</span><span class="w"></span>
 <span class="n">visual_tools</span><span class="p">.</span><span class="n">publishText</span><span class="p">(</span><span class="n">text_pose</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Joint_Space_Goal&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rvt</span><span class="o">::</span><span class="n">WHITE</span><span class="p">,</span><span class="w"> </span><span class="n">rvt</span><span class="o">::</span><span class="n">XLARGE</span><span class="p">);</span><span class="w"></span>
-<span class="cm">/* visual_tools.publishTrajectoryLine(my_plan.trajectory_, joint_model_group); */</span><span class="w"></span>
+<span class="n">visual_tools</span><span class="p">.</span><span class="n">publishTrajectoryLine</span><span class="p">(</span><span class="n">my_plan</span><span class="p">.</span><span class="n">trajectory_</span><span class="p">,</span><span class="w"> </span><span class="n">joint_model_group</span><span class="p">);</span><span class="w"></span>
 <span class="n">visual_tools</span><span class="p">.</span><span class="n">trigger</span><span class="p">();</span><span class="w"></span>
-<span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;Enter&#39; to continue the demo&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="cm">/* visual_tools.prompt(&quot;Press &#39;next&#39; in the RvizVisualToolsGui window to continue the demo&quot;); */</span><span class="w"></span>
+<span class="n">visual_tools</span><span class="p">.</span><span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;next&#39; in the RvizVisualToolsGui window to continue the demo&quot;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1101,10 +1096,9 @@ Lets increase the planning time from the default 5 seconds to be sure the planne
 <span class="n">visual_tools</span><span class="p">.</span><span class="n">publishAxisLabeled</span><span class="p">(</span><span class="n">start_pose2</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;start&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="n">visual_tools</span><span class="p">.</span><span class="n">publishAxisLabeled</span><span class="p">(</span><span class="n">target_pose1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;goal&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="n">visual_tools</span><span class="p">.</span><span class="n">publishText</span><span class="p">(</span><span class="n">text_pose</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Constrained_Goal&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rvt</span><span class="o">::</span><span class="n">WHITE</span><span class="p">,</span><span class="w"> </span><span class="n">rvt</span><span class="o">::</span><span class="n">XLARGE</span><span class="p">);</span><span class="w"></span>
-<span class="cm">/* visual_tools.publishTrajectoryLine(my_plan.trajectory_, joint_model_group); */</span><span class="w"></span>
+<span class="n">visual_tools</span><span class="p">.</span><span class="n">publishTrajectoryLine</span><span class="p">(</span><span class="n">my_plan</span><span class="p">.</span><span class="n">trajectory_</span><span class="p">,</span><span class="w"> </span><span class="n">joint_model_group</span><span class="p">);</span><span class="w"></span>
 <span class="n">visual_tools</span><span class="p">.</span><span class="n">trigger</span><span class="p">();</span><span class="w"></span>
-<span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;Enter&#39; to continue the demo&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="cm">/* visual_tools.prompt(&quot;next step&quot;); */</span><span class="w"></span>
+<span class="n">visual_tools</span><span class="p">.</span><span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;next&#39; in the RvizVisualToolsGui window to continue the demo&quot;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>When done with the path constraint be sure to clear it.</p>
@@ -1154,8 +1148,7 @@ large unpredictable motions of redundant joints and could be a safety issue</p>
 <span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">waypoints</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
 <span class="w">  </span><span class="n">visual_tools</span><span class="p">.</span><span class="n">publishAxisLabeled</span><span class="p">(</span><span class="n">waypoints</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="s">&quot;pt&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">rvt</span><span class="o">::</span><span class="n">SMALL</span><span class="p">);</span><span class="w"></span>
 <span class="n">visual_tools</span><span class="p">.</span><span class="n">trigger</span><span class="p">();</span><span class="w"></span>
-<span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;Enter&#39; to continue the demo&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="cm">/* visual_tools.prompt(&quot;Press &#39;next&#39; in the RvizVisualToolsGui window to continue the demo&quot;); */</span><span class="w"></span>
+<span class="n">visual_tools</span><span class="p">.</span><span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;next&#39; in the RvizVisualToolsGui window to continue the demo&quot;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Cartesian motions should often be slow, e.g. when approaching objects. The speed of cartesian
@@ -1185,10 +1178,9 @@ Pull requests are welcome.</p>
 <span class="n">visual_tools</span><span class="p">.</span><span class="n">deleteAllMarkers</span><span class="p">();</span><span class="w"></span>
 <span class="n">visual_tools</span><span class="p">.</span><span class="n">publishText</span><span class="p">(</span><span class="n">text_pose</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Clear_Goal&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rvt</span><span class="o">::</span><span class="n">WHITE</span><span class="p">,</span><span class="w"> </span><span class="n">rvt</span><span class="o">::</span><span class="n">XLARGE</span><span class="p">);</span><span class="w"></span>
 <span class="n">visual_tools</span><span class="p">.</span><span class="n">publishAxisLabeled</span><span class="p">(</span><span class="n">another_pose</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;goal&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="cm">/* visual_tools.publishTrajectoryLine(my_plan.trajectory_, joint_model_group); */</span><span class="w"></span>
+<span class="n">visual_tools</span><span class="p">.</span><span class="n">publishTrajectoryLine</span><span class="p">(</span><span class="n">my_plan</span><span class="p">.</span><span class="n">trajectory_</span><span class="p">,</span><span class="w"> </span><span class="n">joint_model_group</span><span class="p">);</span><span class="w"></span>
 <span class="n">visual_tools</span><span class="p">.</span><span class="n">trigger</span><span class="p">();</span><span class="w"></span>
-<span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;Enter&#39; to continue the demo&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="cm">/* visual_tools.prompt(&quot;next step&quot;); */</span><span class="w"></span>
+<span class="n">visual_tools</span><span class="p">.</span><span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;next&#39; in the RvizVisualToolsGui window to continue the demo&quot;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>The result may look like this:</p>
@@ -1235,18 +1227,16 @@ Pull requests are welcome.</p>
 <p>Show text in RViz of status and wait for MoveGroup to receive and process the collision object message</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">visual_tools</span><span class="p">.</span><span class="n">publishText</span><span class="p">(</span><span class="n">text_pose</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Add_object&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rvt</span><span class="o">::</span><span class="n">WHITE</span><span class="p">,</span><span class="w"> </span><span class="n">rvt</span><span class="o">::</span><span class="n">XLARGE</span><span class="p">);</span><span class="w"></span>
 <span class="n">visual_tools</span><span class="p">.</span><span class="n">trigger</span><span class="p">();</span><span class="w"></span>
-<span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;Enter&#39; to continue once the collision object appears in RViz&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="cm">/* visual_tools.prompt(&quot;Press &#39;next&#39; in the RvizVisualToolsGui window to once the collision object appears in RViz&quot;); */</span><span class="w"></span>
+<span class="n">visual_tools</span><span class="p">.</span><span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;next&#39; in the RvizVisualToolsGui window to once the collision object appears in RViz&quot;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Now when we plan a trajectory it will avoid the obstacle</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">move_group</span><span class="p">.</span><span class="n">plan</span><span class="p">(</span><span class="n">my_plan</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">moveit</span><span class="o">::</span><span class="n">planning_interface</span><span class="o">::</span><span class="n">MoveItErrorCode</span><span class="o">::</span><span class="n">SUCCESS</span><span class="p">);</span><span class="w"></span>
 <span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Visualizing plan 6 (pose goal move around cuboid) %s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">success</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;FAILED&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="n">visual_tools</span><span class="p">.</span><span class="n">publishText</span><span class="p">(</span><span class="n">text_pose</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Obstacle_Goal&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rvt</span><span class="o">::</span><span class="n">WHITE</span><span class="p">,</span><span class="w"> </span><span class="n">rvt</span><span class="o">::</span><span class="n">XLARGE</span><span class="p">);</span><span class="w"></span>
-<span class="cm">/* visual_tools.publishTrajectoryLine(my_plan.trajectory_, joint_model_group); */</span><span class="w"></span>
+<span class="n">visual_tools</span><span class="p">.</span><span class="n">publishTrajectoryLine</span><span class="p">(</span><span class="n">my_plan</span><span class="p">.</span><span class="n">trajectory_</span><span class="p">,</span><span class="w"> </span><span class="n">joint_model_group</span><span class="p">);</span><span class="w"></span>
 <span class="n">visual_tools</span><span class="p">.</span><span class="n">trigger</span><span class="p">();</span><span class="w"></span>
-<span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;Enter&#39; to continue once the plan is complete&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="cm">/* visual_tools.prompt(&quot;Press &#39;next&#39; in the RvizVisualToolsGui window once the plan is complete&quot;); */</span><span class="w"></span>
+<span class="n">visual_tools</span><span class="p">.</span><span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;next&#39; in the RvizVisualToolsGui window once the plan is complete&quot;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>The result may look like this:</p>
@@ -1294,18 +1284,16 @@ You could also use applyAttachedCollisionObject to attach an object to the robot
 <span class="n">visual_tools</span><span class="p">.</span><span class="n">trigger</span><span class="p">();</span><span class="w"></span>
 
 <span class="cm">/* Wait for MoveGroup to receive and process the attached collision object message */</span><span class="w"></span>
-<span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;Enter&#39; once the collision object attaches to the robot&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="cm">/* visual_tools.prompt(&quot;Press &#39;next&#39; in the RvizVisualToolsGui window once the new object is attached to the robot&quot;); */</span><span class="w"></span>
+<span class="n">visual_tools</span><span class="p">.</span><span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;next&#39; in the RvizVisualToolsGui window once the new object is attached to the robot&quot;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Replan, but now with the object in hand.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">move_group</span><span class="p">.</span><span class="n">setStartStateToCurrentState</span><span class="p">();</span><span class="w"></span>
 <span class="n">success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">move_group</span><span class="p">.</span><span class="n">plan</span><span class="p">(</span><span class="n">my_plan</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">moveit</span><span class="o">::</span><span class="n">planning_interface</span><span class="o">::</span><span class="n">MoveItErrorCode</span><span class="o">::</span><span class="n">SUCCESS</span><span class="p">);</span><span class="w"></span>
 <span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Visualizing plan 7 (move around cuboid with cylinder) %s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">success</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;FAILED&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="cm">/* visual_tools.publishTrajectoryLine(my_plan.trajectory_, joint_model_group); */</span><span class="w"></span>
+<span class="n">visual_tools</span><span class="p">.</span><span class="n">publishTrajectoryLine</span><span class="p">(</span><span class="n">my_plan</span><span class="p">.</span><span class="n">trajectory_</span><span class="p">,</span><span class="w"> </span><span class="n">joint_model_group</span><span class="p">);</span><span class="w"></span>
 <span class="n">visual_tools</span><span class="p">.</span><span class="n">trigger</span><span class="p">();</span><span class="w"></span>
-<span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;Enter&#39; once the plan is complete&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="cm">/* visual_tools.prompt(&quot;Press &#39;next&#39; in the RvizVisualToolsGui window once the plan is complete&quot;); */</span><span class="w"></span>
+<span class="n">visual_tools</span><span class="p">.</span><span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;next&#39; in the RvizVisualToolsGui window once the plan is complete&quot;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>The result may look something like this:</p>
@@ -1324,8 +1312,7 @@ You could also use applyAttachedCollisionObject to attach an object to the robot
 <span class="n">visual_tools</span><span class="p">.</span><span class="n">trigger</span><span class="p">();</span><span class="w"></span>
 
 <span class="cm">/* Wait for MoveGroup to receive and process the attached collision object message */</span><span class="w"></span>
-<span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;Enter&#39; once the collision object detaches from the robot&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="cm">/* visual_tools.prompt(&quot;Press &#39;next&#39; in the RvizVisualToolsGui window once the new object is detached from the robot&quot;); */</span><span class="w"></span>
+<span class="n">visual_tools</span><span class="p">.</span><span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;next&#39; in the RvizVisualToolsGui window once the new object is detached from the robot&quot;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Now, let’s remove the objects from the world.</p>
@@ -1341,8 +1328,7 @@ You could also use applyAttachedCollisionObject to attach an object to the robot
 <span class="n">visual_tools</span><span class="p">.</span><span class="n">trigger</span><span class="p">();</span><span class="w"></span>
 
 <span class="cm">/* Wait for MoveGroup to receive and process the attached collision object message */</span><span class="w"></span>
-<span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;Enter&#39; once the collision object disappears&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="cm">/* visual_tools.prompt(&quot;Press &#39;next&#39; in the RvizVisualToolsGui window to once the collision object disapears&quot;); */</span><span class="w"></span>
+<span class="n">visual_tools</span><span class="p">.</span><span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;next&#39; in the RvizVisualToolsGui window to once the collision object disapears&quot;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
