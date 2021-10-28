@@ -327,7 +327,7 @@
     <li class="wy-breadcrumbs-aside">
       
         
-          <a href="https://github.com/ros-planning/moveit2_tutorials/blob/main/doc/realtime_servo/realtime_servo_tutorial.rst" class="fa fa-github"> Edit on GitHub</a>
+          <a href="https://github.com/ros-planning/moveit2_tutorials/blob/foxy/doc/realtime_servo/realtime_servo_tutorial.rst" class="fa fa-github"> Edit on GitHub</a>
         
       
     </li>
@@ -359,7 +359,7 @@
 <div class="section" id="launching-a-standalone-servo-node">
 <h2>Launching a Standalone Servo Node<a class="headerlink" href="#launching-a-standalone-servo-node" title="Permalink to this headline">¶</a></h2>
 <p>MoveIt Servo provides a component node <code class="code docutils literal notranslate"><span class="pre">moveit_servo::ServoServer</span></code> which allows you to send commands via ROS topics. The commands can come from anywhere, such as a joystick, keyboard, or other controller.</p>
-<p>This demo was written for an Xbox 1 controller, but can be easily modified to use any controller compatible with the <a class="reference external" href="https://index.ros.org/p/joy/#foxy">Joy package</a> by modifying the <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/main/moveit_ros/moveit_servo/src/teleop_demo/joystick_servo_example.cpp">joystick_servo_example.cpp file</a></p>
+<p>This demo was written for an Xbox 1 controller, but can be easily modified to use any controller compatible with the <a class="reference external" href="https://index.ros.org/p/joy/#foxy">Joy package</a> by modifying the <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/foxy/moveit_ros/moveit_servo/src/teleop_demo/joystick_servo_example.cpp">joystick_servo_example.cpp file</a></p>
 <p>To run the demo, make sure your controller is plugged in and can be detected by <code class="code docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">run</span> <span class="pre">joy</span> <span class="pre">joy_node</span></code>. Usually this happens automatically after plugging the controller in. Then launch with</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ros2</span> <span class="n">launch</span> <span class="n">moveit2_tutorials</span> <span class="n">servo_teleop</span><span class="o">.</span><span class="n">launch</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
@@ -398,7 +398,7 @@
 </video></div>
 <div class="section" id="entire-code">
 <h2>Entire Code<a class="headerlink" href="#entire-code" title="Permalink to this headline">¶</a></h2>
-<p>The entire code is available <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/main/doc/realtime_servo/src/servo_cpp_interface_demo.cpp">here</a></p>
+<p>The entire code is available <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/foxy/doc/realtime_servo/src/servo_cpp_interface_demo.cpp">here</a></p>
 <div class="section" id="setup">
 <h3>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h3>
 <p>First we declare pointers to the node and publisher that will publish commands to Servo</p>
@@ -604,7 +604,7 @@ defined, not the robot frame that will follow the command. Again, we need a rece
 </div>
 <div class="section" id="servo-configs">
 <h3>Servo Configs<a class="headerlink" href="#servo-configs" title="Permalink to this headline">¶</a></h3>
-<p>The <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/main/moveit_ros/moveit_servo/config/panda_simulated_config.yaml">demo config file</a> shows the parameters needed for MoveIt Servo and is well documented.</p>
+<p>The <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/foxy/moveit_ros/moveit_servo/config/panda_simulated_config.yaml">demo config file</a> shows the parameters needed for MoveIt Servo and is well documented.</p>
 <dl class="docutils">
 <dt>Start with the parameters from the demo file, but some must be changed for your specific setup:</dt>
 <dd><ol class="first last arabic simple">
@@ -627,7 +627,7 @@ defined, not the robot frame that will follow the command. Again, we need a rece
             
             <div class="admonition note">
               <p class="first admonition-title">Open Source Feedback</p>
-              <p class="last">See something that needs improvement? Please open a pull request on this <a href="https://github.com/ros-planning/moveit2_tutorials/blob/main/doc/realtime_servo/realtime_servo_tutorial.rst" class="fa fa-github"> GitHub page</a></p>
+              <p class="last">See something that needs improvement? Please open a pull request on this <a href="https://github.com/ros-planning/moveit2_tutorials/blob/foxy/doc/realtime_servo/realtime_servo_tutorial.rst" class="fa fa-github"> GitHub page</a></p>
             </div>
             
            </div>
