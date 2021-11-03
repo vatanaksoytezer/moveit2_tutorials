@@ -861,7 +861,7 @@ You could also use applyAttachedCollisionObject to attach an object to the robot
 </div>
 <div class="section" id="a-note-on-setting-tolerances">
 <h2>A Note on Setting Tolerances<a class="headerlink" href="#a-note-on-setting-tolerances" title="Permalink to this headline">¶</a></h2>
-<p>Note that the <a class="reference external" href="http://docs.ros.org/noetic/api/moveit_ros_planning_interface/html/classmoveit_1_1planning__interface_1_1MoveGroupInterface.html">MoveGroupInterface’s</a> <cite>setGoalTolerance()</cite> and related methods sets the tolerance for <strong>planning</strong>, not execution.</p>
+<p>Note that the <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/ed844d4b46f70ed6e97d0c1f971ab2b9a45f156d/moveit_ros/planning_interface/move_group_interface/include/moveit/move_group_interface/move_group_interface.h#L293">MoveGroupInterface’s</a> <cite>setGoalTolerance()</cite> and related methods sets the tolerance for <strong>planning</strong>, not execution.</p>
 <p>If you want to configure the execution tolerances, you will have to edit the <cite>controller.yaml</cite> file if using a FollowJointTrajectory controller, or manually add it into the generated trajectory message from the planner.</p>
 </div>
 </div>
