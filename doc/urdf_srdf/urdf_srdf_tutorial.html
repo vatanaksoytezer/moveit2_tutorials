@@ -350,7 +350,7 @@
 <h1>URDF and SRDF<a class="headerlink" href="#urdf-and-srdf" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="urdf">
 <h2>URDF<a class="headerlink" href="#urdf" title="Permalink to this headline">¶</a></h2>
-<p>MoveIt2 starts with a URDF (Unified Robot Description Format), the native format for describing robots in ROS and ROS2. In this tutorial, you will find resources for the URDF, important tips and also a list of MoveIt2 specific requirements.</p>
+<p>MoveIt 2 starts with a URDF (Unified Robot Description Format), the native format for describing robots in ROS and ROS2. In this tutorial, you will find resources for the URDF, important tips and also a list of MoveIt 2 specific requirements.</p>
 <div class="section" id="urdf-resources">
 <h3>URDF Resources<a class="headerlink" href="#urdf-resources" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
@@ -358,10 +358,11 @@
 <li><a class="reference external" href="http://www.ros.org/wiki/urdf/Tutorials">URDF Tutorials</a> - Tutorials for working with the URDF.</li>
 <li><a class="reference external" href="http://www.ros.org/wiki/sw_urdf_exporter">SOLIDWORKS URDF Plugin</a> - A plugin that lets you generate a URDF directly from a SOLIDWORKS model.</li>
 </ul>
+<p><strong>Note:</strong> Although the documents above are written for ROS, all the documentation is valid given you change the commands from ROS to ROS2 (ie: rosrun -&gt; ros2 run or roslaunch -&gt; ros2 launch)</p>
 </div>
 <div class="section" id="important-tips">
 <h3>Important Tips<a class="headerlink" href="#important-tips" title="Permalink to this headline">¶</a></h3>
-<p>This section contains a set of tips on making sure that the URDF that you generate can be used with MoveIt2. Make sure you go through all these tips before starting to use MoveIt2 with your robot.</p>
+<p>This section contains a set of tips on making sure that the URDF that you generate can be used with MoveIt 2. Make sure you go through all these tips before starting to use MoveIt 2 with your robot.</p>
 <div class="section" id="special-characters-in-joint-names">
 <h4>Special Characters in Joint Names<a class="headerlink" href="#special-characters-in-joint-names" title="Permalink to this headline">¶</a></h4>
 <p>Joint names should not contain any of the following special characters: -,[,],(,),</p>
@@ -373,15 +374,15 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">safety_controller</span> <span class="n">k_position</span><span class="o">=</span><span class="s2">&quot;100&quot;</span> <span class="n">k_velocity</span><span class="o">=</span><span class="s2">&quot;1.5&quot;</span> <span class="n">soft_lower_limit</span><span class="o">=</span><span class="s2">&quot;-2.857&quot;</span> <span class="n">soft_upper_limit</span><span class="o">=</span><span class="s2">&quot;2.857&quot;</span><span class="o">/&gt;</span>
 </pre></div>
 </div>
-<p>The “soft_lower_limit” field and the “soft_upper_limit” field specify the joint position limits for this joint. MoveIt2 will compare these limits to the hard limits for the joint specified in the URDF and choose the limits that are more conservative.</p>
+<p>The “soft_lower_limit” field and the “soft_upper_limit” field specify the joint position limits for this joint. MoveIt 2 will compare these limits to the hard limits for the joint specified in the URDF and choose the limits that are more conservative.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">If the “soft_lower_limit” and the “soft_upper_limit” in the safety_controller are set to 0.0, your joint will be unable to move. MoveIt2 relies on you to specify the correct robot model.</p>
+<p class="last">If the “soft_lower_limit” and the “soft_upper_limit” in the safety_controller are set to 0.0, your joint will be unable to move. MoveIt 2 relies on you to specify the correct robot model.</p>
 </div>
 </div>
 <div class="section" id="collision-checking">
 <h4>Collision Checking<a class="headerlink" href="#collision-checking" title="Permalink to this headline">¶</a></h4>
-<p>MoveIt2 uses the meshes specified in the URDF for collision checking. The URDF allows you to specify two sets of meshes separately for visualization and collision checking. In general, the visualization meshes can be detailed and pretty, but the collision meshes should be much less detailed. The number of triangles in a mesh affects the amount of time it takes to collision check a robot link. The number of triangles in the whole robot should be on the order of a few thousand.</p>
+<p>MoveIt 2 uses the meshes specified in the URDF for collision checking. The URDF allows you to specify two sets of meshes separately for visualization and collision checking. In general, the visualization meshes can be detailed and pretty, but the collision meshes should be much less detailed. The number of triangles in a mesh affects the amount of time it takes to collision check a robot link. The number of triangles in the whole robot should be on the order of a few thousand.</p>
 </div>
 <div class="section" id="test-your-urdf">
 <h4>Test your URDF<a class="headerlink" href="#test-your-urdf" title="Permalink to this headline">¶</a></h4>
@@ -409,7 +410,7 @@
 </div>
 <div class="section" id="groups">
 <h3>Groups<a class="headerlink" href="#groups" title="Permalink to this headline">¶</a></h3>
-<p>A ‘Group’ (sometimes called ‘JointGroup’ or ‘Planning Group’) is a central concept in MoveIt2. MoveIt2 always acts on a particular group. MoveIt2 will only consider moving the joints in the group that it is planning for – other joints are left stationary. (A motion plan where all joints in the robot may move can be achieved by creating a group containing all joints.) A group is simply a collection of joints and links. Each group can be specified in one of several different ways:</p>
+<p>A ‘Group’ (sometimes called ‘JointGroup’ or ‘Planning Group’) is a central concept in MoveIt 2. MoveIt 2 always acts on a particular group. MoveIt 2 will only consider moving the joints in the group that it is planning for – other joints are left stationary. (A motion plan where all joints in the robot may move can be achieved by creating a group containing all joints.) A group is simply a collection of joints and links. Each group can be specified in one of several different ways:</p>
 <div class="section" id="collection-of-joints">
 <h4>Collection of Joints<a class="headerlink" href="#collection-of-joints" title="Permalink to this headline">¶</a></h4>
 <p>A group can be specified as a collection of joints. All the child links of each joint are automatically included in the group.</p>
