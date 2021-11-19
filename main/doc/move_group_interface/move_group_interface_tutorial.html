@@ -9,7 +9,7 @@
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
-    <link rel="canonical" href="https://moveit.picknik.ai/foxy//rolling/doc/move_group_interface/move_group_interface_tutorial.html" />
+    <link rel="canonical" href="https://moveit.picknik.ai/rolling//rolling/doc/move_group_interface/move_group_interface_tutorial.html" />
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -763,9 +763,10 @@
              
 
 <p>
-  <strong>
+  <strong style="color: red;">
     
-    You're reading the documentation for a development version.
+    You're reading the documentation for an untested version of the tutorials that is largely a copy of the tutorials from MoveIt on ROS 1 Noetic.
+    This is here because it contains useful information, albeit incomplete and often misleading.
     For the latest released version, please have a look at <a href="../../../foxy/doc/move_group_interface/move_group_interface_tutorial.html">Foxy</a>.
     
   </strong>
@@ -775,7 +776,7 @@
   <div class="section" id="move-group-c-interface">
 <h1>Move Group C++ Interface<a class="headerlink" href="#move-group-c-interface" title="Permalink to this headline"></a></h1>
 <a class="reference internal image-reference" href="../../_images/move_group_interface_tutorial_start_screen.png"><img alt="../../_images/move_group_interface_tutorial_start_screen.png" src="../../_images/move_group_interface_tutorial_start_screen.png" style="width: 700px;" /></a>
-<p>In MoveIt, the simplest user interface is through the <a class="reference external" href="http://docs.ros.org/foxy/api/moveit_ros_planning_interface/html/classmoveit_1_1planning__interface_1_1MoveGroupInterface.html">MoveGroupInterface</a> class. It provides easy to use functionality for most operations that a user may want to carry out, specifically setting joint or pose goals, creating motion plans, moving the robot, adding objects into the environment and attaching/detaching objects from the robot. This interface communicates over ROS topics, services, and actions to the <a class="reference external" href="http://docs.ros.org/noetic/api/moveit_ros_move_group/html/annotated.html">MoveGroup Node</a>.</p>
+<p>In MoveIt, the simplest user interface is through the <a class="reference external" href="http://docs.ros.org/noetic/api/moveit_ros_planning_interface/html/classmoveit_1_1planning__interface_1_1MoveGroupInterface.html">MoveGroupInterface</a> class. It provides easy to use functionality for most operations that a user may want to carry out, specifically setting joint or pose goals, creating motion plans, moving the robot, adding objects into the environment and attaching/detaching objects from the robot. This interface communicates over ROS topics, services, and actions to the <a class="reference external" href="http://docs.ros.org/noetic/api/moveit_ros_move_group/html/annotated.html">MoveGroup Node</a>.</p>
 <p>Watch this quick <a class="reference external" href="https://youtu.be/_5siHkFQPBQ">YouTube video demo</a> to see the power of the move group interface!</p>
 <div class="section" id="getting-started">
 <h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline"></a></h2>
@@ -813,7 +814,7 @@
 </div>
 <div class="section" id="the-entire-code">
 <h2>The Entire Code<a class="headerlink" href="#the-entire-code" title="Permalink to this headline"></a></h2>
-<p>The entire code can be seen <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/foxy/doc/move_group_interface/src/move_group_interface_tutorial.cpp">here in the MoveIt GitHub project</a>. Next we step through the code piece by piece to explain its functionality.</p>
+<p>The entire code can be seen <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/main/doc/move_group_interface/src/move_group_interface_tutorial.cpp">here in the MoveIt GitHub project</a>. Next we step through the code piece by piece to explain its functionality.</p>
 <div class="section" id="setup">
 <h3>Setup<a class="headerlink" href="#setup" title="Permalink to this headline"></a></h3>
 <p>MoveIt operates on sets of joints called “planning groups” and stores them in an object called
@@ -822,12 +823,12 @@ are used interchangably.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">PLANNING_GROUP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;panda_arm&quot;</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
-<p>The <a class="reference external" href="http://docs.ros.org/foxy/api/moveit_ros_planning_interface/html/classmoveit_1_1planning__interface_1_1MoveGroupInterface.html">MoveGroupInterface</a> class can be easily
+<p>The <a class="reference external" href="http://docs.ros.org/noetic/api/moveit_ros_planning_interface/html/classmoveit_1_1planning__interface_1_1MoveGroupInterface.html">MoveGroupInterface</a> class can be easily
 setup using just the name of the planning group you would like to control and plan for.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">moveit</span><span class="o">::</span><span class="n">planning_interface</span><span class="o">::</span><span class="n">MoveGroupInterface</span><span class="w"> </span><span class="nf">move_group</span><span class="p">(</span><span class="n">move_group_node</span><span class="p">,</span><span class="w"> </span><span class="n">PLANNING_GROUP</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
-<p>We will use the <a class="reference external" href="http://docs.ros.org/foxy/api/moveit_ros_planning_interface/html/classmoveit_1_1planning__interface_1_1PlanningSceneInterface.html">PlanningSceneInterface</a>
+<p>We will use the <a class="reference external" href="http://docs.ros.org/noetic/api/moveit_ros_planning_interface/html/classmoveit_1_1planning__interface_1_1PlanningSceneInterface.html">PlanningSceneInterface</a>
 class to add and remove collision objects in our “virtual world” scene</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">moveit</span><span class="o">::</span><span class="n">planning_interface</span><span class="o">::</span><span class="n">PlanningSceneInterface</span><span class="w"> </span><span class="n">planning_scene_interface</span><span class="p">;</span><span class="w"></span>
 </pre></div>
@@ -1280,7 +1281,7 @@ You could also use applyAttachedCollisionObject to attach an object to the robot
 </div>
 <div class="section" id="the-launch-file">
 <h2>The Launch File<a class="headerlink" href="#the-launch-file" title="Permalink to this headline"></a></h2>
-<p>The entire launch file is <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/foxy/doc/move_group_interface/launch/move_group_interface_tutorial.launch.py">here</a> on GitHub. All the code in this tutorial can be run from the <strong>moveit_tutorials</strong> package that you have as part of your MoveIt setup.</p>
+<p>The entire launch file is <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/main/doc/move_group_interface/launch/move_group_interface_tutorial.launch.py">here</a> on GitHub. All the code in this tutorial can be run from the <strong>moveit_tutorials</strong> package that you have as part of your MoveIt setup.</p>
 </div>
 <div class="section" id="a-note-on-setting-tolerances">
 <h2>A Note on Setting Tolerances<a class="headerlink" href="#a-note-on-setting-tolerances" title="Permalink to this headline"></a></h2>
