@@ -844,8 +844,11 @@
 <span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="n">rclcpp</span><span class="o">::</span><span class="n">init</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p">);</span><span class="w"></span>
 <span class="w">  </span><span class="n">rclcpp</span><span class="o">::</span><span class="n">NodeOptions</span><span class="w"> </span><span class="n">node_options</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="n">node_options</span><span class="p">.</span><span class="n">use_intra_process_comms</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">node_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">rclcpp</span><span class="o">::</span><span class="n">Node</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;servo_demo_node&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">node_options</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>This is false for now until we fix the QoS settings in moveit to enable intra process comms</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">node_options</span><span class="p">.</span><span class="n">use_intra_process_comms</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span><span class="w"></span>
+<span class="n">node_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">rclcpp</span><span class="o">::</span><span class="n">Node</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;servo_demo_node&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">node_options</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Pause for RViz to come up. This is necessary in an integrated demo with a single launch file</p>
@@ -867,6 +870,7 @@ before initializing any collision objects</p>
 <span class="w">  </span><span class="n">planning_scene_monitor</span><span class="o">-&gt;</span><span class="n">startPublishingPlanningScene</span><span class="p">(</span><span class="n">planning_scene_monitor</span><span class="o">::</span><span class="n">PlanningSceneMonitor</span><span class="o">::</span><span class="n">UPDATE_SCENE</span><span class="p">,</span><span class="w"></span>
 <span class="w">                                                       </span><span class="s">&quot;/moveit_servo/publish_planning_scene&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="w">  </span><span class="n">planning_scene_monitor</span><span class="o">-&gt;</span><span class="n">startSceneMonitor</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="n">planning_scene_monitor</span><span class="o">-&gt;</span><span class="n">providePlanningSceneService</span><span class="p">();</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 <span class="k">else</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
