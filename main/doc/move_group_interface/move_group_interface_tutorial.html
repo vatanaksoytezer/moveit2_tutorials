@@ -784,7 +784,7 @@
 </div>
 <div class="section" id="running-the-code">
 <h2>Running the Code<a class="headerlink" href="#running-the-code" title="Permalink to this headline"></a></h2>
-<p>Open two shells. In the first shell start RViz and wait for everything to finish loading:</p>
+<p>Open two shells. In the first shell, start RViz and wait for everything to finish loading:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ros2</span> <span class="n">launch</span> <span class="n">moveit2_tutorials</span> <span class="n">move_group</span><span class="o">.</span><span class="n">launch</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </div>
@@ -802,10 +802,12 @@
 <li><p>The robot moves its arm to the joint goal at its side.</p></li>
 <li><p>The robot moves its arm back to a new pose goal while maintaining the end-effector level.</p></li>
 <li><p>The robot moves its arm along the desired Cartesian path (a triangle down, right, up+left).</p></li>
+<li><p>The robot moves its arm to a simple goal with no objects in the way.</p></li>
 <li><p>A box object is added into the environment to the right of the arm.
 <img alt="B" src="../../_images/move_group_interface_tutorial_robot_with_box.png" /></p></li>
 <li><p>The robot moves its arm to the pose goal, avoiding collision with the box.</p></li>
 <li><p>The object is attached to the wrist (its color will change to purple/orange/green).</p></li>
+<li><p>The robot moves its arm with the attached object to the pose goal, avoiding collision with the box.</p></li>
 <li><p>The object is detached from the wrist (its color will change back to green).</p></li>
 <li><p>The object is removed from the environment.</p></li>
 </ol>
@@ -814,7 +816,7 @@
 </div>
 <div class="section" id="the-entire-code">
 <h2>The Entire Code<a class="headerlink" href="#the-entire-code" title="Permalink to this headline"></a></h2>
-<p>The entire code can be seen <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/main/doc/move_group_interface/src/move_group_interface_tutorial.cpp">here in the MoveIt GitHub project</a>. Next we step through the code piece by piece to explain its functionality.</p>
+<p>The entire code can be seen <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/main/doc/move_group_interface/src/move_group_interface_tutorial.cpp">here in the MoveIt GitHub project</a>. Next, we step through the code piece by piece to explain its functionality.</p>
 <div class="section" id="setup">
 <h3>Setup<a class="headerlink" href="#setup" title="Permalink to this headline"></a></h3>
 <p>MoveIt operates on sets of joints called “planning groups” and stores them in an object called
