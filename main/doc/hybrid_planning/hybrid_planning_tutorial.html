@@ -811,8 +811,8 @@ The main advantages of using the architecture are:</p>
 </pre></div>
 </div>
 <p>You should see a similar behavior as in the example GIF above without the replanning.</p>
-<p>To interact with the architecture you simply need to send a <em>Hybrid Planning Request</em> to an action server offered by the <em>Hybrid Planning Manager</em> as seen in the <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/main/doc/hybrid_planning/src/hybrid_planning_test_node.cpp#L176">hybrid_planning_test_node</a>.</p>
-<p>Let’s change this behavior such that the architecture replans the invalidated trajectory. To do so, just change the <em>planner_logic_plugin</em> by replacing the plugin name in the <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/main/doc/hybrid_planning/config/hybrid_planning_manager.yaml">demo configuration</a> with “moveit_hybrid_planning/ReplanInvalidatedTrajectory” and rebuild the package :</p>
+<p>To interact with the architecture you simply need to send a <em>Hybrid Planning Request</em> to an action server offered by the <em>Hybrid Planning Manager</em> as seen in the <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/main/moveit_ros/hybrid_planning/test/hybrid_planning_demo_node.cpp#L245">hybrid_planning_test_node</a>.</p>
+<p>Let’s change this behavior such that the architecture replans the invalidated trajectory. To do so, just change the <em>planner_logic_plugin</em> by replacing the plugin name in the <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/main/moveit_ros/hybrid_planning/test/config/hybrid_planning_manager.yaml">demo configuration</a> with “moveit_hybrid_planning/ReplanInvalidatedTrajectory” and rebuild the package :</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">colcon</span> <span class="n">build</span> <span class="o">--</span><span class="n">packages</span><span class="o">-</span><span class="n">select</span> <span class="n">moveit2_tutorials</span>
 </pre></div>
 </div>
