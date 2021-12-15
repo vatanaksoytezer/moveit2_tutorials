@@ -46,7 +46,7 @@
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/getting_started.html">Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../getting_started/getting_started.html#install-ros-2-and-colcon">Install ROS 2 and Colcon</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../getting_started/getting_started.html#create-a-colcon-workspace-and-download-moveit-2-source">Create A Colcon Workspace and Download MoveIt 2 Source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/getting_started.html#create-a-colcon-workspace-and-download-tutorials">Create A Colcon Workspace and Download Tutorials</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../getting_started/getting_started.html#download-moveit-2-tutorials-source">Download MoveIt 2 Tutorials Source</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../getting_started/getting_started.html#build-your-colcon-workspace">Build your Colcon Workspace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../getting_started/getting_started.html#next-step">Next Step</a></li>
@@ -796,7 +796,7 @@
 <div class="section" id="launching-a-servo-node">
 <h2>Launching a Servo Node<a class="headerlink" href="#launching-a-servo-node" title="Permalink to this headline"></a></h2>
 <p>MoveIt Servo can be launched as a “node component” or a standalone node. The launch file, moveit_servo/servo_example.launch.py, launches a standalone node by default but also contains a commented component node. Commands are sent via ROS topics. The commands can come from anywhere, such as a joystick, keyboard, or other controller.</p>
-<p>This demo was written for an Xbox 1 controller, but can be easily modified to use any joystick or game controller compatible with the <a class="reference external" href="https://index.ros.org/p/joy/#foxy">Joy package</a> by modifying the <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/main/moveit_ros/moveit_servo/src/teleop_demo/joystick_servo_example.cpp">joystick_servo_example.cpp file</a></p>
+<p>This demo was written for an Xbox 1 controller, but can be easily modified to use any controller compatible with the <a class="reference external" href="https://index.ros.org/p/joy/#foxy">Joy package</a> by modifying the <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/main/moveit_ros/moveit_servo/src/teleop_demo/joystick_servo_example.cpp">joystick_servo_example.cpp file</a></p>
 <p>To run the demo, make sure your controller is plugged in and can be detected by <code class="code docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">run</span> <span class="pre">joy</span> <span class="pre">joy_node</span></code>. Usually this happens automatically after plugging the controller in. Then launch with</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ros2</span> <span class="n">launch</span> <span class="n">moveit_servo</span> <span class="n">servo_example</span><span class="o">.</span><span class="n">launch</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
