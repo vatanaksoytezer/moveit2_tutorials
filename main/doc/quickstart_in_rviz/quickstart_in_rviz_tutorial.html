@@ -867,15 +867,25 @@ Click on topic name to expose topic-name drop-down.</p></li>
 <p>You should now be able to use these markers to drag the arm around and change its orientation. Try it!</p>
 <div class="section" id="moving-into-collision">
 <h3>Moving into collision<a class="headerlink" href="#moving-into-collision" title="Permalink to this headline"></a></h3>
-<p>Note what happens when you try to move one of the arms into collision with the other. The two links that are in collision will turn red.</p>
+<p>For this section, hide the planned path and the goal state:</p>
+<ol class="arabic simple">
+<li><p>Un-check the <strong>Show Robot Visual</strong> checkbox in the <strong>Planned Path</strong> tree menu</p></li>
+<li><p>Un-check the <strong>Query Goal State</strong> checkbox in the <strong>Planning Request</strong> tree menu.</p></li>
+</ol>
+<p>Now, only the Start State (the green colored arm) should be visible.  Try to move the arm into a configuration where two of its links are in collision with each other.  (If you find this difficult, make sure the “Use Collision-Aware IK” checkbox under the Planning tab of the MotionPlanning plugin is un-checked.)  Once you do this, the links that are in collision will turn red.</p>
 <a class="reference internal image-reference" href="../../_images/rviz_plugin_collision.png"><img alt="../../_images/rviz_plugin_collision.png" src="../../_images/rviz_plugin_collision.png" style="width: 700px;" /></a>
-<p>The “Use Collision-Aware IK” checkbox found within the MotionPlanning plugin under the Planning tab allows you to toggle the behavior of the IK solver. When the checkbox is ticked, the solver will keep attempting to find a collision-free solution for the desired end-effector pose. When it is not checked, the solver will allow collisions to happen in the solution. The links in collision will always still be visualized in red, regardless of the state of the checkbox.</p>
+<p>Now, check the “Use Collision-Aware IK” checkbox, and try again to move two of the links into collision with each other.  When the checkbox is ticked, the IK solver will keep attempting to find a collision-free solution for the desired end-effector pose. When it is not checked, the solver will allow collisions to happen in the solution. The links in collision will always still be visualized in red, regardless of the state of the checkbox.</p>
 <a class="reference internal image-reference" href="../../_images/rviz_plugin_collision_aware_ik_checkbox.png"><img alt="../../_images/rviz_plugin_collision_aware_ik_checkbox.png" src="../../_images/rviz_plugin_collision_aware_ik_checkbox.png" style="width: 700px;" /></a>
 </div>
 <div class="section" id="moving-out-of-reachable-workspace">
 <h3>Moving out of Reachable Workspace<a class="headerlink" href="#moving-out-of-reachable-workspace" title="Permalink to this headline"></a></h3>
 <p>Note what happens when you try to move an end-effector out of its reachable workspace.</p>
 <a class="reference internal image-reference" href="../../_images/rviz_plugin_invalid.png"><img alt="../../_images/rviz_plugin_invalid.png" src="../../_images/rviz_plugin_invalid.png" style="width: 700px;" /></a>
+<p>Before moving onto the next section, re-enable the planned path and the goal state:</p>
+<ol class="arabic simple">
+<li><p>Check the <strong>Show Robot Visual</strong> checkbox in the <strong>Planned Path</strong> tree menu</p></li>
+<li><p>Check the <strong>Query Goal State</strong> checkbox in the <strong>Planning Request</strong> tree menu.</p></li>
+</ol>
 </div>
 <div class="section" id="moving-joints-or-in-null-space">
 <h3>Moving Joints or in Null Space<a class="headerlink" href="#moving-joints-or-in-null-space" title="Permalink to this headline"></a></h3>
@@ -894,7 +904,7 @@ Click on topic name to expose topic-name drop-down.</p></li>
 <li><p>Move the Goal State to another desired location.</p></li>
 <li><p>Make sure both states are not in collision with the robot itself.</p></li>
 <li><p>Make sure the Planned Path is being visualized. Also check the
-<strong>Show Trail</strong> checkbox in the <strong>Planned Path</strong> tab.</p></li>
+<strong>Show Trail</strong> checkbox in the <strong>Planned Path</strong> tree menu.</p></li>
 </ul>
 </li>
 <li><p>In the <strong>MotionPlanning</strong> window under the <strong>Planning</strong> tab, press the <strong>Plan</strong> button. You
