@@ -9,7 +9,7 @@
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
-    <link rel="canonical" href="https://moveit.picknik.ai/rolling//rolling/doc/motion_planning_pipeline/motion_planning_pipeline_tutorial.html" />
+    <link rel="canonical" href="https://moveit.picknik.ai/foxy//rolling/doc/motion_planning_pipeline/motion_planning_pipeline_tutorial.html" />
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -773,10 +773,9 @@
              
 
 <p>
-  <strong style="color: red;">
+  <strong>
     
-    You're reading the documentation for an untested version of the tutorials that is largely a copy of the tutorials from MoveIt on ROS 1 Noetic.
-    This is here because it contains useful information, albeit incomplete and often misleading.
+    You're reading the documentation for a development version.
     For the latest released version, please have a look at <a href="../../../foxy/index.html">Foxy</a>.
     
   </strong>
@@ -822,13 +821,13 @@ run you through the C++ code to instantiate and call such a planning pipeline.</
 </div>
 <div class="section" id="the-entire-code">
 <h2>The Entire Code<a class="headerlink" href="#the-entire-code" title="Permalink to this headline"></a></h2>
-<p>The entire code can be seen <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/main/doc/motion_planning_pipeline">here in the MoveIt GitHub project</a>.</p>
+<p>The entire code can be seen <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/foxy/doc/motion_planning_pipeline">here in the MoveIt GitHub project</a>.</p>
 <div class="section" id="start">
 <h3>Start<a class="headerlink" href="#start" title="Permalink to this headline"></a></h3>
 <p>Setting up to start using a planning pipeline is pretty easy. Before we can load the planner, we need two objects,
 a RobotModel and a PlanningScene.</p>
 <p>We will start by instantiating a <a class="reference external" href="http://docs.ros.org/noetic/api/moveit_ros_planning/html/classrobot__model__loader_1_1RobotModelLoader.html">RobotModelLoader</a> object, which will look up the robot description on the ROS
-parameter server and construct a <a class="reference external" href="http://docs.ros.org/noetic/api/moveit_core/html/cpp/classmoveit_1_1core_1_1RobotModel.html">RobotModel</a> for us to use.</p>
+parameter server and construct a <a class="reference external" href="http://docs.ros.org/foxy/api/moveit_core/html/cpp/classmoveit_1_1core_1_1RobotModel.html">RobotModel</a> for us to use.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">robot_model_loader</span><span class="o">::</span><span class="n">RobotModelLoaderPtr</span><span class="w"> </span><span class="nf">robot_model_loader</span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="k">new</span><span class="w"> </span><span class="n">robot_model_loader</span><span class="o">::</span><span class="n">RobotModelLoader</span><span class="p">(</span><span class="s">&quot;robot_description&quot;</span><span class="p">));</span><span class="w"></span>
 </pre></div>
@@ -1069,7 +1068,7 @@ representation while planning</p>
 </div>
 <div class="section" id="the-launch-file">
 <h2>The Launch File<a class="headerlink" href="#the-launch-file" title="Permalink to this headline"></a></h2>
-<p>The entire launch file is <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/main/doc/motion_planning_pipeline/launch/motion_planning_pipeline_tutorial.launch">here</a> on GitHub. All the code in this tutorial can be compiled and run from the moveit_tutorials package that you have as part of your MoveIt setup.</p>
+<p>The entire launch file is <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/foxy/doc/motion_planning_pipeline/launch/motion_planning_pipeline_tutorial.launch">here</a> on GitHub. All the code in this tutorial can be compiled and run from the moveit_tutorials package that you have as part of your MoveIt setup.</p>
 </div>
 </div>
 
