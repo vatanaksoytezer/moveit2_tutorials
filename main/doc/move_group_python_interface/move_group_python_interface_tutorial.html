@@ -9,7 +9,7 @@
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
-    <link rel="canonical" href="https://moveit.picknik.ai/foxy//rolling/doc/move_group_python_interface/move_group_python_interface_tutorial.html" />
+    <link rel="canonical" href="https://moveit.picknik.ai/rolling//rolling/doc/move_group_python_interface/move_group_python_interface_tutorial.html" />
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -479,6 +479,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../urdf_srdf/urdf_srdf_tutorial.html#srdf-documentation">SRDF Documentation</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../urdf_srdf/urdf_srdf_tutorial.html#loading-the-urdf-and-srdf">Loading the URDF and SRDF</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../urdf_srdf/urdf_srdf_tutorial.html#launch-file-specification">Launch File Specification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../urdf_srdf/urdf_srdf_tutorial.html#string-topic-specification">String Topic Specification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../urdf_srdf/urdf_srdf_tutorial.html#under-the-hood-rdfloader">Under the Hood: RDFLoader</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../controller_configuration/controller_configuration_tutorial.html">Low Level Controllers</a><ul>
@@ -773,9 +779,10 @@
              
 
 <p>
-  <strong>
+  <strong style="color: red;">
     
-    You're reading the documentation for a development version.
+    You're reading the documentation for an untested version of the tutorials that is largely a copy of the tutorials from MoveIt on ROS 1 Noetic.
+    This is here because it contains useful information, albeit incomplete and often misleading.
     For the latest released version, please have a look at <a href="../../../foxy/index.html">Foxy</a>.
     
   </strong>
@@ -828,7 +835,7 @@ Note in some instances you may need to make the python script executable:</p>
 </div>
 <div class="section" id="the-entire-code">
 <h2>The Entire Code<a class="headerlink" href="#the-entire-code" title="Permalink to this headline"></a></h2>
-<p>Note: the entire code can be seen <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/foxy/doc/move_group_python_interface/scripts/move_group_python_interface_tutorial.py">here in the tutorials GitHub repository</a>.</p>
+<p>Note: the entire code can be seen <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/main/doc/move_group_python_interface/scripts/move_group_python_interface_tutorial.py">here in the tutorials GitHub repository</a>.</p>
 <p>To use the Python MoveIt interfaces, we will import the <a class="reference external" href="http://docs.ros.org/noetic/api/moveit_commander/html/namespacemoveit__commander.html">moveit_commander</a> namespace.
 This namespace provides us with a <a class="reference external" href="http://docs.ros.org/noetic/api/moveit_commander/html/classmoveit__commander_1_1move__group_1_1MoveGroupCommander.html">MoveGroupCommander</a> class, a <a class="reference external" href="http://docs.ros.org/noetic/api/moveit_commander/html/classmoveit__commander_1_1planning__scene__interface_1_1PlanningSceneInterface.html">PlanningSceneInterface</a> class,
 and a <a class="reference external" href="http://docs.ros.org/noetic/api/moveit_commander/html/classmoveit__commander_1_1robot_1_1RobotCommander.html">RobotCommander</a> class. More on these below. We also import <a class="reference external" href="http://docs.ros.org/noetic/api/rospy/html/">rospy</a> and some messages that we will use:</p>
@@ -1083,7 +1090,7 @@ you should change this value to the name of your end effector group name.</p>
 </div>
 <div class="section" id="the-launch-file">
 <h2>The Launch File<a class="headerlink" href="#the-launch-file" title="Permalink to this headline"></a></h2>
-<p>The entire launch file is <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/foxy/doc/move_group_python_interface/launch/move_group_python_interface_tutorial.launch">here</a>
+<p>The entire launch file is <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/main/doc/move_group_python_interface/launch/move_group_python_interface_tutorial.launch">here</a>
 on GitHub. All the code in this tutorial can be run from the
 <code class="docutils literal notranslate"><span class="pre">moveit_tutorials</span></code> package that you have as part of your MoveIt setup.</p>
 </div>

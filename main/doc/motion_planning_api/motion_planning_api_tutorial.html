@@ -9,7 +9,7 @@
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
-    <link rel="canonical" href="https://moveit.picknik.ai/foxy//rolling/doc/motion_planning_api/motion_planning_api_tutorial.html" />
+    <link rel="canonical" href="https://moveit.picknik.ai/rolling//rolling/doc/motion_planning_api/motion_planning_api_tutorial.html" />
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -479,6 +479,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../urdf_srdf/urdf_srdf_tutorial.html#srdf-documentation">SRDF Documentation</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../urdf_srdf/urdf_srdf_tutorial.html#loading-the-urdf-and-srdf">Loading the URDF and SRDF</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../urdf_srdf/urdf_srdf_tutorial.html#launch-file-specification">Launch File Specification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../urdf_srdf/urdf_srdf_tutorial.html#string-topic-specification">String Topic Specification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../urdf_srdf/urdf_srdf_tutorial.html#under-the-hood-rdfloader">Under the Hood: RDFLoader</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../controller_configuration/controller_configuration_tutorial.html">Low Level Controllers</a><ul>
@@ -773,9 +779,10 @@
              
 
 <p>
-  <strong>
+  <strong style="color: red;">
     
-    You're reading the documentation for a development version.
+    You're reading the documentation for an untested version of the tutorials that is largely a copy of the tutorials from MoveIt on ROS 1 Noetic.
+    This is here because it contains useful information, albeit incomplete and often misleading.
     For the latest released version, please have a look at <a href="../../../foxy/index.html">Foxy</a>.
     
   </strong>
@@ -825,7 +832,7 @@ run through the C++ code required to do this.</p>
 </div>
 <div class="section" id="the-entire-code">
 <h2>The Entire Code<a class="headerlink" href="#the-entire-code" title="Permalink to this headline"></a></h2>
-<p>The entire code can be seen <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/foxy/doc/motion_planning_api">here in the moveit_tutorials GitHub project</a>.</p>
+<p>The entire code can be seen <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/main/doc/motion_planning_api">here in the moveit_tutorials GitHub project</a>.</p>
 <div class="section" id="start">
 <h3>Start<a class="headerlink" href="#start" title="Permalink to this headline"></a></h3>
 <p>Setting up to start using a planner is pretty easy. Planners are
@@ -834,7 +841,7 @@ interface to load any planner that you want to use. Before we
 can load the planner, we need two objects, a RobotModel and a
 PlanningScene. We will start by instantiating a <a class="reference external" href="http://docs.ros.org/noetic/api/moveit_ros_planning/html/classrobot__model__loader_1_1RobotModelLoader.html">RobotModelLoader</a>
 object, which will look up the robot description on the ROS
-parameter server and construct a <a class="reference external" href="http://docs.ros.org/foxy/api/moveit_core/html/cpp/classmoveit_1_1core_1_1RobotModel.html">RobotModel</a> for us
+parameter server and construct a <a class="reference external" href="http://docs.ros.org/noetic/api/moveit_core/html/cpp/classmoveit_1_1core_1_1RobotModel.html">RobotModel</a> for us
 to use.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">PLANNING_GROUP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;panda_arm&quot;</span><span class="p">;</span><span class="w"></span>
 <span class="n">robot_model_loader</span><span class="o">::</span><span class="n">RobotModelLoader</span><span class="w"> </span><span class="nf">robot_model_loader</span><span class="p">(</span><span class="s">&quot;robot_description&quot;</span><span class="p">);</span><span class="w"></span>
@@ -844,7 +851,7 @@ to use.</p>
 <span class="k">const</span><span class="w"> </span><span class="n">moveit</span><span class="o">::</span><span class="n">core</span><span class="o">::</span><span class="n">JointModelGroup</span><span class="o">*</span><span class="w"> </span><span class="n">joint_model_group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">robot_state</span><span class="o">-&gt;</span><span class="n">getJointModelGroup</span><span class="p">(</span><span class="n">PLANNING_GROUP</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
-<p>Using the <a class="reference external" href="http://docs.ros.org/foxy/api/moveit_core/html/cpp/classmoveit_1_1core_1_1RobotModel.html">RobotModel</a>, we can construct a <a class="reference external" href="http://docs.ros.org/foxy/api/moveit_core/html/cpp/classplanning__scene_1_1PlanningScene.html">PlanningScene</a>
+<p>Using the <a class="reference external" href="http://docs.ros.org/noetic/api/moveit_core/html/cpp/classmoveit_1_1core_1_1RobotModel.html">RobotModel</a>, we can construct a <a class="reference external" href="http://docs.ros.org/noetic/api/moveit_core/html/cpp/classplanning__scene_1_1PlanningScene.html">PlanningScene</a>
 that maintains the state of the world (including the robot).</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">planning_scene</span><span class="o">::</span><span class="n">PlanningScenePtr</span><span class="w"> </span><span class="nf">planning_scene</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">planning_scene</span><span class="o">::</span><span class="n">PlanningScene</span><span class="p">(</span><span class="n">robot_model</span><span class="p">));</span><span class="w"></span>
 </pre></div>
@@ -1135,7 +1142,7 @@ when planning for the arm; the bounds are only used to determine if the sampled 
 </div>
 <div class="section" id="the-launch-file">
 <h2>The Launch File<a class="headerlink" href="#the-launch-file" title="Permalink to this headline"></a></h2>
-<p>The entire launch file is <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/foxy/doc/motion_planning_api/launch/motion_planning_api_tutorial.launch">here</a> on GitHub. All the code in this tutorial can be compiled and run from the moveit_tutorials package.</p>
+<p>The entire launch file is <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/main/doc/motion_planning_api/launch/motion_planning_api_tutorial.launch">here</a> on GitHub. All the code in this tutorial can be compiled and run from the moveit_tutorials package.</p>
 </div>
 </div>
 

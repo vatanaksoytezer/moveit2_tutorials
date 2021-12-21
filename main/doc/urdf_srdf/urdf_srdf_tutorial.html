@@ -9,7 +9,7 @@
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
-    <link rel="canonical" href="https://moveit.picknik.ai/foxy//rolling/doc/urdf_srdf/urdf_srdf_tutorial.html" />
+    <link rel="canonical" href="https://moveit.picknik.ai/rolling//rolling/doc/urdf_srdf/urdf_srdf_tutorial.html" />
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -479,6 +479,12 @@
 <li class="toctree-l3"><a class="reference internal" href="#srdf-documentation">SRDF Documentation</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#loading-the-urdf-and-srdf">Loading the URDF and SRDF</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#launch-file-specification">Launch File Specification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#string-topic-specification">String Topic Specification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#under-the-hood-rdfloader">Under the Hood: RDFLoader</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../controller_configuration/controller_configuration_tutorial.html">Low Level Controllers</a><ul>
@@ -773,9 +779,10 @@
              
 
 <p>
-  <strong>
+  <strong style="color: red;">
     
-    You're reading the documentation for a development version.
+    You're reading the documentation for an untested version of the tutorials that is largely a copy of the tutorials from MoveIt on ROS 1 Noetic.
+    This is here because it contains useful information, albeit incomplete and often misleading.
     For the latest released version, please have a look at <a href="../../../foxy/doc/urdf_srdf/urdf_srdf_tutorial.html">Foxy</a>.
     
   </strong>
@@ -791,7 +798,7 @@
 <h3>URDF Resources<a class="headerlink" href="#urdf-resources" title="Permalink to this headline"></a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="http://www.ros.org/wiki/urdf">URDF ROS Wiki Page</a> - The URDF ROS Wiki page is the source of most information about the URDF.</p></li>
-<li><p><a class="reference external" href="http://www.ros.org/wiki/urdf/Tutorials">URDF Tutorials</a> - Tutorials for working with the URDF.</p></li>
+<li><p><a class="reference external" href="https://docs.ros.org/en/rolling/Tutorials/URDF/URDF-Main.html">URDF Tutorials</a> - Tutorials for working with the URDF.</p></li>
 <li><p><a class="reference external" href="http://www.ros.org/wiki/sw_urdf_exporter">SOLIDWORKS URDF Plugin</a> - A plugin that lets you generate a URDF directly from a SOLIDWORKS model.</p></li>
 </ul>
 <p><strong>Note:</strong> Although the documents above are written for ROS, all the documentation is valid given you change the commands from ROS to ROS2 (ie: rosrun -&gt; ros2 run or roslaunch -&gt; ros2 launch)</p>
@@ -879,6 +886,82 @@
 <div class="section" id="srdf-documentation">
 <h3>SRDF Documentation<a class="headerlink" href="#srdf-documentation" title="Permalink to this headline"></a></h3>
 <p>For information about the syntax for the SRDF, read more details on the <a class="reference external" href="http://www.ros.org/wiki/srdf">ROS SRDF Wiki page</a>.</p>
+</div>
+</div>
+<div class="section" id="loading-the-urdf-and-srdf">
+<h2>Loading the URDF and SRDF<a class="headerlink" href="#loading-the-urdf-and-srdf" title="Permalink to this headline"></a></h2>
+<p>All the components of MoveIt that use the <a class="reference external" href="http://docs.ros.org/noetic/api/moveit_core/html/cpp/classmoveit_1_1core_1_1RobotModel.html">RobotModel</a> need to have access to the URDF and SRDF to function properly. In ROS 1, this was accomplished by loading the XML of each into a string parameter (<code class="docutils literal notranslate"><span class="pre">/robot_description</span></code> and <code class="docutils literal notranslate"><span class="pre">/robot_description_semantic</span></code> respectively) into the global parameter server. ROS 2 does not have a global parameter server, so making sure all the appropriate nodes have access requires a little more work.</p>
+<div class="section" id="launch-file-specification">
+<h3>Launch File Specification<a class="headerlink" href="#launch-file-specification" title="Permalink to this headline"></a></h3>
+<p>One option is to set the parameters for each node that requires them, which is typically done using a launch file.</p>
+<p>Loading the URDF often uses xacro, and so loading it looks like</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">launch_ros.parameter_descriptions</span> <span class="kn">import</span> <span class="n">ParameterValue</span>
+<span class="kn">from</span> <span class="nn">launch.substitutions</span> <span class="kn">import</span> <span class="n">Command</span>
+
+<span class="n">robot_description</span> <span class="o">=</span> <span class="n">ParameterValue</span><span class="p">(</span><span class="n">Command</span><span class="p">([</span><span class="s1">&#39;xacro &#39;</span><span class="p">,</span> <span class="n">PATH_TO_URDF</span><span class="p">]),</span>
+                                   <span class="n">value_type</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Meanwhile, the SRDF must be read in explicitly.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">PATH_TO_SRDF</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">semantic_content</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Then the values must be loaded into EACH node.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">move_group_node</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">package</span><span class="o">=</span><span class="s1">&#39;moveit_ros_move_group&#39;</span><span class="p">,</span> <span class="n">executable</span><span class="o">=</span><span class="s1">&#39;move_group&#39;</span><span class="p">,</span>
+                       <span class="n">output</span><span class="o">=</span><span class="s1">&#39;screen&#39;</span><span class="p">,</span>
+                       <span class="n">parameters</span><span class="o">=</span><span class="p">[{</span>
+                            <span class="s1">&#39;robot_description&#39;</span><span class="p">:</span> <span class="n">robot_description</span><span class="p">,</span>
+                            <span class="s1">&#39;robot_description_semantic&#39;</span><span class="p">:</span> <span class="n">semantic_content</span><span class="p">,</span>
+                            <span class="c1"># More params</span>
+                       <span class="p">}],</span>
+                       <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="string-topic-specification">
+<h3>String Topic Specification<a class="headerlink" href="#string-topic-specification" title="Permalink to this headline"></a></h3>
+<p>The other approach is to use publish the two strings as topics. This pattern is already done with the <a class="reference external" href="https://github.com/ros/robot_state_publisher/blob/37aff2034b58794b78f1682c8fab4d609f5d2e29/src/robot_state_publisher.cpp#L136">Robot State Publisher</a> which publishes a <code class="docutils literal notranslate"><span class="pre">std_msgs/msg/String</span></code> message on the <code class="docutils literal notranslate"><span class="pre">/robot_description</span></code> topic. This can be done in the launch file:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rsp_node</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">package</span><span class="o">=</span><span class="s1">&#39;robot_state_publisher&#39;</span><span class="p">,</span>
+                <span class="n">executable</span><span class="o">=</span><span class="s1">&#39;robot_state_publisher&#39;</span><span class="p">,</span>
+                <span class="n">respawn</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="n">output</span><span class="o">=</span><span class="s1">&#39;screen&#39;</span><span class="p">,</span>
+                <span class="n">parameters</span><span class="o">=</span><span class="p">[{</span>
+                    <span class="s1">&#39;robot_description&#39;</span><span class="p">:</span> <span class="n">robot_description</span><span class="p">,</span>
+                    <span class="s1">&#39;publish_frequency&#39;</span><span class="p">:</span> <span class="mf">15.0</span>
+                <span class="p">}]</span>
+                <span class="p">)</span>
+</pre></div>
+</div>
+<p>You can also tell MoveIt nodes to publish the topic as well.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">move_group_node</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">package</span><span class="o">=</span><span class="s1">&#39;moveit_ros_move_group&#39;</span><span class="p">,</span> <span class="n">executable</span><span class="o">=</span><span class="s1">&#39;move_group&#39;</span><span class="p">,</span>
+                       <span class="n">output</span><span class="o">=</span><span class="s1">&#39;screen&#39;</span><span class="p">,</span>
+                       <span class="n">parameters</span><span class="o">=</span><span class="p">[{</span>
+                            <span class="s1">&#39;robot_description&#39;</span><span class="p">:</span> <span class="n">robot_description</span><span class="p">,</span>
+                            <span class="s1">&#39;publish_robot_description&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                            <span class="c1"># More params</span>
+                       <span class="p">}],</span>
+                       <span class="p">)</span>
+</pre></div>
+</div>
+<p>Publishing the robot description as a topic only needs to be done once, not in each node that requires the description.</p>
+<p>Similarly, we can also publish the SRDF as a <code class="docutils literal notranslate"><span class="pre">std_msgs/msg/String</span></code> message. This requires that one node have the parameter set in the launch file, with the additional parameter <code class="docutils literal notranslate"><span class="pre">publish_robot_description_semantic</span></code> set to True.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">move_group_node</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">package</span><span class="o">=</span><span class="s1">&#39;moveit_ros_move_group&#39;</span><span class="p">,</span> <span class="n">executable</span><span class="o">=</span><span class="s1">&#39;move_group&#39;</span><span class="p">,</span>
+                       <span class="n">output</span><span class="o">=</span><span class="s1">&#39;screen&#39;</span><span class="p">,</span>
+                       <span class="n">parameters</span><span class="o">=</span><span class="p">[{</span>
+                            <span class="s1">&#39;robot_description_semantic&#39;</span><span class="p">:</span> <span class="n">semantic_content</span><span class="p">,</span>
+                            <span class="s1">&#39;publish_robot_description_semantic&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                            <span class="c1"># More params</span>
+                       <span class="p">}],</span>
+                       <span class="p">)</span>
+</pre></div>
+</div>
+<p>Then all of the other nodes may subscribe to the string message that gets published.</p>
+</div>
+<div class="section" id="under-the-hood-rdfloader">
+<h3>Under the Hood: RDFLoader<a class="headerlink" href="#under-the-hood-rdfloader" title="Permalink to this headline"></a></h3>
+<p>In many places in the MoveIt code, the robot description and semantics are loaded using the <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/main/moveit_ros/planning/rdf_loader/include/moveit/rdf_loader/rdf_loader.h">RDFLoader</a>
+class, which will attempt to read the parameters from the node, and if that fails, will attempt to subscribe to the String topic for a short period of time. If both methods fail to get the parameter, then a warning will be printed to the console.</p>
 </div>
 </div>
 </div>

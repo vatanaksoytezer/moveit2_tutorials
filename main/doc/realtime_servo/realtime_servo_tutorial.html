@@ -9,7 +9,7 @@
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
-    <link rel="canonical" href="https://moveit.picknik.ai/foxy//rolling/doc/realtime_servo/realtime_servo_tutorial.html" />
+    <link rel="canonical" href="https://moveit.picknik.ai/rolling//rolling/doc/realtime_servo/realtime_servo_tutorial.html" />
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -479,6 +479,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../urdf_srdf/urdf_srdf_tutorial.html#srdf-documentation">SRDF Documentation</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../urdf_srdf/urdf_srdf_tutorial.html#loading-the-urdf-and-srdf">Loading the URDF and SRDF</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../urdf_srdf/urdf_srdf_tutorial.html#launch-file-specification">Launch File Specification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../urdf_srdf/urdf_srdf_tutorial.html#string-topic-specification">String Topic Specification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../urdf_srdf/urdf_srdf_tutorial.html#under-the-hood-rdfloader">Under the Hood: RDFLoader</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../controller_configuration/controller_configuration_tutorial.html">Low Level Controllers</a><ul>
@@ -773,9 +779,10 @@
              
 
 <p>
-  <strong>
+  <strong style="color: red;">
     
-    You're reading the documentation for a development version.
+    You're reading the documentation for an untested version of the tutorials that is largely a copy of the tutorials from MoveIt on ROS 1 Noetic.
+    This is here because it contains useful information, albeit incomplete and often misleading.
     For the latest released version, please have a look at <a href="../../../foxy/doc/realtime_servo/realtime_servo_tutorial.html">Foxy</a>.
     
   </strong>
@@ -838,7 +845,7 @@
 </video></div>
 <div class="section" id="entire-code">
 <h2>Entire Code<a class="headerlink" href="#entire-code" title="Permalink to this headline"></a></h2>
-<p>The entire code is available <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/foxy/doc/realtime_servo/src/servo_cpp_interface_demo.cpp">here</a></p>
+<p>The entire code is available <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/main/doc/realtime_servo/src/servo_cpp_interface_demo.cpp">here</a></p>
 <div class="section" id="setup">
 <h3>Setup<a class="headerlink" href="#setup" title="Permalink to this headline"></a></h3>
 <p>First we declare pointers to the node and publisher that will publish commands to Servo</p>

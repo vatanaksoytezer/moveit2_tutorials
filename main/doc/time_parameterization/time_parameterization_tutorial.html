@@ -9,7 +9,7 @@
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
-    <link rel="canonical" href="https://moveit.picknik.ai/foxy//rolling/doc/time_parameterization/time_parameterization_tutorial.html" />
+    <link rel="canonical" href="https://moveit.picknik.ai/rolling//rolling/doc/time_parameterization/time_parameterization_tutorial.html" />
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -479,6 +479,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../urdf_srdf/urdf_srdf_tutorial.html#srdf-documentation">SRDF Documentation</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../urdf_srdf/urdf_srdf_tutorial.html#loading-the-urdf-and-srdf">Loading the URDF and SRDF</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../urdf_srdf/urdf_srdf_tutorial.html#launch-file-specification">Launch File Specification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../urdf_srdf/urdf_srdf_tutorial.html#string-topic-specification">String Topic Specification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../urdf_srdf/urdf_srdf_tutorial.html#under-the-hood-rdfloader">Under the Hood: RDFLoader</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../controller_configuration/controller_configuration_tutorial.html">Low Level Controllers</a><ul>
@@ -773,9 +779,10 @@
              
 
 <p>
-  <strong>
+  <strong style="color: red;">
     
-    You're reading the documentation for a development version.
+    You're reading the documentation for an untested version of the tutorials that is largely a copy of the tutorials from MoveIt on ROS 1 Noetic.
+    This is here because it contains useful information, albeit incomplete and often misleading.
     For the latest released version, please have a look at <a href="../../../foxy/index.html">Foxy</a>.
     
   </strong>
@@ -793,16 +800,16 @@
 </div>
 <div class="section" id="during-runtime">
 <h3>During Runtime<a class="headerlink" href="#during-runtime" title="Permalink to this headline"></a></h3>
-<p>The speed of a parameterized kinematic trajectory can also be modified during runtime as a fraction of the max velocity and acceleration set in the configuration values, as a value between 0-1. To change the speed on a per-motion plan basis, you can set the two scaling factors as described in <a class="reference external" href="http://docs.ros.org/foxy/api//moveit_msgs/html/msg/MotionPlanRequest.html">MotionPlanRequest.msg</a>. Spinboxes for setting both of those factors are also available in the <a class="reference external" href="../quickstart_in_rviz/quickstart_in_rviz_tutorial.html">MoveIt MotionPlanning RViz plugin</a>.</p>
+<p>The speed of a parameterized kinematic trajectory can also be modified during runtime as a fraction of the max velocity and acceleration set in the configuration values, as a value between 0-1. To change the speed on a per-motion plan basis, you can set the two scaling factors as described in <a class="reference external" href="http://docs.ros.org/noetic/api//moveit_msgs/html/msg/MotionPlanRequest.html">MotionPlanRequest.msg</a>. Spinboxes for setting both of those factors are also available in the <a class="reference external" href="../quickstart_in_rviz/quickstart_in_rviz_tutorial.html">MoveIt MotionPlanning RViz plugin</a>.</p>
 </div>
 </div>
 <div class="section" id="time-parameterization-algorithms">
 <h2>Time Parameterization Algorithms<a class="headerlink" href="#time-parameterization-algorithms" title="Permalink to this headline"></a></h2>
 <p>MoveIt can support different algorithms for post-processing a kinematic trajectory to add timestamps and velocity/acceleration values. Currently there are three available by default in MoveIt:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/ros-planning/moveit2/blob/foxy/moveit_core/trajectory_processing/src/iterative_time_parameterization.cpp">Iterative Parabolic Time Parameterization</a></p></li>
-<li><p><a class="reference external" href="https://github.com/ros-planning/moveit2/blob/foxy/moveit_core/trajectory_processing/src/iterative_spline_parameterization.cpp">Iterative Spline Parameterization</a></p></li>
-<li><p><a class="reference external" href="https://github.com/ros-planning/moveit2/blob/foxy/moveit_core/trajectory_processing/src/time_optimal_trajectory_generation.cpp">Time-optimal Trajectory Generation</a></p></li>
+<li><p><a class="reference external" href="https://github.com/ros-planning/moveit2/blob/main/moveit_core/trajectory_processing/src/iterative_time_parameterization.cpp">Iterative Parabolic Time Parameterization</a></p></li>
+<li><p><a class="reference external" href="https://github.com/ros-planning/moveit2/blob/main/moveit_core/trajectory_processing/src/iterative_spline_parameterization.cpp">Iterative Spline Parameterization</a></p></li>
+<li><p><a class="reference external" href="https://github.com/ros-planning/moveit2/blob/main/moveit_core/trajectory_processing/src/time_optimal_trajectory_generation.cpp">Time-optimal Trajectory Generation</a></p></li>
 </ul>
 <p>The Iterative Parabolic Time Parameterization algorithm is used by default in the <a class="reference external" href="../motion_planning_pipeline/motion_planning_pipeline_tutorial.html">Motion Planning Pipeline</a> as a Planning Request Adapter as documented in <a class="reference external" href="../motion_planning_pipeline/motion_planning_pipeline_tutorial.html#using-a-planning-request-adapter">this tutorial</a>. Although the Iterative Parabolic Time Parameterization algorithm MoveIt uses has been used by hundreds of robots over the years, there is known <a class="reference external" href="https://github.com/ros-planning/moveit/issues/160">bug with it</a>.</p>
 <p>The Iterative Spline Parameterization algorithm was merged with <a class="reference external" href="https://github.com/ros-planning/moveit/pull/382">PR 382</a> as an approach to deal with these issues. While preliminary experiments are very promising, we are waiting for more feedback from the community before replacing the Iterative Parabolic Time Parameterization algorithm completely.</p>
