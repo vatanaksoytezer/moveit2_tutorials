@@ -871,7 +871,7 @@
 </div>
 <div class="section" id="running-stomp-with-obstacles-in-the-scene">
 <h3>Running STOMP with Obstacles in the Scene<a class="headerlink" href="#running-stomp-with-obstacles-in-the-scene" title="Permalink to this headline"></a></h3>
-<p>To run STOMP in an evironment with obstacles, you can run the sample python script:</p>
+<p>To run STOMP in an environment with obstacles, you can run the sample python script:</p>
 <blockquote>
 <div><p><a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/main/doc/collision_environments/scripts/collision_scene_example.py">collision_scene_example.py</a>.</p>
 </div></blockquote>
@@ -888,7 +888,7 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rosrun</span> <span class="n">moveit_tutorials</span> <span class="n">collision_scene_example</span><span class="o">.</span><span class="n">py</span> <span class="n">sparse</span>
 </pre></div>
 </div>
-<p>Next, in RViz, select STOMP in the MotionPlanning pannel under the Context tab. Set the desired start and goal states by moving the end-effector around with the imarker and then click on the Plan button under the Planning tab in the MotionPlanning pannel to start planning. The planner will now attempt to find a feasible solution between the given start and end position. STOMP performs better than CHOMP in avoiding obstacles. This is due to STOMP’s stochastic nature which produces non-jerky trajectories as opposed to CHOMP which often produces jerky paths to avoid obstacles.</p>
+<p>Next, in RViz, select STOMP in the MotionPlanning panel under the Context tab. Set the desired start and goal states by moving the end-effector around with the imarker and then click on the Plan button under the Planning tab in the MotionPlanning panel to start planning. The planner will now attempt to find a feasible solution between the given start and end position. STOMP performs better than CHOMP in avoiding obstacles. This is due to STOMP’s stochastic nature which produces non-jerky trajectories as opposed to CHOMP which often produces jerky paths to avoid obstacles.</p>
 </div>
 </div>
 <div class="section" id="tweaking-some-of-the-parameters-for-stomp">
@@ -907,7 +907,7 @@
 <p><strong>Noise Generator Parameters</strong>:</p>
 <ul class="simple">
 <li><p><em>class</em>: this can be set to “NormalDistributionSampling” (default) or “GoalGuidedMultivariateGaussian”. Depending on what class is used specific parameters need to be set. Have a look at <a class="reference external" href="https://github.com/ros-industrial/industrial_moveit/blob/kinetic-devel/stomp_plugins/example_pages.dox">this link</a> for setting parameters if using the “GoalGuidedMultivariateGaussian”.</p></li>
-<li><p><em>stddev</em>: this is the degree of noise that can be applied to the joints. Each value in this array is the amplitude of the noise applied to the joint at that position in the array. For instace, the leftmost value in the array will be the value used to set the noise of the first joint of the robot (panda_joint1 in our case). The dimensionality of this array should be equal to the number of joints in the planning group name. Larger “stddev” values correspond to larger motions of the joints.</p></li>
+<li><p><em>stddev</em>: this is the degree of noise that can be applied to the joints. Each value in this array is the amplitude of the noise applied to the joint at that position in the array. For instance, the leftmost value in the array will be the value used to set the noise of the first joint of the robot (panda_joint1 in our case). The dimensionality of this array should be equal to the number of joints in the planning group name. Larger “stddev” values correspond to larger motions of the joints.</p></li>
 </ul>
 <p><strong>Cost Function Parameters</strong>:</p>
 <ul class="simple">
@@ -919,7 +919,7 @@
 </ul>
 <p><strong>Update Filter parameters</strong>:</p>
 <ul class="simple">
-<li><p>class: this can be set to “PolynomialSmoother” or “ConstrainedCartesianGoal”. Specific paramters need to be set depending on the chosen class. For setting parameters for “ConstrainedCartesianGoal”, have a look at <a class="reference external" href="https://github.com/ros-industrial/industrial_moveit/blob/kinetic-devel/stomp_plugins/example_pages.dox">this link</a>.</p></li>
+<li><p>class: this can be set to “PolynomialSmoother” or “ConstrainedCartesianGoal”. Specific parameters need to be set depending on the chosen class. For setting parameters for “ConstrainedCartesianGoal”, have a look at <a class="reference external" href="https://github.com/ros-industrial/industrial_moveit/blob/kinetic-devel/stomp_plugins/example_pages.dox">this link</a>.</p></li>
 <li><p><em>poly_order</em>: this is the order of the polynomial function used for smoothing trajectories.</p></li>
 </ul>
 <p>Choosing parameters for STOMP requires lesser intuition than CHOMP. One can have the default parameters for STOMP and this works well in most environments. However you could increase the number of timesteps, number of rollouts and play around with the stddev array for STOMP to perform well under complicated environments so that STOMP can find an optimal path in these situations. Alternatively you can try different cost functions, noise generators, update filter classes by setting whichever ones you want in the stomp_config.yaml file.</p>

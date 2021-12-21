@@ -824,7 +824,7 @@
 </div>
 <div class="section" id="using-the-c-interface">
 <h2>Using the C++ Interface<a class="headerlink" href="#using-the-c-interface" title="Permalink to this headline"></a></h2>
-<p>Instead of launching Servo as its own component, you can include Servo in your own nodes via the C++ interface. Sending commands to the robot is very similiar in both cases, but for the C++ interface a little bit of setup for Servo is necessary. In exchange, you will be able to directly interact with Servo through its C++ API.</p>
+<p>Instead of launching Servo as its own component, you can include Servo in your own nodes via the C++ interface. Sending commands to the robot is very similar in both cases, but for the C++ interface a little bit of setup for Servo is necessary. In exchange, you will be able to directly interact with Servo through its C++ API.</p>
 <p>This basic C++ interface demo moves the robot in a predetermined way and can be launched with</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ros2</span> <span class="n">launch</span> <span class="n">moveit2_tutorials</span> <span class="n">servo_cpp_interface_demo</span><span class="o">.</span><span class="n">launch</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
@@ -935,7 +935,7 @@ and stop before colliding</p>
 </div>
 <div class="section" id="initializing-servo">
 <h3>Initializing Servo<a class="headerlink" href="#initializing-servo" title="Permalink to this headline"></a></h3>
-<p>Servo requires a number of parameters to dictate its behavoir. These can be read automatically by using the
+<p>Servo requires a number of parameters to dictate its behavior. These can be read automatically by using the
 <code class="code docutils literal notranslate"><span class="pre">makeServoParameters</span></code> helper function</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span><span class="w"> </span><span class="n">servo_parameters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">moveit_servo</span><span class="o">::</span><span class="n">ServoParameters</span><span class="o">::</span><span class="n">makeServoParameters</span><span class="p">(</span><span class="n">node_</span><span class="p">);</span><span class="w"></span>
 <span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">servo_parameters</span><span class="p">)</span><span class="w"></span>
@@ -968,7 +968,7 @@ just like if Servo was launched using ServoNode.</p>
 </pre></div>
 </div>
 <p>First we will publish 100 joint jogging commands. The <code class="code docutils literal notranslate"><span class="pre">joint_names</span></code> field allows you to specify individual
-joints to move, at the velocity in the cooresponding <code class="code docutils literal notranslate"><span class="pre">velocities</span></code> field. It is important that the message
+joints to move, at the velocity in the corresponding <code class="code docutils literal notranslate"><span class="pre">velocities</span></code> field. It is important that the message
 contains a recent timestamp, or Servo will think the command is stale and will not move the robot.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">count_</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>

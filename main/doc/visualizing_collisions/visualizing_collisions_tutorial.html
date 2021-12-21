@@ -877,7 +877,7 @@ for how.</p>
 <span class="w">    </span><span class="n">color</span><span class="p">.</span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="n">visualization_msgs</span><span class="o">::</span><span class="n">MarkerArray</span><span class="w"> </span><span class="n">markers</span><span class="p">;</span><span class="w"></span>
 
-<span class="w">    </span><span class="cm">/* Get the contact ponts and display them as markers */</span><span class="w"></span>
+<span class="w">    </span><span class="cm">/* Get the contact points and display them as markers */</span><span class="w"></span>
 <span class="w">    </span><span class="n">collision_detection</span><span class="o">::</span><span class="n">getCollisionMarkersFromContacts</span><span class="p">(</span><span class="n">markers</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;panda_link0&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">c_res</span><span class="p">.</span><span class="n">contacts</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="p">,</span><span class="w"></span>
 <span class="w">                                                         </span><span class="n">ros</span><span class="o">::</span><span class="n">Duration</span><span class="p">(),</span><span class="w">  </span><span class="c1">// remain until deleted</span>
 <span class="w">                                                         </span><span class="mf">0.01</span><span class="p">);</span><span class="w">            </span><span class="c1">// radius</span>

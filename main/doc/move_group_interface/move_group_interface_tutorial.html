@@ -831,7 +831,7 @@
 <h3>Setup<a class="headerlink" href="#setup" title="Permalink to this headline"></a></h3>
 <p>MoveIt operates on sets of joints called “planning groups” and stores them in an object called
 the <code class="docutils literal notranslate"><span class="pre">JointModelGroup</span></code>. Throughout MoveIt, the terms “planning group” and “joint model group”
-are used interchangably.</p>
+are used interchangeably.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">PLANNING_GROUP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;panda_arm&quot;</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
@@ -1096,7 +1096,7 @@ large unpredictable motions of redundant joints and could be a safety issue</p>
 <span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">jump_threshold</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span><span class="w"></span>
 <span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">eef_step</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.01</span><span class="p">;</span><span class="w"></span>
 <span class="kt">double</span><span class="w"> </span><span class="n">fraction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">move_group</span><span class="p">.</span><span class="n">computeCartesianPath</span><span class="p">(</span><span class="n">waypoints</span><span class="p">,</span><span class="w"> </span><span class="n">eef_step</span><span class="p">,</span><span class="w"> </span><span class="n">jump_threshold</span><span class="p">,</span><span class="w"> </span><span class="n">trajectory</span><span class="p">);</span><span class="w"></span>
-<span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Visualizing plan 4 (Cartesian path) (%.2f%% acheived)&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">fraction</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">100.0</span><span class="p">);</span><span class="w"></span>
+<span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Visualizing plan 4 (Cartesian path) (%.2f%% achieved)&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">fraction</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">100.0</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Visualize the plan in RViz</p>
@@ -1286,7 +1286,7 @@ You could also use applyAttachedCollisionObject to attach an object to the robot
 <span class="n">visual_tools</span><span class="p">.</span><span class="n">trigger</span><span class="p">();</span><span class="w"></span>
 
 <span class="cm">/* Wait for MoveGroup to receive and process the attached collision object message */</span><span class="w"></span>
-<span class="n">visual_tools</span><span class="p">.</span><span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;next&#39; in the RvizVisualToolsGui window to once the collision object disapears&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">visual_tools</span><span class="p">.</span><span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;next&#39; in the RvizVisualToolsGui window to once the collision object disappears&quot;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>

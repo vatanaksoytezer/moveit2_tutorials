@@ -817,7 +817,7 @@
 </div>
 <div class="section" id="running-chomp-with-obstacles-in-the-scene">
 <h3>Running CHOMP with Obstacles in the Scene<a class="headerlink" href="#running-chomp-with-obstacles-in-the-scene" title="Permalink to this headline"></a></h3>
-<p>To run CHOMP in an evironment with obstacles, you can run the sample python script:</p>
+<p>To run CHOMP in an environment with obstacles, you can run the sample python script:</p>
 <blockquote>
 <div><p><a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/main/doc/collision_environments/scripts/collision_scene_example.py">collision_scene_example.py</a>.</p>
 </div></blockquote>
@@ -834,7 +834,7 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rosrun</span> <span class="n">moveit_tutorials</span> <span class="n">collision_scene_example</span><span class="o">.</span><span class="n">py</span> <span class="n">sparse</span>
 </pre></div>
 </div>
-<p>Next, in RViz, select CHOMP in the MotionPlanning pannel under the Context tab. Set the desired start and goal states by moving the end-effector around with the imarker and then click on the Plan button under the Planning tab in the MotionPlanning pannel to start planning. The planner will now attempt to find a feasible solution between the given start and end position.</p>
+<p>Next, in RViz, select CHOMP in the MotionPlanning panel under the Context tab. Set the desired start and goal states by moving the end-effector around with the imarker and then click on the Plan button under the Planning tab in the MotionPlanning panel to start planning. The planner will now attempt to find a feasible solution between the given start and end position.</p>
 </div>
 </div>
 <div class="section" id="tweaking-some-of-the-parameters-for-chomp">
@@ -855,7 +855,7 @@
 <li><p><em>collision_clearance</em>: the minimum distance that needs to be maintained to avoid obstacles.</p></li>
 <li><p><em>collision_threshold</em>: the collision threshold cost that needs to be maintained to avoid collisions</p></li>
 <li><p><em>use_stochastic_descent</em>: set this to true/false if you want to use stochastic descent while optimizing the cost. In stochastic descent, a random point from the trajectory is used, rather than all the trajectory points. This is faster and guaranteed to converge, but it may take more iterations in the worst case.</p></li>
-<li><p><em>enable failure recovery</em>: if this is set to true, CHOMP tweaks ceratin parameters in the hope to find a solution when one does not exist with the default paramters specified in the <code class="docutils literal notranslate"><span class="pre">chomp_planning.yaml</span></code> file.</p></li>
+<li><p><em>enable failure recovery</em>: if this is set to true, CHOMP tweaks certain parameters in the hope to find a solution when one does not exist with the default parameters specified in the <code class="docutils literal notranslate"><span class="pre">chomp_planning.yaml</span></code> file.</p></li>
 <li><p><em>max_recovery_attempts</em>: this is the maximum times that CHOMP is run with a varied set of parameters after the first attempt with the default parameters.</p></li>
 <li><p><em>trajectory_initializaiton_method</em>: the type of initialization of the trajectory can be supplied here for CHOMP, this can be <code class="docutils literal notranslate"><span class="pre">quintic-spline</span></code>, <code class="docutils literal notranslate"><span class="pre">linear</span></code>, <code class="docutils literal notranslate"><span class="pre">cubic</span></code> or <code class="docutils literal notranslate"><span class="pre">fillTrajectory</span></code>. The first three options refer to the interpolation methods used for trajectory initialization between start and goal states. <code class="docutils literal notranslate"><span class="pre">fillTrajectory</span></code> provides an option of initializing the trajectory from path computed from an existing motion planner like OMPL.</p></li>
 </ul>
@@ -896,7 +896,7 @@ To achieve this, follow the steps:</p>
 </div>
 </li>
 <li><p>This launch file defines the new planning pipeline <code class="docutils literal notranslate"><span class="pre">ompl-chomp</span></code>, deriving from the <code class="docutils literal notranslate"><span class="pre">ompl</span></code> pipeline,
-but adding the CHOMP post-processor as a planning adapter. Also, the <code class="docutils literal notranslate"><span class="pre">trajectory_initialization_method</span></code> is overriden to use the OMPL-generated trajectory.</p></li>
+but adding the CHOMP post-processor as a planning adapter. Also, the <code class="docutils literal notranslate"><span class="pre">trajectory_initialization_method</span></code> is overridden to use the OMPL-generated trajectory.</p></li>
 <li><p>Now you can launch the newly configure planning pipeline as follows:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">roslaunch</span> <span class="n">panda_moveit_config</span> <span class="n">demo</span><span class="o">.</span><span class="n">launch</span> <span class="n">pipeline</span><span class="o">:=</span><span class="n">ompl</span><span class="o">-</span><span class="n">chomp</span>
 </pre></div>
