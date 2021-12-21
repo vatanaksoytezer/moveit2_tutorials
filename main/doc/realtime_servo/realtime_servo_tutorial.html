@@ -9,7 +9,7 @@
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
-    <link rel="canonical" href="https://moveit.picknik.ai/foxy//rolling/doc/realtime_servo/realtime_servo_tutorial.html" />
+    <link rel="canonical" href="https://moveit.picknik.ai/rolling//rolling/doc/realtime_servo/realtime_servo_tutorial.html" />
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -773,9 +773,10 @@
              
 
 <p>
-  <strong>
+  <strong style="color: red;">
     
-    You're reading the documentation for a development version.
+    You're reading the documentation for an untested version of the tutorials that is largely a copy of the tutorials from MoveIt on ROS 1 Noetic.
+    This is here because it contains useful information, albeit incomplete and often misleading.
     For the latest released version, please have a look at <a href="../../../foxy/doc/realtime_servo/realtime_servo_tutorial.html">Foxy</a>.
     
   </strong>
@@ -795,7 +796,7 @@
 <div class="section" id="launching-a-servo-node">
 <h2>Launching a Servo Node<a class="headerlink" href="#launching-a-servo-node" title="Permalink to this headline"></a></h2>
 <p>MoveIt Servo can be launched as a “node component” or a standalone node. The launch file, moveit_servo/servo_example.launch.py, launches a standalone node by default but also contains a commented component node. Commands are sent via ROS topics. The commands can come from anywhere, such as a joystick, keyboard, or other controller.</p>
-<p>This demo was written for an Xbox 1 controller, but can be easily modified to use any controller compatible with the <a class="reference external" href="https://index.ros.org/p/joy/#foxy">Joy package</a> by modifying the <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/main/moveit_ros/moveit_servo/src/teleop_demo/joystick_servo_example.cpp">joystick_servo_example.cpp file</a></p>
+<p>This demo was written for an Xbox 1 controller, but can be easily modified to use any controller compatible with the <a class="reference external" href="https://index.ros.org/p/joy/#rolling">Joy package</a> by modifying the <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/main/moveit_ros/moveit_servo/src/teleop_demo/joystick_servo_example.cpp">joystick_servo_example.cpp file</a></p>
 <p>To run the demo, make sure your controller is plugged in and can be detected by <code class="code docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">run</span> <span class="pre">joy</span> <span class="pre">joy_node</span></code>. Usually this happens automatically after plugging the controller in. Then launch with</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ros2</span> <span class="n">launch</span> <span class="n">moveit_servo</span> <span class="n">servo_example</span><span class="o">.</span><span class="n">launch</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
@@ -838,7 +839,7 @@
 </video></div>
 <div class="section" id="entire-code">
 <h2>Entire Code<a class="headerlink" href="#entire-code" title="Permalink to this headline"></a></h2>
-<p>The entire code is available <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/foxy/doc/realtime_servo/src/servo_cpp_interface_demo.cpp">here</a></p>
+<p>The entire code is available <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/main/doc/realtime_servo/src/servo_cpp_interface_demo.cpp">here</a></p>
 <div class="section" id="setup">
 <h3>Setup<a class="headerlink" href="#setup" title="Permalink to this headline"></a></h3>
 <p>First we declare pointers to the node and publisher that will publish commands to Servo</p>
