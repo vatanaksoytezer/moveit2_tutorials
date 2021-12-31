@@ -993,7 +993,7 @@ It does not have the actual location of the cylinder nor the actual height. <br 
 We define a struct to hold the parameters that are actually needed for defining a collision object completely.
 <br />
 There are 4 fields and a total of 7 parameters used to define this.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="nc">AddCylinderParams</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">AddCylinderParams</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="cm">/* Radius of the cylinder. */</span><span class="w"></span>
 <span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">radius</span><span class="p">;</span><span class="w"></span>
@@ -1036,7 +1036,7 @@ If you need to find the  actual distance d from the point to the camera, you sho
 angle the point made horizontally- <code> atan2(point.z,point.x);</code> <br />
 angle the point made Vertically- <code> atan2(point.z, point.y);</code> <br />
 Loop over the entire pointcloud.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="nl">point</span> <span class="p">:</span><span class="w"> </span><span class="n">cloud</span><span class="o">-&gt;</span><span class="n">points</span><span class="p">)</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="nl">point</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">cloud</span><span class="o">-&gt;</span><span class="n">points</span><span class="p">)</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">atan2</span><span class="p">(</span><span class="n">point</span><span class="p">.</span><span class="n">z</span><span class="p">,</span><span class="w"> </span><span class="n">point</span><span class="p">.</span><span class="n">y</span><span class="p">);</span><span class="w"></span>
 <span class="w">  </span><span class="cm">/* Find the coordinates of the highest point */</span><span class="w"></span>

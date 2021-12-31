@@ -932,26 +932,26 @@ The following controllers are available:</p>
 </div>
 <div class="section" id="fake-controller-yaml-file">
 <h2>Fake Controller Yaml File<a class="headerlink" href="#fake-controller-yaml-file" title="Permalink to this headline"></a></h2>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">rate</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10 (Hz, used for interpolation controller)</span>
-<span class="nt">controller_list</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">fake_arm_controller</span>
-    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">interpolate | via points | last point</span>
-    <span class="nt">joints</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">joint_1</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">joint_2</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">joint_3</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">joint_4</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">joint_5</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">joint_6</span>
-  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">fake_gripper_controller</span>
-    <span class="nt">joints</span><span class="p">:</span>
-      <span class="p p-Indicator">[]</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">rate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10 (Hz, used for interpolation controller)</span><span class="w"></span>
+<span class="nt">controller_list</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fake_arm_controller</span><span class="w"></span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">interpolate | via points | last point</span><span class="w"></span>
+<span class="w">    </span><span class="nt">joints</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">joint_1</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">joint_2</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">joint_3</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">joint_4</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">joint_5</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">joint_6</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fake_gripper_controller</span><span class="w"></span>
+<span class="w">    </span><span class="nt">joints</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">[]</span><span class="w"></span>
 </pre></div>
 </div>
 <p>In order to load an initial pose, one can have a list of (group, pose) pairs as follows:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">initial</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="nt">group</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">arm</span>
-    <span class="nt">pose</span><span class="p">:</span>  <span class="l l-Scalar l-Scalar-Plain">ready</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">initial</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">arm</span><span class="w"></span>
+<span class="w">    </span><span class="nt">pose</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">ready</span><span class="w"></span>
 </pre></div>
 </div>
 </div>

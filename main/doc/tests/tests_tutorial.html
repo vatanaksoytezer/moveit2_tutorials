@@ -841,7 +841,7 @@ ASSERT will stop the test if it fails, and EXPECT will continue running, althoug
 To make a test fixture, first make a class that derives from ::testing::Test.
 You can use either the constructor or SetUp to load the information.
 Let’s use MoveIt’s testing utilities to load a robot model.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyTestFixture</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">Test</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">MyTestFixture</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">Test</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="cm">/* Everything in the class can be protected:. */</span><span class="w"></span>
 <span class="k">protected</span><span class="o">:</span><span class="w"></span>

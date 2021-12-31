@@ -823,7 +823,7 @@
   ...
 <span class="nt">&lt;/group&gt;</span>
 <span class="nt">&lt;group</span> <span class="na">name=</span><span class="s">&quot;mobile_base&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;joint</span> <span class="na">name=</span><span class="s">&quot;planar_joint&quot;</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- planar_joint must have planar type --&gt;</span>
+  <span class="nt">&lt;joint</span> <span class="na">name=</span><span class="s">&quot;planar_joint&quot;</span> <span class="nt">/&gt;</span> <span class="cm">&lt;!-- planar_joint must have planar type --&gt;</span>
 <span class="nt">&lt;/group&gt;</span>
 <span class="nt">&lt;group</span> <span class="na">name=</span><span class="s">&quot;mobile_base_manipulator&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;group</span> <span class="na">name=</span><span class="s">&quot;manipulator&quot;</span> <span class="nt">/&gt;</span>
@@ -832,10 +832,10 @@
 </pre></div>
 </div>
 <p>In the <code class="docutils literal notranslate"><span class="pre">kinematics.yaml</span></code> file the <code class="docutils literal notranslate"><span class="pre">mobile_base_manipulator</span></code> group need to have <code class="docutils literal notranslate"><span class="pre">stretch_kinematics_plugin/StretchKinematicsPlugin</span></code> as a kinematics solver</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">mobile_base_manipulator</span><span class="p">:</span>
-  <span class="nt">kinematics_solver</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">stretch_kinematics_plugin/StretchKinematicsPlugin</span>
-  <span class="nt">kinematics_solver_search_resolution</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.005</span>
-  <span class="nt">kinematics_solver_timeout</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.1</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">mobile_base_manipulator</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">kinematics_solver</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">stretch_kinematics_plugin/StretchKinematicsPlugin</span><span class="w"></span>
+<span class="w">  </span><span class="nt">kinematics_solver_search_resolution</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.005</span><span class="w"></span>
+<span class="w">  </span><span class="nt">kinematics_solver_timeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1</span><span class="w"></span>
 </pre></div>
 </div>
 <p>See <a class="reference external" href="https://github.com/PickNikRobotics/stretch_ros/blob/ros2/stretch_moveit_config/config/stretch_description.srdf#L29-L35">stretch_description.srdf</a> and <a class="reference external" href="https://github.com/PickNikRobotics/stretch_ros/blob/ros2/stretch_moveit_config/config/kinematics.yaml#L5-L8">kinematics.yaml</a> for how it’s been set-up for stretch robot.</p>
