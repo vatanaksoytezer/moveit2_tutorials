@@ -8,8 +8,9 @@
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/override.css" type="text/css" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
-    <link rel="canonical" href="https://moveit.picknik.ai/foxy//foxy/doc/move_group_interface/move_group_interface_tutorial.html" />
+    <link rel="canonical" href="https://moveit.picknik.ai/rolling//foxy/doc/move_group_interface/move_group_interface_tutorial.html" />
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -32,7 +33,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> MoveIt Documentation: Foxy
+            <a href="../../index.html">
             <img src="../../_static/foxy-small.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
@@ -44,38 +45,8 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../getting_started/getting_started.html">Getting Started</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../getting_started/getting_started.html#install-ros-2-and-colcon">Install ROS 2 and Colcon</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../getting_started/getting_started.html#create-a-colcon-workspace-and-download-tutorials">Create A Colcon Workspace and Download Tutorials</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../getting_started/getting_started.html#download-moveit-2-tutorials-source">Download MoveIt 2 Tutorials Source</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../getting_started/getting_started.html#build-your-colcon-workspace">Build your Colcon Workspace</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../getting_started/getting_started.html#next-step">Next Step</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../quickstart_in_rviz/quickstart_in_rviz_tutorial.html">MoveIt Quickstart in RViz</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../quickstart_in_rviz/quickstart_in_rviz_tutorial.html#getting-started">Getting Started</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../quickstart_in_rviz/quickstart_in_rviz_tutorial.html#step-1-launch-the-demo-and-configure-the-plugin">Step 1: Launch the Demo and Configure the Plugin</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../quickstart_in_rviz/quickstart_in_rviz_tutorial.html#step-2-play-with-the-visualized-robots">Step 2: Play with the Visualized Robots</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../quickstart_in_rviz/quickstart_in_rviz_tutorial.html#step-3-interact-with-the-panda">Step 3: Interact with the Panda</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../quickstart_in_rviz/quickstart_in_rviz_tutorial.html#moving-into-collision">Moving into collision</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../quickstart_in_rviz/quickstart_in_rviz_tutorial.html#moving-out-of-reachable-workspace">Moving out of Reachable Workspace</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../quickstart_in_rviz/quickstart_in_rviz_tutorial.html#moving-joints-or-in-null-space">Moving Joints or in Null Space</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../quickstart_in_rviz/quickstart_in_rviz_tutorial.html#step-4-use-motion-planning-with-the-panda">Step 4: Use Motion Planning with the Panda</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../quickstart_in_rviz/quickstart_in_rviz_tutorial.html#introspecting-trajectory-waypoints">Introspecting Trajectory Waypoints</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../quickstart_in_rviz/quickstart_in_rviz_tutorial.html#plan-cartesian-motions">Plan Cartesian motions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../quickstart_in_rviz/quickstart_in_rviz_tutorial.html#executing-trajectories-adjusting-speed">Executing Trajectories, Adjusting Speed</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../quickstart_in_rviz/quickstart_in_rviz_tutorial.html#next-steps">Next Steps</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../quickstart_in_rviz/quickstart_in_rviz_tutorial.html#rviz-visual-tools">RViz Visual Tools</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../quickstart_in_rviz/quickstart_in_rviz_tutorial.html#saving-your-configuration">Saving Your Configuration</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../quickstart_in_rviz/quickstart_in_rviz_tutorial.html#next-tutorials">Next Tutorials</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart_in_rviz/quickstart_in_rviz_tutorial.html">MoveIt Quickstart in RViz</a></li>
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Move Group C++ Interface</a><ul>
@@ -105,168 +76,18 @@
 </li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../robot_model_and_robot_state/robot_model_and_robot_state_tutorial.html">Robot Model and Robot State</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../robot_model_and_robot_state/robot_model_and_robot_state_tutorial.html#the-robotmodel-and-robotstate-classes">The RobotModel and RobotState Classes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../robot_model_and_robot_state/robot_model_and_robot_state_tutorial.html#getting-started">Getting Started</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../robot_model_and_robot_state/robot_model_and_robot_state_tutorial.html#running-the-code">Running the Code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../robot_model_and_robot_state/robot_model_and_robot_state_tutorial.html#expected-output">Expected Output</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../robot_model_and_robot_state/robot_model_and_robot_state_tutorial.html#the-entire-code">The Entire Code</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../robot_model_and_robot_state/robot_model_and_robot_state_tutorial.html#start">Start</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../robot_model_and_robot_state/robot_model_and_robot_state_tutorial.html#get-joint-values">Get Joint Values</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../robot_model_and_robot_state/robot_model_and_robot_state_tutorial.html#joint-limits">Joint Limits</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../robot_model_and_robot_state/robot_model_and_robot_state_tutorial.html#forward-kinematics">Forward Kinematics</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../robot_model_and_robot_state/robot_model_and_robot_state_tutorial.html#inverse-kinematics">Inverse Kinematics</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../robot_model_and_robot_state/robot_model_and_robot_state_tutorial.html#get-the-jacobian">Get the Jacobian</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../robot_model_and_robot_state/robot_model_and_robot_state_tutorial.html#the-launch-file">The Launch File</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../planning_scene/planning_scene_tutorial.html">Planning Scene</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../planning_scene/planning_scene_tutorial.html#getting-started">Getting Started</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../planning_scene/planning_scene_tutorial.html#the-entire-code">The entire code</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../planning_scene/planning_scene_tutorial.html#setup">Setup</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../planning_scene/planning_scene_tutorial.html#collision-checking">Collision Checking</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../planning_scene/planning_scene_tutorial.html#self-collision-checking">Self-collision checking</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../planning_scene/planning_scene_tutorial.html#change-the-state">Change the state</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../planning_scene/planning_scene_tutorial.html#checking-for-a-group">Checking for a group</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../planning_scene/planning_scene_tutorial.html#getting-contact-information">Getting Contact Information</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../planning_scene/planning_scene_tutorial.html#modifying-the-allowed-collision-matrix">Modifying the Allowed Collision Matrix</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../planning_scene/planning_scene_tutorial.html#full-collision-checking">Full Collision Checking</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../planning_scene/planning_scene_tutorial.html#constraint-checking">Constraint Checking</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../planning_scene/planning_scene_tutorial.html#checking-kinematic-constraints">Checking Kinematic Constraints</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../planning_scene/planning_scene_tutorial.html#user-defined-constraints">User-defined constraints</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../planning_scene/planning_scene_tutorial.html#the-launch-file">The launch file</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../planning_scene/planning_scene_tutorial.html#running-the-code">Running the code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../planning_scene/planning_scene_tutorial.html#expected-output">Expected Output</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../planning_scene_monitor/planning_scene_monitor_tutorial.html">Planning Scene Monitor</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../planning_scene_monitor/planning_scene_monitor_tutorial.html#robotstate">RobotState</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../planning_scene_monitor/planning_scene_monitor_tutorial.html#currentstatemonitor">CurrentStateMonitor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../planning_scene_monitor/planning_scene_monitor_tutorial.html#planningscene">PlanningScene</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../planning_scene_monitor/planning_scene_monitor_tutorial.html#planningscenemonitor">PlanningSceneMonitor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../planning_scene_monitor/planning_scene_monitor_tutorial.html#planningsceneinterface">PlanningSceneInterface</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../planning_scene_ros_api/planning_scene_ros_api_tutorial.html">Planning Scene ROS API</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../planning_scene_ros_api/planning_scene_ros_api_tutorial.html#getting-started">Getting Started</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../planning_scene_ros_api/planning_scene_ros_api_tutorial.html#running-the-code">Running the code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../planning_scene_ros_api/planning_scene_ros_api_tutorial.html#expected-output">Expected Output</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../planning_scene_ros_api/planning_scene_ros_api_tutorial.html#the-entire-code">The entire code</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../planning_scene_ros_api/planning_scene_ros_api_tutorial.html#visualization">Visualization</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../planning_scene_ros_api/planning_scene_ros_api_tutorial.html#ros-api">ROS API</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../planning_scene_ros_api/planning_scene_ros_api_tutorial.html#advertise-the-required-topic">Advertise the required topic</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../planning_scene_ros_api/planning_scene_ros_api_tutorial.html#define-the-attached-object-message">Define the attached object message</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../planning_scene_ros_api/planning_scene_ros_api_tutorial.html#add-an-object-into-the-environment">Add an object into the environment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../planning_scene_ros_api/planning_scene_ros_api_tutorial.html#interlude-synchronous-vs-asynchronous-updates">Interlude: Synchronous vs Asynchronous updates</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../planning_scene_ros_api/planning_scene_ros_api_tutorial.html#attach-an-object-to-the-robot">Attach an object to the robot</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../planning_scene_ros_api/planning_scene_ros_api_tutorial.html#detach-an-object-from-the-robot">Detach an object from the robot</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../planning_scene_ros_api/planning_scene_ros_api_tutorial.html#remove-the-object-from-the-collision-world">Remove the object from the collision world</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../motion_planning_api/motion_planning_api_tutorial.html">Motion Planning API</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../motion_planning_api/motion_planning_api_tutorial.html#getting-started">Getting Started</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../motion_planning_api/motion_planning_api_tutorial.html#running-the-demo">Running the Demo</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../motion_planning_api/motion_planning_api_tutorial.html#expected-output">Expected Output</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../motion_planning_api/motion_planning_api_tutorial.html#the-entire-code">The Entire Code</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../motion_planning_api/motion_planning_api_tutorial.html#start">Start</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../motion_planning_api/motion_planning_api_tutorial.html#visualization">Visualization</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../motion_planning_api/motion_planning_api_tutorial.html#pose-goal">Pose Goal</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../motion_planning_api/motion_planning_api_tutorial.html#visualize-the-result">Visualize the result</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../motion_planning_api/motion_planning_api_tutorial.html#joint-space-goals">Joint Space Goals</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../motion_planning_api/motion_planning_api_tutorial.html#adding-path-constraints">Adding Path Constraints</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../motion_planning_api/motion_planning_api_tutorial.html#the-launch-file">The Launch File</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../moveit_cpp/moveitcpp_tutorial.html">MoveItCpp Tutorial</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../moveit_cpp/moveitcpp_tutorial.html#introduction">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../moveit_cpp/moveitcpp_tutorial.html#getting-started">Getting Started</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../moveit_cpp/moveitcpp_tutorial.html#running-the-code">Running the Code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../moveit_cpp/moveitcpp_tutorial.html#the-entire-code">The Entire Code</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../moveit_cpp/moveitcpp_tutorial.html#setup">Setup</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../moveit_cpp/moveitcpp_tutorial.html#visualization">Visualization</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../moveit_cpp/moveitcpp_tutorial.html#start-the-demo">Start the demo</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../moveit_cpp/moveitcpp_tutorial.html#planning-with-moveitcpp">Planning with MoveItCpp</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../moveit_cpp/moveitcpp_tutorial.html#plan-1">Plan #1</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../moveit_cpp/moveitcpp_tutorial.html#plan-2">Plan #2</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../moveit_cpp/moveitcpp_tutorial.html#plan-3">Plan #3</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../moveit_cpp/moveitcpp_tutorial.html#plan-4">Plan #4</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../moveit_cpp/moveitcpp_tutorial.html#plan-5">Plan #5</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../moveit_cpp/moveitcpp_tutorial.html#the-launch-file">The Launch File</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../robot_model_and_robot_state/robot_model_and_robot_state_tutorial.html">Robot Model and Robot State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../planning_scene/planning_scene_tutorial.html">Planning Scene</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../planning_scene_monitor/planning_scene_monitor_tutorial.html">Planning Scene Monitor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../planning_scene_ros_api/planning_scene_ros_api_tutorial.html">Planning Scene ROS API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../motion_planning_api/motion_planning_api_tutorial.html">Motion Planning API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../moveit_cpp/moveitcpp_tutorial.html">MoveItCpp Tutorial</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../urdf_srdf/urdf_srdf_tutorial.html">URDF and SRDF</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../urdf_srdf/urdf_srdf_tutorial.html#urdf">URDF</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../urdf_srdf/urdf_srdf_tutorial.html#urdf-resources">URDF Resources</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../urdf_srdf/urdf_srdf_tutorial.html#important-tips">Important Tips</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../urdf_srdf/urdf_srdf_tutorial.html#special-characters-in-joint-names">Special Characters in Joint Names</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../urdf_srdf/urdf_srdf_tutorial.html#safety-limits">Safety Limits</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../urdf_srdf/urdf_srdf_tutorial.html#collision-checking">Collision Checking</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../urdf_srdf/urdf_srdf_tutorial.html#test-your-urdf">Test your URDF</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../urdf_srdf/urdf_srdf_tutorial.html#urdf-examples">URDF Examples</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../urdf_srdf/urdf_srdf_tutorial.html#srdf">SRDF</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../urdf_srdf/urdf_srdf_tutorial.html#virtual-joints">Virtual Joints</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../urdf_srdf/urdf_srdf_tutorial.html#passive-joints">Passive Joints</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../urdf_srdf/urdf_srdf_tutorial.html#groups">Groups</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../urdf_srdf/urdf_srdf_tutorial.html#collection-of-joints">Collection of Joints</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../urdf_srdf/urdf_srdf_tutorial.html#collection-of-links">Collection of Links</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../urdf_srdf/urdf_srdf_tutorial.html#serial-chain">Serial Chain</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../urdf_srdf/urdf_srdf_tutorial.html#collection-of-sub-groups">Collection of Sub-Groups</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../urdf_srdf/urdf_srdf_tutorial.html#end-effectors">End-Effectors</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../urdf_srdf/urdf_srdf_tutorial.html#self-collisions">Self-Collisions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../urdf_srdf/urdf_srdf_tutorial.html#robot-poses">Robot Poses</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../urdf_srdf/urdf_srdf_tutorial.html#srdf-documentation">SRDF Documentation</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../urdf_srdf/urdf_srdf_tutorial.html">URDF and SRDF</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../realtime_servo/realtime_servo_tutorial.html">Realtime Arm Servoing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../realtime_servo/realtime_servo_tutorial.html#getting-started">Getting Started</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../realtime_servo/realtime_servo_tutorial.html#launching-a-standalone-servo-node">Launching a Standalone Servo Node</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../realtime_servo/realtime_servo_tutorial.html#without-a-controller">Without a Controller</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../realtime_servo/realtime_servo_tutorial.html#expected-output">Expected Output</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../realtime_servo/realtime_servo_tutorial.html#using-the-c-interface">Using the C++ Interface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../realtime_servo/realtime_servo_tutorial.html#id2">Expected Output</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../realtime_servo/realtime_servo_tutorial.html#entire-code">Entire Code</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../realtime_servo/realtime_servo_tutorial.html#setup">Setup</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../realtime_servo/realtime_servo_tutorial.html#initializing-servo">Initializing Servo</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../realtime_servo/realtime_servo_tutorial.html#sending-commands">Sending Commands</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../realtime_servo/realtime_servo_tutorial.html#servo-overview">Servo Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../realtime_servo/realtime_servo_tutorial.html#setup-on-a-new-robot">Setup on a New Robot</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../realtime_servo/realtime_servo_tutorial.html#preliminaries">Preliminaries</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../realtime_servo/realtime_servo_tutorial.html#input-devices">Input Devices</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../realtime_servo/realtime_servo_tutorial.html#servo-configs">Servo Configs</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../realtime_servo/realtime_servo_tutorial.html">Realtime Arm Servoing</a></li>
 </ul>
 
         </div>
@@ -298,7 +119,7 @@
   <div class="section" id="move-group-c-interface">
 <h1>Move Group C++ Interface<a class="headerlink" href="#move-group-c-interface" title="Permalink to this headline"></a></h1>
 <a class="reference internal image-reference" href="../../_images/move_group_interface_tutorial_start_screen.png"><img alt="../../_images/move_group_interface_tutorial_start_screen.png" src="../../_images/move_group_interface_tutorial_start_screen.png" style="width: 700px;" /></a>
-<p>In MoveIt, the simplest user interface is through the <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/foxy/moveit_ros/planning_interface/move_group_interface/include/moveit/move_group_interface/move_group_interface.h">MoveGroupInterface</a> class. It provides easy to use functionality for most operations that a user may want to carry out, specifically setting joint or pose goals, creating motion plans, moving the robot, adding objects into the environment and attaching/detaching objects from the robot. This interface communicates over ROS topics, services, and actions to the <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/foxy/moveit_ros/move_group/src/move_group.cpp">MoveGroup</a> node.</p>
+<p>In MoveIt, the simplest user interface is through the <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/main/moveit_ros/planning_interface/move_group_interface/include/moveit/move_group_interface/move_group_interface.h">MoveGroupInterface</a> class. It provides easy to use functionality for most operations that a user may want to carry out, specifically setting joint or pose goals, creating motion plans, moving the robot, adding objects into the environment and attaching/detaching objects from the robot. This interface communicates over ROS topics, services, and actions to the <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/main/moveit_ros/move_group/src/move_group.cpp">MoveGroup</a> node.</p>
 <p>Watch this quick <a class="reference external" href="https://youtu.be/_5siHkFQPBQ">YouTube video demo</a> to see the power of the move group interface!</p>
 <div class="section" id="getting-started">
 <h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline"></a></h2>
@@ -338,7 +159,7 @@
 </div>
 <div class="section" id="the-entire-code">
 <h2>The Entire Code<a class="headerlink" href="#the-entire-code" title="Permalink to this headline"></a></h2>
-<p>The entire code can be seen <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/foxy/doc/move_group_interface/src/move_group_interface_tutorial.cpp">here in the MoveIt GitHub project</a>. Next, we step through the code piece by piece to explain its functionality.</p>
+<p>The entire code can be seen <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/main/doc/move_group_interface/src/move_group_interface_tutorial.cpp">here in the MoveIt GitHub project</a>. Next, we step through the code piece by piece to explain its functionality.</p>
 <div class="section" id="setup">
 <h3>Setup<a class="headerlink" href="#setup" title="Permalink to this headline"></a></h3>
 <p>MoveIt operates on sets of joints called “planning groups” and stores them in an object called
@@ -348,13 +169,13 @@ are used interchangably.</p>
 </pre></div>
 </div>
 <p>The
-<a class="reference external" href="https://github.com/ros-planning/moveit2/blob/foxy/moveit_ros/planning_interface/move_group_interface/include/moveit/move_group_interface/move_group_interface.h">MoveGroupInterface</a>
+<a class="reference external" href="https://github.com/ros-planning/moveit2/blob/main/moveit_ros/planning_interface/move_group_interface/include/moveit/move_group_interface/move_group_interface.h">MoveGroupInterface</a>
 class can be easily set up using just the name of the planning group you would like to control and plan for.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">moveit</span><span class="o">::</span><span class="n">planning_interface</span><span class="o">::</span><span class="n">MoveGroupInterface</span><span class="w"> </span><span class="nf">move_group</span><span class="p">(</span><span class="n">move_group_node</span><span class="p">,</span><span class="w"> </span><span class="n">PLANNING_GROUP</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>We will use the
-<a class="reference external" href="https://github.com/ros-planning/moveit2/blob/foxy/moveit_ros/planning_interface/planning_scene_interface/include/moveit/planning_scene_interface/planning_scene_interface.h">PlanningSceneInterface</a>
+<a class="reference external" href="https://github.com/ros-planning/moveit2/blob/main/moveit_ros/planning_interface/planning_scene_interface/include/moveit/planning_scene_interface/planning_scene_interface.h">PlanningSceneInterface</a>
 class to add and remove collision objects in our “virtual world” scene</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">moveit</span><span class="o">::</span><span class="n">planning_interface</span><span class="o">::</span><span class="n">PlanningSceneInterface</span><span class="w"> </span><span class="n">planning_scene_interface</span><span class="p">;</span><span class="w"></span>
 </pre></div>
@@ -805,7 +626,7 @@ You could also use applyAttachedCollisionObject to attach an object to the robot
 </div>
 <div class="section" id="the-launch-file">
 <h2>The Launch File<a class="headerlink" href="#the-launch-file" title="Permalink to this headline"></a></h2>
-<p>The entire launch file is <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/foxy/doc/move_group_interface/launch/move_group_interface_tutorial.launch.py">here</a> on GitHub. All the code in this tutorial can be run from the <strong>moveit2_tutorials</strong> package that you have as part of your MoveIt setup.</p>
+<p>The entire launch file is <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/main/doc/move_group_interface/launch/move_group_interface_tutorial.launch.py">here</a> on GitHub. All the code in this tutorial can be run from the <strong>moveit2_tutorials</strong> package that you have as part of your MoveIt setup.</p>
 </div>
 <div class="section" id="a-note-on-setting-tolerances">
 <h2>A Note on Setting Tolerances<a class="headerlink" href="#a-note-on-setting-tolerances" title="Permalink to this headline"></a></h2>
