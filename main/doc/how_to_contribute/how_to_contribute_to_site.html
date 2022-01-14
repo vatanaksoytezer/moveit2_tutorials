@@ -870,6 +870,10 @@
 </ol>
 <p>To build the website locally run this command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make html
+<span class="c1"># Or run the following line if you want to automatically rebuild the website on new changes</span>
+<span class="k">while</span> inotifywait -re modify,move,create,delete .<span class="p">;</span> <span class="k">do</span>
+  make html
+<span class="k">done</span>
 </pre></div>
 </div>
 <p>Then you can open the local build of the site in your web browser from: <code class="docutils literal notranslate"><span class="pre">./build/html/index.html</span></code>. For example, to open the local site in Firefox the command would be:</p>
