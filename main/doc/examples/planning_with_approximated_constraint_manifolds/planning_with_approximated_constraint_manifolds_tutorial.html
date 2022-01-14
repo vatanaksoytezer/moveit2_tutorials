@@ -1078,7 +1078,18 @@ A correctly named constraint message without initialized constraints would use t
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+    <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108532843-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-108532843-1', {
+          'anonymize_ip': false,
+      });
+    </script> 
 
 </body>
 </html>

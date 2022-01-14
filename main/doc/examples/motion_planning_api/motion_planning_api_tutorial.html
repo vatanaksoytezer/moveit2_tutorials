@@ -1253,7 +1253,18 @@ when planning for the arm; the bounds are only used to determine if the sampled 
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+    <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108532843-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-108532843-1', {
+          'anonymize_ip': false,
+      });
+    </script> 
 
 </body>
 </html>
