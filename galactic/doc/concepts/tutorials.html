@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tutorials &mdash; MoveIt Documentation: Galactic  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/override.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="canonical" href="https://moveit.picknik.ai/rolling//galactic/doc/concepts/tutorials.html" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="How-To Guide" href="how_to_guide.html" />
+    <link rel="prev" title="Concepts" href="concepts.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/galactic-small.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how_to_guides/how_to_guides.html">How-To Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="concepts.html">Concepts</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Tutorials</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#awesome-examples">Awesome Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#drawing-diagrams">Drawing Diagrams</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="how_to_guide.html">How-To Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../how_to_contribute/how_to_contribute.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">Examples</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MoveIt Documentation: Galactic</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="concepts.html">Concepts</a> &raquo;</li>
+      <li>Tutorials</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ros-planning/moveit2_tutorials/blob/galactic/doc/concepts/tutorials.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+
+
+  <div class="section" id="tutorials">
+<h1>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline"></a></h1>
+<p>Tutorials are one of the most useful contributions you can make because they are the first thing many new users see.
+We have separated the sections of this website based on <a class="reference external" href="https://documentation.divio.com/">The Documentation System</a>.
+Tutorials are <strong>Learning-Oriented</strong> and have these qualities:</p>
+<ul class="simple">
+<li><p>learning by doing</p></li>
+<li><p>inspiring confidence</p></li>
+<li><p>repeatability</p></li>
+<li><p>immediate sense of achievement</p></li>
+<li><p>concreteness, not abstraction</p></li>
+<li><p>minimum necessary explanation</p></li>
+<li><p>no distractions</p></li>
+<li><p>no options or decisions</p></li>
+</ul>
+<p>In the end, the reader should feel a sense of accomplishment.
+For that to happen, they need to play an active role throughout the tutorial.
+Avoid the pattern of having a pre-made program that the user just executes followed by an explanation of the code.
+Ideally each tutorial should extend the previous one to make them feel connected.</p>
+<p>Tutorials are not the place for explaining nuanced abstractions or discussing decisions.
+In order to foster learning by the newest users, they should build muscle memory around using the various components in MoveIt to do specific tasks.</p>
+<p>When a user is going through the tutorials, avoid distracting them with potential rabbit holes as that will detract from their experience.
+Save detailed explanations for the <a class="reference internal" href="concepts.html"><span class="doc">Concepts</span></a> pages on this site.
+Place links to external sites and other resources at the end of the tutorial.</p>
+<p>It is important that the tutorials are reviewed by those that are closest to the intended audience in terms of their amount of experience with MoveIt.</p>
+<div class="section" id="awesome-examples">
+<h2>Awesome Examples<a class="headerlink" href="#awesome-examples" title="Permalink to this headline"></a></h2>
+<p>Here are some awesome examples to draw inspiration from for creating tutorials:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://wiki.ros.org/ROS/Tutorials">ROS 1 Tutorials</a></p></li>
+<li><p><a class="reference external" href="https://doc.rust-lang.org/book/">The Rust Book</a></p></li>
+<li><p><a class="reference external" href="https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html#introduction">CUDA Toolkit</a></p></li>
+<li><p><a class="reference external" href="http://docs.libuv.org/en/v1.x/guide/introduction.html">libuv book</a></p></li>
+<li><p><a class="reference external" href="https://reactnative.dev/docs/getting-started">React Native Docs</a></p></li>
+</ul>
+</div>
+<div class="section" id="drawing-diagrams">
+<h2>Drawing Diagrams<a class="headerlink" href="#drawing-diagrams" title="Permalink to this headline"></a></h2>
+<a class="reference internal image-reference" href="../../_images/example_diagram.png"><img alt="../../_images/example_diagram.png" src="../../_images/example_diagram.png" style="width: 700px;" /></a>
+<p>Diagrams can easily convey what words cannot.
+Here are two websites that you can use to create diagrams to explain concepts quickly:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://draw.io">draw.io</a></p></li>
+<li><p><a class="reference external" href="https://excalidraw.com/">excalidraw.com</a></p></li>
+</ul>
+</div>
+</div>
+
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="concepts.html" class="btn btn-neutral float-left" title="Concepts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="how_to_guide.html" class="btn btn-neutral float-right" title="How-To Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, PickNik Robotics.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: galactic
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Releases</dt>
+        <dd><a href="tutorials.html">Galactic (latest)</a></dd>
+        <dd><a href="../../../foxy/index.html">Foxy</a></dd>
+    </dl>
+    <dl>
+      <dt>In Development</dt>
+      <dd><a href="../../../main/doc/concepts/tutorials.html">Main</a></dd>
+    </dl>
+    <dl>
+      <dt>ROS 1</dt>
+      <dd><a href="https://ros-planning.github.io/moveit_tutorials/">Noetic</a></dd>
+      <dd><a href="http://docs.ros.org/en/melodic/api/moveit_tutorials/html/index.html">Melodic</a></dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+    <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108532843-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-108532843-1', {
+          'anonymize_ip': false,
+      });
+    </script> 
+
+</body>
+</html>

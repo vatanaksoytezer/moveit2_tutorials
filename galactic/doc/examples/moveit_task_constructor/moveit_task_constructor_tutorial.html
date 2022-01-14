@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MoveIt Task Constructor &mdash; MoveIt Documentation: Galactic  documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/override.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="canonical" href="https://moveit.picknik.ai/rolling//galactic/doc/examples/moveit_task_constructor/moveit_task_constructor_tutorial.html" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/clipboard.min.js"></script>
+        <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="MoveIt Deep Grasps" href="../moveit_deep_grasps/moveit_deep_grasps_tutorial.html" />
+    <link rel="prev" title="MoveIt Grasps" href="../moveit_grasps/moveit_grasps_tutorial.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html">
+            <img src="../../../_static/galactic-small.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../how_to_guides/how_to_guides.html">How-To Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../concepts/concepts.html">Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../how_to_contribute/how_to_contribute.html">Contributing</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../examples.html">Examples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#movegroup-ros-wrappers-in-c">MoveGroup - ROS Wrappers in C++</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../examples.html#using-moveit-directly-through-the-c-api">Using MoveIt Directly Through the C++ API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../robot_model_and_robot_state/robot_model_and_robot_state_tutorial.html">Robot Model and Robot State</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../planning_scene/planning_scene_tutorial.html">Planning Scene</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../planning_scene_monitor/planning_scene_monitor_tutorial.html">Planning Scene Monitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../planning_scene_ros_api/planning_scene_ros_api_tutorial.html">Planning Scene ROS API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../motion_planning_api/motion_planning_api_tutorial.html">Motion Planning API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../motion_planning_pipeline/motion_planning_pipeline_tutorial.html">Motion Planning Pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../creating_moveit_plugins/plugin_tutorial.html">Creating MoveIt Plugins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualizing_collisions/visualizing_collisions_tutorial.html">Visualizing Collisions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../time_parameterization/time_parameterization_tutorial.html">Time Parameterization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../planning_with_approximated_constraint_manifolds/planning_with_approximated_constraint_manifolds_tutorial.html">Planning with Approximated Constraint Manifolds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pick_place/pick_place_tutorial.html">Pick and Place</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../moveit_grasps/moveit_grasps_tutorial.html">MoveIt Grasps</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">MoveIt Task Constructor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#getting-started">Getting Started</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#installing-moveit-task-constructor">Installing MoveIt Task Constructor</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#install-from-source">Install From Source</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#running-the-demo">Running the Demo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#basic-concepts">Basic Concepts</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../moveit_deep_grasps/moveit_deep_grasps_tutorial.html">MoveIt Deep Grasps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../subframes/subframes_tutorial.html">Subframes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../moveit_cpp/moveitcpp_tutorial.html">MoveItCpp Tutorial</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../bullet_collision_checker/bullet_collision_checker.html">Using Bullet for Collision Checking</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mobile_base_arm/mobile_base_arm_tutorial.html">Planning For Differential-Drive Mobile Base and an Arm</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#integration-with-a-new-robot">Integration with a New Robot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#miscellaneous">Miscellaneous</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">MoveIt Documentation: Galactic</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../examples.html">Examples</a> &raquo;</li>
+      <li>MoveIt Task Constructor</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ros-planning/moveit2_tutorials/blob/galactic/doc/examples/moveit_task_constructor/moveit_task_constructor_tutorial.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+
+
+  <div class="section" id="moveit-task-constructor">
+<h1>MoveIt Task Constructor<a class="headerlink" href="#moveit-task-constructor" title="Permalink to this headline"></a></h1>
+<a class="reference internal image-reference" href="../../../_images/mtc_example.png"><img alt="../../../_images/mtc_example.png" src="../../../_images/mtc_example.png" style="width: 700px;" /></a>
+<p>The Task Constructor framework provides a flexible and transparent way to define and plan actions that consist of multiple interdependent subtasks. It draws on the planning capabilities of MoveIt to solve individual subproblems in black-box planning stages. A common interface, based on MoveIt’s PlanningScene is used to pass solution hypotheses between stages. The framework enables the hierarchical organization of basic stages using containers, allowing for sequential as well as parallel compositions. For more details, please refer to the associated <a class="reference external" href="https://pub.uni-bielefeld.de/download/2918864/2933599/paper.pdf">ICRA 2019 publication</a>.</p>
+<div class="section" id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline"></a></h2>
+<p>If you have not already done so, make sure you have completed the steps in <a class="reference internal" href="../../tutorials/getting_started/getting_started.html"><span class="doc">Getting Started</span></a>.</p>
+</div>
+<div class="section" id="installing-moveit-task-constructor">
+<h2>Installing MoveIt Task Constructor<a class="headerlink" href="#installing-moveit-task-constructor" title="Permalink to this headline"></a></h2>
+<div class="section" id="install-from-source">
+<h3>Install From Source<a class="headerlink" href="#install-from-source" title="Permalink to this headline"></a></h3>
+<p>Go into your catkin workspace and initialize wstool if necessary (assuming <strong>~/ws_moveit</strong> as workspace path):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">ws_moveit</span><span class="o">/</span><span class="n">src</span>
+<span class="n">wstool</span> <span class="n">init</span>
+</pre></div>
+</div>
+<p>Clone MoveIt Task Constructor and source dependencies:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wstool</span> <span class="n">merge</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ros</span><span class="o">-</span><span class="n">planning</span><span class="o">/</span><span class="n">moveit_task_constructor</span><span class="o">/</span><span class="n">master</span><span class="o">/.</span><span class="n">rosinstall</span>
+<span class="n">wstool</span> <span class="n">update</span>
+</pre></div>
+</div>
+<p>Install missing packages with rosdep:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>rosdep install --from-paths . --ignore-src --rosdistro $ROS_DISTRO
+</pre></div>
+</div>
+<p>Build the workspace:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">catkin</span> <span class="n">build</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="running-the-demo">
+<h2>Running the Demo<a class="headerlink" href="#running-the-demo" title="Permalink to this headline"></a></h2>
+<p>The MoveIt Task Constructor package contains several basic examples and a pick-and-place demo.
+For all demos you should launch the basic environment:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">roslaunch</span> <span class="n">moveit_task_constructor_demo</span> <span class="n">demo</span><span class="o">.</span><span class="n">launch</span>
+</pre></div>
+</div>
+<p>Subsequently, you can run the individual demos:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rosrun</span> <span class="n">moveit_task_constructor_demo</span> <span class="n">cartesian</span>
+<span class="n">rosrun</span> <span class="n">moveit_task_constructor_demo</span> <span class="n">modular</span>
+<span class="n">roslaunch</span> <span class="n">moveit_task_constructor_demo</span> <span class="n">pickplace</span><span class="o">.</span><span class="n">launch</span>
+</pre></div>
+</div>
+<p>On the right side you should see the <strong>Motion Planning Tasks</strong> panel outlining the hierarchical stage structure of the tasks.
+When you select a particular stage, the list of successful and failed solutions will be
+shown in the right-most window. Selecting one of those solutions will start its visualization.</p>
+<a class="reference internal image-reference" href="../../../_images/mtc_show_stages.gif"><img alt="../../../_images/mtc_show_stages.gif" src="../../../_images/mtc_show_stages.gif" style="width: 700px;" /></a>
+</div>
+<div class="section" id="basic-concepts">
+<h2>Basic Concepts<a class="headerlink" href="#basic-concepts" title="Permalink to this headline"></a></h2>
+<p>The fundamental idea of MTC is that complex motion planning problems can be composed into a set of simpler subproblems.
+The top-level planning problem is specified as a <strong>Task</strong> while all subproblems are specified by <strong>Stages</strong>.
+Stages can be arranged in any arbitrary order and hierarchy only limited by the individual stages types.
+The order in which stages can be arranged is restricted by the direction in which results are passed.
+There are three possible stages relating to the result flow: generator, propagator, and connector stages:</p>
+<p><strong>Generators</strong> compute their results independently of their neighbor stages and pass them in both directions, backwards and forwards.
+An example is an IK sampler for geometric poses where approaching and departing motions (neighbor stages) depend on the solution.</p>
+<p><strong>Propagators</strong> receive the result of one neighbor stage, solve a subproblem and then propagate their result to the neighbor on the opposite site.
+Depending on the implementation, propagating stages can pass solutions forward, backward or in both directions separately.
+An example is a stage that computes a Cartesian path based on either a start or a goal state.</p>
+<p><strong>Connectors</strong> do not propagate any results, but rather attempt to bridge the gap between the resulting states of both neighbors.
+An example is the computation of a free-motion plan from one given state to another.</p>
+<p>Additional to the order types, there are different hierarchy types allowing to encapsulate subordinate stages.
+Stages without subordinate stages are called <strong>primitive stages</strong>, higher-level stages are called <strong>container stages</strong>.
+There are three container types:</p>
+<p><strong>Wrappers</strong> encapsulate a single subordinate stage and modify or filter the results.
+For example, a filter stage that only accepts solutions of its child stage that satisfy a certain constraint can be realized as a wrapper.
+Another standard use of this type includes the IK wrapper stage, which generates inverse kinematics solutions based on planning scenes annotated with a pose target property.</p>
+<p><strong>Serial Containers</strong> hold a sequence of subordinate stages and only consider end-to-end solutions as results.
+An example is a picking motion that consists of a sequence of coherent steps.</p>
+<p><strong>Parallel Containers</strong> combine set of subordinate stages and can be used for passing the best of alternative results, running fallback solvers or for merging multiple independent solutions.
+Examples are running alternative planners for a free-motion plan, picking objects with the right hand or with the left hand as a fallback, or moving the arm and opening the gripper at the same time.</p>
+<a class="reference internal image-reference" href="../../../_images/mtc_stage_types.png"><img alt="../../../_images/mtc_stage_types.png" src="../../../_images/mtc_stage_types.png" style="width: 700px;" /></a>
+<p>Stages not only support solving motion planning problems.
+They can also be used for all kinds of state transitions, as for instance modifying the planning scene.
+Combined with the possibility of using class inheritance it is possible to construct very complex behavior while only relying on a well-structured set of primitive stages.</p>
+</div>
+</div>
+
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../moveit_grasps/moveit_grasps_tutorial.html" class="btn btn-neutral float-left" title="MoveIt Grasps" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../moveit_deep_grasps/moveit_deep_grasps_tutorial.html" class="btn btn-neutral float-right" title="MoveIt Deep Grasps" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, PickNik Robotics.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: galactic
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Releases</dt>
+        <dd><a href="moveit_task_constructor_tutorial.html">Galactic (latest)</a></dd>
+        <dd><a href="../../../../foxy/index.html">Foxy</a></dd>
+    </dl>
+    <dl>
+      <dt>In Development</dt>
+      <dd><a href="../../../../main/doc/examples/moveit_task_constructor/moveit_task_constructor_tutorial.html">Main</a></dd>
+    </dl>
+    <dl>
+      <dt>ROS 1</dt>
+      <dd><a href="https://ros-planning.github.io/moveit_tutorials/">Noetic</a></dd>
+      <dd><a href="http://docs.ros.org/en/melodic/api/moveit_tutorials/html/index.html">Melodic</a></dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+    <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108532843-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-108532843-1', {
+          'anonymize_ip': false,
+      });
+    </script> 
+
+</body>
+</html>
