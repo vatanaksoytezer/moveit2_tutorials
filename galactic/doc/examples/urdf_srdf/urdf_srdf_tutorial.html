@@ -10,7 +10,7 @@
       <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/override.css" type="text/css" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
-    <link rel="canonical" href="https://moveit.picknik.ai/foxy//galactic/doc/examples/urdf_srdf/urdf_srdf_tutorial.html" />
+    <link rel="canonical" href="https://moveit.picknik.ai/rolling//galactic/doc/examples/urdf_srdf/urdf_srdf_tutorial.html" />
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -140,7 +140,7 @@
 <h3>URDF Resources<a class="headerlink" href="#urdf-resources" title="Permalink to this headline"></a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="http://www.ros.org/wiki/urdf">URDF ROS Wiki Page</a> - The URDF ROS Wiki page is the source of most information about the URDF.</p></li>
-<li><p><a class="reference external" href="https://docs.ros.org/en/foxy/Tutorials/URDF/URDF-Main.html">URDF Tutorials</a> - Tutorials for working with the URDF.</p></li>
+<li><p><a class="reference external" href="https://docs.ros.org/en/rolling/Tutorials/URDF/URDF-Main.html">URDF Tutorials</a> - Tutorials for working with the URDF.</p></li>
 <li><p><a class="reference external" href="http://www.ros.org/wiki/sw_urdf_exporter">SOLIDWORKS URDF Plugin</a> - A plugin that lets you generate a URDF directly from a SOLIDWORKS model.</p></li>
 </ul>
 <p><strong>Note:</strong> Although the documents above are written for ROS, all the documentation is valid given you change the commands from ROS to ROS2 (ie: rosrun -&gt; ros2 run or roslaunch -&gt; ros2 launch)</p>
@@ -232,7 +232,7 @@
 </div>
 <div class="section" id="loading-the-urdf-and-srdf">
 <h2>Loading the URDF and SRDF<a class="headerlink" href="#loading-the-urdf-and-srdf" title="Permalink to this headline"></a></h2>
-<p>All the components of MoveIt that use the <a class="reference external" href="http://docs.ros.org/foxy/api/moveit_core/html/cpp/classmoveit_1_1core_1_1RobotModel.html">RobotModel</a> need to have access to the URDF and SRDF to function properly. In ROS 1, this was accomplished by loading the XML of each into a string parameter (<code class="docutils literal notranslate"><span class="pre">/robot_description</span></code> and <code class="docutils literal notranslate"><span class="pre">/robot_description_semantic</span></code> respectively) into the global parameter server. ROS 2 does not have a global parameter server, so making sure all the appropriate nodes have access requires a little more work.</p>
+<p>All the components of MoveIt that use the <a class="reference external" href="http://docs.ros.org/noetic/api/moveit_core/html/cpp/classmoveit_1_1core_1_1RobotModel.html">RobotModel</a> need to have access to the URDF and SRDF to function properly. In ROS 1, this was accomplished by loading the XML of each into a string parameter (<code class="docutils literal notranslate"><span class="pre">/robot_description</span></code> and <code class="docutils literal notranslate"><span class="pre">/robot_description_semantic</span></code> respectively) into the global parameter server. ROS 2 does not have a global parameter server, so making sure all the appropriate nodes have access requires a little more work.</p>
 <div class="section" id="launch-file-specification">
 <h3>Launch File Specification<a class="headerlink" href="#launch-file-specification" title="Permalink to this headline"></a></h3>
 <p>One option is to set the parameters for each node that requires them, which is typically done using a launch file.</p>
@@ -302,7 +302,7 @@
 </div>
 <div class="section" id="under-the-hood-rdfloader">
 <h3>Under the Hood: RDFLoader<a class="headerlink" href="#under-the-hood-rdfloader" title="Permalink to this headline"></a></h3>
-<p>In many places in the MoveIt code, the robot description and semantics are loaded using the <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/foxy/moveit_ros/planning/rdf_loader/include/moveit/rdf_loader/rdf_loader.h">RDFLoader</a>
+<p>In many places in the MoveIt code, the robot description and semantics are loaded using the <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/main/moveit_ros/planning/rdf_loader/include/moveit/rdf_loader/rdf_loader.h">RDFLoader</a>
 class, which will attempt to read the parameters from the node, and if that fails, will attempt to subscribe to the String topic for a short period of time. If both methods fail to get the parameter, then a warning will be printed to the console.</p>
 </div>
 </div>
