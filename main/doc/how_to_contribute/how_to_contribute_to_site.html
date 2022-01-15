@@ -120,39 +120,43 @@
 <ul class="simple">
 <li><p>Ubuntu 20.04</p></li>
 <li><p>ROS 2 Galactic</p></li>
-<li><p>A local checkout of <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials">the moveit2_tutorials repo</a></p></li>
+<li><p>Docker</p></li>
+<li><p>A colcon workspace with a copy of <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials">the moveit2_tutorials repo</a> (if you don’t already have one, <a class="reference internal" href="../tutorials/getting_started/getting_started.html"><span class="doc">Getting Started</span></a> will walk you through the process of creating one).</p></li>
 </ul>
 </div>
 <div class="section" id="steps">
 <h2>Steps<a class="headerlink" href="#steps" title="Permalink to this headline"></a></h2>
-<p>These steps will walk you through how to build the website locally, test for broken links, run the formatters and spellchecker, and how to locally run industrial_ci to test code changes.</p>
-<p>This should make it easy for you to develop changes to this site and make sure your changes will pass the checks in CI.</p>
 <ol class="arabic simple">
 <li><p>Build and view the website locally</p></li>
 </ol>
-<p>To build the website locally run this command:</p>
+<blockquote>
+<div><p>First, <code class="docutils literal notranslate"><span class="pre">cd</span></code> to the root directory of the moveit2_tutorials repo (if you followed the <a class="reference internal" href="../tutorials/getting_started/getting_started.html"><span class="doc">Getting Started</span></a> tutorial, this will be <code class="docutils literal notranslate"><span class="pre">~/ws_moveit2/src/moveit2_tutorials</span></code>).  From that directory, run this command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make html
-<span class="c1"># Or run the following line if you want to automatically rebuild the website on new changes</span>
+<span class="c1"># Or run the following lines if you want to automatically rebuild the website on new changes</span>
 <span class="k">while</span> inotifywait -re modify,move,create,delete .<span class="p">;</span> <span class="k">do</span>
   make html
 <span class="k">done</span>
 </pre></div>
 </div>
-<p>Then you can open the local build of the site in your web browser from: <code class="docutils literal notranslate"><span class="pre">./build/html/index.html</span></code>. For example, to open the local site in Firefox the command would be:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>firefox ./build/html/index.html
+<p>Then you can open the local build of the site in your web browser from: <code class="docutils literal notranslate"><span class="pre">./build/html/index.html</span></code>. For example, to open the local site in your default browser the command would be:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xdg-open ./build/html/index.html
 </pre></div>
 </div>
+</div></blockquote>
 <ol class="arabic simple" start="2">
 <li><p>Test for broken links</p></li>
 </ol>
-<p>To test for broken links run this command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./htmlprofer.sh
+<blockquote>
+<div><p>To test for broken links run this command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./htmlproofer.sh
 </pre></div>
 </div>
+</div></blockquote>
 <ol class="arabic simple" start="3">
 <li><p>Run the formatters and spellchecker</p></li>
 </ol>
-<p>We use <a class="reference external" href="https://pre-commit.com/">pre-commit</a> to run the formatting and spelling checkers.
+<blockquote>
+<div><p>We use <a class="reference external" href="https://pre-commit.com/">pre-commit</a> to run the formatting and spelling checkers.
 You can install it with pip like this:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3 -m pip install --user pre-commit
 </pre></div>
@@ -161,14 +165,15 @@ You can install it with pip like this:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pre-commit run --all
 </pre></div>
 </div>
+</div></blockquote>
 <ol class="arabic simple" start="4">
 <li><p>Run industrial_ci locally to run CI</p></li>
 </ol>
-<ol class="arabic simple">
+<blockquote>
+<div><ul>
 <li><p>Clone a copy of <a class="reference external" href="https://github.com/ros-industrial/industrial_ci">industrial_ci</a> into your workspace.</p></li>
 <li><p>Build and source your workspace.</p></li>
-<li><p>Run this command from the workspace directory to test code changes just as it is done in CI:</p></li>
-</ol>
+<li><p>Run this command from the workspace directory to test code changes just as it is done in CI:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2 run industrial_ci rerun_ci src/moveit2_tutorials <span class="se">\</span>
   <span class="nv">DOCKER_IMAGE</span><span class="o">=</span><span class="s1">&#39;moveit/moveit2:rolling-source&#39;</span> <span class="se">\</span>
   <span class="nv">UPSTREAM_WORKSPACE</span><span class="o">=</span><span class="s1">&#39;moveit2_tutorials.repos&#39;</span> <span class="se">\</span>
@@ -177,6 +182,9 @@ You can install it with pip like this:</p>
   <span class="nv">CLANG_TIDY</span><span class="o">=</span><span class="s1">&#39;true&#39;</span>
 </pre></div>
 </div>
+</li>
+</ul>
+</div></blockquote>
 </div>
 <div class="section" id="further-reading">
 <h2>Further Reading<a class="headerlink" href="#further-reading" title="Permalink to this headline"></a></h2>
