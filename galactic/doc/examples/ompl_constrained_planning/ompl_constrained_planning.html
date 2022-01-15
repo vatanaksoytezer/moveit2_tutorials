@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OMPL Constrained Planning &mdash; MoveIt Documentation: Galactic  documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/override.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="canonical" href="https://moveit.picknik.ai/rolling//galactic/doc/examples/ompl_constrained_planning/ompl_constrained_planning.html" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/clipboard.min.js"></script>
+        <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="CHOMP Planner" href="../chomp_planner/chomp_planner_tutorial.html" />
+    <link rel="prev" title="OMPL Planner" href="../ompl_interface/ompl_interface_tutorial.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html">
+            <img src="../../../_static/galactic-small.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../how_to_guides/how_to_guides.html">How-To Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../concepts/concepts.html">Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../how_to_contribute/how_to_contribute.html">Contributing</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../examples.html">Examples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#movegroup-ros-wrappers-in-c">MoveGroup - ROS Wrappers in C++</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#using-moveit-directly-through-the-c-api">Using MoveIt Directly Through the C++ API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#integration-with-a-new-robot">Integration with a New Robot</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../examples.html#configuration">Configuration</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../kinematics_configuration/kinematics_configuration_tutorial.html">Kinematics Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../custom_constraint_samplers/custom_constraint_samplers_tutorial.html">Custom Constraint Samplers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ompl_interface/ompl_interface_tutorial.html">OMPL Planner</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">OMPL Constrained Planning</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#when-can-i-use-this-planner">When can I use this planner?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configure-ompl">Configure OMPL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#run-the-tutorial">Run the tutorial</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-code-explained">The code explained</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#setup">Setup</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#create-a-planning-problem">Create a planning problem</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#create-position-constraints">Create position constraints</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#finally-solve-a-planning-problem">Finally, solve a planning problem!</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../chomp_planner/chomp_planner_tutorial.html">CHOMP Planner</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../stomp_planner/stomp_planner_tutorial.html">STOMP Planner</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../trajopt_planner/trajopt_planner_tutorial.html">TrajOpt Planner</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pilz_industrial_motion_planner/pilz_industrial_motion_planner.html">Pilz Industrial Motion Planner</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pilz_industrial_motion_planner/pilz_industrial_motion_planner.html#sequence-of-multiple-segments">Sequence of multiple segments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../planning_adapters/planning_adapters_tutorial.html">Planning Adapter Tutorials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../persistent_scenes_and_states/persistent_scenes_and_states.html">Warehouse - Persistent Scenes and States</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#miscellaneous">Miscellaneous</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">MoveIt Documentation: Galactic</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../examples.html">Examples</a> &raquo;</li>
+      <li>OMPL Constrained Planning</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ros-planning/moveit2_tutorials/blob/galactic/doc/examples/ompl_constrained_planning/ompl_constrained_planning.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+
+
+  <div class="section" id="ompl-constrained-planning">
+<h1>OMPL Constrained Planning<a class="headerlink" href="#ompl-constrained-planning" title="Permalink to this headline"></a></h1>
+<a class="reference internal image-reference" href="../../../_images/ompl_constrained_planning_header.png"><img alt="../../../_images/ompl_constrained_planning_header.png" src="../../../_images/ompl_constrained_planning_header.png" style="width: 600px;" /></a>
+<p>This tutorial shows you how to use OMPL’s <a class="reference external" href="http://ompl.kavrakilab.org/constrainedPlanning.html">Constrained planning capabilities</a> from MoveIt. To illustrate the capabilities of this planner, three planning problems are solved with different types of path constraints. It will be easier to follow if you have read through the tutorial on the <a class="reference external" href="../move_group_python_interface/move_group_python_interface_tutorial.html">move group Python interface</a>.</p>
+<p>For a short walkthrough of running the tutorial, you can watch <a class="reference external" href="https://youtu.be/RkPydgtIq-M">this video</a>.</p>
+<div class="section" id="when-can-i-use-this-planner">
+<h2>When can I use this planner?<a class="headerlink" href="#when-can-i-use-this-planner" title="Permalink to this headline"></a></h2>
+<p>The interface currently only supports position constraints on any link of the robot, where the constrained regions is represented using a <a class="reference external" href="http://docs.ros.org/latest/api/shape_msgs/html/msg/SolidPrimitive.html">box</a>. The planning approach provides an alternative for the <a class="reference external" href="../ompl_interface/ompl_interface_tutorial.html#enforce-planning-in-joint-space">enforce_joint_model_state_space</a> option. It is expected to be most valuable for constraints regions that have a small (or zero) volume in Cartesian space, where the rejection sampling does not always works. For example, keeping the end-effector on a plane or along a line.</p>
+</div>
+<div class="section" id="configure-ompl">
+<h2>Configure OMPL<a class="headerlink" href="#configure-ompl" title="Permalink to this headline"></a></h2>
+<p>OMPL reads configurations parameters from a file called <code class="code docutils literal notranslate"><span class="pre">ompl_planning.yaml</span></code>. This tutorial uses the Panda robot, for which this file can be found in <code class="code docutils literal notranslate"><span class="pre">panda_moveit_config/config/ompl_planning.yaml</span></code>. We will add a parameter to tell OMPL to plan in a constrained state space by setting <code class="code docutils literal notranslate"><span class="pre">enforce_constrained_state_space</span></code>. In addition, if the parameter <a class="reference external" href="../ompl_interface/ompl_interface_tutorial.html#projection-evaluator">projection_evaluator</a> was not yet specified we also need to add it.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">panda_arm</span><span class="p">:</span><span class="w"></span>
+<span class="w">   </span><span class="nt">enforce_constrained_state_space</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">   </span><span class="nt">projection_evaluator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">joints(panda_joint1,panda_joint2)</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Note that, as we are changing configuration files, you should also clone the repository <a class="reference external" href="https://github.com/ros-planning/panda_moveit_config">panda_moveit_config</a> in you’re workspace. (Instead of using the version installed with <code class="code docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> catkin_ws/src
+git clone https://github.com/ros-planning/panda_moveit_config.git
+<span class="nb">cd</span> ../..
+catkin build
+</pre></div>
+</div>
+</div>
+<div class="section" id="run-the-tutorial">
+<h2>Run the tutorial<a class="headerlink" href="#run-the-tutorial" title="Permalink to this headline"></a></h2>
+<p>After you change the configuration as explained in the previous section, launch the move group node for the panda robot:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">roslaunch</span> <span class="n">panda_moveit_config</span> <span class="n">demo</span><span class="o">.</span><span class="n">launch</span>
+</pre></div>
+</div>
+<p>Then add a Marker display to Rviz:</p>
+<a class="reference internal image-reference" href="../../../_images/rviz_add_marker_topic.png"><img alt="../../../_images/rviz_add_marker_topic.png" src="../../../_images/rviz_add_marker_topic.png" style="width: 200px;" /></a>
+<p>Open a new terminal window to run the tutorial node:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rosrun</span> <span class="n">moveit_tutorials</span> <span class="n">ompl_constrained_planning_tutorial</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>A red and green sphere should appear in Rviz to show the start and goal states respectively. In addition, a grey box should appear that represents the position constraint on the link <code class="code docutils literal notranslate"><span class="pre">panda_link8</span></code>. If planning succeeds, you should see a preview of the trajectory that was planned.</p>
+<a class="reference internal image-reference" href="../../../_images/case_1.gif"><img alt="../../../_images/case_1.gif" src="../../../_images/case_1.gif" style="width: 300px;" /></a>
+<p>The following message appears in the terminal:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">============</span> <span class="n">Press</span> <span class="n">enter</span> <span class="n">to</span> <span class="k">continue</span> <span class="k">with</span> <span class="n">the</span> <span class="n">second</span> <span class="n">planning</span> <span class="n">problem</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>After pressing enter, the next planning problem is solved.</p>
+<a class="reference internal image-reference" href="../../../_images/case_2.gif"><img alt="../../../_images/case_2.gif" src="../../../_images/case_2.gif" style="width: 300px;" /></a>
+<p>Again, if planning succeeds, the trajectory is animated in rviz. And finally the last planning problem is solved after pressing enter again.</p>
+<a class="reference internal image-reference" href="../../../_images/case_3.gif"><img alt="../../../_images/case_3.gif" src="../../../_images/case_3.gif" style="width: 300px;" /></a>
+<p>To see the output from the planner, look in the terminal window where you launched the Panda’s move group node. To replay the planned trajectory, you can add a “Trajectory Slider” panel in Rviz.</p>
+<a class="reference internal image-reference" href="../../../_images/trajectory_slider.png"><img alt="../../../_images/trajectory_slider.png" src="../../../_images/trajectory_slider.png" style="width: 200px;" /></a>
+</div>
+<div class="section" id="the-code-explained">
+<h2>The code explained<a class="headerlink" href="#the-code-explained" title="Permalink to this headline"></a></h2>
+<div class="section" id="setup">
+<h3>Setup<a class="headerlink" href="#setup" title="Permalink to this headline"></a></h3>
+<p>Setup a RobotCommander and a MoveGroupCommander, see <a class="reference external" href="../move_group_python_interface/move_group_python_interface_tutorial.html">move group Python interface</a> tutorial for more details.
+Everything is wrappen in a class to make it easily reusable.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ConstrainedPlanningTutorial</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Wrapper class for the tutorial. &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">group_name</span><span class="o">=</span><span class="s2">&quot;panda_arm&quot;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Start the ROS node and create object to handle the robot and the planning scene. &quot;&quot;&quot;</span>
+
+        <span class="n">moveit_commander</span><span class="o">.</span><span class="n">roscpp_initialize</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
+        <span class="n">rospy</span><span class="o">.</span><span class="n">init_node</span><span class="p">(</span><span class="s2">&quot;ompl_constrained_planning_example&quot;</span><span class="p">,</span> <span class="n">anonymous</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">robot</span> <span class="o">=</span> <span class="n">moveit_commander</span><span class="o">.</span><span class="n">RobotCommander</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">move_group</span> <span class="o">=</span> <span class="n">moveit_commander</span><span class="o">.</span><span class="n">MoveGroupCommander</span><span class="p">(</span><span class="n">group_name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">scene</span> <span class="o">=</span> <span class="n">moveit_commander</span><span class="o">.</span><span class="n">PlanningSceneInterface</span><span class="p">()</span>
+
+        <span class="c1"># Create a publisher to visualize the position constraints in Rviz</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">marker_publisher</span> <span class="o">=</span> <span class="n">rospy</span><span class="o">.</span><span class="n">Publisher</span><span class="p">(</span>
+            <span class="s2">&quot;/visualization_marker&quot;</span><span class="p">,</span>
+            <span class="n">visualization_msgs</span><span class="o">.</span><span class="n">msg</span><span class="o">.</span><span class="n">Marker</span><span class="p">,</span>
+            <span class="n">queue_size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">rospy</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>  <span class="c1"># publisher needs some time to connect Rviz</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">remove_all_markers</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">marker_id_counter</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># give each marker a unique idea</span>
+
+        <span class="c1"># Save some commenly used variables in the setup class</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ref_link</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">move_group</span><span class="o">.</span><span class="n">get_pose_reference_frame</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ee_link</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">move_group</span><span class="o">.</span><span class="n">get_end_effector_link</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">obstacle_name</span> <span class="o">=</span> <span class="s2">&quot;obstacle&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="create-a-planning-problem">
+<h3>Create a planning problem<a class="headerlink" href="#create-a-planning-problem" title="Permalink to this headline"></a></h3>
+<p>Instead of using the current robot state as start state, we use a fixed state for the panda robot defined in the srdf config file.
+The <code class="code docutils literal notranslate"><span class="pre">get_named_target_values</span></code> returns a dictionary with joint names and values for the “ready” position.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_start_state</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">named_target</span><span class="o">=</span><span class="s2">&quot;ready&quot;</span><span class="p">):</span>
+    <span class="n">ready</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">move_group</span><span class="o">.</span><span class="n">get_named_target_values</span><span class="p">(</span><span class="n">named_target</span><span class="p">)</span>
+
+    <span class="c1"># Now create a robot state from these joint positions</span>
+    <span class="n">joint_state</span> <span class="o">=</span> <span class="n">sensor_msgs</span><span class="o">.</span><span class="n">msg</span><span class="o">.</span><span class="n">JointState</span><span class="p">()</span>
+    <span class="n">joint_state</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">stamp</span> <span class="o">=</span> <span class="n">rospy</span><span class="o">.</span><span class="n">Time</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+    <span class="n">joint_state</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">frame_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">move_group</span><span class="o">.</span><span class="n">get_pose_reference_frame</span><span class="p">()</span>
+    <span class="n">joint_state</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="p">[</span><span class="n">key</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">ready</span><span class="o">.</span><span class="n">keys</span><span class="p">()]</span>
+    <span class="n">joint_state</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="p">[</span><span class="n">val</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">ready</span><span class="o">.</span><span class="n">values</span><span class="p">()]</span>
+
+    <span class="n">state</span> <span class="o">=</span> <span class="n">moveit_msgs</span><span class="o">.</span><span class="n">msg</span><span class="o">.</span><span class="n">RobotState</span><span class="p">()</span>
+    <span class="n">state</span><span class="o">.</span><span class="n">joint_state</span> <span class="o">=</span> <span class="n">joint_state</span>
+
+    <span class="k">return</span> <span class="n">state</span>
+</pre></div>
+</div>
+<p>To keep things simple, we use the current end-effector pose to quickly create a reasonable goal.
+We also visualize the start and goal position of the end-effector in Rviz with a simple sphere.
+We assume that when the demo.launch file for the panda robot is launched, the robot is in the “ready” position.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_pose_goal</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">move_group</span><span class="o">.</span><span class="n">clear_pose_targets</span><span class="p">()</span>
+    <span class="n">pose</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">move_group</span><span class="o">.</span><span class="n">get_current_pose</span><span class="p">()</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">display_sphere</span><span class="p">(</span><span class="n">pose</span><span class="o">.</span><span class="n">pose</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">COLOR_RED</span><span class="p">)</span>
+
+    <span class="n">pose</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="mf">0.3</span>
+    <span class="n">pose</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">z</span> <span class="o">-=</span> <span class="mf">0.3</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">display_sphere</span><span class="p">(</span><span class="n">pose</span><span class="o">.</span><span class="n">pose</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">pose</span>
+</pre></div>
+</div>
+<p>For the second planning problem with the tilted plane, we need to create a pose goal that lies in this plane.
+The plane is tilted by 45 degrees, so moving an equal amount in the y and z direction should be ok.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_pose_goal_in_plane</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">move_group</span><span class="o">.</span><span class="n">clear_pose_targets</span><span class="p">()</span>
+    <span class="n">pose</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">move_group</span><span class="o">.</span><span class="n">get_current_pose</span><span class="p">()</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">display_sphere</span><span class="p">(</span><span class="n">pose</span><span class="o">.</span><span class="n">pose</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">COLOR_RED</span><span class="p">)</span>
+
+    <span class="n">pose</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="mf">0.2</span>
+    <span class="n">pose</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="mf">0.3</span>
+    <span class="n">pose</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">z</span> <span class="o">-=</span> <span class="mf">0.3</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">display_sphere</span><span class="p">(</span><span class="n">pose</span><span class="o">.</span><span class="n">pose</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">pose</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="create-position-constraints">
+<h3>Create position constraints<a class="headerlink" href="#create-position-constraints" title="Permalink to this headline"></a></h3>
+<p>First we create simple box constraints on the current end-effector link (<code class="code docutils literal notranslate"><span class="pre">self.ee_link</span> <span class="pre">=</span> <span class="pre">&quot;panda_link8&quot;</span></code>).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_simple_box_constraints</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">pcm</span> <span class="o">=</span> <span class="n">moveit_msgs</span><span class="o">.</span><span class="n">msg</span><span class="o">.</span><span class="n">PositionConstraint</span><span class="p">()</span>
+    <span class="n">pcm</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">frame_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ref_link</span>
+    <span class="n">pcm</span><span class="o">.</span><span class="n">link_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ee_link</span>
+
+    <span class="n">cbox</span> <span class="o">=</span> <span class="n">shape_msgs</span><span class="o">.</span><span class="n">msg</span><span class="o">.</span><span class="n">SolidPrimitive</span><span class="p">()</span>
+    <span class="n">cbox</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">shape_msgs</span><span class="o">.</span><span class="n">msg</span><span class="o">.</span><span class="n">SolidPrimitive</span><span class="o">.</span><span class="n">BOX</span>
+    <span class="n">cbox</span><span class="o">.</span><span class="n">dimensions</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">]</span>
+    <span class="n">pcm</span><span class="o">.</span><span class="n">constraint_region</span><span class="o">.</span><span class="n">primitives</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cbox</span><span class="p">)</span>
+
+    <span class="n">current_pose</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">move_group</span><span class="o">.</span><span class="n">get_current_pose</span><span class="p">()</span>
+
+    <span class="n">cbox_pose</span> <span class="o">=</span> <span class="n">geometry_msgs</span><span class="o">.</span><span class="n">msg</span><span class="o">.</span><span class="n">Pose</span><span class="p">()</span>
+    <span class="n">cbox_pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">current_pose</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">x</span>
+    <span class="n">cbox_pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="mf">0.15</span>
+    <span class="n">cbox_pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="mf">0.45</span>
+    <span class="n">cbox_pose</span><span class="o">.</span><span class="n">orientation</span><span class="o">.</span><span class="n">w</span> <span class="o">=</span> <span class="mf">1.0</span>
+    <span class="n">pcm</span><span class="o">.</span><span class="n">constraint_region</span><span class="o">.</span><span class="n">primitive_poses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cbox_pose</span><span class="p">)</span>
+
+    <span class="c1"># display the constraints in rviz</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">display_box</span><span class="p">(</span><span class="n">cbox_pose</span><span class="p">,</span> <span class="n">cbox</span><span class="o">.</span><span class="n">dimensions</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">pcm</span>
+</pre></div>
+</div>
+<p>If you make a box really thin along one dimension, you get something plane like.
+We create a plane perpendicular to the y-axis and tilt it by 45 degrees in the function below.
+When solving the problem, you can tell the planner to model this really thin box as an equality constraint.
+The magic number <code class="code docutils literal notranslate"><span class="pre">0.0005</span></code> is explained later.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_plane_constraints</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">pcm</span> <span class="o">=</span> <span class="n">moveit_msgs</span><span class="o">.</span><span class="n">msg</span><span class="o">.</span><span class="n">PositionConstraint</span><span class="p">()</span>
+    <span class="n">pcm</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">frame_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ref_link</span>
+    <span class="n">pcm</span><span class="o">.</span><span class="n">link_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ee_link</span>
+
+    <span class="n">cbox</span> <span class="o">=</span> <span class="n">shape_msgs</span><span class="o">.</span><span class="n">msg</span><span class="o">.</span><span class="n">SolidPrimitive</span><span class="p">()</span>
+    <span class="n">cbox</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">shape_msgs</span><span class="o">.</span><span class="n">msg</span><span class="o">.</span><span class="n">SolidPrimitive</span><span class="o">.</span><span class="n">BOX</span>
+    <span class="n">cbox</span><span class="o">.</span><span class="n">dimensions</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0005</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]</span>
+    <span class="n">pcm</span><span class="o">.</span><span class="n">constraint_region</span><span class="o">.</span><span class="n">primitives</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cbox</span><span class="p">)</span>
+
+    <span class="n">current_pose</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">move_group</span><span class="o">.</span><span class="n">get_current_pose</span><span class="p">()</span>
+
+    <span class="n">cbox_pose</span> <span class="o">=</span> <span class="n">geometry_msgs</span><span class="o">.</span><span class="n">msg</span><span class="o">.</span><span class="n">Pose</span><span class="p">()</span>
+    <span class="n">cbox_pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">current_pose</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">x</span>
+    <span class="n">cbox_pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">current_pose</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">y</span>
+    <span class="n">cbox_pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="n">current_pose</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">z</span>
+
+    <span class="c1"># turn the constraint region 45 degrees around the x-axis.</span>
+    <span class="n">quat</span> <span class="o">=</span> <span class="n">quaternion_from_euler</span><span class="p">(</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">cbox_pose</span><span class="o">.</span><span class="n">orientation</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">quat</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">cbox_pose</span><span class="o">.</span><span class="n">orientation</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">quat</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">cbox_pose</span><span class="o">.</span><span class="n">orientation</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="n">quat</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">cbox_pose</span><span class="o">.</span><span class="n">orientation</span><span class="o">.</span><span class="n">w</span> <span class="o">=</span> <span class="n">quat</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+    <span class="n">pcm</span><span class="o">.</span><span class="n">constraint_region</span><span class="o">.</span><span class="n">primitive_poses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cbox_pose</span><span class="p">)</span>
+
+    <span class="c1"># display the constraints in rviz</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">display_box</span><span class="p">(</span><span class="n">cbox_pose</span><span class="p">,</span> <span class="n">cbox</span><span class="o">.</span><span class="n">dimensions</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">pcm</span>
+</pre></div>
+</div>
+<p>Building on the previous constraint, we can make it a line, by also reducing the dimension of the box in the x-direction.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_line_constraints</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">pcm</span> <span class="o">=</span> <span class="n">moveit_msgs</span><span class="o">.</span><span class="n">msg</span><span class="o">.</span><span class="n">PositionConstraint</span><span class="p">()</span>
+    <span class="n">pcm</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">frame_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ref_link</span>
+    <span class="n">pcm</span><span class="o">.</span><span class="n">link_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ee_link</span>
+
+    <span class="n">cbox</span> <span class="o">=</span> <span class="n">shape_msgs</span><span class="o">.</span><span class="n">msg</span><span class="o">.</span><span class="n">SolidPrimitive</span><span class="p">()</span>
+    <span class="n">cbox</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">shape_msgs</span><span class="o">.</span><span class="n">msg</span><span class="o">.</span><span class="n">SolidPrimitive</span><span class="o">.</span><span class="n">BOX</span>
+    <span class="n">cbox</span><span class="o">.</span><span class="n">dimensions</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0005</span><span class="p">,</span> <span class="mf">0.0005</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]</span>
+    <span class="n">pcm</span><span class="o">.</span><span class="n">constraint_region</span><span class="o">.</span><span class="n">primitives</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cbox</span><span class="p">)</span>
+
+    <span class="n">current_pose</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">move_group</span><span class="o">.</span><span class="n">get_current_pose</span><span class="p">()</span>
+
+    <span class="n">cbox_pose</span> <span class="o">=</span> <span class="n">geometry_msgs</span><span class="o">.</span><span class="n">msg</span><span class="o">.</span><span class="n">Pose</span><span class="p">()</span>
+    <span class="n">cbox_pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">current_pose</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">x</span>
+    <span class="n">cbox_pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">current_pose</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">y</span>
+    <span class="n">cbox_pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="n">current_pose</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">z</span>
+    <span class="n">quat</span> <span class="o">=</span> <span class="n">quaternion_from_euler</span><span class="p">(</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">cbox_pose</span><span class="o">.</span><span class="n">orientation</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">quat</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">cbox_pose</span><span class="o">.</span><span class="n">orientation</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">quat</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">cbox_pose</span><span class="o">.</span><span class="n">orientation</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="n">quat</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">cbox_pose</span><span class="o">.</span><span class="n">orientation</span><span class="o">.</span><span class="n">w</span> <span class="o">=</span> <span class="n">quat</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+    <span class="n">pcm</span><span class="o">.</span><span class="n">constraint_region</span><span class="o">.</span><span class="n">primitive_poses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cbox_pose</span><span class="p">)</span>
+
+    <span class="c1"># display the constraints in rviz</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">display_box</span><span class="p">(</span><span class="n">cbox_pose</span><span class="p">,</span> <span class="n">cbox</span><span class="o">.</span><span class="n">dimensions</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">pcm</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="finally-solve-a-planning-problem">
+<h3>Finally, solve a planning problem!<a class="headerlink" href="#finally-solve-a-planning-problem" title="Permalink to this headline"></a></h3>
+<p>Now we can use the different pieces we just defined to solve some planning problems.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># First create an instance of the Tutorial class</span>
+<span class="n">tutorial</span> <span class="o">=</span> <span class="n">ConstrainedPlanningTutorial</span><span class="p">()</span>
+
+<span class="c1"># Copy move group variable for readability</span>
+<span class="n">move_group</span> <span class="o">=</span> <span class="n">tutorial</span><span class="o">.</span><span class="n">move_group</span>
+</pre></div>
+</div>
+<p>Create the first planning problem</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">start_state</span> <span class="o">=</span> <span class="n">tutorial</span><span class="o">.</span><span class="n">create_start_state</span><span class="p">()</span>
+<span class="n">pose_goal</span> <span class="o">=</span> <span class="n">tutorial</span><span class="o">.</span><span class="n">create_pose_goal</span><span class="p">()</span>
+
+<span class="c1"># Let&#39;s try the simple box constraints first!</span>
+<span class="n">pcm</span> <span class="o">=</span> <span class="n">tutorial</span><span class="o">.</span><span class="n">create_simple_box_constraints</span><span class="p">()</span>
+
+<span class="c1"># We need two wrap the constraints in a generic `Constraints` message.</span>
+<span class="n">path_constraints</span> <span class="o">=</span> <span class="n">moveit_msgs</span><span class="o">.</span><span class="n">msg</span><span class="o">.</span><span class="n">Constraints</span><span class="p">()</span>
+<span class="n">path_constraints</span><span class="o">.</span><span class="n">position_constraints</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pcm</span><span class="p">)</span>
+
+<span class="c1"># Now we have everything we need to configure and solve a planning problem</span>
+<span class="n">move_group</span><span class="o">.</span><span class="n">set_start_state</span><span class="p">(</span><span class="n">start_state</span><span class="p">)</span>
+<span class="n">move_group</span><span class="o">.</span><span class="n">set_pose_target</span><span class="p">(</span><span class="n">pose_goal</span><span class="p">)</span>
+
+<span class="c1"># Don&#39;t forget the path constraints! That&#39;s the whole point of this tutorial.</span>
+<span class="n">move_group</span><span class="o">.</span><span class="n">set_path_constraints</span><span class="p">(</span><span class="n">path_constraints</span><span class="p">)</span>
+
+<span class="c1"># And let the planner find a solution.</span>
+<span class="c1"># The move_group node should automatically visualize the solution in Rviz if a path is found.</span>
+<span class="n">move_group</span><span class="o">.</span><span class="n">plan</span><span class="p">()</span>
+
+<span class="c1"># Clear the path constraints for our next experiment</span>
+<span class="n">move_group</span><span class="o">.</span><span class="n">clear_path_constraints</span><span class="p">()</span>
+
+<span class="c1"># Now wait for the user (you) to press enter before doing trying the position constraints.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;============ Press enter to continue with the second planning problem.&quot;</span><span class="p">)</span>
+<span class="nb">input</span><span class="p">()</span>
+<span class="c1"># remove all markers in Rviz before starting the next tutorial</span>
+<span class="n">tutorial</span><span class="o">.</span><span class="n">remove_all_markers</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>In the second problem we plan with the end-effector constrained to a plane.
+Remember we created a special pose goal that lies in the constraint plane.
+We did that because any goal or start state should also satisfy the path constraints.</p>
+<p>Solving the problem using equality constraints is a bit more complicated. (Or should I say, hacky?)
+We need to tell the planner explicitly that we want to use equality constraints for the small dimensions.
+This is achieved by setting the name of the constraint to <code class="code docutils literal notranslate"><span class="pre">&quot;use_equality_constraints&quot;</span></code>.
+In addition, any dimension of the box below a threshold of <code class="code docutils literal notranslate"><span class="pre">0.001</span></code> will be considered an equality constraint.
+However, if we make it too small, the box will be thinner that the tolerance used by OMPL to evaluate constraints (<code class="code docutils literal notranslate"><span class="pre">1e-4</span></code> by default).
+MoveIt will use the stricter tolerance (the box width) to check the constraints, and many states will appear invalid.
+That’s where the magic number <code class="code docutils literal notranslate"><span class="pre">0.0005</span></code> comes from, it is between <code class="code docutils literal notranslate"><span class="pre">0.00001</span></code> and <code class="code docutils literal notranslate"><span class="pre">0.001</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pose_goal</span> <span class="o">=</span> <span class="n">tutorial</span><span class="o">.</span><span class="n">create_pose_goal_in_plane</span><span class="p">()</span>
+<span class="n">pcm</span> <span class="o">=</span> <span class="n">tutorial</span><span class="o">.</span><span class="n">create_plane_constraints</span><span class="p">()</span>  <span class="c1"># this function uses the &#39;magic&#39; number</span>
+
+<span class="n">path_constraints</span> <span class="o">=</span> <span class="n">moveit_msgs</span><span class="o">.</span><span class="n">msg</span><span class="o">.</span><span class="n">Constraints</span><span class="p">()</span>
+<span class="n">path_constraints</span><span class="o">.</span><span class="n">position_constraints</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pcm</span><span class="p">)</span>
+
+<span class="n">path_constraints</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;use_equality_constraints&quot;</span>
+
+<span class="c1"># And again, configure and solve the planning problem.</span>
+<span class="n">move_group</span><span class="o">.</span><span class="n">set_start_state</span><span class="p">(</span><span class="n">start_state</span><span class="p">)</span>
+<span class="n">move_group</span><span class="o">.</span><span class="n">set_pose_target</span><span class="p">(</span><span class="n">pose_goal</span><span class="p">)</span>
+<span class="n">move_group</span><span class="o">.</span><span class="n">set_path_constraints</span><span class="p">(</span><span class="n">path_constraints</span><span class="p">)</span>
+<span class="n">move_group</span><span class="o">.</span><span class="n">plan</span><span class="p">()</span>
+<span class="n">move_group</span><span class="o">.</span><span class="n">clear_path_constraints</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;============ Press enter to continue with the second planning problem.&quot;</span><span class="p">)</span>
+<span class="nb">input</span><span class="p">()</span>
+<span class="n">tutorial</span><span class="o">.</span><span class="n">remove_all_markers</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Finally we can also plan along the line.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pose_goal</span> <span class="o">=</span> <span class="n">tutorial</span><span class="o">.</span><span class="n">create_pose_goal</span><span class="p">()</span>
+
+<span class="n">pcm</span> <span class="o">=</span> <span class="n">tutorial</span><span class="o">.</span><span class="n">create_line_constraints</span><span class="p">()</span>
+
+<span class="n">path_constraints</span> <span class="o">=</span> <span class="n">moveit_msgs</span><span class="o">.</span><span class="n">msg</span><span class="o">.</span><span class="n">Constraints</span><span class="p">()</span>
+<span class="n">path_constraints</span><span class="o">.</span><span class="n">position_constraints</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pcm</span><span class="p">)</span>
+
+<span class="n">path_constraints</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;use_equality_constraints&quot;</span>
+
+<span class="n">move_group</span><span class="o">.</span><span class="n">set_start_state</span><span class="p">(</span><span class="n">start_state</span><span class="p">)</span>
+<span class="n">move_group</span><span class="o">.</span><span class="n">set_pose_target</span><span class="p">(</span><span class="n">pose_goal</span><span class="p">)</span>
+<span class="n">move_group</span><span class="o">.</span><span class="n">set_path_constraints</span><span class="p">(</span><span class="n">path_constraints</span><span class="p">)</span>
+<span class="n">move_group</span><span class="o">.</span><span class="n">plan</span><span class="p">()</span>
+<span class="n">move_group</span><span class="o">.</span><span class="n">clear_path_constraints</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Done!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../ompl_interface/ompl_interface_tutorial.html" class="btn btn-neutral float-left" title="OMPL Planner" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../chomp_planner/chomp_planner_tutorial.html" class="btn btn-neutral float-right" title="CHOMP Planner" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, PickNik Robotics.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: galactic
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>MoveIt 2 - Rolling (Development)</dt>
+      <dd><a href="../../../../main/doc/examples/ompl_constrained_planning/ompl_constrained_planning.html">Main (latest)</a></dd>
+    </dl>
+    <dl>
+      <dt>MoveIt 2 - Stable</dt>
+        <dd><a href="ompl_constrained_planning.html">Galactic (recommended)</a></dd>
+        <dd><a href="../../../../foxy/index.html">Foxy</a></dd>
+   </dl>
+    <dl>
+      <dt>MoveIt 1 - Stable</dt>
+      <dd><a href="https://ros-planning.github.io/moveit_tutorials/">Noetic</a></dd>
+      <dd><a href="http://docs.ros.org/en/melodic/api/moveit_tutorials/html/index.html">Melodic</a></dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+    <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108532843-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-108532843-1', {
+          'anonymize_ip': false,
+      });
+    </script> 
+
+</body>
+</html>
