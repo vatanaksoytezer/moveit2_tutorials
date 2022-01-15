@@ -62,6 +62,7 @@
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="#expected-output">Expected Output</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#introspection">Introspection</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#using-the-c-interface">Using the C++ Interface</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id1">Expected Output</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#entire-code">Entire Code</a><ul>
@@ -166,6 +167,21 @@
     <source src="../../../_static/videos/Servo_Teleop_Demo.webm" type="video/webm">
     Teleoperation demo with controller
 </video><p>Note that the controller overlay here is just for demonstration purposes and is not actually included</p>
+</div>
+<div class="section" id="introspection">
+<h2>Introspection<a class="headerlink" href="#introspection" title="Permalink to this headline"></a></h2>
+<p>Here are some tips for inspecting and/or debugging the system.</p>
+<ol class="arabic simple">
+<li><p>View the <code class="code docutils literal notranslate"><span class="pre">ros2_controllers</span></code> that are currently active with <code class="code docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">control</span> <span class="pre">list_controllers</span></code>. You will see a <a class="reference external" href="https://github.com/ros-controls/ros2_controllers/tree/master/joint_trajectory_controller">JointTrajectoryController</a> that receives the joint position commands from Servo and handles them in the simulated robot driver. The JointTrajectoryController is very flexible; it can handle any combination of position/velocity/(position-and-velocity) input. Servo is also compatible with <a class="reference external" href="https://github.com/ros-controls/ros2_controllers/tree/master/position_controllers">JointGroupPosition</a> or <a class="reference external" href="https://github.com/ros-controls/ros2_controllers/tree/master/velocity_controllers">JointGroupVelocity</a>-type controllers.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">topic</span> <span class="pre">echo</span> <span class="pre">/servo_node/status</span></code> shows the current state of the Servo node. If <code class="code docutils literal notranslate"><span class="pre">0</span></code> is published, all is well. The definition for all enums can be seen <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/main/moveit_ros/moveit_servo/include/moveit_servo/status_codes.h">here.</a></p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">node</span> <span class="pre">list</span></code> shows the following. <code class="code docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">node</span> <span class="pre">info</span></code> can be used to get more information about any of these nodes.</p>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">/joy_node</span></code> handles commands from the XBox controller</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">/moveit_servo_demo_container</span></code> holds several ancillary ROS2 “component nodes” that are placed in a container for faster intra-process communication</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">/servo_node</span></code> which does the calculations and collision checking for this demo. <code class="code docutils literal notranslate"><span class="pre">servo_node</span></code> may be moved into the demo container in the future</p></li>
+</ul>
+</li>
+</ol>
 </div>
 <div class="section" id="using-the-c-interface">
 <h2>Using the C++ Interface<a class="headerlink" href="#using-the-c-interface" title="Permalink to this headline"></a></h2>
