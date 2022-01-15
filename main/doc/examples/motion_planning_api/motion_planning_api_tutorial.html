@@ -10,7 +10,7 @@
       <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/override.css" type="text/css" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
-    <link rel="canonical" href="https://moveit.picknik.ai/rolling//rolling/doc/examples/motion_planning_api/motion_planning_api_tutorial.html" />
+    <link rel="canonical" href="https://moveit.picknik.ai/foxy//rolling/doc/examples/motion_planning_api/motion_planning_api_tutorial.html" />
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -177,7 +177,7 @@ run through the C++ code required to do this.</p>
 </div>
 <div class="section" id="the-entire-code">
 <h2>The Entire Code<a class="headerlink" href="#the-entire-code" title="Permalink to this headline"></a></h2>
-<p>The entire code can be seen <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/main/doc/examples/motion_planning_api">here in the moveit_tutorials GitHub project</a>.</p>
+<p>The entire code can be seen <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/foxy/doc/examples/motion_planning_api">here in the moveit_tutorials GitHub project</a>.</p>
 <div class="section" id="start">
 <h3>Start<a class="headerlink" href="#start" title="Permalink to this headline"></a></h3>
 <p>Setting up to start using a planner is pretty easy. Planners are
@@ -185,10 +185,10 @@ setup as plugins in MoveIt and you can use the ROS pluginlib
 interface to load any planner that you want to use. Before we can
 load the planner, we need two objects, a RobotModel and a
 PlanningScene. We will start by instantiating a
-<a class="reference external" href="https://github.com/ros-planning/moveit2/blob/main/moveit_ros/planning/robot_model_loader/include/moveit/robot_model_loader/robot_model_loader.h">RobotModelLoader</a>
+<a class="reference external" href="https://github.com/ros-planning/moveit2/blob/foxy/moveit_ros/planning/robot_model_loader/include/moveit/robot_model_loader/robot_model_loader.h">RobotModelLoader</a>
 object, which will look up the robot description on the ROS
 parameter server and construct a
-<a class="reference external" href="https://github.com/ros-planning/moveit2/blob/main/moveit_core/robot_model/include/moveit/robot_model/robot_model.h">RobotModel</a>
+<a class="reference external" href="https://github.com/ros-planning/moveit2/blob/foxy/moveit_core/robot_model/include/moveit/robot_model/robot_model.h">RobotModel</a>
 for us to use.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">PLANNING_GROUP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;panda_arm&quot;</span><span class="p">;</span><span class="w"></span>
 <span class="n">robot_model_loader</span><span class="o">::</span><span class="n">RobotModelLoader</span><span class="w"> </span><span class="nf">robot_model_loader</span><span class="p">(</span><span class="n">motion_planning_api_tutorial_node</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;robot_description&quot;</span><span class="p">);</span><span class="w"></span>
@@ -199,9 +199,9 @@ for us to use.</p>
 </pre></div>
 </div>
 <p>Using the
-<a class="reference external" href="https://github.com/ros-planning/moveit2/blob/main/moveit_core/robot_model/include/moveit/robot_model/robot_model.h">RobotModel</a>,
+<a class="reference external" href="https://github.com/ros-planning/moveit2/blob/foxy/moveit_core/robot_model/include/moveit/robot_model/robot_model.h">RobotModel</a>,
 we can construct a
-<a class="reference external" href="https://github.com/ros-planning/moveit2/blob/main/moveit_core/planning_scene/include/moveit/planning_scene/planning_scene.h">PlanningScene</a>
+<a class="reference external" href="https://github.com/ros-planning/moveit2/blob/foxy/moveit_core/planning_scene/include/moveit/planning_scene/planning_scene.h">PlanningScene</a>
 that maintains the state of the world (including the robot).</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">planning_scene</span><span class="o">::</span><span class="n">PlanningScenePtr</span><span class="w"> </span><span class="nf">planning_scene</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">planning_scene</span><span class="o">::</span><span class="n">PlanningScene</span><span class="p">(</span><span class="n">robot_model</span><span class="p">));</span><span class="w"></span>
 </pre></div>
@@ -304,7 +304,7 @@ and 0.01 radians in orientation</p>
 </div>
 <p>We will create the request as a constraint using a helper function available
 from the
-<a class="reference external" href="https://github.com/ros-planning/moveit2/blob/main/moveit_core/kinematic_constraints/include/moveit/kinematic_constraints/kinematic_constraint.h">kinematic_constraints</a>
+<a class="reference external" href="https://github.com/ros-planning/moveit2/blob/foxy/moveit_core/kinematic_constraints/include/moveit/kinematic_constraints/kinematic_constraint.h">kinematic_constraints</a>
 package.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">moveit_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Constraints</span><span class="w"> </span><span class="n">pose_goal</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
 <span class="w">    </span><span class="n">kinematic_constraints</span><span class="o">::</span><span class="n">constructGoalConstraints</span><span class="p">(</span><span class="s">&quot;panda_link8&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">pose</span><span class="p">,</span><span class="w"> </span><span class="n">tolerance_pose</span><span class="p">,</span><span class="w"> </span><span class="n">tolerance_angle</span><span class="p">);</span><span class="w"></span>
@@ -491,7 +491,7 @@ when planning for the arm; the bounds are only used to determine if the sampled 
 </div>
 <div class="section" id="the-launch-file">
 <h2>The Launch File<a class="headerlink" href="#the-launch-file" title="Permalink to this headline"></a></h2>
-<p>The entire launch file is <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/main/doc/examples/motion_planning_api/launch/motion_planning_api_tutorial.launch.py">here</a> on GitHub. All the code in this tutorial can be compiled and run from the moveit_tutorials package.</p>
+<p>The entire launch file is <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/foxy/doc/examples/motion_planning_api/launch/motion_planning_api_tutorial.launch.py">here</a> on GitHub. All the code in this tutorial can be compiled and run from the moveit_tutorials package.</p>
 </div>
 </div>
 

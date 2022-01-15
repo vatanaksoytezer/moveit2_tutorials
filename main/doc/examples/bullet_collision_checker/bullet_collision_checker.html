@@ -10,7 +10,7 @@
       <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/override.css" type="text/css" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
-    <link rel="canonical" href="https://moveit.picknik.ai/rolling//rolling/doc/examples/bullet_collision_checker/bullet_collision_checker.html" />
+    <link rel="canonical" href="https://moveit.picknik.ai/foxy//rolling/doc/examples/bullet_collision_checker/bullet_collision_checker.html" />
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -173,7 +173,7 @@ The tutorial builds on top of the <a class="reference internal" href="../visuali
 </div>
 <div class="section" id="relevant-code">
 <h2>Relevant Code<a class="headerlink" href="#relevant-code" title="Permalink to this headline"></a></h2>
-<p>The entire code can be seen <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/main/doc/examples/bullet_collision_checker">here</a> in the moveit_tutorials GitHub project. A lot of information necessary for understanding how this demo works is left out to keep this tutorial focused on Bullet. Please see <a class="reference internal" href="../visualizing_collisions/visualizing_collisions_tutorial.html"><span class="doc">Visualizing Collisions</span></a> for code explanation regarding the visualizing of the collisions.</p>
+<p>The entire code can be seen <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/foxy/doc/examples/bullet_collision_checker">here</a> in the moveit_tutorials GitHub project. A lot of information necessary for understanding how this demo works is left out to keep this tutorial focused on Bullet. Please see <a class="reference internal" href="../visualizing_collisions/visualizing_collisions_tutorial.html"><span class="doc">Visualizing Collisions</span></a> for code explanation regarding the visualizing of the collisions.</p>
 <p>The code starts with creating an interactive robot and a new planning scene.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">InteractiveRobot</span><span class="w"> </span><span class="nf">interactive_robot</span><span class="p">(</span><span class="s">&quot;robot_description&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;bullet_collision_tutorial/interactive_robot_state&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="n">g_planning_scene</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">planning_scene</span><span class="o">::</span><span class="n">PlanningScene</span><span class="o">&gt;</span><span class="p">(</span><span class="n">interactive_robot</span><span class="p">.</span><span class="n">robotModel</span><span class="p">());</span><span class="w"></span>
@@ -249,7 +249,7 @@ not yet contain any direct functions to do CCD, we have to access the collision 
 </div>
 <div class="section" id="launch-file">
 <h2>Launch file<a class="headerlink" href="#launch-file" title="Permalink to this headline"></a></h2>
-<p>The entire launch file is  <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/main/doc/examples/bullet_collision_checker">here</a> on GitHub. All the code in this tutorial can be compiled and run from the <code class="docutils literal notranslate"><span class="pre">moveit_tutorials</span></code> package.</p>
+<p>The entire launch file is  <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/foxy/doc/examples/bullet_collision_checker">here</a> on GitHub. All the code in this tutorial can be compiled and run from the <code class="docutils literal notranslate"><span class="pre">moveit_tutorials</span></code> package.</p>
 </div>
 </div>
 
