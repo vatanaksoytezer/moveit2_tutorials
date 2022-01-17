@@ -10,7 +10,7 @@
       <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/override.css" type="text/css" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
-    <link rel="canonical" href="https://moveit.picknik.ai/foxy//galactic/doc/examples/hybrid_planning/hybrid_planning_tutorial.html" />
+    <link rel="canonical" href="https://moveit.picknik.ai/rolling//galactic/doc/examples/hybrid_planning/hybrid_planning_tutorial.html" />
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -129,8 +129,8 @@ The main advantages of using the architecture are:</p>
 </pre></div>
 </div>
 <p>You should see a similar behavior as in the example GIF above without the replanning.</p>
-<p>To interact with the architecture you simply need to send a <em>Hybrid Planning Request</em> to an action server offered by the <em>Hybrid Planning Manager</em> as seen in the <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/foxy/moveit_ros/hybrid_planning/test/hybrid_planning_demo_node.cpp#L245">hybrid_planning_test_node</a>.</p>
-<p>Let’s change this behavior such that the architecture replans the invalidated trajectory. To do so, just change the <em>planner_logic_plugin</em> by replacing the plugin name in the <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/foxy/moveit_ros/hybrid_planning/test/config/hybrid_planning_manager.yaml">demo configuration</a> with “moveit_hybrid_planning/ReplanInvalidatedTrajectory” and rebuild the package :</p>
+<p>To interact with the architecture you simply need to send a <em>Hybrid Planning Request</em> to an action server offered by the <em>Hybrid Planning Manager</em> as seen in the <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/main/moveit_ros/hybrid_planning/test/hybrid_planning_demo_node.cpp#L245">hybrid_planning_test_node</a>.</p>
+<p>Let’s change this behavior such that the architecture replans the invalidated trajectory. To do so, just change the <em>planner_logic_plugin</em> by replacing the plugin name in the <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/main/moveit_ros/hybrid_planning/test/config/hybrid_planning_manager.yaml">demo configuration</a> with “moveit_hybrid_planning/ReplanInvalidatedTrajectory” and rebuild the package :</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">colcon</span> <span class="n">build</span> <span class="o">--</span><span class="n">packages</span><span class="o">-</span><span class="n">select</span> <span class="n">moveit2_tutorials</span>
 </pre></div>
 </div>
@@ -186,7 +186,7 @@ The main advantages of using the architecture are:</p>
 <p>To get a global motion planning solution, the <em>Global Planner Component</em> needs to be activated via the <em>Global Planning Action Server</em>. When it receives a <em>MotionPlanRequest</em> the component computes a motion plan with the <em>Global Planner Plugin</em> and publishes the solution to the other components.
 The dataflow within the component can be seen in the picture below:</p>
 <a class="reference internal image-reference" href="../../../_images/global_planner_dataflow.png"><img alt="../../../_images/global_planner_dataflow.png" src="../../../_images/global_planner_dataflow.png" style="width: 500pt;" /></a>
-<p>The <em>Global Planner Plugin</em> can be used to implement and customize the global planning algorithm. To implement you own planner you simply need to inherit from the <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/foxy/moveit_ros/hybrid_planning/global_planner/global_planner_component/include/moveit/global_planner/global_planner_interface.h">GlobalPlannerInterface</a>:</p>
+<p>The <em>Global Planner Plugin</em> can be used to implement and customize the global planning algorithm. To implement you own planner you simply need to inherit from the <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/main/moveit_ros/hybrid_planning/global_planner/global_planner_component/include/moveit/global_planner/global_planner_interface.h">GlobalPlannerInterface</a>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MySmartPlanner</span> <span class="p">:</span> <span class="n">public</span> <span class="n">GlobalPlannerInterface</span>
 <span class="p">{</span>
 <span class="n">public</span><span class="p">:</span>
@@ -206,7 +206,7 @@ The dataflow within the component can be seen in the picture below:</p>
 <span class="p">};</span>
 </pre></div>
 </div>
-<p><em>Global Planner</em> example implementations can be found <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/foxy/moveit_ros/hybrid_planning/global_planner/global_planner_plugins/">here</a>.</p>
+<p><em>Global Planner</em> example implementations can be found <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/main/moveit_ros/hybrid_planning/global_planner/global_planner_plugins/">here</a>.</p>
 <p>More complex is the behavior of the <em>Local Planner Component</em>. The data flow is displayed below:</p>
 <a class="reference internal image-reference" href="../../../_images/local_planner_dataflow.png"><img alt="../../../_images/local_planner_dataflow.png" src="../../../_images/local_planner_dataflow.png" style="width: 500pt;" /></a>
 <p>The local planner is started and stopped via the <em>Local Planning Action Server</em>. After the component is started it performs each iteration the following tasks:</p>
@@ -217,7 +217,7 @@ The dataflow within the component can be seen in the picture below:</p>
 </ol>
 <p>Via the <em>Global Solution Subscriber</em> the <em>Local Planner Component</em> receives global planning updates which are processed and blended into the reference trajectory. Based on this reference trajectory the local planner identifies and solves local planning problems once it is started. How the global trajectory updates are processed and included into the reference trajectory is defined by the <em>Trajectory Operator</em> ‘s <em>addTrajectorySegment()</em> function.</p>
 <p>The behavior of the <em>Local Planner Component</em> can be customized via the <em>Trajectory Operator Plugin</em> and the local <em>Solver Plugin</em>:</p>
-<p>The <em>Trajectory Operator Plugin</em> handles the reference trajectory. To create your own operator you need to create a plugin class which inherits from the <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/foxy/moveit_ros/hybrid_planning/local_planner/local_planner_component/include/moveit/local_planner/trajectory_operator_interface.h">TrajectoryOperatorInterface</a>:</p>
+<p>The <em>Trajectory Operator Plugin</em> handles the reference trajectory. To create your own operator you need to create a plugin class which inherits from the <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/main/moveit_ros/hybrid_planning/local_planner/local_planner_component/include/moveit/local_planner/trajectory_operator_interface.h">TrajectoryOperatorInterface</a>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyAwesomeOperator</span> <span class="p">:</span> <span class="n">public</span> <span class="n">TrajectoryOperatorInterface</span>
 <span class="p">{</span>
 <span class="n">public</span><span class="p">:</span>
@@ -247,8 +247,8 @@ The dataflow within the component can be seen in the picture below:</p>
 <span class="p">};</span>
 </pre></div>
 </div>
-<p><em>Trajectory Operator</em> example implementations can be found <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/foxy/moveit_ros/hybrid_planning/local_planner/trajectory_operator_plugins/">here</a>.</p>
-<p>The <em>Local Solver Plugin</em> implements the algorithm to solve the local planning problem each iteration. To implement your solution you need to inherit from the <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/foxy/moveit_ros/hybrid_planning/local_planner/local_planner_component/include/moveit/local_planner/local_constraint_solver_interface.h">LocalConstraintSolverInterface</a>:</p>
+<p><em>Trajectory Operator</em> example implementations can be found <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/main/moveit_ros/hybrid_planning/local_planner/trajectory_operator_plugins/">here</a>.</p>
+<p>The <em>Local Solver Plugin</em> implements the algorithm to solve the local planning problem each iteration. To implement your solution you need to inherit from the <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/main/moveit_ros/hybrid_planning/local_planner/local_planner_component/include/moveit/local_planner/local_constraint_solver_interface.h">LocalConstraintSolverInterface</a>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyAwesomeSolver</span> <span class="p">:</span> <span class="n">public</span> <span class="n">LocalConstraintSolverInterface</span>
 <span class="p">{</span>
 <span class="n">public</span><span class="p">:</span>
@@ -273,7 +273,7 @@ The dataflow within the component can be seen in the picture below:</p>
 <span class="p">};</span>
 </pre></div>
 </div>
-<p><em>Local Constraint Solver</em> example implementations can be found <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/foxy/moveit_ros/hybrid_planning/local_planner/local_constraint_solver_plugins/">here</a>.</p>
+<p><em>Local Constraint Solver</em> example implementations can be found <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/main/moveit_ros/hybrid_planning/local_planner/local_constraint_solver_plugins/">here</a>.</p>
 <p>Both plugins receive a shared pointer to the ROS 2 node when they get initialized which can be used to create additional custom ROS 2 communication interfaces for example to subscribe to an additional sensor source.</p>
 </div>
 <div class="section" id="planning-logic-and-reactive-behavior">
@@ -303,7 +303,7 @@ An example would be an unforeseen collision object during the online local plann
     <span class="p">};</span>
 </pre></div>
 </div>
-<p>To create you own <em>Planner Logic Plugin</em> you need inherit from the <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/foxy/moveit_ros/hybrid_planning/hybrid_planning_manager/hybrid_planning_manager_component/include/moveit/hybrid_planning_manager/planner_logic_interface.h">PlannerLogicInterface</a>:</p>
+<p>To create you own <em>Planner Logic Plugin</em> you need inherit from the <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/main/moveit_ros/hybrid_planning/hybrid_planning_manager/hybrid_planning_manager_component/include/moveit/hybrid_planning_manager/planner_logic_interface.h">PlannerLogicInterface</a>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyCunningLogic</span> <span class="p">:</span> <span class="n">public</span> <span class="n">PlannerLogicInterface</span>
 <span class="p">{</span>
 <span class="n">public</span><span class="p">:</span>
@@ -322,7 +322,7 @@ An example would be an unforeseen collision object during the online local plann
 <span class="p">};</span>
 </pre></div>
 </div>
-<p>A possible implementation of the <em>react()</em> function could contain a switch-case statement that maps events to actions like in the <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/foxy/moveit_ros/hybrid_planning/hybrid_planning_manager/hybrid_planning_manager_component/include/moveit/hybrid_planning_manager/planner_logic_interface.h">example logic plugins</a>.</p>
+<p>A possible implementation of the <em>react()</em> function could contain a switch-case statement that maps events to actions like in the <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/main/moveit_ros/hybrid_planning/hybrid_planning_manager/hybrid_planning_manager_component/include/moveit/hybrid_planning_manager/planner_logic_interface.h">example logic plugins</a>.</p>
 </div>
 </div>
 </div>
