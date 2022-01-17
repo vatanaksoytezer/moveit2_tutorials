@@ -10,7 +10,7 @@
       <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/override.css" type="text/css" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
-    <link rel="canonical" href="https://moveit.picknik.ai/rolling//rolling/doc/examples/chomp_planner/chomp_planner_tutorial.html" />
+    <link rel="canonical" href="https://moveit.picknik.ai/foxy//rolling/doc/examples/chomp_planner/chomp_planner_tutorial.html" />
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -160,7 +160,7 @@
 <h3>Running CHOMP with Obstacles in the Scene<a class="headerlink" href="#running-chomp-with-obstacles-in-the-scene" title="Permalink to this headline"></a></h3>
 <p>To run CHOMP in an environment with obstacles, you can run the sample python script:</p>
 <blockquote>
-<div><p><a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/main/doc/examples/collision_environments/scripts/collision_scene_example.py">collision_scene_example.py</a>.</p>
+<div><p><a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/foxy/doc/examples/collision_environments/scripts/collision_scene_example.py">collision_scene_example.py</a>.</p>
 </div></blockquote>
 <p>This script creates a cluttered scene with four obstacles or a simple scene with one obstacle depending on the argument given to the script. One can also change the position/size of the obstacles to change the scene.</p>
 <p>To run the CHOMP planner with obstacles, open two shells. In the first shell start RViz and wait for everything to finish loading:</p>
@@ -189,7 +189,7 @@
 <li><p><em>obstacle_cost_weight</em>: this controls the weight to be given to obstacles towards the final cost CHOMP optimizes over. e.g., 0.0 would have obstacles to be ignored, 1.0 would be a hard constraint</p></li>
 <li><p><em>learning_rate</em>: this is the learning rate used by the optimizer to find the local / global minima while reducing the total cost.</p></li>
 <li><p><em>smoothness_cost_velocity, smoothness_cost_acceleration, smoothness_cost_jerk</em>: variables associated with the cost in velocity, acceleration and jerk.</p></li>
-<li><p><em>ridge_factor</em>: the noise added to the diagonal of the total <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/main/moveit_planners/chomp/chomp_motion_planner/src/chomp_cost.cpp#L62/">quadratic cost matrix</a> in the objective function. Addition of small noise (e.g., 0.001) allows CHOMP to avoid obstacles at the cost of smoothness in trajectory.</p></li>
+<li><p><em>ridge_factor</em>: the noise added to the diagonal of the total <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/foxy/moveit_planners/chomp/chomp_motion_planner/src/chomp_cost.cpp#L62/">quadratic cost matrix</a> in the objective function. Addition of small noise (e.g., 0.001) allows CHOMP to avoid obstacles at the cost of smoothness in trajectory.</p></li>
 <li><p><em>use_pseudo_inverse</em>: enable pseudo inverse calculations or not.</p></li>
 <li><p><em>pseudo_inverse_ridge_factor</em>: set the ridge factor if pseudo inverse is enabled.</p></li>
 <li><p><em>joint_update_limit</em>: set the update limit for the robot joints</p></li>

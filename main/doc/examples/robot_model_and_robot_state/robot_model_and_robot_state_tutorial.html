@@ -10,7 +10,7 @@
       <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/override.css" type="text/css" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
-    <link rel="canonical" href="https://moveit.picknik.ai/rolling//rolling/doc/examples/robot_model_and_robot_state/robot_model_and_robot_state_tutorial.html" />
+    <link rel="canonical" href="https://moveit.picknik.ai/foxy//rolling/doc/examples/robot_model_and_robot_state/robot_model_and_robot_state_tutorial.html" />
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -141,9 +141,9 @@
 <p>In this section, we will walk you through the C++ API for using kinematics in MoveIt.</p>
 <div class="section" id="the-robotmodel-and-robotstate-classes">
 <h2>The RobotModel and RobotState Classes<a class="headerlink" href="#the-robotmodel-and-robotstate-classes" title="Permalink to this headline"></a></h2>
-<p>The <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/main/moveit_core/robot_model/include/moveit/robot_model/robot_model.h">RobotModel</a> and <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/main/moveit_core/robot_state/include/moveit/robot_state/robot_state.h">RobotState</a> classes are the core classes that give you access to a robot’s kinematics.</p>
-<p>The <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/main/moveit_core/robot_model/include/moveit/robot_model/robot_model.h">RobotModel</a> class contains the relationships between all links and joints including their joint limit properties as loaded from the URDF. The RobotModel also separates the robot’s links and joints into planning groups defined in the SRDF. A separate tutorial on the URDF and SRDF can be found here: <a class="reference internal" href="../urdf_srdf/urdf_srdf_tutorial.html"><span class="doc">URDF and SRDF Tutorial</span></a></p>
-<p>The <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/main/moveit_core/robot_state/include/moveit/robot_state/robot_state.h">RobotState</a> contains information about the robot at a certain point in time, storing vectors of joint positions and optionally velocities and accelerations. This information can be used to obtain kinematic information about the robot that depends on its current state, such as the Jacobian of an end effector.</p>
+<p>The <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/foxy/moveit_core/robot_model/include/moveit/robot_model/robot_model.h">RobotModel</a> and <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/foxy/moveit_core/robot_state/include/moveit/robot_state/robot_state.h">RobotState</a> classes are the core classes that give you access to a robot’s kinematics.</p>
+<p>The <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/foxy/moveit_core/robot_model/include/moveit/robot_model/robot_model.h">RobotModel</a> class contains the relationships between all links and joints including their joint limit properties as loaded from the URDF. The RobotModel also separates the robot’s links and joints into planning groups defined in the SRDF. A separate tutorial on the URDF and SRDF can be found here: <a class="reference internal" href="../urdf_srdf/urdf_srdf_tutorial.html"><span class="doc">URDF and SRDF Tutorial</span></a></p>
+<p>The <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/foxy/moveit_core/robot_state/include/moveit/robot_state/robot_state.h">RobotState</a> contains information about the robot at a certain point in time, storing vectors of joint positions and optionally velocities and accelerations. This information can be used to obtain kinematic information about the robot that depends on its current state, such as the Jacobian of an end effector.</p>
 <p>RobotState also contains helper functions for setting the arm location based on the end effector location (Cartesian pose) and for computing Cartesian trajectories.</p>
 <p>In this example, we will walk through the process of using these classes with the Panda.</p>
 </div>
@@ -204,7 +204,7 @@ setup.</p>
 </div>
 <div class="section" id="the-entire-code">
 <h2>The Entire Code<a class="headerlink" href="#the-entire-code" title="Permalink to this headline"></a></h2>
-<p>The entire code can be seen <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/main/doc/examples/robot_model_and_robot_state/src/robot_model_and_robot_state_tutorial.cpp">here in the MoveIt GitHub project</a>.</p>
+<p>The entire code can be seen <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/foxy/doc/examples/robot_model_and_robot_state/src/robot_model_and_robot_state_tutorial.cpp">here in the MoveIt GitHub project</a>.</p>
 <div class="section" id="start">
 <h3>Start<a class="headerlink" href="#start" title="Permalink to this headline"></a></h3>
 <p>Setting up to start using the RobotModel class is very easy. In
@@ -219,16 +219,16 @@ classes.</p>
 <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/main/moveit_ros/planning/robot_model_loader/include/moveit/robot_model_loader/robot_model_loader.h">RobotModelLoader</a>
 object, which will look up
 the robot description on the ROS parameter server and construct a
-<a class="reference external" href="https://github.com/ros-planning/moveit2/blob/main/moveit_core/robot_model/include/moveit/robot_model/robot_model.h">RobotModel</a> for us to use.</p>
+<a class="reference external" href="https://github.com/ros-planning/moveit2/blob/foxy/moveit_core/robot_model/include/moveit/robot_model/robot_model.h">RobotModel</a> for us to use.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">robot_model_loader</span><span class="o">::</span><span class="n">RobotModelLoader</span><span class="w"> </span><span class="nf">robot_model_loader</span><span class="p">(</span><span class="n">node</span><span class="p">);</span><span class="w"></span>
 <span class="k">const</span><span class="w"> </span><span class="n">moveit</span><span class="o">::</span><span class="n">core</span><span class="o">::</span><span class="n">RobotModelPtr</span><span class="o">&amp;</span><span class="w"> </span><span class="n">kinematic_model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">robot_model_loader</span><span class="p">.</span><span class="n">getModel</span><span class="p">();</span><span class="w"></span>
 <span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Model frame: %s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">kinematic_model</span><span class="o">-&gt;</span><span class="n">getModelFrame</span><span class="p">().</span><span class="n">c_str</span><span class="p">());</span><span class="w"></span>
 </pre></div>
 </div>
-<p>Using the <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/main/moveit_core/robot_model/include/moveit/robot_model/robot_model.h">RobotModel</a>, we can
-construct a <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/main/moveit_core/robot_state/include/moveit/robot_state/robot_state.h">RobotState</a> that
+<p>Using the <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/foxy/moveit_core/robot_model/include/moveit/robot_model/robot_model.h">RobotModel</a>, we can
+construct a <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/foxy/moveit_core/robot_state/include/moveit/robot_state/robot_state.h">RobotState</a> that
 maintains the configuration of the robot. We will set all joints in the state to their default values. We can then
-get a <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/main/moveit_core/robot_model/include/moveit/robot_model/joint_model_group.h">JointModelGroup</a>,
+get a <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/foxy/moveit_core/robot_model/include/moveit/robot_model/joint_model_group.h">JointModelGroup</a>,
 which represents the robot model for a particular group, e.g. the “panda_arm” of the Panda robot.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">moveit</span><span class="o">::</span><span class="n">core</span><span class="o">::</span><span class="n">RobotStatePtr</span><span class="w"> </span><span class="nf">kinematic_state</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">moveit</span><span class="o">::</span><span class="n">core</span><span class="o">::</span><span class="n">RobotState</span><span class="p">(</span><span class="n">kinematic_model</span><span class="p">));</span><span class="w"></span>
 <span class="n">kinematic_state</span><span class="o">-&gt;</span><span class="n">setToDefaultValues</span><span class="p">();</span><span class="w"></span>
@@ -314,7 +314,7 @@ end_effector_state that we computed in the step above.</p></li>
 </div>
 <div class="section" id="get-the-jacobian">
 <h3>Get the Jacobian<a class="headerlink" href="#get-the-jacobian" title="Permalink to this headline"></a></h3>
-<p>We can also get the Jacobian from the <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/main/moveit_core/robot_state/include/moveit/robot_state/robot_state.h">RobotState</a>.</p>
+<p>We can also get the Jacobian from the <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/foxy/moveit_core/robot_state/include/moveit/robot_state/robot_state.h">RobotState</a>.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3d</span><span class="w"> </span><span class="nf">reference_point_position</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">);</span><span class="w"></span>
 <span class="n">Eigen</span><span class="o">::</span><span class="n">MatrixXd</span><span class="w"> </span><span class="n">jacobian</span><span class="p">;</span><span class="w"></span>
 <span class="n">kinematic_state</span><span class="o">-&gt;</span><span class="n">getJacobian</span><span class="p">(</span><span class="n">joint_model_group</span><span class="p">,</span><span class="w"></span>

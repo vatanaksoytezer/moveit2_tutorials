@@ -10,7 +10,7 @@
       <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/override.css" type="text/css" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
-    <link rel="canonical" href="https://moveit.picknik.ai/rolling//rolling/doc/examples/visualizing_collisions/visualizing_collisions_tutorial.html" />
+    <link rel="canonical" href="https://moveit.picknik.ai/foxy//rolling/doc/examples/visualizing_collisions/visualizing_collisions_tutorial.html" />
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -153,7 +153,7 @@
 <div class="section" id="classes">
 <h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline"></a></h2>
 <p>The code for this tutorial is mainly in the <code class="code docutils literal notranslate"><span class="pre">InteractiveRobot</span></code> class which we will walk through below. The <code class="code docutils literal notranslate"><span class="pre">InteractiveRobot</span></code> class maintains a <code class="code docutils literal notranslate"><span class="pre">RobotModel</span></code>, a <code class="code docutils literal notranslate"><span class="pre">RobotState</span></code>, and information about ‘the world’ (in this case “the world” is a single yellow cube).</p>
-<p>The <code class="code docutils literal notranslate"><span class="pre">InteractiveRobot</span></code> class uses the <code class="code docutils literal notranslate"><span class="pre">IMarker</span></code> class which maintains an interactive marker. This tutorial does not cover the implementation of the IMarker class (<a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/main/doc/examples/interactivity/src/imarker.cpp">imarker.cpp</a>), but most of the code is copied from the <a class="reference external" href="http://wiki.ros.org/rviz/Tutorials/Interactive%20Markers:%20Getting%20Started#basic_controls">basic_controls</a> tutorial and you can read more there about interactive markers if you are interested.</p>
+<p>The <code class="code docutils literal notranslate"><span class="pre">InteractiveRobot</span></code> class uses the <code class="code docutils literal notranslate"><span class="pre">IMarker</span></code> class which maintains an interactive marker. This tutorial does not cover the implementation of the IMarker class (<a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/foxy/doc/examples/interactivity/src/imarker.cpp">imarker.cpp</a>), but most of the code is copied from the <a class="reference external" href="http://wiki.ros.org/rviz/Tutorials/Interactive%20Markers:%20Getting%20Started#basic_controls">basic_controls</a> tutorial and you can read more there about interactive markers if you are interested.</p>
 </div>
 <div class="section" id="interacting">
 <h2>Interacting<a class="headerlink" href="#interacting" title="Permalink to this headline"></a></h2>
@@ -164,12 +164,12 @@ Move the right arm so it is in contact with the yellow cube (you may also move t
 </div>
 <div class="section" id="relevant-code">
 <h2>Relevant Code<a class="headerlink" href="#relevant-code" title="Permalink to this headline"></a></h2>
-<p>The entire code can be seen <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/main/doc/examples/visualizing_collisions">here</a> in the moveit_tutorials GitHub project. Libraries used can be found <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/main/doc/examples/interactivity">here</a>. A lot of information necessary for understanding how this demo works is left out to keep this tutorial focused on collision contacts. To understand this demo fully, it is highly recommended that you read through the source code.</p>
+<p>The entire code can be seen <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/foxy/doc/examples/visualizing_collisions">here</a> in the moveit_tutorials GitHub project. Libraries used can be found <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/foxy/doc/examples/interactivity">here</a>. A lot of information necessary for understanding how this demo works is left out to keep this tutorial focused on collision contacts. To understand this demo fully, it is highly recommended that you read through the source code.</p>
 <div class="section" id="initializing-the-planning-scene-and-markers">
 <h3>Initializing the Planning Scene and Markers<a class="headerlink" href="#initializing-the-planning-scene-and-markers" title="Permalink to this headline"></a></h3>
-<p>For this tutorial we use an <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/main/doc/interactivity/src/interactive_robot.cpp">InteractiveRobot</a>
+<p>For this tutorial we use an <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/foxy/doc/interactivity/src/interactive_robot.cpp">InteractiveRobot</a>
 object as a wrapper that combines a robot_model with the cube and an interactive marker. We also
-create a <a class="reference external" href="http://docs.ros.org/noetic/api/moveit_core/html/cpp/classplanning__scene_1_1PlanningScene.html">PlanningScene</a> for collision checking. If you haven’t already gone through the
+create a <a class="reference external" href="http://docs.ros.org/foxy/api/moveit_core/html/cpp/classplanning__scene_1_1PlanningScene.html">PlanningScene</a> for collision checking. If you haven’t already gone through the
 <a class="reference internal" href="../planning_scene/planning_scene_tutorial.html"><span class="doc">planning scene tutorial</span></a>, you go through that first.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">InteractiveRobot</span><span class="w"> </span><span class="n">robot</span><span class="p">;</span><span class="w"></span>
 <span class="cm">/* Create a PlanningScene */</span><span class="w"></span>
@@ -240,7 +240,7 @@ for how.</p>
 </div>
 <div class="section" id="launch-file">
 <h2>Launch file<a class="headerlink" href="#launch-file" title="Permalink to this headline"></a></h2>
-<p>The entire launch file is  <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/main/doc/examples/visualizing_collisions">here</a> on GitHub. All the code in this tutorial can be compiled and run from the moveit_tutorials package.</p>
+<p>The entire launch file is  <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/foxy/doc/examples/visualizing_collisions">here</a> on GitHub. All the code in this tutorial can be compiled and run from the moveit_tutorials package.</p>
 </div>
 </div>
 

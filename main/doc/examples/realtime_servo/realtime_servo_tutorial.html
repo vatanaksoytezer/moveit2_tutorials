@@ -10,7 +10,7 @@
       <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/override.css" type="text/css" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
-    <link rel="canonical" href="https://moveit.picknik.ai/rolling//rolling/doc/examples/realtime_servo/realtime_servo_tutorial.html" />
+    <link rel="canonical" href="https://moveit.picknik.ai/foxy//rolling/doc/examples/realtime_servo/realtime_servo_tutorial.html" />
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -173,7 +173,7 @@
 <p>Here are some tips for inspecting and/or debugging the system.</p>
 <ol class="arabic simple">
 <li><p>View the <code class="code docutils literal notranslate"><span class="pre">ros2_controllers</span></code> that are currently active with <code class="code docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">control</span> <span class="pre">list_controllers</span></code>. You will see a <a class="reference external" href="https://github.com/ros-controls/ros2_controllers/tree/master/joint_trajectory_controller">JointTrajectoryController</a> that receives the joint position commands from Servo and handles them in the simulated robot driver. The JointTrajectoryController is very flexible; it can handle any combination of position/velocity/(position-and-velocity) input. Servo is also compatible with <a class="reference external" href="https://github.com/ros-controls/ros2_controllers/tree/master/position_controllers">JointGroupPosition</a> or <a class="reference external" href="https://github.com/ros-controls/ros2_controllers/tree/master/velocity_controllers">JointGroupVelocity</a>-type controllers.</p></li>
-<li><p><code class="code docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">topic</span> <span class="pre">echo</span> <span class="pre">/servo_node/status</span></code> shows the current state of the Servo node. If <code class="code docutils literal notranslate"><span class="pre">0</span></code> is published, all is well. The definition for all enums can be seen <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/main/moveit_ros/moveit_servo/include/moveit_servo/status_codes.h">here.</a></p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">topic</span> <span class="pre">echo</span> <span class="pre">/servo_node/status</span></code> shows the current state of the Servo node. If <code class="code docutils literal notranslate"><span class="pre">0</span></code> is published, all is well. The definition for all enums can be seen <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/foxy/moveit_ros/moveit_servo/include/moveit_servo/status_codes.h">here.</a></p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">node</span> <span class="pre">list</span></code> shows the following. <code class="code docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">node</span> <span class="pre">info</span></code> can be used to get more information about any of these nodes.</p>
 <ul class="simple">
 <li><p><code class="code docutils literal notranslate"><span class="pre">/joy_node</span></code> handles commands from the XBox controller</p></li>
@@ -200,7 +200,7 @@
 </video></div>
 <div class="section" id="entire-code">
 <h2>Entire Code<a class="headerlink" href="#entire-code" title="Permalink to this headline"></a></h2>
-<p>The entire code is available <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/main/doc/examples/realtime_servo/src/servo_cpp_interface_demo.cpp">here</a></p>
+<p>The entire code is available <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/foxy/doc/examples/realtime_servo/src/servo_cpp_interface_demo.cpp">here</a></p>
 <div class="section" id="setup">
 <h3>Setup<a class="headerlink" href="#setup" title="Permalink to this headline"></a></h3>
 <p>First we declare pointers to the node and publisher that will publish commands to Servo</p>
