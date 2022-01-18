@@ -381,21 +381,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a16ad2dbf427bddba1c9c4ba20e0a2f05"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a16ad2dbf427bddba1c9c4ba20e0a2f05">stop</a> ()</td></tr>
 <tr class="memdesc:a16ad2dbf427bddba1c9c4ba20e0a2f05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop any trajectory execution, if one is active.  <a href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a16ad2dbf427bddba1c9c4ba20e0a2f05">More...</a><br /></td></tr>
 <tr class="separator:a16ad2dbf427bddba1c9c4ba20e0a2f05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae33718102a4542366b43a6a763031d52"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#ae33718102a4542366b43a6a763031d52">allowLooking</a> (bool flag)</td></tr>
+<tr class="memdesc:ae33718102a4542366b43a6a763031d52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specify whether the robot is allowed to look around before moving if it determines it should (default is true)  <a href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#ae33718102a4542366b43a6a763031d52">More...</a><br /></td></tr>
+<tr class="separator:ae33718102a4542366b43a6a763031d52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a683a78bcefe1207e71a1354f0189bcc8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a683a78bcefe1207e71a1354f0189bcc8">allowReplanning</a> (bool flag)</td></tr>
 <tr class="memdesc:a683a78bcefe1207e71a1354f0189bcc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specify whether the robot is allowed to replan if it detects changes in the environment.  <a href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a683a78bcefe1207e71a1354f0189bcc8">More...</a><br /></td></tr>
 <tr class="separator:a683a78bcefe1207e71a1354f0189bcc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c3d049f7263a05461be68039c6bc287"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a5c3d049f7263a05461be68039c6bc287">setReplanAttempts</a> (int32_t attempts)</td></tr>
-<tr class="memdesc:a5c3d049f7263a05461be68039c6bc287"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of replanning attempts.  <a href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a5c3d049f7263a05461be68039c6bc287">More...</a><br /></td></tr>
-<tr class="separator:a5c3d049f7263a05461be68039c6bc287"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e301fb50f3f20cd06c75559a46fa52e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a1e301fb50f3f20cd06c75559a46fa52e">setReplanDelay</a> (double delay)</td></tr>
-<tr class="memdesc:a1e301fb50f3f20cd06c75559a46fa52e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sleep this duration between replanning attempts (in walltime seconds)  <a href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a1e301fb50f3f20cd06c75559a46fa52e">More...</a><br /></td></tr>
-<tr class="separator:a1e301fb50f3f20cd06c75559a46fa52e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae33718102a4542366b43a6a763031d52"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#ae33718102a4542366b43a6a763031d52">allowLooking</a> (bool flag)</td></tr>
-<tr class="memdesc:ae33718102a4542366b43a6a763031d52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specify whether the robot is allowed to look around before moving if it determines it should (default is false)  <a href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#ae33718102a4542366b43a6a763031d52">More...</a><br /></td></tr>
-<tr class="separator:ae33718102a4542366b43a6a763031d52"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a49b0b8885f6a62228b8cce52dfe59c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a9a49b0b8885f6a62228b8cce52dfe59c">setLookAroundAttempts</a> (int32_t attempts)</td></tr>
-<tr class="memdesc:a9a49b0b8885f6a62228b8cce52dfe59c"><td class="mdescLeft">&#160;</td><td class="mdescRight">How often is the system allowed to move the camera to update environment model when looking.  <a href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a9a49b0b8885f6a62228b8cce52dfe59c">More...</a><br /></td></tr>
-<tr class="separator:a9a49b0b8885f6a62228b8cce52dfe59c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ed9be2b4652788b2016dd5641bebfe8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a6ed9be2b4652788b2016dd5641bebfe8">constructMotionPlanRequest</a> (moveit_msgs::msg::MotionPlanRequest &amp;request)</td></tr>
 <tr class="memdesc:a6ed9be2b4652788b2016dd5641bebfe8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build the MotionPlanRequest that would be sent to the <a class="el" href="namespacemove__group.html">move_group</a> action with <a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a9c45180e15c2b26f61c64c3add5648b3" title="Compute a motion plan that takes the group declared in the constructor from the current state to the ...">plan()</a> or <a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#ad9b54cdc45eed094a69508cc4398c1ad" title="Plan and execute a trajectory that takes the group of joints declared in the constructor to the speci...">move()</a> and store it in <em>request</em>.  <a href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a6ed9be2b4652788b2016dd5641bebfe8">More...</a><br /></td></tr>
 <tr class="separator:a6ed9be2b4652788b2016dd5641bebfe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -537,7 +528,7 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01485">1485</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01502">1502</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -588,7 +579,7 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01475">1475</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01492">1492</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -616,7 +607,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01492">1492</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01509">1509</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -681,7 +672,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01497">1497</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01514">1514</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -711,9 +702,18 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Specify whether the robot is allowed to look around before moving if it determines it should (default is false) </p>
+<p>Specify whether the robot is allowed to look around before moving if it determines it should (default is true) </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02312">2312</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02329">2329</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmoveit_1_1planning__interface_1_1MoveGroupInterface_ae33718102a4542366b43a6a763031d52_cgraph.png" border="0" usemap="#classmoveit_1_1planning__interface_1_1MoveGroupInterface_ae33718102a4542366b43a6a763031d52_cgraph" alt=""/></div>
+<map name="classmoveit_1_1planning__interface_1_1MoveGroupInterface_ae33718102a4542366b43a6a763031d52_cgraph" id="classmoveit_1_1planning__interface_1_1MoveGroupInterface_ae33718102a4542366b43a6a763031d52_cgraph">
+<area shape="rect" title="Specify whether the robot is allowed to look around before moving if it determines it should (default..." alt="" coords="5,13,263,54"/>
+<area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl.html#a2dc0447eedd465865a90b7216200dff3" title=" " alt="" coords="311,5,557,61"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -735,14 +735,14 @@ Here is the call graph for this function:</div>
 
 <p>Specify whether the robot is allowed to replan if it detects changes in the environment. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02331">2331</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02334">2334</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classmoveit_1_1planning__interface_1_1MoveGroupInterface_a683a78bcefe1207e71a1354f0189bcc8_cgraph.png" border="0" usemap="#classmoveit_1_1planning__interface_1_1MoveGroupInterface_a683a78bcefe1207e71a1354f0189bcc8_cgraph" alt=""/></div>
 <map name="classmoveit_1_1planning__interface_1_1MoveGroupInterface_a683a78bcefe1207e71a1354f0189bcc8_cgraph" id="classmoveit_1_1planning__interface_1_1MoveGroupInterface_a683a78bcefe1207e71a1354f0189bcc8_cgraph">
 <area shape="rect" title="Specify whether the robot is allowed to replan if it detects changes in the environment." alt="" coords="5,13,284,54"/>
-<area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl.html#ad0f8bc458a2c1b729f1a2123fee3c09d" title=" " alt="" coords="332,5,619,61"/>
+<area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl.html#a53249f7f96f2e15c5ff7917ed2ffc315" title=" " alt="" coords="332,5,607,61"/>
 </map>
 </div>
 
@@ -766,7 +766,7 @@ Here is the call graph for this function:</div>
 
 <p>Given a <em>robot</em> trajectory, execute it without waiting for completion. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01620">1620</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01637">1637</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -788,7 +788,7 @@ Here is the call graph for this function:</div>
 
 <p>Given a <em>plan</em>, execute it without waiting for completion. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01615">1615</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01632">1632</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -820,7 +820,7 @@ Here is the call graph for this function:</div>
 
 <p><a class="el" href="structmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1Plan.html" title="The representation of a motion plan (as ROS messasges)">Plan</a> and execute a trajectory that takes the group of joints declared in the constructor to the specified target. This call is not blocking (does not wait for the execution of the trajectory to complete). </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01600">1600</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01617">1617</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -858,7 +858,7 @@ Here is the call graph for this function:</div>
 
 <p>Given the name of an object in the planning scene, make the object attached to a link of the robot. The set of links the object is allowed to touch without considering that a collision is specified by <em>touch_links</em>. If <em>link</em> is empty, the end-effector link is used. If there is no end-effector, the first link in the group is used. If the object name does not exist an error will be produced in <a class="el" href="namespacemove__group.html">move_group</a>, but the request made by this interface will succeed. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02445">2445</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02421">2421</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -905,7 +905,7 @@ Here is the call graph for this function:</div>
 <p>Use as follows: first create the goal with constructPlaceGoal(), then set <em>place_locations</em> and any other desired variable in the goal, and finally pass it on to this function</p>
 <p>Given the name of an object in the planning scene, make the object attached to a link of the robot. If no link name is specified, the end-effector is used. If there is no end-effector, the first link in the group is used. If the object name does not exist an error will be produced in <a class="el" href="namespacemove__group.html">move_group</a>, but the request made by this interface will succeed. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02440">2440</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02416">2416</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -935,23 +935,14 @@ Here is the caller graph for this function:</div>
 
 <p>Specify that no path constraints are to be used. This removes any path constraints set in previous calls to <a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#ac74ec94967a06f6b1da8ea6e060b7444" title="Specify a set of path constraints to use. The constraints are looked up by name from the Mongo databa...">setPathConstraints()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02383">2383</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02359">2359</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classmoveit_1_1planning__interface_1_1MoveGroupInterface_a4530a0e30683a0d1ae47de1424a5a992_cgraph.png" border="0" usemap="#classmoveit_1_1planning__interface_1_1MoveGroupInterface_a4530a0e30683a0d1ae47de1424a5a992_cgraph" alt=""/></div>
 <map name="classmoveit_1_1planning__interface_1_1MoveGroupInterface_a4530a0e30683a0d1ae47de1424a5a992_cgraph" id="classmoveit_1_1planning__interface_1_1MoveGroupInterface_a4530a0e30683a0d1ae47de1424a5a992_cgraph">
-<area shape="rect" title="Specify that no path constraints are to be used. This removes any path constraints set in previous ca..." alt="" coords="5,103,236,159"/>
-<area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl.html#ae26f3a6b60ca8da84829097eafba50d5" title=" " alt="" coords="284,103,531,159"/>
-<area shape="rect" href="namespacekinematic__constraints.html#a449c87b5d209ba3b9a62d73b4278da77" title="Generates a constraint message intended to be used as a goal constraint for a joint group...." alt="" coords="607,37,801,79"/>
-<area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl.html#acc232befd1cfbf355910bafd90b9efd2" title=" " alt="" coords="579,103,829,159"/>
-<area shape="rect" href="namespacemoveit_1_1core.html#a0aafbf7242f36d6efd7bd73ecee400e8" title="Convert a MoveIt robot state to a robot state message." alt="" coords="614,184,794,225"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#a5902793ed7f64dfc073e37c91154c497" title="For a given group, copy the position values of the variables that make up the group into another loca..." alt="" coords="878,5,1066,47"/>
-<area shape="rect" href="classmoveit_1_1core_1_1JointModelGroup.html#aaaeee5ac20a07f6d5c1fe43a892f005a" title="Get the names of the variables that make up the joints included in this group. The number of returned..." alt="" coords="877,71,1067,112"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#a4c3dc21cb7e8b21d0552677a3aeb819e" title="Given velocities for the variables that make up a group, in the order found in the group (including v..." alt="" coords="1115,5,1299,47"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#a3c2938fb8c9467dff253db4b5c1992ca" title="For a given group, copy the velocity values of the variables that make up the group into another loca..." alt="" coords="1347,5,1539,47"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#a47eb1edf2046387de44c3a9dee3433e6" title="Given accelerations for the variables that make up a group, in the order found in the group (includin..." alt="" coords="1587,5,1793,47"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#ac39ff2e3e4801ba1092a4c8eb44dd071" title="For a given group, copy the acceleration values of the variables that make up the group into another ..." alt="" coords="1841,5,2059,47"/>
+<area shape="rect" title="Specify that no path constraints are to be used. This removes any path constraints set in previous ca..." alt="" coords="5,5,236,61"/>
+<area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl.html#ae26f3a6b60ca8da84829097eafba50d5" title=" " alt="" coords="284,5,531,61"/>
 </map>
 </div>
 
@@ -975,7 +966,7 @@ Here is the call graph for this function:</div>
 
 <p>Forget pose(s) specified for <em>end_effector_link</em>. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01952">1952</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01969">1969</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -996,7 +987,7 @@ Here is the call graph for this function:</div>
 
 <p>Forget any poses specified for all end-effectors. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01957">1957</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01974">1974</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1025,7 +1016,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02398">2398</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02374">2374</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -1081,7 +1072,7 @@ Here is the call graph for this function:</div>
 
 <p>Compute a Cartesian path that follows specified waypoints with a step size of at most <em>eef_step</em> meters between end effector configurations of consecutive points in the result <em>trajectory</em>. The reference frame for the waypoints is that specified by <a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#aac4b6f7cb3c3257001ccbd64c6d14f46" title="Specify which reference frame to assume for poses specified without a reference frame.">setPoseReferenceFrame()</a>. No more than <em>jump_threshold</em> is allowed as change in distance in the configuration space of the robot (this is to prevent 'jumps' in IK solutions). Collisions are avoided if <em>avoid_collisions</em> is set to true. If collisions cannot be avoided, the function fails. Return a value that is between 0.0 and 1.0 indicating the fraction of the path achieved as described by the waypoints. Return -1.0 in case of error. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01680">1680</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01697">1697</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1162,7 +1153,7 @@ Here is the caller graph for this function:</div>
 
 <p>Compute a Cartesian path that follows specified waypoints with a step size of at most <em>eef_step</em> meters between end effector configurations of consecutive points in the result <em>trajectory</em>. The reference frame for the waypoints is that specified by <a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#aac4b6f7cb3c3257001ccbd64c6d14f46" title="Specify which reference frame to assume for poses specified without a reference frame.">setPoseReferenceFrame()</a>. No more than <em>jump_threshold</em> is allowed as change in distance in the configuration space of the robot (this is to prevent 'jumps' in IK solutions). Kinematic constraints for the path given by <em>path_constraints</em> will be met for every point along the trajectory, if they are not met, a partial solution will be returned. Constraints are checked (collision and kinematic) if <em>avoid_collisions</em> is set to true. If constraints cannot be met, the function fails. Return a value that is between 0.0 and 1.0 indicating the fraction of the path achieved as described by the waypoints. Return -1.0 in case of error. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01689">1689</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01706">1706</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -1184,7 +1175,7 @@ Here is the caller graph for this function:</div>
 
 <p>Build the MotionPlanRequest that would be sent to the <a class="el" href="namespacemove__group.html">move_group</a> action with <a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a9c45180e15c2b26f61c64c3add5648b3" title="Compute a motion plan that takes the group declared in the constructor from the current state to the ...">plan()</a> or <a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#ad9b54cdc45eed094a69508cc4398c1ad" title="Plan and execute a trajectory that takes the group of joints declared in the constructor to the speci...">move()</a> and store it in <em>request</em>. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02456">2456</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02432">2432</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -1206,7 +1197,7 @@ Here is the caller graph for this function:</div>
 
 <p>Detach an object. <em>name</em> specifies the name of the object attached to this group, or the name of the link the object is attached to. If there is no name specified, and there is only one attached object, that object is detached. An error is produced if no object to detach is identified. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02451">2451</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02427">2427</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -1228,7 +1219,7 @@ Here is the caller graph for this function:</div>
 
 <p>Given a <em>robot</em> trajectory, execute it while waiting for completion. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01630">1630</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01647">1647</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -1250,7 +1241,7 @@ Here is the caller graph for this function:</div>
 
 <p>Given a <em>plan</em>, execute it while waiting for completion. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01625">1625</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01642">1642</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1281,7 +1272,7 @@ Here is the call graph for this function:</div>
 
 <p>Forget the joint values remembered under <em>name</em>. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02307">2307</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02324">2324</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -1302,7 +1293,16 @@ Here is the call graph for this function:</div>
 
 <p>Get only the active (actuated) joints this instance operates on. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02280">2280</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02297">2297</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmoveit_1_1planning__interface_1_1MoveGroupInterface_a9603eb67712ae165a9aa494c283af164_cgraph.png" border="0" usemap="#classmoveit_1_1planning__interface_1_1MoveGroupInterface_a9603eb67712ae165a9aa494c283af164_cgraph" alt=""/></div>
+<map name="classmoveit_1_1planning__interface_1_1MoveGroupInterface_a9603eb67712ae165a9aa494c283af164_cgraph" id="classmoveit_1_1planning__interface_1_1MoveGroupInterface_a9603eb67712ae165a9aa494c283af164_cgraph">
+<area shape="rect" title="Get only the active (actuated) joints this instance operates on." alt="" coords="5,5,239,61"/>
+<area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl.html#abb263ae7bfb76917af9a1232f1ad92d6" title=" " alt="" coords="287,5,563,61"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1323,7 +1323,7 @@ Here is the call graph for this function:</div>
 
 <p>Get the current joint values for the joints planned for by this instance (see <a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#aa60b695f0e891c7248068d75406f8cd3" title="Get all the joints this instance operates on (including fixed joints)">getJoints()</a>) </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02188">2188</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02205">2205</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -1345,7 +1345,7 @@ Here is the call graph for this function:</div>
 
 <p>Get the pose for the end-effector <em>end_effector_link</em>. If <em>end_effector_link</em> is empty (the default value) then the end-effector reported by <a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a10a9d94597ba094bd59cb1ca9f69e75e" title="Get the current end-effector link. This returns the value set by setEndEffectorLink() (or indirectly ...">getEndEffectorLink()</a> is assumed. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02229">2229</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02246">2246</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -1367,7 +1367,16 @@ Here is the call graph for this function:</div>
 
 <p>Get the roll-pitch-yaw (XYZ) for the end-effector <em>end_effector_link</em>. If <em>end_effector_link</em> is empty (the default value) then the end-effector reported by <a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a10a9d94597ba094bd59cb1ca9f69e75e" title="Get the current end-effector link. This returns the value set by setEndEffectorLink() (or indirectly ...">getEndEffectorLink()</a> is assumed. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02253">2253</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02270">2270</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmoveit_1_1planning__interface_1_1MoveGroupInterface_acf44c8d1234a65aac973fe2eb227e3bc_cgraph.png" border="0" usemap="#classmoveit_1_1planning__interface_1_1MoveGroupInterface_acf44c8d1234a65aac973fe2eb227e3bc_cgraph" alt=""/></div>
+<map name="classmoveit_1_1planning__interface_1_1MoveGroupInterface_acf44c8d1234a65aac973fe2eb227e3bc_cgraph" id="classmoveit_1_1planning__interface_1_1MoveGroupInterface_acf44c8d1234a65aac973fe2eb227e3bc_cgraph">
+<area shape="rect" title="Get the roll&#45;pitch&#45;yaw (XYZ) for the end&#45;effector end_effector_link. If end_effector_link is empty (t..." alt="" coords="5,13,271,54"/>
+<area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl.html#a079301970a5557ee31eafe5d75c4d856" title=" " alt="" coords="319,5,575,61"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1389,14 +1398,14 @@ Here is the call graph for this function:</div>
 
 <p>Get the current state of the robot within the duration specified by wait. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02295">2295</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02312">2312</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classmoveit_1_1planning__interface_1_1MoveGroupInterface_a92ff1a7ceec9f299988ded4e72d5cce5_cgraph.png" border="0" usemap="#classmoveit_1_1planning__interface_1_1MoveGroupInterface_a92ff1a7ceec9f299988ded4e72d5cce5_cgraph" alt=""/></div>
 <map name="classmoveit_1_1planning__interface_1_1MoveGroupInterface_a92ff1a7ceec9f299988ded4e72d5cce5_cgraph" id="classmoveit_1_1planning__interface_1_1MoveGroupInterface_a92ff1a7ceec9f299988ded4e72d5cce5_cgraph">
-<area shape="rect" title="Get the current state of the robot within the duration specified by wait." alt="" coords="5,13,280,54"/>
-<area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl.html#a079301970a5557ee31eafe5d75c4d856" title=" " alt="" coords="328,5,584,61"/>
+<area shape="rect" title="Get the current state of the robot within the duration specified by wait." alt="" coords="5,20,280,61"/>
+<area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl.html#a6e42ec93f9a82313e1f41ac2431e2e37" title=" " alt="" coords="328,5,575,76"/>
 </map>
 </div>
 
@@ -1420,7 +1429,7 @@ Here is the call graph for this function:</div>
 
 <p>Get the default planner of the current planning pipeline for the given group (or the pipeline's default) </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01570">1570</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01587">1587</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -1439,7 +1448,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01555">1555</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01572">1572</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -1460,7 +1469,7 @@ Here is the call graph for this function:</div>
 
 <p>Get the current end-effector name. This returns the value set by <a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#acd09831014016b69fef201a066560184" title="Specify the name of the end-effector to use. This is equivalent to setting the EndEffectorLink to the...">setEndEffector()</a> (or indirectly by <a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a344d714020cfbbfed36ccf7b3c5055da" title="Specify the parent link of the end-effector. This end_effector_link will be used in calls to pose tar...">setEndEffectorLink()</a>). If <a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#acd09831014016b69fef201a066560184" title="Specify the name of the end-effector to use. This is equivalent to setting the EndEffectorLink to the...">setEndEffector()</a> was not called, this function reports an end-effector attached to this group. If there are multiple end-effectors, one of them is returned. If no end-effector is known, the empty string is returned. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01930">1930</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01947">1947</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -1481,7 +1490,7 @@ Here is the call graph for this function:</div>
 
 <p>Get the current end-effector link. This returns the value set by <a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a344d714020cfbbfed36ccf7b3c5055da" title="Specify the parent link of the end-effector. This end_effector_link will be used in calls to pose tar...">setEndEffectorLink()</a> (or indirectly by <a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#acd09831014016b69fef201a066560184" title="Specify the name of the end-effector to use. This is equivalent to setting the EndEffectorLink to the...">setEndEffector()</a>). If <a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a344d714020cfbbfed36ccf7b3c5055da" title="Specify the parent link of the end-effector. This end_effector_link will be used in calls to pose tar...">setEndEffectorLink()</a> was not called, this function reports the link name that serves as parent of an end-effector attached to this group. If there are multiple end-effectors, one of them is returned. If no such link is known, the empty string is returned. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01925">1925</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01942">1942</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1514,7 +1523,7 @@ Here is the caller graph for this function:</div>
 
 <p>Get the tolerance that is used for reaching a joint goal. This is distance for each joint in configuration space. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02141">2141</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02158">2158</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -1535,7 +1544,7 @@ Here is the caller graph for this function:</div>
 
 <p>Get the tolerance that is used for reaching an orientation goal. This is the tolerance for roll, pitch and yaw, in radians. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02151">2151</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02168">2168</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -1556,7 +1565,7 @@ Here is the caller graph for this function:</div>
 
 <p>Get the tolerance that is used for reaching a position goal. This is be the radius of a sphere where the end-effector must reach. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02146">2146</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02163">2163</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1587,7 +1596,7 @@ Here is the call graph for this function:</div>
 
 <p>Get the description of the default planning plugin loaded by the action server. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01533">1533</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01550">1550</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1618,7 +1627,7 @@ Here is the call graph for this function:</div>
 
 <p>Get the descriptions of all planning plugins loaded by the action server. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01538">1538</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01555">1555</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1648,7 +1657,7 @@ Here is the call graph for this function:</div>
 
 <p>Get the available planning group names. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02435">2435</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02411">2411</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -1669,7 +1678,7 @@ Here is the call graph for this function:</div>
 
 <p>Get vector of names of joints available in move group. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01739">1739</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01756">1756</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1700,7 +1709,16 @@ Here is the call graph for this function:</div>
 
 <p>Get all the joints this instance operates on (including fixed joints) </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02285">2285</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02302">2302</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmoveit_1_1planning__interface_1_1MoveGroupInterface_aa60b695f0e891c7248068d75406f8cd3_cgraph.png" border="0" usemap="#classmoveit_1_1planning__interface_1_1MoveGroupInterface_aa60b695f0e891c7248068d75406f8cd3_cgraph" alt=""/></div>
+<map name="classmoveit_1_1planning__interface_1_1MoveGroupInterface_aa60b695f0e891c7248068d75406f8cd3_cgraph" id="classmoveit_1_1planning__interface_1_1MoveGroupInterface_aa60b695f0e891c7248068d75406f8cd3_cgraph">
+<area shape="rect" title="Get all the joints this instance operates on (including fixed joints)" alt="" coords="5,13,233,54"/>
+<area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl.html#aa7ca36df227b982fdc276de1b5073e9a" title=" " alt="" coords="281,5,556,61"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1721,7 +1739,7 @@ Here is the call graph for this function:</div>
 
 <p>Get the currently set joint state goal, replaced by private <a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#adb2ad3165848ef703d8fa8e4fb031f53">getTargetRobotState()</a> </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01915">1915</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01932">1932</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -1743,7 +1761,7 @@ Here is the call graph for this function:</div>
 
 <p>Get the current joint state goal in a form compatible to <a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a71e3819bd31711dcb81c18305ca9a521" title="Set the JointValueTarget and use it for future planning requests.">setJointValueTarget()</a> </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01788">1788</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01805">1805</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -1764,7 +1782,7 @@ Here is the call graph for this function:</div>
 
 <p>Get the names of the known constraints as read from the Mongo database, if a connection was achieved. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02363">2363</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02339">2339</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1794,7 +1812,7 @@ Here is the call graph for this function:</div>
 
 <p>Get vector of names of links available in move group. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01744">1744</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01761">1761</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1825,7 +1843,7 @@ Here is the call graph for this function:</div>
 
 <p>Get the <a class="el" href="namespacemove__group.html">move_group</a> action client used by the <em><a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html" title="Client class to conveniently use the ROS interfaces provided by the move_group node.">MoveGroupInterface</a></em>. The client can be used for querying the execution state of the trajectory and abort trajectory execution during asynchronous execution. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01605">1605</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01622">1622</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -1846,7 +1864,7 @@ Here is the call graph for this function:</div>
 
 <p>Get the name of the group this instance operates on. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01516">1516</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01533">1533</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1876,7 +1894,7 @@ Here is the call graph for this function:</div>
 
 <p>Get the names of the named robot states available as targets, both either remembered states or default states from srdf. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01521">1521</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01538">1538</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1908,7 +1926,7 @@ Here is the call graph for this function:</div>
 
 <p>Get the joint angles for targets specified by name. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01749">1749</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01766">1766</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -1949,7 +1967,7 @@ Here is the call graph for this function:</div>
 <p>Get the actual set of constraints in use with this <a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html" title="Client class to conveniently use the ROS interfaces provided by the move_group node.">MoveGroupInterface</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="classA.html">A</a> copy of the current path constraints set for this interface </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02368">2368</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02344">2344</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1979,7 +1997,7 @@ Here is the call graph for this function:</div>
 
 <p>Get the current planner_id. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01580">1580</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01597">1597</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -2011,7 +2029,7 @@ Here is the call graph for this function:</div>
 
 <p>Get the planner parameters for given group and planner_id. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01543">1543</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01560">1560</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -2041,7 +2059,7 @@ Here is the call graph for this function:</div>
 
 <p>Get the name of the frame in which the robot is planning. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02430">2430</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02406">2406</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -2062,7 +2080,7 @@ Here is the call graph for this function:</div>
 
 <p>Get the current planning_pipeline_id. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01565">1565</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01582">1582</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -2084,7 +2102,7 @@ Here is the call graph for this function:</div>
 <p>Get the number of seconds set by <a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#af4631a849c750b4c1428242475c8988d" title="Specify the maximum amount of time to use when planning.">setPlanningTime()</a> </p>
 <p>Get time allowed to planner to solve problem before aborting. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02420">2420</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02396">2396</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -2105,7 +2123,7 @@ Here is the call graph for this function:</div>
 
 <p>Get the reference frame set by <a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#aac4b6f7cb3c3257001ccbd64c6d14f46" title="Specify which reference frame to assume for poses specified without a reference frame.">setPoseReferenceFrame()</a>. By default this is the reference frame of the robot model. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02136">2136</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02153">2153</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -2146,7 +2164,7 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Get the currently set pose goal for the end-effector <em>end_effector_link</em>. If <em>end_effector_link</em> is empty (the default value) then the end-effector reported by <a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a10a9d94597ba094bd59cb1ca9f69e75e" title="Get the current end-effector link. This returns the value set by setEndEffectorLink() (or indirectly ...">getEndEffectorLink()</a> is assumed. If multiple targets are set for <em>end_effector_link</em> this will return the first one. If no pose target is set for this <em>end_effector_link</em> then an empty pose will be returned (check for orientation.xyzw == 0). </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02031">2031</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02048">2048</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -2178,7 +2196,7 @@ Here is the caller graph for this function:</div>
 <p>Get the currently set pose goal for the end-effector <em>end_effector_link</em>. The pose goal can consist of multiple poses, if corresponding <a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a28a6cebdb01f4f8cadc829b36855182a" title="Set the goal pose of the end-effector end_effector_link.">setPoseTarget()</a> calls were made. Otherwise, only one pose is returned in the vector. If <em>end_effector_link</em> is empty (the default value) then the end-effector reported by <a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a10a9d94597ba094bd59cb1ca9f69e75e" title="Get the current end-effector link. This returns the value set by setEndEffectorLink() (or indirectly ...">getEndEffectorLink()</a> is assumed <br  />
  </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02037">2037</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02054">2054</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -2211,7 +2229,7 @@ Here is the call graph for this function:</div>
 
 <p>Get random joint values for the joints planned for by this instance (see <a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#aa60b695f0e891c7248068d75406f8cd3" title="Get all the joints this instance operates on (including fixed joints)">getJoints()</a>) </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02197">2197</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02214">2214</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -2233,7 +2251,7 @@ Here is the call graph for this function:</div>
 
 <p>Get a random reachable pose for the end-effector <em>end_effector_link</em>. If <em>end_effector_link</em> is empty (the default value) then the end-effector reported by <a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a10a9d94597ba094bd59cb1ca9f69e75e" title="Get the current end-effector link. This returns the value set by setEndEffectorLink() (or indirectly ...">getEndEffectorLink()</a> is assumed. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02204">2204</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02221">2221</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -2262,7 +2280,7 @@ Here is the call graph for this function:</div>
 
 <p>Get the currently remembered map of names to joint values. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8h_source.html#l01055">1055</a> of file <a class="el" href="move__group__interface_8h_source.html">move_group_interface.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8h_source.html#l01046">1046</a> of file <a class="el" href="move__group__interface_8h_source.html">move_group_interface.h</a>.</p>
 
 </div>
 </div>
@@ -2283,7 +2301,7 @@ Here is the call graph for this function:</div>
 
 <p>Get the RobotModel object. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01528">1528</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01545">1545</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -2320,7 +2338,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>return the full RobotState of the joint-space target, only for internal use </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01920">1920</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01937">1937</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -2350,7 +2368,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02388">2388</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02364">2364</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -2380,7 +2398,16 @@ Here is the call graph for this function:</div>
 
 <p>Get the number of variables used to describe the state of this group. This is larger or equal to the number of DOF. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02290">2290</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02307">2307</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmoveit_1_1planning__interface_1_1MoveGroupInterface_aea1baee2416a79d3b663c4132a0ca838_cgraph.png" border="0" usemap="#classmoveit_1_1planning__interface_1_1MoveGroupInterface_aea1baee2416a79d3b663c4132a0ca838_cgraph" alt=""/></div>
+<map name="classmoveit_1_1planning__interface_1_1MoveGroupInterface_aea1baee2416a79d3b663c4132a0ca838_cgraph" id="classmoveit_1_1planning__interface_1_1MoveGroupInterface_aea1baee2416a79d3b663c4132a0ca838_cgraph">
+<area shape="rect" title="Get the number of variables used to describe the state of this group. This is larger or equal to the ..." alt="" coords="5,13,288,54"/>
+<area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl.html#ad0f8bc458a2c1b729f1a2123fee3c09d" title=" " alt="" coords="336,5,623,61"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -2401,7 +2428,7 @@ Here is the call graph for this function:</div>
 
 <p><a class="el" href="structmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1Plan.html" title="The representation of a motion plan (as ROS messasges)">Plan</a> and execute a trajectory that takes the group of joints declared in the constructor to the specified target. This call is always blocking (waits for the execution of the trajectory to complete) and requires an asynchronous spinner to be started. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01610">1610</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01627">1627</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -2473,7 +2500,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01503">1503</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01520">1520</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -2504,7 +2531,7 @@ Here is the call graph for this function:</div>
 
 <p>Compute a motion plan that takes the group declared in the constructor from the current state to the specified target. No execution is performed. The resulting plan is stored in <em>plan</em>. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01635">1635</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01652">1652</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -2537,7 +2564,7 @@ Here is the caller graph for this function:</div>
 
 <p>Remember the current joint values (of the robot being monitored) under <em>name</em>. These can be used by <a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a5262ff42a454b499d3608b384957a5e4" title="Set the current joint values to be ones previously remembered by rememberJointValues() or,...">setNamedTarget()</a>. These values are remembered locally in the client. Other clients will not have access to them. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02178">2178</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02195">2195</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -2569,7 +2596,7 @@ Here is the caller graph for this function:</div>
 
 <p>Remember the specified joint values under <em>name</em>. These can be used by <a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a5262ff42a454b499d3608b384957a5e4" title="Set the current joint values to be ones previously remembered by rememberJointValues() or,...">setNamedTarget()</a>. These values are remembered locally in the client. Other clients will not have access to them. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02302">2302</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02319">2319</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -2604,7 +2631,7 @@ Here is the caller graph for this function:</div>
 <p>After this call, the JointValueTarget is used <b>instead</b> of any previously set Position, Orientation, or Pose targets.</p>
 <p>If IK fails to find a solution then an approximation is used. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01908">1908</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01925">1925</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -2639,7 +2666,7 @@ Here is the caller graph for this function:</div>
 <p>After this call, the JointValueTarget is used <b>instead</b> of any previously set Position, Orientation, or Pose targets.</p>
 <p>If IK fails to find a solution then an approximation is used. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01896">1896</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01913">1913</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -2674,7 +2701,7 @@ Here is the caller graph for this function:</div>
 <p>After this call, the JointValueTarget is used <b>instead</b> of any previously set Position, Orientation, or Pose targets.</p>
 <p>If IK fails to find a solution then an approximation is used. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01902">1902</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01919">1919</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -2716,7 +2743,7 @@ Here is the call graph for this function:</div>
 
 <p>Specify where the database server that holds known constraints resides. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02403">2403</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02379">2379</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -2738,7 +2765,7 @@ Here is the call graph for this function:</div>
 
 <p>Specify the name of the end-effector to use. This is equivalent to setting the EndEffectorLink to the parent link of this end effector. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01944">1944</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01961">1961</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -2760,7 +2787,7 @@ Here is the call graph for this function:</div>
 
 <p>Specify the parent link of the end-effector. This <em>end_effector_link</em> will be used in calls to pose target functions when end_effector_link is not explicitly specified. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01935">1935</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01952">1952</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -2793,7 +2820,7 @@ Here is the call graph for this function:</div>
 
 <p>Set the joint tolerance (for each joint) that is used for reaching the goal when moving to a joint value target. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02163">2163</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02180">2180</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -2815,7 +2842,7 @@ Here is the call graph for this function:</div>
 
 <p>Set the orientation tolerance that is used for reaching the goal when moving to a pose. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02173">2173</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02190">2190</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -2837,7 +2864,7 @@ Here is the call graph for this function:</div>
 
 <p>Set the position tolerance that is used for reaching the goal when moving to a pose. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02168">2168</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02185">2185</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -2869,7 +2896,7 @@ Here is the call graph for this function:</div>
 
 <p>Set the tolerance that is used for reaching the goal. For joint state goals, this will be distance for each joint, in the configuration space (radians or meters depending on joint type). For pose goals this will be the radius of a sphere where the end-effector must reach. This function simply triggers calls to <a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a25e58a6cc1c120409cfa5f256716ffca" title="Set the position tolerance that is used for reaching the goal when moving to a pose.">setGoalPositionTolerance()</a>, <a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a7f803a9f365c5c37801c04611d1db933" title="Set the orientation tolerance that is used for reaching the goal when moving to a pose.">setGoalOrientationTolerance()</a> and <a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a8ec9d8fa132c8d807a5e48d18c579187" title="Set the joint tolerance (for each joint) that is used for reaching the goal when moving to a joint va...">setGoalJointTolerance()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02156">2156</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02173">2173</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -2904,7 +2931,7 @@ Here is the call graph for this function:</div>
 <p>After this call, the JointValueTarget is used <b>instead</b> of any previously set Position, Orientation, or Pose targets.</p>
 <p>If IK fails to find a solution then false is returned BUT THE PARTIAL RESULT OF IK IS STILL SET AS THE GOAL. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01890">1890</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01907">1907</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -2948,7 +2975,7 @@ Here is the call graph for this function:</div>
 <p>After this call, the JointValueTarget is used <b>instead</b> of any previously set Position, Orientation, or Pose targets.</p>
 <p>If IK fails to find a solution then false is returned BUT THE PARTIAL RESULT OF IK IS STILL SET AS THE GOAL. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01878">1878</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01895">1895</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -2983,7 +3010,7 @@ Here is the call graph for this function:</div>
 <p>After this call, the JointValueTarget is used <b>instead</b> of any previously set Position, Orientation, or Pose targets.</p>
 <p>If IK fails to find a solution then false is returned BUT THE PARTIAL RESULT OF IK IS STILL SET AS THE GOAL. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01884">1884</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01901">1901</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -3017,7 +3044,7 @@ Here is the call graph for this function:</div>
 <p>After this call, the JointValueTarget is used <b>instead</b> of any previously set Position, Orientation, or Pose targets.</p>
 <p>If these values are out of bounds then false is returned BUT THE VALUES ARE STILL SET AS THE GOAL. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01845">1845</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01862">1862</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -3042,7 +3069,7 @@ Here is the call graph for this function:</div>
 <p>After this call, the JointValueTarget is used <b>instead</b> of any previously set Position, Orientation, or Pose targets.</p>
 <p>If these values are out of bounds then false is returned BUT THE VALUES ARE STILL SET AS THE GOAL. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01873">1873</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01890">1890</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -3067,7 +3094,7 @@ Here is the call graph for this function:</div>
 <p>After this call, the JointValueTarget is used <b>instead</b> of any previously set Position, Orientation, or Pose targets.</p>
 <p>If these values are out of bounds then false is returned BUT THE VALUES ARE STILL SET AS THE GOAL. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01808">1808</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01825">1825</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -3102,7 +3129,7 @@ Here is the call graph for this function:</div>
 <p>After this call, the JointValueTarget is used <b>instead</b> of any previously set Position, Orientation, or Pose targets.</p>
 <p>If these values are out of bounds then false is returned BUT THE VALUES ARE STILL SET AS THE GOAL. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01858">1858</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01875">1875</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -3146,7 +3173,7 @@ Here is the call graph for this function:</div>
 <p>After this call, the JointValueTarget is used <b>instead</b> of any previously set Position, Orientation, or Pose targets.</p>
 <p>If these values are out of bounds then false is returned BUT THE VALUES ARE STILL SET AS THE GOAL. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01852">1852</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01869">1869</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -3181,25 +3208,18 @@ Here is the call graph for this function:</div>
 <p>After this call, the JointValueTarget is used <b>instead</b> of any previously set Position, Orientation, or Pose targets.</p>
 <p>If these values are out of bounds then false is returned BUT THE VALUES ARE STILL SET AS THE GOAL. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01793">1793</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01810">1810</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classmoveit_1_1planning__interface_1_1MoveGroupInterface_a71e3819bd31711dcb81c18305ca9a521_cgraph.png" border="0" usemap="#classmoveit_1_1planning__interface_1_1MoveGroupInterface_a71e3819bd31711dcb81c18305ca9a521_cgraph" alt=""/></div>
 <map name="classmoveit_1_1planning__interface_1_1MoveGroupInterface_a71e3819bd31711dcb81c18305ca9a521_cgraph" id="classmoveit_1_1planning__interface_1_1MoveGroupInterface_a71e3819bd31711dcb81c18305ca9a521_cgraph">
-<area shape="rect" title="Set the JointValueTarget and use it for future planning requests." alt="" coords="5,149,261,205"/>
-<area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl.html#a43758a93035c24ec52ada30a73dea723" title=" " alt="" coords="309,31,568,87"/>
-<area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl.html#acc232befd1cfbf355910bafd90b9efd2" title=" " alt="" coords="313,111,564,167"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#aa40ffd60c2e50769f9a61d71ab7faa23" title=" " alt="" coords="347,192,531,233"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#afd01134540eb6ccc57e75d1f8c4f48d5" title=" " alt="" coords="347,257,531,299"/>
-<area shape="rect" href="namespacekinematic__constraints.html#a449c87b5d209ba3b9a62d73b4278da77" title="Generates a constraint message intended to be used as a goal constraint for a joint group...." alt="" coords="616,39,811,80"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#a5902793ed7f64dfc073e37c91154c497" title="For a given group, copy the position values of the variables that make up the group into another loca..." alt="" coords="859,5,1047,47"/>
-<area shape="rect" href="classmoveit_1_1core_1_1JointModelGroup.html#aaaeee5ac20a07f6d5c1fe43a892f005a" title="Get the names of the variables that make up the joints included in this group. The number of returned..." alt="" coords="859,71,1048,112"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#a4c3dc21cb7e8b21d0552677a3aeb819e" title="Given velocities for the variables that make up a group, in the order found in the group (including v..." alt="" coords="1096,5,1280,47"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#a3c2938fb8c9467dff253db4b5c1992ca" title="For a given group, copy the velocity values of the variables that make up the group into another loca..." alt="" coords="1328,5,1520,47"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#a47eb1edf2046387de44c3a9dee3433e6" title="Given accelerations for the variables that make up a group, in the order found in the group (includin..." alt="" coords="1568,5,1775,47"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#ac39ff2e3e4801ba1092a4c8eb44dd071" title="For a given group, copy the acceleration values of the variables that make up the group into another ..." alt="" coords="1823,5,2040,47"/>
-<area shape="rect" href="classmoveit_1_1core_1_1JointModel.html#a749ce652067b82e5ec5b3ffe3baca733" title="Get the index of this joint&#39;s first variable within the full robot state." alt="" coords="623,257,804,299"/>
+<area shape="rect" title="Set the JointValueTarget and use it for future planning requests." alt="" coords="5,123,261,179"/>
+<area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl.html#a43758a93035c24ec52ada30a73dea723" title=" " alt="" coords="309,5,568,61"/>
+<area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl.html#acc232befd1cfbf355910bafd90b9efd2" title=" " alt="" coords="313,85,564,141"/>
+<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#aa40ffd60c2e50769f9a61d71ab7faa23" title=" " alt="" coords="347,166,531,207"/>
+<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#afd01134540eb6ccc57e75d1f8c4f48d5" title=" " alt="" coords="347,231,531,273"/>
+<area shape="rect" href="classmoveit_1_1core_1_1JointModel.html#add390f0a7b124a90c551bb7c875b8c7d" title="Get the index of this joint&#39;s first variable within the full robot state." alt="" coords="616,231,797,273"/>
 </map>
 </div>
 
@@ -3236,29 +3256,7 @@ Here is the call graph for this function:</div>
 <p>After this call, the JointValueTarget is used <b>instead</b> of any previously set Position, Orientation, or Pose targets.</p>
 <p>If these values are out of bounds then false is returned BUT THE VALUES ARE STILL SET AS THE GOAL. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01826">1826</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a9a49b0b8885f6a62228b8cce52dfe59c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9a49b0b8885f6a62228b8cce52dfe59c">&#9670;&nbsp;</a></span>setLookAroundAttempts()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void moveit::planning_interface::MoveGroupInterface::setLookAroundAttempts </td>
-          <td>(</td>
-          <td class="paramtype">int32_t&#160;</td>
-          <td class="paramname"><em>attempts</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>How often is the system allowed to move the camera to update environment model when looking. </p>
-
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02318">2318</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01843">1843</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -3280,7 +3278,7 @@ Here is the call graph for this function:</div>
 
 <p>Set a scaling factor for optionally reducing the maximum joint acceleration. Allowed values are in (0,1]. The maximum joint acceleration specified in the robot model is multiplied by the factor. If the value is 0, it is set to the default value, which is defined in joint_limits.yaml of the moveit_config. If the value is greater than 1, it is set to 1.0. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01595">1595</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01612">1612</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -3302,7 +3300,7 @@ Here is the call graph for this function:</div>
 
 <p>Set a scaling factor for optionally reducing the maximum joint velocity. Allowed values are in (0,1]. The maximum joint velocity specified in the robot model is multiplied by the factor. If the value is 0, it is set to the default value, which is defined in joint_limits.yaml of the moveit_config. If the value is greater than 1, it is set to 1.0. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01590">1590</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01607">1607</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -3324,7 +3322,7 @@ Here is the call graph for this function:</div>
 
 <p>Set the current joint values to be ones previously remembered by <a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a9756c7e7248526382189ca7cc89fdddd" title="Remember the current joint values (of the robot being monitored) under name. These can be used by set...">rememberJointValues()</a> or, if not found, that are specified in the SRDF under the name <em>name</em> as a group state. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01769">1769</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01786">1786</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -3346,7 +3344,7 @@ Here is the call graph for this function:</div>
 
 <p>Set the number of times the motion plan is to be computed from scratch before the shortest solution is returned. The default value is 1. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01585">1585</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01602">1602</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -3398,7 +3396,7 @@ Here is the call graph for this function:</div>
 <p>If <em>end_effector_link</em> is empty then <a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a10a9d94597ba094bd59cb1ca9f69e75e" title="Get the current end-effector link. This returns the value set by setEndEffectorLink() (or indirectly ...">getEndEffectorLink()</a> is used.</p>
 <p>This new orientation target replaces any pre-existing JointValueTarget or pre-existing Position, Orientation, or Pose target for this <em>end_effector_link</em>. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02105">2105</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02122">2122</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -3429,7 +3427,7 @@ Here is the call graph for this function:</div>
 
 <p>Specify a set of path constraints to use. This version does not require a database server. This replaces any path constraints set in previous calls to <a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#ac74ec94967a06f6b1da8ea6e060b7444" title="Specify a set of path constraints to use. The constraints are looked up by name from the Mongo databa...">setPathConstraints()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02378">2378</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02354">2354</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -3460,7 +3458,7 @@ Here is the call graph for this function:</div>
 
 <p>Specify a set of path constraints to use. The constraints are looked up by name from the Mongo database server. This replaces any path constraints set in previous calls to <a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#ac74ec94967a06f6b1da8ea6e060b7444" title="Specify a set of path constraints to use. The constraints are looked up by name from the Mongo databa...">setPathConstraints()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02373">2373</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02349">2349</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -3491,7 +3489,7 @@ Here is the call graph for this function:</div>
 
 <p>Specify a planner to be used for further planning. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01575">1575</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01592">1592</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -3535,7 +3533,7 @@ Here is the call graph for this function:</div>
 
 <p>Set the planner parameters for given group and planner_id. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01549">1549</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01566">1566</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -3557,7 +3555,7 @@ Here is the call graph for this function:</div>
 
 <p>Specify a planning pipeline to be used for further planning. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01560">1560</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01577">1577</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -3580,7 +3578,7 @@ Here is the call graph for this function:</div>
 <p>Specify the maximum amount of time to use when planning. </p>
 <p>Set time allowed to planner to solve problem before aborting. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02414">2414</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02390">2390</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -3602,7 +3600,7 @@ Here is the call graph for this function:</div>
 
 <p>Specify which reference frame to assume for poses specified without a reference frame. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02131">2131</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02148">2148</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -3636,7 +3634,7 @@ Here is the call graph for this function:</div>
 <p>If <em>end_effector_link</em> is empty then <a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a10a9d94597ba094bd59cb1ca9f69e75e" title="Get the current end-effector link. This returns the value set by setEndEffectorLink() (or indirectly ...">getEndEffectorLink()</a> is used.</p>
 <p>This new pose target replaces any pre-existing JointValueTarget or pre-existing Position, Orientation, or Pose target for this <em>end_effector_link</em>. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01962">1962</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01979">1979</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -3679,7 +3677,7 @@ Here is the call graph for this function:</div>
 <p>If <em>end_effector_link</em> is empty then <a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a10a9d94597ba094bd59cb1ca9f69e75e" title="Get the current end-effector link. This returns the value set by setEndEffectorLink() (or indirectly ...">getEndEffectorLink()</a> is used.</p>
 <p>This new orientation target replaces any pre-existing JointValueTarget or pre-existing Position, Orientation, or Pose target for this <em>end_effector_link</em>. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01971">1971</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01988">1988</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -3713,7 +3711,7 @@ Here is the call graph for this function:</div>
 <p>If <em>end_effector_link</em> is empty then <a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a10a9d94597ba094bd59cb1ca9f69e75e" title="Get the current end-effector link. This returns the value set by setEndEffectorLink() (or indirectly ...">getEndEffectorLink()</a> is used.</p>
 <p>This new orientation target replaces any pre-existing JointValueTarget or pre-existing Position, Orientation, or Pose target for this <em>end_effector_link</em>. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01980">1980</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01997">1997</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -3748,7 +3746,7 @@ Here is the call graph for this function:</div>
 <p>When planning, the planner will find a path to one (arbitrarily chosen) pose from the list. If this group contains multiple end effectors then all end effectors in the group should have the same number of pose targets. If planning is successful then the result of the plan will place all end effectors at a pose from the same index in the list. (In other words, if one end effector ends up at the 3rd pose in the list then all end effectors in the group will end up at the 3rd pose in their respective lists. End effectors which do not matter (i.e. can end up in any position) can have their pose targets disabled by calling <a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a837dd04d54218876236da957faf82374" title="Forget pose(s) specified for end_effector_link.">clearPoseTarget()</a> for that end_effector_link.</p>
 <p>This new orientation target replaces any pre-existing JointValueTarget or pre-existing Position, Orientation, or Pose target(s) for this <em>end_effector_link</em>. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01987">1987</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02004">2004</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -3783,7 +3781,7 @@ Here is the call graph for this function:</div>
 <p>When planning, the planner will find a path to one (arbitrarily chosen) pose from the list. If this group contains multiple end effectors then all end effectors in the group should have the same number of pose targets. If planning is successful then the result of the plan will place all end effectors at a pose from the same index in the list. (In other words, if one end effector ends up at the 3rd pose in the list then all end effectors in the group will end up at the 3rd pose in their respective lists. End effectors which do not matter (i.e. can end up in any position) can have their pose targets disabled by calling <a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a837dd04d54218876236da957faf82374" title="Forget pose(s) specified for end_effector_link.">clearPoseTarget()</a> for that end_effector_link.</p>
 <p>This new orientation target replaces any pre-existing JointValueTarget or pre-existing Position, Orientation, or Pose target(s) for this <em>end_effector_link</em>. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02001">2001</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02018">2018</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -3818,7 +3816,7 @@ Here is the call graph for this function:</div>
 <p>When planning, the planner will find a path to one (arbitrarily chosen) pose from the list. If this group contains multiple end effectors then all end effectors in the group should have the same number of pose targets. If planning is successful then the result of the plan will place all end effectors at a pose from the same index in the list. (In other words, if one end effector ends up at the 3rd pose in the list then all end effectors in the group will end up at the 3rd pose in their respective lists. End effectors which do not matter (i.e. can end up in any position) can have their pose targets disabled by calling <a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a837dd04d54218876236da957faf82374" title="Forget pose(s) specified for end_effector_link.">clearPoseTarget()</a> for that end_effector_link.</p>
 <p>This new orientation target replaces any pre-existing JointValueTarget or pre-existing Position, Orientation, or Pose target(s) for this <em>end_effector_link</em>. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02016">2016</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02033">2033</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -3875,7 +3873,7 @@ Here is the call graph for this function:</div>
 <p>If <em>end_effector_link</em> is empty then <a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a10a9d94597ba094bd59cb1ca9f69e75e" title="Get the current end-effector link. This returns the value set by setEndEffectorLink() (or indirectly ...">getEndEffectorLink()</a> is used.</p>
 <p>This new position target replaces any pre-existing JointValueTarget or pre-existing Position, Orientation, or Pose target for this <em>end_effector_link</em>. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02057">2057</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02074">2074</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -3897,60 +3895,7 @@ Here is the call graph for this function:</div>
 <p>Set the joint state goal to a random joint configuration. </p>
 <p>After this call, the JointValueTarget is used <b>instead</b> of any previously set Position, Orientation, or Pose targets. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01733">1733</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a5c3d049f7263a05461be68039c6bc287"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5c3d049f7263a05461be68039c6bc287">&#9670;&nbsp;</a></span>setReplanAttempts()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void moveit::planning_interface::MoveGroupInterface::setReplanAttempts </td>
-          <td>(</td>
-          <td class="paramtype">int32_t&#160;</td>
-          <td class="paramname"><em>attempts</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Maximum number of replanning attempts. </p>
-
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02337">2337</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a1e301fb50f3f20cd06c75559a46fa52e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1e301fb50f3f20cd06c75559a46fa52e">&#9670;&nbsp;</a></span>setReplanDelay()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void moveit::planning_interface::MoveGroupInterface::setReplanDelay </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>delay</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sleep this duration between replanning attempts (in walltime seconds) </p>
-
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02350">2350</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classmoveit_1_1planning__interface_1_1MoveGroupInterface_a1e301fb50f3f20cd06c75559a46fa52e_cgraph.png" border="0" usemap="#classmoveit_1_1planning__interface_1_1MoveGroupInterface_a1e301fb50f3f20cd06c75559a46fa52e_cgraph" alt=""/></div>
-<map name="classmoveit_1_1planning__interface_1_1MoveGroupInterface_a1e301fb50f3f20cd06c75559a46fa52e_cgraph" id="classmoveit_1_1planning__interface_1_1MoveGroupInterface_a1e301fb50f3f20cd06c75559a46fa52e_cgraph">
-<area shape="rect" title="Sleep this duration between replanning attempts (in walltime seconds)" alt="" coords="5,13,280,54"/>
-<area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl.html#a2dc0447eedd465865a90b7216200dff3" title=" " alt="" coords="328,5,575,61"/>
-</map>
-</div>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01750">1750</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -3996,7 +3941,7 @@ Here is the call graph for this function:</div>
 <p>If <em>end_effector_link</em> is empty then <a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a10a9d94597ba094bd59cb1ca9f69e75e" title="Get the current end-effector link. This returns the value set by setEndEffectorLink() (or indirectly ...">getEndEffectorLink()</a> is used.</p>
 <p>This new orientation target replaces any pre-existing JointValueTarget or pre-existing Position, Orientation, or Pose target for this <em>end_effector_link</em>. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02082">2082</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02099">2099</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -4027,7 +3972,7 @@ Here is the call graph for this function:</div>
 
 <p>If a different start state should be considered instead of the current state of the robot, this function sets that state. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01723">1723</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01740">1740</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -4049,7 +3994,7 @@ Here is the call graph for this function:</div>
 
 <p>If a different start state should be considered instead of the current state of the robot, this function sets that state. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01712">1712</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01729">1729</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -4070,7 +4015,7 @@ Here is the call graph for this function:</div>
 
 <p>Set the starting state for planning to be that reported by the robot's joint state publication. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01728">1728</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01745">1745</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -4102,7 +4047,7 @@ Here is the call graph for this function:</div>
 
 <p>For pick/place operations, the name of the support surface is used to specify the fact that attached objects are allowed to touch the support surface. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02425">2425</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02401">2401</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -4122,7 +4067,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02393">2393</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02369">2369</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -4178,7 +4123,7 @@ Here is the call graph for this function:</div>
 
 <p>Specify the workspace bounding box. The box is specified in the planning frame (i.e. relative to the robot root link start position). This is useful when the planning group contains the root joint of the robot &ndash; i.e. when planning motion for the robot relative to the world. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02408">2408</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02384">2384</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -4200,7 +4145,7 @@ Here is the call graph for this function:</div>
 
 <p>When reasoning about the current state of a robot, a CurrentStateMonitor instance is automatically constructed. This function allows triggering the construction of that object from the beginning, so that future calls to functions such as <a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a92ff1a7ceec9f299988ded4e72d5cce5" title="Get the current state of the robot within the duration specified by wait.">getCurrentState()</a> will not take so long and are less likely to fail. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02183">2183</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l02200">2200</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -4221,7 +4166,7 @@ Here is the call graph for this function:</div>
 
 <p>Stop any trajectory execution, if one is active. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01707">1707</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01724">1724</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>

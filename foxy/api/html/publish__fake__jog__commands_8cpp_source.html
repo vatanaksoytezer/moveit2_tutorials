@@ -129,12 +129,12 @@ $(function() {
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="comment">// Call the start service to init and start the servo component</span></div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  rclcpp::Client&lt;std_srvs::srv::Trigger&gt;::SharedPtr servo_start_client =</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      node-&gt;create_client&lt;std_srvs::srv::Trigger&gt;(<span class="stringliteral">&quot;/servo_node/start_servo&quot;</span>);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      node-&gt;create_client&lt;std_srvs::srv::Trigger&gt;(<span class="stringliteral">&quot;/servo_server/start_servo&quot;</span>);</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  servo_start_client-&gt;wait_for_service(1s);</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  servo_start_client-&gt;async_send_request(std::make_shared&lt;std_srvs::srv::Trigger::Request&gt;());</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="comment">// Create a publisher for publishing the jog commands</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keyword">auto</span> pub = node-&gt;create_publisher&lt;geometry_msgs::msg::TwistStamped&gt;(<span class="stringliteral">&quot;/servo_node/delta_twist_cmds&quot;</span>, 10);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keyword">auto</span> pub = node-&gt;create_publisher&lt;geometry_msgs::msg::TwistStamped&gt;(<span class="stringliteral">&quot;/servo_server/delta_twist_cmds&quot;</span>, 10);</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  std::weak_ptr&lt;std::remove_pointer&lt;decltype(pub.get())&gt;<a class="code" href="namespacemoveit__commander__cmdline.html#ad511cd8d787603477151f3a6383a9dfb">::type</a>&gt; captured_pub = pub;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  std::weak_ptr&lt;std::remove_pointer&lt;decltype(node.get())&gt;<a class="code" href="namespacemoveit__commander__cmdline.html#ad511cd8d787603477151f3a6383a9dfb">::type</a>&gt; captured_node = node;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keyword">auto</span> callback = [captured_pub, captured_node]() -&gt; <span class="keywordtype">void</span> {</div>

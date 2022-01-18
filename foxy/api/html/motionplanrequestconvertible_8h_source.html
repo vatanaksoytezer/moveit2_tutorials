@@ -104,24 +104,27 @@ $(function() {
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> *  POSSIBILITY OF SUCH DAMAGE.</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"> *********************************************************************/</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="robot__model_8h.html">moveit/robot_model/robot_model.h</a>&gt;</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="planning__interface_8h.html">moveit/planning_interface/planning_interface.h</a>&gt;</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacepilz__industrial__motion__planner__testutils.html">pilz_industrial_motion_planner_testutils</a></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">class </span>MotionPlanRequestConvertible</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="namespaceplanning__interface.html#a1307e10a0a3b9ca03406d777b9a938a3">planning_interface::MotionPlanRequest</a> <a class="code" href="classpilz__industrial__motion__planner__testutils_1_1MotionPlanRequestConvertible.html#a51be3a7f6a082b538eea433e65e1ab01">toRequest</a>() <span class="keyword">const</span> = 0;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;};</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}  <span class="comment">// namespace pilz_industrial_motion_planner_testutils</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#ifndef MOTIONPLANREQUESTCONVERTIBLE_H</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#define MOTIONPLANREQUESTCONVERTIBLE_H</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="robot__model_8h.html">moveit/robot_model/robot_model.h</a>&gt;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="planning__interface_8h.html">moveit/planning_interface/planning_interface.h</a>&gt;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacepilz__industrial__motion__planner__testutils.html">pilz_industrial_motion_planner_testutils</a></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">class </span>MotionPlanRequestConvertible</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;{</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="namespaceplanning__interface.html#a1307e10a0a3b9ca03406d777b9a938a3">planning_interface::MotionPlanRequest</a> <a class="code" href="classpilz__industrial__motion__planner__testutils_1_1MotionPlanRequestConvertible.html#a51be3a7f6a082b538eea433e65e1ab01">toRequest</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;};</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}  <span class="comment">// namespace pilz_industrial_motion_planner_testutils</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#endif  // MOTIONPLANREQUESTCONVERTIBLE_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aplanning__interface_8h_html"><div class="ttname"><a href="planning__interface_8h.html">planning_interface.h</a></div></div>
 <div class="ttc" id="arobot__model_8h_html"><div class="ttname"><a href="robot__model_8h.html">robot_model.h</a></div></div>
 <div class="ttc" id="aclasspilz__industrial__motion__planner__testutils_1_1MotionPlanRequestConvertible_html_a51be3a7f6a082b538eea433e65e1ab01"><div class="ttname"><a href="classpilz__industrial__motion__planner__testutils_1_1MotionPlanRequestConvertible.html#a51be3a7f6a082b538eea433e65e1ab01">pilz_industrial_motion_planner_testutils::MotionPlanRequestConvertible::toRequest</a></div><div class="ttdeci">virtual planning_interface::MotionPlanRequest toRequest() const =0</div></div>
-<div class="ttc" id="anamespacepilz__industrial__motion__planner__testutils_html"><div class="ttname"><a href="namespacepilz__industrial__motion__planner__testutils.html">pilz_industrial_motion_planner_testutils</a></div><div class="ttdef"><b>Definition:</b> <a href="basecmd_8h_source.html#l00041">basecmd.h:41</a></div></div>
+<div class="ttc" id="anamespacepilz__industrial__motion__planner__testutils_html"><div class="ttname"><a href="namespacepilz__industrial__motion__planner__testutils.html">pilz_industrial_motion_planner_testutils</a></div><div class="ttdef"><b>Definition:</b> <a href="basecmd_8h_source.html#l00042">basecmd.h:42</a></div></div>
 <div class="ttc" id="anamespaceplanning__interface_html_a1307e10a0a3b9ca03406d777b9a938a3"><div class="ttname"><a href="namespaceplanning__interface.html#a1307e10a0a3b9ca03406d777b9a938a3">planning_interface::MotionPlanRequest</a></div><div class="ttdeci">moveit_msgs::msg::MotionPlanRequest MotionPlanRequest</div><div class="ttdef"><b>Definition:</b> <a href="planning__request_8h_source.html#l00077">planning_request.h:77</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

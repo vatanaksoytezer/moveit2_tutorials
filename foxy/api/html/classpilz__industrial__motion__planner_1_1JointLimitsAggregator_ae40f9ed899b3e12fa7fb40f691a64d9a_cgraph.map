@@ -1,0 +1,13 @@
+<map id="pilz_industrial_motion_planner::JointLimitsAggregator::getAggregatedLimits" name="pilz_industrial_motion_planner::JointLimitsAggregator::getAggregatedLimits">
+<area shape="rect" id="node1" title="Aggregates(combines) the joint limits from joint model and parameter server. The rules for the combin..." alt="" coords="5,205,232,261"/>
+<area shape="rect" id="node2" href="$classpilz__industrial__motion__planner_1_1JointLimitsContainer.html#a40383e43f2853d45c9456333cda2a537" title="Add a limit." alt="" coords="302,5,521,61"/>
+<area shape="rect" id="node3" href="$classpilz__industrial__motion__planner_1_1JointLimitsAggregator.html#a442930b2020131d17e2e9248050794ee" title="Checks if the position limits from the given joint_limit are stricter than the limits of the joint_mo..." alt="" coords="297,165,525,221"/>
+<area shape="rect" id="node6" href="$classpilz__industrial__motion__planner_1_1JointLimitsAggregator.html#abf9d281b216ce7c89d930cb00a3b2e4a" title="Checks if the velocity limit from the given joint_limit are stricter than the limit of the joint_mode..." alt="" coords="297,85,525,141"/>
+<area shape="rect" id="node8" href="$namespacepilz__industrial__motion__planner_1_1joint__limits__interface.html#a19e41ae2a42b3c2ea6d75662853b6aac" title=" " alt="" coords="319,405,504,461"/>
+<area shape="rect" id="node9" href="$classpilz__industrial__motion__planner_1_1JointLimitsAggregator.html#abf8235616e4fbeafe33278ae57ede18f" title="Update the position limits with the ones from the joint_model." alt="" coords="280,245,543,301"/>
+<area shape="rect" id="node11" href="$classpilz__industrial__motion__planner_1_1JointLimitsAggregator.html#a6ee5ac793eb0e93f5c98c621dafbf126" title="Update the velocity limit with the one from the joint_model." alt="" coords="280,325,543,381"/>
+<area shape="rect" id="node4" href="$classmoveit_1_1core_1_1JointModel.html#aa1d2f99c9025d01a92e47bc356938f77" title="Get the name of the joint." alt="" coords="592,245,773,286"/>
+<area shape="rect" id="node5" href="$classmoveit_1_1core_1_1JointModel.html#accc3352876f4d640f5b57904bf6ab265" title="Check if the set of values for the variables of this joint are within bounds." alt="" coords="591,173,775,214"/>
+<area shape="rect" id="node7" href="$classmoveit_1_1core_1_1JointModel.html#a0ee14b22009db973b8a4be4e2c911dca" title="Check if the set of velocities for the variables of this joint are within bounds." alt="" coords="591,93,775,134"/>
+<area shape="rect" id="node10" href="$classmoveit_1_1core_1_1JointModel.html#ad55551ed55d54b9d67e6e7d7865330d1" title="Get the bounds for a variable. Throw an exception if the variable was not found." alt="" coords="592,325,773,366"/>
+</map>

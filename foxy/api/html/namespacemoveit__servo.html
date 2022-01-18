@@ -66,7 +66,8 @@ $(function() {
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">moveit_servo Namespace Reference</div>  </div>
 </div><!--header-->
@@ -78,7 +79,7 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit__servo_1_1JoyToServoPub.html">JoyToServoPub</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit__servo_1_1ParameterDescriptorBuilder.html">ParameterDescriptorBuilder</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit__servo_1_1LowPassFilter.html">LowPassFilter</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmoveit__servo_1_1PIDConfig.html">PIDConfig</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -92,9 +93,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit__servo_1_1ServoFixture.html">ServoFixture</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit__servo_1_1ServoNode.html">ServoNode</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmoveit__servo_1_1ServoParameters.html">ServoParameters</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit__servo_1_1ServoServer.html">ServoServer</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
@@ -105,11 +106,13 @@ Typedefs</h2></td></tr>
 <tr class="separator:acb3ea7ccdadbae2b565f76ab34a16c19"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6cd0d54f218835d8727b95a708d2c54e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemoveit__servo.html#a6cd0d54f218835d8727b95a708d2c54e">SetParameterCallbackType</a> = std::function&lt; rcl_interfaces::msg::SetParametersResult(const rclcpp::Parameter &amp;)&gt;</td></tr>
 <tr class="separator:a6cd0d54f218835d8727b95a708d2c54e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1c64ff4ef356c099885b21679f35d2d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemoveit__servo.html#ae1c64ff4ef356c099885b21679f35d2d">ServoServer</a> = <a class="el" href="classmoveit__servo_1_1ServoNode.html">ServoNode</a></td></tr>
-<tr class="separator:ae1c64ff4ef356c099885b21679f35d2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
+<tr class="memitem:a0f88f74045a858c60249d37ecd131701"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemoveit__servo.html#a0f88f74045a858c60249d37ecd131701">CollisionCheckType</a> { <a class="el" href="namespacemoveit__servo.html#a0f88f74045a858c60249d37ecd131701a48487c1f0ad8c7662586f05648e3abd3">K_THRESHOLD_DISTANCE</a> = 1, 
+<a class="el" href="namespacemoveit__servo.html#a0f88f74045a858c60249d37ecd131701a3e7bcbbb451928b98b1f02eeef03f03f">K_STOP_DISTANCE</a> = 2
+ }</td></tr>
+<tr class="separator:a0f88f74045a858c60249d37ecd131701"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72baa5ed9c5fc60a76a9cddfce6b5548"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemoveit__servo.html#a72baa5ed9c5fc60a76a9cddfce6b5548">PoseTrackingStatusCode</a> : int8_t { <br />
 &#160;&#160;<a class="el" href="namespacemoveit__servo.html#a72baa5ed9c5fc60a76a9cddfce6b5548accc0377a8afbf50e7094f5c23a8af223">PoseTrackingStatusCode::INVALID</a> = -1, 
 <a class="el" href="namespacemoveit__servo.html#a72baa5ed9c5fc60a76a9cddfce6b5548ad0749aaba8b833466dfcbb0428e4f89c">PoseTrackingStatusCode::SUCCESS</a> = 0, 
@@ -139,11 +142,14 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aad144f0d55db346503612164e88d8772"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemoveit__servo.html#aad144f0d55db346503612164e88d8772">enforceVelocityLimits</a> (const <a class="el" href="classmoveit_1_1core_1_1JointModelGroup.html">moveit::core::JointModelGroup</a> *joint_model_group, const double publish_period, sensor_msgs::msg::JointState &amp;joint_state)</td></tr>
-<tr class="memdesc:aad144f0d55db346503612164e88d8772"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrease robot position change and velocity, if needed, to satisfy joint velocity limits.  <a href="namespacemoveit__servo.html#aad144f0d55db346503612164e88d8772">More...</a><br /></td></tr>
-<tr class="separator:aad144f0d55db346503612164e88d8772"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3650f7acc84c4ea2183ec75ee28b17d3"><td class="memItemLeft" align="right" valign="top">Eigen::ArrayXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemoveit__servo.html#a3650f7acc84c4ea2183ec75ee28b17d3">enforceVelocityLimits</a> (const <a class="el" href="classmoveit_1_1core_1_1JointModelGroup.html">moveit::core::JointModelGroup</a> *joint_model_group, double publish_period, const Eigen::ArrayXd &amp;delta_theta)</td></tr>
+<tr class="memdesc:a3650f7acc84c4ea2183ec75ee28b17d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scale the delta theta to match joint velocity/acceleration limits.  <a href="namespacemoveit__servo.html#a3650f7acc84c4ea2183ec75ee28b17d3">More...</a><br /></td></tr>
+<tr class="separator:a3650f7acc84c4ea2183ec75ee28b17d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a10063149c6b08a77854ceafff0b68e14"><td class="memItemLeft" align="right" valign="top">const std::unordered_map&lt; <a class="el" href="namespacemoveit__servo.html#a72baa5ed9c5fc60a76a9cddfce6b5548">PoseTrackingStatusCode</a>, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemoveit__servo.html#a10063149c6b08a77854ceafff0b68e14">POSE_TRACKING_STATUS_CODE_MAP</a> ({ { <a class="el" href="namespacemoveit__servo.html#a72baa5ed9c5fc60a76a9cddfce6b5548accc0377a8afbf50e7094f5c23a8af223">PoseTrackingStatusCode::INVALID</a>, &quot;Invalid&quot; }, { PoseTrackingStatusCode::SUCCESS, &quot;Success&quot; }, { PoseTrackingStatusCode::NO_RECENT_TARGET_POSE, &quot;No recent target pose&quot; }, { PoseTrackingStatusCode::NO_RECENT_END_EFFECTOR_POSE, &quot;No recent end effector pose&quot; }, { PoseTrackingStatusCode::STOP_REQUESTED, &quot;Stop requested&quot; } })</td></tr>
 <tr class="separator:a10063149c6b08a77854ceafff0b68e14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51b0fc155c14edca6625cae7918d3a7f"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a51b0fc155c14edca6625cae7918d3a7f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemoveit__servo.html#a51b0fc155c14edca6625cae7918d3a7f">declareOrGetParam</a> (T &amp;output_value, const std::string &amp;param_name, const rclcpp::Node::SharedPtr &amp;node, const rclcpp::Logger &amp;logger, const T default_value=T{})</td></tr>
+<tr class="separator:a51b0fc155c14edca6625cae7918d3a7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7fbffcbbd4f9cea09e63e0a1c81c624"><td class="memItemLeft" align="right" valign="top">const std::unordered_map&lt; <a class="el" href="namespacemoveit__servo.html#a645be72fe1553806404002b7cb52b43f">StatusCode</a>, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemoveit__servo.html#ad7fbffcbbd4f9cea09e63e0a1c81c624">SERVO_STATUS_CODE_MAP</a> ({ { <a class="el" href="namespacemoveit__servo.html#a645be72fe1553806404002b7cb52b43faccc0377a8afbf50e7094f5c23a8af223">StatusCode::INVALID</a>, &quot;Invalid&quot; }, { StatusCode::NO_WARNING, &quot;No warnings&quot; }, { StatusCode::DECELERATE_FOR_SINGULARITY, &quot;Close to a singularity, decelerating&quot; }, { StatusCode::HALT_FOR_SINGULARITY, &quot;Very close to a singularity, emergency stop&quot; }, { StatusCode::DECELERATE_FOR_COLLISION, &quot;Close to a collision, decelerating&quot; }, { StatusCode::HALT_FOR_COLLISION, &quot;Collision detected, emergency stop&quot; }, { StatusCode::JOINT_BOUND, &quot;Close to a joint bound (position or velocity), halting&quot; } })</td></tr>
 <tr class="separator:ad7fbffcbbd4f9cea09e63e0a1c81c624"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac23c005d46e36b6782e787628a1407fa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemoveit__servo.html#ac23c005d46e36b6782e787628a1407fa">TEST_F</a> (<a class="el" href="classmoveit__servo_1_1ServoFixture.html">ServoFixture</a>, SendTwistStampedTest)</td></tr>
@@ -152,6 +158,10 @@ Functions</h2></td></tr>
 <tr class="separator:a515a60c03984fa0b9117f530acf23970"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8edf9cfa55723e9959c43228f5cb7f14"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemoveit__servo.html#a8edf9cfa55723e9959c43228f5cb7f14">TEST_F</a> (<a class="el" href="classmoveit__servo_1_1PoseTrackingFixture.html">PoseTrackingFixture</a>, OutgoingMsgTest)</td></tr>
 <tr class="separator:a8edf9cfa55723e9959c43228f5cb7f14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c32ca5e9d3bb1633486c8aaad0202c3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemoveit__servo.html#a0c32ca5e9d3bb1633486c8aaad0202c3">TEST_F</a> (<a class="el" href="classmoveit__servo_1_1ServoFixture.html">ServoFixture</a>, StartStopTest)</td></tr>
+<tr class="separator:a0c32ca5e9d3bb1633486c8aaad0202c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a564db9da62d560ec1f13099e82c8e6a0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemoveit__servo.html#a564db9da62d560ec1f13099e82c8e6a0">TEST_F</a> (<a class="el" href="classmoveit__servo_1_1ServoFixture.html">ServoFixture</a>, JointVelocityEnforcementTest)</td></tr>
+<tr class="separator:a564db9da62d560ec1f13099e82c8e6a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a1787c2c61fd83e150e805c85d8e4c0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemoveit__servo.html#a4a1787c2c61fd83e150e805c85d8e4c0">TEST_F</a> (<a class="el" href="classmoveit__servo_1_1ServoFixture.html">ServoFixture</a>, SelfCollision)</td></tr>
 <tr class="separator:a4a1787c2c61fd83e150e805c85d8e4c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ed7b63fb491b9582b6eb6323973f6ab"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemoveit__servo.html#a9ed7b63fb491b9582b6eb6323973f6ab">TEST_F</a> (<a class="el" href="classmoveit__servo_1_1ServoFixture.html">ServoFixture</a>, ExternalCollision)</td></tr>
@@ -160,6 +170,11 @@ Functions</h2></td></tr>
 <tr class="separator:a4802ee551f9163e7929d297f7a7948cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d8cec09ffe4ef0dfb2366c12739940e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemoveit__servo.html#a8d8cec09ffe4ef0dfb2366c12739940e">TEST_F</a> (<a class="el" href="classmoveit__servo_1_1ServoFixture.html">ServoFixture</a>, ReachSingular)</td></tr>
 <tr class="separator:a8d8cec09ffe4ef0dfb2366c12739940e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a9a621d10395f1b42feb05ea21ba46448"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemoveit__servo.html#a9a621d10395f1b42feb05ea21ba46448">ROS_QUEUE_SIZE</a> = 2</td></tr>
+<tr class="separator:a9a621d10395f1b42feb05ea21ba46448"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="a5beddf2504c922f63942ca6bff5bef3a"></a>
@@ -174,7 +189,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="pose__tracking_8h_source.html#l00231">231</a> of file <a class="el" href="pose__tracking_8h_source.html">pose_tracking.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pose__tracking_8h_source.html#l00227">227</a> of file <a class="el" href="pose__tracking_8h_source.html">pose_tracking.h</a>.</p>
 
 </div>
 </div>
@@ -194,22 +209,6 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ae1c64ff4ef356c099885b21679f35d2d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae1c64ff4ef356c099885b21679f35d2d">&#9670;&nbsp;</a></span>ServoServer</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="namespacemoveit__servo.html#ae1c64ff4ef356c099885b21679f35d2d">moveit_servo::ServoServer</a> = typedef <a class="el" href="classmoveit__servo_1_1ServoNode.html">ServoNode</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="servo__server_8h_source.html#l00081">81</a> of file <a class="el" href="servo__server_8h_source.html">servo_server.h</a>.</p>
-
-</div>
-</div>
 <a id="a6cd0d54f218835d8727b95a708d2c54e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6cd0d54f218835d8727b95a708d2c54e">&#9670;&nbsp;</a></span>SetParameterCallbackType</h2>
 
@@ -222,11 +221,31 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__parameters_8h_source.html#l00086">86</a> of file <a class="el" href="servo__parameters_8h_source.html">servo_parameters.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__parameters_8h_source.html#l00087">87</a> of file <a class="el" href="servo__parameters_8h_source.html">servo_parameters.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a0f88f74045a858c60249d37ecd131701"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f88f74045a858c60249d37ecd131701">&#9670;&nbsp;</a></span>CollisionCheckType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespacemoveit__servo.html#a0f88f74045a858c60249d37ecd131701">moveit_servo::CollisionCheckType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a0f88f74045a858c60249d37ecd131701a48487c1f0ad8c7662586f05648e3abd3"></a>K_THRESHOLD_DISTANCE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a0f88f74045a858c60249d37ecd131701a3e7bcbbb451928b98b1f02eeef03f03f"></a>K_STOP_DISTANCE&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="collision__check_8h_source.html#l00091">91</a> of file <a class="el" href="collision__check_8h_source.html">collision_check.h</a>.</p>
+
+</div>
+</div>
 <a id="a72baa5ed9c5fc60a76a9cddfce6b5548"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a72baa5ed9c5fc60a76a9cddfce6b5548">&#9670;&nbsp;</a></span>PoseTrackingStatusCode</h2>
 
@@ -254,7 +273,7 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="a72baa5ed9c5fc60a76a9cddfce6b5548a890150b688f0819a3bbda52dd2df8f80"></a>STOP_REQUESTED&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="pose__tracking_8h_source.html#l00102">102</a> of file <a class="el" href="pose__tracking_8h_source.html">pose_tracking.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pose__tracking_8h_source.html#l00098">98</a> of file <a class="el" href="pose__tracking_8h_source.html">pose_tracking.h</a>.</p>
 
 </div>
 </div>
@@ -282,7 +301,7 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="ab082f4a5d59a0b8b54c3b8bafccc02c4af975a4017d40171c079368ed6e9489dc"></a>JOINT_SPACE&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="servo__calcs_8h_source.html#l00111">111</a> of file <a class="el" href="servo__calcs_8h_source.html">servo_calcs.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__calcs_8h_source.html#l00106">106</a> of file <a class="el" href="servo__calcs_8h_source.html">servo_calcs.h</a>.</p>
 
 </div>
 </div>
@@ -320,29 +339,43 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="aad144f0d55db346503612164e88d8772"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad144f0d55db346503612164e88d8772">&#9670;&nbsp;</a></span>enforceVelocityLimits()</h2>
+<a id="a51b0fc155c14edca6625cae7918d3a7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51b0fc155c14edca6625cae7918d3a7f">&#9670;&nbsp;</a></span>declareOrGetParam()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void moveit_servo::enforceVelocityLimits </td>
+          <td class="memname">void moveit_servo::declareOrGetParam </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classmoveit_1_1core_1_1JointModelGroup.html">moveit::core::JointModelGroup</a> *&#160;</td>
-          <td class="paramname"><em>joint_model_group</em>, </td>
+          <td class="paramtype">T &amp;&#160;</td>
+          <td class="paramname"><em>output_value</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const double&#160;</td>
-          <td class="paramname"><em>publish_period</em>, </td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>param_name</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">sensor_msgs::msg::JointState &amp;&#160;</td>
-          <td class="paramname"><em>joint_state</em>&#160;</td>
+          <td class="paramtype">const rclcpp::Node::SharedPtr &amp;&#160;</td>
+          <td class="paramname"><em>node</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const rclcpp::Logger &amp;&#160;</td>
+          <td class="paramname"><em>logger</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T&#160;</td>
+          <td class="paramname"><em>default_value</em> = <code>T{}</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -352,23 +385,67 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Decrease robot position change and velocity, if needed, to satisfy joint velocity limits. </p>
+<p class="definition">Definition at line <a class="el" href="servo__parameters_8h_source.html#l00193">193</a> of file <a class="el" href="servo__parameters_8h_source.html">servo_parameters.h</a>.</p>
+
+</div>
+</div>
+<a id="a3650f7acc84c4ea2183ec75ee28b17d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3650f7acc84c4ea2183ec75ee28b17d3">&#9670;&nbsp;</a></span>enforceVelocityLimits()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::ArrayXd moveit_servo::enforceVelocityLimits </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmoveit_1_1core_1_1JointModelGroup.html">moveit::core::JointModelGroup</a> *&#160;</td>
+          <td class="paramname"><em>joint_model_group</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>publish_period</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::ArrayXd &amp;&#160;</td>
+          <td class="paramname"><em>delta_theta</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Scale the delta theta to match joint velocity/acceleration limits. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">joint_model_group</td><td>Active joint group. Used to retrieve limits. </td></tr>
-    <tr><td class="paramname">joint_state</td><td>The command that will go to the robot. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">joint_model_group</td><td>The joint model group </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">publish_period</td><td>The publish period of servo (used for calculating joint velocity) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">delta_theta</td><td>The delta theta input</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>The delta theta output </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="enforce__limits_8cpp_source.html#l00103">103</a> of file <a class="el" href="enforce__limits_8cpp_source.html">enforce_limits.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="namespacemoveit__servo_aad144f0d55db346503612164e88d8772_icgraph.png" border="0" usemap="#namespacemoveit__servo_aad144f0d55db346503612164e88d8772_icgraph" alt=""/></div>
-<map name="namespacemoveit__servo_aad144f0d55db346503612164e88d8772_icgraph" id="namespacemoveit__servo_aad144f0d55db346503612164e88d8772_icgraph">
-<area shape="rect" title="Decrease robot position change and velocity, if needed, to satisfy joint velocity limits." alt="" coords="123,5,343,47"/>
-<area shape="rect" href="enforce__limits__tests_8cpp.html#ac2637e106557268dacb4887a8dda41ea" title=" " alt="" coords="5,13,75,39"/>
+<div class="center"><img src="namespacemoveit__servo_a3650f7acc84c4ea2183ec75ee28b17d3_icgraph.png" border="0" usemap="#namespacemoveit__servo_a3650f7acc84c4ea2183ec75ee28b17d3_icgraph" alt=""/></div>
+<map name="namespacemoveit__servo_a3650f7acc84c4ea2183ec75ee28b17d3_icgraph" id="namespacemoveit__servo_a3650f7acc84c4ea2183ec75ee28b17d3_icgraph">
+<area shape="rect" title="Scale the delta theta to match joint velocity/acceleration limits." alt="" coords="1199,68,1419,109"/>
+<area shape="rect" href="classmoveit__servo_1_1ServoCalcs.html#ab0f0d493e2cf6af1059b0c8a72235cca" title="Handles all aspects of the servoing after the desired joint commands are established Joint and Cartes..." alt="" coords="960,39,1151,80"/>
+<area shape="rect" href="enforce__limits__tests_8cpp.html#ac2637e106557268dacb4887a8dda41ea" title=" " alt="" coords="1021,105,1090,131"/>
+<area shape="rect" href="classmoveit__servo_1_1ServoCalcs.html#a5b6e7595d763abd516731e7d1987961f" title="Do servoing calculations for Cartesian twist commands." alt="" coords="721,5,912,47"/>
+<area shape="rect" href="classmoveit__servo_1_1ServoCalcs.html#a5871836138647004b7b32cb2905144ca" title="Do servoing calculations for direct commands to a joint." alt="" coords="721,71,912,112"/>
+<area shape="rect" href="classmoveit__servo_1_1ServoCalcs.html#abc7fc9277c10322e7af56c7e889c2cd8" title="Do calculations for a single iteration. Publish one outgoing command." alt="" coords="483,39,673,80"/>
+<area shape="rect" href="classmoveit__servo_1_1ServoCalcs.html#abada414babad9c28179c0ce88ca6917b" title="Run the main calculation loop." alt="" coords="244,39,435,80"/>
+<area shape="rect" href="classmoveit__servo_1_1ServoCalcs.html#ad942432113d0c473d1b04acfcb21e052" title="Start the timer where we do work and publish outputs." alt="" coords="5,39,196,80"/>
 </map>
 </div>
 
@@ -407,11 +484,26 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacemoveit__servo_ad7fbffcbbd4f9cea09e63e0a1c81c624_icgraph.png" border="0" usemap="#namespacemoveit__servo_ad7fbffcbbd4f9cea09e63e0a1c81c624_icgraph" alt=""/></div>
+<map name="namespacemoveit__servo_ad7fbffcbbd4f9cea09e63e0a1c81c624_icgraph" id="namespacemoveit__servo_ad7fbffcbbd4f9cea09e63e0a1c81c624_icgraph">
+<area shape="rect" title=" " alt="" coords="1267,39,1429,80"/>
+<area shape="rect" href="classmoveit__servo_1_1ServoCalcs.html#ab0f0d493e2cf6af1059b0c8a72235cca" title="Handles all aspects of the servoing after the desired joint commands are established Joint and Cartes..." alt="" coords="994,71,1185,112"/>
+<area shape="rect" href="classmoveit__servo_1_1ServoCalcs.html#a4b10bbcd55ca716e56faf9bf2b91e050" title="Possibly calculate a velocity scaling factor, due to proximity of singularity and direction of motion..." alt="" coords="960,5,1219,47"/>
+<area shape="rect" href="classmoveit__servo_1_1ServoCalcs.html#a5b6e7595d763abd516731e7d1987961f" title="Do servoing calculations for Cartesian twist commands." alt="" coords="721,5,912,47"/>
+<area shape="rect" href="classmoveit__servo_1_1ServoCalcs.html#a5871836138647004b7b32cb2905144ca" title="Do servoing calculations for direct commands to a joint." alt="" coords="721,71,912,112"/>
+<area shape="rect" href="classmoveit__servo_1_1ServoCalcs.html#abc7fc9277c10322e7af56c7e889c2cd8" title="Do calculations for a single iteration. Publish one outgoing command." alt="" coords="483,39,673,80"/>
+<area shape="rect" href="classmoveit__servo_1_1ServoCalcs.html#abada414babad9c28179c0ce88ca6917b" title="Run the main calculation loop." alt="" coords="244,39,435,80"/>
+<area shape="rect" href="classmoveit__servo_1_1ServoCalcs.html#ad942432113d0c473d1b04acfcb21e052" title="Start the timer where we do work and publish outputs." alt="" coords="5,39,196,80"/>
+</map>
+</div>
 
 </div>
 </div>
 <a id="a8edf9cfa55723e9959c43228f5cb7f14"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8edf9cfa55723e9959c43228f5cb7f14">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[1/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8edf9cfa55723e9959c43228f5cb7f14">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[1/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -441,7 +533,7 @@ Here is the caller graph for this function:</div>
 </div>
 </div>
 <a id="a4802ee551f9163e7929d297f7a7948cc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4802ee551f9163e7929d297f7a7948cc">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[2/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4802ee551f9163e7929d297f7a7948cc">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[2/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -466,12 +558,12 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="test__servo__interface_8cpp_source.html#l00147">147</a> of file <a class="el" href="test__servo__interface_8cpp_source.html">test_servo_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="test__servo__interface_8cpp_source.html#l00213">213</a> of file <a class="el" href="test__servo__interface_8cpp_source.html">test_servo_interface.cpp</a>.</p>
 
 </div>
 </div>
 <a id="a9ed7b63fb491b9582b6eb6323973f6ab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9ed7b63fb491b9582b6eb6323973f6ab">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[3/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ed7b63fb491b9582b6eb6323973f6ab">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[3/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -500,8 +592,38 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="a564db9da62d560ec1f13099e82c8e6a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a564db9da62d560ec1f13099e82c8e6a0">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[4/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">moveit_servo::TEST_F </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmoveit__servo_1_1ServoFixture.html">ServoFixture</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">JointVelocityEnforcementTest&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="servo__cpp__interface__test_8cpp_source.html#l00192">192</a> of file <a class="el" href="servo__cpp__interface__test_8cpp_source.html">servo_cpp_interface_test.cpp</a>.</p>
+
+</div>
+</div>
 <a id="a8d8cec09ffe4ef0dfb2366c12739940e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8d8cec09ffe4ef0dfb2366c12739940e">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[4/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d8cec09ffe4ef0dfb2366c12739940e">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[5/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -531,7 +653,7 @@ Here is the caller graph for this function:</div>
 </div>
 </div>
 <a id="a4a1787c2c61fd83e150e805c85d8e4c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4a1787c2c61fd83e150e805c85d8e4c0">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[5/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a1787c2c61fd83e150e805c85d8e4c0">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[6/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -561,7 +683,7 @@ Here is the caller graph for this function:</div>
 </div>
 </div>
 <a id="a515a60c03984fa0b9117f530acf23970"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a515a60c03984fa0b9117f530acf23970">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[6/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a515a60c03984fa0b9117f530acf23970">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[7/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -591,7 +713,7 @@ Here is the caller graph for this function:</div>
 </div>
 </div>
 <a id="ac23c005d46e36b6782e787628a1407fa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac23c005d46e36b6782e787628a1407fa">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[7/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac23c005d46e36b6782e787628a1407fa">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[8/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -617,6 +739,61 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="basic__servo__tests_8cpp_source.html#l00087">87</a> of file <a class="el" href="basic__servo__tests_8cpp_source.html">basic_servo_tests.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a0c32ca5e9d3bb1633486c8aaad0202c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c32ca5e9d3bb1633486c8aaad0202c3">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[9/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">moveit_servo::TEST_F </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmoveit__servo_1_1ServoFixture.html">ServoFixture</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">StartStopTest&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="servo__cpp__interface__test_8cpp_source.html#l00097">97</a> of file <a class="el" href="servo__cpp__interface__test_8cpp_source.html">servo_cpp_interface_test.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a9a621d10395f1b42feb05ea21ba46448"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a621d10395f1b42feb05ea21ba46448">&#9670;&nbsp;</a></span>ROS_QUEUE_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t moveit_servo::ROS_QUEUE_SIZE = 2</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="servo__parameters_8h_source.html#l00085">85</a> of file <a class="el" href="servo__parameters_8h_source.html">servo_parameters.h</a>.</p>
 
 </div>
 </div>

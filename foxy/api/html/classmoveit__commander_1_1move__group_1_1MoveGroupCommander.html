@@ -214,8 +214,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a88c06e3e346cf8a474975a95653db21a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e5ab16f996802d5b523024cf64459c8"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit__commander_1_1move__group_1_1MoveGroupCommander.html#a2e5ab16f996802d5b523024cf64459c8">set_planning_pipeline_id</a> (self, planning_pipeline)</td></tr>
 <tr class="separator:a2e5ab16f996802d5b523024cf64459c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a4f930dc8b77a4ea3736020ed7a8bf0"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit__commander_1_1move__group_1_1MoveGroupCommander.html#a1a4f930dc8b77a4ea3736020ed7a8bf0">get_planning_pipeline_id</a> (self)</td></tr>
-<tr class="separator:a1a4f930dc8b77a4ea3736020ed7a8bf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ba9fd7a713c17bd99822ed189fcbe5b"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit__commander_1_1move__group_1_1MoveGroupCommander.html#a7ba9fd7a713c17bd99822ed189fcbe5b">get_planning_pipeline_id</a> (self, planning_pipeline)</td></tr>
+<tr class="separator:a7ba9fd7a713c17bd99822ed189fcbe5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a362bbe2b8418e1e64bc04b5162e75e11"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit__commander_1_1move__group_1_1MoveGroupCommander.html#a362bbe2b8418e1e64bc04b5162e75e11">set_planner_id</a> (self, planner_id)</td></tr>
 <tr class="separator:a362bbe2b8418e1e64bc04b5162e75e11"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a66a352ef81df0da4ff9bc5245523d867"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit__commander_1_1move__group_1_1MoveGroupCommander.html#a66a352ef81df0da4ff9bc5245523d867">get_planner_id</a> (self)</td></tr>
@@ -406,7 +406,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">Given the name of an object existing in the planning scene, attach it to a link. The link used is specified by the second argument. If left unspecified, the end-effector link is used, if one is known. If there is no end-effector link, the first link in the group is used. If no link is identified, failure is reported. True is returned if an attach request was successfully sent to the move_group node. This does not verify that the attach request also was successfully applied by move_group.</pre> 
+<pre class="fragment">Given the name of an object existing in the planning scene, attach it to a link. The link used is specified by the second argument. If left unspecified, the end-effector link is used, if one is known. If there is no end-effector link, the first link in the group is used. If no link is identified, failure is reported. True is returned if an attach request was succesfully sent to the move_group node. This does not verify that the attach request also was successfuly applied by move_group.</pre> 
 <p class="definition">Definition at line <a class="el" href="move__group_8py_source.html#l00689">689</a> of file <a class="el" href="move__group_8py_source.html">move_group.py</a>.</p>
 
 </div>
@@ -1263,7 +1263,7 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">Get the actual path constraints in form of a moveit_msgs.msgs.Constraints </pre> 
+<pre class="fragment">Get the acutal path constraints in form of a moveit_msgs.msgs.Constraints </pre> 
 <p class="definition">Definition at line <a class="el" href="move__group_8py_source.html#l00476">476</a> of file <a class="el" href="move__group_8py_source.html">move_group.py</a>.</p>
 
 </div>
@@ -1319,8 +1319,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a1a4f930dc8b77a4ea3736020ed7a8bf0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1a4f930dc8b77a4ea3736020ed7a8bf0">&#9670;&nbsp;</a></span>get_planning_pipeline_id()</h2>
+<a id="a7ba9fd7a713c17bd99822ed189fcbe5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ba9fd7a713c17bd99822ed189fcbe5b">&#9670;&nbsp;</a></span>get_planning_pipeline_id()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1329,8 +1329,18 @@ Here is the caller graph for this function:</div>
           <td class="memname">def moveit_commander.move_group.MoveGroupCommander.get_planning_pipeline_id </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>planning_pipeline</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1510,7 +1520,7 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">Get the actual trajectory constraints in form of a moveit_msgs.msgs.TrajectoryConstraints </pre> 
+<pre class="fragment">Get the actual trajectory constraints in form of a moveit_msgs.msgs.Constraints </pre> 
 <p class="definition">Definition at line <a class="el" href="move__group_8py_source.html#l00499">499</a> of file <a class="el" href="move__group_8py_source.html">move_group.py</a>.</p>
 
 </div>
@@ -2841,7 +2851,7 @@ Examples
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">Specify the trajectory constraints to be used (setting from database is not implemented yet)</pre> 
+<pre class="fragment">Specify the trajectory constraints to be used </pre> 
 <p class="definition">Definition at line <a class="el" href="move__group_8py_source.html#l00506">506</a> of file <a class="el" href="move__group_8py_source.html">move_group.py</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>

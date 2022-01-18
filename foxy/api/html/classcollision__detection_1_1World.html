@@ -134,8 +134,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:adc7e8e0144c3bd71304f18eac293d589"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a7d25081a838ac51cf567ff1f003f6a"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcollision__detection_1_1World.html#a1a7d25081a838ac51cf567ff1f003f6a">size</a> () const</td></tr>
 <tr class="separator:a1a7d25081a838ac51cf567ff1f003f6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09ee229dd47f0f083e4e7c5db4fd27a1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcollision__detection_1_1World.html#a30e6e9963f2635fee705aab92ddf373f">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcollision__detection_1_1World.html#a09ee229dd47f0f083e4e7c5db4fd27a1">find</a> (const std::string &amp;object_id) const</td></tr>
-<tr class="separator:a09ee229dd47f0f083e4e7c5db4fd27a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af21cbb630b4c137b37e5ff673b7e1451"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcollision__detection_1_1World.html#a30e6e9963f2635fee705aab92ddf373f">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcollision__detection_1_1World.html#af21cbb630b4c137b37e5ff673b7e1451">find</a> (const std::string &amp;id) const</td></tr>
+<tr class="separator:af21cbb630b4c137b37e5ff673b7e1451"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1f31fe9d2e4c623cabb9fa8f88749101"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcollision__detection_1_1World.html#a1f31fe9d2e4c623cabb9fa8f88749101">hasObject</a> (const std::string &amp;object_id) const</td></tr>
 <tr class="memdesc:a1f31fe9d2e4c623cabb9fa8f88749101"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a particular object exists in the collision world.  <a href="classcollision__detection_1_1World.html#a1f31fe9d2e4c623cabb9fa8f88749101">More...</a><br /></td></tr>
 <tr class="separator:a1f31fe9d2e4c623cabb9fa8f88749101"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -143,38 +143,23 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:abf81ea556b4953e9828ab85d316cd3b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if an object or subframe with given name exists in the collision world. <a class="el" href="classA.html">A</a> subframe name needs to be prefixed with the object's name separated by a slash.  <a href="classcollision__detection_1_1World.html#abf81ea556b4953e9828ab85d316cd3b4">More...</a><br /></td></tr>
 <tr class="separator:abf81ea556b4953e9828ab85d316cd3b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a00985034de270027fd37982a181cd39d"><td class="memItemLeft" align="right" valign="top">const Eigen::Isometry3d &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcollision__detection_1_1World.html#a00985034de270027fd37982a181cd39d">getTransform</a> (const std::string &amp;name) const</td></tr>
-<tr class="memdesc:a00985034de270027fd37982a181cd39d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the transform to an object or subframe with given name. If name does not exist, a std::runtime_error is thrown. <a class="el" href="classA.html">A</a> subframe name needs to be prefixed with the object's name separated by a slash. The transform is global (relative to the world origin). The returned transform is guaranteed to be a valid isometry.  <a href="classcollision__detection_1_1World.html#a00985034de270027fd37982a181cd39d">More...</a><br /></td></tr>
+<tr class="memdesc:a00985034de270027fd37982a181cd39d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the transform to an object or subframe with given name. If name does not exist, a std::runtime_error is thrown. <a class="el" href="classA.html">A</a> subframe name needs to be prefixed with the object's name separated by a slash. The returned transform is guaranteed to be a valid isometry.  <a href="classcollision__detection_1_1World.html#a00985034de270027fd37982a181cd39d">More...</a><br /></td></tr>
 <tr class="separator:a00985034de270027fd37982a181cd39d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac975be061c312033d19c90e328f4b528"><td class="memItemLeft" align="right" valign="top">const Eigen::Isometry3d &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcollision__detection_1_1World.html#ac975be061c312033d19c90e328f4b528">getTransform</a> (const std::string &amp;name, bool &amp;frame_found) const</td></tr>
-<tr class="memdesc:ac975be061c312033d19c90e328f4b528"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the transform to an object or subframe with given name. If name does not exist, returns an identity transform and sets frame_found to false. <a class="el" href="classA.html">A</a> subframe name needs to be prefixed with the object's name separated by a slash. The transform is global (relative to the world origin). The returned transform is guaranteed to be a valid isometry.  <a href="classcollision__detection_1_1World.html#ac975be061c312033d19c90e328f4b528">More...</a><br /></td></tr>
+<tr class="memdesc:ac975be061c312033d19c90e328f4b528"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the transform to an object or subframe with given name. If name does not exist, returns an identity transform and sets frame_found to false. <a class="el" href="classA.html">A</a> subframe name needs to be prefixed with the object's name separated by a slash. The returned transform is guaranteed to be a valid isometry.  <a href="classcollision__detection_1_1World.html#ac975be061c312033d19c90e328f4b528">More...</a><br /></td></tr>
 <tr class="separator:ac975be061c312033d19c90e328f4b528"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c9f13355f4162741a1b430fcb6f5205"><td class="memItemLeft" align="right" valign="top">const Eigen::Isometry3d &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcollision__detection_1_1World.html#a5c9f13355f4162741a1b430fcb6f5205">getGlobalShapeTransform</a> (const std::string &amp;object_id, int shape_index) const</td></tr>
-<tr class="memdesc:a5c9f13355f4162741a1b430fcb6f5205"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the global transform to a shape of an object with multiple shapes. shape_index is the index of the object (counting from 0) and needs to be valid. This function is used to construct the collision environment.  <a href="classcollision__detection_1_1World.html#a5c9f13355f4162741a1b430fcb6f5205">More...</a><br /></td></tr>
-<tr class="separator:a5c9f13355f4162741a1b430fcb6f5205"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aefa771956454cfe5efbf77b72184857a"><td class="memItemLeft" align="right" valign="top">const EigenSTL::vector_Isometry3d &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcollision__detection_1_1World.html#aefa771956454cfe5efbf77b72184857a">getGlobalShapeTransforms</a> (const std::string &amp;object_id) const</td></tr>
-<tr class="memdesc:aefa771956454cfe5efbf77b72184857a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the global transforms to the shapes of an object. This function is used to construct the collision environment.  <a href="classcollision__detection_1_1World.html#aefa771956454cfe5efbf77b72184857a">More...</a><br /></td></tr>
-<tr class="separator:aefa771956454cfe5efbf77b72184857a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e18424a37de7f24092f2e7c7898e620"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcollision__detection_1_1World.html#a5e18424a37de7f24092f2e7c7898e620">addToObject</a> (const std::string &amp;object_id, const Eigen::Isometry3d &amp;pose, const std::vector&lt; shapes::ShapeConstPtr &gt; &amp;shapes, const EigenSTL::vector_Isometry3d &amp;shape_poses)</td></tr>
-<tr class="memdesc:a5e18424a37de7f24092f2e7c7898e620"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a pose and shapes to an object in the map. This function makes repeated calls to addToObjectInternal() to add the shapes one by one.  <a href="classcollision__detection_1_1World.html#a5e18424a37de7f24092f2e7c7898e620">More...</a><br /></td></tr>
-<tr class="separator:a5e18424a37de7f24092f2e7c7898e620"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab6e49ebe3d29980d0dd0c7876bbc4d23"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcollision__detection_1_1World.html#ab6e49ebe3d29980d0dd0c7876bbc4d23">addToObject</a> (const std::string &amp;object_id, const std::vector&lt; shapes::ShapeConstPtr &gt; &amp;shapes, const EigenSTL::vector_Isometry3d &amp;shape_poses)</td></tr>
-<tr class="memdesc:ab6e49ebe3d29980d0dd0c7876bbc4d23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add shapes to an object in the map. This function makes repeated calls to addToObjectInternal() to add the shapes one by one.  <a href="classcollision__detection_1_1World.html#ab6e49ebe3d29980d0dd0c7876bbc4d23">More...</a><br /></td></tr>
-<tr class="separator:ab6e49ebe3d29980d0dd0c7876bbc4d23"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba922913ec2e7249ebf648b2ed0b23bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcollision__detection_1_1World.html#aba922913ec2e7249ebf648b2ed0b23bc">addToObject</a> (const std::string &amp;object_id, const Eigen::Isometry3d &amp;pose, const shapes::ShapeConstPtr &amp;shape, const Eigen::Isometry3d &amp;shape_pose)</td></tr>
-<tr class="memdesc:aba922913ec2e7249ebf648b2ed0b23bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a pose and shape to an object. If the object already exists, this call will add the shape to the object at the specified pose. Otherwise, the object is created and the specified shape is added. This calls addToObjectInternal(). shape_pose is defined relative to the object's pose, not to the world frame.  <a href="classcollision__detection_1_1World.html#aba922913ec2e7249ebf648b2ed0b23bc">More...</a><br /></td></tr>
-<tr class="separator:aba922913ec2e7249ebf648b2ed0b23bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11b457d209dfe22a5cabc26b7df2bafa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcollision__detection_1_1World.html#a11b457d209dfe22a5cabc26b7df2bafa">addToObject</a> (const std::string &amp;object_id, const shapes::ShapeConstPtr &amp;shape, const Eigen::Isometry3d &amp;shape_pose)</td></tr>
-<tr class="memdesc:a11b457d209dfe22a5cabc26b7df2bafa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a shape to an object. If the object already exists, this call will add the shape to the object at the specified pose. Otherwise, the object is created and the specified shape is added. This calls addToObjectInternal(). shape_pose is defined relative to the object's pose, not to the world frame.  <a href="classcollision__detection_1_1World.html#a11b457d209dfe22a5cabc26b7df2bafa">More...</a><br /></td></tr>
-<tr class="separator:a11b457d209dfe22a5cabc26b7df2bafa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31e4c0573c302c06ba391839d6c4f17c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcollision__detection_1_1World.html#a31e4c0573c302c06ba391839d6c4f17c">moveShapeInObject</a> (const std::string &amp;object_id, const shapes::ShapeConstPtr &amp;shape, const Eigen::Isometry3d &amp;shape_pose)</td></tr>
-<tr class="memdesc:a31e4c0573c302c06ba391839d6c4f17c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the pose of a shape in an object. Shape equality is verified by comparing pointers. Returns true on success.  <a href="classcollision__detection_1_1World.html#a31e4c0573c302c06ba391839d6c4f17c">More...</a><br /></td></tr>
-<tr class="separator:a31e4c0573c302c06ba391839d6c4f17c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac555cf977a37a0831673df03b6f41bf3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcollision__detection_1_1World.html#ac555cf977a37a0831673df03b6f41bf3">addToObject</a> (const std::string &amp;object_id, const std::vector&lt; shapes::ShapeConstPtr &gt; &amp;shapes, const EigenSTL::vector_Isometry3d &amp;poses)</td></tr>
+<tr class="memdesc:ac555cf977a37a0831673df03b6f41bf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add shapes to an object in the map. This function makes repeated calls to addToObjectInternal() to add the shapes one by one.  <a href="classcollision__detection_1_1World.html#ac555cf977a37a0831673df03b6f41bf3">More...</a><br /></td></tr>
+<tr class="separator:ac555cf977a37a0831673df03b6f41bf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd2a8c0a438392b2b63fc0694bed3e50"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcollision__detection_1_1World.html#afd2a8c0a438392b2b63fc0694bed3e50">addToObject</a> (const std::string &amp;object_id, const shapes::ShapeConstPtr &amp;shape, const Eigen::Isometry3d &amp;pose)</td></tr>
+<tr class="memdesc:afd2a8c0a438392b2b63fc0694bed3e50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a shape to an object. If the object already exists, this call will add the shape to the object at the specified pose. Otherwise, the object is created and the specified shape is added. This calls addToObjectInternal().  <a href="classcollision__detection_1_1World.html#afd2a8c0a438392b2b63fc0694bed3e50">More...</a><br /></td></tr>
+<tr class="separator:afd2a8c0a438392b2b63fc0694bed3e50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f8f5187f286ee273fabf8f607dcaba6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcollision__detection_1_1World.html#a1f8f5187f286ee273fabf8f607dcaba6">moveShapeInObject</a> (const std::string &amp;object_id, const shapes::ShapeConstPtr &amp;shape, const Eigen::Isometry3d &amp;pose)</td></tr>
+<tr class="memdesc:a1f8f5187f286ee273fabf8f607dcaba6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the pose of a shape in an object. Shape equality is verified by comparing pointers. Returns true on success.  <a href="classcollision__detection_1_1World.html#a1f8f5187f286ee273fabf8f607dcaba6">More...</a><br /></td></tr>
+<tr class="separator:a1f8f5187f286ee273fabf8f607dcaba6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67d166f54e0dfe169ff05e8d93181ffc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcollision__detection_1_1World.html#a67d166f54e0dfe169ff05e8d93181ffc">moveObject</a> (const std::string &amp;object_id, const Eigen::Isometry3d &amp;transform)</td></tr>
-<tr class="memdesc:a67d166f54e0dfe169ff05e8d93181ffc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the object pose (thus moving all shapes and subframes in the object) according to the given transform specified in world frame. The transform is relative to and changes the object pose. It does not replace it.  <a href="classcollision__detection_1_1World.html#a67d166f54e0dfe169ff05e8d93181ffc">More...</a><br /></td></tr>
+<tr class="memdesc:a67d166f54e0dfe169ff05e8d93181ffc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move all shapes in an object according to the given transform specified in world frame.  <a href="classcollision__detection_1_1World.html#a67d166f54e0dfe169ff05e8d93181ffc">More...</a><br /></td></tr>
 <tr class="separator:a67d166f54e0dfe169ff05e8d93181ffc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c9b1d33dc58d6c7e79ef3281c6ecf6f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcollision__detection_1_1World.html#a7c9b1d33dc58d6c7e79ef3281c6ecf6f">setObjectPose</a> (const std::string &amp;object_id, const Eigen::Isometry3d &amp;pose)</td></tr>
-<tr class="memdesc:a7c9b1d33dc58d6c7e79ef3281c6ecf6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the pose of an object. The pose is specified in the world frame.  <a href="classcollision__detection_1_1World.html#a7c9b1d33dc58d6c7e79ef3281c6ecf6f">More...</a><br /></td></tr>
-<tr class="separator:a7c9b1d33dc58d6c7e79ef3281c6ecf6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a49d198631f76d2f2a5550821187070ed"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcollision__detection_1_1World.html#a49d198631f76d2f2a5550821187070ed">removeShapeFromObject</a> (const std::string &amp;object_id, const shapes::ShapeConstPtr &amp;shape)</td></tr>
 <tr class="memdesc:a49d198631f76d2f2a5550821187070ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove shape from object. Shape equality is verified by comparing pointers. Ownership of the object is renounced (i.e. object is deleted if no external references exist) if this was the last shape in the object. Returns true on success and false if the object did not exist or did not contain the shape.  <a href="classcollision__detection_1_1World.html#a49d198631f76d2f2a5550821187070ed">More...</a><br /></td></tr>
 <tr class="separator:a49d198631f76d2f2a5550821187070ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -182,7 +167,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a206bc9df40cb659a0a34353523a689e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove a particular object. If there are no external pointers to the corresponding instance of <a class="el" href="structcollision__detection_1_1World_1_1Object.html" title="A representation of an object.">Object</a>, the memory is freed. Returns true on success and false if no such object was found.  <a href="classcollision__detection_1_1World.html#a206bc9df40cb659a0a34353523a689e4">More...</a><br /></td></tr>
 <tr class="separator:a206bc9df40cb659a0a34353523a689e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa19a61199fd3e38a8681a731700385ae"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcollision__detection_1_1World.html#aa19a61199fd3e38a8681a731700385ae">setSubframesOfObject</a> (const std::string &amp;object_id, const <a class="el" href="namespacemoveit_1_1core.html#aaed75968b346de18defad60f19fc2545">moveit::core::FixedTransformsMap</a> &amp;subframe_poses)</td></tr>
-<tr class="memdesc:aa19a61199fd3e38a8681a731700385ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set subframes on an object. The frames are relative to the object pose.  <a href="classcollision__detection_1_1World.html#aa19a61199fd3e38a8681a731700385ae">More...</a><br /></td></tr>
+<tr class="memdesc:aa19a61199fd3e38a8681a731700385ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set subframes on an object.  <a href="classcollision__detection_1_1World.html#aa19a61199fd3e38a8681a731700385ae">More...</a><br /></td></tr>
 <tr class="separator:aa19a61199fd3e38a8681a731700385ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc4d485fb4e992dccafebd760b22c23c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcollision__detection_1_1World.html#adc4d485fb4e992dccafebd760b22c23c">clearObjects</a> ()</td></tr>
 <tr class="memdesc:adc4d485fb4e992dccafebd760b22c23c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear all objects. If there are no other pointers to corresponding instances of Objects, the memory is freed.  <a href="classcollision__detection_1_1World.html#adc4d485fb4e992dccafebd760b22c23c">More...</a><br /></td></tr>
@@ -214,7 +199,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>iterator over the objects in the world. </p>
 
-<p class="definition">Definition at line <a class="el" href="world_8h_source.html#l00126">126</a> of file <a class="el" href="world_8h_source.html">world.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="world_8h_source.html#l00121">121</a> of file <a class="el" href="world_8h_source.html">world.h</a>.</p>
 
 </div>
 </div>
@@ -230,7 +215,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="world_8h_source.html#l00301">301</a> of file <a class="el" href="world_8h_source.html">world.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="world_8h_source.html#l00256">256</a> of file <a class="el" href="world_8h_source.html">world.h</a>.</p>
 
 </div>
 </div>
@@ -259,7 +244,7 @@ Public Member Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="world_8h_source.html#l00251">251</a> of file <a class="el" href="world_8h_source.html">world.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="world_8h_source.html#l00206">206</a> of file <a class="el" href="world_8h_source.html">world.h</a>.</p>
 
 </div>
 </div>
@@ -353,7 +338,7 @@ Public Member Functions</h2></td></tr>
 
 <p>register a callback function for notification of changes. <em>callback</em> will be called right after any change occurs to any <a class="el" href="structcollision__detection_1_1World_1_1Object.html" title="A representation of an object.">Object</a>. <em>observer</em> is the object which is requesting the changes. It is only used for identifying the callback in <a class="el" href="classcollision__detection_1_1World.html#a0d94126a3e3046ddc264213b319a2655" title="remove a notifier callback">removeObserver()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="world_8cpp_source.html#l00394">394</a> of file <a class="el" href="world_8cpp_source.html">world.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="world_8cpp_source.html#l00336">336</a> of file <a class="el" href="world_8cpp_source.html">world.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -366,129 +351,11 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="aba922913ec2e7249ebf648b2ed0b23bc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba922913ec2e7249ebf648b2ed0b23bc">&#9670;&nbsp;</a></span>addToObject() <span class="overload">[1/4]</span></h2>
+<a id="afd2a8c0a438392b2b63fc0694bed3e50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd2a8c0a438392b2b63fc0694bed3e50">&#9670;&nbsp;</a></span>addToObject() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void collision_detection::World::addToObject </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>object_id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::Isometry3d &amp;&#160;</td>
-          <td class="paramname"><em>pose</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const shapes::ShapeConstPtr &amp;&#160;</td>
-          <td class="paramname"><em>shape</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::Isometry3d &amp;&#160;</td>
-          <td class="paramname"><em>shape_pose</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Add a pose and shape to an object. If the object already exists, this call will add the shape to the object at the specified pose. Otherwise, the object is created and the specified shape is added. This calls addToObjectInternal(). shape_pose is defined relative to the object's pose, not to the world frame. </p>
-
-<p class="definition">Definition at line <a class="el" href="world_8h_source.html#l00198">198</a> of file <a class="el" href="world_8h_source.html">world.h</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classcollision__detection_1_1World_aba922913ec2e7249ebf648b2ed0b23bc_cgraph.png" border="0" usemap="#classcollision__detection_1_1World_aba922913ec2e7249ebf648b2ed0b23bc_cgraph" alt=""/></div>
-<map name="classcollision__detection_1_1World_aba922913ec2e7249ebf648b2ed0b23bc_cgraph" id="classcollision__detection_1_1World_aba922913ec2e7249ebf648b2ed0b23bc_cgraph">
-<area shape="rect" title="Add a pose and shape to an object. If the object already exists, this call will add the shape to the ..." alt="" coords="5,5,160,47"/>
-<area shape="rect" href="classcollision__detection_1_1World.html#a5e18424a37de7f24092f2e7c7898e620" title="Add a pose and shapes to an object in the map. This function makes repeated calls to addToObjectInter..." alt="" coords="208,5,363,47"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a5e18424a37de7f24092f2e7c7898e620"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e18424a37de7f24092f2e7c7898e620">&#9670;&nbsp;</a></span>addToObject() <span class="overload">[2/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void collision_detection::World::addToObject </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>object_id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::Isometry3d &amp;&#160;</td>
-          <td class="paramname"><em>pose</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::vector&lt; shapes::ShapeConstPtr &gt; &amp;&#160;</td>
-          <td class="paramname"><em>shapes</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const EigenSTL::vector_Isometry3d &amp;&#160;</td>
-          <td class="paramname"><em>shape_poses</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Add a pose and shapes to an object in the map. This function makes repeated calls to addToObjectInternal() to add the shapes one by one. </p>
-
-<p class="definition">Definition at line <a class="el" href="world_8cpp_source.html#l00103">103</a> of file <a class="el" href="world_8cpp_source.html">world.cpp</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classcollision__detection_1_1World_a5e18424a37de7f24092f2e7c7898e620_icgraph.png" border="0" usemap="#classcollision__detection_1_1World_a5e18424a37de7f24092f2e7c7898e620_icgraph" alt=""/></div>
-<map name="classcollision__detection_1_1World_a5e18424a37de7f24092f2e7c7898e620_icgraph" id="classcollision__detection_1_1World_a5e18424a37de7f24092f2e7c7898e620_icgraph">
-<area shape="rect" title="Add a pose and shapes to an object in the map. This function makes repeated calls to addToObjectInter..." alt="" coords="208,35,363,76"/>
-<area shape="rect" href="classcollision__detection_1_1World.html#ab6e49ebe3d29980d0dd0c7876bbc4d23" title="Add shapes to an object in the map. This function makes repeated calls to addToObjectInternal() to ad..." alt="" coords="5,5,160,47"/>
-<area shape="rect" href="test__world_8cpp.html#a0044d326dabb69316ae673240928f93a" title=" " alt="" coords="55,71,110,98"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a11b457d209dfe22a5cabc26b7df2bafa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a11b457d209dfe22a5cabc26b7df2bafa">&#9670;&nbsp;</a></span>addToObject() <span class="overload">[3/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void collision_detection::World::addToObject </td>
@@ -506,7 +373,7 @@ Here is the caller graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const Eigen::Isometry3d &amp;&#160;</td>
-          <td class="paramname"><em>shape_pose</em>&#160;</td>
+          <td class="paramname"><em>pose</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -514,36 +381,19 @@ Here is the caller graph for this function:</div>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Add a shape to an object. If the object already exists, this call will add the shape to the object at the specified pose. Otherwise, the object is created and the specified shape is added. This calls addToObjectInternal(). shape_pose is defined relative to the object's pose, not to the world frame. </p>
+<p>Add a shape to an object. If the object already exists, this call will add the shape to the object at the specified pose. Otherwise, the object is created and the specified shape is added. This calls addToObjectInternal(). </p>
 
-<p class="definition">Definition at line <a class="el" href="world_8h_source.html#l00209">209</a> of file <a class="el" href="world_8h_source.html">world.h</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classcollision__detection_1_1World_a11b457d209dfe22a5cabc26b7df2bafa_cgraph.png" border="0" usemap="#classcollision__detection_1_1World_a11b457d209dfe22a5cabc26b7df2bafa_cgraph" alt=""/></div>
-<map name="classcollision__detection_1_1World_a11b457d209dfe22a5cabc26b7df2bafa_cgraph" id="classcollision__detection_1_1World_a11b457d209dfe22a5cabc26b7df2bafa_cgraph">
-<area shape="rect" title="Add a shape to an object. If the object already exists, this call will add the shape to the object at..." alt="" coords="5,5,160,47"/>
-<area shape="rect" href="classcollision__detection_1_1World.html#a5e18424a37de7f24092f2e7c7898e620" title="Add a pose and shapes to an object in the map. This function makes repeated calls to addToObjectInter..." alt="" coords="208,5,363,47"/>
-</map>
-</div>
+<p class="definition">Definition at line <a class="el" href="world_8cpp_source.html#l00132">132</a> of file <a class="el" href="world_8cpp_source.html">world.cpp</a>.</p>
 
 </div>
 </div>
-<a id="ab6e49ebe3d29980d0dd0c7876bbc4d23"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab6e49ebe3d29980d0dd0c7876bbc4d23">&#9670;&nbsp;</a></span>addToObject() <span class="overload">[4/4]</span></h2>
+<a id="ac555cf977a37a0831673df03b6f41bf3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac555cf977a37a0831673df03b6f41bf3">&#9670;&nbsp;</a></span>addToObject() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void collision_detection::World::addToObject </td>
@@ -561,7 +411,7 @@ Here is the call graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const EigenSTL::vector_Isometry3d &amp;&#160;</td>
-          <td class="paramname"><em>shape_poses</em>&#160;</td>
+          <td class="paramname"><em>poses</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -569,23 +419,19 @@ Here is the call graph for this function:</div>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Add shapes to an object in the map. This function makes repeated calls to addToObjectInternal() to add the shapes one by one. </p>
+<dl class="section note"><dt>Note</dt><dd>This function does NOT call the <a class="el" href="classcollision__detection_1_1World.html#ac555cf977a37a0831673df03b6f41bf3" title="Add shapes to an object in the map. This function makes repeated calls to addToObjectInternal() to ad...">addToObject()</a> variant that takes a single shape and a single pose as input. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="world_8h_source.html#l00187">187</a> of file <a class="el" href="world_8h_source.html">world.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="world_8cpp_source.html#l00102">102</a> of file <a class="el" href="world_8cpp_source.html">world.cpp</a>.</p>
 <div class="dynheader">
-Here is the call graph for this function:</div>
+Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classcollision__detection_1_1World_ab6e49ebe3d29980d0dd0c7876bbc4d23_cgraph.png" border="0" usemap="#classcollision__detection_1_1World_ab6e49ebe3d29980d0dd0c7876bbc4d23_cgraph" alt=""/></div>
-<map name="classcollision__detection_1_1World_ab6e49ebe3d29980d0dd0c7876bbc4d23_cgraph" id="classcollision__detection_1_1World_ab6e49ebe3d29980d0dd0c7876bbc4d23_cgraph">
-<area shape="rect" title="Add shapes to an object in the map. This function makes repeated calls to addToObjectInternal() to ad..." alt="" coords="5,5,160,47"/>
-<area shape="rect" href="classcollision__detection_1_1World.html#a5e18424a37de7f24092f2e7c7898e620" title="Add a pose and shapes to an object in the map. This function makes repeated calls to addToObjectInter..." alt="" coords="208,5,363,47"/>
+<div class="center"><img src="classcollision__detection_1_1World_ac555cf977a37a0831673df03b6f41bf3_icgraph.png" border="0" usemap="#classcollision__detection_1_1World_ac555cf977a37a0831673df03b6f41bf3_icgraph" alt=""/></div>
+<map name="classcollision__detection_1_1World_ac555cf977a37a0831673df03b6f41bf3_icgraph" id="classcollision__detection_1_1World_ac555cf977a37a0831673df03b6f41bf3_icgraph">
+<area shape="rect" title="Add shapes to an object in the map. This function makes repeated calls to addToObjectInternal() to ad..." alt="" coords="108,5,263,47"/>
+<area shape="rect" href="test__world_8cpp.html#a0044d326dabb69316ae673240928f93a" title=" " alt="" coords="5,13,60,39"/>
 </map>
 </div>
 
@@ -615,7 +461,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>iterator pointing to first change </p>
 
-<p class="definition">Definition at line <a class="el" href="world_8h_source.html#l00128">128</a> of file <a class="el" href="world_8h_source.html">world.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="world_8h_source.html#l00123">123</a> of file <a class="el" href="world_8h_source.html">world.h</a>.</p>
 
 </div>
 </div>
@@ -636,7 +482,7 @@ Here is the call graph for this function:</div>
 
 <p>Clear all objects. If there are no other pointers to corresponding instances of Objects, the memory is freed. </p>
 
-<p class="definition">Definition at line <a class="el" href="world_8cpp_source.html#l00352">352</a> of file <a class="el" href="world_8cpp_source.html">world.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="world_8cpp_source.html#l00315">315</a> of file <a class="el" href="world_8cpp_source.html">world.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -673,12 +519,12 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>iterator pointing to end of changes </p>
 
-<p class="definition">Definition at line <a class="el" href="world_8h_source.html#l00133">133</a> of file <a class="el" href="world_8h_source.html">world.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="world_8h_source.html#l00128">128</a> of file <a class="el" href="world_8h_source.html">world.h</a>.</p>
 
 </div>
 </div>
-<a id="a09ee229dd47f0f083e4e7c5db4fd27a1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a09ee229dd47f0f083e4e7c5db4fd27a1">&#9670;&nbsp;</a></span>find()</h2>
+<a id="af21cbb630b4c137b37e5ff673b7e1451"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af21cbb630b4c137b37e5ff673b7e1451">&#9670;&nbsp;</a></span>find()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -690,7 +536,7 @@ Here is the caller graph for this function:</div>
           <td class="memname"><a class="el" href="classcollision__detection_1_1World.html#a30e6e9963f2635fee705aab92ddf373f">const_iterator</a> collision_detection::World::find </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>object_id</em></td><td>)</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -702,61 +548,7 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>find changes for a named object </p>
 
-<p class="definition">Definition at line <a class="el" href="world_8h_source.html#l00143">143</a> of file <a class="el" href="world_8h_source.html">world.h</a>.</p>
-
-</div>
-</div>
-<a id="a5c9f13355f4162741a1b430fcb6f5205"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5c9f13355f4162741a1b430fcb6f5205">&#9670;&nbsp;</a></span>getGlobalShapeTransform()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const Eigen::Isometry3d &amp; collision_detection::World::getGlobalShapeTransform </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>object_id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>shape_index</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get the global transform to a shape of an object with multiple shapes. shape_index is the index of the object (counting from 0) and needs to be valid. This function is used to construct the collision environment. </p>
-
-<p class="definition">Definition at line <a class="el" href="world_8cpp_source.html#l00225">225</a> of file <a class="el" href="world_8cpp_source.html">world.cpp</a>.</p>
-
-</div>
-</div>
-<a id="aefa771956454cfe5efbf77b72184857a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aefa771956454cfe5efbf77b72184857a">&#9670;&nbsp;</a></span>getGlobalShapeTransforms()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const EigenSTL::vector_Isometry3d &amp; collision_detection::World::getGlobalShapeTransforms </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>object_id</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get the global transforms to the shapes of an object. This function is used to construct the collision environment. </p>
-
-<p class="definition">Definition at line <a class="el" href="world_8cpp_source.html#l00240">240</a> of file <a class="el" href="world_8cpp_source.html">world.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="world_8h_source.html#l00138">138</a> of file <a class="el" href="world_8h_source.html">world.h</a>.</p>
 
 </div>
 </div>
@@ -778,7 +570,7 @@ Here is the caller graph for this function:</div>
 
 <p>Get a particular object. </p>
 
-<p class="definition">Definition at line <a class="el" href="world_8cpp_source.html#l00143">143</a> of file <a class="el" href="world_8cpp_source.html">world.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="world_8cpp_source.html#l00157">157</a> of file <a class="el" href="world_8cpp_source.html">world.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -808,7 +600,7 @@ Here is the caller graph for this function:</div>
 
 <p>Get the list of <a class="el" href="structcollision__detection_1_1World_1_1Object.html" title="A representation of an object.">Object</a> ids. </p>
 
-<p class="definition">Definition at line <a class="el" href="world_8cpp_source.html#l00135">135</a> of file <a class="el" href="world_8cpp_source.html">world.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="world_8cpp_source.html#l00149">149</a> of file <a class="el" href="world_8cpp_source.html">world.cpp</a>.</p>
 
 </div>
 </div>
@@ -828,9 +620,9 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Get the transform to an object or subframe with given name. If name does not exist, a std::runtime_error is thrown. <a class="el" href="classA.html">A</a> subframe name needs to be prefixed with the object's name separated by a slash. The transform is global (relative to the world origin). The returned transform is guaranteed to be a valid isometry. </p>
+<p>Get the transform to an object or subframe with given name. If name does not exist, a std::runtime_error is thrown. <a class="el" href="classA.html">A</a> subframe name needs to be prefixed with the object's name separated by a slash. The returned transform is guaranteed to be a valid isometry. </p>
 
-<p class="definition">Definition at line <a class="el" href="world_8cpp_source.html#l00184">184</a> of file <a class="el" href="world_8cpp_source.html">world.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="world_8cpp_source.html#l00197">197</a> of file <a class="el" href="world_8cpp_source.html">world.cpp</a>.</p>
 
 </div>
 </div>
@@ -860,9 +652,9 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Get the transform to an object or subframe with given name. If name does not exist, returns an identity transform and sets frame_found to false. <a class="el" href="classA.html">A</a> subframe name needs to be prefixed with the object's name separated by a slash. The transform is global (relative to the world origin). The returned transform is guaranteed to be a valid isometry. </p>
+<p>Get the transform to an object or subframe with given name. If name does not exist, returns an identity transform and sets frame_found to false. <a class="el" href="classA.html">A</a> subframe name needs to be prefixed with the object's name separated by a slash. The returned transform is guaranteed to be a valid isometry. </p>
 
-<p class="definition">Definition at line <a class="el" href="world_8cpp_source.html#l00193">193</a> of file <a class="el" href="world_8cpp_source.html">world.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="world_8cpp_source.html#l00206">206</a> of file <a class="el" href="world_8cpp_source.html">world.cpp</a>.</p>
 
 </div>
 </div>
@@ -884,7 +676,7 @@ Here is the caller graph for this function:</div>
 
 <p>Check if a particular object exists in the collision world. </p>
 
-<p class="definition">Definition at line <a class="el" href="world_8cpp_source.html#l00158">158</a> of file <a class="el" href="world_8cpp_source.html">world.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="world_8cpp_source.html#l00172">172</a> of file <a class="el" href="world_8cpp_source.html">world.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -915,7 +707,7 @@ Here is the caller graph for this function:</div>
 
 <p>Check if an object or subframe with given name exists in the collision world. <a class="el" href="classA.html">A</a> subframe name needs to be prefixed with the object's name separated by a slash. </p>
 
-<p class="definition">Definition at line <a class="el" href="world_8cpp_source.html#l00163">163</a> of file <a class="el" href="world_8cpp_source.html">world.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="world_8cpp_source.html#l00177">177</a> of file <a class="el" href="world_8cpp_source.html">world.cpp</a>.</p>
 
 </div>
 </div>
@@ -963,14 +755,14 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Move the object pose (thus moving all shapes and subframes in the object) according to the given transform specified in world frame. The transform is relative to and changes the object pose. It does not replace it. </p>
+<p>Move all shapes in an object according to the given transform specified in world frame. </p>
 
-<p class="definition">Definition at line <a class="el" href="world_8cpp_source.html#l00277">277</a> of file <a class="el" href="world_8cpp_source.html">world.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="world_8cpp_source.html#l00258">258</a> of file <a class="el" href="world_8cpp_source.html">world.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a31e4c0573c302c06ba391839d6c4f17c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a31e4c0573c302c06ba391839d6c4f17c">&#9670;&nbsp;</a></span>moveShapeInObject()</h2>
+<a id="a1f8f5187f286ee273fabf8f607dcaba6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f8f5187f286ee273fabf8f607dcaba6">&#9670;&nbsp;</a></span>moveShapeInObject()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -991,7 +783,7 @@ Here is the caller graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const Eigen::Isometry3d &amp;&#160;</td>
-          <td class="paramname"><em>shape_pose</em>&#160;</td>
+          <td class="paramname"><em>pose</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1003,12 +795,12 @@ Here is the caller graph for this function:</div>
 
 <p>Update the pose of a shape in an object. Shape equality is verified by comparing pointers. Returns true on success. </p>
 
-<p class="definition">Definition at line <a class="el" href="world_8cpp_source.html#l00255">255</a> of file <a class="el" href="world_8cpp_source.html">world.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="world_8cpp_source.html#l00237">237</a> of file <a class="el" href="world_8cpp_source.html">world.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classcollision__detection_1_1World_a31e4c0573c302c06ba391839d6c4f17c_icgraph.png" border="0" usemap="#classcollision__detection_1_1World_a31e4c0573c302c06ba391839d6c4f17c_icgraph" alt=""/></div>
-<map name="classcollision__detection_1_1World_a31e4c0573c302c06ba391839d6c4f17c_icgraph" id="classcollision__detection_1_1World_a31e4c0573c302c06ba391839d6c4f17c_icgraph">
+<div class="center"><img src="classcollision__detection_1_1World_a1f8f5187f286ee273fabf8f607dcaba6_icgraph.png" border="0" usemap="#classcollision__detection_1_1World_a1f8f5187f286ee273fabf8f607dcaba6_icgraph" alt=""/></div>
+<map name="classcollision__detection_1_1World_a1f8f5187f286ee273fabf8f607dcaba6_icgraph" id="classcollision__detection_1_1World_a1f8f5187f286ee273fabf8f607dcaba6_icgraph">
 <area shape="rect" title="Update the pose of a shape in an object. Shape equality is verified by comparing pointers...." alt="" coords="108,5,315,47"/>
 <area shape="rect" href="test__world_8cpp.html#a0044d326dabb69316ae673240928f93a" title=" " alt="" coords="5,13,60,39"/>
 </map>
@@ -1043,7 +835,7 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>send notification of change to all objects to a particular observer. Used which switching from one world to another. </p>
 
-<p class="definition">Definition at line <a class="el" href="world_8cpp_source.html#l00426">426</a> of file <a class="el" href="world_8cpp_source.html">world.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="world_8cpp_source.html#l00368">368</a> of file <a class="el" href="world_8cpp_source.html">world.cpp</a>.</p>
 
 </div>
 </div>
@@ -1065,7 +857,7 @@ Here is the caller graph for this function:</div>
 
 <p>Remove a particular object. If there are no external pointers to the corresponding instance of <a class="el" href="structcollision__detection_1_1World_1_1Object.html" title="A representation of an object.">Object</a>, the memory is freed. Returns true on success and false if no such object was found. </p>
 
-<p class="definition">Definition at line <a class="el" href="world_8cpp_source.html#l00340">340</a> of file <a class="el" href="world_8cpp_source.html">world.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="world_8cpp_source.html#l00303">303</a> of file <a class="el" href="world_8cpp_source.html">world.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1096,7 +888,7 @@ Here is the caller graph for this function:</div>
 
 <p>remove a notifier callback </p>
 
-<p class="definition">Definition at line <a class="el" href="world_8cpp_source.html#l00401">401</a> of file <a class="el" href="world_8cpp_source.html">world.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="world_8cpp_source.html#l00343">343</a> of file <a class="el" href="world_8cpp_source.html">world.cpp</a>.</p>
 
 </div>
 </div>
@@ -1128,7 +920,7 @@ Here is the caller graph for this function:</div>
 
 <p>Remove shape from object. Shape equality is verified by comparing pointers. Ownership of the object is renounced (i.e. object is deleted if no external references exist) if this was the last shape in the object. Returns true on success and false if the object did not exist or did not contain the shape. </p>
 
-<p class="definition">Definition at line <a class="el" href="world_8cpp_source.html#l00311">311</a> of file <a class="el" href="world_8cpp_source.html">world.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="world_8cpp_source.html#l00275">275</a> of file <a class="el" href="world_8cpp_source.html">world.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1138,38 +930,6 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="test__world_8cpp.html#a0044d326dabb69316ae673240928f93a" title=" " alt="" coords="5,13,60,39"/>
 </map>
 </div>
-
-</div>
-</div>
-<a id="a7c9b1d33dc58d6c7e79ef3281c6ecf6f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7c9b1d33dc58d6c7e79ef3281c6ecf6f">&#9670;&nbsp;</a></span>setObjectPose()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool collision_detection::World::setObjectPose </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>object_id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::Isometry3d &amp;&#160;</td>
-          <td class="paramname"><em>pose</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Set the pose of an object. The pose is specified in the world frame. </p>
-
-<p class="definition">Definition at line <a class="el" href="world_8cpp_source.html#l00289">289</a> of file <a class="el" href="world_8cpp_source.html">world.cpp</a>.</p>
 
 </div>
 </div>
@@ -1199,9 +959,9 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Set subframes on an object. The frames are relative to the object pose. </p>
+<p>Set subframes on an object. </p>
 
-<p class="definition">Definition at line <a class="el" href="world_8cpp_source.html#l00358">358</a> of file <a class="el" href="world_8cpp_source.html">world.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="world_8cpp_source.html#l00321">321</a> of file <a class="el" href="world_8cpp_source.html">world.cpp</a>.</p>
 
 </div>
 </div>
@@ -1229,7 +989,7 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>number of changes stored </p>
 
-<p class="definition">Definition at line <a class="el" href="world_8h_source.html#l00138">138</a> of file <a class="el" href="world_8h_source.html">world.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="world_8h_source.html#l00133">133</a> of file <a class="el" href="world_8h_source.html">world.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">

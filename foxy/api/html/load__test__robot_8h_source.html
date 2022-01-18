@@ -131,7 +131,7 @@ $(function() {
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <a class="code" href="classompl__interface__testing_1_1LoadTestRobot.html#a81d4bd591b6e28cb8c7a0f805396695e">ee_link_name_</a> = <a class="code" href="classompl__interface__testing_1_1LoadTestRobot.html#aa04a52e23cc5741c7505f72f8784b4e9">joint_model_group_</a>-&gt;<a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html#a0b1752d210db29e6a05f7d0e70c4ce4f">getLinkModelNames</a>().back();</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <a class="code" href="classompl__interface__testing_1_1LoadTestRobot.html#ad7d66641b76435b6513bfbb4e16a281d">base_link_name_</a> = <a class="code" href="classompl__interface__testing_1_1LoadTestRobot.html#a6b1fd001b4209a4b69db4d83c72f5321">robot_model_</a>-&gt;getRootLinkName();</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Loading robot: &quot;</span> &lt;&lt; robot_name &lt;&lt; <span class="stringliteral">&quot; for planning group: &quot;</span> &lt;&lt; group_name &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Loading robot: &quot;</span> &lt;&lt; robot_name &lt;&lt; <span class="stringliteral">&quot; for planning group: &quot;</span> &lt;&lt; group_name &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  }</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  Eigen::VectorXd <a class="code" href="classompl__interface__testing_1_1LoadTestRobot.html#ad5b74afdee4ae02f0a3e1e607f4a223a">getRandomState</a>()<span class="keyword"> const</span></div>
@@ -146,7 +146,7 @@ $(function() {
 <div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="classompl__interface__testing_1_1LoadTestRobot.html">  130</a></span>&#160;<span class="keyword">  </span>{</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    Eigen::VectorXd state(<a class="code" href="classompl__interface__testing_1_1LoadTestRobot.html#a2dc2045584029dcb58b0ca77cf1e8673">num_dofs_</a>);</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordtype">double</span> value = 0.1;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; <a class="code" href="classompl__interface__testing_1_1LoadTestRobot.html#a2dc2045584029dcb58b0ca77cf1e8673">num_dofs_</a>; ++i)</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; <a class="code" href="classompl__interface__testing_1_1LoadTestRobot.html#a2dc2045584029dcb58b0ca77cf1e8673">num_dofs_</a>; i++)</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    {</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;      state[i] = value;</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;      value += 0.1;</div>

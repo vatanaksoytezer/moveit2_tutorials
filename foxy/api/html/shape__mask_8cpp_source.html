@@ -196,7 +196,7 @@ $(function() {
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  mask.resize(np);</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <span class="keywordflow">if</span> (bodies_.empty())</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    std::fill(mask.begin(), mask.end(), <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(OUTSIDE));</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    std::fill(mask.begin(), mask.end(), (<span class="keywordtype">int</span>)OUTSIDE);</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  {</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    Eigen::Isometry3d tmp;</div>
@@ -232,7 +232,7 @@ $(function() {
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="comment">// Cloud iterators are not incremented in the for loop, because of the pragma</span></div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="comment">// Comment out below parallelization as it can result in very high CPU consumption</span></div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="comment">//#pragma omp parallel for schedule(dynamic)</span></div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; static_cast&lt;int&gt;(np); ++i)</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; (int)np; ++i)</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    {</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;      <a class="code" href="namespacefcl.html#a0288e6b07bc0c851a9503dbaea7a0f19">Eigen::Vector3d</a> pt = <a class="code" href="namespacefcl.html#a0288e6b07bc0c851a9503dbaea7a0f19">Eigen::Vector3d</a>(*(iter_x + i), *(iter_y + i), *(iter_z + i));</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;      <span class="keywordtype">double</span> <a class="code" href="namespacesetup.html#aa2586b6c4dd84a0aaaf49cb1565cee6e">d</a> = pt.norm();</div>

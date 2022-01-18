@@ -105,6 +105,12 @@ Classes</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a9a23d7fbe0096cd62f29585869a27390"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit__servo_1_1ServoFixture.html#a9a23d7fbe0096cd62f29585869a27390">SetUp</a> () override</td></tr>
 <tr class="separator:a9a23d7fbe0096cd62f29585869a27390"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a438fe979da97914fd0200a958ffaffae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit__servo_1_1ServoFixture.html#a438fe979da97914fd0200a958ffaffae">TearDown</a> () override</td></tr>
+<tr class="separator:a438fe979da97914fd0200a958ffaffae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5aa53550ee14b6a94b1b7d8ee832ef6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit__servo_1_1ServoFixture.html#ad5aa53550ee14b6a94b1b7d8ee832ef6">waitForFirstStatus</a> ()</td></tr>
+<tr class="separator:ad5aa53550ee14b6a94b1b7d8ee832ef6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a23d7fbe0096cd62f29585869a27390"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit__servo_1_1ServoFixture.html#a9a23d7fbe0096cd62f29585869a27390">SetUp</a> () override</td></tr>
+<tr class="separator:a9a23d7fbe0096cd62f29585869a27390"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4074cdb745d060f7f187f912306b49f6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit__servo_1_1ServoFixture.html#a4074cdb745d060f7f187f912306b49f6">ServoFixture</a> ()</td></tr>
 <tr class="separator:a4074cdb745d060f7f187f912306b49f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a438fe979da97914fd0200a958ffaffae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit__servo_1_1ServoFixture.html#a438fe979da97914fd0200a958ffaffae">TearDown</a> () override</td></tr>
@@ -174,6 +180,12 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
+<tr class="memitem:a27f4ae48760c8bd232b8d18a29f62e46"><td class="memItemLeft" align="right" valign="top">ros::NodeHandle&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit__servo_1_1ServoFixture.html#a27f4ae48760c8bd232b8d18a29f62e46">nh_</a> { &quot;~&quot; }</td></tr>
+<tr class="separator:a27f4ae48760c8bd232b8d18a29f62e46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa23063449518580087bcb99024529356"><td class="memItemLeft" align="right" valign="top">planning_scene_monitor::PlanningSceneMonitorPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit__servo_1_1ServoFixture.html#aa23063449518580087bcb99024529356">planning_scene_monitor_</a></td></tr>
+<tr class="separator:aa23063449518580087bcb99024529356"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af46133044a5183bbcbda0b0e9c141299"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemoveit__servo.html#acb3ea7ccdadbae2b565f76ab34a16c19">moveit_servo::ServoPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit__servo_1_1ServoFixture.html#af46133044a5183bbcbda0b0e9c141299">servo_</a></td></tr>
+<tr class="separator:af46133044a5183bbcbda0b0e9c141299"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab659354adabdd93c14d31f8d08658ca2"><td class="memItemLeft" align="right" valign="top">rclcpp::Node::SharedPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit__servo_1_1ServoFixture.html#ab659354adabdd93c14d31f8d08658ca2">node_</a></td></tr>
 <tr class="separator:ab659354adabdd93c14d31f8d08658ca2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a177d6aee35e62d49454faa87ca836601"><td class="memItemLeft" align="right" valign="top">rclcpp::Executor::SharedPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit__servo_1_1ServoFixture.html#a177d6aee35e62d49454faa87ca836601">executor_</a></td></tr>
@@ -237,7 +249,7 @@ Protected Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00070">70</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__cpp__interface__test_8cpp_source.html#l00057">57</a> of file <a class="el" href="servo__cpp__interface__test_8cpp_source.html">servo_cpp_interface_test.cpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a4074cdb745d060f7f187f912306b49f6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4074cdb745d060f7f187f912306b49f6">&#9670;&nbsp;</a></span>ServoFixture()</h2>
@@ -262,14 +274,14 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00080">80</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00082">82</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classmoveit__servo_1_1ServoFixture_a4074cdb745d060f7f187f912306b49f6_cgraph.png" border="0" usemap="#classmoveit__servo_1_1ServoFixture_a4074cdb745d060f7f187f912306b49f6_cgraph" alt=""/></div>
 <map name="classmoveit__servo_1_1ServoFixture_a4074cdb745d060f7f187f912306b49f6_cgraph" id="classmoveit__servo_1_1ServoFixture_a4074cdb745d060f7f187f912306b49f6_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,207,47"/>
-<area shape="rect" href="structmoveit__servo_1_1ServoParameters.html#ae0c07c1d1ce25185738eeaaf2fb45f23" title=" " alt="" coords="255,5,485,47"/>
+<area shape="rect" href="structmoveit__servo_1_1ServoParameters.html#abe43872c701a88ea758e640875abedc8" title=" " alt="" coords="255,5,485,47"/>
 </map>
 </div>
 
@@ -300,16 +312,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00302">302</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classmoveit__servo_1_1ServoFixture_a3a4cbe38d51ad6639502496ceb42732d_icgraph.png" border="0" usemap="#classmoveit__servo_1_1ServoFixture_a3a4cbe38d51ad6639502496ceb42732d_icgraph" alt=""/></div>
-<map name="classmoveit__servo_1_1ServoFixture_a3a4cbe38d51ad6639502496ceb42732d_icgraph" id="classmoveit__servo_1_1ServoFixture_a3a4cbe38d51ad6639502496ceb42732d_icgraph">
-<area shape="rect" title=" " alt="" coords="255,5,456,47"/>
-<area shape="rect" href="classmoveit__servo_1_1ServoFixture.html#ac93e590e766e0f318887523ff7458cab" title=" " alt="" coords="5,5,207,47"/>
-</map>
-</div>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00304">304</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -337,16 +340,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00281">281</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classmoveit__servo_1_1ServoFixture_abbce38dc74cf86206d9e6ac70fbfef3a_icgraph.png" border="0" usemap="#classmoveit__servo_1_1ServoFixture_abbce38dc74cf86206d9e6ac70fbfef3a_icgraph" alt=""/></div>
-<map name="classmoveit__servo_1_1ServoFixture_abbce38dc74cf86206d9e6ac70fbfef3a_icgraph" id="classmoveit__servo_1_1ServoFixture_abbce38dc74cf86206d9e6ac70fbfef3a_icgraph">
-<area shape="rect" title=" " alt="" coords="255,5,456,47"/>
-<area shape="rect" href="classmoveit__servo_1_1ServoFixture.html#ad50f28c164e29add0008e1921fb3c862" title=" " alt="" coords="5,5,207,47"/>
-</map>
-</div>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00283">283</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -373,7 +367,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00369">369</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00371">371</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -400,7 +394,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00327">327</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00329">329</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -427,7 +421,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00345">345</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00347">347</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -454,7 +448,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00309">309</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00311">311</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -481,7 +475,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00363">363</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00365">365</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -508,7 +502,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00333">333</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00335">335</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -535,7 +529,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00375">375</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00377">377</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -562,7 +556,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00351">351</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00353">353</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -589,7 +583,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00315">315</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00317">317</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -617,16 +611,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00288">288</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classmoveit__servo_1_1ServoFixture_af7d703bc8f6b82c37a3c37c2fc8b3a11_icgraph.png" border="0" usemap="#classmoveit__servo_1_1ServoFixture_af7d703bc8f6b82c37a3c37c2fc8b3a11_icgraph" alt=""/></div>
-<map name="classmoveit__servo_1_1ServoFixture_af7d703bc8f6b82c37a3c37c2fc8b3a11_icgraph" id="classmoveit__servo_1_1ServoFixture_af7d703bc8f6b82c37a3c37c2fc8b3a11_icgraph">
-<area shape="rect" title=" " alt="" coords="255,5,456,47"/>
-<area shape="rect" href="classmoveit__servo_1_1ServoFixture.html#a4c1a7b7a103e43046d047c0c6c6cb56d" title=" " alt="" coords="5,5,207,47"/>
-</map>
-</div>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00290">290</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -653,7 +638,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00339">339</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00341">341</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -680,7 +665,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00381">381</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00383">383</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -707,7 +692,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00357">357</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00359">359</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -734,7 +719,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00321">321</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00323">323</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -762,23 +747,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00123">123</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classmoveit__servo_1_1ServoFixture_a31d885f3d60379217962cbc280163cf5_icgraph.png" border="0" usemap="#classmoveit__servo_1_1ServoFixture_a31d885f3d60379217962cbc280163cf5_icgraph" alt=""/></div>
-<map name="classmoveit__servo_1_1ServoFixture_a31d885f3d60379217962cbc280163cf5_icgraph" id="classmoveit__servo_1_1ServoFixture_a31d885f3d60379217962cbc280163cf5_icgraph">
-<area shape="rect" title=" " alt="" coords="255,235,456,276"/>
-<area shape="rect" href="classmoveit__servo_1_1ServoFixture.html#ad50f28c164e29add0008e1921fb3c862" title=" " alt="" coords="5,5,207,47"/>
-<area shape="rect" href="classmoveit__servo_1_1ServoFixture.html#ac93e590e766e0f318887523ff7458cab" title=" " alt="" coords="5,71,207,112"/>
-<area shape="rect" href="classmoveit__servo_1_1ServoFixture.html#a06a89a772d887bc850696a9a2bac8aa6" title=" " alt="" coords="5,136,207,177"/>
-<area shape="rect" href="classmoveit__servo_1_1ServoFixture.html#a1e399daf55466eeee7db0af9e716b181" title=" " alt="" coords="5,201,207,243"/>
-<area shape="rect" href="classmoveit__servo_1_1ServoFixture.html#a4c1a7b7a103e43046d047c0c6c6cb56d" title=" " alt="" coords="5,267,207,308"/>
-<area shape="rect" href="classmoveit__servo_1_1ServoFixture.html#a87a94781b4bb4ddadb1bbddbb8ededb8" title=" " alt="" coords="5,332,207,373"/>
-<area shape="rect" href="classmoveit__servo_1_1ServoFixture.html#abf26dcfb00ca6b67c6fecd86d59e84bb" title=" " alt="" coords="5,397,207,439"/>
-<area shape="rect" href="classmoveit__servo_1_1ServoFixture.html#a002e8d92d8a43b6c5d3691de931a55e1" title=" " alt="" coords="5,463,207,504"/>
-</map>
-</div>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00125">125</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -805,12 +774,12 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00394">394</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00396">396</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
 <a id="a9a23d7fbe0096cd62f29585869a27390"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9a23d7fbe0096cd62f29585869a27390">&#9670;&nbsp;</a></span>SetUp()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a23d7fbe0096cd62f29585869a27390">&#9670;&nbsp;</a></span>SetUp() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -832,7 +801,34 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00073">73</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__cpp__interface__test_8cpp_source.html#l00060">60</a> of file <a class="el" href="servo__cpp__interface__test_8cpp_source.html">servo_cpp_interface_test.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a9a23d7fbe0096cd62f29585869a27390"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a23d7fbe0096cd62f29585869a27390">&#9670;&nbsp;</a></span>SetUp() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void moveit_servo::ServoFixture::SetUp </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00075">75</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -859,17 +855,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00233">233</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classmoveit__servo_1_1ServoFixture_ad50f28c164e29add0008e1921fb3c862_cgraph.png" border="0" usemap="#classmoveit__servo_1_1ServoFixture_ad50f28c164e29add0008e1921fb3c862_cgraph" alt=""/></div>
-<map name="classmoveit__servo_1_1ServoFixture_ad50f28c164e29add0008e1921fb3c862_cgraph" id="classmoveit__servo_1_1ServoFixture_ad50f28c164e29add0008e1921fb3c862_cgraph">
-<area shape="rect" title=" " alt="" coords="5,39,207,80"/>
-<area shape="rect" href="classmoveit__servo_1_1ServoFixture.html#abbce38dc74cf86206d9e6ac70fbfef3a" title=" " alt="" coords="255,5,456,47"/>
-<area shape="rect" href="classmoveit__servo_1_1ServoFixture.html#a31d885f3d60379217962cbc280163cf5" title=" " alt="" coords="255,71,456,112"/>
-</map>
-</div>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00235">235</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -897,18 +883,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00241">241</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classmoveit__servo_1_1ServoFixture_ac93e590e766e0f318887523ff7458cab_cgraph.png" border="0" usemap="#classmoveit__servo_1_1ServoFixture_ac93e590e766e0f318887523ff7458cab_cgraph" alt=""/></div>
-<map name="classmoveit__servo_1_1ServoFixture_ac93e590e766e0f318887523ff7458cab_cgraph" id="classmoveit__servo_1_1ServoFixture_ac93e590e766e0f318887523ff7458cab_cgraph">
-<area shape="rect" title=" " alt="" coords="5,71,207,112"/>
-<area shape="rect" href="classmoveit__servo_1_1ServoFixture.html#a3a4cbe38d51ad6639502496ceb42732d" title=" " alt="" coords="255,5,456,47"/>
-<area shape="rect" href="classmoveit__servo_1_1ServoFixture.html#a31d885f3d60379217962cbc280163cf5" title=" " alt="" coords="255,71,456,112"/>
-<area shape="rect" href="classmoveit__servo_1_1ServoFixture.html#a9409cab5e8dc72d14a5df20a965c65e4" title=" " alt="" coords="255,136,456,177"/>
-</map>
-</div>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00243">243</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -935,16 +910,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00199">199</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classmoveit__servo_1_1ServoFixture_a06a89a772d887bc850696a9a2bac8aa6_cgraph.png" border="0" usemap="#classmoveit__servo_1_1ServoFixture_a06a89a772d887bc850696a9a2bac8aa6_cgraph" alt=""/></div>
-<map name="classmoveit__servo_1_1ServoFixture_a06a89a772d887bc850696a9a2bac8aa6_cgraph" id="classmoveit__servo_1_1ServoFixture_a06a89a772d887bc850696a9a2bac8aa6_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,207,47"/>
-<area shape="rect" href="classmoveit__servo_1_1ServoFixture.html#a31d885f3d60379217962cbc280163cf5" title=" " alt="" coords="255,5,456,47"/>
-</map>
-</div>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00201">201</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -971,16 +937,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00216">216</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classmoveit__servo_1_1ServoFixture_a1e399daf55466eeee7db0af9e716b181_cgraph.png" border="0" usemap="#classmoveit__servo_1_1ServoFixture_a1e399daf55466eeee7db0af9e716b181_cgraph" alt=""/></div>
-<map name="classmoveit__servo_1_1ServoFixture_a1e399daf55466eeee7db0af9e716b181_cgraph" id="classmoveit__servo_1_1ServoFixture_a1e399daf55466eeee7db0af9e716b181_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,207,47"/>
-<area shape="rect" href="classmoveit__servo_1_1ServoFixture.html#a31d885f3d60379217962cbc280163cf5" title=" " alt="" coords="255,5,456,47"/>
-</map>
-</div>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00218">218</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -1007,17 +964,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00264">264</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classmoveit__servo_1_1ServoFixture_a4c1a7b7a103e43046d047c0c6c6cb56d_cgraph.png" border="0" usemap="#classmoveit__servo_1_1ServoFixture_a4c1a7b7a103e43046d047c0c6c6cb56d_cgraph" alt=""/></div>
-<map name="classmoveit__servo_1_1ServoFixture_a4c1a7b7a103e43046d047c0c6c6cb56d_cgraph" id="classmoveit__servo_1_1ServoFixture_a4c1a7b7a103e43046d047c0c6c6cb56d_cgraph">
-<area shape="rect" title=" " alt="" coords="5,39,207,80"/>
-<area shape="rect" href="classmoveit__servo_1_1ServoFixture.html#af7d703bc8f6b82c37a3c37c2fc8b3a11" title=" " alt="" coords="255,5,456,47"/>
-<area shape="rect" href="classmoveit__servo_1_1ServoFixture.html#a31d885f3d60379217962cbc280163cf5" title=" " alt="" coords="255,71,456,112"/>
-</map>
-</div>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00266">266</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -1044,16 +991,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00167">167</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classmoveit__servo_1_1ServoFixture_a87a94781b4bb4ddadb1bbddbb8ededb8_cgraph.png" border="0" usemap="#classmoveit__servo_1_1ServoFixture_a87a94781b4bb4ddadb1bbddbb8ededb8_cgraph" alt=""/></div>
-<map name="classmoveit__servo_1_1ServoFixture_a87a94781b4bb4ddadb1bbddbb8ededb8_cgraph" id="classmoveit__servo_1_1ServoFixture_a87a94781b4bb4ddadb1bbddbb8ededb8_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,207,47"/>
-<area shape="rect" href="classmoveit__servo_1_1ServoFixture.html#a31d885f3d60379217962cbc280163cf5" title=" " alt="" coords="255,5,456,47"/>
-</map>
-</div>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00169">169</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -1080,16 +1018,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00132">132</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classmoveit__servo_1_1ServoFixture_abf26dcfb00ca6b67c6fecd86d59e84bb_cgraph.png" border="0" usemap="#classmoveit__servo_1_1ServoFixture_abf26dcfb00ca6b67c6fecd86d59e84bb_cgraph" alt=""/></div>
-<map name="classmoveit__servo_1_1ServoFixture_abf26dcfb00ca6b67c6fecd86d59e84bb_cgraph" id="classmoveit__servo_1_1ServoFixture_abf26dcfb00ca6b67c6fecd86d59e84bb_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,207,47"/>
-<area shape="rect" href="classmoveit__servo_1_1ServoFixture.html#a31d885f3d60379217962cbc280163cf5" title=" " alt="" coords="255,5,456,47"/>
-</map>
-</div>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00134">134</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -1116,16 +1045,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00183">183</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classmoveit__servo_1_1ServoFixture_a002e8d92d8a43b6c5d3691de931a55e1_cgraph.png" border="0" usemap="#classmoveit__servo_1_1ServoFixture_a002e8d92d8a43b6c5d3691de931a55e1_cgraph" alt=""/></div>
-<map name="classmoveit__servo_1_1ServoFixture_a002e8d92d8a43b6c5d3691de931a55e1_cgraph" id="classmoveit__servo_1_1ServoFixture_a002e8d92d8a43b6c5d3691de931a55e1_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,207,47"/>
-<area shape="rect" href="classmoveit__servo_1_1ServoFixture.html#a31d885f3d60379217962cbc280163cf5" title=" " alt="" coords="255,5,456,47"/>
-</map>
-</div>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00185">185</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -1152,7 +1072,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00400">400</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00402">402</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -1180,7 +1100,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00272">272</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00274">274</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -1207,12 +1127,12 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00432">432</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00434">434</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
 <a id="a438fe979da97914fd0200a958ffaffae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a438fe979da97914fd0200a958ffaffae">&#9670;&nbsp;</a></span>TearDown()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a438fe979da97914fd0200a958ffaffae">&#9670;&nbsp;</a></span>TearDown() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1234,7 +1154,34 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00110">110</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__cpp__interface__test_8cpp_source.html#l00081">81</a> of file <a class="el" href="servo__cpp__interface__test_8cpp_source.html">servo_cpp_interface_test.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a438fe979da97914fd0200a958ffaffae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a438fe979da97914fd0200a958ffaffae">&#9670;&nbsp;</a></span>TearDown() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void moveit_servo::ServoFixture::TearDown </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00112">112</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -1262,16 +1209,34 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00295">295</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classmoveit__servo_1_1ServoFixture_a9409cab5e8dc72d14a5df20a965c65e4_icgraph.png" border="0" usemap="#classmoveit__servo_1_1ServoFixture_a9409cab5e8dc72d14a5df20a965c65e4_icgraph" alt=""/></div>
-<map name="classmoveit__servo_1_1ServoFixture_a9409cab5e8dc72d14a5df20a965c65e4_icgraph" id="classmoveit__servo_1_1ServoFixture_a9409cab5e8dc72d14a5df20a965c65e4_icgraph">
-<area shape="rect" title=" " alt="" coords="255,5,456,47"/>
-<area shape="rect" href="classmoveit__servo_1_1ServoFixture.html#ac93e590e766e0f318887523ff7458cab" title=" " alt="" coords="5,5,207,47"/>
-</map>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00297">297</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+
 </div>
+</div>
+<a id="ad5aa53550ee14b6a94b1b7d8ee832ef6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5aa53550ee14b6a94b1b7d8ee832ef6">&#9670;&nbsp;</a></span>waitForFirstStatus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool moveit_servo::ServoFixture::waitForFirstStatus </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="servo__cpp__interface__test_8cpp_source.html#l00085">85</a> of file <a class="el" href="servo__cpp__interface__test_8cpp_source.html">servo_cpp_interface_test.cpp</a>.</p>
 
 </div>
 </div>
@@ -1299,7 +1264,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00387">387</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00389">389</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -1324,7 +1289,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00466">466</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00490">490</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -1348,7 +1313,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00467">467</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00491">491</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -1372,7 +1337,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00464">464</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00488">488</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -1396,7 +1361,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00462">462</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00486">486</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -1420,7 +1385,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00463">463</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00487">487</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -1444,7 +1409,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00465">465</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00489">489</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -1468,7 +1433,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00446">446</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00470">470</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -1492,7 +1457,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00447">447</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00471">471</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -1516,7 +1481,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00492">492</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00516">516</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -1540,7 +1505,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00485">485</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00509">509</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -1564,7 +1529,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00488">488</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00512">512</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -1588,7 +1553,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00497">497</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00521">521</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -1612,7 +1577,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00482">482</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00506">506</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -1636,7 +1601,31 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00491">491</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00515">515</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a27f4ae48760c8bd232b8d18a29f62e46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27f4ae48760c8bd232b8d18a29f62e46">&#9670;&nbsp;</a></span>nh_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ros::NodeHandle moveit_servo::ServoFixture::nh_ { &quot;~&quot; }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="servo__cpp__interface__test_8cpp_source.html#l00092">92</a> of file <a class="el" href="servo__cpp__interface__test_8cpp_source.html">servo_cpp_interface_test.cpp</a>.</p>
 
 </div>
 </div>
@@ -1660,7 +1649,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00445">445</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00469">469</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -1684,7 +1673,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00484">484</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00508">508</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -1708,7 +1697,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00490">490</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00514">514</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -1732,7 +1721,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00487">487</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00511">511</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -1756,7 +1745,31 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00481">481</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00505">505</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aa23063449518580087bcb99024529356"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa23063449518580087bcb99024529356">&#9670;&nbsp;</a></span>planning_scene_monitor_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">planning_scene_monitor::PlanningSceneMonitorPtr moveit_servo::ServoFixture::planning_scene_monitor_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="servo__cpp__interface__test_8cpp_source.html#l00093">93</a> of file <a class="el" href="servo__cpp__interface__test_8cpp_source.html">servo_cpp_interface_test.cpp</a>.</p>
 
 </div>
 </div>
@@ -1780,7 +1793,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00471">471</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00495">495</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -1804,7 +1817,31 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00470">470</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00494">494</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+
+</div>
+</div>
+<a id="af46133044a5183bbcbda0b0e9c141299"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af46133044a5183bbcbda0b0e9c141299">&#9670;&nbsp;</a></span>servo_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacemoveit__servo.html#acb3ea7ccdadbae2b565f76ab34a16c19">moveit_servo::ServoPtr</a> moveit_servo::ServoFixture::servo_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="servo__cpp__interface__test_8cpp_source.html#l00094">94</a> of file <a class="el" href="servo__cpp__interface__test_8cpp_source.html">servo_cpp_interface_test.cpp</a>.</p>
 
 </div>
 </div>
@@ -1828,7 +1865,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00448">448</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00472">472</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -1852,7 +1889,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00494">494</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00518">518</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -1876,7 +1913,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00495">495</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00519">519</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -1900,7 +1937,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00478">478</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00502">502</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -1924,7 +1961,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00475">475</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00499">499</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -1948,7 +1985,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00476">476</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00500">500</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -1972,7 +2009,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00474">474</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00498">498</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -1996,7 +2033,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00477">477</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00501">501</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
@@ -2020,11 +2057,12 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00457">457</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="servo__launch__test__common_8hpp_source.html#l00481">481</a> of file <a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>moveit2/moveit_ros/moveit_servo/test/<a class="el" href="servo__cpp__interface__test_8cpp_source.html">servo_cpp_interface_test.cpp</a></li>
 <li>moveit2/moveit_ros/moveit_servo/test/<a class="el" href="servo__launch__test__common_8hpp_source.html">servo_launch_test_common.hpp</a></li>
 </ul>
 </div><!-- contents -->

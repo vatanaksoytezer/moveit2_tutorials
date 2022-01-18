@@ -1,5 +1,7 @@
 <map id="printTrajectory" name="printTrajectory">
-<area shape="rect" id="node1" title=" " alt="" coords="5,46,121,73"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,111,121,138"/>
 <area shape="rect" id="node2" href="$classrobot__trajectory_1_1RobotTrajectory.html#a6eaef50c3127c83dbc5ca393376435b1" title=" " alt="" coords="169,5,404,47"/>
-<area shape="rect" id="node3" href="$classrobot__trajectory_1_1RobotTrajectory.html#a55e7beedfc60e0a6e523bd7d9278d884" title="Print information about the trajectory." alt="" coords="169,71,404,112"/>
+<area shape="rect" id="node3" href="$classrobot__trajectory_1_1RobotTrajectory.html#ababf812aa287c586d9ad0b190e1d2482" title=" " alt="" coords="169,71,404,112"/>
+<area shape="rect" id="node4" href="$classrobot__trajectory_1_1RobotTrajectory.html#a23eca045c783372e4869cd3cccb2fb66" title="Returns the duration after start that a waypoint will be reached." alt="" coords="169,136,404,177"/>
+<area shape="rect" id="node5" href="$classrobot__trajectory_1_1RobotTrajectory.html#aa02527d5b79f3249febefb4780743746" title=" " alt="" coords="169,201,404,243"/>
 </map>

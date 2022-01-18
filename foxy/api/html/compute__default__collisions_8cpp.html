@@ -77,66 +77,67 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;<a class="el" href="planning__scene_8h_source.html">moveit/planning_scene/planning_scene.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="compute__default__collisions_8hpp_source.html">moveit/setup_assistant/tools/compute_default_collisions.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="compute__default__collisions_8h_source.html">moveit/setup_assistant/tools/compute_default_collisions.h</a>&gt;</code><br />
 <code>#include &lt;boost/math/special_functions/binomial.hpp&gt;</code><br />
 <code>#include &lt;boost/thread.hpp&gt;</code><br />
 <code>#include &lt;boost/unordered_map.hpp&gt;</code><br />
 <code>#include &lt;boost/assign.hpp&gt;</code><br />
+<code>#include &lt;ros/console.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for compute_default_collisions.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="compute__default__collisions_8cpp__incl.png" border="0" usemap="#moveit2_2moveit__setup__assistant_2src_2tools_2compute__default__collisions_8cpp" alt=""/></div>
 <map name="moveit2_2moveit__setup__assistant_2src_2tools_2compute__default__collisions_8cpp" id="moveit2_2moveit__setup__assistant_2src_2tools_2compute__default__collisions_8cpp">
-<area shape="rect" title=" " alt="" coords="2634,5,2865,61"/>
-<area shape="rect" href="planning__scene_8h.html" title=" " alt="" coords="2374,109,2547,151"/>
-<area shape="rect" href="compute__default__collisions_8hpp.html" title=" " alt="" coords="45,556,220,612"/>
-<area shape="rect" title=" " alt="" coords="2571,109,2750,151"/>
-<area shape="rect" title=" " alt="" coords="2774,117,2906,143"/>
-<area shape="rect" title=" " alt="" coords="2931,117,3123,143"/>
-<area shape="rect" title=" " alt="" coords="3148,117,3280,143"/>
-<area shape="rect" href="robot__model_8h.html" title=" " alt="" coords="2435,467,2590,508"/>
-<area shape="rect" href="class__forward_8h.html" title=" " alt="" coords="462,749,619,791"/>
-<area shape="rect" href="kinematics__base_8h.html" title=" " alt="" coords="2860,660,3042,701"/>
-<area shape="rect" title=" " alt="" coords="3065,757,3197,783"/>
-<area shape="rect" title=" " alt="" coords="2750,757,2893,783"/>
-<area shape="rect" href="robot__state_8h.html" title=" " alt="" coords="1707,377,1854,419"/>
-<area shape="rect" href="transforms_8h.html" title=" " alt="" coords="857,571,1088,597"/>
-<area shape="rect" title=" " alt="" coords="1208,667,1382,694"/>
-<area shape="rect" href="collision__detector__allocator_8h.html" title=" " alt="" coords="519,199,735,240"/>
-<area shape="rect" href="collision__env_8h.html" title=" " alt="" coords="560,288,755,329"/>
-<area shape="rect" href="world__diff_8h.html" title=" " alt="" coords="591,377,786,419"/>
-<area shape="rect" href="kinematic__constraint_8h.html" title=" " alt="" coords="1119,199,1335,240"/>
-<area shape="rect" title=" " alt="" coords="2025,295,2272,322"/>
-<area shape="rect" href="robot__trajectory_8h.html" title=" " alt="" coords="2574,199,2750,240"/>
-<area shape="rect" title=" " alt="" coords="2726,288,2906,329"/>
-<area shape="rect" title=" " alt="" coords="2931,295,3008,322"/>
-<area shape="rect" title=" " alt="" coords="2875,199,3078,240"/>
-<area shape="rect" title=" " alt="" coords="3102,199,3304,240"/>
-<area shape="rect" title=" " alt="" coords="3329,199,3544,240"/>
-<area shape="rect" title=" " alt="" coords="3568,206,3755,233"/>
-<area shape="rect" title=" " alt="" coords="3779,199,3955,240"/>
-<area shape="rect" href="exceptions_8h.html" title=" " alt="" coords="1558,571,1789,597"/>
-<area shape="rect" title=" " alt="" coords="2651,667,2784,694"/>
-<area shape="rect" href="joint__model__group_8h.html" title=" " alt="" coords="2833,563,2992,605"/>
-<area shape="rect" href="fixed__joint__model_8h.html" title=" " alt="" coords="1814,563,1968,605"/>
-<area shape="rect" href="floating__joint__model_8h.html" title=" " alt="" coords="1992,563,2163,605"/>
-<area shape="rect" href="planar__joint__model_8h.html" title=" " alt="" coords="2187,563,2350,605"/>
-<area shape="rect" href="revolute__joint__model_8h.html" title=" " alt="" coords="2374,563,2550,605"/>
-<area shape="rect" href="prismatic__joint__model_8h.html" title=" " alt="" coords="2574,563,2757,605"/>
-<area shape="rect" title=" " alt="" coords="756,667,882,694"/>
-<area shape="rect" title=" " alt="" coords="1112,571,1192,597"/>
-<area shape="rect" href="attached__body_8h.html" title=" " alt="" coords="2163,467,2310,508"/>
-<area shape="rect" title=" " alt="" coords="1101,467,1273,508"/>
-<area shape="rect" title=" " alt="" coords="1298,467,1468,508"/>
-<area shape="rect" title=" " alt="" coords="1492,467,1644,508"/>
-<area shape="rect" title=" " alt="" coords="1669,474,1892,501"/>
-<area shape="rect" title=" " alt="" coords="1915,474,1984,501"/>
-<area shape="rect" title=" " alt="" coords="2008,474,2139,501"/>
-<area shape="rect" title=" " alt="" coords="958,660,1184,701"/>
-<area shape="rect" title=" " alt="" coords="515,667,566,694"/>
-<area shape="rect" href="collision__matrix_8h.html" title=" " alt="" coords="410,467,604,508"/>
-<area shape="rect" title=" " alt="" coords="396,377,567,419"/>
-<area shape="rect" href="world_8h.html" title=" " alt="" coords="628,467,823,508"/>
+<area shape="rect" title=" " alt="" coords="2641,5,2871,61"/>
+<area shape="rect" href="planning__scene_8h.html" title=" " alt="" coords="2289,109,2463,151"/>
+<area shape="rect" href="compute__default__collisions_8h.html" title=" " alt="" coords="94,556,269,612"/>
+<area shape="rect" title=" " alt="" coords="2487,109,2665,151"/>
+<area shape="rect" title=" " alt="" coords="2690,117,2822,143"/>
+<area shape="rect" title=" " alt="" coords="2847,117,3039,143"/>
+<area shape="rect" title=" " alt="" coords="3063,117,3195,143"/>
+<area shape="rect" title=" " alt="" coords="3219,117,3327,143"/>
+<area shape="rect" href="robot__model_8h.html" title=" " alt="" coords="2471,467,2625,508"/>
+<area shape="rect" href="class__forward_8h.html" title=" " alt="" coords="545,749,703,791"/>
+<area shape="rect" href="kinematics__base_8h.html" title=" " alt="" coords="3305,660,3487,701"/>
+<area shape="rect" title=" " alt="" coords="3510,757,3642,783"/>
+<area shape="rect" title=" " alt="" coords="3195,757,3338,783"/>
+<area shape="rect" href="robot__state_8h.html" title=" " alt="" coords="1644,377,1791,419"/>
+<area shape="rect" href="transforms_8h.html" title=" " alt="" coords="927,571,1158,597"/>
+<area shape="rect" title=" " alt="" coords="1379,667,1552,694"/>
+<area shape="rect" href="collision__detector__allocator_8h.html" title=" " alt="" coords="529,199,745,240"/>
+<area shape="rect" href="collision__env_8h.html" title=" " alt="" coords="540,288,735,329"/>
+<area shape="rect" href="world__diff_8h.html" title=" " alt="" coords="664,377,859,419"/>
+<area shape="rect" href="kinematic__constraint_8h.html" title=" " alt="" coords="1157,199,1373,240"/>
+<area shape="rect" title=" " alt="" coords="1946,295,2193,322"/>
+<area shape="rect" href="robot__trajectory_8h.html" title=" " alt="" coords="2337,288,2513,329"/>
+<area shape="rect" title=" " alt="" coords="2514,377,2694,419"/>
+<area shape="rect" title=" " alt="" coords="2540,199,2743,240"/>
+<area shape="rect" title=" " alt="" coords="2767,199,2969,240"/>
+<area shape="rect" title=" " alt="" coords="2994,199,3209,240"/>
+<area shape="rect" title=" " alt="" coords="3233,206,3420,233"/>
+<area shape="rect" title=" " alt="" coords="3444,206,3521,233"/>
+<area shape="rect" title=" " alt="" coords="3545,199,3721,240"/>
+<area shape="rect" href="exceptions_8h.html" title=" " alt="" coords="1926,571,2157,597"/>
+<area shape="rect" title=" " alt="" coords="3096,667,3229,694"/>
+<area shape="rect" href="joint__model__group_8h.html" title=" " alt="" coords="3201,563,3359,605"/>
+<area shape="rect" href="fixed__joint__model_8h.html" title=" " alt="" coords="2181,563,2336,605"/>
+<area shape="rect" href="floating__joint__model_8h.html" title=" " alt="" coords="2360,563,2531,605"/>
+<area shape="rect" href="planar__joint__model_8h.html" title=" " alt="" coords="2555,563,2717,605"/>
+<area shape="rect" href="revolute__joint__model_8h.html" title=" " alt="" coords="2741,563,2917,605"/>
+<area shape="rect" href="prismatic__joint__model_8h.html" title=" " alt="" coords="2942,563,3125,605"/>
+<area shape="rect" title=" " alt="" coords="1169,667,1295,694"/>
+<area shape="rect" title=" " alt="" coords="1183,571,1263,597"/>
+<area shape="rect" href="attached__body_8h.html" title=" " alt="" coords="2199,467,2345,508"/>
+<area shape="rect" title=" " alt="" coords="1807,467,1979,508"/>
+<area shape="rect" title=" " alt="" coords="2004,467,2175,508"/>
+<area shape="rect" title=" " alt="" coords="1136,467,1288,508"/>
+<area shape="rect" title=" " alt="" coords="1313,474,1535,501"/>
+<area shape="rect" title=" " alt="" coords="1559,474,1628,501"/>
+<area shape="rect" title=" " alt="" coords="1652,474,1783,501"/>
+<area shape="rect" title=" " alt="" coords="917,660,1144,701"/>
+<area shape="rect" title=" " alt="" coords="599,667,649,694"/>
+<area shape="rect" href="collision__matrix_8h.html" title=" " alt="" coords="445,467,640,508"/>
+<area shape="rect" href="world_8h.html" title=" " alt="" coords="664,467,859,508"/>
 </map>
 </div>
 </div>
@@ -154,9 +155,9 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a98a4840ded10cd49d1912a2a6cf1c096"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="ros_2warehouse_2warehouse_2CMakeLists_8txt.html#af4423e580afb68aec7c40fb0bce7d5d4">std::set</a>&lt; std::pair&lt; std::string, std::string &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemoveit__setup__assistant.html#a98a4840ded10cd49d1912a2a6cf1c096">moveit_setup_assistant::StringPairSet</a></td></tr>
+<tr class="memitem:a98a4840ded10cd49d1912a2a6cf1c096"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="setup__assistant_2CMakeLists_8txt.html#a58ab708fe5c1f47f0642bdaee3056d3b">std::set</a>&lt; std::pair&lt; std::string, std::string &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemoveit__setup__assistant.html#a98a4840ded10cd49d1912a2a6cf1c096">moveit_setup_assistant::StringPairSet</a></td></tr>
 <tr class="separator:a98a4840ded10cd49d1912a2a6cf1c096"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7084ef61757e964005f702ccd3617dfa"><td class="memItemLeft" align="right" valign="top">typedef std::map&lt; const <a class="el" href="classmoveit_1_1core_1_1LinkModel.html">moveit::core::LinkModel</a> *, <a class="el" href="ros_2warehouse_2warehouse_2CMakeLists_8txt.html#af4423e580afb68aec7c40fb0bce7d5d4">std::set</a>&lt; const <a class="el" href="classmoveit_1_1core_1_1LinkModel.html">moveit::core::LinkModel</a> * &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemoveit__setup__assistant.html#a7084ef61757e964005f702ccd3617dfa">moveit_setup_assistant::LinkGraph</a></td></tr>
+<tr class="memitem:a7084ef61757e964005f702ccd3617dfa"><td class="memItemLeft" align="right" valign="top">typedef std::map&lt; const <a class="el" href="classmoveit_1_1core_1_1LinkModel.html">moveit::core::LinkModel</a> *, <a class="el" href="setup__assistant_2CMakeLists_8txt.html#a58ab708fe5c1f47f0642bdaee3056d3b">std::set</a>&lt; const <a class="el" href="classmoveit_1_1core_1_1LinkModel.html">moveit::core::LinkModel</a> * &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemoveit__setup__assistant.html#a7084ef61757e964005f702ccd3617dfa">moveit_setup_assistant::LinkGraph</a></td></tr>
 <tr class="separator:a7084ef61757e964005f702ccd3617dfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>

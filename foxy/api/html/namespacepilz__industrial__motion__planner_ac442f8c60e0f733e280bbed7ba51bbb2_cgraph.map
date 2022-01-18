@@ -1,0 +1,5 @@
+<map id="pilz_industrial_motion_planner::verifySampleJointLimits" name="pilz_industrial_motion_planner::verifySampleJointLimits">
+<area shape="rect" id="node1" title="verify the velocity/acceleration limits of current sample (based on backward difference computation) ..." alt="" coords="5,53,247,94"/>
+<area shape="rect" id="node2" href="$classpilz__industrial__motion__planner_1_1JointLimitsContainer.html#a040d5fa11dbedd32a857862bd4ce0b67" title="getLimit get the limit for the given joint name" alt="" coords="295,5,513,61"/>
+<area shape="rect" id="node3" href="$classpilz__industrial__motion__planner_1_1JointLimitsContainer.html#a11ae34fba2acfa928a8e27d8f654671d" title="verify position limit of single joint" alt="" coords="295,85,513,141"/>
+</map>

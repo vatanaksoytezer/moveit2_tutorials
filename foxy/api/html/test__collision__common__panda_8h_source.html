@@ -145,11 +145,11 @@ $(function() {
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keyword">protected</span>:</div>
 <div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classCollisionDetectorPandaTest.html#ac80f4ae223ee276d35b520c06f20b23f">   75</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classCollisionDetectorPandaTest.html#ac80f4ae223ee276d35b520c06f20b23f">SetUp</a>()<span class="keyword"> override</span></div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keyword">  </span>{</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="classCollisionDetectorPandaTest.html#a69220529b5e7cb4bf475f403fabe3093">value_</a> = std::make_shared&lt;CollisionAllocatorType&gt;();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="classCollisionDetectorPandaTest.html#a69220529b5e7cb4bf475f403fabe3093">value_</a>.reset(<span class="keyword">new</span> CollisionAllocatorType);</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <a class="code" href="classCollisionDetectorPandaTest.html#a4af648aabc7d3b7a6225a0ac79b43424">robot_model_</a> = <a class="code" href="namespacemoveit_1_1core.html#a646367a1863f557a16cb8769a2980604">moveit::core::loadTestingRobotModel</a>(<span class="stringliteral">&quot;panda&quot;</span>);</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <a class="code" href="classCollisionDetectorPandaTest.html#ada0f313df3e0dc5b89e9f8f3e3fd765e">robot_model_ok_</a> = <span class="keyword">static_cast&lt;</span><span class="keywordtype">bool</span><span class="keyword">&gt;</span>(<a class="code" href="classCollisionDetectorPandaTest.html#a4af648aabc7d3b7a6225a0ac79b43424">robot_model_</a>);</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <a class="code" href="classCollisionDetectorPandaTest.html#aa917d5349a32e25b287405e5c8d0d516">acm_</a> = std::make_shared&lt;collision_detection::AllowedCollisionMatrix&gt;();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <a class="code" href="classCollisionDetectorPandaTest.html#aa917d5349a32e25b287405e5c8d0d516">acm_</a>.reset(<span class="keyword">new</span> <a class="code" href="classcollision__detection_1_1AllowedCollisionMatrix.html">collision_detection::AllowedCollisionMatrix</a>());</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">// Use default collision operations in the SRDF to setup the acm</span></div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; collision_links = <a class="code" href="classCollisionDetectorPandaTest.html#a4af648aabc7d3b7a6225a0ac79b43424">robot_model_</a>-&gt;getLinkModelNamesWithCollisionGeometry();</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="classCollisionDetectorPandaTest.html#aa917d5349a32e25b287405e5c8d0d516">acm_</a>-&gt;setEntry(collision_links, collision_links, <span class="keyword">false</span>);</div>
@@ -161,7 +161,7 @@ $(function() {
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <a class="code" href="classCollisionDetectorPandaTest.html#a127fc4ad26cf9d52fdc2bed11db4c9bc">cenv_</a> = <a class="code" href="classCollisionDetectorPandaTest.html#a69220529b5e7cb4bf475f403fabe3093">value_</a>-&gt;allocateEnv(<a class="code" href="classCollisionDetectorPandaTest.html#a4af648aabc7d3b7a6225a0ac79b43424">robot_model_</a>);</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <a class="code" href="classCollisionDetectorPandaTest.html#a77c51fd542c1949b9f5b9a6b302d7f12">robot_state_</a> = std::make_shared&lt;moveit::core::RobotState&gt;(<a class="code" href="classCollisionDetectorPandaTest.html#a4af648aabc7d3b7a6225a0ac79b43424">robot_model_</a>);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <a class="code" href="classCollisionDetectorPandaTest.html#a77c51fd542c1949b9f5b9a6b302d7f12">robot_state_</a>.reset(<span class="keyword">new</span> <a class="code" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a>(<a class="code" href="classCollisionDetectorPandaTest.html#a4af648aabc7d3b7a6225a0ac79b43424">robot_model_</a>));</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <a class="code" href="test__collision__common__panda_8h.html#a894803518e93708a180036f3541da9e1">setToHome</a>(*<a class="code" href="classCollisionDetectorPandaTest.html#a77c51fd542c1949b9f5b9a6b302d7f12">robot_state_</a>);</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  }</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
@@ -220,7 +220,7 @@ $(function() {
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  Eigen::Isometry3d pos1 = Eigen::Isometry3d::Identity();</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  pos1.translation().z() = 0.3;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  this-&gt;cenv_-&gt;getWorld()-&gt;addToObject(<span class="stringliteral">&quot;box&quot;</span>, pos1, shape_ptr, Eigen::Isometry3d::Identity());</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  this-&gt;cenv_-&gt;getWorld()-&gt;addToObject(<span class="stringliteral">&quot;box&quot;</span>, shape_ptr, pos1);</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  this-&gt;cenv_-&gt;checkSelfCollision(req, res, *this-&gt;robot_state_, *this-&gt;acm_);</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  ASSERT_FALSE(res.<a class="code" href="structcollision__detection_1_1CollisionResult.html#ad68db09bcc111730f7c4ab1bdff31e67">collision</a>);</div>
@@ -252,188 +252,187 @@ $(function() {
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;  Eigen::Isometry3d pos1 = Eigen::Isometry3d::Identity();</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  pos1.translation().z() = 0.3;</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;  this-&gt;cenv_-&gt;getWorld()-&gt;addToObject(<span class="stringliteral">&quot;box&quot;</span>, pos1, shape_ptr, Eigen::Isometry3d::Identity());</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  this-&gt;cenv_-&gt;checkRobotCollision(req, res, *this-&gt;robot_state_, *this-&gt;acm_);</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  ASSERT_TRUE(res.<a class="code" href="structcollision__detection_1_1CollisionResult.html#ad68db09bcc111730f7c4ab1bdff31e67">collision</a>);</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  ASSERT_GE(res.<a class="code" href="structcollision__detection_1_1CollisionResult.html#afd0843007154ccb922e8117312bbacbb">contact_count</a>, 3u);</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  res.<a class="code" href="structcollision__detection_1_1CollisionResult.html#ac2f7f5603102be94cda1fe5d5fd1b531">clear</a>();</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;}</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
-<div class="line"><a name="l00198"></a><span class="lineno"><a class="line" href="test__collision__common__panda_8h.html#afa930bfc15cfee6b8a964f87e832fe1d">  198</a></span>&#160;<a class="code" href="test__collision__common__panda_8h.html#a8c3500382e7942e4b6df74cd2e02e24e">TYPED_TEST_P</a>(<a class="code" href="classCollisionDetectorPandaTest.html">CollisionDetectorPandaTest</a>, PaddingTest)</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;{</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;  <a class="code" href="structcollision__detection_1_1CollisionRequest.html">collision_detection::CollisionRequest</a> req;</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;  req.<a class="code" href="structcollision__detection_1_1CollisionRequest.html#a5360522b02a383072fb881fc08d15788">contacts</a> = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;  req.<a class="code" href="structcollision__detection_1_1CollisionRequest.html#a8dac54b1f11971b246df751eff3242d8">max_contacts</a> = 10;</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;  <a class="code" href="structcollision__detection_1_1CollisionResult.html">collision_detection::CollisionResult</a> res;</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;  this-&gt;cenv_-&gt;checkRobotCollision(req, res, *this-&gt;robot_state_, *this-&gt;acm_);</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;  ASSERT_FALSE(res.<a class="code" href="structcollision__detection_1_1CollisionResult.html#ad68db09bcc111730f7c4ab1bdff31e67">collision</a>);</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;  res.<a class="code" href="structcollision__detection_1_1CollisionResult.html#ac2f7f5603102be94cda1fe5d5fd1b531">clear</a>();</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;  <span class="comment">// Adding the box right in front of the robot hand</span></div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;  shapes::Shape* shape = <span class="keyword">new</span> shapes::Box(0.1, 0.1, 0.1);</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;  shapes::ShapeConstPtr shape_ptr(shape);</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160; </div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;  Eigen::Isometry3d pos{ Eigen::Isometry3d::Identity() };</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;  pos.translation().x() = 0.43;</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;  pos.translation().y() = 0;</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;  pos.translation().z() = 0.55;</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;  this-&gt;cenv_-&gt;getWorld()-&gt;addToObject(<span class="stringliteral">&quot;box&quot;</span>, pos, shape_ptr, Eigen::Isometry3d::Identity());</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160; </div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;  this-&gt;cenv_-&gt;setLinkPadding(<span class="stringliteral">&quot;panda_hand&quot;</span>, 0.08);</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;  this-&gt;cenv_-&gt;checkRobotCollision(req, res, *this-&gt;robot_state_, *this-&gt;acm_);</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;  ASSERT_TRUE(res.<a class="code" href="structcollision__detection_1_1CollisionResult.html#ad68db09bcc111730f7c4ab1bdff31e67">collision</a>);</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;  res.<a class="code" href="structcollision__detection_1_1CollisionResult.html#ac2f7f5603102be94cda1fe5d5fd1b531">clear</a>();</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160; </div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;  this-&gt;cenv_-&gt;setLinkPadding(<span class="stringliteral">&quot;panda_hand&quot;</span>, 0.0);</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;  this-&gt;cenv_-&gt;checkRobotCollision(req, res, *this-&gt;robot_state_, *this-&gt;acm_);</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;  ASSERT_FALSE(res.<a class="code" href="structcollision__detection_1_1CollisionResult.html#ad68db09bcc111730f7c4ab1bdff31e67">collision</a>);</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;}</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
-<div class="line"><a name="l00230"></a><span class="lineno"><a class="line" href="test__collision__common__panda_8h.html#a45f8e3d60ffb36c31fad022c9ec6f9ec">  230</a></span>&#160;<a class="code" href="test__collision__common__panda_8h.html#a8c3500382e7942e4b6df74cd2e02e24e">TYPED_TEST_P</a>(<a class="code" href="classCollisionDetectorPandaTest.html">CollisionDetectorPandaTest</a>, DistanceSelf)</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;{</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;  <a class="code" href="structcollision__detection_1_1CollisionRequest.html">collision_detection::CollisionRequest</a> req;</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;  req.<a class="code" href="structcollision__detection_1_1CollisionRequest.html#af004da8744b925118ebd7cf5ef3c42e8">distance</a> = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;  <a class="code" href="structcollision__detection_1_1CollisionResult.html">collision_detection::CollisionResult</a> res;</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;  this-&gt;cenv_-&gt;checkSelfCollision(req, res, *this-&gt;robot_state_, *this-&gt;acm_);</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;  ASSERT_FALSE(res.<a class="code" href="structcollision__detection_1_1CollisionResult.html#ad68db09bcc111730f7c4ab1bdff31e67">collision</a>);</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;  EXPECT_NEAR(res.<a class="code" href="structcollision__detection_1_1CollisionResult.html#ab5697568819a44e678768fe48c98400f">distance</a>, 0.022, 0.001);</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;}</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160; </div>
-<div class="line"><a name="l00240"></a><span class="lineno"><a class="line" href="test__collision__common__panda_8h.html#a7626f30f8e28dbc1421a81c0abbca9c7">  240</a></span>&#160;<a class="code" href="test__collision__common__panda_8h.html#a8c3500382e7942e4b6df74cd2e02e24e">TYPED_TEST_P</a>(<a class="code" href="classCollisionDetectorPandaTest.html">CollisionDetectorPandaTest</a>, DistanceWorld)</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;{</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;  <a class="code" href="structcollision__detection_1_1CollisionRequest.html">collision_detection::CollisionRequest</a> req;</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;  req.<a class="code" href="structcollision__detection_1_1CollisionRequest.html#af004da8744b925118ebd7cf5ef3c42e8">distance</a> = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;  <a class="code" href="structcollision__detection_1_1CollisionResult.html">collision_detection::CollisionResult</a> res;</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;  <span class="comment">// Adding the box right in front of the robot hand</span></div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;  shapes::Shape* shape = <span class="keyword">new</span> shapes::Box(0.1, 0.1, 0.1);</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;  shapes::ShapeConstPtr shape_ptr(shape);</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160; </div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;  Eigen::Isometry3d pos{ Eigen::Isometry3d::Identity() };</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;  pos.translation().x() = 0.43;</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;  pos.translation().y() = 0;</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;  pos.translation().z() = 0.55;</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;  this-&gt;cenv_-&gt;getWorld()-&gt;addToObject(<span class="stringliteral">&quot;box&quot;</span>, pos, shape_ptr, Eigen::Isometry3d::Identity());</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; </div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;  this-&gt;cenv_-&gt;setLinkPadding(<span class="stringliteral">&quot;panda_hand&quot;</span>, 0.0);</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;  this-&gt;cenv_-&gt;checkRobotCollision(req, res, *this-&gt;robot_state_, *this-&gt;acm_);</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;  ASSERT_FALSE(res.<a class="code" href="structcollision__detection_1_1CollisionResult.html#ad68db09bcc111730f7c4ab1bdff31e67">collision</a>);</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;  EXPECT_NEAR(res.<a class="code" href="structcollision__detection_1_1CollisionResult.html#ab5697568819a44e678768fe48c98400f">distance</a>, 0.029, 0.01);</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;}</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160; </div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> CollisionAllocatorType&gt;</div>
-<div class="line"><a name="l00263"></a><span class="lineno"><a class="line" href="classDistanceCheckPandaTest.html">  263</a></span>&#160;<span class="keyword">class </span><a class="code" href="classDistanceCheckPandaTest.html">DistanceCheckPandaTest</a> : <span class="keyword">public</span> <a class="code" href="classCollisionDetectorPandaTest.html">CollisionDetectorPandaTest</a>&lt;CollisionAllocatorType&gt;</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;{</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;};</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160; </div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;<a class="code" href="test__collision__common__panda_8h.html#a462c67cf04888148c7bbab5c8c3f1c0e">TYPED_TEST_CASE_P</a>(<a class="code" href="classDistanceCheckPandaTest.html">DistanceCheckPandaTest</a>);</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160; </div>
-<div class="line"><a name="l00269"></a><span class="lineno"><a class="line" href="test__collision__common__panda_8h.html#aab97612ac359bd9fc11e4ddc89a524f0">  269</a></span>&#160;<a class="code" href="test__collision__common__panda_8h.html#a8c3500382e7942e4b6df74cd2e02e24e">TYPED_TEST_P</a>(<a class="code" href="classDistanceCheckPandaTest.html">DistanceCheckPandaTest</a>, DistanceSingle)</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;{</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;  std::set&lt;const moveit::core::LinkModel*&gt; active_components{ this-&gt;robot_model_-&gt;getLinkModel(<span class="stringliteral">&quot;panda_hand&quot;</span>) };</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;  <a class="code" href="structcollision__detection_1_1DistanceRequest.html">collision_detection::DistanceRequest</a> req;</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;  req.<a class="code" href="structcollision__detection_1_1DistanceRequest.html#ab4c792a7bf743908123c4abd293e5321">type</a> = <a class="code" href="namespacecollision__detection_1_1DistanceRequestTypes.html#ac754f7bfd3f776cb02a190e9a0fd893eaf042b2d1203de239d52771e4cb11b417">collision_detection::DistanceRequestTypes::SINGLE</a>;</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;  req.<a class="code" href="structcollision__detection_1_1DistanceRequest.html#a13e427531c837d43593c49e2ddc2ad61">active_components_only</a> = &amp;active_components;</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;  req.<a class="code" href="structcollision__detection_1_1DistanceRequest.html#ac004290481e3a6c3f30e305cec82f132">enable_signed_distance</a> = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160; </div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;  random_numbers::RandomNumberGenerator rng(0x47110815);</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;  <span class="keywordtype">double</span> min_distance = std::numeric_limits&lt;double&gt;::max();</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 10; ++i)</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;  {</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    <a class="code" href="structcollision__detection_1_1DistanceResult.html">collision_detection::DistanceResult</a> res;</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160; </div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    shapes::ShapeConstPtr shape(<span class="keyword">new</span> shapes::Cylinder(rng.uniform01(), rng.uniform01()));</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    Eigen::Isometry3d pose{ Eigen::Isometry3d::Identity() };</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    pose.translation() =</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        <a class="code" href="namespacefcl.html#a0288e6b07bc0c851a9503dbaea7a0f19">Eigen::Vector3d</a>(rng.uniformReal(0.1, 2.0), rng.uniformReal(0.1, 2.0), rng.uniformReal(1.2, 1.7));</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <span class="keywordtype">double</span> quat[4];</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    rng.quaternion(quat);</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    pose.linear() = Eigen::Quaterniond(quat[0], quat[1], quat[2], quat[3]).toRotationMatrix();</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160; </div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    this-&gt;cenv_-&gt;getWorld()-&gt;addToObject(<span class="stringliteral">&quot;collection&quot;</span>, Eigen::Isometry3d::Identity(), shape, pose);</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    this-&gt;cenv_-&gt;getWorld()-&gt;removeObject(<span class="stringliteral">&quot;object&quot;</span>);</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    this-&gt;cenv_-&gt;getWorld()-&gt;addToObject(<span class="stringliteral">&quot;object&quot;</span>, pose, shape, Eigen::Isometry3d::Identity());</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160; </div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    this-&gt;cenv_-&gt;distanceRobot(req, res, *this-&gt;robot_state_);</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <span class="keyword">auto</span>&amp; distances1 = res.<a class="code" href="structcollision__detection_1_1DistanceResult.html#a5f4a33fc2e1e6b9f33ef854c6d802355">distances</a>[std::pair&lt;std::string, std::string&gt;(<span class="stringliteral">&quot;collection&quot;</span>, <span class="stringliteral">&quot;panda_hand&quot;</span>)];</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    <span class="keyword">auto</span>&amp; distances2 = res.<a class="code" href="structcollision__detection_1_1DistanceResult.html#a5f4a33fc2e1e6b9f33ef854c6d802355">distances</a>[std::pair&lt;std::string, std::string&gt;(<span class="stringliteral">&quot;object&quot;</span>, <span class="stringliteral">&quot;panda_hand&quot;</span>)];</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    ASSERT_EQ(distances1.size(), 1u) &lt;&lt; <span class="stringliteral">&quot;no distance reported for collection/panda_hand&quot;</span>;</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    ASSERT_EQ(distances2.size(), 1u) &lt;&lt; <span class="stringliteral">&quot;no distance reported for object/panda_hand&quot;</span>;</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160; </div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    <span class="keywordtype">double</span> collection_distance = distances1[0].distance;</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    min_distance = std::min(min_distance, distances2[0].<a class="code" href="namespacepr2__arm__kinematics.html#a24f684af4bcce4a6d0c945aa27d04550">distance</a>);</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    ASSERT_NEAR(collection_distance, min_distance, 1e-5)</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        &lt;&lt; <span class="stringliteral">&quot;distance to collection is greater than distance to minimum of individual objects after &quot;</span> &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot; rounds&quot;</span>;</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;  }</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;}</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160; </div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;<span class="comment">// FCL &lt; 0.6 completely fails the DistancePoints test, so we have two test</span></div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;<span class="comment">// suites, one with and one without the test.</span></div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> CollisionAllocatorType&gt;</div>
-<div class="line"><a name="l00311"></a><span class="lineno"><a class="line" href="classDistanceFullPandaTest.html">  311</a></span>&#160;<span class="keyword">class </span><a class="code" href="classDistanceFullPandaTest.html">DistanceFullPandaTest</a> : <span class="keyword">public</span> <a class="code" href="classDistanceCheckPandaTest.html">DistanceCheckPandaTest</a>&lt;CollisionAllocatorType&gt;</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;{</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;};</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160; </div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;<a class="code" href="test__collision__common__panda_8h.html#a462c67cf04888148c7bbab5c8c3f1c0e">TYPED_TEST_CASE_P</a>(<a class="code" href="classDistanceFullPandaTest.html">DistanceFullPandaTest</a>);</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160; </div>
-<div class="line"><a name="l00318"></a><span class="lineno"><a class="line" href="test__collision__common__panda_8h.html#a4eed1ab35eb002f35bc943c7dcc299d5">  318</a></span>&#160;<a class="code" href="test__collision__common__panda_8h.html#a8c3500382e7942e4b6df74cd2e02e24e">TYPED_TEST_P</a>(<a class="code" href="classDistanceFullPandaTest.html">DistanceFullPandaTest</a>, DistancePoints)</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;{</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;  <span class="comment">// Adding the box right in front of the robot hand</span></div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;  shapes::Box* shape = <span class="keyword">new</span> shapes::Box(0.1, 0.1, 0.1);</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;  shapes::ShapeConstPtr shape_ptr(shape);</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160; </div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;  Eigen::Isometry3d pos{ Eigen::Isometry3d::Identity() };</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;  pos.translation().x() = 0.43;</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;  pos.translation().y() = 0;</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;  pos.translation().z() = 0.55;</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;  this-&gt;cenv_-&gt;getWorld()-&gt;addToObject(<span class="stringliteral">&quot;box&quot;</span>, shape_ptr, pos);</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160; </div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;  <a class="code" href="structcollision__detection_1_1DistanceRequest.html">collision_detection::DistanceRequest</a> req;</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;  req.<a class="code" href="structcollision__detection_1_1DistanceRequest.html#ad59ba3aa3de18225797b9119c1848600">acm</a> = &amp;*this-&gt;acm_;</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;  req.<a class="code" href="structcollision__detection_1_1DistanceRequest.html#ab4c792a7bf743908123c4abd293e5321">type</a> = <a class="code" href="namespacecollision__detection_1_1DistanceRequestTypes.html#ac754f7bfd3f776cb02a190e9a0fd893eaf042b2d1203de239d52771e4cb11b417">collision_detection::DistanceRequestTypes::SINGLE</a>;</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;  req.<a class="code" href="structcollision__detection_1_1DistanceRequest.html#af1142aa4548e9577db3fc9dab1917b52">enable_nearest_points</a> = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;  req.<a class="code" href="structcollision__detection_1_1DistanceRequest.html#a95e2754133ea61ff5a577c89908b8a23">max_contacts_per_body</a> = 1;</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160; </div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;  <a class="code" href="structcollision__detection_1_1DistanceResult.html">collision_detection::DistanceResult</a> res;</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;  this-&gt;cenv_-&gt;distanceRobot(req, res, *this-&gt;robot_state_);</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160; </div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;  <span class="comment">// Checks a particular point is inside the box</span></div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;  <span class="keyword">auto</span> check_in_box = [&amp;](<span class="keyword">const</span> <a class="code" href="namespacefcl.html#a0288e6b07bc0c851a9503dbaea7a0f19">Eigen::Vector3d</a>&amp; <a class="code" href="namespacepick.html#a40e85b309b8813e4f17a4c3242b98c34">p</a>) {</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    <a class="code" href="namespacefcl.html#a0288e6b07bc0c851a9503dbaea7a0f19">Eigen::Vector3d</a> in_box = pos.inverse() * <a class="code" href="namespacepick.html#a40e85b309b8813e4f17a4c3242b98c34">p</a>;</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160; </div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    constexpr <span class="keywordtype">double</span> eps = 1e-5;</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    EXPECT_LE(std::abs(in_box.x()), shape-&gt;size[0] + eps);</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    EXPECT_LE(std::abs(in_box.y()), shape-&gt;size[1] + eps);</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    EXPECT_LE(std::abs(in_box.z()), shape-&gt;size[2] + eps);</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;  };</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160; </div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;  <span class="comment">// Check that all points reported on &quot;box&quot; are actually on the box and not</span></div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;  <span class="comment">// on the robot</span></div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; <a class="code" href="namespacepr2__arm__kinematics.html#a24f684af4bcce4a6d0c945aa27d04550">distance</a> : res.<a class="code" href="structcollision__detection_1_1DistanceResult.html#a5f4a33fc2e1e6b9f33ef854c6d802355">distances</a>)</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;  {</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; pair : <a class="code" href="namespacepr2__arm__kinematics.html#a24f684af4bcce4a6d0c945aa27d04550">distance</a>.second)</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    {</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;      <span class="keywordflow">if</span> (pair.link_names[0] == <span class="stringliteral">&quot;box&quot;</span>)</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        check_in_box(pair.nearest_points[0]);</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pair.link_names[1] == <span class="stringliteral">&quot;box&quot;</span>)</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;        check_in_box(pair.nearest_points[1]);</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;      <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;        ADD_FAILURE() &lt;&lt; <span class="stringliteral">&quot;Unrecognized link names&quot;</span>;</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    }</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;  }</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;}</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160; </div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;<a class="code" href="test__collision__common__panda_8h.html#a6ef09b5b6a9e537f7249139c86923945">REGISTER_TYPED_TEST_CASE_P</a>(<a class="code" href="classCollisionDetectorPandaTest.html">CollisionDetectorPandaTest</a>, InitOK, DefaultNotInCollision, LinksInCollision,</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;                           RobotWorldCollision_1, RobotWorldCollision_2, PaddingTest, DistanceSelf, DistanceWorld);</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160; </div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;<a class="code" href="test__collision__common__panda_8h.html#a6ef09b5b6a9e537f7249139c86923945">REGISTER_TYPED_TEST_CASE_P</a>(<a class="code" href="classDistanceCheckPandaTest.html">DistanceCheckPandaTest</a>, DistanceSingle);</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160; </div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;<a class="code" href="test__collision__common__panda_8h.html#a6ef09b5b6a9e537f7249139c86923945">REGISTER_TYPED_TEST_CASE_P</a>(<a class="code" href="classDistanceFullPandaTest.html">DistanceFullPandaTest</a>, DistancePoints);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;  this-&gt;cenv_-&gt;getWorld()-&gt;addToObject(<span class="stringliteral">&quot;box&quot;</span>, shape_ptr, pos1);</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  this-&gt;cenv_-&gt;checkRobotCollision(req, res, *this-&gt;robot_state_, *this-&gt;acm_);</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  ASSERT_TRUE(res.<a class="code" href="structcollision__detection_1_1CollisionResult.html#ad68db09bcc111730f7c4ab1bdff31e67">collision</a>);</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  ASSERT_GE(res.<a class="code" href="structcollision__detection_1_1CollisionResult.html#afd0843007154ccb922e8117312bbacbb">contact_count</a>, 3u);</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  res.<a class="code" href="structcollision__detection_1_1CollisionResult.html#ac2f7f5603102be94cda1fe5d5fd1b531">clear</a>();</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;}</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
+<div class="line"><a name="l00197"></a><span class="lineno"><a class="line" href="test__collision__common__panda_8h.html#afa930bfc15cfee6b8a964f87e832fe1d">  197</a></span>&#160;<a class="code" href="test__collision__common__panda_8h.html#a8c3500382e7942e4b6df74cd2e02e24e">TYPED_TEST_P</a>(<a class="code" href="classCollisionDetectorPandaTest.html">CollisionDetectorPandaTest</a>, PaddingTest)</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;{</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;  <a class="code" href="structcollision__detection_1_1CollisionRequest.html">collision_detection::CollisionRequest</a> req;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;  req.<a class="code" href="structcollision__detection_1_1CollisionRequest.html#a5360522b02a383072fb881fc08d15788">contacts</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;  req.<a class="code" href="structcollision__detection_1_1CollisionRequest.html#a8dac54b1f11971b246df751eff3242d8">max_contacts</a> = 10;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;  <a class="code" href="structcollision__detection_1_1CollisionResult.html">collision_detection::CollisionResult</a> res;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;  this-&gt;cenv_-&gt;checkRobotCollision(req, res, *this-&gt;robot_state_, *this-&gt;acm_);</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;  ASSERT_FALSE(res.<a class="code" href="structcollision__detection_1_1CollisionResult.html#ad68db09bcc111730f7c4ab1bdff31e67">collision</a>);</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;  res.<a class="code" href="structcollision__detection_1_1CollisionResult.html#ac2f7f5603102be94cda1fe5d5fd1b531">clear</a>();</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;  <span class="comment">// Adding the box right in front of the robot hand</span></div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;  shapes::Shape* shape = <span class="keyword">new</span> shapes::Box(0.1, 0.1, 0.1);</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;  shapes::ShapeConstPtr shape_ptr(shape);</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;  Eigen::Isometry3d pos{ Eigen::Isometry3d::Identity() };</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;  pos.translation().x() = 0.43;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;  pos.translation().y() = 0;</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;  pos.translation().z() = 0.55;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;  this-&gt;cenv_-&gt;getWorld()-&gt;addToObject(<span class="stringliteral">&quot;box&quot;</span>, shape_ptr, pos);</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;  this-&gt;cenv_-&gt;setLinkPadding(<span class="stringliteral">&quot;panda_hand&quot;</span>, 0.08);</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;  this-&gt;cenv_-&gt;checkRobotCollision(req, res, *this-&gt;robot_state_, *this-&gt;acm_);</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;  ASSERT_TRUE(res.<a class="code" href="structcollision__detection_1_1CollisionResult.html#ad68db09bcc111730f7c4ab1bdff31e67">collision</a>);</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;  res.<a class="code" href="structcollision__detection_1_1CollisionResult.html#ac2f7f5603102be94cda1fe5d5fd1b531">clear</a>();</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160; </div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;  this-&gt;cenv_-&gt;setLinkPadding(<span class="stringliteral">&quot;panda_hand&quot;</span>, 0.0);</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;  this-&gt;cenv_-&gt;checkRobotCollision(req, res, *this-&gt;robot_state_, *this-&gt;acm_);</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;  ASSERT_FALSE(res.<a class="code" href="structcollision__detection_1_1CollisionResult.html#ad68db09bcc111730f7c4ab1bdff31e67">collision</a>);</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;}</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
+<div class="line"><a name="l00229"></a><span class="lineno"><a class="line" href="test__collision__common__panda_8h.html#a45f8e3d60ffb36c31fad022c9ec6f9ec">  229</a></span>&#160;<a class="code" href="test__collision__common__panda_8h.html#a8c3500382e7942e4b6df74cd2e02e24e">TYPED_TEST_P</a>(<a class="code" href="classCollisionDetectorPandaTest.html">CollisionDetectorPandaTest</a>, DistanceSelf)</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;{</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;  <a class="code" href="structcollision__detection_1_1CollisionRequest.html">collision_detection::CollisionRequest</a> req;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;  req.<a class="code" href="structcollision__detection_1_1CollisionRequest.html#af004da8744b925118ebd7cf5ef3c42e8">distance</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;  <a class="code" href="structcollision__detection_1_1CollisionResult.html">collision_detection::CollisionResult</a> res;</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;  this-&gt;cenv_-&gt;checkSelfCollision(req, res, *this-&gt;robot_state_, *this-&gt;acm_);</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;  ASSERT_FALSE(res.<a class="code" href="structcollision__detection_1_1CollisionResult.html#ad68db09bcc111730f7c4ab1bdff31e67">collision</a>);</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;  EXPECT_NEAR(res.<a class="code" href="structcollision__detection_1_1CollisionResult.html#ab5697568819a44e678768fe48c98400f">distance</a>, 0.022, 0.001);</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;}</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
+<div class="line"><a name="l00239"></a><span class="lineno"><a class="line" href="test__collision__common__panda_8h.html#a7626f30f8e28dbc1421a81c0abbca9c7">  239</a></span>&#160;<a class="code" href="test__collision__common__panda_8h.html#a8c3500382e7942e4b6df74cd2e02e24e">TYPED_TEST_P</a>(<a class="code" href="classCollisionDetectorPandaTest.html">CollisionDetectorPandaTest</a>, DistanceWorld)</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;{</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;  <a class="code" href="structcollision__detection_1_1CollisionRequest.html">collision_detection::CollisionRequest</a> req;</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;  req.<a class="code" href="structcollision__detection_1_1CollisionRequest.html#af004da8744b925118ebd7cf5ef3c42e8">distance</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;  <a class="code" href="structcollision__detection_1_1CollisionResult.html">collision_detection::CollisionResult</a> res;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160; </div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;  <span class="comment">// Adding the box right in front of the robot hand</span></div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;  shapes::Shape* shape = <span class="keyword">new</span> shapes::Box(0.1, 0.1, 0.1);</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;  shapes::ShapeConstPtr shape_ptr(shape);</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; </div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;  Eigen::Isometry3d pos{ Eigen::Isometry3d::Identity() };</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;  pos.translation().x() = 0.43;</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;  pos.translation().y() = 0;</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;  pos.translation().z() = 0.55;</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;  this-&gt;cenv_-&gt;getWorld()-&gt;addToObject(<span class="stringliteral">&quot;box&quot;</span>, shape_ptr, pos);</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160; </div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;  this-&gt;cenv_-&gt;setLinkPadding(<span class="stringliteral">&quot;panda_hand&quot;</span>, 0.0);</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;  this-&gt;cenv_-&gt;checkRobotCollision(req, res, *this-&gt;robot_state_, *this-&gt;acm_);</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;  ASSERT_FALSE(res.<a class="code" href="structcollision__detection_1_1CollisionResult.html#ad68db09bcc111730f7c4ab1bdff31e67">collision</a>);</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;  EXPECT_NEAR(res.<a class="code" href="structcollision__detection_1_1CollisionResult.html#ab5697568819a44e678768fe48c98400f">distance</a>, 0.029, 0.01);</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;}</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160; </div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> CollisionAllocatorType&gt;</div>
+<div class="line"><a name="l00262"></a><span class="lineno"><a class="line" href="classDistanceCheckPandaTest.html">  262</a></span>&#160;<span class="keyword">class </span><a class="code" href="classDistanceCheckPandaTest.html">DistanceCheckPandaTest</a> : <span class="keyword">public</span> <a class="code" href="classCollisionDetectorPandaTest.html">CollisionDetectorPandaTest</a>&lt;CollisionAllocatorType&gt;</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;{</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;};</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<a class="code" href="test__collision__common__panda_8h.html#a462c67cf04888148c7bbab5c8c3f1c0e">TYPED_TEST_CASE_P</a>(<a class="code" href="classDistanceCheckPandaTest.html">DistanceCheckPandaTest</a>);</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
+<div class="line"><a name="l00268"></a><span class="lineno"><a class="line" href="test__collision__common__panda_8h.html#aab97612ac359bd9fc11e4ddc89a524f0">  268</a></span>&#160;<a class="code" href="test__collision__common__panda_8h.html#a8c3500382e7942e4b6df74cd2e02e24e">TYPED_TEST_P</a>(<a class="code" href="classDistanceCheckPandaTest.html">DistanceCheckPandaTest</a>, DistanceSingle)</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;{</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;  std::set&lt;const moveit::core::LinkModel*&gt; active_components{ this-&gt;robot_model_-&gt;getLinkModel(<span class="stringliteral">&quot;panda_hand&quot;</span>) };</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;  <a class="code" href="structcollision__detection_1_1DistanceRequest.html">collision_detection::DistanceRequest</a> req;</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;  req.<a class="code" href="structcollision__detection_1_1DistanceRequest.html#ab4c792a7bf743908123c4abd293e5321">type</a> = <a class="code" href="namespacecollision__detection_1_1DistanceRequestTypes.html#ac754f7bfd3f776cb02a190e9a0fd893eaf042b2d1203de239d52771e4cb11b417">collision_detection::DistanceRequestTypes::SINGLE</a>;</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;  req.<a class="code" href="structcollision__detection_1_1DistanceRequest.html#a13e427531c837d43593c49e2ddc2ad61">active_components_only</a> = &amp;active_components;</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;  req.<a class="code" href="structcollision__detection_1_1DistanceRequest.html#ac004290481e3a6c3f30e305cec82f132">enable_signed_distance</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160; </div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;  random_numbers::RandomNumberGenerator rng(0x47110815);</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;  <span class="keywordtype">double</span> min_distance = std::numeric_limits&lt;double&gt;::max();</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 10; ++i)</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;  {</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <a class="code" href="structcollision__detection_1_1DistanceResult.html">collision_detection::DistanceResult</a> res;</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160; </div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    shapes::ShapeConstPtr shape(<span class="keyword">new</span> shapes::Cylinder(rng.uniform01(), rng.uniform01()));</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    Eigen::Isometry3d pose{ Eigen::Isometry3d::Identity() };</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    pose.translation() =</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        <a class="code" href="namespacefcl.html#a0288e6b07bc0c851a9503dbaea7a0f19">Eigen::Vector3d</a>(rng.uniformReal(0.1, 2.0), rng.uniformReal(0.1, 2.0), rng.uniformReal(1.2, 1.7));</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    <span class="keywordtype">double</span> quat[4];</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    rng.quaternion(quat);</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    pose.linear() = Eigen::Quaterniond(quat[0], quat[1], quat[2], quat[3]).toRotationMatrix();</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160; </div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    this-&gt;cenv_-&gt;getWorld()-&gt;addToObject(<span class="stringliteral">&quot;collection&quot;</span>, shape, pose);</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    this-&gt;cenv_-&gt;getWorld()-&gt;removeObject(<span class="stringliteral">&quot;object&quot;</span>);</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    this-&gt;cenv_-&gt;getWorld()-&gt;addToObject(<span class="stringliteral">&quot;object&quot;</span>, shape, pose);</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    this-&gt;cenv_-&gt;distanceRobot(req, res, *this-&gt;robot_state_);</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    <span class="keyword">auto</span>&amp; distances1 = res.<a class="code" href="structcollision__detection_1_1DistanceResult.html#a5f4a33fc2e1e6b9f33ef854c6d802355">distances</a>[std::pair&lt;std::string, std::string&gt;(<span class="stringliteral">&quot;collection&quot;</span>, <span class="stringliteral">&quot;panda_hand&quot;</span>)];</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <span class="keyword">auto</span>&amp; distances2 = res.<a class="code" href="structcollision__detection_1_1DistanceResult.html#a5f4a33fc2e1e6b9f33ef854c6d802355">distances</a>[std::pair&lt;std::string, std::string&gt;(<span class="stringliteral">&quot;object&quot;</span>, <span class="stringliteral">&quot;panda_hand&quot;</span>)];</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    ASSERT_EQ(distances1.size(), 1u) &lt;&lt; <span class="stringliteral">&quot;no distance reported for collection/panda_hand&quot;</span>;</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    ASSERT_EQ(distances2.size(), 1u) &lt;&lt; <span class="stringliteral">&quot;no distance reported for object/panda_hand&quot;</span>;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160; </div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    <span class="keywordtype">double</span> collection_distance = distances1[0].distance;</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    min_distance = std::min(min_distance, distances2[0].<a class="code" href="namespacepr2__arm__kinematics.html#a24f684af4bcce4a6d0c945aa27d04550">distance</a>);</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    ASSERT_NEAR(collection_distance, min_distance, 1e-5)</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        &lt;&lt; <span class="stringliteral">&quot;distance to collection is greater than distance to minimum of individual objects after &quot;</span> &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot; rounds&quot;</span>;</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;  }</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;}</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160; </div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span class="comment">// FCL &lt; 0.6 completely fails the DistancePoints test, so we have two test</span></div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;<span class="comment">// suites, one with and one without the test.</span></div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> CollisionAllocatorType&gt;</div>
+<div class="line"><a name="l00310"></a><span class="lineno"><a class="line" href="classDistanceFullPandaTest.html">  310</a></span>&#160;<span class="keyword">class </span><a class="code" href="classDistanceFullPandaTest.html">DistanceFullPandaTest</a> : <span class="keyword">public</span> <a class="code" href="classDistanceCheckPandaTest.html">DistanceCheckPandaTest</a>&lt;CollisionAllocatorType&gt;</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;{</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;};</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160; </div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;<a class="code" href="test__collision__common__panda_8h.html#a462c67cf04888148c7bbab5c8c3f1c0e">TYPED_TEST_CASE_P</a>(<a class="code" href="classDistanceFullPandaTest.html">DistanceFullPandaTest</a>);</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160; </div>
+<div class="line"><a name="l00317"></a><span class="lineno"><a class="line" href="test__collision__common__panda_8h.html#a4eed1ab35eb002f35bc943c7dcc299d5">  317</a></span>&#160;<a class="code" href="test__collision__common__panda_8h.html#a8c3500382e7942e4b6df74cd2e02e24e">TYPED_TEST_P</a>(<a class="code" href="classDistanceFullPandaTest.html">DistanceFullPandaTest</a>, DistancePoints)</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;{</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;  <span class="comment">// Adding the box right in front of the robot hand</span></div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;  shapes::Box* shape = <span class="keyword">new</span> shapes::Box(0.1, 0.1, 0.1);</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;  shapes::ShapeConstPtr shape_ptr(shape);</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160; </div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;  Eigen::Isometry3d pos{ Eigen::Isometry3d::Identity() };</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;  pos.translation().x() = 0.43;</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;  pos.translation().y() = 0;</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;  pos.translation().z() = 0.55;</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;  this-&gt;cenv_-&gt;getWorld()-&gt;addToObject(<span class="stringliteral">&quot;box&quot;</span>, shape_ptr, pos);</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160; </div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;  <a class="code" href="structcollision__detection_1_1DistanceRequest.html">collision_detection::DistanceRequest</a> req;</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;  req.<a class="code" href="structcollision__detection_1_1DistanceRequest.html#ad59ba3aa3de18225797b9119c1848600">acm</a> = &amp;*this-&gt;acm_;</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;  req.<a class="code" href="structcollision__detection_1_1DistanceRequest.html#ab4c792a7bf743908123c4abd293e5321">type</a> = <a class="code" href="namespacecollision__detection_1_1DistanceRequestTypes.html#ac754f7bfd3f776cb02a190e9a0fd893eaf042b2d1203de239d52771e4cb11b417">collision_detection::DistanceRequestTypes::SINGLE</a>;</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;  req.<a class="code" href="structcollision__detection_1_1DistanceRequest.html#af1142aa4548e9577db3fc9dab1917b52">enable_nearest_points</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;  req.<a class="code" href="structcollision__detection_1_1DistanceRequest.html#a95e2754133ea61ff5a577c89908b8a23">max_contacts_per_body</a> = 1;</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160; </div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;  <a class="code" href="structcollision__detection_1_1DistanceResult.html">collision_detection::DistanceResult</a> res;</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;  this-&gt;cenv_-&gt;distanceRobot(req, res, *this-&gt;robot_state_);</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160; </div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;  <span class="comment">// Checks a particular point is inside the box</span></div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;  <span class="keyword">auto</span> checkInBox = [&amp;](<span class="keyword">const</span> <a class="code" href="namespacefcl.html#a0288e6b07bc0c851a9503dbaea7a0f19">Eigen::Vector3d</a>&amp; <a class="code" href="namespacepick.html#a40e85b309b8813e4f17a4c3242b98c34">p</a>) {</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    <a class="code" href="namespacefcl.html#a0288e6b07bc0c851a9503dbaea7a0f19">Eigen::Vector3d</a> inBox = pos.inverse() * <a class="code" href="namespacepick.html#a40e85b309b8813e4f17a4c3242b98c34">p</a>;</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160; </div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    constexpr <span class="keywordtype">double</span> <a class="code" href="namespacetrajectory__processing.html#aded0ec500910a07ae0d36d4fdfb9da44">EPS</a> = 1e-5;</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    EXPECT_LE(std::abs(inBox.x()), shape-&gt;size[0] + <a class="code" href="namespacetrajectory__processing.html#aded0ec500910a07ae0d36d4fdfb9da44">EPS</a>);</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    EXPECT_LE(std::abs(inBox.y()), shape-&gt;size[1] + <a class="code" href="namespacetrajectory__processing.html#aded0ec500910a07ae0d36d4fdfb9da44">EPS</a>);</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    EXPECT_LE(std::abs(inBox.z()), shape-&gt;size[2] + <a class="code" href="namespacetrajectory__processing.html#aded0ec500910a07ae0d36d4fdfb9da44">EPS</a>);</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;  };</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160; </div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;  <span class="comment">// Check that all points reported on &quot;box&quot; are actually on the box and not</span></div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;  <span class="comment">// on the robot</span></div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; <a class="code" href="namespacepr2__arm__kinematics.html#a24f684af4bcce4a6d0c945aa27d04550">distance</a> : res.<a class="code" href="structcollision__detection_1_1DistanceResult.html#a5f4a33fc2e1e6b9f33ef854c6d802355">distances</a>)</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;  {</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; pair : <a class="code" href="namespacepr2__arm__kinematics.html#a24f684af4bcce4a6d0c945aa27d04550">distance</a>.second)</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    {</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;      <span class="keywordflow">if</span> (pair.link_names[0] == <span class="stringliteral">&quot;box&quot;</span>)</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        checkInBox(pair.nearest_points[0]);</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pair.link_names[1] == <span class="stringliteral">&quot;box&quot;</span>)</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;        checkInBox(pair.nearest_points[1]);</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;      <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;        ADD_FAILURE() &lt;&lt; <span class="stringliteral">&quot;Unrecognized link names&quot;</span>;</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    }</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;  }</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;}</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160; </div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;<a class="code" href="test__collision__common__panda_8h.html#a6ef09b5b6a9e537f7249139c86923945">REGISTER_TYPED_TEST_CASE_P</a>(<a class="code" href="classCollisionDetectorPandaTest.html">CollisionDetectorPandaTest</a>, InitOK, DefaultNotInCollision, LinksInCollision,</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;                           RobotWorldCollision_1, RobotWorldCollision_2, PaddingTest, DistanceSelf, DistanceWorld);</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160; </div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;<a class="code" href="test__collision__common__panda_8h.html#a6ef09b5b6a9e537f7249139c86923945">REGISTER_TYPED_TEST_CASE_P</a>(<a class="code" href="classDistanceCheckPandaTest.html">DistanceCheckPandaTest</a>, DistanceSingle);</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160; </div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;<a class="code" href="test__collision__common__panda_8h.html#a6ef09b5b6a9e537f7249139c86923945">REGISTER_TYPED_TEST_CASE_P</a>(<a class="code" href="classDistanceFullPandaTest.html">DistanceFullPandaTest</a>, DistancePoints);</div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassCollisionDetectorPandaTest_html_a77c51fd542c1949b9f5b9a6b302d7f12"><div class="ttname"><a href="classCollisionDetectorPandaTest.html#a77c51fd542c1949b9f5b9a6b302d7f12">CollisionDetectorPandaTest::robot_state_</a></div><div class="ttdeci">moveit::core::RobotStatePtr robot_state_</div><div class="ttdef"><b>Definition:</b> <a href="test__collision__common__panda_8h_source.html#l00109">test_collision_common_panda.h:109</a></div></div>
-<div class="ttc" id="aclassDistanceCheckPandaTest_html"><div class="ttname"><a href="classDistanceCheckPandaTest.html">DistanceCheckPandaTest</a></div><div class="ttdef"><b>Definition:</b> <a href="test__collision__common__panda_8h_source.html#l00263">test_collision_common_panda.h:263</a></div></div>
+<div class="ttc" id="aclassDistanceCheckPandaTest_html"><div class="ttname"><a href="classDistanceCheckPandaTest.html">DistanceCheckPandaTest</a></div><div class="ttdef"><b>Definition:</b> <a href="test__collision__common__panda_8h_source.html#l00262">test_collision_common_panda.h:262</a></div></div>
 <div class="ttc" id="aclassmoveit_1_1core_1_1RobotState_html_afd01134540eb6ccc57e75d1f8c4f48d5"><div class="ttname"><a href="classmoveit_1_1core_1_1RobotState.html#afd01134540eb6ccc57e75d1f8c4f48d5">moveit::core::RobotState::setJointPositions</a></div><div class="ttdeci">void setJointPositions(const std::string &amp;joint_name, const double *position)</div><div class="ttdef"><b>Definition:</b> <a href="robot__state_8h_source.html#l00581">robot_state.h:581</a></div></div>
 <div class="ttc" id="atest__collision__common__panda_8h_html_a894803518e93708a180036f3541da9e1"><div class="ttname"><a href="test__collision__common__panda_8h.html#a894803518e93708a180036f3541da9e1">setToHome</a></div><div class="ttdeci">void setToHome(moveit::core::RobotState &amp;panda_state)</div><div class="ttdoc">Brings the panda robot in user defined home position.</div><div class="ttdef"><b>Definition:</b> <a href="test__collision__common__panda_8h_source.html#l00054">test_collision_common_panda.h:54</a></div></div>
 <div class="ttc" id="atest__collision__common__panda_8h_html_a6ef09b5b6a9e537f7249139c86923945"><div class="ttname"><a href="test__collision__common__panda_8h.html#a6ef09b5b6a9e537f7249139c86923945">REGISTER_TYPED_TEST_CASE_P</a></div><div class="ttdeci">REGISTER_TYPED_TEST_CASE_P(CollisionDetectorPandaTest, InitOK, DefaultNotInCollision, LinksInCollision, RobotWorldCollision_1, RobotWorldCollision_2, PaddingTest, DistanceSelf, DistanceWorld)</div></div>
@@ -448,15 +447,17 @@ $(function() {
 <div class="ttc" id="arobot__model_8h_html"><div class="ttname"><a href="robot__model_8h.html">robot_model.h</a></div></div>
 <div class="ttc" id="astructcollision__detection_1_1CollisionRequest_html_af004da8744b925118ebd7cf5ef3c42e8"><div class="ttname"><a href="structcollision__detection_1_1CollisionRequest.html#af004da8744b925118ebd7cf5ef3c42e8">collision_detection::CollisionRequest::distance</a></div><div class="ttdeci">bool distance</div><div class="ttdoc">If true, compute proximity distance.</div><div class="ttdef"><b>Definition:</b> <a href="include_2moveit_2collision__detection_2collision__common_8h_source.html#l00236">collision_common.h:236</a></div></div>
 <div class="ttc" id="ainclude_2moveit_2collision__detection_2collision__common_8h_html"><div class="ttname"><a href="include_2moveit_2collision__detection_2collision__common_8h.html">collision_common.h</a></div></div>
-<div class="ttc" id="aclassmoveit_1_1core_1_1RobotState_html_aaec5557d55b862d9dd832b3d4c221836"><div class="ttname"><a href="classmoveit_1_1core_1_1RobotState.html#aaec5557d55b862d9dd832b3d4c221836">moveit::core::RobotState::update</a></div><div class="ttdeci">void update(bool force=false)</div><div class="ttdoc">Update all transforms.</div><div class="ttdef"><b>Definition:</b> <a href="robot__state_8cpp_source.html#l00722">robot_state.cpp:722</a></div></div>
+<div class="ttc" id="aclasscollision__detection_1_1AllowedCollisionMatrix_html"><div class="ttname"><a href="classcollision__detection_1_1AllowedCollisionMatrix.html">collision_detection::AllowedCollisionMatrix</a></div><div class="ttdoc">Definition of a structure for the allowed collision matrix. All elements in the collision world are r...</div><div class="ttdef"><b>Definition:</b> <a href="collision__matrix_8h_source.html#l00111">collision_matrix.h:111</a></div></div>
+<div class="ttc" id="aclassmoveit_1_1core_1_1RobotState_html_aaec5557d55b862d9dd832b3d4c221836"><div class="ttname"><a href="classmoveit_1_1core_1_1RobotState.html#aaec5557d55b862d9dd832b3d4c221836">moveit::core::RobotState::update</a></div><div class="ttdeci">void update(bool force=false)</div><div class="ttdoc">Update all transforms.</div><div class="ttdef"><b>Definition:</b> <a href="robot__state_8cpp_source.html#l00708">robot_state.cpp:708</a></div></div>
 <div class="ttc" id="astructcollision__detection_1_1CollisionResult_html"><div class="ttname"><a href="structcollision__detection_1_1CollisionResult.html">collision_detection::CollisionResult</a></div><div class="ttdoc">Representation of a collision checking result.</div><div class="ttdef"><b>Definition:</b> <a href="include_2moveit_2collision__detection_2collision__common_8h_source.html#l00177">collision_common.h:177</a></div></div>
 <div class="ttc" id="aclassCollisionDetectorPandaTest_html_a69220529b5e7cb4bf475f403fabe3093"><div class="ttname"><a href="classCollisionDetectorPandaTest.html#a69220529b5e7cb4bf475f403fabe3093">CollisionDetectorPandaTest::value_</a></div><div class="ttdeci">std::shared_ptr&lt; CollisionAllocatorType &gt; value_</div><div class="ttdef"><b>Definition:</b> <a href="test__collision__common__panda_8h_source.html#l00072">test_collision_common_panda.h:72</a></div></div>
 <div class="ttc" id="acollision__env_8h_html"><div class="ttname"><a href="collision__env_8h.html">collision_env.h</a></div></div>
 <div class="ttc" id="astructcollision__detection_1_1CollisionRequest_html_a8dac54b1f11971b246df751eff3242d8"><div class="ttname"><a href="structcollision__detection_1_1CollisionRequest.html#a8dac54b1f11971b246df751eff3242d8">collision_detection::CollisionRequest::max_contacts</a></div><div class="ttdeci">std::size_t max_contacts</div><div class="ttdoc">Overall maximum number of contacts to compute.</div><div class="ttdef"><b>Definition:</b> <a href="include_2moveit_2collision__detection_2collision__common_8h_source.html#l00245">collision_common.h:245</a></div></div>
 <div class="ttc" id="astructcollision__detection_1_1CollisionRequest_html_a4c5f87dc1f2be6cc0c3463a319b6ca36"><div class="ttname"><a href="structcollision__detection_1_1CollisionRequest.html#a4c5f87dc1f2be6cc0c3463a319b6ca36">collision_detection::CollisionRequest::verbose</a></div><div class="ttdeci">bool verbose</div><div class="ttdoc">Flag indicating whether information about detected collisions should be reported.</div><div class="ttdef"><b>Definition:</b> <a href="include_2moveit_2collision__detection_2collision__common_8h_source.html#l00258">collision_common.h:258</a></div></div>
-<div class="ttc" id="aclassmoveit_1_1core_1_1RobotState_html_aba31c6f758e3dabd32c1acbd069e189e"><div class="ttname"><a href="classmoveit_1_1core_1_1RobotState.html#aba31c6f758e3dabd32c1acbd069e189e">moveit::core::RobotState::setToDefaultValues</a></div><div class="ttdeci">void setToDefaultValues()</div><div class="ttdoc">Set all joints to their default positions. The default position is 0, or if that is not within bounds...</div><div class="ttdef"><b>Definition:</b> <a href="robot__state_8cpp_source.html#l00427">robot_state.cpp:427</a></div></div>
+<div class="ttc" id="aclassmoveit_1_1core_1_1RobotState_html_aba31c6f758e3dabd32c1acbd069e189e"><div class="ttname"><a href="classmoveit_1_1core_1_1RobotState.html#aba31c6f758e3dabd32c1acbd069e189e">moveit::core::RobotState::setToDefaultValues</a></div><div class="ttdeci">void setToDefaultValues()</div><div class="ttdoc">Set all joints to their default positions. The default position is 0, or if that is not within bounds...</div><div class="ttdef"><b>Definition:</b> <a href="robot__state_8cpp_source.html#l00413">robot_state.cpp:413</a></div></div>
 <div class="ttc" id="astructcollision__detection_1_1DistanceRequest_html_ad59ba3aa3de18225797b9119c1848600"><div class="ttname"><a href="structcollision__detection_1_1DistanceRequest.html#ad59ba3aa3de18225797b9119c1848600">collision_detection::DistanceRequest::acm</a></div><div class="ttdeci">const AllowedCollisionMatrix * acm</div><div class="ttdoc">The allowed collision matrix used to filter checks.</div><div class="ttdef"><b>Definition:</b> <a href="include_2moveit_2collision__detection_2collision__common_8h_source.html#l00319">collision_common.h:319</a></div></div>
 <div class="ttc" id="atest__collision__common__panda_8h_html_a8c3500382e7942e4b6df74cd2e02e24e"><div class="ttname"><a href="test__collision__common__panda_8h.html#a8c3500382e7942e4b6df74cd2e02e24e">TYPED_TEST_P</a></div><div class="ttdeci">TYPED_TEST_P(CollisionDetectorPandaTest, InitOK)</div><div class="ttdoc">Correct setup testing.</div><div class="ttdef"><b>Definition:</b> <a href="test__collision__common__panda_8h_source.html#l00115">test_collision_common_panda.h:115</a></div></div>
+<div class="ttc" id="anamespacetrajectory__processing_html_aded0ec500910a07ae0d36d4fdfb9da44"><div class="ttname"><a href="namespacetrajectory__processing.html#aded0ec500910a07ae0d36d4fdfb9da44">trajectory_processing::EPS</a></div><div class="ttdeci">constexpr double EPS</div><div class="ttdef"><b>Definition:</b> <a href="time__optimal__trajectory__generation_8cpp_source.html#l00052">time_optimal_trajectory_generation.cpp:52</a></div></div>
 <div class="ttc" id="arobot__model__test__utils_8h_html"><div class="ttname"><a href="robot__model__test__utils_8h.html">robot_model_test_utils.h</a></div></div>
 <div class="ttc" id="astructcollision__detection_1_1DistanceResult_html_a5f4a33fc2e1e6b9f33ef854c6d802355"><div class="ttname"><a href="structcollision__detection_1_1DistanceResult.html#a5f4a33fc2e1e6b9f33ef854c6d802355">collision_detection::DistanceResult::distances</a></div><div class="ttdeci">DistanceMap distances</div><div class="ttdoc">A map of distance data for each link in the req.active_components_only.</div><div class="ttdef"><b>Definition:</b> <a href="include_2moveit_2collision__detection_2collision__common_8h_source.html#l00406">collision_common.h:406</a></div></div>
 <div class="ttc" id="anamespacecollision__detection_1_1DistanceRequestTypes_html_ac754f7bfd3f776cb02a190e9a0fd893eaf042b2d1203de239d52771e4cb11b417"><div class="ttname"><a href="namespacecollision__detection_1_1DistanceRequestTypes.html#ac754f7bfd3f776cb02a190e9a0fd893eaf042b2d1203de239d52771e4cb11b417">collision_detection::DistanceRequestTypes::SINGLE</a></div><div class="ttdeci">@ SINGLE</div><div class="ttdoc">Find the global minimum for each pair.</div><div class="ttdef"><b>Definition:</b> <a href="include_2moveit_2collision__detection_2collision__common_8h_source.html#l00266">collision_common.h:266</a></div></div>
@@ -466,7 +467,7 @@ $(function() {
 <div class="ttc" id="anamespacepick_html_a40e85b309b8813e4f17a4c3242b98c34"><div class="ttname"><a href="namespacepick.html#a40e85b309b8813e4f17a4c3242b98c34">pick.p</a></div><div class="ttdeci">p</div><div class="ttdef"><b>Definition:</b> <a href="pick_8py_source.html#l00062">pick.py:62</a></div></div>
 <div class="ttc" id="aclassCollisionDetectorPandaTest_html_a4af648aabc7d3b7a6225a0ac79b43424"><div class="ttname"><a href="classCollisionDetectorPandaTest.html#a4af648aabc7d3b7a6225a0ac79b43424">CollisionDetectorPandaTest::robot_model_</a></div><div class="ttdeci">moveit::core::RobotModelPtr robot_model_</div><div class="ttdef"><b>Definition:</b> <a href="test__collision__common__panda_8h_source.html#l00103">test_collision_common_panda.h:103</a></div></div>
 <div class="ttc" id="aclassCollisionDetectorPandaTest_html_aa917d5349a32e25b287405e5c8d0d516"><div class="ttname"><a href="classCollisionDetectorPandaTest.html#aa917d5349a32e25b287405e5c8d0d516">CollisionDetectorPandaTest::acm_</a></div><div class="ttdeci">collision_detection::AllowedCollisionMatrixPtr acm_</div><div class="ttdef"><b>Definition:</b> <a href="test__collision__common__panda_8h_source.html#l00107">test_collision_common_panda.h:107</a></div></div>
-<div class="ttc" id="aclassDistanceFullPandaTest_html"><div class="ttname"><a href="classDistanceFullPandaTest.html">DistanceFullPandaTest</a></div><div class="ttdef"><b>Definition:</b> <a href="test__collision__common__panda_8h_source.html#l00311">test_collision_common_panda.h:311</a></div></div>
+<div class="ttc" id="aclassDistanceFullPandaTest_html"><div class="ttname"><a href="classDistanceFullPandaTest.html">DistanceFullPandaTest</a></div><div class="ttdef"><b>Definition:</b> <a href="test__collision__common__panda_8h_source.html#l00310">test_collision_common_panda.h:310</a></div></div>
 <div class="ttc" id="astructcollision__detection_1_1CollisionResult_html_ad68db09bcc111730f7c4ab1bdff31e67"><div class="ttname"><a href="structcollision__detection_1_1CollisionResult.html#ad68db09bcc111730f7c4ab1bdff31e67">collision_detection::CollisionResult::collision</a></div><div class="ttdeci">bool collision</div><div class="ttdoc">True if collision was found, false otherwise.</div><div class="ttdef"><b>Definition:</b> <a href="include_2moveit_2collision__detection_2collision__common_8h_source.html#l00200">collision_common.h:200</a></div></div>
 <div class="ttc" id="astructcollision__detection_1_1DistanceRequest_html_af1142aa4548e9577db3fc9dab1917b52"><div class="ttname"><a href="structcollision__detection_1_1DistanceRequest.html#af1142aa4548e9577db3fc9dab1917b52">collision_detection::DistanceRequest::enable_nearest_points</a></div><div class="ttdeci">bool enable_nearest_points</div><div class="ttdoc">Indicate if nearest point information should be calculated.</div><div class="ttdef"><b>Definition:</b> <a href="include_2moveit_2collision__detection_2collision__common_8h_source.html#l00299">collision_common.h:299</a></div></div>
 <div class="ttc" id="astructcollision__detection_1_1CollisionResult_html_ac2f7f5603102be94cda1fe5d5fd1b531"><div class="ttname"><a href="structcollision__detection_1_1CollisionResult.html#ac2f7f5603102be94cda1fe5d5fd1b531">collision_detection::CollisionResult::clear</a></div><div class="ttdeci">EIGEN_MAKE_ALIGNED_OPERATOR_NEW void clear()</div><div class="ttdoc">Clear a previously stored result.</div><div class="ttdef"><b>Definition:</b> <a href="include_2moveit_2collision__detection_2collision__common_8h_source.html#l00187">collision_common.h:187</a></div></div>

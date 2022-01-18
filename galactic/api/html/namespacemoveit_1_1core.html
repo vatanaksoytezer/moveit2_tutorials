@@ -151,9 +151,9 @@ name" (e.g., a joint named 'base' with local variables 'x' and 'y' will store it
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a4bc26a7f9b3ac37afb7022d766fb307a"><td class="memItemLeft" align="right" valign="top">typedef std::map&lt; std::string, size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemoveit_1_1core.html#a4bc26a7f9b3ac37afb7022d766fb307a">VariableIndexMap</a></td></tr>
-<tr class="memdesc:a4bc26a7f9b3ac37afb7022d766fb307a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data type for holding mappings from variable names to their position in a state vector.  <a href="namespacemoveit_1_1core.html#a4bc26a7f9b3ac37afb7022d766fb307a">More...</a><br /></td></tr>
-<tr class="separator:a4bc26a7f9b3ac37afb7022d766fb307a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae101bd641ed50af6f5936c5a337ad3fd"><td class="memItemLeft" align="right" valign="top">typedef std::map&lt; std::string, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemoveit_1_1core.html#ae101bd641ed50af6f5936c5a337ad3fd">VariableIndexMap</a></td></tr>
+<tr class="memdesc:ae101bd641ed50af6f5936c5a337ad3fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data type for holding mappings from variable names to their position in a state vector.  <a href="namespacemoveit_1_1core.html#ae101bd641ed50af6f5936c5a337ad3fd">More...</a><br /></td></tr>
+<tr class="separator:ae101bd641ed50af6f5936c5a337ad3fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22010fd4eae073f3d7f52818ee1d193c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemoveit_1_1core.html#a22010fd4eae073f3d7f52818ee1d193c">VariableBoundsMap</a> = std::map&lt; std::string, <a class="el" href="structmoveit_1_1core_1_1VariableBounds.html">VariableBounds</a> &gt;</td></tr>
 <tr class="memdesc:a22010fd4eae073f3d7f52818ee1d193c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data type for holding mappings from variable names to their bounds.  <a href="namespacemoveit_1_1core.html#a22010fd4eae073f3d7f52818ee1d193c">More...</a><br /></td></tr>
 <tr class="separator:a22010fd4eae073f3d7f52818ee1d193c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -411,7 +411,7 @@ Functions</h2></td></tr>
 
 <p>Map of names to instances for <a class="el" href="classmoveit_1_1core_1_1JointModel.html" title="A joint from the robot. Models the transform that this joint applies in the kinematic chain....">JointModel</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00165">165</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00158">158</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 
 </div>
 </div>
@@ -429,7 +429,7 @@ Functions</h2></td></tr>
 
 <p>Map of names to const instances for <a class="el" href="classmoveit_1_1core_1_1JointModel.html" title="A joint from the robot. Models the transform that this joint applies in the kinematic chain....">JointModel</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00168">168</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00161">161</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 
 </div>
 </div>
@@ -537,25 +537,25 @@ Functions</h2></td></tr>
 
 <p>Data type for holding mappings from variable names to their bounds. </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00162">162</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00155">155</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 
 </div>
 </div>
-<a id="a4bc26a7f9b3ac37afb7022d766fb307a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4bc26a7f9b3ac37afb7022d766fb307a">&#9670;&nbsp;</a></span>VariableIndexMap</h2>
+<a id="ae101bd641ed50af6f5936c5a337ad3fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae101bd641ed50af6f5936c5a337ad3fd">&#9670;&nbsp;</a></span>VariableIndexMap</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef std::map&lt;std::string, size_t&gt; <a class="el" href="namespacemoveit_1_1core.html#a4bc26a7f9b3ac37afb7022d766fb307a">moveit::core::VariableIndexMap</a></td>
+          <td class="memname">typedef std::map&lt;std::string, int&gt; <a class="el" href="namespacemoveit_1_1core.html#ae101bd641ed50af6f5936c5a337ad3fd">moveit::core::VariableIndexMap</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Data type for holding mappings from variable names to their position in a state vector. </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00156">156</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00149">149</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 
 </div>
 </div>
@@ -676,7 +676,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="planar__joint__model_8cpp_source.html#l00213">213</a> of file <a class="el" href="planar__joint__model_8cpp_source.html">planar_joint_model.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planar__joint__model_8cpp_source.html#l00210">210</a> of file <a class="el" href="planar__joint__model_8cpp_source.html">planar_joint_model.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1163,7 +1163,7 @@ Here is the caller graph for this function:</div>
 
 <p>Operator overload for printing variable bounds to a stream. </p>
 
-<p class="definition">Definition at line <a class="el" href="robot__state_8cpp_source.html#l02326">2326</a> of file <a class="el" href="robot__state_8cpp_source.html">robot_state.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__state_8cpp_source.html#l02327">2327</a> of file <a class="el" href="robot__state_8cpp_source.html">robot_state.cpp</a>.</p>
 
 </div>
 </div>
@@ -1195,7 +1195,7 @@ Here is the caller graph for this function:</div>
 
 <p>Operator overload for printing variable bounds to a stream. </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8cpp_source.html#l00295">295</a> of file <a class="el" href="joint__model_8cpp_source.html">joint_model.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8cpp_source.html#l00287">287</a> of file <a class="el" href="joint__model_8cpp_source.html">joint_model.cpp</a>.</p>
 
 </div>
 </div>
@@ -1403,33 +1403,31 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespacemoveit_1_1core_a0aafbf7242f36d6efd7bd73ecee400e8_icgraph.png" border="0" usemap="#namespacemoveit_1_1core_a0aafbf7242f36d6efd7bd73ecee400e8_icgraph" alt=""/></div>
 <map name="namespacemoveit_1_1core_a0aafbf7242f36d6efd7bd73ecee400e8_icgraph" id="namespacemoveit_1_1core_a0aafbf7242f36d6efd7bd73ecee400e8_icgraph">
-<area shape="rect" title="Convert a MoveIt robot state to a robot state message." alt="" coords="591,559,771,601"/>
-<area shape="rect" href="generate__state__database_8cpp.html#a82b7d814b7d1e65af86a269fc31283c3" title=" " alt="" coords="364,5,463,32"/>
-<area shape="rect" href="classmove__group_1_1MoveGroupCapability.html#a5bc0d92b709dfd7580bd62f469b1fcab" title=" " alt="" coords="287,57,539,98"/>
-<area shape="rect" href="namespacetestutils.html#a3604c25908da745d6e201a35db05a990" title="create a dummy motion plan request with zero start state No goal constraint is given." alt="" coords="299,304,528,331"/>
-<area shape="rect" href="namespacetestutils.html#ae6f9c0bb1d0c74b4321a6a419f892a57" title=" " alt="" coords="313,173,514,200"/>
-<area shape="rect" href="pyrobot__state_8cpp.html#aa8c1252e3b20b1ad33704211363eb88c" title=" " alt="" coords="320,123,507,149"/>
-<area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl.html#ae26f3a6b60ca8da84829097eafba50d5" title=" " alt="" coords="290,224,537,280"/>
-<area shape="rect" href="classTrajectoryBlenderTransitionWindowTest.html#ac7af913fa9f0f2f253b49be325ae59a5" title="Generate lin trajectories for blend sequences." alt="" coords="306,355,521,397"/>
-<area shape="rect" href="namespacetestutils.html#a47e7d5ac95ce106e03eeca07873a8eef" title=" " alt="" coords="316,421,511,462"/>
-<area shape="rect" href="namespacetestutils.html#a4d7a40fa95d80d2748271e44a7b28588" title="generate two LIN trajectories from test data set" alt="" coords="315,486,512,527"/>
-<area shape="rect" href="structplanning__interface_1_1MotionPlanDetailedResponse.html#a5db993696b1fb595a7e87f8d871d86e4" title=" " alt="" coords="303,552,524,608"/>
-<area shape="rect" href="structplanning__interface_1_1MotionPlanResponse.html#acec831a8d2cfd2ef0aa0b6ed94d8d59a" title=" " alt="" coords="330,632,497,688"/>
-<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#a1c4051599aa9702d96097634db499621" title="Construct a message (scene) with all the necessary data so that the scene can be later reconstructed ..." alt="" coords="307,713,519,754"/>
-<area shape="rect" href="classPlanningContextTest.html#a007e70029a3f986a0596ff0a7feac14a" title="Generate a valid fully defined request." alt="" coords="336,778,491,819"/>
-<area shape="rect" href="classmove__group_1_1MoveGroupKinematicsService.html#a5f7431ad977ffa26914345d0769d6ce8" title=" " alt="" coords="284,843,543,885"/>
-<area shape="rect" href="import__from__text_8cpp.html#aaf196fa51e069cfb8c1d3109d6a5c383" title=" " alt="" coords="369,909,458,936"/>
-<area shape="rect" href="classpick__place_1_1PickPlace.html#a3930343d1b25a8a5bd68ee524f521590" title=" " alt="" coords="333,961,494,1002"/>
-<area shape="rect" href="classpilz__industrial__motion__planner_1_1PlanningContextBase.html#aeca472a81bd00dc9317506af6af2029f" title=" " alt="" coords="301,1026,526,1097"/>
-<area shape="rect" href="classTrajectoryGeneratorCommonTest.html#a80e3885bdb7b0ce80bc85c3a75e0e28b" title=" " alt="" coords="308,1121,519,1162"/>
-<area shape="rect" href="test__kinematic__complex_8cpp.html#a21a56d609cf50d6d770a29e8edc10a43" title=" " alt="" coords="379,1187,448,1213"/>
-<area shape="rect" href="unittest__trajectory__generator__ptp_8cpp.html#afc270e6306260d6dfbe4f2eba872e929" title="test the ptp trajectory generator of Cartesian space goal" alt="" coords="86,416,155,443"/>
-<area shape="rect" href="pymoveit__core_8cpp.html#aae5c18014d007aef7676d42ced1ba2b0" title=" " alt="" coords="45,123,196,149"/>
-<area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a4530a0e30683a0d1ae47de1424a5a992" title="Specify that no path constraints are to be used. This removes any path constraints set in previous ca..." alt="" coords="5,224,236,280"/>
-<area shape="rect" href="classTrajectoryGeneratorCIRCTest.html#aa870399f4f43b67f1a4080a1e79417f9" title=" " alt="" coords="17,646,225,687"/>
-<area shape="rect" href="classTrajectoryGeneratorLINTest.html#a3341aac2919075600b39a93fa18247b1" title=" " alt="" coords="21,581,220,622"/>
-<area shape="rect" href="test__planning__scene_8cpp.html#a8657479fb681ab94486683c9e03019fa" title=" " alt="" coords="93,720,148,747"/>
-<area shape="rect" href="import__from__text_8cpp.html#a4fc562e476806fc50eb0888fb28f9b61" title=" " alt="" coords="67,909,175,936"/>
+<area shape="rect" title="Convert a MoveIt robot state to a robot state message." alt="" coords="568,519,748,561"/>
+<area shape="rect" href="generate__state__database_8cpp.html#a82b7d814b7d1e65af86a269fc31283c3" title=" " alt="" coords="341,5,440,32"/>
+<area shape="rect" href="classmove__group_1_1MoveGroupCapability.html#a5bc0d92b709dfd7580bd62f469b1fcab" title=" " alt="" coords="265,57,517,98"/>
+<area shape="rect" href="namespacetestutils.html#a3604c25908da745d6e201a35db05a990" title="create a dummy motion plan request with zero start state No goal constraint is given." alt="" coords="276,224,505,251"/>
+<area shape="rect" href="namespacetestutils.html#ae6f9c0bb1d0c74b4321a6a419f892a57" title=" " alt="" coords="290,173,491,200"/>
+<area shape="rect" href="pyrobot__state_8cpp.html#aa8c1252e3b20b1ad33704211363eb88c" title=" " alt="" coords="297,123,484,149"/>
+<area shape="rect" href="classTrajectoryBlenderTransitionWindowTest.html#ac7af913fa9f0f2f253b49be325ae59a5" title="Generate lin trajectories for blend sequences." alt="" coords="283,275,498,317"/>
+<area shape="rect" href="namespacetestutils.html#a47e7d5ac95ce106e03eeca07873a8eef" title=" " alt="" coords="293,341,488,382"/>
+<area shape="rect" href="namespacetestutils.html#a4d7a40fa95d80d2748271e44a7b28588" title="generate two LIN trajectories from test data set" alt="" coords="292,406,489,447"/>
+<area shape="rect" href="structplanning__interface_1_1MotionPlanDetailedResponse.html#a5db993696b1fb595a7e87f8d871d86e4" title=" " alt="" coords="280,472,501,528"/>
+<area shape="rect" href="structplanning__interface_1_1MotionPlanResponse.html#acec831a8d2cfd2ef0aa0b6ed94d8d59a" title=" " alt="" coords="307,552,474,608"/>
+<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#a1c4051599aa9702d96097634db499621" title="Construct a message (scene) with all the necessary data so that the scene can be later reconstructed ..." alt="" coords="285,633,497,674"/>
+<area shape="rect" href="classPlanningContextTest.html#a007e70029a3f986a0596ff0a7feac14a" title="Generate a valid fully defined request." alt="" coords="313,698,468,739"/>
+<area shape="rect" href="classmove__group_1_1MoveGroupKinematicsService.html#a5f7431ad977ffa26914345d0769d6ce8" title=" " alt="" coords="261,763,520,805"/>
+<area shape="rect" href="import__from__text_8cpp.html#aaf196fa51e069cfb8c1d3109d6a5c383" title=" " alt="" coords="346,829,435,856"/>
+<area shape="rect" href="classpick__place_1_1PickPlace.html#a3930343d1b25a8a5bd68ee524f521590" title=" " alt="" coords="310,881,471,922"/>
+<area shape="rect" href="classpilz__industrial__motion__planner_1_1PlanningContextBase.html#aeca472a81bd00dc9317506af6af2029f" title=" " alt="" coords="278,946,503,1017"/>
+<area shape="rect" href="classTrajectoryGeneratorCommonTest.html#a80e3885bdb7b0ce80bc85c3a75e0e28b" title=" " alt="" coords="285,1041,496,1082"/>
+<area shape="rect" href="test__kinematic__complex_8cpp.html#a21a56d609cf50d6d770a29e8edc10a43" title=" " alt="" coords="356,1107,425,1133"/>
+<area shape="rect" href="unittest__trajectory__generator__ptp_8cpp.html#afc270e6306260d6dfbe4f2eba872e929" title="test the ptp trajectory generator of Cartesian space goal" alt="" coords="75,336,144,363"/>
+<area shape="rect" href="pymoveit__core_8cpp.html#aae5c18014d007aef7676d42ced1ba2b0" title=" " alt="" coords="34,123,185,149"/>
+<area shape="rect" href="classTrajectoryGeneratorCIRCTest.html#aa870399f4f43b67f1a4080a1e79417f9" title=" " alt="" coords="5,501,213,542"/>
+<area shape="rect" href="classTrajectoryGeneratorLINTest.html#a3341aac2919075600b39a93fa18247b1" title=" " alt="" coords="10,566,209,607"/>
+<area shape="rect" href="test__planning__scene_8cpp.html#a8657479fb681ab94486683c9e03019fa" title=" " alt="" coords="82,640,137,667"/>
+<area shape="rect" href="import__from__text_8cpp.html#a4fc562e476806fc50eb0888fb28f9b61" title=" " alt="" coords="55,829,163,856"/>
 </map>
 </div>
 

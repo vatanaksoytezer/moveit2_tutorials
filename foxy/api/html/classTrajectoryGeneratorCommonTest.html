@@ -75,9 +75,10 @@ Inheritance diagram for TrajectoryGeneratorCommonTest&lt; T &gt;:</div>
 <div class="dyncontent">
 <div class="center"><img src="classTrajectoryGeneratorCommonTest__inherit__graph.png" border="0" usemap="#TrajectoryGeneratorCommonTest_3_01T_01_4_inherit__map" alt="Inheritance graph"/></div>
 <map name="TrajectoryGeneratorCommonTest_3_01T_01_4_inherit__map" id="TrajectoryGeneratorCommonTest_3_01T_01_4_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,80,216,121"/>
-<area shape="rect" href="classTrajectoryGeneratorCommonTestNoGripper.html" title=" " alt="" coords="5,169,216,211"/>
-<area shape="rect" title=" " alt="" coords="87,5,135,32"/>
+<area shape="rect" title=" " alt="" coords="101,39,312,80"/>
+<area shape="rect" href="classTrajectoryGeneratorCommonTestNoGripper.html" title=" " alt="" coords="360,5,571,47"/>
+<area shape="rect" href="classTrajectoryGeneratorCommonTestWithGripper.html" title=" " alt="" coords="360,71,571,112"/>
+<area shape="rect" title=" " alt="" coords="5,46,53,73"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -100,12 +101,10 @@ Protected Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a84509d8c97d3498c39700da94b5b0d60"><td class="memItemLeft" align="right" valign="top">rclcpp::Node::SharedPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrajectoryGeneratorCommonTest.html#a84509d8c97d3498c39700da94b5b0d60">node_</a></td></tr>
-<tr class="separator:a84509d8c97d3498c39700da94b5b0d60"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9546be5367d914db0ccc85192b5407a8"><td class="memItemLeft" align="right" valign="top">moveit::core::RobotModelConstPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrajectoryGeneratorCommonTest.html#a9546be5367d914db0ccc85192b5407a8">robot_model_</a></td></tr>
-<tr class="separator:a9546be5367d914db0ccc85192b5407a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab6cb51660b9084f7809b8eb8c0b81274"><td class="memItemLeft" align="right" valign="top">planning_scene::PlanningSceneConstPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrajectoryGeneratorCommonTest.html#ab6cb51660b9084f7809b8eb8c0b81274">planning_scene_</a></td></tr>
-<tr class="separator:ab6cb51660b9084f7809b8eb8c0b81274"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad13a9dd9d7d7f3519254003a364041a5"><td class="memItemLeft" align="right" valign="top">ros::NodeHandle&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrajectoryGeneratorCommonTest.html#ad13a9dd9d7d7f3519254003a364041a5">ph_</a> { &quot;~&quot; }</td></tr>
+<tr class="separator:ad13a9dd9d7d7f3519254003a364041a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09659a8ac96d5da4ff2b91abec3208ef"><td class="memItemLeft" align="right" valign="top">robot_model::RobotModelConstPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrajectoryGeneratorCommonTest.html#a09659a8ac96d5da4ff2b91abec3208ef">robot_model_</a></td></tr>
+<tr class="separator:a09659a8ac96d5da4ff2b91abec3208ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9117f76dc3563a28831790be4a825e91"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classpilz__industrial__motion__planner_1_1TrajectoryGenerator.html">pilz_industrial_motion_planner::TrajectoryGenerator</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrajectoryGeneratorCommonTest.html#a9117f76dc3563a28831790be4a825e91">trajectory_generator_</a></td></tr>
 <tr class="separator:a9117f76dc3563a28831790be4a825e91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd2f1be5d14b7fa78cbbd23593334e73"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structplanning__interface_1_1MotionPlanResponse.html">planning_interface::MotionPlanResponse</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrajectoryGeneratorCommonTest.html#afd2f1be5d14b7fa78cbbd23593334e73">res_</a></td></tr>
@@ -123,7 +122,7 @@ class TrajectoryGeneratorCommonTest&lt; T &gt;</h3>
 
 <p>type parameterized test fixture </p>
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__common_8cpp_source.html#l00096">96</a> of file <a class="el" href="unittest__trajectory__generator__common_8cpp_source.html">unittest_trajectory_generator_common.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__common_8cpp_source.html#l00097">97</a> of file <a class="el" href="unittest__trajectory__generator__common_8cpp_source.html">unittest_trajectory_generator_common.cpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a80e3885bdb7b0ce80bc85c3a75e0e28b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a80e3885bdb7b0ce80bc85c3a75e0e28b">&#9670;&nbsp;</a></span>SetUp()</h2>
@@ -150,34 +149,30 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__common_8cpp_source.html#l00099">99</a> of file <a class="el" href="unittest__trajectory__generator__common_8cpp_source.html">unittest_trajectory_generator_common.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__common_8cpp_source.html#l00100">100</a> of file <a class="el" href="unittest__trajectory__generator__common_8cpp_source.html">unittest_trajectory_generator_common.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classTrajectoryGeneratorCommonTest_a80e3885bdb7b0ce80bc85c3a75e0e28b_cgraph.png" border="0" usemap="#classTrajectoryGeneratorCommonTest_a80e3885bdb7b0ce80bc85c3a75e0e28b_cgraph" alt=""/></div>
 <map name="classTrajectoryGeneratorCommonTest_a80e3885bdb7b0ce80bc85c3a75e0e28b_cgraph" id="classTrajectoryGeneratorCommonTest_a80e3885bdb7b0ce80bc85c3a75e0e28b_cgraph">
-<area shape="rect" title=" " alt="" coords="5,655,216,697"/>
-<area shape="rect" href="namespacetestutils.html#aee400d4013caab0af4681d89dc96d66c" title=" " alt="" coords="287,195,485,221"/>
-<area shape="rect" href="classpilz__industrial__motion__planner_1_1JointLimitsAggregator.html#a78abef0abbf23021c1edc1451af3e3c8" title="Aggregates(combines) the joint limits from joint model and node parameters. The rules for the combina..." alt="" coords="273,245,499,301"/>
-<area shape="rect" href="classrobot__model__loader_1_1RobotModelLoader.html#a40e202c404ae62a984861b273a401fcd" title="Get the constructed planning_models::RobotModel." alt="" coords="306,325,466,381"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#abf6f716f6cf1ba8c4a63807b11962c41" title="Get the number of variables that make up this state." alt="" coords="294,406,478,447"/>
-<area shape="rect" href="namespacemoveit_1_1core.html#a0aafbf7242f36d6efd7bd73ecee400e8" title="Convert a MoveIt robot state to a robot state message." alt="" coords="296,471,476,513"/>
-<area shape="rect" href="classpilz__industrial__motion__planner_1_1LimitsContainer.html#a4bad0e0b995a846b3d5e370594b457f6" title="Set cartesian limits." alt="" coords="291,537,481,593"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#a564140d144754d149b292e70c4c59b55" title="Given positions for the variables that make up a group, in the order found in the group (including va..." alt="" coords="294,618,478,659"/>
-<area shape="rect" href="classpilz__industrial__motion__planner_1_1LimitsContainer.html#a8bbc4136be28081f1aeb1f8e942fcf75" title="Set joint limits." alt="" coords="291,684,481,740"/>
-<area shape="rect" href="classpilz__industrial__motion__planner_1_1CartesianLimit.html#a550ec57d1779f6e0b34f27554769d8a2" title="Set the maximum rotational velocity." alt="" coords="287,764,485,820"/>
-<area shape="rect" href="classpilz__industrial__motion__planner_1_1CartesianLimit.html#a98bee11f3336595d2b6a06e7a724e311" title="Set the maximum translational acceleration." alt="" coords="265,844,507,900"/>
-<area shape="rect" href="classpilz__industrial__motion__planner_1_1CartesianLimit.html#afc6ae3a75bde60fd382bd702cf5104dc" title="Set the maximum translational deceleration." alt="" coords="264,924,508,980"/>
-<area shape="rect" href="classpilz__industrial__motion__planner_1_1CartesianLimit.html#a6cc92d1b40f64bdcbb6fe02b523d9e92" title="Set the maximal translational velocity." alt="" coords="279,1004,493,1060"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#aba31c6f758e3dabd32c1acbd069e189e" title="Set all joints to their default positions. The default position is 0, or if that is not within bounds..." alt="" coords="294,1085,478,1126"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#a61b8f09e3940519f1abc6f6862305e2f" title="Given an array with velocity values for all variables, set those values as the velocities in this sta..." alt="" coords="294,1150,478,1191"/>
+<area shape="rect" title=" " alt="" coords="5,461,216,502"/>
+<area shape="rect" href="namespacetestutils.html#aee400d4013caab0af4681d89dc96d66c" title=" " alt="" coords="287,155,485,181"/>
+<area shape="rect" href="classpilz__industrial__motion__planner_1_1JointLimitsAggregator.html#ae40f9ed899b3e12fa7fb40f691a64d9a" title="Aggregates(combines) the joint limits from joint model and parameter server. The rules for the combin..." alt="" coords="273,205,499,261"/>
+<area shape="rect" href="unittest__trajectory__generator__common_8cpp.html#a0258d4e48c5d63bd1bb8c56e97bd09af" title=" " alt="" coords="264,285,508,312"/>
+<area shape="rect" href="unittest__trajectory__generator__common_8cpp.html#a3ef26f92433dcdbf9ac9c73dfdf72ac8" title=" " alt="" coords="281,336,491,363"/>
+<area shape="rect" href="namespacemoveit_1_1core.html#a0aafbf7242f36d6efd7bd73ecee400e8" title="Convert a MoveIt robot state to a robot state message." alt="" coords="296,387,476,429"/>
+<area shape="rect" href="classpilz__industrial__motion__planner_1_1LimitsContainer.html#a4bad0e0b995a846b3d5e370594b457f6" title="Set cartesian limits." alt="" coords="291,453,481,509"/>
+<area shape="rect" href="classpilz__industrial__motion__planner_1_1LimitsContainer.html#a8bbc4136be28081f1aeb1f8e942fcf75" title="Set joint limits." alt="" coords="291,533,481,589"/>
+<area shape="rect" href="classpilz__industrial__motion__planner_1_1CartesianLimit.html#a550ec57d1779f6e0b34f27554769d8a2" title="Set the maximum rotational velocity." alt="" coords="287,613,485,669"/>
+<area shape="rect" href="classpilz__industrial__motion__planner_1_1CartesianLimit.html#a98bee11f3336595d2b6a06e7a724e311" title="Set the maximum translational acceleration." alt="" coords="265,693,507,749"/>
+<area shape="rect" href="classpilz__industrial__motion__planner_1_1CartesianLimit.html#afc6ae3a75bde60fd382bd702cf5104dc" title="Set the maximum translational deceleration." alt="" coords="264,773,508,829"/>
+<area shape="rect" href="classpilz__industrial__motion__planner_1_1CartesianLimit.html#a6cc92d1b40f64bdcbb6fe02b523d9e92" title="Set the maximal translational velocity." alt="" coords="279,853,493,909"/>
 <area shape="rect" href="classpilz__industrial__motion__planner_1_1JointLimitsContainer.html#a40383e43f2853d45c9456333cda2a537" title="Add a limit." alt="" coords="578,5,797,61"/>
 <area shape="rect" href="classpilz__industrial__motion__planner_1_1JointLimitsAggregator.html#a442930b2020131d17e2e9248050794ee" title="Checks if the position limits from the given joint_limit are stricter than the limits of the joint_mo..." alt="" coords="573,165,801,221"/>
 <area shape="rect" href="classpilz__industrial__motion__planner_1_1JointLimitsAggregator.html#abf9d281b216ce7c89d930cb00a3b2e4a" title="Checks if the velocity limit from the given joint_limit are stricter than the limit of the joint_mode..." alt="" coords="573,85,801,141"/>
-<area shape="rect" href="namespacepilz__industrial__motion__planner_1_1joint__limits__interface.html#ac682308f1616f72e41067b74e6a8957c" title=" " alt="" coords="579,405,796,461"/>
-<area shape="rect" href="namespacepilz__industrial__motion__planner_1_1joint__limits__interface.html#aae7165a7b65ce68169a0363771f68d35" title=" " alt="" coords="595,485,780,541"/>
-<area shape="rect" href="classpilz__industrial__motion__planner_1_1JointLimitsAggregator.html#abf8235616e4fbeafe33278ae57ede18f" title="Update the position limits with the ones from the joint_model." alt="" coords="556,325,819,381"/>
-<area shape="rect" href="classpilz__industrial__motion__planner_1_1JointLimitsAggregator.html#a6ee5ac793eb0e93f5c98c621dafbf126" title="Update the velocity limit with the one from the joint_model." alt="" coords="556,245,819,301"/>
+<area shape="rect" href="namespacepilz__industrial__motion__planner_1_1joint__limits__interface.html#a19e41ae2a42b3c2ea6d75662853b6aac" title=" " alt="" coords="595,405,780,461"/>
+<area shape="rect" href="classpilz__industrial__motion__planner_1_1JointLimitsAggregator.html#abf8235616e4fbeafe33278ae57ede18f" title="Update the position limits with the ones from the joint_model." alt="" coords="556,245,819,301"/>
+<area shape="rect" href="classpilz__industrial__motion__planner_1_1JointLimitsAggregator.html#a6ee5ac793eb0e93f5c98c621dafbf126" title="Update the velocity limit with the one from the joint_model." alt="" coords="556,325,819,381"/>
 <area shape="rect" href="classmoveit_1_1core_1_1JointModel.html#aa1d2f99c9025d01a92e47bc356938f77" title="Get the name of the joint." alt="" coords="868,246,1049,287"/>
 <area shape="rect" href="classmoveit_1_1core_1_1JointModel.html#accc3352876f4d640f5b57904bf6ab265" title="Check if the set of values for the variables of this joint are within bounds." alt="" coords="867,173,1051,214"/>
 <area shape="rect" href="classmoveit_1_1core_1_1JointModel.html#a0ee14b22009db973b8a4be4e2c911dca" title="Check if the set of velocities for the variables of this joint are within bounds." alt="" coords="867,93,1051,134"/>
@@ -188,8 +183,8 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a84509d8c97d3498c39700da94b5b0d60"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a84509d8c97d3498c39700da94b5b0d60">&#9670;&nbsp;</a></span>node_</h2>
+<a id="ad13a9dd9d7d7f3519254003a364041a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad13a9dd9d7d7f3519254003a364041a5">&#9670;&nbsp;</a></span>ph_</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -200,7 +195,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">rclcpp::Node::SharedPtr <a class="el" href="classTrajectoryGeneratorCommonTest.html">TrajectoryGeneratorCommonTest</a>&lt; T &gt;::node_</td>
+          <td class="memname">ros::NodeHandle <a class="el" href="classTrajectoryGeneratorCommonTest.html">TrajectoryGeneratorCommonTest</a>&lt; T &gt;::ph_ { &quot;~&quot; }</td>
         </tr>
       </table>
   </td>
@@ -210,7 +205,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__common_8cpp_source.html#l00157">157</a> of file <a class="el" href="unittest__trajectory__generator__common_8cpp_source.html">unittest_trajectory_generator_common.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__common_8cpp_source.html#l00145">145</a> of file <a class="el" href="unittest__trajectory__generator__common_8cpp_source.html">unittest_trajectory_generator_common.cpp</a>.</p>
 
 </div>
 </div>
@@ -236,33 +231,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__common_8cpp_source.html#l00166">166</a> of file <a class="el" href="unittest__trajectory__generator__common_8cpp_source.html">unittest_trajectory_generator_common.cpp</a>.</p>
-
-</div>
-</div>
-<a id="ab6cb51660b9084f7809b8eb8c0b81274"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab6cb51660b9084f7809b8eb8c0b81274">&#9670;&nbsp;</a></span>planning_scene_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">planning_scene::PlanningSceneConstPtr <a class="el" href="classTrajectoryGeneratorCommonTest.html">TrajectoryGeneratorCommonTest</a>&lt; T &gt;::planning_scene_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__common_8cpp_source.html#l00159">159</a> of file <a class="el" href="unittest__trajectory__generator__common_8cpp_source.html">unittest_trajectory_generator_common.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__common_8cpp_source.html#l00156">156</a> of file <a class="el" href="unittest__trajectory__generator__common_8cpp_source.html">unittest_trajectory_generator_common.cpp</a>.</p>
 
 </div>
 </div>
@@ -288,7 +257,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__common_8cpp_source.html#l00164">164</a> of file <a class="el" href="unittest__trajectory__generator__common_8cpp_source.html">unittest_trajectory_generator_common.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__common_8cpp_source.html#l00154">154</a> of file <a class="el" href="unittest__trajectory__generator__common_8cpp_source.html">unittest_trajectory_generator_common.cpp</a>.</p>
 
 </div>
 </div>
@@ -314,12 +283,12 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__common_8cpp_source.html#l00163">163</a> of file <a class="el" href="unittest__trajectory__generator__common_8cpp_source.html">unittest_trajectory_generator_common.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__common_8cpp_source.html#l00153">153</a> of file <a class="el" href="unittest__trajectory__generator__common_8cpp_source.html">unittest_trajectory_generator_common.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a9546be5367d914db0ccc85192b5407a8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9546be5367d914db0ccc85192b5407a8">&#9670;&nbsp;</a></span>robot_model_</h2>
+<a id="a09659a8ac96d5da4ff2b91abec3208ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09659a8ac96d5da4ff2b91abec3208ef">&#9670;&nbsp;</a></span>robot_model_</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -330,7 +299,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">moveit::core::RobotModelConstPtr <a class="el" href="classTrajectoryGeneratorCommonTest.html">TrajectoryGeneratorCommonTest</a>&lt; T &gt;::robot_model_</td>
+          <td class="memname">robot_model::RobotModelConstPtr <a class="el" href="classTrajectoryGeneratorCommonTest.html">TrajectoryGeneratorCommonTest</a>&lt; T &gt;::robot_model_</td>
         </tr>
       </table>
   </td>
@@ -339,8 +308,12 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__common_8cpp_source.html#l00158">158</a> of file <a class="el" href="unittest__trajectory__generator__common_8cpp_source.html">unittest_trajectory_generator_common.cpp</a>.</p>
+<b>Initial value:</b><div class="fragment"><div class="line">{</div>
+<div class="line">    <a class="code" href="classrobot__model__loader_1_1RobotModelLoader.html">robot_model_loader::RobotModelLoader</a>(!T::VALUE ? <a class="code" href="unittest__pilz__industrial__motion__planner_8cpp.html#aa7f9383e07e7c03560917dd18d1f761b">PARAM_MODEL_NO_GRIPPER_NAME</a> : <a class="code" href="unittest__pilz__industrial__motion__planner_8cpp.html#a1ca4023b540762bab834d86532ceb22f">PARAM_MODEL_WITH_GRIPPER_NAME</a>)</div>
+<div class="line">        .<a class="code" href="classrobot__model__loader_1_1RobotModelLoader.html#a40e202c404ae62a984861b273a401fcd">getModel</a>()</div>
+<div class="line">  }</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__common_8cpp_source.html#l00146">146</a> of file <a class="el" href="unittest__trajectory__generator__common_8cpp_source.html">unittest_trajectory_generator_common.cpp</a>.</p>
 
 </div>
 </div>
@@ -366,7 +339,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__common_8cpp_source.html#l00166">166</a> of file <a class="el" href="unittest__trajectory__generator__common_8cpp_source.html">unittest_trajectory_generator_common.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__common_8cpp_source.html#l00156">156</a> of file <a class="el" href="unittest__trajectory__generator__common_8cpp_source.html">unittest_trajectory_generator_common.cpp</a>.</p>
 
 </div>
 </div>
@@ -392,14 +365,18 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__common_8cpp_source.html#l00162">162</a> of file <a class="el" href="unittest__trajectory__generator__common_8cpp_source.html">unittest_trajectory_generator_common.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__common_8cpp_source.html#l00152">152</a> of file <a class="el" href="unittest__trajectory__generator__common_8cpp_source.html">unittest_trajectory_generator_common.cpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>moveit2/moveit_planners/pilz_industrial_motion_planner/test/unit_tests/src/<a class="el" href="unittest__trajectory__generator__common_8cpp_source.html">unittest_trajectory_generator_common.cpp</a></li>
+<li>moveit2/moveit_planners/pilz_industrial_motion_planner/test/<a class="el" href="unittest__trajectory__generator__common_8cpp_source.html">unittest_trajectory_generator_common.cpp</a></li>
 </ul>
 </div><!-- contents -->
+<div class="ttc" id="aunittest__pilz__industrial__motion__planner_8cpp_html_aa7f9383e07e7c03560917dd18d1f761b"><div class="ttname"><a href="unittest__pilz__industrial__motion__planner_8cpp.html#aa7f9383e07e7c03560917dd18d1f761b">PARAM_MODEL_NO_GRIPPER_NAME</a></div><div class="ttdeci">const std::string PARAM_MODEL_NO_GRIPPER_NAME</div><div class="ttdef"><b>Definition:</b> <a href="unittest__pilz__industrial__motion__planner_8cpp_source.html#l00045">unittest_pilz_industrial_motion_planner.cpp:45</a></div></div>
+<div class="ttc" id="aclassrobot__model__loader_1_1RobotModelLoader_html"><div class="ttname"><a href="classrobot__model__loader_1_1RobotModelLoader.html">robot_model_loader::RobotModelLoader</a></div><div class="ttdef"><b>Definition:</b> <a href="robot__model__loader_8h_source.html#l00081">robot_model_loader.h:81</a></div></div>
+<div class="ttc" id="aunittest__pilz__industrial__motion__planner_8cpp_html_a1ca4023b540762bab834d86532ceb22f"><div class="ttname"><a href="unittest__pilz__industrial__motion__planner_8cpp.html#a1ca4023b540762bab834d86532ceb22f">PARAM_MODEL_WITH_GRIPPER_NAME</a></div><div class="ttdeci">const std::string PARAM_MODEL_WITH_GRIPPER_NAME</div><div class="ttdef"><b>Definition:</b> <a href="unittest__pilz__industrial__motion__planner_8cpp_source.html#l00046">unittest_pilz_industrial_motion_planner.cpp:46</a></div></div>
+<div class="ttc" id="aclassrobot__model__loader_1_1RobotModelLoader_html_a40e202c404ae62a984861b273a401fcd"><div class="ttname"><a href="classrobot__model__loader_1_1RobotModelLoader.html#a40e202c404ae62a984861b273a401fcd">robot_model_loader::RobotModelLoader::getModel</a></div><div class="ttdeci">const moveit::core::RobotModelPtr &amp; getModel() const</div><div class="ttdoc">Get the constructed planning_models::RobotModel.</div><div class="ttdef"><b>Definition:</b> <a href="robot__model__loader_8h_source.html#l00120">robot_model_loader.h:120</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

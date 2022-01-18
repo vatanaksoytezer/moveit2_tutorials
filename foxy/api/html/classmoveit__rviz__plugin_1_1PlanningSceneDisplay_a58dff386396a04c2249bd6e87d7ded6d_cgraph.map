@@ -1,0 +1,5 @@
+<map id="moveit_rviz_plugin::PlanningSceneDisplay::onRobotModelLoaded" name="moveit_rviz_plugin::PlanningSceneDisplay::onRobotModelLoaded">
+<area shape="rect" id="node1" title="This is an event called by loadRobotModel() in the MainLoop; do not call directly." alt="" coords="5,39,180,95"/>
+<area shape="rect" id="node2" href="$classmoveit__rviz__plugin_1_1PlanningSceneDisplay.html#a13fce732c3b9f3f8010e5a5988048afe" title="get read&#45;only access to planning scene" alt="" coords="228,5,403,61"/>
+<area shape="rect" id="node3" href="$classmoveit__rviz__plugin_1_1PlanningSceneDisplay.html#a332e91816296f14bf7735d61749e89ef" title="get write access to planning scene" alt="" coords="451,39,625,95"/>
+</map>

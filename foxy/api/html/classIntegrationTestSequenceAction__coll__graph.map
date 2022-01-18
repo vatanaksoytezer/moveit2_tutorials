@@ -5,6 +5,6 @@
 <area shape="rect" id="node4" href="$classrobot__model__loader_1_1RobotModelLoader.html" title=" " alt="" coords="673,107,825,149"/>
 <area shape="rect" id="node5" href="$classpilz__industrial__motion__planner__testutils_1_1JointConfiguration.html" title="Class to define a robot configuration in space with the help of joint values." alt="" coords="617,173,880,214"/>
 <area shape="rect" id="node6" href="$classpilz__industrial__motion__planner__testutils_1_1RobotConfiguration.html" title="Class to define robot configuration in space." alt="" coords="297,173,568,214"/>
-<area shape="rect" id="node7" href="$classpilz__industrial__motion__planner__testutils_1_1RobotStateMsgConvertible.html" title="Interface class to express that a derived class can be converted into a moveit_msgs::msg::RobotState." alt="" coords="17,125,236,181"/>
-<area shape="rect" id="node8" href="$classpilz__industrial__motion__planner__testutils_1_1GoalConstraintMsgConvertible.html" title="Interface class to express that a derived class can be converted into a moveit_msgs::msg::Constraints..." alt="" coords="5,205,248,261"/>
+<area shape="rect" id="node7" href="$classpilz__industrial__motion__planner__testutils_1_1RobotStateMsgConvertible.html" title="Interface class to express that a derived class can be converted into a moveit_msgs::RobotState." alt="" coords="17,125,236,181"/>
+<area shape="rect" id="node8" href="$classpilz__industrial__motion__planner__testutils_1_1GoalConstraintMsgConvertible.html" title="Interface class to express that a derived class can be converted into a moveit_msgs::Constaints." alt="" coords="5,205,248,261"/>
 </map>

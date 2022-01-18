@@ -143,8 +143,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad310fc6565098bba70a44b019e09eaec"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkinematic__constraints_1_1OrientationConstraint.html#ad310fc6565098bba70a44b019e09eaec">getZAxisTolerance</a> () const</td></tr>
 <tr class="memdesc:ad310fc6565098bba70a44b019e09eaec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the Z axis tolerance.  <a href="classkinematic__constraints_1_1OrientationConstraint.html#ad310fc6565098bba70a44b019e09eaec">More...</a><br /></td></tr>
 <tr class="separator:ad310fc6565098bba70a44b019e09eaec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b6bffb1604d60612b93b110fb781db0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkinematic__constraints_1_1OrientationConstraint.html#a8b6bffb1604d60612b93b110fb781db0">getParameterizationType</a> () const</td></tr>
-<tr class="separator:a8b6bffb1604d60612b93b110fb781db0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classkinematic__constraints_1_1KinematicConstraint"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classkinematic__constraints_1_1KinematicConstraint')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classkinematic__constraints_1_1KinematicConstraint.html">kinematic_constraints::KinematicConstraint</a></td></tr>
 <tr class="memitem:a7fc714287109f4fed25c5d706b8969ef inherit pub_methods_classkinematic__constraints_1_1KinematicConstraint"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkinematic__constraints_1_1KinematicConstraint.html#a7fc714287109f4fed25c5d706b8969ef">KinematicConstraint</a> (const moveit::core::RobotModelConstPtr &amp;model)</td></tr>
 <tr class="memdesc:a7fc714287109f4fed25c5d706b8969ef inherit pub_methods_classkinematic__constraints_1_1KinematicConstraint"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classkinematic__constraints_1_1KinematicConstraint.html#a7fc714287109f4fed25c5d706b8969ef">More...</a><br /></td></tr>
@@ -177,9 +175,6 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a084b134c9e23337bf6f27f833f7df1d4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkinematic__constraints_1_1OrientationConstraint.html#a084b134c9e23337bf6f27f833f7df1d4">mobile_frame_</a></td></tr>
 <tr class="memdesc:a084b134c9e23337bf6f27f833f7df1d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether or not the header frame is mobile or fixed.  <a href="classkinematic__constraints_1_1OrientationConstraint.html#a084b134c9e23337bf6f27f833f7df1d4">More...</a><br /></td></tr>
 <tr class="separator:a084b134c9e23337bf6f27f833f7df1d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2c7a66f77ff1430acdd0cb6976349ba"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkinematic__constraints_1_1OrientationConstraint.html#ae2c7a66f77ff1430acdd0cb6976349ba">parameterization_type_</a></td></tr>
-<tr class="memdesc:ae2c7a66f77ff1430acdd0cb6976349ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameterization type for orientation tolerance.  <a href="classkinematic__constraints_1_1OrientationConstraint.html#ae2c7a66f77ff1430acdd0cb6976349ba">More...</a><br /></td></tr>
-<tr class="separator:ae2c7a66f77ff1430acdd0cb6976349ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1dedfb7a16dd41844c4dd01a7ae91c6"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkinematic__constraints_1_1OrientationConstraint.html#ad1dedfb7a16dd41844c4dd01a7ae91c6">absolute_x_axis_tolerance_</a></td></tr>
 <tr class="separator:ad1dedfb7a16dd41844c4dd01a7ae91c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a641712ae042eca1fb24e80a0071a86bf"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkinematic__constraints_1_1OrientationConstraint.html#a641712ae042eca1fb24e80a0071a86bf">absolute_y_axis_tolerance_</a></td></tr>
@@ -216,7 +211,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class for constraints on the orientation of a link. </p>
-<p>This class expresses an orientation constraint on a particular link. The constraint is specified in terms of a quaternion, with tolerances on X,Y, and Z axes. The rotation difference is computed based on the XYZ Euler angle formulation (intrinsic rotations) or as a rotation vector. This depends on the <code>Parameterization</code> type. The header on the quaternion can be specified in terms of either a fixed or a mobile frame. The type value will return ORIENTATION_CONSTRAINT. </p>
+<p>This class expresses an orientation constraint on a particular link. The constraint is specified in terms of a quaternion, with tolerances on X,Y, and Z axes. The rotation difference is computed based on the XYZ Euler angle formulation (intrinsic rotations). The header on the quaternion can be specified in terms of either a fixed frame or a mobile frame. The type value will return ORIENTATION_CONSTRAINT. </p>
 
 <p class="definition">Definition at line <a class="el" href="kinematic__constraint_8h_source.html#l00379">379</a> of file <a class="el" href="kinematic__constraint_8h_source.html">kinematic_constraint.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -284,7 +279,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classkinematic__constraints_1_1KinematicConstraint.html#a274f48adeec52887ecc31858c5f938d7">kinematic_constraints::KinematicConstraint</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8cpp_source.html#l00689">689</a> of file <a class="el" href="kinematic__constraint_8cpp_source.html">kinematic_constraint.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8cpp_source.html#l00672">672</a> of file <a class="el" href="kinematic__constraint_8cpp_source.html">kinematic_constraint.cpp</a>.</p>
 
 </div>
 </div>
@@ -324,7 +319,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if constraint can be configured from oc </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8cpp_source.html#l00592">592</a> of file <a class="el" href="kinematic__constraint_8cpp_source.html">kinematic_constraint.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8cpp_source.html#l00588">588</a> of file <a class="el" href="kinematic__constraint_8cpp_source.html">kinematic_constraint.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -384,7 +379,7 @@ Here is the caller graph for this function:</div>
 
 <p>Implements <a class="el" href="classkinematic__constraints_1_1KinematicConstraint.html#af8d42b0e5ada212cec7490b78dcfa2a9">kinematic_constraints::KinematicConstraint</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8cpp_source.html#l00704">704</a> of file <a class="el" href="kinematic__constraint_8cpp_source.html">kinematic_constraint.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8cpp_source.html#l00687">687</a> of file <a class="el" href="kinematic__constraint_8cpp_source.html">kinematic_constraint.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -424,7 +419,7 @@ Here is the caller graph for this function:</div>
 
 <p>Implements <a class="el" href="classkinematic__constraints_1_1KinematicConstraint.html#a941e7334e9bd320492d00c4ff49f81d2">kinematic_constraints::KinematicConstraint</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8cpp_source.html#l00699">699</a> of file <a class="el" href="kinematic__constraint_8cpp_source.html">kinematic_constraint.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8cpp_source.html#l00682">682</a> of file <a class="el" href="kinematic__constraint_8cpp_source.html">kinematic_constraint.cpp</a>.</p>
 
 </div>
 </div>
@@ -479,18 +474,16 @@ Here is the caller graph for this function:</div>
 
 <p>Implements <a class="el" href="classkinematic__constraints_1_1KinematicConstraint.html#a7275ec0d99e4dd0429c0f6c0ad9930a4">kinematic_constraints::KinematicConstraint</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8cpp_source.html#l00671">671</a> of file <a class="el" href="kinematic__constraint_8cpp_source.html">kinematic_constraint.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8cpp_source.html#l00654">654</a> of file <a class="el" href="kinematic__constraint_8cpp_source.html">kinematic_constraint.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classkinematic__constraints_1_1OrientationConstraint_a25993b5d141ca35b14fefccc45f3f6fa_cgraph.png" border="0" usemap="#classkinematic__constraints_1_1OrientationConstraint_a25993b5d141ca35b14fefccc45f3f6fa_cgraph" alt=""/></div>
 <map name="classkinematic__constraints_1_1OrientationConstraint_a25993b5d141ca35b14fefccc45f3f6fa_cgraph" id="classkinematic__constraints_1_1OrientationConstraint_a25993b5d141ca35b14fefccc45f3f6fa_cgraph">
-<area shape="rect" title="Check if two orientation constraints are the same." alt="" coords="5,31,176,87"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#aa0d9f132691a3f24186dcdff72be5d28" title="Get the transformation matrix from the model frame (root of model) to the frame identified by frame_i..." alt="" coords="225,5,409,47"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#a309800a933676917ea4848b972a4318b" title="Get the link transform w.r.t. the root link (model frame) of the RobotModel. This is typically the ro..." alt="" coords="224,71,409,112"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#a867985359844193ea81c2d23ac2c49b4" title="Returns true if anything in this state is dirty." alt="" coords="457,37,641,79"/>
-<area shape="rect" href="classmoveit_1_1core_1_1JointModel.html#a32646942dc054f77e3eff984affb7ced" title="Get the index of this joint within the robot model." alt="" coords="459,103,640,144"/>
-<area shape="rect" href="classmoveit_1_1core_1_1JointModel.html#ac997d44f51ca03d13f0d54cf699e0662" title="Force the specified values to be inside bounds and normalized. Quaternions are normalized,..." alt="" coords="689,103,871,144"/>
+<area shape="rect" title="Check if two orientation constraints are the same." alt="" coords="5,63,176,119"/>
+<area shape="rect" href="namespacekinematic__constraints.html#a77b15615c57deb4b25f9b1d543ab4049" title=" " alt="" coords="233,5,400,47"/>
+<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#aa0d9f132691a3f24186dcdff72be5d28" title="Get the transformation matrix from the model frame (root of model) to the frame identified by frame_i..." alt="" coords="225,71,409,112"/>
+<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#a309800a933676917ea4848b972a4318b" title="Get the link transform w.r.t. the root link (model frame) of the RobotModel. This is typically the ro..." alt="" coords="224,136,409,177"/>
 </map>
 </div>
 <div class="dynheader">
@@ -570,42 +563,6 @@ Here is the caller graph for this function:</div>
 <map name="classkinematic__constraints_1_1OrientationConstraint_a8be128cbad8a980c0fc93a5bb7a584a8_icgraph" id="classkinematic__constraints_1_1OrientationConstraint_a8be128cbad8a980c0fc93a5bb7a584a8_icgraph">
 <area shape="rect" title="Gets the subject link model." alt="" coords="123,5,293,61"/>
 <area shape="rect" href="test__constraints_8cpp.html#a0b1f5a3d6803a1b4f1057a54d3356231" title=" " alt="" coords="5,20,75,47"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a8b6bffb1604d60612b93b110fb781db0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8b6bffb1604d60612b93b110fb781db0">&#9670;&nbsp;</a></span>getParameterizationType()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int kinematic_constraints::OrientationConstraint::getParameterizationType </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8h_source.html#l00513">513</a> of file <a class="el" href="kinematic__constraint_8h_source.html">kinematic_constraint.h</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classkinematic__constraints_1_1OrientationConstraint_a8b6bffb1604d60612b93b110fb781db0_icgraph.png" border="0" usemap="#classkinematic__constraints_1_1OrientationConstraint_a8b6bffb1604d60612b93b110fb781db0_icgraph" alt=""/></div>
-<map name="classkinematic__constraints_1_1OrientationConstraint_a8b6bffb1604d60612b93b110fb781db0_icgraph" id="classkinematic__constraints_1_1OrientationConstraint_a8b6bffb1604d60612b93b110fb781db0_icgraph">
-<area shape="rect" title=" " alt="" coords="123,5,315,61"/>
-<area shape="rect" href="test__orientation__constraints_8cpp.html#a1cb084d39e93bc47277f9b36feb8d698" title=" " alt="" coords="5,20,75,47"/>
 </map>
 </div>
 
@@ -804,7 +761,7 @@ Here is the caller graph for this function:</div>
 
 <p>Reimplemented from <a class="el" href="classkinematic__constraints_1_1KinematicConstraint.html#a9f8184e1a84312f97efd2bc9022124a9">kinematic_constraints::KinematicConstraint</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8cpp_source.html#l00780">780</a> of file <a class="el" href="kinematic__constraint_8cpp_source.html">kinematic_constraint.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8cpp_source.html#l00746">746</a> of file <a class="el" href="kinematic__constraint_8cpp_source.html">kinematic_constraint.cpp</a>.</p>
 
 </div>
 </div>
@@ -829,7 +786,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8h_source.html#l00527">527</a> of file <a class="el" href="kinematic__constraint_8h_source.html">kinematic_constraint.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8h_source.html#l00521">521</a> of file <a class="el" href="kinematic__constraint_8h_source.html">kinematic_constraint.h</a>.</p>
 
 </div>
 </div>
@@ -853,7 +810,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8h_source.html#l00527">527</a> of file <a class="el" href="kinematic__constraint_8h_source.html">kinematic_constraint.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8h_source.html#l00521">521</a> of file <a class="el" href="kinematic__constraint_8h_source.html">kinematic_constraint.h</a>.</p>
 
 </div>
 </div>
@@ -879,7 +836,7 @@ Here is the caller graph for this function:</div>
 
 <p>Storage for the tolerances. </p>
 
-<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8h_source.html#l00528">528</a> of file <a class="el" href="kinematic__constraint_8h_source.html">kinematic_constraint.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8h_source.html#l00522">522</a> of file <a class="el" href="kinematic__constraint_8h_source.html">kinematic_constraint.h</a>.</p>
 
 </div>
 </div>
@@ -905,7 +862,7 @@ Here is the caller graph for this function:</div>
 
 <p>The target frame of the transform tree. </p>
 
-<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8h_source.html#l00524">524</a> of file <a class="el" href="kinematic__constraint_8h_source.html">kinematic_constraint.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8h_source.html#l00519">519</a> of file <a class="el" href="kinematic__constraint_8h_source.html">kinematic_constraint.h</a>.</p>
 
 </div>
 </div>
@@ -931,7 +888,7 @@ Here is the caller graph for this function:</div>
 
 <p>The desired rotation matrix in the tf frame. Guaranteed to be valid rotation matrix. </p>
 
-<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8h_source.html#l00520">520</a> of file <a class="el" href="kinematic__constraint_8h_source.html">kinematic_constraint.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8h_source.html#l00515">515</a> of file <a class="el" href="kinematic__constraint_8h_source.html">kinematic_constraint.h</a>.</p>
 
 </div>
 </div>
@@ -957,7 +914,7 @@ Here is the caller graph for this function:</div>
 
 <p>The inverse of the desired rotation matrix, precomputed for efficiency. Guaranteed to be valid rotation matrix. </p>
 
-<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8h_source.html#l00522">522</a> of file <a class="el" href="kinematic__constraint_8h_source.html">kinematic_constraint.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8h_source.html#l00517">517</a> of file <a class="el" href="kinematic__constraint_8h_source.html">kinematic_constraint.h</a>.</p>
 
 </div>
 </div>
@@ -983,7 +940,7 @@ Here is the caller graph for this function:</div>
 
 <p>The target link model. </p>
 
-<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8h_source.html#l00519">519</a> of file <a class="el" href="kinematic__constraint_8h_source.html">kinematic_constraint.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8h_source.html#l00514">514</a> of file <a class="el" href="kinematic__constraint_8h_source.html">kinematic_constraint.h</a>.</p>
 
 </div>
 </div>
@@ -1009,33 +966,7 @@ Here is the caller graph for this function:</div>
 
 <p>Whether or not the header frame is mobile or fixed. </p>
 
-<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8h_source.html#l00525">525</a> of file <a class="el" href="kinematic__constraint_8h_source.html">kinematic_constraint.h</a>.</p>
-
-</div>
-</div>
-<a id="ae2c7a66f77ff1430acdd0cb6976349ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae2c7a66f77ff1430acdd0cb6976349ba">&#9670;&nbsp;</a></span>parameterization_type_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int kinematic_constraints::OrientationConstraint::parameterization_type_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Parameterization type for orientation tolerance. </p>
-
-<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8h_source.html#l00526">526</a> of file <a class="el" href="kinematic__constraint_8h_source.html">kinematic_constraint.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8h_source.html#l00520">520</a> of file <a class="el" href="kinematic__constraint_8h_source.html">kinematic_constraint.h</a>.</p>
 
 </div>
 </div>

@@ -127,9 +127,9 @@ $(function() {
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;      node_-&gt;get_parameter(<span class="stringliteral">&quot;constraint_samplers&quot;</span>, <a class="code" href="namespaceconstraint__samplers.html">constraint_samplers</a>);</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      <span class="keywordflow">try</span></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        constraint_sampler_plugin_loader_ =</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            std::make_unique&lt;pluginlib::ClassLoader&lt;constraint_samplers::ConstraintSamplerAllocator&gt;&gt;(</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="stringliteral">&quot;moveit_core&quot;</span>, <span class="stringliteral">&quot;constraint_samplers::ConstraintSamplerAllocator&quot;</span>);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        constraint_sampler_plugin_loader_.reset(</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keyword">new</span> pluginlib::ClassLoader&lt;constraint_samplers::ConstraintSamplerAllocator&gt;(</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="stringliteral">&quot;moveit_core&quot;</span>, <span class="stringliteral">&quot;constraint_samplers::ConstraintSamplerAllocator&quot;</span>));</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      }</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      <span class="keywordflow">catch</span> (pluginlib::PluginlibException&amp; ex)</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      {</div>
@@ -137,8 +137,8 @@ $(function() {
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      }</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      boost::char_separator&lt;char&gt; sep(<span class="stringliteral">&quot; &quot;</span>);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      boost::tokenizer&lt;boost::char_separator&lt;char&gt;&gt; tok(<a class="code" href="namespaceconstraint__samplers.html">constraint_samplers</a>, sep);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      <span class="keywordflow">for</span> (boost::tokenizer&lt;boost::char_separator&lt;char&gt;&gt;::iterator beg = tok.begin(); beg != tok.end(); ++beg)</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      boost::tokenizer&lt;boost::char_separator&lt;char&gt; &gt; tok(<a class="code" href="namespaceconstraint__samplers.html">constraint_samplers</a>, sep);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      <span class="keywordflow">for</span> (boost::tokenizer&lt;boost::char_separator&lt;char&gt; &gt;::iterator beg = tok.begin(); beg != tok.end(); ++beg)</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      {</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">try</span></div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        {</div>
@@ -157,16 +157,18 @@ $(function() {
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="keyword">const</span> rclcpp::Node::SharedPtr node_;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  std::unique_ptr&lt;pluginlib::ClassLoader&lt;constraint_samplers::ConstraintSamplerAllocator&gt;&gt;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  std::unique_ptr&lt;pluginlib::ClassLoader&lt;constraint_samplers::ConstraintSamplerAllocator&gt; &gt;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;      constraint_sampler_plugin_loader_;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;};</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<a class="code" href="classconstraint__sampler__manager__loader_1_1ConstraintSamplerManagerLoader.html#abee53d60b0c41c84031badab13bebd5a">ConstraintSamplerManagerLoader::ConstraintSamplerManagerLoader</a>(</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keyword">const</span> rclcpp::Node::SharedPtr&amp; node, <span class="keyword">const</span> constraint_samplers::ConstraintSamplerManagerPtr&amp; csm)</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  : constraint_sampler_manager_(csm ? csm : std::make_shared&lt;<a class="code" href="namespaceconstraint__samplers.html">constraint_samplers</a>::ConstraintSamplerManager&gt;())</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  , impl_(new Helper(node, constraint_sampler_manager_))</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;{</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}  <span class="comment">// namespace constraint_sampler_manager_loader</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  : constraint_sampler_manager_(</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        csm ? csm :</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;              <a class="code" href="namespaceconstraint__samplers.html">constraint_samplers</a>::ConstraintSamplerManagerPtr(new <a class="code" href="namespaceconstraint__samplers.html">constraint_samplers</a>::ConstraintSamplerManager()))</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  , impl_(new Helper(node, constraint_sampler_manager_))</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;{</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}  <span class="comment">// namespace constraint_sampler_manager_loader</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aconstraint__sampler__manager__loader_8h_html"><div class="ttname"><a href="constraint__sampler__manager__loader_8h.html">constraint_sampler_manager_loader.h</a></div></div>
 <div class="ttc" id="aclassconstraint__sampler__manager__loader_1_1ConstraintSamplerManagerLoader_html_abee53d60b0c41c84031badab13bebd5a"><div class="ttname"><a href="classconstraint__sampler__manager__loader_1_1ConstraintSamplerManagerLoader.html#abee53d60b0c41c84031badab13bebd5a">constraint_sampler_manager_loader::ConstraintSamplerManagerLoader::ConstraintSamplerManagerLoader</a></div><div class="ttdeci">ConstraintSamplerManagerLoader(const rclcpp::Node::SharedPtr &amp;node, const constraint_samplers::ConstraintSamplerManagerPtr &amp;csm=constraint_samplers::ConstraintSamplerManagerPtr())</div><div class="ttdef"><b>Definition:</b> <a href="constraint__sampler__manager__loader_8cpp_source.html#l00123">constraint_sampler_manager_loader.cpp:123</a></div></div>

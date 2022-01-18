@@ -201,7 +201,7 @@ $(function() {
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                    verbose);</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;      constraint_sampler_-&gt;setGroupStateValidityCallback(gsvcf);</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;      <span class="keywordflow">if</span> (constraint_sampler_-&gt;sample(work_state_, planning_context_-&gt;getMaximumStateSamplingAttempts()))</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;      <span class="keywordflow">if</span> (constraint_sampler_-&gt;project(work_state_, planning_context_-&gt;getMaximumStateSamplingAttempts()))</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;      {</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        work_state_.update();</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="keywordflow">if</span> (kinematic_constraint_set_-&gt;decide(work_state_, verbose).satisfied)</div>

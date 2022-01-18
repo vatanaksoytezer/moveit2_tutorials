@@ -81,20 +81,14 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aabba37049256d5259e89516785777d61"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1AttachedBody.html#aabba37049256d5259e89516785777d61">AttachedBody</a> (const <a class="el" href="classmoveit_1_1core_1_1LinkModel.html">LinkModel</a> *link, const std::string &amp;id, const Eigen::Isometry3d &amp;pose, const std::vector&lt; shapes::ShapeConstPtr &gt; &amp;shapes, const EigenSTL::vector_Isometry3d &amp;shape_poses, const <a class="el" href="ros_2warehouse_2warehouse_2CMakeLists_8txt.html#af4423e580afb68aec7c40fb0bce7d5d4">std::set</a>&lt; std::string &gt; &amp;touch_links, const trajectory_msgs::msg::JointTrajectory &amp;attach_posture, const <a class="el" href="namespacemoveit_1_1core.html#aaed75968b346de18defad60f19fc2545">moveit::core::FixedTransformsMap</a> &amp;subframe_poses=<a class="el" href="namespacemoveit_1_1core.html#aaed75968b346de18defad60f19fc2545">moveit::core::FixedTransformsMap</a>())</td></tr>
-<tr class="memdesc:aabba37049256d5259e89516785777d61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an attached body for a specified <em>link</em>.  <a href="classmoveit_1_1core_1_1AttachedBody.html#aabba37049256d5259e89516785777d61">More...</a><br /></td></tr>
-<tr class="separator:aabba37049256d5259e89516785777d61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acabd91d6ac4fb4eb1cb8237f3fcd9cb2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1AttachedBody.html#acabd91d6ac4fb4eb1cb8237f3fcd9cb2">AttachedBody</a> (const <a class="el" href="classmoveit_1_1core_1_1LinkModel.html">LinkModel</a> *link, const std::string &amp;id, const std::vector&lt; shapes::ShapeConstPtr &gt; &amp;shapes, const EigenSTL::vector_Isometry3d &amp;attach_trans, const <a class="el" href="setup__assistant_2CMakeLists_8txt.html#a58ab708fe5c1f47f0642bdaee3056d3b">std::set</a>&lt; std::string &gt; &amp;touch_links, const trajectory_msgs::msg::JointTrajectory &amp;attach_posture, const <a class="el" href="namespacemoveit_1_1core.html#aaed75968b346de18defad60f19fc2545">moveit::core::FixedTransformsMap</a> &amp;subframe_poses=<a class="el" href="namespacemoveit_1_1core.html#aaed75968b346de18defad60f19fc2545">moveit::core::FixedTransformsMap</a>())</td></tr>
+<tr class="memdesc:acabd91d6ac4fb4eb1cb8237f3fcd9cb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an attached body for a specified <em>link</em>.  <a href="classmoveit_1_1core_1_1AttachedBody.html#acabd91d6ac4fb4eb1cb8237f3fcd9cb2">More...</a><br /></td></tr>
+<tr class="separator:acabd91d6ac4fb4eb1cb8237f3fcd9cb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0eb18ac015702bffe9b8c499597ab4a7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1AttachedBody.html#a0eb18ac015702bffe9b8c499597ab4a7">~AttachedBody</a> ()</td></tr>
 <tr class="separator:a0eb18ac015702bffe9b8c499597ab4a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a857be05cdda0157e486176c034105426"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1AttachedBody.html#a857be05cdda0157e486176c034105426">getName</a> () const</td></tr>
 <tr class="memdesc:a857be05cdda0157e486176c034105426"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the name of the attached body.  <a href="classmoveit_1_1core_1_1AttachedBody.html#a857be05cdda0157e486176c034105426">More...</a><br /></td></tr>
 <tr class="separator:a857be05cdda0157e486176c034105426"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6ba631b74e575e53a07b333a4054a15"><td class="memItemLeft" align="right" valign="top">const Eigen::Isometry3d &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1AttachedBody.html#ad6ba631b74e575e53a07b333a4054a15">getPose</a> () const</td></tr>
-<tr class="memdesc:ad6ba631b74e575e53a07b333a4054a15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the pose of the attached body relative to the parent link.  <a href="classmoveit_1_1core_1_1AttachedBody.html#ad6ba631b74e575e53a07b333a4054a15">More...</a><br /></td></tr>
-<tr class="separator:ad6ba631b74e575e53a07b333a4054a15"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a572196d20382bcec4728a747d7f19fb7"><td class="memItemLeft" align="right" valign="top">const Eigen::Isometry3d &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1AttachedBody.html#a572196d20382bcec4728a747d7f19fb7">getGlobalPose</a> () const</td></tr>
-<tr class="memdesc:a572196d20382bcec4728a747d7f19fb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the pose of the attached body, relative to the world.  <a href="classmoveit_1_1core_1_1AttachedBody.html#a572196d20382bcec4728a747d7f19fb7">More...</a><br /></td></tr>
-<tr class="separator:a572196d20382bcec4728a747d7f19fb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11d6a3b22ff5b6be47352f9621783f22"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1AttachedBody.html#a11d6a3b22ff5b6be47352f9621783f22">getAttachedLinkName</a> () const</td></tr>
 <tr class="memdesc:a11d6a3b22ff5b6be47352f9621783f22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the name of the link this body is attached to.  <a href="classmoveit_1_1core_1_1AttachedBody.html#a11d6a3b22ff5b6be47352f9621783f22">More...</a><br /></td></tr>
 <tr class="separator:a11d6a3b22ff5b6be47352f9621783f22"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -104,24 +98,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8832405dda038c3e28a7969cb63993d1"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; shapes::ShapeConstPtr &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1AttachedBody.html#a8832405dda038c3e28a7969cb63993d1">getShapes</a> () const</td></tr>
 <tr class="memdesc:a8832405dda038c3e28a7969cb63993d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the shapes that make up this attached body.  <a href="classmoveit_1_1core_1_1AttachedBody.html#a8832405dda038c3e28a7969cb63993d1">More...</a><br /></td></tr>
 <tr class="separator:a8832405dda038c3e28a7969cb63993d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7e41060467df2a8db42540d86cfbcf6"><td class="memItemLeft" align="right" valign="top">const EigenSTL::vector_Isometry3d &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1AttachedBody.html#ad7e41060467df2a8db42540d86cfbcf6">getShapePoses</a> () const</td></tr>
-<tr class="memdesc:ad7e41060467df2a8db42540d86cfbcf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the shape poses (the transforms to the shapes of this body, relative to the pose). The returned transforms are guaranteed to be valid isometries.  <a href="classmoveit_1_1core_1_1AttachedBody.html#ad7e41060467df2a8db42540d86cfbcf6">More...</a><br /></td></tr>
-<tr class="separator:ad7e41060467df2a8db42540d86cfbcf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1added4f50dd7c18b8559e160885cbf1"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="ros_2warehouse_2warehouse_2CMakeLists_8txt.html#af4423e580afb68aec7c40fb0bce7d5d4">std::set</a>&lt; std::string &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1AttachedBody.html#a1added4f50dd7c18b8559e160885cbf1">getTouchLinks</a> () const</td></tr>
+<tr class="memitem:a1added4f50dd7c18b8559e160885cbf1"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="setup__assistant_2CMakeLists_8txt.html#a58ab708fe5c1f47f0642bdaee3056d3b">std::set</a>&lt; std::string &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1AttachedBody.html#a1added4f50dd7c18b8559e160885cbf1">getTouchLinks</a> () const</td></tr>
 <tr class="memdesc:a1added4f50dd7c18b8559e160885cbf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the links that the attached body is allowed to touch.  <a href="classmoveit_1_1core_1_1AttachedBody.html#a1added4f50dd7c18b8559e160885cbf1">More...</a><br /></td></tr>
 <tr class="separator:a1added4f50dd7c18b8559e160885cbf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b5208f4d6c74fd1c31d89015f153d93"><td class="memItemLeft" align="right" valign="top">const trajectory_msgs::msg::JointTrajectory &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1AttachedBody.html#a1b5208f4d6c74fd1c31d89015f153d93">getDetachPosture</a> () const</td></tr>
 <tr class="memdesc:a1b5208f4d6c74fd1c31d89015f153d93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the posture that is necessary for the object to be released, (if any). This is useful for example when storing the configuration of a gripper holding an object.  <a href="classmoveit_1_1core_1_1AttachedBody.html#a1b5208f4d6c74fd1c31d89015f153d93">More...</a><br /></td></tr>
 <tr class="separator:a1b5208f4d6c74fd1c31d89015f153d93"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99d936abf012843590f70245a9a4b261"><td class="memItemLeft" align="right" valign="top">const EigenSTL::vector_Isometry3d &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1AttachedBody.html#a99d936abf012843590f70245a9a4b261">getShapePosesInLinkFrame</a> () const</td></tr>
-<tr class="memdesc:a99d936abf012843590f70245a9a4b261"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the fixed transforms (the transforms to the shapes of this body, relative to the link). The returned transforms are guaranteed to be valid isometries.  <a href="classmoveit_1_1core_1_1AttachedBody.html#a99d936abf012843590f70245a9a4b261">More...</a><br /></td></tr>
-<tr class="separator:a99d936abf012843590f70245a9a4b261"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ad0a458fbb1d88eefd0d9866020912d"><td class="memItemLeft" align="right" valign="top">const EigenSTL::vector_Isometry3d &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1AttachedBody.html#a6ad0a458fbb1d88eefd0d9866020912d">getFixedTransforms</a> () const</td></tr>
-<tr class="memdesc:a6ad0a458fbb1d88eefd0d9866020912d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the fixed transforms (the transforms to the shapes of this body, relative to the link). The returned transforms are guaranteed to be valid isometries. Deprecated. Use getShapePosesInLinkFrame instead.  <a href="classmoveit_1_1core_1_1AttachedBody.html#a6ad0a458fbb1d88eefd0d9866020912d">More...</a><br /></td></tr>
+<tr class="memdesc:a6ad0a458fbb1d88eefd0d9866020912d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the fixed transforms (the transforms to the shapes of this body, relative to the link). The returned transforms are guaranteed to be valid isometries.  <a href="classmoveit_1_1core_1_1AttachedBody.html#a6ad0a458fbb1d88eefd0d9866020912d">More...</a><br /></td></tr>
 <tr class="separator:a6ad0a458fbb1d88eefd0d9866020912d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b79d5b6840236f1a14735c16bcbede8"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacemoveit_1_1core.html#aaed75968b346de18defad60f19fc2545">moveit::core::FixedTransformsMap</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1AttachedBody.html#a6b79d5b6840236f1a14735c16bcbede8">getSubframes</a> () const</td></tr>
-<tr class="memdesc:a6b79d5b6840236f1a14735c16bcbede8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get subframes of this object (relative to the object pose). The returned transforms are guaranteed to be valid isometries.  <a href="classmoveit_1_1core_1_1AttachedBody.html#a6b79d5b6840236f1a14735c16bcbede8">More...</a><br /></td></tr>
-<tr class="separator:a6b79d5b6840236f1a14735c16bcbede8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a625360c145f93840d145328ea02836b5"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacemoveit_1_1core.html#aaed75968b346de18defad60f19fc2545">moveit::core::FixedTransformsMap</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1AttachedBody.html#a625360c145f93840d145328ea02836b5">getSubframeTransforms</a> () const</td></tr>
+<tr class="memdesc:a625360c145f93840d145328ea02836b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get subframes of this object (relative to the link). The returned transforms are guaranteed to be valid isometries.  <a href="classmoveit_1_1core_1_1AttachedBody.html#a625360c145f93840d145328ea02836b5">More...</a><br /></td></tr>
+<tr class="separator:a625360c145f93840d145328ea02836b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4407ed8d9d36704d3fb78d10bdf93559"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacemoveit_1_1core.html#aaed75968b346de18defad60f19fc2545">moveit::core::FixedTransformsMap</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1AttachedBody.html#a4407ed8d9d36704d3fb78d10bdf93559">getGlobalSubframeTransforms</a> () const</td></tr>
 <tr class="memdesc:a4407ed8d9d36704d3fb78d10bdf93559"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get subframes of this object (in the world frame)  <a href="classmoveit_1_1core_1_1AttachedBody.html#a4407ed8d9d36704d3fb78d10bdf93559">More...</a><br /></td></tr>
 <tr class="separator:a4407ed8d9d36704d3fb78d10bdf93559"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -129,19 +117,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a10d71f5055660089d896c93d8aaae527"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set all subframes of this object.  <a href="classmoveit_1_1core_1_1AttachedBody.html#a10d71f5055660089d896c93d8aaae527">More...</a><br /></td></tr>
 <tr class="separator:a10d71f5055660089d896c93d8aaae527"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55e4e366820e703b04b262c4832af62f"><td class="memItemLeft" align="right" valign="top">const Eigen::Isometry3d &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1AttachedBody.html#a55e4e366820e703b04b262c4832af62f">getSubframeTransform</a> (const std::string &amp;frame_name, bool *found=nullptr) const</td></tr>
-<tr class="memdesc:a55e4e366820e703b04b262c4832af62f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the fixed transform to a named subframe on this body (relative to the body's pose)  <a href="classmoveit_1_1core_1_1AttachedBody.html#a55e4e366820e703b04b262c4832af62f">More...</a><br /></td></tr>
+<tr class="memdesc:a55e4e366820e703b04b262c4832af62f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the fixed transform to a named subframe on this body (relative to the robot link)  <a href="classmoveit_1_1core_1_1AttachedBody.html#a55e4e366820e703b04b262c4832af62f">More...</a><br /></td></tr>
 <tr class="separator:a55e4e366820e703b04b262c4832af62f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac186878595880ce02dd676c289c87d9"><td class="memItemLeft" align="right" valign="top">const Eigen::Isometry3d &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1AttachedBody.html#aac186878595880ce02dd676c289c87d9">getSubframeTransformInLinkFrame</a> (const std::string &amp;frame_name, bool *found=nullptr) const</td></tr>
-<tr class="memdesc:aac186878595880ce02dd676c289c87d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the fixed transform to a named subframe on this body (relative to the robot link)  <a href="classmoveit_1_1core_1_1AttachedBody.html#aac186878595880ce02dd676c289c87d9">More...</a><br /></td></tr>
-<tr class="separator:aac186878595880ce02dd676c289c87d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef3a71105098a96cdd8a8b35f79d138e"><td class="memItemLeft" align="right" valign="top">const Eigen::Isometry3d &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1AttachedBody.html#aef3a71105098a96cdd8a8b35f79d138e">getGlobalSubframeTransform</a> (const std::string &amp;frame_name, bool *found=nullptr) const</td></tr>
-<tr class="memdesc:aef3a71105098a96cdd8a8b35f79d138e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the fixed transform to a named subframe on this body, relative to the world frame. The frame_name needs to have the object's name prepended (e.g. "screwdriver/tip" returns true if the object's name is "screwdriver"). Returns an identity transform if frame_name is unknown (and set found to false). The returned transform is guaranteed to be a valid isometry.  <a href="classmoveit_1_1core_1_1AttachedBody.html#aef3a71105098a96cdd8a8b35f79d138e">More...</a><br /></td></tr>
+<tr class="memdesc:aef3a71105098a96cdd8a8b35f79d138e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the fixed transform to a named subframe on this body. The frame_name needs to have the object's name prepended (e.g. "screwdriver/tip" returns true if the object's name is "screwdriver"). Returns an identity transform if frame_name is unknown (and set found to false). The returned transform is guaranteed to be a valid isometry.  <a href="classmoveit_1_1core_1_1AttachedBody.html#aef3a71105098a96cdd8a8b35f79d138e">More...</a><br /></td></tr>
 <tr class="separator:aef3a71105098a96cdd8a8b35f79d138e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72cc04876c61fe56bf948e47612705ad"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1AttachedBody.html#a72cc04876c61fe56bf948e47612705ad">hasSubframeTransform</a> (const std::string &amp;frame_name) const</td></tr>
 <tr class="memdesc:a72cc04876c61fe56bf948e47612705ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether a subframe of given @frame_name is present in this object.  <a href="classmoveit_1_1core_1_1AttachedBody.html#a72cc04876c61fe56bf948e47612705ad">More...</a><br /></td></tr>
 <tr class="separator:a72cc04876c61fe56bf948e47612705ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a385c7ec39f012ce26eb81b32fa22cae9"><td class="memItemLeft" align="right" valign="top">const EigenSTL::vector_Isometry3d &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1AttachedBody.html#a385c7ec39f012ce26eb81b32fa22cae9">getGlobalCollisionBodyTransforms</a> () const</td></tr>
-<tr class="memdesc:a385c7ec39f012ce26eb81b32fa22cae9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the global transforms (in world frame) for the collision bodies. The returned transforms are guaranteed to be valid isometries.  <a href="classmoveit_1_1core_1_1AttachedBody.html#a385c7ec39f012ce26eb81b32fa22cae9">More...</a><br /></td></tr>
+<tr class="memdesc:a385c7ec39f012ce26eb81b32fa22cae9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the global transforms for the collision bodies. The returned transforms are guaranteed to be valid isometries.  <a href="classmoveit_1_1core_1_1AttachedBody.html#a385c7ec39f012ce26eb81b32fa22cae9">More...</a><br /></td></tr>
 <tr class="separator:a385c7ec39f012ce26eb81b32fa22cae9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5bcf3884cb5922c5364b20b05a3bd608"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1AttachedBody.html#a5bcf3884cb5922c5364b20b05a3bd608">setPadding</a> (double padding)</td></tr>
 <tr class="memdesc:a5bcf3884cb5922c5364b20b05a3bd608"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the padding for the shapes of this attached object.  <a href="classmoveit_1_1core_1_1AttachedBody.html#a5bcf3884cb5922c5364b20b05a3bd608">More...</a><br /></td></tr>
@@ -159,8 +144,8 @@ Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="attached__body_8h_source.html#l00121">121</a> of file <a class="el" href="attached__body_8h_source.html">attached_body.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aabba37049256d5259e89516785777d61"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aabba37049256d5259e89516785777d61">&#9670;&nbsp;</a></span>AttachedBody()</h2>
+<a id="acabd91d6ac4fb4eb1cb8237f3fcd9cb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acabd91d6ac4fb4eb1cb8237f3fcd9cb2">&#9670;&nbsp;</a></span>AttachedBody()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -180,12 +165,6 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const Eigen::Isometry3d &amp;&#160;</td>
-          <td class="paramname"><em>pose</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">const std::vector&lt; shapes::ShapeConstPtr &gt; &amp;&#160;</td>
           <td class="paramname"><em>shapes</em>, </td>
         </tr>
@@ -193,12 +172,12 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const EigenSTL::vector_Isometry3d &amp;&#160;</td>
-          <td class="paramname"><em>shape_poses</em>, </td>
+          <td class="paramname"><em>attach_trans</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="ros_2warehouse_2warehouse_2CMakeLists_8txt.html#af4423e580afb68aec7c40fb0bce7d5d4">std::set</a>&lt; std::string &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="setup__assistant_2CMakeLists_8txt.html#a58ab708fe5c1f47f0642bdaee3056d3b">std::set</a>&lt; std::string &gt; &amp;&#160;</td>
           <td class="paramname"><em>touch_links</em>, </td>
         </tr>
         <tr>
@@ -222,7 +201,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Construct an attached body for a specified <em>link</em>. </p>
-<p>The name of this body is <em>id</em> and it consists of <em>shapes</em> that attach to the link by the transforms <em>shape_poses</em>. The set of links that are allowed to be touched by this object is specified by <em>touch_links</em>. </p>
+<p>The name of this body is <em>id</em> and it consists of <em>shapes</em> that attach to the link by the transforms <em>attach_trans</em>. The set of links that are allowed to be touched by this object is specified by <em>touch_links</em>. </p>
 
 <p class="definition">Definition at line <a class="el" href="attached__body_8cpp_source.html#l00110">110</a> of file <a class="el" href="attached__body_8cpp_source.html">attached_body.cpp</a>.</p>
 
@@ -272,7 +251,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Recompute global_collision_body_transform given the transform of the parent link. </p>
 
-<p class="definition">Definition at line <a class="el" href="attached__body_8cpp_source.html#l00168">168</a> of file <a class="el" href="attached__body_8cpp_source.html">attached_body.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="attached__body_8cpp_source.html#l00156">156</a> of file <a class="el" href="attached__body_8cpp_source.html">attached_body.cpp</a>.</p>
 
 </div>
 </div>
@@ -301,7 +280,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Get the model of the link this body is attached to. </p>
 
-<p class="definition">Definition at line <a class="el" href="attached__body_8h_source.html#l00160">160</a> of file <a class="el" href="attached__body_8h_source.html">attached_body.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="attached__body_8h_source.html#l00148">148</a> of file <a class="el" href="attached__body_8h_source.html">attached_body.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -339,16 +318,7 @@ Here is the caller graph for this function:</div>
 
 <p>Get the name of the link this body is attached to. </p>
 
-<p class="definition">Definition at line <a class="el" href="attached__body_8h_source.html#l00154">154</a> of file <a class="el" href="attached__body_8h_source.html">attached_body.h</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classmoveit_1_1core_1_1AttachedBody_a11d6a3b22ff5b6be47352f9621783f22_icgraph.png" border="0" usemap="#classmoveit_1_1core_1_1AttachedBody_a11d6a3b22ff5b6be47352f9621783f22_icgraph" alt=""/></div>
-<map name="classmoveit_1_1core_1_1AttachedBody_a11d6a3b22ff5b6be47352f9621783f22_icgraph" id="classmoveit_1_1core_1_1AttachedBody_a11d6a3b22ff5b6be47352f9621783f22_icgraph">
-<area shape="rect" title="Get the name of the link this body is attached to." alt="" coords="237,5,440,47"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#a7bbd086fed1babcc8e5492e0d9c80614" title="setFromIK for multiple poses and tips (end effectors) when no solver exists for the jmg that can solv..." alt="" coords="5,5,189,47"/>
-</map>
-</div>
+<p class="definition">Definition at line <a class="el" href="attached__body_8h_source.html#l00142">142</a> of file <a class="el" href="attached__body_8h_source.html">attached_body.h</a>.</p>
 
 </div>
 </div>
@@ -377,16 +347,7 @@ Here is the caller graph for this function:</div>
 
 <p>Return the posture that is necessary for the object to be released, (if any). This is useful for example when storing the configuration of a gripper holding an object. </p>
 
-<p class="definition">Definition at line <a class="el" href="attached__body_8h_source.html#l00186">186</a> of file <a class="el" href="attached__body_8h_source.html">attached_body.h</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classmoveit_1_1core_1_1AttachedBody_a1b5208f4d6c74fd1c31d89015f153d93_icgraph.png" border="0" usemap="#classmoveit_1_1core_1_1AttachedBody_a1b5208f4d6c74fd1c31d89015f153d93_icgraph" alt=""/></div>
-<map name="classmoveit_1_1core_1_1AttachedBody_a1b5208f4d6c74fd1c31d89015f153d93_icgraph" id="classmoveit_1_1core_1_1AttachedBody_a1b5208f4d6c74fd1c31d89015f153d93_icgraph">
-<area shape="rect" title="Return the posture that is necessary for the object to be released, (if any). This is useful for exam..." alt="" coords="287,13,489,54"/>
-<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#a6f16582ddf99b615ef69c658521731ff" title=" " alt="" coords="5,5,239,61"/>
-</map>
-</div>
+<p class="definition">Definition at line <a class="el" href="attached__body_8h_source.html#l00168">168</a> of file <a class="el" href="attached__body_8h_source.html">attached_body.h</a>.</p>
 
 </div>
 </div>
@@ -413,9 +374,18 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Get the fixed transforms (the transforms to the shapes of this body, relative to the link). The returned transforms are guaranteed to be valid isometries. Deprecated. Use getShapePosesInLinkFrame instead. </p>
+<p>Get the fixed transforms (the transforms to the shapes of this body, relative to the link). The returned transforms are guaranteed to be valid isometries. </p>
 
-<p class="definition">Definition at line <a class="el" href="attached__body_8h_source.html#l00201">201</a> of file <a class="el" href="attached__body_8h_source.html">attached_body.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="attached__body_8h_source.html#l00175">175</a> of file <a class="el" href="attached__body_8h_source.html">attached_body.h</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmoveit_1_1core_1_1AttachedBody_a6ad0a458fbb1d88eefd0d9866020912d_icgraph.png" border="0" usemap="#classmoveit_1_1core_1_1AttachedBody_a6ad0a458fbb1d88eefd0d9866020912d_icgraph" alt=""/></div>
+<map name="classmoveit_1_1core_1_1AttachedBody_a6ad0a458fbb1d88eefd0d9866020912d_icgraph" id="classmoveit_1_1core_1_1AttachedBody_a6ad0a458fbb1d88eefd0d9866020912d_icgraph">
+<area shape="rect" title="Get the fixed transforms (the transforms to the shapes of this body, relative to the link)...." alt="" coords="237,5,440,47"/>
+<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#a7bbd086fed1babcc8e5492e0d9c80614" title="setFromIK for multiple poses and tips (end effectors) when no solver exists for the jmg that can solv..." alt="" coords="5,5,189,47"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -442,56 +412,18 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Get the global transforms (in world frame) for the collision bodies. The returned transforms are guaranteed to be valid isometries. </p>
+<p>Get the global transforms for the collision bodies. The returned transforms are guaranteed to be valid isometries. </p>
 
-<p class="definition">Definition at line <a class="el" href="attached__body_8h_source.html#l00261">261</a> of file <a class="el" href="attached__body_8h_source.html">attached_body.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="attached__body_8h_source.html#l00228">228</a> of file <a class="el" href="attached__body_8h_source.html">attached_body.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classmoveit_1_1core_1_1AttachedBody_a385c7ec39f012ce26eb81b32fa22cae9_icgraph.png" border="0" usemap="#classmoveit_1_1core_1_1AttachedBody_a385c7ec39f012ce26eb81b32fa22cae9_icgraph" alt=""/></div>
 <map name="classmoveit_1_1core_1_1AttachedBody_a385c7ec39f012ce26eb81b32fa22cae9_icgraph" id="classmoveit_1_1core_1_1AttachedBody_a385c7ec39f012ce26eb81b32fa22cae9_icgraph">
-<area shape="rect" title="Get the global transforms (in world frame) for the collision bodies. The returned transforms are guar..." alt="" coords="333,86,588,127"/>
+<area shape="rect" title="Get the global transforms for the collision bodies. The returned transforms are guaranteed to be vali..." alt="" coords="333,86,588,127"/>
 <area shape="rect" href="classcollision__detection_1_1CollisionEnvBullet.html#a7d61a67dcd95b0e223cf483643727cd3" title=" " alt="" coords="43,5,248,61"/>
 <area shape="rect" href="namespacecollision__detection.html#a1138fda53957ff4d0719e919ff7aef52" title=" " alt="" coords="5,86,285,127"/>
 <area shape="rect" href="classcollision__detection_1_1CollisionEnvBullet.html#adf0dea35ea4440d2a714edb446ffd59e" title=" " alt="" coords="66,152,225,208"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a572196d20382bcec4728a747d7f19fb7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a572196d20382bcec4728a747d7f19fb7">&#9670;&nbsp;</a></span>getGlobalPose()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const Eigen::Isometry3d&amp; moveit::core::AttachedBody::getGlobalPose </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the pose of the attached body, relative to the world. </p>
-
-<p class="definition">Definition at line <a class="el" href="attached__body_8h_source.html#l00148">148</a> of file <a class="el" href="attached__body_8h_source.html">attached_body.h</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classmoveit_1_1core_1_1AttachedBody_a572196d20382bcec4728a747d7f19fb7_icgraph.png" border="0" usemap="#classmoveit_1_1core_1_1AttachedBody_a572196d20382bcec4728a747d7f19fb7_icgraph" alt=""/></div>
-<map name="classmoveit_1_1core_1_1AttachedBody_a572196d20382bcec4728a747d7f19fb7_icgraph" id="classmoveit_1_1core_1_1AttachedBody_a572196d20382bcec4728a747d7f19fb7_icgraph">
-<area shape="rect" title="Get the pose of the attached body, relative to the world." alt="" coords="123,5,325,47"/>
-<area shape="rect" href="test__kinematic__complex_8cpp.html#aa1450fb7f87ddc5fe47f1d52fe1a62dc" title=" " alt="" coords="5,13,75,39"/>
 </map>
 </div>
 
@@ -523,9 +455,9 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Get the fixed transform to a named subframe on this body, relative to the world frame. The frame_name needs to have the object's name prepended (e.g. "screwdriver/tip" returns true if the object's name is "screwdriver"). Returns an identity transform if frame_name is unknown (and set found to false). The returned transform is guaranteed to be a valid isometry. </p>
+<p>Get the fixed transform to a named subframe on this body. The frame_name needs to have the object's name prepended (e.g. "screwdriver/tip" returns true if the object's name is "screwdriver"). Returns an identity transform if frame_name is unknown (and set found to false). The returned transform is guaranteed to be a valid isometry. </p>
 
-<p class="definition">Definition at line <a class="el" href="attached__body_8cpp_source.html#l00218">218</a> of file <a class="el" href="attached__body_8cpp_source.html">attached_body.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="attached__body_8cpp_source.html#l00205">205</a> of file <a class="el" href="attached__body_8cpp_source.html">attached_body.cpp</a>.</p>
 
 </div>
 </div>
@@ -554,7 +486,7 @@ Here is the caller graph for this function:</div>
 
 <p>Get subframes of this object (in the world frame) </p>
 
-<p class="definition">Definition at line <a class="el" href="attached__body_8h_source.html#l00214">214</a> of file <a class="el" href="attached__body_8h_source.html">attached_body.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="attached__body_8h_source.html#l00188">188</a> of file <a class="el" href="attached__body_8h_source.html">attached_body.h</a>.</p>
 
 </div>
 </div>
@@ -600,122 +532,6 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="ad6ba631b74e575e53a07b333a4054a15"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad6ba631b74e575e53a07b333a4054a15">&#9670;&nbsp;</a></span>getPose()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const Eigen::Isometry3d&amp; moveit::core::AttachedBody::getPose </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the pose of the attached body relative to the parent link. </p>
-
-<p class="definition">Definition at line <a class="el" href="attached__body_8h_source.html#l00142">142</a> of file <a class="el" href="attached__body_8h_source.html">attached_body.h</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classmoveit_1_1core_1_1AttachedBody_ad6ba631b74e575e53a07b333a4054a15_icgraph.png" border="0" usemap="#classmoveit_1_1core_1_1AttachedBody_ad6ba631b74e575e53a07b333a4054a15_icgraph" alt=""/></div>
-<map name="classmoveit_1_1core_1_1AttachedBody_ad6ba631b74e575e53a07b333a4054a15_icgraph" id="classmoveit_1_1core_1_1AttachedBody_ad6ba631b74e575e53a07b333a4054a15_icgraph">
-<area shape="rect" title="Get the pose of the attached body relative to the parent link." alt="" coords="287,86,489,127"/>
-<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#a6f16582ddf99b615ef69c658521731ff" title=" " alt="" coords="5,5,239,61"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#a7bbd086fed1babcc8e5492e0d9c80614" title="setFromIK for multiple poses and tips (end effectors) when no solver exists for the jmg that can solv..." alt="" coords="30,86,214,127"/>
-<area shape="rect" href="test__kinematic__complex_8cpp.html#aa1450fb7f87ddc5fe47f1d52fe1a62dc" title=" " alt="" coords="87,152,157,179"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="ad7e41060467df2a8db42540d86cfbcf6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad7e41060467df2a8db42540d86cfbcf6">&#9670;&nbsp;</a></span>getShapePoses()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const EigenSTL::vector_Isometry3d&amp; moveit::core::AttachedBody::getShapePoses </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the shape poses (the transforms to the shapes of this body, relative to the pose). The returned transforms are guaranteed to be valid isometries. </p>
-
-<p class="definition">Definition at line <a class="el" href="attached__body_8h_source.html#l00173">173</a> of file <a class="el" href="attached__body_8h_source.html">attached_body.h</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classmoveit_1_1core_1_1AttachedBody_ad7e41060467df2a8db42540d86cfbcf6_icgraph.png" border="0" usemap="#classmoveit_1_1core_1_1AttachedBody_ad7e41060467df2a8db42540d86cfbcf6_icgraph" alt=""/></div>
-<map name="classmoveit_1_1core_1_1AttachedBody_ad7e41060467df2a8db42540d86cfbcf6_icgraph" id="classmoveit_1_1core_1_1AttachedBody_ad7e41060467df2a8db42540d86cfbcf6_icgraph">
-<area shape="rect" title="Get the shape poses (the transforms to the shapes of this body, relative to the pose)...." alt="" coords="287,13,489,54"/>
-<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#a6f16582ddf99b615ef69c658521731ff" title=" " alt="" coords="5,5,239,61"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a99d936abf012843590f70245a9a4b261"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a99d936abf012843590f70245a9a4b261">&#9670;&nbsp;</a></span>getShapePosesInLinkFrame()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const EigenSTL::vector_Isometry3d&amp; moveit::core::AttachedBody::getShapePosesInLinkFrame </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the fixed transforms (the transforms to the shapes of this body, relative to the link). The returned transforms are guaranteed to be valid isometries. </p>
-
-<p class="definition">Definition at line <a class="el" href="attached__body_8h_source.html#l00193">193</a> of file <a class="el" href="attached__body_8h_source.html">attached_body.h</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classmoveit_1_1core_1_1AttachedBody_a99d936abf012843590f70245a9a4b261_icgraph.png" border="0" usemap="#classmoveit_1_1core_1_1AttachedBody_a99d936abf012843590f70245a9a4b261_icgraph" alt=""/></div>
-<map name="classmoveit_1_1core_1_1AttachedBody_a99d936abf012843590f70245a9a4b261_icgraph" id="classmoveit_1_1core_1_1AttachedBody_a99d936abf012843590f70245a9a4b261_icgraph">
-<area shape="rect" title="Get the fixed transforms (the transforms to the shapes of this body, relative to the link)...." alt="" coords="123,5,332,47"/>
-<area shape="rect" href="test__kinematic__complex_8cpp.html#aa1450fb7f87ddc5fe47f1d52fe1a62dc" title=" " alt="" coords="5,13,75,39"/>
-</map>
-</div>
-
-</div>
-</div>
 <a id="a8832405dda038c3e28a7969cb63993d1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8832405dda038c3e28a7969cb63993d1">&#9670;&nbsp;</a></span>getShapes()</h2>
 
@@ -741,60 +557,21 @@ Here is the caller graph for this function:</div>
 
 <p>Get the shapes that make up this attached body. </p>
 
-<p class="definition">Definition at line <a class="el" href="attached__body_8h_source.html#l00166">166</a> of file <a class="el" href="attached__body_8h_source.html">attached_body.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="attached__body_8h_source.html#l00154">154</a> of file <a class="el" href="attached__body_8h_source.html">attached_body.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classmoveit_1_1core_1_1AttachedBody_a8832405dda038c3e28a7969cb63993d1_icgraph.png" border="0" usemap="#classmoveit_1_1core_1_1AttachedBody_a8832405dda038c3e28a7969cb63993d1_icgraph" alt=""/></div>
 <map name="classmoveit_1_1core_1_1AttachedBody_a8832405dda038c3e28a7969cb63993d1_icgraph" id="classmoveit_1_1core_1_1AttachedBody_a8832405dda038c3e28a7969cb63993d1_icgraph">
-<area shape="rect" title="Get the shapes that make up this attached body." alt="" coords="1373,175,1576,216"/>
+<area shape="rect" title="Get the shapes that make up this attached body." alt="" coords="1373,137,1576,179"/>
 <area shape="rect" href="classplanning__scene__monitor_1_1PlanningSceneMonitor.html#a477bfb14b4cac0faccbef97c5e498148" title=" " alt="" coords="1061,57,1309,113"/>
 <area shape="rect" href="namespacecollision__detection.html#a1138fda53957ff4d0719e919ff7aef52" title=" " alt="" coords="1045,137,1325,179"/>
 <area shape="rect" href="classcollision__detection_1_1CollisionEnvDistanceField.html#ac995657ee4e300570b7b90baed15014a" title=" " alt="" coords="1044,203,1325,259"/>
-<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#a6f16582ddf99b615ef69c658521731ff" title=" " alt="" coords="1068,283,1301,339"/>
 <area shape="rect" href="classplanning__scene__monitor_1_1PlanningSceneMonitor.html#ae4d889aa729b6873c86364c3e94331ed" title="Callback for a change for an attached object of the current state of the planning scene." alt="" coords="743,5,991,76"/>
 <area shape="rect" href="classplanning__scene__monitor_1_1PlanningSceneMonitor.html#a15a0655438d60c31f5e887fa3816ddf3" title=" " alt="" coords="737,101,996,157"/>
 <area shape="rect" href="classplanning__scene__monitor_1_1PlanningSceneMonitor.html#ae24b91704cc02e4e93c5b8ceaf532cc0" title="By default, the maintained planning scene does not reason about diffs. When the flag passed in is tru..." alt="" coords="508,13,689,69"/>
 <area shape="rect" href="classplanning__scene__monitor_1_1PlanningSceneMonitor.html#a47683738cf3fe6751ab46fc685016fbe" title="Stop publishing the maintained planning scene." alt="" coords="240,13,460,69"/>
 <area shape="rect" href="classplanning__scene__monitor_1_1PlanningSceneMonitor.html#ac887bea208471873f79cec4e5f1fdc3b" title=" " alt="" coords="5,13,192,69"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a6b79d5b6840236f1a14735c16bcbede8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6b79d5b6840236f1a14735c16bcbede8">&#9670;&nbsp;</a></span>getSubframes()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="namespacemoveit_1_1core.html#aaed75968b346de18defad60f19fc2545">moveit::core::FixedTransformsMap</a>&amp; moveit::core::AttachedBody::getSubframes </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get subframes of this object (relative to the object pose). The returned transforms are guaranteed to be valid isometries. </p>
-
-<p class="definition">Definition at line <a class="el" href="attached__body_8h_source.html#l00208">208</a> of file <a class="el" href="attached__body_8h_source.html">attached_body.h</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classmoveit_1_1core_1_1AttachedBody_a6b79d5b6840236f1a14735c16bcbede8_icgraph.png" border="0" usemap="#classmoveit_1_1core_1_1AttachedBody_a6b79d5b6840236f1a14735c16bcbede8_icgraph" alt=""/></div>
-<map name="classmoveit_1_1core_1_1AttachedBody_a6b79d5b6840236f1a14735c16bcbede8_icgraph" id="classmoveit_1_1core_1_1AttachedBody_a6b79d5b6840236f1a14735c16bcbede8_icgraph">
-<area shape="rect" title="Get subframes of this object (relative to the object pose). The returned transforms are guaranteed to..." alt="" coords="287,13,489,54"/>
-<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#a6f16582ddf99b615ef69c658521731ff" title=" " alt="" coords="5,5,239,61"/>
 </map>
 </div>
 
@@ -826,41 +603,39 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Get the fixed transform to a named subframe on this body (relative to the body's pose) </p>
+<p>Get the fixed transform to a named subframe on this body (relative to the robot link) </p>
 <p>The frame_name needs to have the object's name prepended (e.g. "screwdriver/tip" returns true if the object's name is "screwdriver"). Returns an identity transform if frame_name is unknown (and set found to false). The returned transform is guaranteed to be a valid isometry. </p>
 
-<p class="definition">Definition at line <a class="el" href="attached__body_8cpp_source.html#l00200">200</a> of file <a class="el" href="attached__body_8cpp_source.html">attached_body.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="attached__body_8cpp_source.html#l00187">187</a> of file <a class="el" href="attached__body_8cpp_source.html">attached_body.cpp</a>.</p>
 
 </div>
 </div>
-<a id="aac186878595880ce02dd676c289c87d9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac186878595880ce02dd676c289c87d9">&#9670;&nbsp;</a></span>getSubframeTransformInLinkFrame()</h2>
+<a id="a625360c145f93840d145328ea02836b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a625360c145f93840d145328ea02836b5">&#9670;&nbsp;</a></span>getSubframeTransforms()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const Eigen::Isometry3d&amp; moveit::core::AttachedBody::getSubframeTransformInLinkFrame </td>
+          <td class="memname">const <a class="el" href="namespacemoveit_1_1core.html#aaed75968b346de18defad60f19fc2545">moveit::core::FixedTransformsMap</a>&amp; moveit::core::AttachedBody::getSubframeTransforms </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>frame_name</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool *&#160;</td>
-          <td class="paramname"><em>found</em> = <code>nullptr</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Get the fixed transform to a named subframe on this body (relative to the robot link) </p>
-<p>The frame_name needs to have the object's name prepended (e.g. "screwdriver/tip" returns true if the object's name is "screwdriver"). Returns an identity transform if frame_name is unknown (and set found to false). The returned transform is guaranteed to be a valid isometry. </p>
+<p>Get subframes of this object (relative to the link). The returned transforms are guaranteed to be valid isometries. </p>
+
+<p class="definition">Definition at line <a class="el" href="attached__body_8h_source.html#l00182">182</a> of file <a class="el" href="attached__body_8h_source.html">attached_body.h</a>.</p>
 
 </div>
 </div>
@@ -874,7 +649,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="ros_2warehouse_2warehouse_2CMakeLists_8txt.html#af4423e580afb68aec7c40fb0bce7d5d4">std::set</a>&lt;std::string&gt;&amp; moveit::core::AttachedBody::getTouchLinks </td>
+          <td class="memname">const <a class="el" href="setup__assistant_2CMakeLists_8txt.html#a58ab708fe5c1f47f0642bdaee3056d3b">std::set</a>&lt;std::string&gt;&amp; moveit::core::AttachedBody::getTouchLinks </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -889,16 +664,7 @@ Here is the caller graph for this function:</div>
 
 <p>Get the links that the attached body is allowed to touch. </p>
 
-<p class="definition">Definition at line <a class="el" href="attached__body_8h_source.html#l00179">179</a> of file <a class="el" href="attached__body_8h_source.html">attached_body.h</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classmoveit_1_1core_1_1AttachedBody_a1added4f50dd7c18b8559e160885cbf1_icgraph.png" border="0" usemap="#classmoveit_1_1core_1_1AttachedBody_a1added4f50dd7c18b8559e160885cbf1_icgraph" alt=""/></div>
-<map name="classmoveit_1_1core_1_1AttachedBody_a1added4f50dd7c18b8559e160885cbf1_icgraph" id="classmoveit_1_1core_1_1AttachedBody_a1added4f50dd7c18b8559e160885cbf1_icgraph">
-<area shape="rect" title="Get the links that the attached body is allowed to touch." alt="" coords="287,13,489,54"/>
-<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#a6f16582ddf99b615ef69c658521731ff" title=" " alt="" coords="5,5,239,61"/>
-</map>
-</div>
+<p class="definition">Definition at line <a class="el" href="attached__body_8h_source.html#l00160">160</a> of file <a class="el" href="attached__body_8h_source.html">attached_body.h</a>.</p>
 
 </div>
 </div>
@@ -921,7 +687,7 @@ Here is the caller graph for this function:</div>
 <p>Check whether a subframe of given @frame_name is present in this object. </p>
 <p>The frame_name needs to have the object's name prepended (e.g. "screwdriver/tip" returns true if the object's name is "screwdriver"). </p>
 
-<p class="definition">Definition at line <a class="el" href="attached__body_8cpp_source.html#l00236">236</a> of file <a class="el" href="attached__body_8cpp_source.html">attached_body.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="attached__body_8cpp_source.html#l00223">223</a> of file <a class="el" href="attached__body_8cpp_source.html">attached_body.cpp</a>.</p>
 
 </div>
 </div>
@@ -943,7 +709,7 @@ Here is the caller graph for this function:</div>
 
 <p>Set the padding for the shapes of this attached object. </p>
 
-<p class="definition">Definition at line <a class="el" href="attached__body_8cpp_source.html#l00183">183</a> of file <a class="el" href="attached__body_8cpp_source.html">attached_body.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="attached__body_8cpp_source.html#l00170">170</a> of file <a class="el" href="attached__body_8cpp_source.html">attached_body.cpp</a>.</p>
 
 </div>
 </div>
@@ -965,7 +731,7 @@ Here is the caller graph for this function:</div>
 
 <p>Set the scale for the shapes of this attached object. </p>
 
-<p class="definition">Definition at line <a class="el" href="attached__body_8cpp_source.html#l00151">151</a> of file <a class="el" href="attached__body_8cpp_source.html">attached_body.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="attached__body_8cpp_source.html#l00139">139</a> of file <a class="el" href="attached__body_8cpp_source.html">attached_body.cpp</a>.</p>
 
 </div>
 </div>
@@ -996,7 +762,7 @@ Here is the caller graph for this function:</div>
 <p>Set all subframes of this object. </p>
 <p>Use these to define points of interest on the object to plan with (e.g. screwdriver/tip, kettle/spout, mug/base). </p>
 
-<p class="definition">Definition at line <a class="el" href="attached__body_8h_source.html#l00224">224</a> of file <a class="el" href="attached__body_8h_source.html">attached_body.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="attached__body_8h_source.html#l00198">198</a> of file <a class="el" href="attached__body_8h_source.html">attached_body.h</a>.</p>
 
 </div>
 </div>

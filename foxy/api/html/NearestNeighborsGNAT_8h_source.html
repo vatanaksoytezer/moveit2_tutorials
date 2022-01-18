@@ -318,9 +318,9 @@ $(function() {
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;      {</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        out &lt;&lt; <span class="stringliteral">&quot;Elements marked for removal:\n&quot;</span>;</div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">typename</span> std::unordered_set&lt;const _T*&gt;::const_iterator it = gnat.removed_.begin();</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;             it != gnat.removed_.end(); ++it)</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;             it != gnat.removed_.end(); it++)</div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;          out &lt;&lt; **it &lt;&lt; <span class="charliteral">&#39;\t&#39;</span>;</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        out &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        out &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00268"></a><span class="lineno"><a class="line" href="classcached__ik__kinematics__plugin_1_1NearestNeighborsGNAT.html#ae251d568d7203e825bf490f1b4835e3b">  268</a></span>&#160;      }</div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    }</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <span class="keywordflow">return</span> out;</div>
@@ -335,7 +335,7 @@ $(function() {
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <a class="code" href="classcached__ik__kinematics__plugin_1_1NearestNeighborsGNAT.html#a827c83d987eb312a5edcedea6908d50d">removed_</a>.swap(tmp);</div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <a class="code" href="classcached__ik__kinematics__plugin_1_1NearestNeighborsGNAT.html#a2532c0ef3ece366f6ec7228b48239004">list</a>(lst);</div>
 <div class="line"><a name="l00281"></a><span class="lineno"><a class="line" href="classcached__ik__kinematics__plugin_1_1NearestNeighborsGNAT.html#ad868a902d012049dd98b6a30f558f724">  281</a></span>&#160;    <span class="comment">// check if every element marked for removal is also in the tree</span></div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">typename</span> std::unordered_set&lt;const _T*&gt;::iterator it = tmp.begin(); it != tmp.end(); ++it)</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">typename</span> std::unordered_set&lt;const _T*&gt;::iterator it = tmp.begin(); it != tmp.end(); it++)</div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    {</div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;      <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i;</div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;      <span class="keywordflow">for</span> (i = 0; i &lt; lst.size(); ++i)</div>
@@ -347,7 +347,7 @@ $(function() {
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;***** FAIL!! ******\n&quot;</span> &lt;&lt; *<span class="keyword">this</span> &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> j = 0; j &lt; lst.size(); ++j)</div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;          std::cout &lt;&lt; lst[j] &lt;&lt; <span class="charliteral">&#39;\t&#39;</span>;</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        std::cout &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        std::cout &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00295"></a><span class="lineno"><a class="line" href="classcached__ik__kinematics__plugin_1_1NearestNeighborsGNAT.html#a44882365239a83d1a2264f81cbebf26d">  295</a></span>&#160;      }</div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;      assert(i != lst.size());</div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    }</div>
@@ -356,7 +356,7 @@ $(function() {
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    <span class="comment">// get elements in the tree with elements marked for removal purged from the list</span></div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    <a class="code" href="classcached__ik__kinematics__plugin_1_1NearestNeighborsGNAT.html#a2532c0ef3ece366f6ec7228b48239004">list</a>(lst);</div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <span class="keywordflow">if</span> (lst.size() != <a class="code" href="classcached__ik__kinematics__plugin_1_1NearestNeighborsGNAT.html#aef23be44621451ce015f19b41ec3bf97">size_</a>)</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;      std::cout &lt;&lt; <span class="stringliteral">&quot;#########################################\n&quot;</span> &lt;&lt; *<span class="keyword">this</span> &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;      std::cout &lt;&lt; <span class="stringliteral">&quot;#########################################\n&quot;</span> &lt;&lt; *<span class="keyword">this</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    assert(lst.size() == <a class="code" href="classcached__ik__kinematics__plugin_1_1NearestNeighborsGNAT.html#aef23be44621451ce015f19b41ec3bf97">size_</a>);</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;  }</div>
 <div class="line"><a name="l00306"></a><span class="lineno"><a class="line" href="classcached__ik__kinematics__plugin_1_1NearestNeighborsGNAT.html#a233cca10b0d44494fbe16a9b43d5673b">  306</a></span>&#160; </div>

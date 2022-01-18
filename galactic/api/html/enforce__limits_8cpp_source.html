@@ -119,7 +119,7 @@ $(function() {
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">namespace</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;{</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keywordtype">double</span> getVelocityScalingFactor(<span class="keyword">const</span> <a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html">moveit::core::JointModelGroup</a>* joint_model_group, <span class="keyword">const</span> Eigen::VectorXd&amp; velocity)</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keywordtype">double</span> getVelocityScalingFactor(<span class="keyword">const</span> <a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html">moveit::core::JointModelGroup</a>* joint_model_group, <span class="keyword">const</span> Eigen::ArrayXd&amp; velocity)</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  std::size_t joint_delta_index{ 0 };</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keywordtype">double</span> velocity_scaling_factor{ 1.0 };</div>
@@ -141,38 +141,28 @@ $(function() {
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}  <span class="comment">// namespace</span></div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacemoveit__servo.html#aad144f0d55db346503612164e88d8772">enforceVelocityLimits</a>(<span class="keyword">const</span> <a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html">moveit::core::JointModelGroup</a>* joint_model_group, <span class="keyword">const</span> <span class="keywordtype">double</span> publish_period,</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                           sensor_msgs::msg::JointState&amp; joint_state)</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;Eigen::ArrayXd <a class="code" href="namespacemoveit__servo.html#a3650f7acc84c4ea2183ec75ee28b17d3">enforceVelocityLimits</a>(<span class="keyword">const</span> <a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html">moveit::core::JointModelGroup</a>* joint_model_group, <span class="keywordtype">double</span> publish_period,</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                                     <span class="keyword">const</span> Eigen::ArrayXd&amp; delta_theta)</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;{</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="comment">// Get the velocity scaling factor</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  Eigen::VectorXd velocity =</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      Eigen::Map&lt;Eigen::VectorXd, Eigen::Unaligned&gt;(joint_state.velocity.data(), joint_state.velocity.size());</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keywordtype">double</span> velocity_scaling_factor = getVelocityScalingFactor(joint_model_group, velocity);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="comment">// Take a smaller step if the velocity scaling factor is less than 1</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keywordflow">if</span> (velocity_scaling_factor &lt; 1)</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    Eigen::VectorXd velocity_residuals = (1 - velocity_scaling_factor) * velocity;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    Eigen::VectorXd positions =</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        Eigen::Map&lt;Eigen::VectorXd, Eigen::Unaligned&gt;(joint_state.position.data(), joint_state.position.size());</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    positions -= velocity_residuals * publish_period;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    velocity *= velocity_scaling_factor;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="comment">// Back to sensor_msgs type</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    joint_state.velocity = std::vector&lt;double&gt;(velocity.data(), velocity.data() + velocity.size());</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    joint_state.position = std::vector&lt;double&gt;(positions.data(), positions.data() + positions.size());</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  }</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}  <span class="comment">// namespace moveit_servo</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="comment">// Convert to joint angle velocities for checking and applying joint specific velocity limits.</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  Eigen::ArrayXd velocity = delta_theta / publish_period;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="comment">// Get the velocity scaling factor</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keywordtype">double</span> velocity_scaling_factor = getVelocityScalingFactor(joint_model_group, velocity);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="comment">// Scale the resulting detas to avoid violating limits.</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="keywordflow">return</span> velocity_scaling_factor * velocity * publish_period;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}  <span class="comment">// namespace moveit_servo</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassmoveit_1_1core_1_1JointModelGroup_html_a14fb89fcb1b1d7297b5ddd3d063c715f"><div class="ttname"><a href="classmoveit_1_1core_1_1JointModelGroup.html#a14fb89fcb1b1d7297b5ddd3d063c715f">moveit::core::JointModelGroup::getActiveJointModels</a></div><div class="ttdeci">const std::vector&lt; const JointModel * &gt; &amp; getActiveJointModels() const</div><div class="ttdoc">Get the active joints in this group (that have controllable DOF). This does not include mimic joints.</div><div class="ttdef"><b>Definition:</b> <a href="joint__model__group_8h_source.html#l00222">joint_model_group.h:222</a></div></div>
 <div class="ttc" id="aclassmoveit_1_1core_1_1JointModelGroup_html"><div class="ttname"><a href="classmoveit_1_1core_1_1JointModelGroup.html">moveit::core::JointModelGroup</a></div><div class="ttdef"><b>Definition:</b> <a href="joint__model__group_8h_source.html#l00134">joint_model_group.h:134</a></div></div>
-<div class="ttc" id="anamespacemoveit__servo_html_aad144f0d55db346503612164e88d8772"><div class="ttname"><a href="namespacemoveit__servo.html#aad144f0d55db346503612164e88d8772">moveit_servo::enforceVelocityLimits</a></div><div class="ttdeci">void enforceVelocityLimits(const moveit::core::JointModelGroup *joint_model_group, const double publish_period, sensor_msgs::msg::JointState &amp;joint_state)</div><div class="ttdoc">Decrease robot position change and velocity, if needed, to satisfy joint velocity limits.</div><div class="ttdef"><b>Definition:</b> <a href="enforce__limits_8cpp_source.html#l00103">enforce_limits.cpp:103</a></div></div>
 <div class="ttc" id="aenforce__limits_8hpp_html"><div class="ttname"><a href="enforce__limits_8hpp.html">enforce_limits.hpp</a></div></div>
 <div class="ttc" id="anamespacemoveit__servo_html"><div class="ttname"><a href="namespacemoveit__servo.html">moveit_servo</a></div><div class="ttdef"><b>Definition:</b> <a href="collision__check_8h_source.html#l00052">collision_check.h:52</a></div></div>
+<div class="ttc" id="anamespacemoveit__servo_html_a3650f7acc84c4ea2183ec75ee28b17d3"><div class="ttname"><a href="namespacemoveit__servo.html#a3650f7acc84c4ea2183ec75ee28b17d3">moveit_servo::enforceVelocityLimits</a></div><div class="ttdeci">Eigen::ArrayXd enforceVelocityLimits(const moveit::core::JointModelGroup *joint_model_group, double publish_period, const Eigen::ArrayXd &amp;delta_theta)</div><div class="ttdoc">Scale the delta theta to match joint velocity/acceleration limits.</div><div class="ttdef"><b>Definition:</b> <a href="enforce__limits_8cpp_source.html#l00103">enforce_limits.cpp:103</a></div></div>
 <div class="ttc" id="ajoint__model__group_8h_html"><div class="ttname"><a href="joint__model__group_8h.html">joint_model_group.h</a></div></div>
-<div class="ttc" id="aclassmoveit_1_1core_1_1JointModel_html"><div class="ttname"><a href="classmoveit_1_1core_1_1JointModel.html">moveit::core::JointModel</a></div><div class="ttdoc">A joint from the robot. Models the transform that this joint applies in the kinematic chain....</div><div class="ttdef"><b>Definition:</b> <a href="joint__model_8h_source.html#l00182">joint_model.h:182</a></div></div>
+<div class="ttc" id="aclassmoveit_1_1core_1_1JointModel_html"><div class="ttname"><a href="classmoveit_1_1core_1_1JointModel.html">moveit::core::JointModel</a></div><div class="ttdoc">A joint from the robot. Models the transform that this joint applies in the kinematic chain....</div><div class="ttdef"><b>Definition:</b> <a href="joint__model_8h_source.html#l00175">joint_model.h:175</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

@@ -1,0 +1,9 @@
+<map id="TrajectoryGeneratorPTPTest::checkTrajectory" name="TrajectoryGeneratorPTPTest::checkTrajectory">
+<area shape="rect" id="node1" title="check the resulted joint trajectory" alt="" coords="5,115,207,156"/>
+<area shape="rect" id="node2" href="$namespacetestutils.html#acf76645b0c371ee65aa05732ed6ad6e8" title="is Acceleration Bounded" alt="" coords="281,5,455,47"/>
+<area shape="rect" id="node4" href="$namespacetestutils.html#a9181f5d8223138bace67ea54a4789c59" title="check if the goal given in joint space is reached Only the last point in the trajectory is veryfied." alt="" coords="278,71,458,98"/>
+<area shape="rect" id="node5" href="$namespacetestutils.html#a92afbd45dfbe849ac79e2f71d3cb16db" title="is Position Bounded" alt="" coords="267,122,469,149"/>
+<area shape="rect" id="node6" href="$namespacetestutils.html#aae843ff794dfbc3b5ead9ddc6f98529d" title="check if the sizes of the joint position/veloicty/acceleration are correct" alt="" coords="255,173,481,199"/>
+<area shape="rect" id="node7" href="$namespacetestutils.html#ab5e2d5d8565b6d76e95a7dcddc8af2b5" title="is Velocity Bounded" alt="" coords="267,223,469,250"/>
+<area shape="rect" id="node3" href="$classpilz__industrial__motion__planner_1_1JointLimitsContainer.html#a040d5fa11dbedd32a857862bd4ce0b67" title="getLimit get the limit for the given joint name" alt="" coords="529,107,748,163"/>
+</map>

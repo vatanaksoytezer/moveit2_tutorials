@@ -121,7 +121,7 @@ $(function() {
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
 <div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="setup__assistant__main_8cpp.html#abceef1724f89a8ec41f48a5732c60400">   50</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="setup__assistant__main_8cpp.html#abceef1724f89a8ec41f48a5732c60400">usage</a>(boost::program_options::options_description&amp; desc, <span class="keywordtype">int</span> exit_code)</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  std::cout &lt;&lt; desc &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  std::cout &lt;&lt; desc &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  exit(exit_code);</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
@@ -148,7 +148,7 @@ $(function() {
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  }</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; e)</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    std::cerr &lt;&lt; e.what() &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    std::cerr &lt;&lt; e.what() &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="setup__assistant__main_8cpp.html#abceef1724f89a8ec41f48a5732c60400">usage</a>(desc, 1);</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  }</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="comment">// Start ROS Node</span></div>

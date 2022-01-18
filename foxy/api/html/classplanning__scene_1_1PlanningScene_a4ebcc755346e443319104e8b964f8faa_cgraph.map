@@ -1,0 +1,4 @@
+<map id="planning_scene::PlanningScene::checkCollision" name="planning_scene::PlanningScene::checkCollision">
+<area shape="rect" id="node1" title="Check whether the current state is in collision, and if needed, updates the collision transforms of t..." alt="" coords="5,5,192,47"/>
+<area shape="rect" id="node2" href="$classplanning__scene_1_1PlanningScene.html#aeed4b8e82fc31eb7abb405429877343e" title="Get the active collision environment." alt="" coords="240,5,427,47"/>
+</map>

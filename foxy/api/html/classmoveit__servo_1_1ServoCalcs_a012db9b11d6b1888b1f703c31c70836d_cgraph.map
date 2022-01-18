@@ -1,4 +1,12 @@
 <map id="moveit_servo::ServoCalcs::ServoCalcs" name="moveit_servo::ServoCalcs::ServoCalcs">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,196,47"/>
-<area shape="rect" id="node2" href="$classmoveit__servo_1_1ServoCalcs.html#abad5862e7dd2dee0bfefac50ec8c103d" title=" " alt="" coords="244,5,499,47"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,267,196,308"/>
+<area shape="rect" id="node2" href="$classmoveit__servo_1_1ServoCalcs.html#a7cc6ea34ba37025f94bd6d0e0380acf6" title="Start the main calculation timer." alt="" coords="271,5,472,47"/>
+<area shape="rect" id="node3" href="$classmoveit__servo_1_1ServoCalcs.html#a460d0ab6ed8d2bc767561080d433e143" title=" " alt="" coords="276,71,467,112"/>
+<area shape="rect" id="node4" href="$classmoveit__servo_1_1ServoCalcs.html#abc168aced07f49d0dbdd689a833cdb2c" title=" " alt="" coords="276,136,467,177"/>
+<area shape="rect" id="node5" href="$classmoveit_1_1core_1_1JointModelGroup.html#ad3a2b2661f3303f1d6fb8a8a08008174" title="Get the names of the active joints in this group. These are the names of the joints returned by getJo..." alt="" coords="248,201,495,243"/>
+<area shape="rect" id="node6" href="$classmoveit_1_1core_1_1JointModelGroup.html#a14fb89fcb1b1d7297b5ddd3d063c715f" title="Get the active joints in this group (that have controllable DOF). This does not include mimic joints." alt="" coords="268,267,475,308"/>
+<area shape="rect" id="node7" href="$classmoveit__servo_1_1ServoCalcs.html#a99b65d45b7da52e43a6bf9d313d8c459" title=" " alt="" coords="276,332,467,373"/>
+<area shape="rect" id="node8" href="$classmoveit__servo_1_1ServoCalcs.html#ab31f2d250be5e0e214d2839d5493b832" title="Service callback to reset Servo status, e.g. so the arm can move again after a collision." alt="" coords="276,397,467,439"/>
+<area shape="rect" id="node9" href="$classmoveit__servo_1_1ServoCalcs.html#abad5862e7dd2dee0bfefac50ec8c103d" title=" " alt="" coords="244,463,499,504"/>
+<area shape="rect" id="node10" href="$classmoveit__servo_1_1ServoCalcs.html#a33087effbb29d4a2864095a3ec14f9a1" title=" " alt="" coords="276,528,467,569"/>
 </map>

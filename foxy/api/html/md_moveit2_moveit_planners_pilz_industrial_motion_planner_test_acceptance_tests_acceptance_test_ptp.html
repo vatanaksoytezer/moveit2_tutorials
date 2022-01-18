@@ -66,15 +66,15 @@ $(function() {
 <div class="title">acceptance_test_ptp </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md35"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md43"></a>
 Acceptance Test PTP Motion using the MoveIt Motion Planning Plugin on the real robot</h1>
 <p>This test checks that the real robot system is able to perform a PTP Motion to a goal state given by the user. The test is performed using the moveit motion planning plugin.</p>
-<h2><a class="anchor" id="autotoc_md36"></a>
+<h2><a class="anchor" id="autotoc_md44"></a>
 Prerequisites</h2>
 <ul>
 <li>Properly connect and startup the robot. Make sure a emergency stop is within reach.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md37"></a>
+<h2><a class="anchor" id="autotoc_md45"></a>
 Test Sequence:</h2>
 <ol type="1">
 <li>Bringup can: <code>sudo ip link set can0 up type can bitrate 1000000</code></li>
@@ -82,14 +82,14 @@ Test Sequence:</h2>
 <li>The motion planning widget (lower left part of moveit) choose PTP in the dropdown below "Trapezoidal Command Planner" (see image) <img src="img/acceptance_test_ptp_img1.png" alt="moveit_1" class="inline"/></li>
 <li>Switch to the tab "Planning" in the moveit planning plugin. Move the ball handle the select goal pose. Click on "plan and execute". <img src="img/acceptance_test_ptp_img2.png" alt="moveit_2" class="inline"/></li>
 </ol>
-<h2><a class="anchor" id="autotoc_md38"></a>
+<h2><a class="anchor" id="autotoc_md46"></a>
 Expected Results:</h2>
 <ol type="1">
 <li>Can should be visible with <code>ifconfig</code> displayed as can0</li>
 <li><a class="el" href="classA.html">A</a> -click- indicates the enabling of the drives.</li>
 <li>PTP was available for selection </li>
 </ol>
-<h2><a class="anchor" id="autotoc_md39"></a>
+<h2><a class="anchor" id="autotoc_md47"></a>
 4. The robot should move to the desired position. All axis should start and stop at the same time.</h2>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

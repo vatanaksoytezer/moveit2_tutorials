@@ -108,14 +108,14 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:ac3acdd37bb04ca7cb01121fb9c8e50a9"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structcollision__detection_1_1CollisionRequest.html">CollisionRequest</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcollision__detection_1_1CollisionData.html#ac3acdd37bb04ca7cb01121fb9c8e50a9">req_</a></td></tr>
 <tr class="memdesc:ac3acdd37bb04ca7cb01121fb9c8e50a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The collision request passed by the user.  <a href="structcollision__detection_1_1CollisionData.html#ac3acdd37bb04ca7cb01121fb9c8e50a9">More...</a><br /></td></tr>
 <tr class="separator:ac3acdd37bb04ca7cb01121fb9c8e50a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0eec0c930da626150db59051c783e0e4"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="ros_2warehouse_2warehouse_2CMakeLists_8txt.html#af4423e580afb68aec7c40fb0bce7d5d4">std::set</a>&lt; const <a class="el" href="classmoveit_1_1core_1_1LinkModel.html">moveit::core::LinkModel</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcollision__detection_1_1CollisionData.html#a0eec0c930da626150db59051c783e0e4">active_components_only_</a></td></tr>
+<tr class="memitem:a0eec0c930da626150db59051c783e0e4"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="setup__assistant_2CMakeLists_8txt.html#a58ab708fe5c1f47f0642bdaee3056d3b">std::set</a>&lt; const <a class="el" href="classmoveit_1_1core_1_1LinkModel.html">moveit::core::LinkModel</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcollision__detection_1_1CollisionData.html#a0eec0c930da626150db59051c783e0e4">active_components_only_</a></td></tr>
 <tr class="memdesc:a0eec0c930da626150db59051c783e0e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the collision request includes a group name, this set contains the pointers to the link models that are considered for collision.  <a href="structcollision__detection_1_1CollisionData.html#a0eec0c930da626150db59051c783e0e4">More...</a><br /></td></tr>
 <tr class="separator:a0eec0c930da626150db59051c783e0e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abfbfa11a207e6fcc447fc863a60646ca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcollision__detection_1_1CollisionResult.html">CollisionResult</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcollision__detection_1_1CollisionData.html#abfbfa11a207e6fcc447fc863a60646ca">res_</a></td></tr>
 <tr class="memdesc:abfbfa11a207e6fcc447fc863a60646ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">The user-specified response location.  <a href="structcollision__detection_1_1CollisionData.html#abfbfa11a207e6fcc447fc863a60646ca">More...</a><br /></td></tr>
 <tr class="separator:abfbfa11a207e6fcc447fc863a60646ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1f844247961cabea352ad7856877b83e"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classcollision__detection_1_1AllowedCollisionMatrix.html">AllowedCollisionMatrix</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcollision__detection_1_1CollisionData.html#a1f844247961cabea352ad7856877b83e">acm_</a></td></tr>
-<tr class="memdesc:a1f844247961cabea352ad7856877b83e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The user-specified collision matrix (may be nullptr).  <a href="structcollision__detection_1_1CollisionData.html#a1f844247961cabea352ad7856877b83e">More...</a><br /></td></tr>
+<tr class="memdesc:a1f844247961cabea352ad7856877b83e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The user-specified collision matrix (may be NULL).  <a href="structcollision__detection_1_1CollisionData.html#a1f844247961cabea352ad7856877b83e">More...</a><br /></td></tr>
 <tr class="separator:a1f844247961cabea352ad7856877b83e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abcad47b7b2460e079bacb3bd9d64fb36"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcollision__detection_1_1CollisionData.html#abcad47b7b2460e079bacb3bd9d64fb36">done_</a></td></tr>
 <tr class="memdesc:abcad47b7b2460e079bacb3bd9d64fb36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag indicating whether collision checking is complete.  <a href="structcollision__detection_1_1CollisionData.html#abcad47b7b2460e079bacb3bd9d64fb36">More...</a><br /></td></tr>
@@ -252,7 +252,7 @@ Here is the call graph for this function:</div>
 
 <p>Compute <em>active_components_only_</em> based on the joint group specified in <em>req_</em>. </p>
 
-<p class="definition">Definition at line <a class="el" href="fcl_2src_2collision__common_8cpp_source.html#l00964">964</a> of file <a class="el" href="fcl_2src_2collision__common_8cpp_source.html">collision_common.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fcl_2src_2collision__common_8cpp_source.html#l00981">981</a> of file <a class="el" href="fcl_2src_2collision__common_8cpp_source.html">collision_common.cpp</a>.</p>
 
 </div>
 </div>
@@ -269,7 +269,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>The user-specified collision matrix (may be nullptr). </p>
+<p>The user-specified collision matrix (may be NULL). </p>
 
 <p class="definition">Definition at line <a class="el" href="fcl_2include_2moveit_2collision__detection__fcl_2collision__common_8h_source.html#l00204">204</a> of file <a class="el" href="fcl_2include_2moveit_2collision__detection__fcl_2collision__common_8h_source.html">collision_common.h</a>.</p>
 
@@ -282,13 +282,13 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="ros_2warehouse_2warehouse_2CMakeLists_8txt.html#af4423e580afb68aec7c40fb0bce7d5d4">std::set</a>&lt;const <a class="el" href="classmoveit_1_1core_1_1LinkModel.html">moveit::core::LinkModel</a>*&gt;* collision_detection::CollisionData::active_components_only_</td>
+          <td class="memname">const <a class="el" href="setup__assistant_2CMakeLists_8txt.html#a58ab708fe5c1f47f0642bdaee3056d3b">std::set</a>&lt;const <a class="el" href="classmoveit_1_1core_1_1LinkModel.html">moveit::core::LinkModel</a>*&gt;* collision_detection::CollisionData::active_components_only_</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>If the collision request includes a group name, this set contains the pointers to the link models that are considered for collision. </p>
-<p>If the pointer is nullptr, all collisions are considered. </p>
+<p>If the pointer is NULL, all collisions are considered. </p>
 
 <p class="definition">Definition at line <a class="el" href="fcl_2include_2moveit_2collision__detection__fcl_2collision__common_8h_source.html#l00198">198</a> of file <a class="el" href="fcl_2include_2moveit_2collision__detection__fcl_2collision__common_8h_source.html">collision_common.h</a>.</p>
 

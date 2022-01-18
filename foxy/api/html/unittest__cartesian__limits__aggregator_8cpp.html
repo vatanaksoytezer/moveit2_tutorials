@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>moveit2: moveit2/moveit_planners/pilz_industrial_motion_planner/test/unit_tests/src/unittest_cartesian_limits_aggregator.cpp File Reference</title>
+<title>moveit2: moveit2/moveit_planners/pilz_industrial_motion_planner/test/unittest_cartesian_limits_aggregator.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,7 +62,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_a604c952227cf87b5a3218a0034012e1.html">moveit2</a></li><li class="navelem"><a class="el" href="dir_397d57caa61a6ead544bb61b8030bf75.html">moveit_planners</a></li><li class="navelem"><a class="el" href="dir_b42145b99fa2fc2e1a9a76dd5d48e934.html">pilz_industrial_motion_planner</a></li><li class="navelem"><a class="el" href="dir_32106610d8bf69b1c283f4fa4bf1e70c.html">test</a></li><li class="navelem"><a class="el" href="dir_c0e323a8108843403cd65ddcf58c52bb.html">unit_tests</a></li><li class="navelem"><a class="el" href="dir_aeaf384bd36bd7964cb18f189c047c9e.html">src</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_a604c952227cf87b5a3218a0034012e1.html">moveit2</a></li><li class="navelem"><a class="el" href="dir_397d57caa61a6ead544bb61b8030bf75.html">moveit_planners</a></li><li class="navelem"><a class="el" href="dir_b42145b99fa2fc2e1a9a76dd5d48e934.html">pilz_industrial_motion_planner</a></li><li class="navelem"><a class="el" href="dir_32106610d8bf69b1c283f4fa4bf1e70c.html">test</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -74,19 +74,19 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;gtest/gtest.h&gt;</code><br />
-<code>#include &lt;rclcpp/rclcpp.hpp&gt;</code><br />
+<code>#include &lt;ros/ros.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="cartesian__limit_8h_source.html">pilz_industrial_motion_planner/cartesian_limit.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="cartesian__limits__aggregator_8h_source.html">pilz_industrial_motion_planner/cartesian_limits_aggregator.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for unittest_cartesian_limits_aggregator.cpp:</div>
 <div class="dyncontent">
-<div class="center"><img src="unittest__cartesian__limits__aggregator_8cpp__incl.png" border="0" usemap="#moveit2_2moveit__planners_2pilz__industrial__motion__planner_2test_2unit__tests_2src_2unittest__cartesian__limits__aggregator_8cpp" alt=""/></div>
-<map name="moveit2_2moveit__planners_2pilz__industrial__motion__planner_2test_2unit__tests_2src_2unittest__cartesian__limits__aggregator_8cpp" id="moveit2_2moveit__planners_2pilz__industrial__motion__planner_2test_2unit__tests_2src_2unittest__cartesian__limits__aggregator_8cpp">
-<area shape="rect" title=" " alt="" coords="107,5,317,91"/>
-<area shape="rect" title=" " alt="" coords="5,153,109,180"/>
-<area shape="rect" title=" " alt="" coords="99,250,231,277"/>
-<area shape="rect" href="cartesian__limit_8h.html" title=" " alt="" coords="293,243,483,284"/>
-<area shape="rect" href="cartesian__limits__aggregator_8h.html" title=" " alt="" coords="184,139,371,195"/>
+<div class="center"><img src="unittest__cartesian__limits__aggregator_8cpp__incl.png" border="0" usemap="#moveit2_2moveit__planners_2pilz__industrial__motion__planner_2test_2unittest__cartesian__limits__aggregator_8cpp" alt=""/></div>
+<map name="moveit2_2moveit__planners_2pilz__industrial__motion__planner_2test_2unittest__cartesian__limits__aggregator_8cpp" id="moveit2_2moveit__planners_2pilz__industrial__motion__planner_2test_2unittest__cartesian__limits__aggregator_8cpp">
+<area shape="rect" title=" " alt="" coords="98,5,326,76"/>
+<area shape="rect" title=" " alt="" coords="5,139,109,165"/>
+<area shape="rect" title=" " alt="" coords="134,139,213,165"/>
+<area shape="rect" href="cartesian__limit_8h.html" title=" " alt="" coords="221,228,411,269"/>
+<area shape="rect" href="cartesian__limits__aggregator_8h.html" title=" " alt="" coords="288,124,475,180"/>
 </map>
 </div>
 </div>
@@ -136,7 +136,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="unittest__cartesian__limits__aggregator_8cpp_source.html#l00089">89</a> of file <a class="el" href="unittest__cartesian__limits__aggregator_8cpp_source.html">unittest_cartesian_limits_aggregator.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__cartesian__limits__aggregator_8cpp_source.html#l00087">87</a> of file <a class="el" href="unittest__cartesian__limits__aggregator_8cpp_source.html">unittest_cartesian_limits_aggregator.cpp</a>.</p>
 
 </div>
 </div>
@@ -168,17 +168,22 @@ Functions</h2></td></tr>
 
 <p>Check if all values are set correctly. </p>
 
-<p class="definition">Definition at line <a class="el" href="unittest__cartesian__limits__aggregator_8cpp_source.html#l00072">72</a> of file <a class="el" href="unittest__cartesian__limits__aggregator_8cpp_source.html">unittest_cartesian_limits_aggregator.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__cartesian__limits__aggregator_8cpp_source.html#l00068">68</a> of file <a class="el" href="unittest__cartesian__limits__aggregator_8cpp_source.html">unittest_cartesian_limits_aggregator.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="unittest__cartesian__limits__aggregator_8cpp_a73e0a8cc8cf3e31033a1ff9dcf0dd75d_cgraph.png" border="0" usemap="#unittest__cartesian__limits__aggregator_8cpp_a73e0a8cc8cf3e31033a1ff9dcf0dd75d_cgraph" alt=""/></div>
 <map name="unittest__cartesian__limits__aggregator_8cpp_a73e0a8cc8cf3e31033a1ff9dcf0dd75d_cgraph" id="unittest__cartesian__limits__aggregator_8cpp_a73e0a8cc8cf3e31033a1ff9dcf0dd75d_cgraph">
-<area shape="rect" title="Check if all values are set correctly." alt="" coords="5,140,75,167"/>
-<area shape="rect" href="classpilz__industrial__motion__planner_1_1CartesianLimitsAggregator.html#ae522ae2e7639d289dd6d818b363cadc8" title="Loads cartesian limits from the node parameters." alt="" coords="123,5,383,61"/>
-<area shape="rect" href="classpilz__industrial__motion__planner_1_1CartesianLimit.html#ae271329c2a90afec8db744e9b3f53548" title="Return the maximal translational velocity [m/s], 0 if nothing was set." alt="" coords="145,85,360,141"/>
-<area shape="rect" href="classpilz__industrial__motion__planner_1_1CartesianLimit.html#af512550524da8ee79e1b0250e0a386ea" title="Check if translational acceleration limit is set." alt="" coords="130,165,375,221"/>
-<area shape="rect" href="classpilz__industrial__motion__planner_1_1CartesianLimit.html#abdbf137d1b5cbf486bd19afad7f10c69" title="Check if translational velocity limit is set." alt="" coords="145,245,361,301"/>
+<area shape="rect" title="Check if all values are set correctly." alt="" coords="5,340,75,367"/>
+<area shape="rect" href="classpilz__industrial__motion__planner_1_1CartesianLimitsAggregator.html#a432696a4e71dc307327c4ecc11b1afb6" title="Loads cartesian limits from the parameter server." alt="" coords="123,5,383,61"/>
+<area shape="rect" href="classpilz__industrial__motion__planner_1_1CartesianLimit.html#a238c218afd7f810c629010bdd976443f" title="Return the maximal rotational velocity [rad/s], 0 if nothing was set." alt="" coords="153,85,352,141"/>
+<area shape="rect" href="classpilz__industrial__motion__planner_1_1CartesianLimit.html#adf1477f7582ef5d4ace6d2462a2a3825" title="Return the maximal translational acceleration [m/s^2], 0 if nothing was set." alt="" coords="131,165,374,221"/>
+<area shape="rect" href="classpilz__industrial__motion__planner_1_1CartesianLimit.html#a8425190887085ec7579872258159c899" title="Return the maximal translational deceleration [m/s^2], 0 if nothing was set." alt="" coords="130,245,375,301"/>
+<area shape="rect" href="classpilz__industrial__motion__planner_1_1CartesianLimit.html#ae271329c2a90afec8db744e9b3f53548" title="Return the maximal translational velocity [m/s], 0 if nothing was set." alt="" coords="145,325,360,381"/>
+<area shape="rect" href="classpilz__industrial__motion__planner_1_1CartesianLimit.html#a5f828faf6e5e536fbcf884faebeab8e7" title="Check if rotational velocity limit is set." alt="" coords="153,405,353,461"/>
+<area shape="rect" href="classpilz__industrial__motion__planner_1_1CartesianLimit.html#af512550524da8ee79e1b0250e0a386ea" title="Check if translational acceleration limit is set." alt="" coords="130,485,375,541"/>
+<area shape="rect" href="classpilz__industrial__motion__planner_1_1CartesianLimit.html#a625ce03e48ca99fa8ff7c38cf06af76b" title="Check if translational deceleration limit is set." alt="" coords="129,565,376,621"/>
+<area shape="rect" href="classpilz__industrial__motion__planner_1_1CartesianLimit.html#abdbf137d1b5cbf486bd19afad7f10c69" title="Check if translational velocity limit is set." alt="" coords="145,645,361,701"/>
 </map>
 </div>
 
@@ -212,14 +217,14 @@ Here is the call graph for this function:</div>
 
 <p>Check if only velocity is set. </p>
 
-<p class="definition">Definition at line <a class="el" href="unittest__cartesian__limits__aggregator_8cpp_source.html#l00058">58</a> of file <a class="el" href="unittest__cartesian__limits__aggregator_8cpp_source.html">unittest_cartesian_limits_aggregator.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__cartesian__limits__aggregator_8cpp_source.html#l00052">52</a> of file <a class="el" href="unittest__cartesian__limits__aggregator_8cpp_source.html">unittest_cartesian_limits_aggregator.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="unittest__cartesian__limits__aggregator_8cpp_ad4d89f3f967085d3a51c3b8442117b64_cgraph.png" border="0" usemap="#unittest__cartesian__limits__aggregator_8cpp_ad4d89f3f967085d3a51c3b8442117b64_cgraph" alt=""/></div>
 <map name="unittest__cartesian__limits__aggregator_8cpp_ad4d89f3f967085d3a51c3b8442117b64_cgraph" id="unittest__cartesian__limits__aggregator_8cpp_ad4d89f3f967085d3a51c3b8442117b64_cgraph">
 <area shape="rect" title="Check if only velocity is set." alt="" coords="5,220,75,247"/>
-<area shape="rect" href="classpilz__industrial__motion__planner_1_1CartesianLimitsAggregator.html#ae522ae2e7639d289dd6d818b363cadc8" title="Loads cartesian limits from the node parameters." alt="" coords="123,5,383,61"/>
+<area shape="rect" href="classpilz__industrial__motion__planner_1_1CartesianLimitsAggregator.html#a432696a4e71dc307327c4ecc11b1afb6" title="Loads cartesian limits from the parameter server." alt="" coords="123,5,383,61"/>
 <area shape="rect" href="classpilz__industrial__motion__planner_1_1CartesianLimit.html#ae271329c2a90afec8db744e9b3f53548" title="Return the maximal translational velocity [m/s], 0 if nothing was set." alt="" coords="145,85,360,141"/>
 <area shape="rect" href="classpilz__industrial__motion__planner_1_1CartesianLimit.html#a5f828faf6e5e536fbcf884faebeab8e7" title="Check if rotational velocity limit is set." alt="" coords="153,165,353,221"/>
 <area shape="rect" href="classpilz__industrial__motion__planner_1_1CartesianLimit.html#af512550524da8ee79e1b0250e0a386ea" title="Check if translational acceleration limit is set." alt="" coords="130,245,375,301"/>

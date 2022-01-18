@@ -66,15 +66,15 @@ $(function() {
 <div class="title">acceptance_test_lin </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md30"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md38"></a>
 Acceptance Test LIN Motion using the MoveIt Motion Planning Plugin on the real robot</h1>
 <p>This test checks that the real robot system is able to perform a LIN Motion to a goal state given by the user. The test is performed using the moveit motion planning plugin. Note that before you can apply the LIN command the robot has to be moved out of singularities.</p>
-<h2><a class="anchor" id="autotoc_md31"></a>
+<h2><a class="anchor" id="autotoc_md39"></a>
 Prerequisites</h2>
 <ul>
 <li>Properly connect and startup the robot. Make sure a emergency stop is within reach.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md32"></a>
+<h2><a class="anchor" id="autotoc_md40"></a>
 Test Sequence:</h2>
 <ol type="1">
 <li>Bringup can: <code>sudo ip link set can0 up type can bitrate 1000000</code></li>
@@ -84,7 +84,7 @@ Test Sequence:</h2>
 <li>The motion planning widget (lower left part of moveit) choose LIN in the dropdown below "Trapezoidal Command Planner" (see image) <img src="img/acceptance_test_lin_img3.png" alt="moveit_1" class="inline"/></li>
 <li>Switch to the tab "Planning" in the moveit planning plugin. Move the ball handle the select goal pose. Move the robot about 10-20cm choose a goal where the configuration has no jumps. Set velocity and acceleration scaling to 0.1. Click on "plan and execute". <img src="img/acceptance_test_lin_img4.png" alt="moveit_2" class="inline"/></li>
 </ol>
-<h2><a class="anchor" id="autotoc_md33"></a>
+<h2><a class="anchor" id="autotoc_md41"></a>
 Expected Results:</h2>
 <ol type="1">
 <li>Can should be visible with <code>ifconfig</code> displayed as can0</li>
@@ -93,7 +93,7 @@ Expected Results:</h2>
 <li>The robot should move to the desired position.</li>
 <li>LIN was available for selection </li>
 </ol>
-<h2><a class="anchor" id="autotoc_md34"></a>
+<h2><a class="anchor" id="autotoc_md42"></a>
 6. The robot should move to the desired position via a straight line.</h2>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

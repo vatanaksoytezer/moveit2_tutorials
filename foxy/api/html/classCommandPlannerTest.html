@@ -75,8 +75,8 @@ Inheritance diagram for CommandPlannerTest:</div>
 <div class="dyncontent">
 <div class="center"><img src="classCommandPlannerTest__inherit__graph.png" border="0" usemap="#CommandPlannerTest_inherit__map" alt="Inheritance graph"/></div>
 <map name="CommandPlannerTest_inherit__map" id="CommandPlannerTest_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,80,169,107"/>
-<area shape="rect" title=" " alt="" coords="63,5,111,32"/>
+<area shape="rect" title=" " alt="" coords="9,95,173,121"/>
+<area shape="rect" title=" " alt="" coords="5,5,177,47"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -84,8 +84,8 @@ Collaboration diagram for CommandPlannerTest:</div>
 <div class="dyncontent">
 <div class="center"><img src="classCommandPlannerTest__coll__graph.png" border="0" usemap="#CommandPlannerTest_coll__map" alt="Collaboration graph"/></div>
 <map name="CommandPlannerTest_coll__map" id="CommandPlannerTest_coll__map">
-<area shape="rect" title=" " alt="" coords="5,80,169,107"/>
-<area shape="rect" title=" " alt="" coords="63,5,111,32"/>
+<area shape="rect" title=" " alt="" coords="9,95,173,121"/>
+<area shape="rect" title=" " alt="" coords="5,5,177,47"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -101,10 +101,10 @@ Protected Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:aa5d63c7eec2e1749380393cbf5475f8a"><td class="memItemLeft" align="right" valign="top">rclcpp::Node::SharedPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommandPlannerTest.html#aa5d63c7eec2e1749380393cbf5475f8a">node_</a></td></tr>
-<tr class="separator:aa5d63c7eec2e1749380393cbf5475f8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd671756ec0d367dd261175f90f28193"><td class="memItemLeft" align="right" valign="top">moveit::core::RobotModelConstPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommandPlannerTest.html#abd671756ec0d367dd261175f90f28193">robot_model_</a></td></tr>
-<tr class="separator:abd671756ec0d367dd261175f90f28193"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65134a38d19d22bb42ab58facd9c206e"><td class="memItemLeft" align="right" valign="top">ros::NodeHandle&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommandPlannerTest.html#a65134a38d19d22bb42ab58facd9c206e">ph_</a> { &quot;~&quot; }</td></tr>
+<tr class="separator:a65134a38d19d22bb42ab58facd9c206e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b84dea949811f7adc8f15710efbdf77"><td class="memItemLeft" align="right" valign="top">robot_model::RobotModelConstPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommandPlannerTest.html#a0b84dea949811f7adc8f15710efbdf77">robot_model_</a> { <a class="el" href="classrobot__model__loader_1_1RobotModelLoader.html">robot_model_loader::RobotModelLoader</a>(GetParam()).getModel() }</td></tr>
+<tr class="separator:a0b84dea949811f7adc8f15710efbdf77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7aa5ff1bc4c790aa80deb0b5c74a1f55"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommandPlannerTest.html#a7aa5ff1bc4c790aa80deb0b5c74a1f55">planner_plugin_name_</a></td></tr>
 <tr class="separator:a7aa5ff1bc4c790aa80deb0b5c74a1f55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a623532d6d2ea25f3074407d53a19588c"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; pluginlib::ClassLoader&lt; <a class="el" href="classplanning__interface_1_1PlannerManager.html">planning_interface::PlannerManager</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommandPlannerTest.html#a623532d6d2ea25f3074407d53a19588c">planner_plugin_loader_</a></td></tr>
@@ -114,7 +114,7 @@ Protected Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="unittest__pilz__industrial__motion__planner_8cpp_source.html#l00049">49</a> of file <a class="el" href="unittest__pilz__industrial__motion__planner_8cpp_source.html">unittest_pilz_industrial_motion_planner.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__pilz__industrial__motion__planner_8cpp_source.html#l00048">48</a> of file <a class="el" href="unittest__pilz__industrial__motion__planner_8cpp_source.html">unittest_pilz_industrial_motion_planner.cpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="aec51ab9a80428cc7a1881d7270e31319"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aec51ab9a80428cc7a1881d7270e31319">&#9670;&nbsp;</a></span>createPlannerInstance()</h2>
@@ -142,16 +142,7 @@ Protected Attributes</h2></td></tr>
 <p>initialize the planner plugin The planner is loaded using the pluginlib. Checks that the planner was loaded properly. Exceptions will cause test failure. </p>
 <p>This function should be called only once during initialization of the class. </p>
 
-<p class="definition">Definition at line <a class="el" href="unittest__pilz__industrial__motion__planner_8cpp_source.html#l00069">69</a> of file <a class="el" href="unittest__pilz__industrial__motion__planner_8cpp_source.html">unittest_pilz_industrial_motion_planner.cpp</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classCommandPlannerTest_aec51ab9a80428cc7a1881d7270e31319_cgraph.png" border="0" usemap="#classCommandPlannerTest_aec51ab9a80428cc7a1881d7270e31319_cgraph" alt=""/></div>
-<map name="classCommandPlannerTest_aec51ab9a80428cc7a1881d7270e31319_cgraph" id="classCommandPlannerTest_aec51ab9a80428cc7a1881d7270e31319_cgraph">
-<area shape="rect" title="initialize the planner plugin The planner is loaded using the pluginlib. Checks that the planner was ..." alt="" coords="5,13,180,54"/>
-<area shape="rect" href="classrobot__model__loader_1_1RobotModelLoader.html#a40e202c404ae62a984861b273a401fcd" title="Get the constructed planning_models::RobotModel." alt="" coords="228,5,388,61"/>
-</map>
-</div>
+<p class="definition">Definition at line <a class="el" href="unittest__pilz__industrial__motion__planner_8cpp_source.html#l00065">65</a> of file <a class="el" href="unittest__pilz__industrial__motion__planner_8cpp_source.html">unittest_pilz_industrial_motion_planner.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -187,15 +178,14 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="unittest__pilz__industrial__motion__planner_8cpp_source.html#l00052">52</a> of file <a class="el" href="unittest__pilz__industrial__motion__planner_8cpp_source.html">unittest_pilz_industrial_motion_planner.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__pilz__industrial__motion__planner_8cpp_source.html#l00051">51</a> of file <a class="el" href="unittest__pilz__industrial__motion__planner_8cpp_source.html">unittest_pilz_industrial_motion_planner.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classCommandPlannerTest_a6cde73498ba5839999f36596dfd874bc_cgraph.png" border="0" usemap="#classCommandPlannerTest_a6cde73498ba5839999f36596dfd874bc_cgraph" alt=""/></div>
 <map name="classCommandPlannerTest_a6cde73498ba5839999f36596dfd874bc_cgraph" id="classCommandPlannerTest_a6cde73498ba5839999f36596dfd874bc_cgraph">
-<area shape="rect" title=" " alt="" coords="5,13,169,54"/>
-<area shape="rect" href="classCommandPlannerTest.html#aec51ab9a80428cc7a1881d7270e31319" title="initialize the planner plugin The planner is loaded using the pluginlib. Checks that the planner was ..." alt="" coords="217,13,392,54"/>
-<area shape="rect" href="classrobot__model__loader_1_1RobotModelLoader.html#a40e202c404ae62a984861b273a401fcd" title="Get the constructed planning_models::RobotModel." alt="" coords="440,5,600,61"/>
+<area shape="rect" title=" " alt="" coords="5,5,169,47"/>
+<area shape="rect" href="classCommandPlannerTest.html#aec51ab9a80428cc7a1881d7270e31319" title="initialize the planner plugin The planner is loaded using the pluginlib. Checks that the planner was ..." alt="" coords="217,5,392,47"/>
 </map>
 </div>
 
@@ -224,13 +214,13 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="unittest__pilz__industrial__motion__planner_8cpp_source.html#l00105">105</a> of file <a class="el" href="unittest__pilz__industrial__motion__planner_8cpp_source.html">unittest_pilz_industrial_motion_planner.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__pilz__industrial__motion__planner_8cpp_source.html#l00099">99</a> of file <a class="el" href="unittest__pilz__industrial__motion__planner_8cpp_source.html">unittest_pilz_industrial_motion_planner.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="aa5d63c7eec2e1749380393cbf5475f8a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa5d63c7eec2e1749380393cbf5475f8a">&#9670;&nbsp;</a></span>node_</h2>
+<a id="a65134a38d19d22bb42ab58facd9c206e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65134a38d19d22bb42ab58facd9c206e">&#9670;&nbsp;</a></span>ph_</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -239,7 +229,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">rclcpp::Node::SharedPtr CommandPlannerTest::node_</td>
+          <td class="memname">ros::NodeHandle CommandPlannerTest::ph_ { &quot;~&quot; }</td>
         </tr>
       </table>
   </td>
@@ -249,7 +239,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="unittest__pilz__industrial__motion__planner_8cpp_source.html#l00112">112</a> of file <a class="el" href="unittest__pilz__industrial__motion__planner_8cpp_source.html">unittest_pilz_industrial_motion_planner.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__pilz__industrial__motion__planner_8cpp_source.html#l00106">106</a> of file <a class="el" href="unittest__pilz__industrial__motion__planner_8cpp_source.html">unittest_pilz_industrial_motion_planner.cpp</a>.</p>
 
 </div>
 </div>
@@ -273,7 +263,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="unittest__pilz__industrial__motion__planner_8cpp_source.html#l00117">117</a> of file <a class="el" href="unittest__pilz__industrial__motion__planner_8cpp_source.html">unittest_pilz_industrial_motion_planner.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__pilz__industrial__motion__planner_8cpp_source.html#l00113">113</a> of file <a class="el" href="unittest__pilz__industrial__motion__planner_8cpp_source.html">unittest_pilz_industrial_motion_planner.cpp</a>.</p>
 
 </div>
 </div>
@@ -297,7 +287,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="unittest__pilz__industrial__motion__planner_8cpp_source.html#l00116">116</a> of file <a class="el" href="unittest__pilz__industrial__motion__planner_8cpp_source.html">unittest_pilz_industrial_motion_planner.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__pilz__industrial__motion__planner_8cpp_source.html#l00111">111</a> of file <a class="el" href="unittest__pilz__industrial__motion__planner_8cpp_source.html">unittest_pilz_industrial_motion_planner.cpp</a>.</p>
 
 </div>
 </div>
@@ -321,12 +311,12 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="unittest__pilz__industrial__motion__planner_8cpp_source.html#l00115">115</a> of file <a class="el" href="unittest__pilz__industrial__motion__planner_8cpp_source.html">unittest_pilz_industrial_motion_planner.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__pilz__industrial__motion__planner_8cpp_source.html#l00109">109</a> of file <a class="el" href="unittest__pilz__industrial__motion__planner_8cpp_source.html">unittest_pilz_industrial_motion_planner.cpp</a>.</p>
 
 </div>
 </div>
-<a id="abd671756ec0d367dd261175f90f28193"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abd671756ec0d367dd261175f90f28193">&#9670;&nbsp;</a></span>robot_model_</h2>
+<a id="a0b84dea949811f7adc8f15710efbdf77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b84dea949811f7adc8f15710efbdf77">&#9670;&nbsp;</a></span>robot_model_</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -335,7 +325,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">moveit::core::RobotModelConstPtr CommandPlannerTest::robot_model_</td>
+          <td class="memname">robot_model::RobotModelConstPtr CommandPlannerTest::robot_model_ { <a class="el" href="classrobot__model__loader_1_1RobotModelLoader.html">robot_model_loader::RobotModelLoader</a>(GetParam()).getModel() }</td>
         </tr>
       </table>
   </td>
@@ -345,12 +335,12 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="unittest__pilz__industrial__motion__planner_8cpp_source.html#l00113">113</a> of file <a class="el" href="unittest__pilz__industrial__motion__planner_8cpp_source.html">unittest_pilz_industrial_motion_planner.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__pilz__industrial__motion__planner_8cpp_source.html#l00107">107</a> of file <a class="el" href="unittest__pilz__industrial__motion__planner_8cpp_source.html">unittest_pilz_industrial_motion_planner.cpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>moveit2/moveit_planners/pilz_industrial_motion_planner/test/unit_tests/src/<a class="el" href="unittest__pilz__industrial__motion__planner_8cpp_source.html">unittest_pilz_industrial_motion_planner.cpp</a></li>
+<li>moveit2/moveit_planners/pilz_industrial_motion_planner/test/<a class="el" href="unittest__pilz__industrial__motion__planner_8cpp_source.html">unittest_pilz_industrial_motion_planner.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

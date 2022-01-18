@@ -136,7 +136,7 @@ $(function() {
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  distance_grid = <span class="keyword">new</span> <span class="keywordtype">int</span>[dim_xyz];</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  queue = <span class="keyword">new</span> <span class="keywordtype">int</span>[width * height * length];</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> node = 0; node &lt; dim_xyz; ++node)</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> node = 0; node &lt; dim_xyz; node++)</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  {</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="namespacepick.html#a9173b397dbd476ca3db55ee54f86d707">x</a> = node % dim_x, <a class="code" href="namespacepick.html#a99d8b65794c6c99611647f100666d253">y</a> = node / dim_x % dim_y, <a class="code" href="namespacepick.html#adf6e0b74c284ada499cc78238d0da486">z</a> = node / dim_xy;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespacepick.html#a9173b397dbd476ca3db55ee54f86d707">x</a> == 0 || <a class="code" href="namespacepick.html#a9173b397dbd476ca3db55ee54f86d707">x</a> == dim_x - 1 || <a class="code" href="namespacepick.html#a99d8b65794c6c99611647f100666d253">y</a> == 0 || <a class="code" href="namespacepick.html#a99d8b65794c6c99611647f100666d253">y</a> == dim_y - 1 || <a class="code" href="namespacepick.html#adf6e0b74c284ada499cc78238d0da486">z</a> == 0 || <a class="code" href="namespacepick.html#adf6e0b74c284ada499cc78238d0da486">z</a> == dim_z - 1)</div>
@@ -193,7 +193,7 @@ $(function() {
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  }</div>
 <div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="classsbpl__interface_1_1BFS__3D.html#a8d16b43332e14dd77b3252fdad71c17f">  123</a></span>&#160; </div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; dim_xyz; ++i)</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; dim_xyz; i++)</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordflow">if</span> (distance_grid[i] != <a class="code" href="BFS__3D_8h.html#ac749b87dd5d843e4add3eb8e8a130f62">WALL</a>)</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;      distance_grid[i] = <a class="code" href="BFS__3D_8h.html#acf1a489dd1e5cb86f2d91a9ae78bfa4b">UNDISCOVERED</a>;</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
@@ -205,8 +205,8 @@ $(function() {
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  distance_grid[origin] = 0;</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  search_thread_ = std::make_shared&lt;boost::thread&gt;(&amp;BFS_3D::search, <span class="keyword">this</span>, dim_x, dim_xy, distance_grid, queue,</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                                                   queue_head, queue_tail);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  search_thread_.reset(</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;      <span class="keyword">new</span> boost::thread(&amp;BFS_3D::search, <span class="keyword">this</span>, dim_x, dim_xy, distance_grid, queue, queue_head, queue_tail));</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  running = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;}</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>

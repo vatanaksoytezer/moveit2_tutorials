@@ -114,401 +114,374 @@ $(function() {
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> rclcpp::Logger <a class="code" href="namespaceplanning__request__adapter.html#af64b3fa8ebc256d9c5133c6c80ade28f">LOGGER</a> = rclcpp::get_logger(<span class="stringliteral">&quot;moveit_servo.pose_tracking&quot;</span>);</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;constexpr <span class="keywordtype">size_t</span> <a class="code" href="src_2collision__common_8cpp.html#a2b0aefb050b5a586b3ba93f3199015a8">LOG_THROTTLE_PERIOD</a> = 10;  <span class="comment">// sec</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">// Helper template for declaring and getting ros param</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacemoveit_1_1hybrid__planning.html#a13ae90bec8392b34b9beb63c00d789ec">declareOrGetParam</a>(T&amp; output_value, <span class="keyword">const</span> std::string&amp; param_name, <span class="keyword">const</span> rclcpp::Node::SharedPtr&amp; node,</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                       <span class="keyword">const</span> rclcpp::Logger&amp; logger, <span class="keyword">const</span> T default_value = T{})</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordflow">try</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">if</span> (node-&gt;has_parameter(param_name))</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;      node-&gt;get_parameter&lt;T&gt;(param_name, output_value);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;      output_value = node-&gt;declare_parameter&lt;T&gt;(param_name, default_value);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordflow">catch</span> (<span class="keyword">const</span> rclcpp::exceptions::InvalidParameterTypeException&amp; e)</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    RCLCPP_WARN_STREAM(logger, <span class="stringliteral">&quot;InvalidParameterTypeException(&quot;</span> &lt;&lt; param_name &lt;&lt; <span class="stringliteral">&quot;): &quot;</span> &lt;&lt; e.what());</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    RCLCPP_ERROR_STREAM(logger, <span class="stringliteral">&quot;Error getting parameter \&#39;&quot;</span> &lt;&lt; param_name &lt;&lt; <span class="stringliteral">&quot;\&#39;, check parameter type in YAML file&quot;</span>);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">throw</span> e;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  }</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  RCLCPP_INFO_STREAM(logger, <span class="stringliteral">&quot;Found parameter - &quot;</span> &lt;&lt; param_name &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; output_value);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}  <span class="comment">// namespace</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacemoveit__servo.html">moveit_servo</a></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;{</div>
-<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classmoveit__servo_1_1PoseTracking.html#a8616652e962ee093f3749a047495e47b">   75</a></span>&#160;PoseTracking::PoseTracking(<span class="keyword">const</span> rclcpp::Node::SharedPtr&amp; node, <span class="keyword">const</span> <a class="code" href="structmoveit__servo_1_1ServoParameters.html#a20068dc44ef620c41f866277102b2edf">ServoParameters::SharedConstPtr</a>&amp; servo_parameters,</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                           <span class="keyword">const</span> planning_scene_monitor::PlanningSceneMonitorPtr&amp; <a class="code" href="namespaceplanning__scene__monitor.html">planning_scene_monitor</a>)</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  : node_(node)</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  , servo_parameters_(servo_parameters)</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  , planning_scene_monitor_(<a class="code" href="namespaceplanning__scene__monitor.html">planning_scene_monitor</a>)</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  , loop_rate_(1.0 / servo_parameters-&gt;publish_period)</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  , transform_buffer_(node_-&gt;get_clock())</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  , transform_listener_(transform_buffer_)</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  , stop_requested_(false)</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  , angular_error_(<a class="code" href="namespaceboost.html">boost</a>::none)</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;{</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  readROSParams();</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  robot_model_ = planning_scene_monitor_-&gt;getRobotModel();</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  joint_model_group_ = robot_model_-&gt;getJointModelGroup(move_group_name_);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="comment">// Initialize PID controllers</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  initializePID(x_pid_config_, cartesian_position_pids_);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  initializePID(y_pid_config_, cartesian_position_pids_);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  initializePID(z_pid_config_, cartesian_position_pids_);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  initializePID(angular_pid_config_, cartesian_orientation_pids_);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <span class="comment">// Use the C++ interface that Servo provides</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <a class="code" href="classmoveit__servo_1_1PoseTracking.html#a86b4351a4f8b4ca85ec928fd0e38f62f">servo_</a> = std::make_unique&lt;moveit_servo::Servo&gt;(node_, servo_parameters_, planning_scene_monitor_);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <a class="code" href="classmoveit__servo_1_1PoseTracking.html#a86b4351a4f8b4ca85ec928fd0e38f62f">servo_</a>-&gt;start();</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <span class="comment">// Connect to Servo ROS interfaces</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  target_pose_sub_ = node_-&gt;create_subscription&lt;geometry_msgs::msg::PoseStamped&gt;(</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;      <span class="stringliteral">&quot;target_pose&quot;</span>, rclcpp::SystemDefaultsQoS(),</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;      std::bind(&amp;PoseTracking::targetPoseCallback, <span class="keyword">this</span>, std::placeholders::_1));</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <span class="comment">// Publish outgoing twist commands to the Servo object</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  twist_stamped_pub_ = node_-&gt;create_publisher&lt;geometry_msgs::msg::TwistStamped&gt;(</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;      <a class="code" href="classmoveit__servo_1_1PoseTracking.html#a86b4351a4f8b4ca85ec928fd0e38f62f">servo_</a>-&gt;getParameters()-&gt;cartesian_command_in_topic, rclcpp::SystemDefaultsQoS());</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
-<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="classmoveit__servo_1_1PoseTracking.html#a1d7046c89fba7df3f812e970ec6cfa96">  111</a></span>&#160;<a class="code" href="namespacemoveit__servo.html#a72baa5ed9c5fc60a76a9cddfce6b5548">PoseTrackingStatusCode</a> <a class="code" href="classmoveit__servo_1_1PoseTracking.html#a1d7046c89fba7df3f812e970ec6cfa96">PoseTracking::moveToPose</a>(<span class="keyword">const</span> <a class="code" href="namespacefcl.html#a0288e6b07bc0c851a9503dbaea7a0f19">Eigen::Vector3d</a>&amp; positional_tolerance,</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                                                <span class="keyword">const</span> <span class="keywordtype">double</span> angular_tolerance, <span class="keyword">const</span> <span class="keywordtype">double</span> target_pose_timeout)</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;{</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <span class="comment">// Reset stop requested flag before starting motions</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  stop_requested_ = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <span class="comment">// Wait a bit for a target pose message to arrive.</span></div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  <span class="comment">// The target pose may get updated by new messages as the robot moves (in a callback function).</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  <span class="keyword">const</span> rclcpp::Time start_time = node_-&gt;now();</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  rclcpp::Clock clock;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <span class="keywordflow">while</span> ((!haveRecentTargetPose(target_pose_timeout) || !haveRecentEndEffectorPose(target_pose_timeout)) &amp;&amp;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;         ((node_-&gt;now() - start_time).seconds() &lt; target_pose_timeout))</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  {</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classmoveit__servo_1_1PoseTracking.html#a86b4351a4f8b4ca85ec928fd0e38f62f">servo_</a>-&gt;getCommandFrameTransform(command_frame_transform_))</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    {</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;      command_frame_transform_stamp_ = node_-&gt;now();</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    }</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    std::this_thread::sleep_for(1ms);</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  }</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  <span class="keywordflow">if</span> (!haveRecentTargetPose(target_pose_timeout))</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  {</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    RCLCPP_ERROR_STREAM(LOGGER, <span class="stringliteral">&quot;The target pose was not updated recently. Aborting.&quot;</span>);</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespacemoveit__servo.html#a72baa5ed9c5fc60a76a9cddfce6b5548af77af10d8b1feddc0022171332669886">PoseTrackingStatusCode::NO_RECENT_TARGET_POSE</a>;</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  }</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  <span class="comment">// Continue sending PID controller output to Servo until one of the following conditions is met:</span></div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  <span class="comment">// - Goal tolerance is satisfied</span></div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  <span class="comment">// - Target pose becomes outdated</span></div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  <span class="comment">// - Command frame transform becomes outdated</span></div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  <span class="comment">// - Another thread requested a stop</span></div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  <span class="keywordflow">while</span> (rclcpp::ok())</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  {</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordflow">if</span> (satisfiesPoseTolerance(positional_tolerance, angular_tolerance))</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    {</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;      RCLCPP_INFO_STREAM(LOGGER, <span class="stringliteral">&quot;The target pose is achieved!&quot;</span>);</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;      <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    }</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="comment">// Attempt to update robot pose</span></div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classmoveit__servo_1_1PoseTracking.html#a86b4351a4f8b4ca85ec928fd0e38f62f">servo_</a>-&gt;getCommandFrameTransform(command_frame_transform_))</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    {</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;      command_frame_transform_stamp_ = node_-&gt;now();</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    }</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="comment">// Check that end-effector pose (command frame transform) is recent enough.</span></div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keywordflow">if</span> (!haveRecentEndEffectorPose(target_pose_timeout))</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    {</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;      RCLCPP_ERROR_STREAM(LOGGER, <span class="stringliteral">&quot;The end effector pose was not updated in time. Aborting.&quot;</span>);</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;      doPostMotionReset();</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="namespacemoveit__servo.html#a72baa5ed9c5fc60a76a9cddfce6b5548aacbb405b2f165c94eb2b620fde610f0b">PoseTrackingStatusCode::NO_RECENT_END_EFFECTOR_POSE</a>;</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}  <span class="comment">// namespace</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacemoveit__servo.html">moveit_servo</a></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;{</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classmoveit__servo_1_1PoseTracking.html#a8616652e962ee093f3749a047495e47b">   49</a></span>&#160;PoseTracking::PoseTracking(<span class="keyword">const</span> rclcpp::Node::SharedPtr&amp; node, <span class="keyword">const</span> <a class="code" href="structmoveit__servo_1_1ServoParameters.html#a20068dc44ef620c41f866277102b2edf">ServoParameters::SharedConstPtr</a>&amp; servo_parameters,</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                           <span class="keyword">const</span> planning_scene_monitor::PlanningSceneMonitorPtr&amp; <a class="code" href="namespaceplanning__scene__monitor.html">planning_scene_monitor</a>)</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  : node_(node)</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  , servo_parameters_(servo_parameters)</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  , planning_scene_monitor_(<a class="code" href="namespaceplanning__scene__monitor.html">planning_scene_monitor</a>)</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  , loop_rate_(1.0 / servo_parameters-&gt;publish_period)</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  , transform_buffer_(node_-&gt;get_clock())</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  , transform_listener_(transform_buffer_)</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  , stop_requested_(false)</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  , angular_error_(<a class="code" href="namespaceboost.html">boost</a>::none)</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  readROSParams();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  robot_model_ = planning_scene_monitor_-&gt;getRobotModel();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  joint_model_group_ = robot_model_-&gt;getJointModelGroup(move_group_name_);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="comment">// Initialize PID controllers</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  initializePID(x_pid_config_, cartesian_position_pids_);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  initializePID(y_pid_config_, cartesian_position_pids_);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  initializePID(z_pid_config_, cartesian_position_pids_);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  initializePID(angular_pid_config_, cartesian_orientation_pids_);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="comment">// Use the C++ interface that Servo provides</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <a class="code" href="classmoveit__servo_1_1PoseTracking.html#a86b4351a4f8b4ca85ec928fd0e38f62f">servo_</a> = std::make_unique&lt;moveit_servo::Servo&gt;(node_, servo_parameters_, planning_scene_monitor_);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <a class="code" href="classmoveit__servo_1_1PoseTracking.html#a86b4351a4f8b4ca85ec928fd0e38f62f">servo_</a>-&gt;start();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="comment">// Connect to Servo ROS interfaces</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  target_pose_sub_ = node_-&gt;create_subscription&lt;geometry_msgs::msg::PoseStamped&gt;(</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      <span class="stringliteral">&quot;target_pose&quot;</span>, 1, std::bind(&amp;PoseTracking::targetPoseCallback, <span class="keyword">this</span>, std::placeholders::_1));</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="comment">// Publish outgoing twist commands to the Servo object</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  twist_stamped_pub_ =</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;      node_-&gt;create_publisher&lt;geometry_msgs::msg::TwistStamped&gt;(<a class="code" href="classmoveit__servo_1_1PoseTracking.html#a86b4351a4f8b4ca85ec928fd0e38f62f">servo_</a>-&gt;getParameters()-&gt;cartesian_command_in_topic, 1);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classmoveit__servo_1_1PoseTracking.html#a1d7046c89fba7df3f812e970ec6cfa96">   84</a></span>&#160;<a class="code" href="namespacemoveit__servo.html#a72baa5ed9c5fc60a76a9cddfce6b5548">PoseTrackingStatusCode</a> <a class="code" href="classmoveit__servo_1_1PoseTracking.html#a1d7046c89fba7df3f812e970ec6cfa96">PoseTracking::moveToPose</a>(<span class="keyword">const</span> <a class="code" href="namespacefcl.html#a0288e6b07bc0c851a9503dbaea7a0f19">Eigen::Vector3d</a>&amp; positional_tolerance,</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                                                <span class="keyword">const</span> <span class="keywordtype">double</span> angular_tolerance, <span class="keyword">const</span> <span class="keywordtype">double</span> target_pose_timeout)</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;{</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="comment">// Reset stop requested flag before starting motions</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  stop_requested_ = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="comment">// Wait a bit for a target pose message to arrive.</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="comment">// The target pose may get updated by new messages as the robot moves (in a callback function).</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="keyword">const</span> rclcpp::Time start_time = node_-&gt;now();</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  rclcpp::Clock clock;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keywordflow">while</span> ((!haveRecentTargetPose(target_pose_timeout) || !haveRecentEndEffectorPose(target_pose_timeout)) &amp;&amp;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;         ((node_-&gt;now() - start_time).seconds() &lt; target_pose_timeout))</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classmoveit__servo_1_1PoseTracking.html#a86b4351a4f8b4ca85ec928fd0e38f62f">servo_</a>-&gt;getCommandFrameTransform(command_frame_transform_))</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;      command_frame_transform_stamp_ = node_-&gt;now();</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    }</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    std::this_thread::sleep_for(1ms);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <span class="keywordflow">if</span> (!haveRecentTargetPose(target_pose_timeout))</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  {</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    RCLCPP_ERROR_STREAM(LOGGER, <span class="stringliteral">&quot;The target pose was not updated recently. Aborting.&quot;</span>);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespacemoveit__servo.html#a72baa5ed9c5fc60a76a9cddfce6b5548af77af10d8b1feddc0022171332669886">PoseTrackingStatusCode::NO_RECENT_TARGET_POSE</a>;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  }</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <span class="comment">// Continue sending PID controller output to Servo until one of the following conditions is met:</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <span class="comment">// - Goal tolerance is satisfied</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <span class="comment">// - Target pose becomes outdated</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <span class="comment">// - Command frame transform becomes outdated</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <span class="comment">// - Another thread requested a stop</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <span class="keywordflow">while</span> (rclcpp::ok())</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  {</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">if</span> (satisfiesPoseTolerance(positional_tolerance, angular_tolerance))</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;      RCLCPP_INFO_STREAM(LOGGER, <span class="stringliteral">&quot;The target pose is achieved!&quot;</span>);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;      <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    }</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="comment">// Attempt to update robot pose</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classmoveit__servo_1_1PoseTracking.html#a86b4351a4f8b4ca85ec928fd0e38f62f">servo_</a>-&gt;getCommandFrameTransform(command_frame_transform_))</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    {</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;      command_frame_transform_stamp_ = node_-&gt;now();</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    }</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="comment">// Check that end-effector pose (command frame transform) is recent enough.</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordflow">if</span> (!haveRecentEndEffectorPose(target_pose_timeout))</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    {</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;      RCLCPP_ERROR_STREAM(LOGGER, <span class="stringliteral">&quot;The end effector pose was not updated in time. Aborting.&quot;</span>);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;      doPostMotionReset();</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="namespacemoveit__servo.html#a72baa5ed9c5fc60a76a9cddfce6b5548aacbb405b2f165c94eb2b620fde610f0b">PoseTrackingStatusCode::NO_RECENT_END_EFFECTOR_POSE</a>;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    }</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordflow">if</span> (stop_requested_)</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    {</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;      RCLCPP_INFO_STREAM(LOGGER, <span class="stringliteral">&quot;Halting servo motion, a stop was requested.&quot;</span>);</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;      doPostMotionReset();</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="namespacemoveit__servo.html#a72baa5ed9c5fc60a76a9cddfce6b5548a890150b688f0819a3bbda52dd2df8f80">PoseTrackingStatusCode::STOP_REQUESTED</a>;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    }</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="comment">// Compute servo command from PID controller output and send it to the Servo object, for execution</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    twist_stamped_pub_-&gt;publish(*calculateTwistCommand());</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordflow">if</span> (!loop_rate_.sleep())</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    {</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;      RCLCPP_WARN_STREAM_THROTTLE(LOGGER, clock, <a class="code" href="src_2collision__common_8cpp.html#a2b0aefb050b5a586b3ba93f3199015a8">LOG_THROTTLE_PERIOD</a>, <span class="stringliteral">&quot;Target control rate was missed&quot;</span>);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    }</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  }</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  doPostMotionReset();</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="namespacemoveit__servo.html#a72baa5ed9c5fc60a76a9cddfce6b5548ad0749aaba8b833466dfcbb0428e4f89c">PoseTrackingStatusCode::SUCCESS</a>;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;}</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="keywordtype">void</span> PoseTracking::readROSParams()</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;{</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  <span class="keyword">const</span> std::string ns = <span class="stringliteral">&quot;moveit_servo&quot;</span>;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  <a class="code" href="namespacemoveit__servo.html#a51b0fc155c14edca6625cae7918d3a7f">declareOrGetParam</a>(planning_frame_, ns + <span class="stringliteral">&quot;.planning_frame&quot;</span>, node_, LOGGER);</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  <a class="code" href="namespacemoveit__servo.html#a51b0fc155c14edca6625cae7918d3a7f">declareOrGetParam</a>(move_group_name_, ns + <span class="stringliteral">&quot;.move_group_name&quot;</span>, node_, LOGGER);</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordflow">if</span> (stop_requested_)</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    {</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;      RCLCPP_INFO_STREAM(LOGGER, <span class="stringliteral">&quot;Halting servo motion, a stop was requested.&quot;</span>);</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;      doPostMotionReset();</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="namespacemoveit__servo.html#a72baa5ed9c5fc60a76a9cddfce6b5548a890150b688f0819a3bbda52dd2df8f80">PoseTrackingStatusCode::STOP_REQUESTED</a>;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    }</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="comment">// Compute servo command from PID controller output and send it to the Servo object, for execution</span></div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    twist_stamped_pub_-&gt;publish(*calculateTwistCommand());</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="keywordflow">if</span> (!loop_rate_.sleep())</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    {</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;      RCLCPP_WARN_STREAM_THROTTLE(LOGGER, clock, <a class="code" href="src_2collision__common_8cpp.html#a2b0aefb050b5a586b3ba93f3199015a8">LOG_THROTTLE_PERIOD</a>, <span class="stringliteral">&quot;Target control rate was missed&quot;</span>);</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    }</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;  }</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160; </div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;  doPostMotionReset();</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="namespacemoveit__servo.html#a72baa5ed9c5fc60a76a9cddfce6b5548ad0749aaba8b833466dfcbb0428e4f89c">PoseTrackingStatusCode::SUCCESS</a>;</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;}</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;  <span class="keywordflow">if</span> (!planning_scene_monitor_-&gt;getRobotModel()-&gt;hasJointModelGroup(move_group_name_))</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;  {</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    RCLCPP_ERROR_STREAM(LOGGER, <span class="stringliteral">&quot;Unable to find the specified joint model group: &quot;</span> &lt;&lt; move_group_name_);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  }</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  <span class="keywordtype">double</span> publish_period;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  <a class="code" href="namespacemoveit__servo.html#a51b0fc155c14edca6625cae7918d3a7f">declareOrGetParam</a>(publish_period, ns + <span class="stringliteral">&quot;.publish_period&quot;</span>, node_, LOGGER);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  x_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#af6e1fc269f841892331329ca360c72fb">dt</a> = publish_period;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;  y_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#af6e1fc269f841892331329ca360c72fb">dt</a> = publish_period;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;  z_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#af6e1fc269f841892331329ca360c72fb">dt</a> = publish_period;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;  angular_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#af6e1fc269f841892331329ca360c72fb">dt</a> = publish_period;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;  <span class="keywordtype">double</span> windup_limit;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;  <a class="code" href="namespacemoveit__servo.html#a51b0fc155c14edca6625cae7918d3a7f">declareOrGetParam</a>(windup_limit, ns + <span class="stringliteral">&quot;.windup_limit&quot;</span>, node_, LOGGER);</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;  x_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#a2a0b19b3f893efc8702728897ca44adb">windup_limit</a> = windup_limit;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;  y_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#a2a0b19b3f893efc8702728897ca44adb">windup_limit</a> = windup_limit;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;  z_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#a2a0b19b3f893efc8702728897ca44adb">windup_limit</a> = windup_limit;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;  angular_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#a2a0b19b3f893efc8702728897ca44adb">windup_limit</a> = windup_limit;</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="keywordtype">void</span> PoseTracking::readROSParams()</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;{</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;  <span class="keyword">const</span> std::string ns = <span class="stringliteral">&quot;moveit_servo&quot;</span>;</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;  <a class="code" href="namespacemoveit_1_1hybrid__planning.html#a13ae90bec8392b34b9beb63c00d789ec">declareOrGetParam</a>(planning_frame_, ns + <span class="stringliteral">&quot;.planning_frame&quot;</span>, node_, LOGGER);</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  <a class="code" href="namespacemoveit_1_1hybrid__planning.html#a13ae90bec8392b34b9beb63c00d789ec">declareOrGetParam</a>(move_group_name_, ns + <span class="stringliteral">&quot;.move_group_name&quot;</span>, node_, LOGGER);</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  <span class="keywordflow">if</span> (!planning_scene_monitor_-&gt;getRobotModel()-&gt;hasJointModelGroup(move_group_name_))</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  {</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    RCLCPP_ERROR_STREAM(LOGGER, <span class="stringliteral">&quot;Unable to find the specified joint model group: &quot;</span> &lt;&lt; move_group_name_);</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  }</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;  <span class="keywordtype">double</span> publish_period;</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;  <a class="code" href="namespacemoveit_1_1hybrid__planning.html#a13ae90bec8392b34b9beb63c00d789ec">declareOrGetParam</a>(publish_period, ns + <span class="stringliteral">&quot;.publish_period&quot;</span>, node_, LOGGER);</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  x_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#af6e1fc269f841892331329ca360c72fb">dt</a> = publish_period;</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;  y_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#af6e1fc269f841892331329ca360c72fb">dt</a> = publish_period;</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;  z_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#af6e1fc269f841892331329ca360c72fb">dt</a> = publish_period;</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;  angular_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#af6e1fc269f841892331329ca360c72fb">dt</a> = publish_period;</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;  <span class="keywordtype">double</span> windup_limit;</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;  <a class="code" href="namespacemoveit_1_1hybrid__planning.html#a13ae90bec8392b34b9beb63c00d789ec">declareOrGetParam</a>(windup_limit, ns + <span class="stringliteral">&quot;.windup_limit&quot;</span>, node_, LOGGER);</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;  x_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#a2a0b19b3f893efc8702728897ca44adb">windup_limit</a> = windup_limit;</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;  y_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#a2a0b19b3f893efc8702728897ca44adb">windup_limit</a> = windup_limit;</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;  z_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#a2a0b19b3f893efc8702728897ca44adb">windup_limit</a> = windup_limit;</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;  angular_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#a2a0b19b3f893efc8702728897ca44adb">windup_limit</a> = windup_limit;</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;  <a class="code" href="namespacemoveit_1_1hybrid__planning.html#a13ae90bec8392b34b9beb63c00d789ec">declareOrGetParam</a>(x_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#aff96e6903b3f86a57f51489dc6521894">k_p</a>, ns + <span class="stringliteral">&quot;.x_proportional_gain&quot;</span>, node_, LOGGER);</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;  <a class="code" href="namespacemoveit_1_1hybrid__planning.html#a13ae90bec8392b34b9beb63c00d789ec">declareOrGetParam</a>(x_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#aff96e6903b3f86a57f51489dc6521894">k_p</a>, ns + <span class="stringliteral">&quot;.x_proportional_gain&quot;</span>, node_, LOGGER);</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;  <a class="code" href="namespacemoveit_1_1hybrid__planning.html#a13ae90bec8392b34b9beb63c00d789ec">declareOrGetParam</a>(y_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#aff96e6903b3f86a57f51489dc6521894">k_p</a>, ns + <span class="stringliteral">&quot;.y_proportional_gain&quot;</span>, node_, LOGGER);</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;  <a class="code" href="namespacemoveit_1_1hybrid__planning.html#a13ae90bec8392b34b9beb63c00d789ec">declareOrGetParam</a>(z_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#aff96e6903b3f86a57f51489dc6521894">k_p</a>, ns + <span class="stringliteral">&quot;.z_proportional_gain&quot;</span>, node_, LOGGER);</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;  <a class="code" href="namespacemoveit_1_1hybrid__planning.html#a13ae90bec8392b34b9beb63c00d789ec">declareOrGetParam</a>(x_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#ab4038708344b744fd54d3d51b13099de">k_i</a>, ns + <span class="stringliteral">&quot;.x_integral_gain&quot;</span>, node_, LOGGER);</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;  <a class="code" href="namespacemoveit_1_1hybrid__planning.html#a13ae90bec8392b34b9beb63c00d789ec">declareOrGetParam</a>(y_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#ab4038708344b744fd54d3d51b13099de">k_i</a>, ns + <span class="stringliteral">&quot;.y_integral_gain&quot;</span>, node_, LOGGER);</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;  <a class="code" href="namespacemoveit_1_1hybrid__planning.html#a13ae90bec8392b34b9beb63c00d789ec">declareOrGetParam</a>(z_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#ab4038708344b744fd54d3d51b13099de">k_i</a>, ns + <span class="stringliteral">&quot;.z_integral_gain&quot;</span>, node_, LOGGER);</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;  <a class="code" href="namespacemoveit_1_1hybrid__planning.html#a13ae90bec8392b34b9beb63c00d789ec">declareOrGetParam</a>(x_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#a5396f574aa7b7fdc5cf831e540859735">k_d</a>, ns + <span class="stringliteral">&quot;.x_derivative_gain&quot;</span>, node_, LOGGER);</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;  <a class="code" href="namespacemoveit_1_1hybrid__planning.html#a13ae90bec8392b34b9beb63c00d789ec">declareOrGetParam</a>(y_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#a5396f574aa7b7fdc5cf831e540859735">k_d</a>, ns + <span class="stringliteral">&quot;.y_derivative_gain&quot;</span>, node_, LOGGER);</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;  <a class="code" href="namespacemoveit_1_1hybrid__planning.html#a13ae90bec8392b34b9beb63c00d789ec">declareOrGetParam</a>(z_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#a5396f574aa7b7fdc5cf831e540859735">k_d</a>, ns + <span class="stringliteral">&quot;.z_derivative_gain&quot;</span>, node_, LOGGER);</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;  <a class="code" href="namespacemoveit_1_1hybrid__planning.html#a13ae90bec8392b34b9beb63c00d789ec">declareOrGetParam</a>(angular_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#aff96e6903b3f86a57f51489dc6521894">k_p</a>, ns + <span class="stringliteral">&quot;.angular_proportional_gain&quot;</span>, node_, LOGGER);</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;  <a class="code" href="namespacemoveit_1_1hybrid__planning.html#a13ae90bec8392b34b9beb63c00d789ec">declareOrGetParam</a>(angular_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#ab4038708344b744fd54d3d51b13099de">k_i</a>, ns + <span class="stringliteral">&quot;.angular_integral_gain&quot;</span>, node_, LOGGER);</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;  <a class="code" href="namespacemoveit_1_1hybrid__planning.html#a13ae90bec8392b34b9beb63c00d789ec">declareOrGetParam</a>(angular_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#a5396f574aa7b7fdc5cf831e540859735">k_d</a>, ns + <span class="stringliteral">&quot;.angular_derivative_gain&quot;</span>, node_, LOGGER);</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;}</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160; </div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="keywordtype">void</span> PoseTracking::initializePID(<span class="keyword">const</span> PIDConfig&amp; pid_config, std::vector&lt;control_toolbox::Pid&gt;&amp; pid_vector)</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;{</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;  <span class="keywordtype">bool</span> use_anti_windup = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;  pid_vector.push_back(control_toolbox::Pid(pid_config.k_p, pid_config.k_i, pid_config.k_d, pid_config.windup_limit,</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                                            -pid_config.windup_limit, use_anti_windup));</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;}</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160; </div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="keywordtype">bool</span> PoseTracking::haveRecentTargetPose(<span class="keyword">const</span> <span class="keywordtype">double</span> timespan)</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;{</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;  std::lock_guard&lt;std::mutex&gt; lock(target_pose_mtx_);</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;  <span class="keywordflow">return</span> ((node_-&gt;now() - target_pose_.header.stamp).seconds() &lt; timespan);</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;}</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;<span class="keywordtype">bool</span> PoseTracking::haveRecentEndEffectorPose(<span class="keyword">const</span> <span class="keywordtype">double</span> timespan)</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;{</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;  <span class="keywordflow">return</span> ((node_-&gt;now() - command_frame_transform_stamp_).seconds() &lt; timespan);</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;}</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; </div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;<span class="keywordtype">bool</span> PoseTracking::satisfiesPoseTolerance(<span class="keyword">const</span> <a class="code" href="namespacefcl.html#a0288e6b07bc0c851a9503dbaea7a0f19">Eigen::Vector3d</a>&amp; positional_tolerance, <span class="keyword">const</span> <span class="keywordtype">double</span> angular_tolerance)</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;{</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;  std::lock_guard&lt;std::mutex&gt; lock(target_pose_mtx_);</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;  <span class="keywordtype">double</span> x_error = target_pose_.pose.position.x - command_frame_transform_.translation()(0);</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;  <span class="keywordtype">double</span> y_error = target_pose_.pose.position.y - command_frame_transform_.translation()(1);</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;  <span class="keywordtype">double</span> z_error = target_pose_.pose.position.z - command_frame_transform_.translation()(2);</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160; </div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;  <span class="comment">// If uninitialized, likely haven&#39;t received the target pose yet.</span></div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;  <span class="keywordflow">if</span> (!angular_error_)</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160; </div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;  <span class="keywordflow">return</span> ((std::abs(x_error) &lt; positional_tolerance(0)) &amp;&amp; (std::abs(y_error) &lt; positional_tolerance(1)) &amp;&amp;</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;          (std::abs(z_error) &lt; positional_tolerance(2)) &amp;&amp; (std::abs(*angular_error_) &lt; angular_tolerance));</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;}</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160; </div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;<span class="keywordtype">void</span> PoseTracking::targetPoseCallback(<span class="keyword">const</span> geometry_msgs::msg::PoseStamped::ConstSharedPtr msg)</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;{</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;  std::lock_guard&lt;std::mutex&gt; lock(target_pose_mtx_);</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;  target_pose_ = *msg;</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;  <span class="comment">// If the target pose is not defined in planning frame, transform the target pose.</span></div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;  <span class="keywordflow">if</span> (target_pose_.header.frame_id != planning_frame_)</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;  {</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <span class="keywordflow">try</span></div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    {</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;      geometry_msgs::msg::TransformStamped target_to_planning_frame = transform_buffer_.lookupTransform(</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;          planning_frame_, target_pose_.header.frame_id, rclcpp::Time(0), rclcpp::Duration(100ms));</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;      tf2::doTransform(target_pose_, target_pose_, target_to_planning_frame);</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160; </div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;      <span class="comment">// Prevent doTransform from copying a stamp of 0, which will cause the haveRecentTargetPose check to fail servo motions</span></div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;      target_pose_.header.stamp = node_-&gt;now();</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    }</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <span class="keywordflow">catch</span> (<span class="keyword">const</span> tf2::TransformException&amp; ex)</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    {</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;      RCLCPP_WARN_STREAM(LOGGER, ex.what());</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;      <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    }</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;  }</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;}</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160; </div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;geometry_msgs::msg::TwistStamped::ConstSharedPtr PoseTracking::calculateTwistCommand()</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;{</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;  <span class="comment">// use the shared pool to create a message more efficiently</span></div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;  <span class="keyword">auto</span> msg = moveit::util::make_shared_from_pool&lt;geometry_msgs::msg::TwistStamped&gt;();</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160; </div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;  <span class="comment">// Get twist components from PID controllers</span></div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;  geometry_msgs::msg::Twist&amp; twist = msg-&gt;twist;</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;  Eigen::Quaterniond q_desired;</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160; </div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;  <span class="comment">// Scope mutex locking only to operations which require access to target pose.</span></div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;  {</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    std::lock_guard&lt;std::mutex&gt; lock(target_pose_mtx_);</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    msg-&gt;header.frame_id = target_pose_.header.frame_id;</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160; </div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    <span class="comment">// Position</span></div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    twist.linear.x = cartesian_position_pids_[0].computeCommand(</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        target_pose_.pose.position.x - command_frame_transform_.translation()(0), loop_rate_.period().count());</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    twist.linear.y = cartesian_position_pids_[1].computeCommand(</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        target_pose_.pose.position.y - command_frame_transform_.translation()(1), loop_rate_.period().count());</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    twist.linear.z = cartesian_position_pids_[2].computeCommand(</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        target_pose_.pose.position.z - command_frame_transform_.translation()(2), loop_rate_.period().count());</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;  <a class="code" href="namespacemoveit__servo.html#a51b0fc155c14edca6625cae7918d3a7f">declareOrGetParam</a>(x_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#aff96e6903b3f86a57f51489dc6521894">k_p</a>, ns + <span class="stringliteral">&quot;.x_proportional_gain&quot;</span>, node_, LOGGER);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;  <a class="code" href="namespacemoveit__servo.html#a51b0fc155c14edca6625cae7918d3a7f">declareOrGetParam</a>(x_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#aff96e6903b3f86a57f51489dc6521894">k_p</a>, ns + <span class="stringliteral">&quot;.x_proportional_gain&quot;</span>, node_, LOGGER);</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;  <a class="code" href="namespacemoveit__servo.html#a51b0fc155c14edca6625cae7918d3a7f">declareOrGetParam</a>(y_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#aff96e6903b3f86a57f51489dc6521894">k_p</a>, ns + <span class="stringliteral">&quot;.y_proportional_gain&quot;</span>, node_, LOGGER);</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;  <a class="code" href="namespacemoveit__servo.html#a51b0fc155c14edca6625cae7918d3a7f">declareOrGetParam</a>(z_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#aff96e6903b3f86a57f51489dc6521894">k_p</a>, ns + <span class="stringliteral">&quot;.z_proportional_gain&quot;</span>, node_, LOGGER);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;  <a class="code" href="namespacemoveit__servo.html#a51b0fc155c14edca6625cae7918d3a7f">declareOrGetParam</a>(x_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#ab4038708344b744fd54d3d51b13099de">k_i</a>, ns + <span class="stringliteral">&quot;.x_integral_gain&quot;</span>, node_, LOGGER);</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  <a class="code" href="namespacemoveit__servo.html#a51b0fc155c14edca6625cae7918d3a7f">declareOrGetParam</a>(y_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#ab4038708344b744fd54d3d51b13099de">k_i</a>, ns + <span class="stringliteral">&quot;.y_integral_gain&quot;</span>, node_, LOGGER);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;  <a class="code" href="namespacemoveit__servo.html#a51b0fc155c14edca6625cae7918d3a7f">declareOrGetParam</a>(z_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#ab4038708344b744fd54d3d51b13099de">k_i</a>, ns + <span class="stringliteral">&quot;.z_integral_gain&quot;</span>, node_, LOGGER);</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  <a class="code" href="namespacemoveit__servo.html#a51b0fc155c14edca6625cae7918d3a7f">declareOrGetParam</a>(x_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#a5396f574aa7b7fdc5cf831e540859735">k_d</a>, ns + <span class="stringliteral">&quot;.x_derivative_gain&quot;</span>, node_, LOGGER);</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  <a class="code" href="namespacemoveit__servo.html#a51b0fc155c14edca6625cae7918d3a7f">declareOrGetParam</a>(y_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#a5396f574aa7b7fdc5cf831e540859735">k_d</a>, ns + <span class="stringliteral">&quot;.y_derivative_gain&quot;</span>, node_, LOGGER);</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  <a class="code" href="namespacemoveit__servo.html#a51b0fc155c14edca6625cae7918d3a7f">declareOrGetParam</a>(z_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#a5396f574aa7b7fdc5cf831e540859735">k_d</a>, ns + <span class="stringliteral">&quot;.z_derivative_gain&quot;</span>, node_, LOGGER);</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  <a class="code" href="namespacemoveit__servo.html#a51b0fc155c14edca6625cae7918d3a7f">declareOrGetParam</a>(angular_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#aff96e6903b3f86a57f51489dc6521894">k_p</a>, ns + <span class="stringliteral">&quot;.angular_proportional_gain&quot;</span>, node_, LOGGER);</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;  <a class="code" href="namespacemoveit__servo.html#a51b0fc155c14edca6625cae7918d3a7f">declareOrGetParam</a>(angular_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#ab4038708344b744fd54d3d51b13099de">k_i</a>, ns + <span class="stringliteral">&quot;.angular_integral_gain&quot;</span>, node_, LOGGER);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;  <a class="code" href="namespacemoveit__servo.html#a51b0fc155c14edca6625cae7918d3a7f">declareOrGetParam</a>(angular_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#a5396f574aa7b7fdc5cf831e540859735">k_d</a>, ns + <span class="stringliteral">&quot;.angular_derivative_gain&quot;</span>, node_, LOGGER);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;}</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="keywordtype">void</span> PoseTracking::initializePID(<span class="keyword">const</span> PIDConfig&amp; pid_config, std::vector&lt;control_toolbox::Pid&gt;&amp; pid_vector)</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;{</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;  <span class="keywordtype">bool</span> use_anti_windup = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;  pid_vector.push_back(control_toolbox::Pid(pid_config.k_p, pid_config.k_i, pid_config.k_d, pid_config.windup_limit,</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                                            -pid_config.windup_limit, use_anti_windup));</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;}</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="keywordtype">bool</span> PoseTracking::haveRecentTargetPose(<span class="keyword">const</span> <span class="keywordtype">double</span> timespan)</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;{</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;  std::lock_guard&lt;std::mutex&gt; lock(target_pose_mtx_);</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;  <span class="keywordflow">return</span> ((node_-&gt;now() - target_pose_.header.stamp).seconds() &lt; timespan);</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;}</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<span class="keywordtype">bool</span> PoseTracking::haveRecentEndEffectorPose(<span class="keyword">const</span> <span class="keywordtype">double</span> timespan)</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;{</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;  <span class="keywordflow">return</span> ((node_-&gt;now() - command_frame_transform_stamp_).seconds() &lt; timespan);</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;}</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160; </div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="keywordtype">bool</span> PoseTracking::satisfiesPoseTolerance(<span class="keyword">const</span> <a class="code" href="namespacefcl.html#a0288e6b07bc0c851a9503dbaea7a0f19">Eigen::Vector3d</a>&amp; positional_tolerance, <span class="keyword">const</span> <span class="keywordtype">double</span> angular_tolerance)</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;{</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;  std::lock_guard&lt;std::mutex&gt; lock(target_pose_mtx_);</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;  <span class="keywordtype">double</span> x_error = target_pose_.pose.position.x - command_frame_transform_.translation()(0);</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;  <span class="keywordtype">double</span> y_error = target_pose_.pose.position.y - command_frame_transform_.translation()(1);</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;  <span class="keywordtype">double</span> z_error = target_pose_.pose.position.z - command_frame_transform_.translation()(2);</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160; </div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;  <span class="comment">// If uninitialized, likely haven&#39;t received the target pose yet.</span></div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;  <span class="keywordflow">if</span> (!angular_error_)</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;  <span class="keywordflow">return</span> ((std::abs(x_error) &lt; positional_tolerance(0)) &amp;&amp; (std::abs(y_error) &lt; positional_tolerance(1)) &amp;&amp;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;          (std::abs(z_error) &lt; positional_tolerance(2)) &amp;&amp; (std::abs(*angular_error_) &lt; angular_tolerance));</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;}</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160; </div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="keywordtype">void</span> PoseTracking::targetPoseCallback(<span class="keyword">const</span> geometry_msgs::msg::PoseStamped::ConstSharedPtr msg)</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;{</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;  std::lock_guard&lt;std::mutex&gt; lock(target_pose_mtx_);</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;  target_pose_ = *msg;</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;  <span class="comment">// If the target pose is not defined in planning frame, transform the target pose.</span></div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;  <span class="keywordflow">if</span> (target_pose_.header.frame_id != planning_frame_)</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;  {</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <span class="keywordflow">try</span></div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    {</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;      geometry_msgs::msg::TransformStamped target_to_planning_frame = transform_buffer_.lookupTransform(</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;          planning_frame_, target_pose_.header.frame_id, rclcpp::Time(0), rclcpp::Duration(100ms));</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;      tf2::doTransform(target_pose_, target_pose_, target_to_planning_frame);</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160; </div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;      <span class="comment">// Prevent doTransform from copying a stamp of 0, which will cause the haveRecentTargetPose check to fail servo motions</span></div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;      target_pose_.header.stamp = node_-&gt;now();</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    }</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keywordflow">catch</span> (<span class="keyword">const</span> tf2::TransformException&amp; ex)</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    {</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;      RCLCPP_WARN_STREAM(LOGGER, ex.what());</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;      <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    }</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;  }</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;}</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; </div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;geometry_msgs::msg::TwistStamped::ConstSharedPtr PoseTracking::calculateTwistCommand()</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;{</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;  <span class="comment">// use the shared pool to create a message more efficiently</span></div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;  <span class="keyword">auto</span> msg = moveit::util::make_shared_from_pool&lt;geometry_msgs::msg::TwistStamped&gt;();</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160; </div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;  <span class="comment">// Get twist components from PID controllers</span></div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;  geometry_msgs::msg::Twist&amp; twist = msg-&gt;twist;</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;  Eigen::Quaterniond q_desired;</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160; </div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;  <span class="comment">// Scope mutex locking only to operations which require access to target pose.</span></div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;  {</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    std::lock_guard&lt;std::mutex&gt; lock(target_pose_mtx_);</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    msg-&gt;header.frame_id = target_pose_.header.frame_id;</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160; </div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <span class="comment">// Position</span></div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    twist.linear.x = cartesian_position_pids_[0].computeCommand(</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        target_pose_.pose.position.x - command_frame_transform_.translation()(0), loop_rate_.period().count());</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    twist.linear.y = cartesian_position_pids_[1].computeCommand(</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        target_pose_.pose.position.y - command_frame_transform_.translation()(1), loop_rate_.period().count());</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    twist.linear.z = cartesian_position_pids_[2].computeCommand(</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        target_pose_.pose.position.z - command_frame_transform_.translation()(2), loop_rate_.period().count());</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160; </div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="comment">// Orientation algorithm:</span></div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <span class="comment">// - Find the orientation error as a quaternion: q_error = q_desired * q_current ^ -1</span></div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <span class="comment">// - Use the angle-axis PID controller to calculate an angular rate</span></div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    <span class="comment">// - Convert to angular velocity for the TwistStamped message</span></div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    q_desired = Eigen::Quaterniond(target_pose_.pose.orientation.w, target_pose_.pose.orientation.x,</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                                   target_pose_.pose.orientation.y, target_pose_.pose.orientation.z);</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;  }</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160; </div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;  Eigen::Quaterniond q_current(command_frame_transform_.rotation());</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;  Eigen::Quaterniond q_error = q_desired * q_current.inverse();</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160; </div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;  <span class="comment">// Convert axis-angle to angular velocity</span></div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;  Eigen::AngleAxisd axis_angle(q_error);</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;  <span class="comment">// Cache the angular error, for rotation tolerance checking</span></div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;  angular_error_ = axis_angle.angle();</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;  <span class="keywordtype">double</span> ang_vel_magnitude =</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;      cartesian_orientation_pids_[0].computeCommand(*angular_error_, loop_rate_.period().count());</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;  twist.angular.x = ang_vel_magnitude * axis_angle.axis()[0];</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;  twist.angular.y = ang_vel_magnitude * axis_angle.axis()[1];</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;  twist.angular.z = ang_vel_magnitude * axis_angle.axis()[2];</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160; </div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;  msg-&gt;header.stamp = node_-&gt;now();</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160; </div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;  <span class="keywordflow">return</span> msg;</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;}</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160; </div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <span class="comment">// Orientation algorithm:</span></div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    <span class="comment">// - Find the orientation error as a quaternion: q_error = q_desired * q_current ^ -1</span></div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    <span class="comment">// - Use the angle-axis PID controller to calculate an angular rate</span></div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    <span class="comment">// - Convert to angular velocity for the TwistStamped message</span></div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    q_desired = Eigen::Quaterniond(target_pose_.pose.orientation.w, target_pose_.pose.orientation.x,</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                                   target_pose_.pose.orientation.y, target_pose_.pose.orientation.z);</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;  }</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160; </div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;  Eigen::Quaterniond q_current(command_frame_transform_.rotation());</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;  Eigen::Quaterniond q_error = q_desired * q_current.inverse();</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160; </div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;  <span class="comment">// Convert axis-angle to angular velocity</span></div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;  Eigen::AngleAxisd axis_angle(q_error);</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;  <span class="comment">// Cache the angular error, for rotation tolerance checking</span></div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;  angular_error_ = axis_angle.angle();</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160; </div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;  <span class="keywordtype">double</span> ang_vel_magnitude =</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;      cartesian_orientation_pids_[0].computeCommand(*angular_error_, loop_rate_.period().count());</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;  twist.angular.x = ang_vel_magnitude * axis_angle.axis()[0];</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;  twist.angular.y = ang_vel_magnitude * axis_angle.axis()[1];</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;  twist.angular.z = ang_vel_magnitude * axis_angle.axis()[2];</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160; </div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;  msg-&gt;header.stamp = node_-&gt;now();</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160; </div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;  <span class="keywordflow">return</span> msg;</div>
+<div class="line"><a name="l00305"></a><span class="lineno"><a class="line" href="classmoveit__servo_1_1PoseTracking.html#aa38b7b59ca81d408bdaa27c529046577">  305</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmoveit__servo_1_1PoseTracking.html#aa38b7b59ca81d408bdaa27c529046577">PoseTracking::stopMotion</a>()</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;{</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;  stop_requested_ = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160; </div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;  <span class="comment">// Send a 0 command to Servo to halt arm motion</span></div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;  <span class="keyword">auto</span> msg = moveit::util::make_shared_from_pool&lt;geometry_msgs::msg::TwistStamped&gt;();</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;  {</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    std::lock_guard&lt;std::mutex&gt; lock(target_pose_mtx_);</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    msg-&gt;header.frame_id = target_pose_.header.frame_id;</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;  }</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;  msg-&gt;header.stamp = node_-&gt;now();</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;  twist_stamped_pub_-&gt;publish(*msg);</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;}</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160; </div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;<span class="keywordtype">void</span> PoseTracking::doPostMotionReset()</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;{</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;  <a class="code" href="classmoveit__servo_1_1PoseTracking.html#aa38b7b59ca81d408bdaa27c529046577">stopMotion</a>();</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;  stop_requested_ = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;  angular_error_ = boost::none;</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160; </div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;  <span class="comment">// Reset error integrals and previous errors of PID controllers</span></div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;  cartesian_position_pids_[0].reset();</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;  cartesian_position_pids_[1].reset();</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;  cartesian_position_pids_[2].reset();</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;  cartesian_orientation_pids_[0].reset();</div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;}</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160; </div>
-<div class="line"><a name="l00332"></a><span class="lineno"><a class="line" href="classmoveit__servo_1_1PoseTracking.html#aa38b7b59ca81d408bdaa27c529046577">  332</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmoveit__servo_1_1PoseTracking.html#aa38b7b59ca81d408bdaa27c529046577">PoseTracking::stopMotion</a>()</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;{</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;  stop_requested_ = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160; </div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;  <span class="comment">// Send a 0 command to Servo to halt arm motion</span></div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;  <span class="keyword">auto</span> msg = moveit::util::make_shared_from_pool&lt;geometry_msgs::msg::TwistStamped&gt;();</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;  {</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    std::lock_guard&lt;std::mutex&gt; lock(target_pose_mtx_);</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    msg-&gt;header.frame_id = target_pose_.header.frame_id;</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;  }</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;  msg-&gt;header.stamp = node_-&gt;now();</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;  twist_stamped_pub_-&gt;publish(*msg);</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;}</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160; </div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;<span class="keywordtype">void</span> PoseTracking::doPostMotionReset()</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;{</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;  <a class="code" href="classmoveit__servo_1_1PoseTracking.html#aa38b7b59ca81d408bdaa27c529046577">stopMotion</a>();</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;  stop_requested_ = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;  angular_error_ = boost::none;</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160; </div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;  <span class="comment">// Reset error integrals and previous errors of PID controllers</span></div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;  cartesian_position_pids_[0].reset();</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;  cartesian_position_pids_[1].reset();</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;  cartesian_position_pids_[2].reset();</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;  cartesian_orientation_pids_[0].reset();</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;}</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160; </div>
-<div class="line"><a name="l00359"></a><span class="lineno"><a class="line" href="classmoveit__servo_1_1PoseTracking.html#ad39f332875049b2e933d55fa4e4c5970">  359</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmoveit__servo_1_1PoseTracking.html#ad39f332875049b2e933d55fa4e4c5970">PoseTracking::updatePIDConfig</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> x_proportional_gain, <span class="keyword">const</span> <span class="keywordtype">double</span> x_integral_gain,</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;                                   <span class="keyword">const</span> <span class="keywordtype">double</span> x_derivative_gain, <span class="keyword">const</span> <span class="keywordtype">double</span> y_proportional_gain,</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;                                   <span class="keyword">const</span> <span class="keywordtype">double</span> y_integral_gain, <span class="keyword">const</span> <span class="keywordtype">double</span> y_derivative_gain,</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;                                   <span class="keyword">const</span> <span class="keywordtype">double</span> z_proportional_gain, <span class="keyword">const</span> <span class="keywordtype">double</span> z_integral_gain,</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;                                   <span class="keyword">const</span> <span class="keywordtype">double</span> z_derivative_gain, <span class="keyword">const</span> <span class="keywordtype">double</span> angular_proportional_gain,</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;                                   <span class="keyword">const</span> <span class="keywordtype">double</span> angular_integral_gain, <span class="keyword">const</span> <span class="keywordtype">double</span> angular_derivative_gain)</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;{</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;  <a class="code" href="classmoveit__servo_1_1PoseTracking.html#aa38b7b59ca81d408bdaa27c529046577">stopMotion</a>();</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160; </div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;  x_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#aff96e6903b3f86a57f51489dc6521894">k_p</a> = x_proportional_gain;</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;  x_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#ab4038708344b744fd54d3d51b13099de">k_i</a> = x_integral_gain;</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;  x_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#a5396f574aa7b7fdc5cf831e540859735">k_d</a> = x_derivative_gain;</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;  y_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#aff96e6903b3f86a57f51489dc6521894">k_p</a> = y_proportional_gain;</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;  y_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#ab4038708344b744fd54d3d51b13099de">k_i</a> = y_integral_gain;</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;  y_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#a5396f574aa7b7fdc5cf831e540859735">k_d</a> = y_derivative_gain;</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;  z_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#aff96e6903b3f86a57f51489dc6521894">k_p</a> = z_proportional_gain;</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;  z_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#ab4038708344b744fd54d3d51b13099de">k_i</a> = z_integral_gain;</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;  z_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#a5396f574aa7b7fdc5cf831e540859735">k_d</a> = z_derivative_gain;</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160; </div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;  angular_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#aff96e6903b3f86a57f51489dc6521894">k_p</a> = angular_proportional_gain;</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;  angular_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#ab4038708344b744fd54d3d51b13099de">k_i</a> = angular_integral_gain;</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;  angular_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#a5396f574aa7b7fdc5cf831e540859735">k_d</a> = angular_derivative_gain;</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160; </div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;  cartesian_position_pids_.clear();</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;  cartesian_orientation_pids_.clear();</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;  initializePID(x_pid_config_, cartesian_position_pids_);</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;  initializePID(y_pid_config_, cartesian_position_pids_);</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;  initializePID(z_pid_config_, cartesian_position_pids_);</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;  initializePID(angular_pid_config_, cartesian_orientation_pids_);</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160; </div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;  doPostMotionReset();</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;}</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160; </div>
-<div class="line"><a name="l00392"></a><span class="lineno"><a class="line" href="classmoveit__servo_1_1PoseTracking.html#a0407fdb695c09b890ca1c0ff516c9007">  392</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmoveit__servo_1_1PoseTracking.html#a0407fdb695c09b890ca1c0ff516c9007">PoseTracking::getPIDErrors</a>(<span class="keywordtype">double</span>&amp; x_error, <span class="keywordtype">double</span>&amp; y_error, <span class="keywordtype">double</span>&amp; z_error, <span class="keywordtype">double</span>&amp; orientation_error)</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;{</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;  <span class="keywordtype">double</span> dummy1, dummy2;</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;  cartesian_position_pids_.at(0).getCurrentPIDErrors(x_error, dummy1, dummy2);</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;  cartesian_position_pids_.at(1).getCurrentPIDErrors(y_error, dummy1, dummy2);</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;  cartesian_position_pids_.at(2).getCurrentPIDErrors(z_error, dummy1, dummy2);</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;  cartesian_orientation_pids_.at(0).getCurrentPIDErrors(orientation_error, dummy1, dummy2);</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;}</div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160; </div>
-<div class="line"><a name="l00401"></a><span class="lineno"><a class="line" href="classmoveit__servo_1_1PoseTracking.html#ac9dba791fb8bd5b64aa8f76122d326e1">  401</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmoveit__servo_1_1PoseTracking.html#ac9dba791fb8bd5b64aa8f76122d326e1">PoseTracking::resetTargetPose</a>()</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;{</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;  std::lock_guard&lt;std::mutex&gt; lock(target_pose_mtx_);</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;  target_pose_ = geometry_msgs::msg::PoseStamped();</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;  target_pose_.header.stamp = rclcpp::Time(RCL_ROS_TIME);</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;}</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160; </div>
-<div class="line"><a name="l00408"></a><span class="lineno"><a class="line" href="classmoveit__servo_1_1PoseTracking.html#a9224527015a7ec72bc2deb3bf0b5219a">  408</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classmoveit__servo_1_1PoseTracking.html#a9224527015a7ec72bc2deb3bf0b5219a">PoseTracking::getCommandFrameTransform</a>(geometry_msgs::msg::TransformStamped&amp; transform)</div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;{</div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classmoveit__servo_1_1PoseTracking.html#a86b4351a4f8b4ca85ec928fd0e38f62f">servo_</a>-&gt;getCommandFrameTransform(transform);</div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;}</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;}  <span class="comment">// namespace moveit_servo</span></div>
+<div class="line"><a name="l00332"></a><span class="lineno"><a class="line" href="classmoveit__servo_1_1PoseTracking.html#ad39f332875049b2e933d55fa4e4c5970">  332</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmoveit__servo_1_1PoseTracking.html#ad39f332875049b2e933d55fa4e4c5970">PoseTracking::updatePIDConfig</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> x_proportional_gain, <span class="keyword">const</span> <span class="keywordtype">double</span> x_integral_gain,</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;                                   <span class="keyword">const</span> <span class="keywordtype">double</span> x_derivative_gain, <span class="keyword">const</span> <span class="keywordtype">double</span> y_proportional_gain,</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;                                   <span class="keyword">const</span> <span class="keywordtype">double</span> y_integral_gain, <span class="keyword">const</span> <span class="keywordtype">double</span> y_derivative_gain,</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;                                   <span class="keyword">const</span> <span class="keywordtype">double</span> z_proportional_gain, <span class="keyword">const</span> <span class="keywordtype">double</span> z_integral_gain,</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;                                   <span class="keyword">const</span> <span class="keywordtype">double</span> z_derivative_gain, <span class="keyword">const</span> <span class="keywordtype">double</span> angular_proportional_gain,</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;                                   <span class="keyword">const</span> <span class="keywordtype">double</span> angular_integral_gain, <span class="keyword">const</span> <span class="keywordtype">double</span> angular_derivative_gain)</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;{</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;  <a class="code" href="classmoveit__servo_1_1PoseTracking.html#aa38b7b59ca81d408bdaa27c529046577">stopMotion</a>();</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160; </div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;  x_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#aff96e6903b3f86a57f51489dc6521894">k_p</a> = x_proportional_gain;</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;  x_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#ab4038708344b744fd54d3d51b13099de">k_i</a> = x_integral_gain;</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;  x_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#a5396f574aa7b7fdc5cf831e540859735">k_d</a> = x_derivative_gain;</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;  y_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#aff96e6903b3f86a57f51489dc6521894">k_p</a> = y_proportional_gain;</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;  y_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#ab4038708344b744fd54d3d51b13099de">k_i</a> = y_integral_gain;</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;  y_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#a5396f574aa7b7fdc5cf831e540859735">k_d</a> = y_derivative_gain;</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;  z_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#aff96e6903b3f86a57f51489dc6521894">k_p</a> = z_proportional_gain;</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;  z_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#ab4038708344b744fd54d3d51b13099de">k_i</a> = z_integral_gain;</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;  z_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#a5396f574aa7b7fdc5cf831e540859735">k_d</a> = z_derivative_gain;</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160; </div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;  angular_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#aff96e6903b3f86a57f51489dc6521894">k_p</a> = angular_proportional_gain;</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;  angular_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#ab4038708344b744fd54d3d51b13099de">k_i</a> = angular_integral_gain;</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;  angular_pid_config_.<a class="code" href="structmoveit__servo_1_1PIDConfig.html#a5396f574aa7b7fdc5cf831e540859735">k_d</a> = angular_derivative_gain;</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160; </div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;  cartesian_position_pids_.clear();</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;  cartesian_orientation_pids_.clear();</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;  initializePID(x_pid_config_, cartesian_position_pids_);</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;  initializePID(y_pid_config_, cartesian_position_pids_);</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;  initializePID(z_pid_config_, cartesian_position_pids_);</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;  initializePID(angular_pid_config_, cartesian_orientation_pids_);</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160; </div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;  doPostMotionReset();</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;}</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160; </div>
+<div class="line"><a name="l00365"></a><span class="lineno"><a class="line" href="classmoveit__servo_1_1PoseTracking.html#a0407fdb695c09b890ca1c0ff516c9007">  365</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmoveit__servo_1_1PoseTracking.html#a0407fdb695c09b890ca1c0ff516c9007">PoseTracking::getPIDErrors</a>(<span class="keywordtype">double</span>&amp; x_error, <span class="keywordtype">double</span>&amp; y_error, <span class="keywordtype">double</span>&amp; z_error, <span class="keywordtype">double</span>&amp; orientation_error)</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;{</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;  <span class="keywordtype">double</span> dummy1, dummy2;</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;  cartesian_position_pids_.at(0).getCurrentPIDErrors(x_error, dummy1, dummy2);</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;  cartesian_position_pids_.at(1).getCurrentPIDErrors(y_error, dummy1, dummy2);</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;  cartesian_position_pids_.at(2).getCurrentPIDErrors(z_error, dummy1, dummy2);</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;  cartesian_orientation_pids_.at(0).getCurrentPIDErrors(orientation_error, dummy1, dummy2);</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;}</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160; </div>
+<div class="line"><a name="l00374"></a><span class="lineno"><a class="line" href="classmoveit__servo_1_1PoseTracking.html#ac9dba791fb8bd5b64aa8f76122d326e1">  374</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmoveit__servo_1_1PoseTracking.html#ac9dba791fb8bd5b64aa8f76122d326e1">PoseTracking::resetTargetPose</a>()</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;{</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;  std::lock_guard&lt;std::mutex&gt; lock(target_pose_mtx_);</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;  target_pose_ = geometry_msgs::msg::PoseStamped();</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;  target_pose_.header.stamp = rclcpp::Time(RCL_ROS_TIME);</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;}</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160; </div>
+<div class="line"><a name="l00381"></a><span class="lineno"><a class="line" href="classmoveit__servo_1_1PoseTracking.html#a9224527015a7ec72bc2deb3bf0b5219a">  381</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classmoveit__servo_1_1PoseTracking.html#a9224527015a7ec72bc2deb3bf0b5219a">PoseTracking::getCommandFrameTransform</a>(geometry_msgs::msg::TransformStamped&amp; transform)</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;{</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classmoveit__servo_1_1PoseTracking.html#a86b4351a4f8b4ca85ec928fd0e38f62f">servo_</a>-&gt;getCommandFrameTransform(transform);</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;}</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;}  <span class="comment">// namespace moveit_servo</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="astructmoveit__servo_1_1PIDConfig_html_a5396f574aa7b7fdc5cf831e540859735"><div class="ttname"><a href="structmoveit__servo_1_1PIDConfig.html#a5396f574aa7b7fdc5cf831e540859735">moveit_servo::PIDConfig::k_d</a></div><div class="ttdeci">double k_d</div><div class="ttdef"><b>Definition:</b> <a href="pose__tracking_8h_source.html#l00130">pose_tracking.h:130</a></div></div>
+<div class="ttc" id="astructmoveit__servo_1_1PIDConfig_html_a5396f574aa7b7fdc5cf831e540859735"><div class="ttname"><a href="structmoveit__servo_1_1PIDConfig.html#a5396f574aa7b7fdc5cf831e540859735">moveit_servo::PIDConfig::k_d</a></div><div class="ttdeci">double k_d</div><div class="ttdef"><b>Definition:</b> <a href="pose__tracking_8h_source.html#l00126">pose_tracking.h:126</a></div></div>
 <div class="ttc" id="anamespaceplanning__scene__monitor_html"><div class="ttname"><a href="namespaceplanning__scene__monitor.html">planning_scene_monitor</a></div><div class="ttdef"><b>Definition:</b> <a href="move__group__context_8h_source.html#l00047">move_group_context.h:47</a></div></div>
 <div class="ttc" id="anamespacemoveit__servo_html_a72baa5ed9c5fc60a76a9cddfce6b5548aacbb405b2f165c94eb2b620fde610f0b"><div class="ttname"><a href="namespacemoveit__servo.html#a72baa5ed9c5fc60a76a9cddfce6b5548aacbb405b2f165c94eb2b620fde610f0b">moveit_servo::PoseTrackingStatusCode::NO_RECENT_END_EFFECTOR_POSE</a></div><div class="ttdeci">@ NO_RECENT_END_EFFECTOR_POSE</div></div>
+<div class="ttc" id="anamespacemoveit__servo_html_a51b0fc155c14edca6625cae7918d3a7f"><div class="ttname"><a href="namespacemoveit__servo.html#a51b0fc155c14edca6625cae7918d3a7f">moveit_servo::declareOrGetParam</a></div><div class="ttdeci">void declareOrGetParam(T &amp;output_value, const std::string &amp;param_name, const rclcpp::Node::SharedPtr &amp;node, const rclcpp::Logger &amp;logger, const T default_value=T{})</div><div class="ttdef"><b>Definition:</b> <a href="servo__parameters_8h_source.html#l00193">servo_parameters.h:193</a></div></div>
 <div class="ttc" id="asrc_2collision__common_8cpp_html_a2b0aefb050b5a586b3ba93f3199015a8"><div class="ttname"><a href="src_2collision__common_8cpp.html#a2b0aefb050b5a586b3ba93f3199015a8">LOG_THROTTLE_PERIOD</a></div><div class="ttdeci">constexpr size_t LOG_THROTTLE_PERIOD</div><div class="ttdef"><b>Definition:</b> <a href="src_2collision__common_8cpp_source.html#l00038">collision_common.cpp:38</a></div></div>
-<div class="ttc" id="aclassmoveit__servo_1_1PoseTracking_html_a0407fdb695c09b890ca1c0ff516c9007"><div class="ttname"><a href="classmoveit__servo_1_1PoseTracking.html#a0407fdb695c09b890ca1c0ff516c9007">moveit_servo::PoseTracking::getPIDErrors</a></div><div class="ttdeci">void getPIDErrors(double &amp;x_error, double &amp;y_error, double &amp;z_error, double &amp;orientation_error)</div><div class="ttdef"><b>Definition:</b> <a href="pose__tracking_8cpp_source.html#l00392">pose_tracking.cpp:392</a></div></div>
+<div class="ttc" id="aclassmoveit__servo_1_1PoseTracking_html_a0407fdb695c09b890ca1c0ff516c9007"><div class="ttname"><a href="classmoveit__servo_1_1PoseTracking.html#a0407fdb695c09b890ca1c0ff516c9007">moveit_servo::PoseTracking::getPIDErrors</a></div><div class="ttdeci">void getPIDErrors(double &amp;x_error, double &amp;y_error, double &amp;z_error, double &amp;orientation_error)</div><div class="ttdef"><b>Definition:</b> <a href="pose__tracking_8cpp_source.html#l00365">pose_tracking.cpp:365</a></div></div>
 <div class="ttc" id="anamespacemoveit__servo_html_a72baa5ed9c5fc60a76a9cddfce6b5548af77af10d8b1feddc0022171332669886"><div class="ttname"><a href="namespacemoveit__servo.html#a72baa5ed9c5fc60a76a9cddfce6b5548af77af10d8b1feddc0022171332669886">moveit_servo::PoseTrackingStatusCode::NO_RECENT_TARGET_POSE</a></div><div class="ttdeci">@ NO_RECENT_TARGET_POSE</div></div>
-<div class="ttc" id="aclassmoveit__servo_1_1PoseTracking_html_ac9dba791fb8bd5b64aa8f76122d326e1"><div class="ttname"><a href="classmoveit__servo_1_1PoseTracking.html#ac9dba791fb8bd5b64aa8f76122d326e1">moveit_servo::PoseTracking::resetTargetPose</a></div><div class="ttdeci">void resetTargetPose()</div><div class="ttdoc">Re-initialize the target pose to an empty message. Can be used to reset motion between waypoints.</div><div class="ttdef"><b>Definition:</b> <a href="pose__tracking_8cpp_source.html#l00401">pose_tracking.cpp:401</a></div></div>
-<div class="ttc" id="astructmoveit__servo_1_1PIDConfig_html_ab4038708344b744fd54d3d51b13099de"><div class="ttname"><a href="structmoveit__servo_1_1PIDConfig.html#ab4038708344b744fd54d3d51b13099de">moveit_servo::PIDConfig::k_i</a></div><div class="ttdeci">double k_i</div><div class="ttdef"><b>Definition:</b> <a href="pose__tracking_8h_source.html#l00129">pose_tracking.h:129</a></div></div>
+<div class="ttc" id="aclassmoveit__servo_1_1PoseTracking_html_ac9dba791fb8bd5b64aa8f76122d326e1"><div class="ttname"><a href="classmoveit__servo_1_1PoseTracking.html#ac9dba791fb8bd5b64aa8f76122d326e1">moveit_servo::PoseTracking::resetTargetPose</a></div><div class="ttdeci">void resetTargetPose()</div><div class="ttdoc">Re-initialize the target pose to an empty message. Can be used to reset motion between waypoints.</div><div class="ttdef"><b>Definition:</b> <a href="pose__tracking_8cpp_source.html#l00374">pose_tracking.cpp:374</a></div></div>
+<div class="ttc" id="astructmoveit__servo_1_1PIDConfig_html_ab4038708344b744fd54d3d51b13099de"><div class="ttname"><a href="structmoveit__servo_1_1PIDConfig.html#ab4038708344b744fd54d3d51b13099de">moveit_servo::PIDConfig::k_i</a></div><div class="ttdeci">double k_i</div><div class="ttdef"><b>Definition:</b> <a href="pose__tracking_8h_source.html#l00125">pose_tracking.h:125</a></div></div>
 <div class="ttc" id="anamespaceboost_html"><div class="ttname"><a href="namespaceboost.html">boost</a></div><div class="ttdef"><b>Definition:</b> <a href="serialize__msg_8h_source.html#l00118">serialize_msg.h:118</a></div></div>
-<div class="ttc" id="astructmoveit__servo_1_1PIDConfig_html_a2a0b19b3f893efc8702728897ca44adb"><div class="ttname"><a href="structmoveit__servo_1_1PIDConfig.html#a2a0b19b3f893efc8702728897ca44adb">moveit_servo::PIDConfig::windup_limit</a></div><div class="ttdeci">double windup_limit</div><div class="ttdef"><b>Definition:</b> <a href="pose__tracking_8h_source.html#l00131">pose_tracking.h:131</a></div></div>
+<div class="ttc" id="astructmoveit__servo_1_1PIDConfig_html_a2a0b19b3f893efc8702728897ca44adb"><div class="ttname"><a href="structmoveit__servo_1_1PIDConfig.html#a2a0b19b3f893efc8702728897ca44adb">moveit_servo::PIDConfig::windup_limit</a></div><div class="ttdeci">double windup_limit</div><div class="ttdef"><b>Definition:</b> <a href="pose__tracking_8h_source.html#l00127">pose_tracking.h:127</a></div></div>
 <div class="ttc" id="anamespacemoveit__servo_html_a72baa5ed9c5fc60a76a9cddfce6b5548ad0749aaba8b833466dfcbb0428e4f89c"><div class="ttname"><a href="namespacemoveit__servo.html#a72baa5ed9c5fc60a76a9cddfce6b5548ad0749aaba8b833466dfcbb0428e4f89c">moveit_servo::PoseTrackingStatusCode::SUCCESS</a></div><div class="ttdeci">@ SUCCESS</div></div>
-<div class="ttc" id="aclassmoveit__servo_1_1PoseTracking_html_ad39f332875049b2e933d55fa4e4c5970"><div class="ttname"><a href="classmoveit__servo_1_1PoseTracking.html#ad39f332875049b2e933d55fa4e4c5970">moveit_servo::PoseTracking::updatePIDConfig</a></div><div class="ttdeci">void updatePIDConfig(const double x_proportional_gain, const double x_integral_gain, const double x_derivative_gain, const double y_proportional_gain, const double y_integral_gain, const double y_derivative_gain, const double z_proportional_gain, const double z_integral_gain, const double z_derivative_gain, const double angular_proportional_gain, const double angular_integral_gain, const double angular_derivative_gain)</div><div class="ttdoc">Change PID parameters. Motion is stopped before the update.</div><div class="ttdef"><b>Definition:</b> <a href="pose__tracking_8cpp_source.html#l00359">pose_tracking.cpp:359</a></div></div>
-<div class="ttc" id="astructmoveit__servo_1_1ServoParameters_html_a20068dc44ef620c41f866277102b2edf"><div class="ttname"><a href="structmoveit__servo_1_1ServoParameters.html#a20068dc44ef620c41f866277102b2edf">moveit_servo::ServoParameters::SharedConstPtr</a></div><div class="ttdeci">std::shared_ptr&lt; const ServoParameters &gt; SharedConstPtr</div><div class="ttdef"><b>Definition:</b> <a href="servo__parameters_8h_source.html#l00091">servo_parameters.h:91</a></div></div>
-<div class="ttc" id="astructmoveit__servo_1_1PIDConfig_html_af6e1fc269f841892331329ca360c72fb"><div class="ttname"><a href="structmoveit__servo_1_1PIDConfig.html#af6e1fc269f841892331329ca360c72fb">moveit_servo::PIDConfig::dt</a></div><div class="ttdeci">double dt</div><div class="ttdef"><b>Definition:</b> <a href="pose__tracking_8h_source.html#l00127">pose_tracking.h:127</a></div></div>
-<div class="ttc" id="anamespacemoveit__servo_html"><div class="ttname"><a href="namespacemoveit__servo.html">moveit_servo</a></div><div class="ttdef"><b>Definition:</b> <a href="collision__check_8h_source.html#l00052">collision_check.h:52</a></div></div>
-<div class="ttc" id="anamespacemoveit__servo_html_a72baa5ed9c5fc60a76a9cddfce6b5548"><div class="ttname"><a href="namespacemoveit__servo.html#a72baa5ed9c5fc60a76a9cddfce6b5548">moveit_servo::PoseTrackingStatusCode</a></div><div class="ttdeci">PoseTrackingStatusCode</div><div class="ttdef"><b>Definition:</b> <a href="pose__tracking_8h_source.html#l00102">pose_tracking.h:102</a></div></div>
-<div class="ttc" id="aclassmoveit__servo_1_1PoseTracking_html_aa38b7b59ca81d408bdaa27c529046577"><div class="ttname"><a href="classmoveit__servo_1_1PoseTracking.html#aa38b7b59ca81d408bdaa27c529046577">moveit_servo::PoseTracking::stopMotion</a></div><div class="ttdeci">void stopMotion()</div><div class="ttdoc">A method for a different thread to stop motion and return early from control loop.</div><div class="ttdef"><b>Definition:</b> <a href="pose__tracking_8cpp_source.html#l00332">pose_tracking.cpp:332</a></div></div>
-<div class="ttc" id="aclassmoveit__servo_1_1PoseTracking_html_a9224527015a7ec72bc2deb3bf0b5219a"><div class="ttname"><a href="classmoveit__servo_1_1PoseTracking.html#a9224527015a7ec72bc2deb3bf0b5219a">moveit_servo::PoseTracking::getCommandFrameTransform</a></div><div class="ttdeci">bool getCommandFrameTransform(geometry_msgs::msg::TransformStamped &amp;transform)</div><div class="ttdef"><b>Definition:</b> <a href="pose__tracking_8cpp_source.html#l00408">pose_tracking.cpp:408</a></div></div>
+<div class="ttc" id="aclassmoveit__servo_1_1PoseTracking_html_ad39f332875049b2e933d55fa4e4c5970"><div class="ttname"><a href="classmoveit__servo_1_1PoseTracking.html#ad39f332875049b2e933d55fa4e4c5970">moveit_servo::PoseTracking::updatePIDConfig</a></div><div class="ttdeci">void updatePIDConfig(const double x_proportional_gain, const double x_integral_gain, const double x_derivative_gain, const double y_proportional_gain, const double y_integral_gain, const double y_derivative_gain, const double z_proportional_gain, const double z_integral_gain, const double z_derivative_gain, const double angular_proportional_gain, const double angular_integral_gain, const double angular_derivative_gain)</div><div class="ttdoc">Change PID parameters. Motion is stopped before the udpate.</div><div class="ttdef"><b>Definition:</b> <a href="pose__tracking_8cpp_source.html#l00332">pose_tracking.cpp:332</a></div></div>
+<div class="ttc" id="astructmoveit__servo_1_1ServoParameters_html_a20068dc44ef620c41f866277102b2edf"><div class="ttname"><a href="structmoveit__servo_1_1ServoParameters.html#a20068dc44ef620c41f866277102b2edf">moveit_servo::ServoParameters::SharedConstPtr</a></div><div class="ttdeci">std::shared_ptr&lt; const ServoParameters &gt; SharedConstPtr</div><div class="ttdef"><b>Definition:</b> <a href="servo__parameters_8h_source.html#l00092">servo_parameters.h:92</a></div></div>
+<div class="ttc" id="astructmoveit__servo_1_1PIDConfig_html_af6e1fc269f841892331329ca360c72fb"><div class="ttname"><a href="structmoveit__servo_1_1PIDConfig.html#af6e1fc269f841892331329ca360c72fb">moveit_servo::PIDConfig::dt</a></div><div class="ttdeci">double dt</div><div class="ttdef"><b>Definition:</b> <a href="pose__tracking_8h_source.html#l00123">pose_tracking.h:123</a></div></div>
+<div class="ttc" id="anamespacemoveit__servo_html"><div class="ttname"><a href="namespacemoveit__servo.html">moveit_servo</a></div><div class="ttdef"><b>Definition:</b> <a href="collision__check_8h_source.html#l00053">collision_check.h:53</a></div></div>
+<div class="ttc" id="anamespacemoveit__servo_html_a72baa5ed9c5fc60a76a9cddfce6b5548"><div class="ttname"><a href="namespacemoveit__servo.html#a72baa5ed9c5fc60a76a9cddfce6b5548">moveit_servo::PoseTrackingStatusCode</a></div><div class="ttdeci">PoseTrackingStatusCode</div><div class="ttdef"><b>Definition:</b> <a href="pose__tracking_8h_source.html#l00098">pose_tracking.h:98</a></div></div>
+<div class="ttc" id="aclassmoveit__servo_1_1PoseTracking_html_aa38b7b59ca81d408bdaa27c529046577"><div class="ttname"><a href="classmoveit__servo_1_1PoseTracking.html#aa38b7b59ca81d408bdaa27c529046577">moveit_servo::PoseTracking::stopMotion</a></div><div class="ttdeci">void stopMotion()</div><div class="ttdoc">A method for a different thread to stop motion and return early from control loop.</div><div class="ttdef"><b>Definition:</b> <a href="pose__tracking_8cpp_source.html#l00305">pose_tracking.cpp:305</a></div></div>
+<div class="ttc" id="aclassmoveit__servo_1_1PoseTracking_html_a9224527015a7ec72bc2deb3bf0b5219a"><div class="ttname"><a href="classmoveit__servo_1_1PoseTracking.html#a9224527015a7ec72bc2deb3bf0b5219a">moveit_servo::PoseTracking::getCommandFrameTransform</a></div><div class="ttdeci">bool getCommandFrameTransform(geometry_msgs::msg::TransformStamped &amp;transform)</div><div class="ttdef"><b>Definition:</b> <a href="pose__tracking_8cpp_source.html#l00381">pose_tracking.cpp:381</a></div></div>
 <div class="ttc" id="anamespacemoveit__servo_html_a72baa5ed9c5fc60a76a9cddfce6b5548a890150b688f0819a3bbda52dd2df8f80"><div class="ttname"><a href="namespacemoveit__servo.html#a72baa5ed9c5fc60a76a9cddfce6b5548a890150b688f0819a3bbda52dd2df8f80">moveit_servo::PoseTrackingStatusCode::STOP_REQUESTED</a></div><div class="ttdeci">@ STOP_REQUESTED</div></div>
 <div class="ttc" id="anamespaceplanning__request__adapter_html_af64b3fa8ebc256d9c5133c6c80ade28f"><div class="ttname"><a href="namespaceplanning__request__adapter.html#af64b3fa8ebc256d9c5133c6c80ade28f">planning_request_adapter::LOGGER</a></div><div class="ttdeci">rclcpp::Logger LOGGER</div><div class="ttdef"><b>Definition:</b> <a href="planning__request__adapter_8cpp_source.html#l00078">planning_request_adapter.cpp:78</a></div></div>
 <div class="ttc" id="apose__tracking_8h_html"><div class="ttname"><a href="pose__tracking_8h.html">pose_tracking.h</a></div></div>
-<div class="ttc" id="anamespacemoveit_1_1hybrid__planning_html_a13ae90bec8392b34b9beb63c00d789ec"><div class="ttname"><a href="namespacemoveit_1_1hybrid__planning.html#a13ae90bec8392b34b9beb63c00d789ec">moveit::hybrid_planning::declareOrGetParam</a></div><div class="ttdeci">void declareOrGetParam(const std::string &amp;param_name, T &amp;output_value, const T &amp;default_value, const rclcpp::Node::SharedPtr &amp;node)</div><div class="ttdef"><b>Definition:</b> <a href="local__planner__component_8h_source.html#l00100">local_planner_component.h:100</a></div></div>
-<div class="ttc" id="astructmoveit__servo_1_1PIDConfig_html_aff96e6903b3f86a57f51489dc6521894"><div class="ttname"><a href="structmoveit__servo_1_1PIDConfig.html#aff96e6903b3f86a57f51489dc6521894">moveit_servo::PIDConfig::k_p</a></div><div class="ttdeci">double k_p</div><div class="ttdef"><b>Definition:</b> <a href="pose__tracking_8h_source.html#l00128">pose_tracking.h:128</a></div></div>
-<div class="ttc" id="aclassmoveit__servo_1_1PoseTracking_html_a1d7046c89fba7df3f812e970ec6cfa96"><div class="ttname"><a href="classmoveit__servo_1_1PoseTracking.html#a1d7046c89fba7df3f812e970ec6cfa96">moveit_servo::PoseTracking::moveToPose</a></div><div class="ttdeci">PoseTrackingStatusCode moveToPose(const Eigen::Vector3d &amp;positional_tolerance, const double angular_tolerance, const double target_pose_timeout)</div><div class="ttdef"><b>Definition:</b> <a href="pose__tracking_8cpp_source.html#l00111">pose_tracking.cpp:111</a></div></div>
+<div class="ttc" id="astructmoveit__servo_1_1PIDConfig_html_aff96e6903b3f86a57f51489dc6521894"><div class="ttname"><a href="structmoveit__servo_1_1PIDConfig.html#aff96e6903b3f86a57f51489dc6521894">moveit_servo::PIDConfig::k_p</a></div><div class="ttdeci">double k_p</div><div class="ttdef"><b>Definition:</b> <a href="pose__tracking_8h_source.html#l00124">pose_tracking.h:124</a></div></div>
+<div class="ttc" id="aclassmoveit__servo_1_1PoseTracking_html_a1d7046c89fba7df3f812e970ec6cfa96"><div class="ttname"><a href="classmoveit__servo_1_1PoseTracking.html#a1d7046c89fba7df3f812e970ec6cfa96">moveit_servo::PoseTracking::moveToPose</a></div><div class="ttdeci">PoseTrackingStatusCode moveToPose(const Eigen::Vector3d &amp;positional_tolerance, const double angular_tolerance, const double target_pose_timeout)</div><div class="ttdef"><b>Definition:</b> <a href="pose__tracking_8cpp_source.html#l00084">pose_tracking.cpp:84</a></div></div>
 <div class="ttc" id="aservo__parameters_8h_html"><div class="ttname"><a href="servo__parameters_8h.html">servo_parameters.h</a></div></div>
-<div class="ttc" id="aclassmoveit__servo_1_1PoseTracking_html_a86b4351a4f8b4ca85ec928fd0e38f62f"><div class="ttname"><a href="classmoveit__servo_1_1PoseTracking.html#a86b4351a4f8b4ca85ec928fd0e38f62f">moveit_servo::PoseTracking::servo_</a></div><div class="ttdeci">std::unique_ptr&lt; moveit_servo::Servo &gt; servo_</div><div class="ttdef"><b>Definition:</b> <a href="pose__tracking_8h_source.html#l00157">pose_tracking.h:157</a></div></div>
+<div class="ttc" id="aclassmoveit__servo_1_1PoseTracking_html_a86b4351a4f8b4ca85ec928fd0e38f62f"><div class="ttname"><a href="classmoveit__servo_1_1PoseTracking.html#a86b4351a4f8b4ca85ec928fd0e38f62f">moveit_servo::PoseTracking::servo_</a></div><div class="ttdeci">std::unique_ptr&lt; moveit_servo::Servo &gt; servo_</div><div class="ttdef"><b>Definition:</b> <a href="pose__tracking_8h_source.html#l00153">pose_tracking.h:153</a></div></div>
 <div class="ttc" id="anamespacefcl_html_a0288e6b07bc0c851a9503dbaea7a0f19"><div class="ttname"><a href="namespacefcl.html#a0288e6b07bc0c851a9503dbaea7a0f19">fcl::Vector3d</a></div><div class="ttdeci">Vec3fX&lt; details::Vec3Data&lt; double &gt; &gt; Vector3d</div><div class="ttdef"><b>Definition:</b> <a href="fcl__compat_8h_source.html#l00089">fcl_compat.h:89</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

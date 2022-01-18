@@ -135,7 +135,7 @@ $(function() {
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    ROS_WARN_STREAM(<span class="stringliteral">&quot;Link spheres has no entries&quot;</span>);</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  }</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; link_spheres.size(); ++i)</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; link_spheres.size(); i++)</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  {</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">if</span> (!link_spheres[i].hasMember(<span class="stringliteral">&quot;link&quot;</span>))</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    {</div>
@@ -160,7 +160,7 @@ $(function() {
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;      }</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    std::vector&lt;collision_detection::CollisionSphere&gt; coll_spheres;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; spheres.size(); ++j)</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; spheres.size(); j++)</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    {</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;      <span class="keywordflow">if</span> (!spheres[j].hasMember(<span class="stringliteral">&quot;x&quot;</span>))</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;      {</div>

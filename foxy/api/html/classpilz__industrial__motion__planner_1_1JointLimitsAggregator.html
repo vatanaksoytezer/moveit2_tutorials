@@ -75,16 +75,16 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Unifies the joint limits from the given joint models with joint limits from the node parameters.  
+<p>Unifies the joint limits from the given joint models with joint limits from the parameter server.  
  <a href="classpilz__industrial__motion__planner_1_1JointLimitsAggregator.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="joint__limits__aggregator_8h_source.html">joint_limits_aggregator.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a78abef0abbf23021c1edc1451af3e3c8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classpilz__industrial__motion__planner_1_1JointLimitsContainer.html">JointLimitsContainer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpilz__industrial__motion__planner_1_1JointLimitsAggregator.html#a78abef0abbf23021c1edc1451af3e3c8">getAggregatedLimits</a> (const rclcpp::Node::SharedPtr &amp;node, const std::string &amp;param_namespace, const std::vector&lt; const <a class="el" href="classmoveit_1_1core_1_1JointModel.html">moveit::core::JointModel</a> * &gt; &amp;joint_models)</td></tr>
-<tr class="memdesc:a78abef0abbf23021c1edc1451af3e3c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aggregates(combines) the joint limits from joint model and node parameters. The rules for the combination are:  <a href="classpilz__industrial__motion__planner_1_1JointLimitsAggregator.html#a78abef0abbf23021c1edc1451af3e3c8">More...</a><br /></td></tr>
-<tr class="separator:a78abef0abbf23021c1edc1451af3e3c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae40f9ed899b3e12fa7fb40f691a64d9a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classpilz__industrial__motion__planner_1_1JointLimitsContainer.html">JointLimitsContainer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpilz__industrial__motion__planner_1_1JointLimitsAggregator.html#ae40f9ed899b3e12fa7fb40f691a64d9a">getAggregatedLimits</a> (const ros::NodeHandle &amp;nh, const std::vector&lt; const <a class="el" href="classmoveit_1_1core_1_1JointModel.html">moveit::core::JointModel</a> * &gt; &amp;joint_models)</td></tr>
+<tr class="memdesc:ae40f9ed899b3e12fa7fb40f691a64d9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aggregates(combines) the joint limits from joint model and parameter server. The rules for the combination are:  <a href="classpilz__industrial__motion__planner_1_1JointLimitsAggregator.html#ae40f9ed899b3e12fa7fb40f691a64d9a">More...</a><br /></td></tr>
+<tr class="separator:ae40f9ed899b3e12fa7fb40f691a64d9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-methods"></a>
 Static Protected Member Functions</h2></td></tr>
@@ -102,7 +102,7 @@ Static Protected Member Functions</h2></td></tr>
 <tr class="separator:abf9d281b216ce7c89d930cb00a3b2e4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Unifies the joint limits from the given joint models with joint limits from the node parameters. </p>
+<div class="textblock"><p>Unifies the joint limits from the given joint models with joint limits from the parameter server. </p>
 <p>Does not support MultiDOF joints. </p>
 
 <p class="definition">Definition at line <a class="el" href="joint__limits__aggregator_8h_source.html#l00088">88</a> of file <a class="el" href="joint__limits__aggregator_8h_source.html">joint_limits_aggregator.h</a>.</p>
@@ -150,7 +150,7 @@ Static Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="joint__limits__aggregator_8cpp_source.html#l00165">165</a> of file <a class="el" href="joint__limits__aggregator_8cpp_source.html">joint_limits_aggregator.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__limits__aggregator_8cpp_source.html#l00154">154</a> of file <a class="el" href="joint__limits__aggregator_8cpp_source.html">joint_limits_aggregator.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -167,9 +167,9 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="classpilz__industrial__motion__planner_1_1JointLimitsAggregator_a442930b2020131d17e2e9248050794ee_icgraph.png" border="0" usemap="#classpilz__industrial__motion__planner_1_1JointLimitsAggregator_a442930b2020131d17e2e9248050794ee_icgraph" alt=""/></div>
 <map name="classpilz__industrial__motion__planner_1_1JointLimitsAggregator_a442930b2020131d17e2e9248050794ee_icgraph" id="classpilz__industrial__motion__planner_1_1JointLimitsAggregator_a442930b2020131d17e2e9248050794ee_icgraph">
 <area shape="rect" title="Checks if the position limits from the given joint_limit are stricter than the limits of the joint_mo..." alt="" coords="539,129,767,185"/>
-<area shape="rect" href="classpilz__industrial__motion__planner_1_1JointLimitsAggregator.html#a78abef0abbf23021c1edc1451af3e3c8" title="Aggregates(combines) the joint limits from joint model and node parameters. The rules for the combina..." alt="" coords="264,129,491,185"/>
-<area shape="rect" href="classTrajectoryGeneratorCIRCTest.html#a23026b4e6ff9c4dc0d949a6965227cdb" title="Create test scenario for circ trajectory generator." alt="" coords="7,5,215,47"/>
-<area shape="rect" href="classTrajectoryBlenderTransitionWindowTest.html#a053df89241e6ed29c6d277de86a01f6e" title="Create test scenario for trajectory blender." alt="" coords="11,71,210,112"/>
+<area shape="rect" href="classpilz__industrial__motion__planner_1_1JointLimitsAggregator.html#ae40f9ed899b3e12fa7fb40f691a64d9a" title="Aggregates(combines) the joint limits from joint model and parameter server. The rules for the combin..." alt="" coords="264,129,491,185"/>
+<area shape="rect" href="classTrajectoryBlenderTransitionWindowTest.html#a053df89241e6ed29c6d277de86a01f6e" title="Create test scenario for trajectory blender." alt="" coords="11,5,210,47"/>
+<area shape="rect" href="classTrajectoryGeneratorCIRCTest.html#a23026b4e6ff9c4dc0d949a6965227cdb" title="Create test scenario for circ trajectory generator." alt="" coords="7,71,215,112"/>
 <area shape="rect" href="classTrajectoryGeneratorLINTest.html#aa501c1263458d8ae0807e10ee79a569b" title="Create test scenario for lin trajectory generator." alt="" coords="11,136,210,177"/>
 <area shape="rect" href="classTrajectoryGeneratorCommonTest.html#a80e3885bdb7b0ce80bc85c3a75e0e28b" title=" " alt="" coords="5,201,216,243"/>
 <area shape="rect" href="unittest__joint__limits__aggregator_8cpp.html#a0a5b27dc7195a628f23dc3763bd898a3" title="Check for that the size of the map and the size of the given joint models is equal." alt="" coords="76,267,145,294"/>
@@ -221,7 +221,7 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="joint__limits__aggregator_8cpp_source.html#l00183">183</a> of file <a class="el" href="joint__limits__aggregator_8cpp_source.html">joint_limits_aggregator.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__limits__aggregator_8cpp_source.html#l00172">172</a> of file <a class="el" href="joint__limits__aggregator_8cpp_source.html">joint_limits_aggregator.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -238,9 +238,9 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="classpilz__industrial__motion__planner_1_1JointLimitsAggregator_abf9d281b216ce7c89d930cb00a3b2e4a_icgraph.png" border="0" usemap="#classpilz__industrial__motion__planner_1_1JointLimitsAggregator_abf9d281b216ce7c89d930cb00a3b2e4a_icgraph" alt=""/></div>
 <map name="classpilz__industrial__motion__planner_1_1JointLimitsAggregator_abf9d281b216ce7c89d930cb00a3b2e4a_icgraph" id="classpilz__industrial__motion__planner_1_1JointLimitsAggregator_abf9d281b216ce7c89d930cb00a3b2e4a_icgraph">
 <area shape="rect" title="Checks if the velocity limit from the given joint_limit are stricter than the limit of the joint_mode..." alt="" coords="539,129,767,185"/>
-<area shape="rect" href="classpilz__industrial__motion__planner_1_1JointLimitsAggregator.html#a78abef0abbf23021c1edc1451af3e3c8" title="Aggregates(combines) the joint limits from joint model and node parameters. The rules for the combina..." alt="" coords="264,129,491,185"/>
-<area shape="rect" href="classTrajectoryGeneratorCIRCTest.html#a23026b4e6ff9c4dc0d949a6965227cdb" title="Create test scenario for circ trajectory generator." alt="" coords="7,5,215,47"/>
-<area shape="rect" href="classTrajectoryBlenderTransitionWindowTest.html#a053df89241e6ed29c6d277de86a01f6e" title="Create test scenario for trajectory blender." alt="" coords="11,71,210,112"/>
+<area shape="rect" href="classpilz__industrial__motion__planner_1_1JointLimitsAggregator.html#ae40f9ed899b3e12fa7fb40f691a64d9a" title="Aggregates(combines) the joint limits from joint model and parameter server. The rules for the combin..." alt="" coords="264,129,491,185"/>
+<area shape="rect" href="classTrajectoryBlenderTransitionWindowTest.html#a053df89241e6ed29c6d277de86a01f6e" title="Create test scenario for trajectory blender." alt="" coords="11,5,210,47"/>
+<area shape="rect" href="classTrajectoryGeneratorCIRCTest.html#a23026b4e6ff9c4dc0d949a6965227cdb" title="Create test scenario for circ trajectory generator." alt="" coords="7,71,215,112"/>
 <area shape="rect" href="classTrajectoryGeneratorLINTest.html#aa501c1263458d8ae0807e10ee79a569b" title="Create test scenario for lin trajectory generator." alt="" coords="11,136,210,177"/>
 <area shape="rect" href="classTrajectoryGeneratorCommonTest.html#a80e3885bdb7b0ce80bc85c3a75e0e28b" title=" " alt="" coords="5,201,216,243"/>
 <area shape="rect" href="unittest__joint__limits__aggregator_8cpp.html#a0a5b27dc7195a628f23dc3763bd898a3" title="Check for that the size of the map and the size of the given joint models is equal." alt="" coords="76,267,145,294"/>
@@ -249,8 +249,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a78abef0abbf23021c1edc1451af3e3c8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a78abef0abbf23021c1edc1451af3e3c8">&#9670;&nbsp;</a></span>getAggregatedLimits()</h2>
+<a id="ae40f9ed899b3e12fa7fb40f691a64d9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae40f9ed899b3e12fa7fb40f691a64d9a">&#9670;&nbsp;</a></span>getAggregatedLimits()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -261,14 +261,8 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname"><a class="el" href="classpilz__industrial__motion__planner_1_1JointLimitsContainer.html">pilz_industrial_motion_planner::JointLimitsContainer</a> JointLimitsAggregator::getAggregatedLimits </td>
           <td>(</td>
-          <td class="paramtype">const rclcpp::Node::SharedPtr &amp;&#160;</td>
-          <td class="paramname"><em>node</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>param_namespace</em>, </td>
+          <td class="paramtype">const ros::NodeHandle &amp;&#160;</td>
+          <td class="paramname"><em>nh</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -289,16 +283,15 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Aggregates(combines) the joint limits from joint model and node parameters. The rules for the combination are: </p>
+<p>Aggregates(combines) the joint limits from joint model and parameter server. The rules for the combination are: </p>
 <ol type="1">
-<li>Position and velocity limits in the node parameters must be stricter or equal if they are defined.</li>
-<li>Limits in the node parameters where the corresponding has_&lt;position|velocity|acceleration|deceleration&gt;_limits are „false“ are considered undefined(see point 1).</li>
-<li>Not all joints have to be limited by the node parameters. Selective limitation is possible.</li>
-<li>If max_deceleration is unset, it will be set to: max_deceleration = - max_acceleration. <dl class="section note"><dt>Note</dt><dd>The acceleration/deceleration can only be set via the node parameters parameter since they are not supported in the urdf so far. </dd></dl>
+<li>Position and velocity limits on the parameter server must be stricter or equal if they are defined.</li>
+<li>Limits on the parameter server where the corresponding has_&lt;position|velocity|acceleration|deceleration&gt;_limits are „false“ are considered undefined(see point 1).</li>
+<li>Not all joints have to be limited by the parameter server. Selective limitation is possible.</li>
+<li>If max_deceleration is unset, it will be set to: max_deceleration = - max_acceleration. <dl class="section note"><dt>Note</dt><dd>The acceleration/deceleration can only be set via the parameter server since they are not supported in the urdf so far. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">node</td><td>Node to use for accessing joint limit parameters </td></tr>
-    <tr><td class="paramname">param_namespace</td><td>Namespace to use for looking up node parameters </td></tr>
+    <tr><td class="paramname">nh</td><td>Node handle in whose namespace the joint limit parameters are expected. </td></tr>
     <tr><td class="paramname">joint_models</td><td>The joint models </td></tr>
   </table>
   </dd>
@@ -307,20 +300,19 @@ Here is the caller graph for this function:</div>
 </li>
 </ol>
 
-<p class="definition">Definition at line <a class="el" href="joint__limits__aggregator_8cpp_source.html#l00049">49</a> of file <a class="el" href="joint__limits__aggregator_8cpp_source.html">joint_limits_aggregator.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__limits__aggregator_8cpp_source.html#l00044">44</a> of file <a class="el" href="joint__limits__aggregator_8cpp_source.html">joint_limits_aggregator.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classpilz__industrial__motion__planner_1_1JointLimitsAggregator_a78abef0abbf23021c1edc1451af3e3c8_cgraph.png" border="0" usemap="#classpilz__industrial__motion__planner_1_1JointLimitsAggregator_a78abef0abbf23021c1edc1451af3e3c8_cgraph" alt=""/></div>
-<map name="classpilz__industrial__motion__planner_1_1JointLimitsAggregator_a78abef0abbf23021c1edc1451af3e3c8_cgraph" id="classpilz__industrial__motion__planner_1_1JointLimitsAggregator_a78abef0abbf23021c1edc1451af3e3c8_cgraph">
-<area shape="rect" title="Aggregates(combines) the joint limits from joint model and node parameters. The rules for the combina..." alt="" coords="5,245,232,301"/>
+<div class="center"><img src="classpilz__industrial__motion__planner_1_1JointLimitsAggregator_ae40f9ed899b3e12fa7fb40f691a64d9a_cgraph.png" border="0" usemap="#classpilz__industrial__motion__planner_1_1JointLimitsAggregator_ae40f9ed899b3e12fa7fb40f691a64d9a_cgraph" alt=""/></div>
+<map name="classpilz__industrial__motion__planner_1_1JointLimitsAggregator_ae40f9ed899b3e12fa7fb40f691a64d9a_cgraph" id="classpilz__industrial__motion__planner_1_1JointLimitsAggregator_ae40f9ed899b3e12fa7fb40f691a64d9a_cgraph">
+<area shape="rect" title="Aggregates(combines) the joint limits from joint model and parameter server. The rules for the combin..." alt="" coords="5,205,232,261"/>
 <area shape="rect" href="classpilz__industrial__motion__planner_1_1JointLimitsContainer.html#a40383e43f2853d45c9456333cda2a537" title="Add a limit." alt="" coords="302,5,521,61"/>
 <area shape="rect" href="classpilz__industrial__motion__planner_1_1JointLimitsAggregator.html#a442930b2020131d17e2e9248050794ee" title="Checks if the position limits from the given joint_limit are stricter than the limits of the joint_mo..." alt="" coords="297,165,525,221"/>
 <area shape="rect" href="classpilz__industrial__motion__planner_1_1JointLimitsAggregator.html#abf9d281b216ce7c89d930cb00a3b2e4a" title="Checks if the velocity limit from the given joint_limit are stricter than the limit of the joint_mode..." alt="" coords="297,85,525,141"/>
-<area shape="rect" href="namespacepilz__industrial__motion__planner_1_1joint__limits__interface.html#ac682308f1616f72e41067b74e6a8957c" title=" " alt="" coords="303,405,520,461"/>
-<area shape="rect" href="namespacepilz__industrial__motion__planner_1_1joint__limits__interface.html#aae7165a7b65ce68169a0363771f68d35" title=" " alt="" coords="319,485,504,541"/>
-<area shape="rect" href="classpilz__industrial__motion__planner_1_1JointLimitsAggregator.html#abf8235616e4fbeafe33278ae57ede18f" title="Update the position limits with the ones from the joint_model." alt="" coords="280,325,543,381"/>
-<area shape="rect" href="classpilz__industrial__motion__planner_1_1JointLimitsAggregator.html#a6ee5ac793eb0e93f5c98c621dafbf126" title="Update the velocity limit with the one from the joint_model." alt="" coords="280,245,543,301"/>
+<area shape="rect" href="namespacepilz__industrial__motion__planner_1_1joint__limits__interface.html#a19e41ae2a42b3c2ea6d75662853b6aac" title=" " alt="" coords="319,405,504,461"/>
+<area shape="rect" href="classpilz__industrial__motion__planner_1_1JointLimitsAggregator.html#abf8235616e4fbeafe33278ae57ede18f" title="Update the position limits with the ones from the joint_model." alt="" coords="280,245,543,301"/>
+<area shape="rect" href="classpilz__industrial__motion__planner_1_1JointLimitsAggregator.html#a6ee5ac793eb0e93f5c98c621dafbf126" title="Update the velocity limit with the one from the joint_model." alt="" coords="280,325,543,381"/>
 <area shape="rect" href="classmoveit_1_1core_1_1JointModel.html#aa1d2f99c9025d01a92e47bc356938f77" title="Get the name of the joint." alt="" coords="592,245,773,286"/>
 <area shape="rect" href="classmoveit_1_1core_1_1JointModel.html#accc3352876f4d640f5b57904bf6ab265" title="Check if the set of values for the variables of this joint are within bounds." alt="" coords="591,173,775,214"/>
 <area shape="rect" href="classmoveit_1_1core_1_1JointModel.html#a0ee14b22009db973b8a4be4e2c911dca" title="Check if the set of velocities for the variables of this joint are within bounds." alt="" coords="591,93,775,134"/>
@@ -330,11 +322,11 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classpilz__industrial__motion__planner_1_1JointLimitsAggregator_a78abef0abbf23021c1edc1451af3e3c8_icgraph.png" border="0" usemap="#classpilz__industrial__motion__planner_1_1JointLimitsAggregator_a78abef0abbf23021c1edc1451af3e3c8_icgraph" alt=""/></div>
-<map name="classpilz__industrial__motion__planner_1_1JointLimitsAggregator_a78abef0abbf23021c1edc1451af3e3c8_icgraph" id="classpilz__industrial__motion__planner_1_1JointLimitsAggregator_a78abef0abbf23021c1edc1451af3e3c8_icgraph">
-<area shape="rect" title="Aggregates(combines) the joint limits from joint model and node parameters. The rules for the combina..." alt="" coords="264,129,491,185"/>
-<area shape="rect" href="classTrajectoryGeneratorCIRCTest.html#a23026b4e6ff9c4dc0d949a6965227cdb" title="Create test scenario for circ trajectory generator." alt="" coords="7,5,215,47"/>
-<area shape="rect" href="classTrajectoryBlenderTransitionWindowTest.html#a053df89241e6ed29c6d277de86a01f6e" title="Create test scenario for trajectory blender." alt="" coords="11,71,210,112"/>
+<div class="center"><img src="classpilz__industrial__motion__planner_1_1JointLimitsAggregator_ae40f9ed899b3e12fa7fb40f691a64d9a_icgraph.png" border="0" usemap="#classpilz__industrial__motion__planner_1_1JointLimitsAggregator_ae40f9ed899b3e12fa7fb40f691a64d9a_icgraph" alt=""/></div>
+<map name="classpilz__industrial__motion__planner_1_1JointLimitsAggregator_ae40f9ed899b3e12fa7fb40f691a64d9a_icgraph" id="classpilz__industrial__motion__planner_1_1JointLimitsAggregator_ae40f9ed899b3e12fa7fb40f691a64d9a_icgraph">
+<area shape="rect" title="Aggregates(combines) the joint limits from joint model and parameter server. The rules for the combin..." alt="" coords="264,129,491,185"/>
+<area shape="rect" href="classTrajectoryBlenderTransitionWindowTest.html#a053df89241e6ed29c6d277de86a01f6e" title="Create test scenario for trajectory blender." alt="" coords="11,5,210,47"/>
+<area shape="rect" href="classTrajectoryGeneratorCIRCTest.html#a23026b4e6ff9c4dc0d949a6965227cdb" title="Create test scenario for circ trajectory generator." alt="" coords="7,71,215,112"/>
 <area shape="rect" href="classTrajectoryGeneratorLINTest.html#aa501c1263458d8ae0807e10ee79a569b" title="Create test scenario for lin trajectory generator." alt="" coords="11,136,210,177"/>
 <area shape="rect" href="classTrajectoryGeneratorCommonTest.html#a80e3885bdb7b0ce80bc85c3a75e0e28b" title=" " alt="" coords="5,201,216,243"/>
 <area shape="rect" href="unittest__joint__limits__aggregator_8cpp.html#a0a5b27dc7195a628f23dc3763bd898a3" title="Check for that the size of the map and the size of the given joint models is equal." alt="" coords="76,267,145,294"/>
@@ -387,7 +379,7 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="joint__limits__aggregator_8cpp_source.html#l00112">112</a> of file <a class="el" href="joint__limits__aggregator_8cpp_source.html">joint_limits_aggregator.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__limits__aggregator_8cpp_source.html#l00101">101</a> of file <a class="el" href="joint__limits__aggregator_8cpp_source.html">joint_limits_aggregator.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -404,9 +396,9 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="classpilz__industrial__motion__planner_1_1JointLimitsAggregator_abf8235616e4fbeafe33278ae57ede18f_icgraph.png" border="0" usemap="#classpilz__industrial__motion__planner_1_1JointLimitsAggregator_abf8235616e4fbeafe33278ae57ede18f_icgraph" alt=""/></div>
 <map name="classpilz__industrial__motion__planner_1_1JointLimitsAggregator_abf8235616e4fbeafe33278ae57ede18f_icgraph" id="classpilz__industrial__motion__planner_1_1JointLimitsAggregator_abf8235616e4fbeafe33278ae57ede18f_icgraph">
 <area shape="rect" title="Update the position limits with the ones from the joint_model." alt="" coords="539,129,801,185"/>
-<area shape="rect" href="classpilz__industrial__motion__planner_1_1JointLimitsAggregator.html#a78abef0abbf23021c1edc1451af3e3c8" title="Aggregates(combines) the joint limits from joint model and node parameters. The rules for the combina..." alt="" coords="264,129,491,185"/>
-<area shape="rect" href="classTrajectoryGeneratorCIRCTest.html#a23026b4e6ff9c4dc0d949a6965227cdb" title="Create test scenario for circ trajectory generator." alt="" coords="7,5,215,47"/>
-<area shape="rect" href="classTrajectoryBlenderTransitionWindowTest.html#a053df89241e6ed29c6d277de86a01f6e" title="Create test scenario for trajectory blender." alt="" coords="11,71,210,112"/>
+<area shape="rect" href="classpilz__industrial__motion__planner_1_1JointLimitsAggregator.html#ae40f9ed899b3e12fa7fb40f691a64d9a" title="Aggregates(combines) the joint limits from joint model and parameter server. The rules for the combin..." alt="" coords="264,129,491,185"/>
+<area shape="rect" href="classTrajectoryBlenderTransitionWindowTest.html#a053df89241e6ed29c6d277de86a01f6e" title="Create test scenario for trajectory blender." alt="" coords="11,5,210,47"/>
+<area shape="rect" href="classTrajectoryGeneratorCIRCTest.html#a23026b4e6ff9c4dc0d949a6965227cdb" title="Create test scenario for circ trajectory generator." alt="" coords="7,71,215,112"/>
 <area shape="rect" href="classTrajectoryGeneratorLINTest.html#aa501c1263458d8ae0807e10ee79a569b" title="Create test scenario for lin trajectory generator." alt="" coords="11,136,210,177"/>
 <area shape="rect" href="classTrajectoryGeneratorCommonTest.html#a80e3885bdb7b0ce80bc85c3a75e0e28b" title=" " alt="" coords="5,201,216,243"/>
 <area shape="rect" href="unittest__joint__limits__aggregator_8cpp.html#a0a5b27dc7195a628f23dc3763bd898a3" title="Check for that the size of the map and the size of the given joint models is equal." alt="" coords="76,267,145,294"/>
@@ -459,7 +451,7 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="joint__limits__aggregator_8cpp_source.html#l00141">141</a> of file <a class="el" href="joint__limits__aggregator_8cpp_source.html">joint_limits_aggregator.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__limits__aggregator_8cpp_source.html#l00130">130</a> of file <a class="el" href="joint__limits__aggregator_8cpp_source.html">joint_limits_aggregator.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -476,9 +468,9 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="classpilz__industrial__motion__planner_1_1JointLimitsAggregator_a6ee5ac793eb0e93f5c98c621dafbf126_icgraph.png" border="0" usemap="#classpilz__industrial__motion__planner_1_1JointLimitsAggregator_a6ee5ac793eb0e93f5c98c621dafbf126_icgraph" alt=""/></div>
 <map name="classpilz__industrial__motion__planner_1_1JointLimitsAggregator_a6ee5ac793eb0e93f5c98c621dafbf126_icgraph" id="classpilz__industrial__motion__planner_1_1JointLimitsAggregator_a6ee5ac793eb0e93f5c98c621dafbf126_icgraph">
 <area shape="rect" title="Update the velocity limit with the one from the joint_model." alt="" coords="539,129,801,185"/>
-<area shape="rect" href="classpilz__industrial__motion__planner_1_1JointLimitsAggregator.html#a78abef0abbf23021c1edc1451af3e3c8" title="Aggregates(combines) the joint limits from joint model and node parameters. The rules for the combina..." alt="" coords="264,129,491,185"/>
-<area shape="rect" href="classTrajectoryGeneratorCIRCTest.html#a23026b4e6ff9c4dc0d949a6965227cdb" title="Create test scenario for circ trajectory generator." alt="" coords="7,5,215,47"/>
-<area shape="rect" href="classTrajectoryBlenderTransitionWindowTest.html#a053df89241e6ed29c6d277de86a01f6e" title="Create test scenario for trajectory blender." alt="" coords="11,71,210,112"/>
+<area shape="rect" href="classpilz__industrial__motion__planner_1_1JointLimitsAggregator.html#ae40f9ed899b3e12fa7fb40f691a64d9a" title="Aggregates(combines) the joint limits from joint model and parameter server. The rules for the combin..." alt="" coords="264,129,491,185"/>
+<area shape="rect" href="classTrajectoryBlenderTransitionWindowTest.html#a053df89241e6ed29c6d277de86a01f6e" title="Create test scenario for trajectory blender." alt="" coords="11,5,210,47"/>
+<area shape="rect" href="classTrajectoryGeneratorCIRCTest.html#a23026b4e6ff9c4dc0d949a6965227cdb" title="Create test scenario for circ trajectory generator." alt="" coords="7,71,215,112"/>
 <area shape="rect" href="classTrajectoryGeneratorLINTest.html#aa501c1263458d8ae0807e10ee79a569b" title="Create test scenario for lin trajectory generator." alt="" coords="11,136,210,177"/>
 <area shape="rect" href="classTrajectoryGeneratorCommonTest.html#a80e3885bdb7b0ce80bc85c3a75e0e28b" title=" " alt="" coords="5,201,216,243"/>
 <area shape="rect" href="unittest__joint__limits__aggregator_8cpp.html#a0a5b27dc7195a628f23dc3763bd898a3" title="Check for that the size of the map and the size of the given joint models is equal." alt="" coords="76,267,145,294"/>

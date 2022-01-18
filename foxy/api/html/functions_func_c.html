@@ -89,6 +89,9 @@ $(function() {
 <li>calculateSingleIteration()
 : <a class="el" href="classmoveit__servo_1_1ServoCalcs.html#abc7fc9277c10322e7af56c7e889c2cd8">moveit_servo::ServoCalcs</a>
 </li>
+<li>calculateWorstCaseStopTime()
+: <a class="el" href="classmoveit__servo_1_1ServoCalcs.html#a366142facb0721f79d2f49695cea3ad7">moveit_servo::ServoCalcs</a>
+</li>
 <li>callIK()
 : <a class="el" href="classconstraint__samplers_1_1IKConstraintSampler.html#a770d65f81d4f4ae2ca9d5e86c6bd7c79">constraint_samplers::IKConstraintSampler</a>
 </li>
@@ -128,7 +131,7 @@ $(function() {
 </li>
 <li>canService()
 : <a class="el" href="classconstraint__samplers_1_1ConstraintSamplerAllocator.html#a03d23b65983ef4f2e96b8eace3a57cdb">constraint_samplers::ConstraintSamplerAllocator</a>
-, <a class="el" href="classconstraint__samplers_1_1UnionConstraintSampler.html#a7997b5c7420b0bd7a98a334167db7f1d">constraint_samplers::UnionConstraintSampler</a>
+, <a class="el" href="classconstraint__samplers_1_1UnionConstraintSampler.html#a513d8e1c3545622df27edd4d0c6e0f4f">constraint_samplers::UnionConstraintSampler</a>
 </li>
 <li>canServiceRequest()
 : <a class="el" href="classchomp__interface_1_1CHOMPPlannerManager.html#a3dd156dce3b16a8b76711a2685a3c25a">chomp_interface::CHOMPPlannerManager</a>
@@ -275,7 +278,7 @@ $(function() {
 : <a class="el" href="classMyInfo.html#a4e42c5e62f402f0f351b7863f9e97e89">MyInfo</a>
 </li>
 <li>checkTrajectory()
-: <a class="el" href="classTrajectoryGeneratorPTPTest.html#a5cba4ed8fd22991f343f606768348f87">TrajectoryGeneratorPTPTest</a>
+: <a class="el" href="classTrajectoryGeneratorPTPTest.html#a99179b9475e70c01313db6139e95b076">TrajectoryGeneratorPTPTest</a>
 </li>
 <li>checkValidCommand()
 : <a class="el" href="classmoveit__servo_1_1ServoCalcs.html#acda48f8e1c9c89e616c7693fb0adf981">moveit_servo::ServoCalcs</a>
@@ -369,7 +372,7 @@ $(function() {
 , <a class="el" href="classpilz__industrial__motion__planner_1_1PlanningContextBase.html#ac4be7f667943234cb2038c4209daaaa6">pilz_industrial_motion_planner::PlanningContextBase&lt; GeneratorT &gt;</a>
 , <a class="el" href="classplanning__interface_1_1PlanningContext.html#a92cfedf0e29ce7596c9bff24cee04b0f">planning_interface::PlanningContext</a>
 , <a class="el" href="classrobot__interaction_1_1RobotInteraction.html#a7c31e8155a688f8eb284710b49a79a1c">robot_interaction::RobotInteraction</a>
-, <a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#ae07ca729ccee3748d65abe389de3b8e1">robot_trajectory::RobotTrajectory</a>
+, <a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#ac95d7d9d74d13c2e31bcc5b1f6aaee6f">robot_trajectory::RobotTrajectory</a>
 , <a class="el" href="classrviz__rendering_1_1MeshShape.html#a7ee09ef1a3a1c0919148a3dac4047c56">rviz_rendering::MeshShape</a>
 , <a class="el" href="classtrajectory__execution__manager_1_1TrajectoryExecutionManager.html#a263a182be1c8a3ea036c0ed35dea2141">trajectory_execution_manager::TrajectoryExecutionManager</a>
 , <a class="el" href="classtrajopt__interface_1_1TrajOptPlanningContext.html#a374d70befa78508cdec91627f82a1de5">trajopt_interface::TrajOptPlanningContext</a>
@@ -476,9 +479,6 @@ $(function() {
 <li>clearSceneRobotState()
 : <a class="el" href="classmove__group_1_1MoveGroupCapability.html#a4add6a98685db2cd79ef165a8989fb6b">move_group::MoveGroupCapability</a>
 </li>
-<li>clearSensorPluginConfig()
-: <a class="el" href="classmoveit__setup__assistant_1_1MoveItConfigData.html#a1d2f644eb1c925a20386b7f365007852">moveit_setup_assistant::MoveItConfigData</a>
-</li>
 <li>clearTrajectory()
 : <a class="el" href="classplanning__scene__monitor_1_1TrajectoryMonitor.html#a76250c7a32b9e5cc6178d3c563547c54">planning_scene_monitor::TrajectoryMonitor</a>
 </li>
@@ -529,7 +529,7 @@ $(function() {
 : <a class="el" href="classmoveit__servo_1_1CollisionCheck.html#a5fe8c545132c7b14f3564d924e030df9">moveit_servo::CollisionCheck</a>
 </li>
 <li>CollisionData()
-: <a class="el" href="structcollision__detection_1_1CollisionData.html#ac02433b9053141809b69b2788ee871fe">collision_detection::CollisionData</a>
+: <a class="el" href="structcollision__detection_1_1CollisionData.html#a1d9db235d4a3711d6e5f2897232a3997">collision_detection::CollisionData</a>
 </li>
 <li>CollisionDetectorTest()
 : <a class="el" href="classCollisionDetectorTest.html#a2a0e265093216e3f8134b85d08134ec0">CollisionDetectorTest&lt; CollisionAllocatorType &gt;</a>
@@ -547,10 +547,10 @@ $(function() {
 : <a class="el" href="classcollision__detection_1_1CollisionEnvDistanceField.html#a34498751eb6fe388f991bf8c8e623612">collision_detection::CollisionEnvDistanceField</a>
 </li>
 <li>CollisionEnvFCL()
-: <a class="el" href="classcollision__detection_1_1CollisionEnvFCL.html#aec0e2ac5157fcb386597513655e365ec">collision_detection::CollisionEnvFCL</a>
+: <a class="el" href="classcollision__detection_1_1CollisionEnvFCL.html#a4b3f5169098f2468560d319c4b28486e">collision_detection::CollisionEnvFCL</a>
 </li>
 <li>CollisionEnvHybrid()
-: <a class="el" href="classcollision__detection_1_1CollisionEnvHybrid.html#a538ed435294835e3177176dd27a75413">collision_detection::CollisionEnvHybrid</a>
+: <a class="el" href="classcollision__detection_1_1CollisionEnvHybrid.html#ac89b012bce1410b54bf3a8e8b1233ad5">collision_detection::CollisionEnvHybrid</a>
 </li>
 <li>CollisionGeometryData()
 : <a class="el" href="structcollision__detection_1_1CollisionGeometryData.html#a6b870208631f537c8376cf3294d508df">collision_detection::CollisionGeometryData</a>
@@ -570,11 +570,11 @@ $(function() {
 <li>CollisionPlugin()
 : <a class="el" href="classcollision__detection_1_1CollisionPlugin.html#ad3312e457276a8254ebd85b847dd705e">collision_detection::CollisionPlugin</a>
 </li>
-<li>CollisionPluginCache()
-: <a class="el" href="classcollision__detection_1_1CollisionPluginCache.html#a99977e75d7a2f21d5263b0d5c593dcdd">collision_detection::CollisionPluginCache</a>
+<li>CollisionPluginLoader()
+: <a class="el" href="classcollision__detection_1_1CollisionPluginLoader.html#abdd53b98b1fd15c0344148f3a8ca4c59">collision_detection::CollisionPluginLoader</a>
 </li>
-<li>CollisionPluginCacheImpl()
-: <a class="el" href="classcollision__detection_1_1CollisionPluginCache_1_1CollisionPluginCacheImpl.html#a9322ebf1c4a7905d59e0b16c347a65d6">collision_detection::CollisionPluginCache::CollisionPluginCacheImpl</a>
+<li>CollisionPluginLoaderImpl()
+: <a class="el" href="classcollision__detection_1_1CollisionPluginLoader_1_1CollisionPluginLoaderImpl.html#ad6579061422cbb134a713e6e8a838a1c">collision_detection::CollisionPluginLoader::CollisionPluginLoaderImpl</a>
 </li>
 <li>CollisionRequest()
 : <a class="el" href="structcollision__detection_1_1CollisionRequest.html#a982d0f634496fbcd183f9cad7cfcf902">collision_detection::CollisionRequest</a>
@@ -615,7 +615,7 @@ $(function() {
 : <a class="el" href="classmoveit__commander_1_1interpreter_1_1MoveGroupCommandInterpreter.html#a2a9c1af76071857524ee7f66a0c24f6c">moveit_commander.interpreter.MoveGroupCommandInterpreter</a>
 </li>
 <li>CommandListManager()
-: <a class="el" href="classpilz__industrial__motion__planner_1_1CommandListManager.html#a2ed8d6bac5083871307380751b10bf6d">pilz_industrial_motion_planner::CommandListManager</a>
+: <a class="el" href="classpilz__industrial__motion__planner_1_1CommandListManager.html#a3372f4e68bac2974ce2b2cde4ad872ca">pilz_industrial_motion_planner::CommandListManager</a>
 </li>
 <li>compareCacheEntryToAllowedCollisionMatrix()
 : <a class="el" href="classcollision__detection_1_1CollisionEnvDistanceField.html#a4d71cf57a45d9518dd15571f1070ec6f">collision_detection::CollisionEnvDistanceField</a>
@@ -645,25 +645,28 @@ $(function() {
 : <a class="el" href="classmoveit__commander_1_1move__group_1_1MoveGroupCommander.html#af8014e1eb7b5cdab0e575865578d920e">moveit_commander.move_group.MoveGroupCommander</a>
 </li>
 <li>computeAABB()
-: <a class="el" href="classmoveit_1_1core_1_1RobotState.html#ad6919686feee89138316eb279794b71f">moveit::core::RobotState</a>
+: <a class="el" href="classmoveit_1_1core_1_1RobotState.html#a55cae73d3315d1283436db1df51f4fe0">moveit::core::RobotState</a>
 </li>
 <li>computeAveragePathSimilarities()
 : <a class="el" href="classmoveit__ros__benchmarks_1_1BenchmarkExecutor.html#a010cfee930229a13774ea96cafb45dca">moveit_ros_benchmarks::BenchmarkExecutor</a>
 </li>
 <li>computeCartesianPath()
-: <a class="el" href="classmoveit_1_1core_1_1CartesianInterpolator.html#ae8e2f4be4098480869bb8a55340f6483">moveit::core::CartesianInterpolator</a>
-, <a class="el" href="classmoveit_1_1core_1_1RobotState.html#abfa970bb8b0c9b24199c2eb1547cb32c">moveit::core::RobotState</a>
+: <a class="el" href="classmoveit_1_1core_1_1CartesianInterpolator.html#a4f8be419adb404a8632b6699391b13ab">moveit::core::CartesianInterpolator</a>
+, <a class="el" href="classmoveit_1_1core_1_1RobotState.html#ac920b75bd636551e31bb36db696910f9">moveit::core::RobotState</a>
 , <a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#aeac942e48d33a75d5c59bf23590b6496">moveit::planning_interface::MoveGroupInterface</a>
 , <a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl.html#a2e21ac5f48a4d30b6231f36127be36ee">moveit::planning_interface::MoveGroupInterface::MoveGroupInterfaceImpl</a>
 </li>
 <li>computeCommonRoot()
 : <a class="el" href="classmoveit_1_1core_1_1RobotModel.html#a339f50f2a5dd6de03da7e2db2de60eeb">moveit::core::RobotModel</a>
 </li>
+<li>computeCommonRoots()
+: <a class="el" href="classmoveit_1_1core_1_1RobotModel.html#ab79cc844a13ea80b854f7d391ec023c1">moveit::core::RobotModel</a>
+</li>
+<li>computeDescendants()
+: <a class="el" href="classmoveit_1_1core_1_1RobotModel.html#a32a3a06b04a9ca84486f0baba80dd073">moveit::core::RobotModel</a>
+</li>
 <li>computeFixedTransforms()
 : <a class="el" href="classmoveit_1_1core_1_1RobotModel.html#a21ffe6c8000be76c7585c289e08c8627">moveit::core::RobotModel</a>
-</li>
-<li>ComputeIk()
-: <a class="el" href="classIKSolver.html#ac0195e291bed491b4cb6a68db8199b55">IKSolver</a>
 </li>
 <li>computeIKIndexBijection()
 : <a class="el" href="classmoveit_1_1core_1_1JointModelGroup.html#abc36f85e8064845d63632045dfc77334">moveit::core::JointModelGroup</a>
@@ -724,7 +727,7 @@ $(function() {
 , <a class="el" href="classmoveit_1_1core_1_1RevoluteJointModel.html#a2b2728142c4dfdaa3d91def1a1cf5f71">moveit::core::RevoluteJointModel</a>
 </li>
 <li>computeVariableVelocity()
-: <a class="el" href="classmoveit_1_1core_1_1RobotState.html#afc43c8b0e761f33418bb414698274ec6">moveit::core::RobotState</a>
+: <a class="el" href="classmoveit_1_1core_1_1RobotState.html#a4d3abe6777731f6314caba135ba593d7">moveit::core::RobotState</a>
 </li>
 <li>configChanged()
 : <a class="el" href="classmoveit__rviz__plugin_1_1MotionPlanningFrame.html#aedbc257f41e9904568de8525f8bf39dd">moveit_rviz_plugin::MotionPlanningFrame</a>
@@ -738,8 +741,8 @@ $(function() {
 <li>configure()
 : <a class="el" href="classconstraint__samplers_1_1ConstraintSampler.html#a42104965516ab50880e2cf7c7a6056ad">constraint_samplers::ConstraintSampler</a>
 , <a class="el" href="classconstraint__samplers_1_1IKConstraintSampler.html#a0d828a65dbd765a8cde9b07430dcf423">constraint_samplers::IKConstraintSampler</a>
-, <a class="el" href="classconstraint__samplers_1_1JointConstraintSampler.html#ae8d005674ad13829c59268417125cbdc">constraint_samplers::JointConstraintSampler</a>
-, <a class="el" href="classconstraint__samplers_1_1UnionConstraintSampler.html#a1c9685e6f8eaa7dfaff59032cfa8a4f1">constraint_samplers::UnionConstraintSampler</a>
+, <a class="el" href="classconstraint__samplers_1_1JointConstraintSampler.html#a7fb5f7164e985416fa116a8ba2516e9c">constraint_samplers::JointConstraintSampler</a>
+, <a class="el" href="classconstraint__samplers_1_1UnionConstraintSampler.html#a74c2bd1d2d5c0f74057479b9e204db13">constraint_samplers::UnionConstraintSampler</a>
 , <a class="el" href="classkinematic__constraints_1_1JointConstraint.html#a6609a7b9f83757c679eb49156dc7dd3b">kinematic_constraints::JointConstraint</a>
 , <a class="el" href="classkinematic__constraints_1_1OrientationConstraint.html#a84922767a2ef4774373cbdf6ab0bda39">kinematic_constraints::OrientationConstraint</a>
 , <a class="el" href="classkinematic__constraints_1_1PositionConstraint.html#a64b2965ed73b6e010118b6420d916da8">kinematic_constraints::PositionConstraint</a>
@@ -758,14 +761,17 @@ $(function() {
 <li>connectToDatabase()
 : <a class="el" href="classmoveit__warehouse_1_1WarehouseConnector.html#aaa91a123900334487b0592de81d91971">moveit_warehouse::WarehouseConnector</a>
 </li>
-<li>console()
-: <a class="el" href="classmoveit_1_1tools_1_1Profiler.html#a1fc23b9b7d4675c8ce80485229c2f96f">moveit::tools::Profiler</a>
-</li>
 <li>Console()
 : <a class="el" href="classmoveit_1_1tools_1_1Profiler.html#abd91c1b48ca7462be7da533697f96ad3">moveit::tools::Profiler</a>
 </li>
+<li>console()
+: <a class="el" href="classmoveit_1_1tools_1_1Profiler.html#a1fc23b9b7d4675c8ce80485229c2f96f">moveit::tools::Profiler</a>
+</li>
 <li>ConstrainedGoalSampler()
 : <a class="el" href="classompl__interface_1_1ConstrainedGoalSampler.html#a833ad1065226f0275bfc5124498c39df">ompl_interface::ConstrainedGoalSampler</a>
+</li>
+<li>ConstrainedPlanning()
+: <a class="el" href="classConstrainedPlanning.html#a172023271933c6b8307eab22ae41601d">ConstrainedPlanning</a>
 </li>
 <li>ConstrainedPlanningStateSpace()
 : <a class="el" href="classompl__interface_1_1ConstrainedPlanningStateSpace.html#ad1669ddfc62bce70cf3215ec62bd44c7">ompl_interface::ConstrainedPlanningStateSpace</a>
@@ -783,7 +789,7 @@ $(function() {
 : <a class="el" href="classompl__interface_1_1ConstrainedSampler.html#af66c063729bc37cb2197aba7ca57031f">ompl_interface::ConstrainedSampler</a>
 </li>
 <li>ConstraintApproximation()
-: <a class="el" href="structompl__interface_1_1ConstraintApproximation.html#a586218d869a52f4e8eed7f9644d35e1e">ompl_interface::ConstraintApproximation</a>
+: <a class="el" href="structompl__interface_1_1ConstraintApproximation.html#a6cf02380b00ad91f00747c7ff86fec8c">ompl_interface::ConstraintApproximation</a>
 </li>
 <li>ConstraintApproximationConstructionOptions()
 : <a class="el" href="structompl__interface_1_1ConstraintApproximationConstructionOptions.html#a373ce36ca3dc1c49fd7d7f0007daa6a4">ompl_interface::ConstraintApproximationConstructionOptions</a>
@@ -828,6 +834,12 @@ $(function() {
 : <a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl.html#a2b63591645e3ef521e31597f5c049bc5">moveit::planning_interface::MoveGroupInterface::MoveGroupInterfaceImpl</a>
 , <a class="el" href="classompl__interface_1_1ModelBasedPlanningContext.html#aee14229aca593e33a73106cc6275ed73">ompl_interface::ModelBasedPlanningContext</a>
 </li>
+<li>constructJointModel()
+: <a class="el" href="classmoveit_1_1core_1_1RobotModel.html#adbf5a7c0c1430d0bc4bd040f39ad96cc">moveit::core::RobotModel</a>
+</li>
+<li>constructLinkModel()
+: <a class="el" href="classmoveit_1_1core_1_1RobotModel.html#a4984ed960df65c297658d488dc7148e1">moveit::core::RobotModel</a>
+</li>
 <li>constructMotionPlanRequest()
 : <a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a6ed9be2b4652788b2016dd5641bebfe8">moveit::planning_interface::MoveGroupInterface</a>
 , <a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl.html#ab59f8929101f223fa4acc814d354cb27">moveit::planning_interface::MoveGroupInterface::MoveGroupInterfaceImpl</a>
@@ -837,6 +849,9 @@ $(function() {
 </li>
 <li>constructPlanningRequest()
 : <a class="el" href="classmoveit__rviz__plugin_1_1MotionPlanningFrame.html#aa6b4592edb828e4d84963a83120de945">moveit_rviz_plugin::MotionPlanningFrame</a>
+</li>
+<li>constructShape()
+: <a class="el" href="classmoveit_1_1core_1_1RobotModel.html#abcd785395005fe888e1a79e110908b39">moveit::core::RobotModel</a>
 </li>
 <li>contactTest()
 : <a class="el" href="classcollision__detection__bullet_1_1BulletBVHManager.html#afb5245e662e74f704e3a461b3f69946e">collision_detection_bullet::BulletBVHManager</a>
@@ -872,16 +887,16 @@ $(function() {
 : <a class="el" href="classompl__interface_1_1ModelBasedPlanningContext.html#a7c98e2b24df6a458e5b43654905aaebc">ompl_interface::ModelBasedPlanningContext</a>
 </li>
 <li>convertToMsg()
-: <a class="el" href="classmove__group_1_1MoveGroupCapability.html#ad5cb39119d313db15f75b0ae221acdb6">move_group::MoveGroupCapability</a>
+: <a class="el" href="classmove__group_1_1MoveGroupCapability.html#a5bc0d92b709dfd7580bd62f469b1fcab">move_group::MoveGroupCapability</a>
 </li>
 <li>copyJointGroupAccelerations()
-: <a class="el" href="classmoveit_1_1core_1_1RobotState.html#ac39ff2e3e4801ba1092a4c8eb44dd071">moveit::core::RobotState</a>
+: <a class="el" href="classmoveit_1_1core_1_1RobotState.html#af8cd62bf201a3d2a7ae739d4f117a3a4">moveit::core::RobotState</a>
 </li>
 <li>copyJointGroupPositions()
-: <a class="el" href="classmoveit_1_1core_1_1RobotState.html#a8dd891c19219b03bfa36e4e61113adbe">moveit::core::RobotState</a>
+: <a class="el" href="classmoveit_1_1core_1_1RobotState.html#ac0b2f35d1e9a7b553185211d840853a2">moveit::core::RobotState</a>
 </li>
 <li>copyJointGroupVelocities()
-: <a class="el" href="classmoveit_1_1core_1_1RobotState.html#a31bb9b99ecff521c4df1c249af34939c">moveit::core::RobotState</a>
+: <a class="el" href="classmoveit_1_1core_1_1RobotState.html#a0f0d3723db378c41e961aa0896a1874f">moveit::core::RobotState</a>
 </li>
 <li>copyJointToOMPLState()
 : <a class="el" href="classompl__interface_1_1ConstrainedPlanningStateSpace.html#a43441f991bf69262deed8392dc437736">ompl_interface::ConstrainedPlanningStateSpace</a>
@@ -921,26 +936,12 @@ $(function() {
 <li>createCollisionModelMarker()
 : <a class="el" href="classcollision__detection_1_1CollisionEnvDistanceField.html#adc1b9493f60da8b57ed80ea47eed2c16">collision_detection::CollisionEnvDistanceField</a>
 </li>
-<li>createDynamicTfSubscription()
-: <a class="el" href="classplanning__scene__monitor_1_1CurrentStateMonitor_1_1MiddlewareHandle.html#ab50ac11cd4972c1c86db1f25b0049d08">planning_scene_monitor::CurrentStateMonitor::MiddlewareHandle</a>
-, <a class="el" href="classplanning__scene__monitor_1_1CurrentStateMonitorMiddlewareHandle.html#a6bd059a76248bc8a1f07f7bcdfd2ec60">planning_scene_monitor::CurrentStateMonitorMiddlewareHandle</a>
-</li>
 <li>createEditor()
 : <a class="el" href="classmoveit__rviz__plugin_1_1ProgressBarDelegate.html#a68042a840b7f36a7855c34985e9a453a">moveit_rviz_plugin::ProgressBarDelegate</a>
-</li>
-<li>createFullSRDFPath()
-: <a class="el" href="classmoveit__setup__assistant_1_1MoveItConfigData.html#ad5332ef7d3154a0f8cb5448557558f04">moveit_setup_assistant::MoveItConfigData</a>
-</li>
-<li>createFullURDFPath()
-: <a class="el" href="classmoveit__setup__assistant_1_1MoveItConfigData.html#ab5d21aacbe0036a6dd9282fcf5a1211b">moveit_setup_assistant::MoveItConfigData</a>
 </li>
 <li>createJointStateSubscription()
 : <a class="el" href="classplanning__scene__monitor_1_1CurrentStateMonitor_1_1MiddlewareHandle.html#a756263c8097e4cbd1f20cd1cd97d5002">planning_scene_monitor::CurrentStateMonitor::MiddlewareHandle</a>
 , <a class="el" href="classplanning__scene__monitor_1_1CurrentStateMonitorMiddlewareHandle.html#adc1804f92f024d1b6ddc45915958737f">planning_scene_monitor::CurrentStateMonitorMiddlewareHandle</a>
-</li>
-<li>createLoadMapService()
-: <a class="el" href="classoccupancy__map__monitor_1_1OccupancyMapMonitor_1_1MiddlewareHandle.html#a72b4d1dbf5613ec6328fa89ecc2c1c9a">occupancy_map_monitor::OccupancyMapMonitor::MiddlewareHandle</a>
-, <a class="el" href="classoccupancy__map__monitor_1_1OccupancyMapMonitorMiddlewareHandle.html#ad8716fce44c1f2aeab9ed8324b320089">occupancy_map_monitor::OccupancyMapMonitorMiddlewareHandle</a>
 </li>
 <li>createNSSlider()
 : <a class="el" href="classmoveit__rviz__plugin_1_1MotionPlanningFrameJointsWidget.html#a930afdf23abaf34d6d8f701cdcfdb27c">moveit_rviz_plugin::MotionPlanningFrameJointsWidget</a>
@@ -964,14 +965,6 @@ $(function() {
 <li>createRequestCombinations()
 : <a class="el" href="classmoveit__ros__benchmarks_1_1BenchmarkExecutor.html#ac3f4cd59bd4846f077a80b64bf709ce4">moveit_ros_benchmarks::BenchmarkExecutor</a>
 </li>
-<li>createSaveMapService()
-: <a class="el" href="classoccupancy__map__monitor_1_1OccupancyMapMonitor_1_1MiddlewareHandle.html#adb42b1febcc5c839e3a811ffefeaae20">occupancy_map_monitor::OccupancyMapMonitor::MiddlewareHandle</a>
-, <a class="el" href="classoccupancy__map__monitor_1_1OccupancyMapMonitorMiddlewareHandle.html#a6d1129bbe5ab44b33f6c9de1ec6c8ee1">occupancy_map_monitor::OccupancyMapMonitorMiddlewareHandle</a>
-</li>
-<li>createStaticTfSubscription()
-: <a class="el" href="classplanning__scene__monitor_1_1CurrentStateMonitor_1_1MiddlewareHandle.html#a3d46c6fd239114c6a4090f8dcfe0812d">planning_scene_monitor::CurrentStateMonitor::MiddlewareHandle</a>
-, <a class="el" href="classplanning__scene__monitor_1_1CurrentStateMonitorMiddlewareHandle.html#a7a9a088a5b775996ffdcd81d48bdf601">planning_scene_monitor::CurrentStateMonitorMiddlewareHandle</a>
-</li>
 <li>createUniqueInstance()
 : <a class="el" href="classSharedData.html#a34847b81a58ac1496a2692b2dd285b15">SharedData</a>
 </li>
@@ -979,7 +972,7 @@ $(function() {
 : <a class="el" href="classplanning__scene__monitor_1_1PlanningSceneMonitor.html#ae4d889aa729b6873c86364c3e94331ed">planning_scene_monitor::PlanningSceneMonitor</a>
 </li>
 <li>CurrentStateMonitor()
-: <a class="el" href="classplanning__scene__monitor_1_1CurrentStateMonitor.html#aeedd4c38cdff17b9b74397166eaf3429">planning_scene_monitor::CurrentStateMonitor</a>
+: <a class="el" href="classplanning__scene__monitor_1_1CurrentStateMonitor.html#a0228beaa0ce4cd530b60239b7d5891b9">planning_scene_monitor::CurrentStateMonitor</a>
 </li>
 <li>CurrentStateMonitorMiddlewareHandle()
 : <a class="el" href="classplanning__scene__monitor_1_1CurrentStateMonitorMiddlewareHandle.html#aae7e567b61782d742a6ad84e40947400">planning_scene_monitor::CurrentStateMonitorMiddlewareHandle</a>

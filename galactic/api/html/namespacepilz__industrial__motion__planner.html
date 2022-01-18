@@ -269,9 +269,9 @@ Functions</h2></td></tr>
 <tr class="separator:aefc542cd82d60b584e7977e23d7e0403"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40ec128f5a3915c2d1d4ad2148a6b05a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a40ec128f5a3915c2d1d4ad2148a6b05a">computePoseIK</a> (const planning_scene::PlanningSceneConstPtr &amp;scene, const std::string &amp;group_name, const std::string &amp;link_name, const geometry_msgs::msg::Pose &amp;pose, const std::string &amp;frame_id, const std::map&lt; std::string, double &gt; &amp;seed, std::map&lt; std::string, double &gt; &amp;solution, bool check_self_collision=true, const double timeout=0.0)</td></tr>
 <tr class="separator:a40ec128f5a3915c2d1d4ad2148a6b05a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a846707e0c70fe0ce82d46c752642e37e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a846707e0c70fe0ce82d46c752642e37e">computeLinkFK</a> (const moveit::core::RobotModelConstPtr &amp;robot_model, const std::string &amp;link_name, const std::map&lt; std::string, double &gt; &amp;joint_state, Eigen::Isometry3d &amp;pose)</td></tr>
-<tr class="memdesc:a846707e0c70fe0ce82d46c752642e37e"><td class="mdescLeft">&#160;</td><td class="mdescRight">compute the pose of a link at give robot state  <a href="namespacepilz__industrial__motion__planner.html#a846707e0c70fe0ce82d46c752642e37e">More...</a><br /></td></tr>
-<tr class="separator:a846707e0c70fe0ce82d46c752642e37e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f9f24ec7611a5e7888c3e1564457c44"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a1f9f24ec7611a5e7888c3e1564457c44">computeLinkFK</a> (const moveit::core::RobotModelConstPtr &amp;robot_model, const std::string &amp;link_name, const std::map&lt; std::string, double &gt; &amp;joint_state, Eigen::Isometry3d &amp;pose)</td></tr>
+<tr class="memdesc:a1f9f24ec7611a5e7888c3e1564457c44"><td class="mdescLeft">&#160;</td><td class="mdescRight">compute the pose of a link at give robot state  <a href="namespacepilz__industrial__motion__planner.html#a1f9f24ec7611a5e7888c3e1564457c44">More...</a><br /></td></tr>
+<tr class="separator:a1f9f24ec7611a5e7888c3e1564457c44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adef2b7361e2dba8f6bc99e5785cf5dc8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#adef2b7361e2dba8f6bc99e5785cf5dc8">computeLinkFK</a> (const moveit::core::RobotModelConstPtr &amp;robot_model, const std::string &amp;link_name, const std::vector&lt; std::string &gt; &amp;joint_names, const std::vector&lt; double &gt; &amp;joint_positions, Eigen::Isometry3d &amp;pose)</td></tr>
 <tr class="separator:adef2b7361e2dba8f6bc99e5785cf5dc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac442f8c60e0f733e280bbed7ba51bbb2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#ac442f8c60e0f733e280bbed7ba51bbb2">verifySampleJointLimits</a> (const std::map&lt; std::string, double &gt; &amp;position_last, const std::map&lt; std::string, double &gt; &amp;velocity_last, const std::map&lt; std::string, double &gt; &amp;position_current, double duration_last, double duration_current, const <a class="el" href="classpilz__industrial__motion__planner_1_1JointLimitsContainer.html">JointLimitsContainer</a> &amp;joint_limits)</td></tr>
@@ -623,14 +623,14 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a846707e0c70fe0ce82d46c752642e37e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a846707e0c70fe0ce82d46c752642e37e">&#9670;&nbsp;</a></span>computeLinkFK() <span class="overload">[1/2]</span></h2>
+<a id="a1f9f24ec7611a5e7888c3e1564457c44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f9f24ec7611a5e7888c3e1564457c44">&#9670;&nbsp;</a></span>computeLinkFK() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool pilz_industrial_motion_planner::computeLinkFK </td>
+          <td class="memname">bool testutils::computeLinkFK </td>
           <td>(</td>
           <td class="paramtype">const moveit::core::RobotModelConstPtr &amp;&#160;</td>
           <td class="paramname"><em>robot_model</em>, </td>
@@ -677,8 +677,8 @@ Functions</h2></td></tr>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="namespacepilz__industrial__motion__planner_a846707e0c70fe0ce82d46c752642e37e_cgraph.png" border="0" usemap="#namespacepilz__industrial__motion__planner_a846707e0c70fe0ce82d46c752642e37e_cgraph" alt=""/></div>
-<map name="namespacepilz__industrial__motion__planner_a846707e0c70fe0ce82d46c752642e37e_cgraph" id="namespacepilz__industrial__motion__planner_a846707e0c70fe0ce82d46c752642e37e_cgraph">
+<div class="center"><img src="namespacepilz__industrial__motion__planner_a1f9f24ec7611a5e7888c3e1564457c44_cgraph.png" border="0" usemap="#namespacepilz__industrial__motion__planner_a1f9f24ec7611a5e7888c3e1564457c44_cgraph" alt=""/></div>
+<map name="namespacepilz__industrial__motion__planner_a1f9f24ec7611a5e7888c3e1564457c44_cgraph" id="namespacepilz__industrial__motion__planner_a1f9f24ec7611a5e7888c3e1564457c44_cgraph">
 <area shape="rect" title="compute the pose of a link at give robot state" alt="" coords="5,5,192,47"/>
 <area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#acb5a70a55390ddecac5d79bbc1a929ba" title="Check if a transformation matrix from the model frame (root of model) to frame frame_id is known." alt="" coords="240,5,424,47"/>
 </map>
@@ -686,8 +686,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="namespacepilz__industrial__motion__planner_a846707e0c70fe0ce82d46c752642e37e_icgraph.png" border="0" usemap="#namespacepilz__industrial__motion__planner_a846707e0c70fe0ce82d46c752642e37e_icgraph" alt=""/></div>
-<map name="namespacepilz__industrial__motion__planner_a846707e0c70fe0ce82d46c752642e37e_icgraph" id="namespacepilz__industrial__motion__planner_a846707e0c70fe0ce82d46c752642e37e_icgraph">
+<div class="center"><img src="namespacepilz__industrial__motion__planner_a1f9f24ec7611a5e7888c3e1564457c44_icgraph.png" border="0" usemap="#namespacepilz__industrial__motion__planner_a1f9f24ec7611a5e7888c3e1564457c44_icgraph" alt=""/></div>
+<map name="namespacepilz__industrial__motion__planner_a1f9f24ec7611a5e7888c3e1564457c44_icgraph" id="namespacepilz__industrial__motion__planner_a1f9f24ec7611a5e7888c3e1564457c44_icgraph">
 <area shape="rect" title="compute the pose of a link at give robot state" alt="" coords="756,100,943,141"/>
 <area shape="rect" href="namespacetestutils.html#ab92bd7b28971f78ffe134429c7e3d333" title="Check that given trajectory is straight line." alt="" coords="252,35,435,76"/>
 <area shape="rect" href="namespacetestutils.html#a3adb3ee10723d5a032569890776fc5ea" title="Determines the goal position from the given request. TRUE if successful, FALSE otherwise." alt="" coords="483,82,708,109"/>

@@ -1,6 +1,15 @@
 <map id="moveit_servo::ServoCalcs::jointServoCalcs" name="moveit_servo::ServoCalcs::jointServoCalcs">
-<area shape="rect" id="node1" title="Do servoing calculations for direct commands to a joint." alt="" coords="5,71,196,112"/>
-<area shape="rect" id="node2" href="$classmoveit__servo_1_1ServoCalcs.html#acda48f8e1c9c89e616c7693fb0adf981" title=" " alt="" coords="244,5,435,47"/>
-<area shape="rect" id="node3" href="$classmoveit__servo_1_1ServoCalcs.html#ab0f0d493e2cf6af1059b0c8a72235cca" title="Handles all aspects of the servoing after the desired joint commands are established Joint and Cartes..." alt="" coords="244,71,435,112"/>
-<area shape="rect" id="node4" href="$classmoveit__servo_1_1ServoCalcs.html#ab067ce21cc68695a3bdf246517b8b85b" title="If incoming velocity commands are from a unitless joystick, scale them to physical units...." alt="" coords="244,136,435,177"/>
+<area shape="rect" id="node1" title="Do servoing calculations for direct commands to a joint." alt="" coords="5,224,196,265"/>
+<area shape="rect" id="node2" href="$classmoveit__servo_1_1ServoCalcs.html#acda48f8e1c9c89e616c7693fb0adf981" title=" " alt="" coords="244,159,435,200"/>
+<area shape="rect" id="node3" href="$classmoveit__servo_1_1ServoCalcs.html#ab0f0d493e2cf6af1059b0c8a72235cca" title="Handles all aspects of the servoing after the desired joint commands are established Joint and Cartes..." alt="" coords="244,224,435,265"/>
+<area shape="rect" id="node13" href="$classmoveit__servo_1_1ServoCalcs.html#ab067ce21cc68695a3bdf246517b8b85b" title="If incoming velocity commands are from a unitless joystick, scale them to physical units...." alt="" coords="244,289,435,331"/>
+<area shape="rect" id="node4" href="$classmoveit__servo_1_1ServoCalcs.html#acd9235f7cdc0be5af941fc877b50c46d" title="Joint&#45;wise update of a sensor_msgs::msg::JointState with given delta&#39;s Also calculates the previous v..." alt="" coords="521,5,711,47"/>
+<area shape="rect" id="node5" href="$classmoveit__servo_1_1ServoCalcs.html#ad10d54d66bea66f726fb26d10926dc53" title="Compose the outgoing JointTrajectory message." alt="" coords="517,71,715,112"/>
+<area shape="rect" id="node6" href="$classmoveit__servo_1_1ServoCalcs.html#af60cee9b0b121079abda886bb4e60817" title="Avoid overshooting joint limits." alt="" coords="521,136,711,177"/>
+<area shape="rect" id="node8" href="$classmoveit_1_1core_1_1JointModelGroup.html#a14fb89fcb1b1d7297b5ddd3d063c715f" title="Get the active joints in this group (that have controllable DOF). This does not include mimic joints." alt="" coords="797,195,1004,236"/>
+<area shape="rect" id="node9" href="$namespacemoveit__servo.html#a3650f7acc84c4ea2183ec75ee28b17d3" title="Scale the delta theta to match joint velocity/acceleration limits." alt="" coords="506,253,726,295"/>
+<area shape="rect" id="node10" href="$classmoveit__servo_1_1ServoCalcs.html#a2c6efb6af7ccc88f74d41e5d077335b8" title="Gazebo simulations have very strict message timestamp requirements. Satisfy Gazebo by stuffing multip..." alt="" coords="483,319,749,360"/>
+<area shape="rect" id="node11" href="$namespacemoveit__servo.html#ad7fbffcbbd4f9cea09e63e0a1c81c624" title=" " alt="" coords="535,384,697,425"/>
+<area shape="rect" id="node12" href="$classmoveit__servo_1_1ServoCalcs.html#af4b6c6bd342432286e0a7c185eb4059e" title="Suddenly halt for a joint limit or other critical issue. Is handled differently for position vs...." alt="" coords="521,449,711,491"/>
+<area shape="rect" id="node7" href="$namespacepr2__arm__kinematics.html#a24f684af4bcce4a6d0c945aa27d04550" title=" " alt="" coords="823,129,978,171"/>
 </map>

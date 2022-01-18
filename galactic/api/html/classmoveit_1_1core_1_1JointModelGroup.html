@@ -409,7 +409,7 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a5610371e81be8fcbea9b78bb1699308b"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classmoveit_1_1core_1_1JointModel.html">JointModel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1JointModelGroup.html#a5610371e81be8fcbea9b78bb1699308b">common_root_</a></td></tr>
 <tr class="memdesc:a5610371e81be8fcbea9b78bb1699308b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The joint that is a common root for all joints in this group (not necessarily part of this group)  <a href="classmoveit_1_1core_1_1JointModelGroup.html#a5610371e81be8fcbea9b78bb1699308b">More...</a><br /></td></tr>
 <tr class="separator:a5610371e81be8fcbea9b78bb1699308b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac94c88c58cf1a8f6e608f61369369287"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemoveit_1_1core.html#a4bc26a7f9b3ac37afb7022d766fb307a">VariableIndexMap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1JointModelGroup.html#ac94c88c58cf1a8f6e608f61369369287">joint_variables_index_map_</a></td></tr>
+<tr class="memitem:ac94c88c58cf1a8f6e608f61369369287"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemoveit_1_1core.html#ae101bd641ed50af6f5936c5a337ad3fd">VariableIndexMap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1JointModelGroup.html#ac94c88c58cf1a8f6e608f61369369287">joint_variables_index_map_</a></td></tr>
 <tr class="memdesc:ac94c88c58cf1a8f6e608f61369369287"><td class="mdescLeft">&#160;</td><td class="mdescRight">The group includes all the joint variables that make up the joints the group consists of. This map gives the position in the state vector of the group for each of these variables. Additionally, it includes the names of the joints and the index for the first variable of that joint.  <a href="classmoveit_1_1core_1_1JointModelGroup.html#ac94c88c58cf1a8f6e608f61369369287">More...</a><br /></td></tr>
 <tr class="separator:ac94c88c58cf1a8f6e608f61369369287"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a646b3a848b46be53d9d0313fa3c8c02b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemoveit_1_1core.html#ad652fd03ea08dacf06e522436eead29b">JointBoundsVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1JointModelGroup.html#a646b3a848b46be53d9d0313fa3c8c02b">active_joint_models_bounds_</a></td></tr>
@@ -1316,9 +1316,11 @@ Here is the call graph for this function:</div>
 <map name="classmoveit_1_1core_1_1JointModelGroup_a0f60ea765fd917f911480a7615f8ff32_cgraph" id="classmoveit_1_1core_1_1JointModelGroup_a0f60ea765fd917f911480a7615f8ff32_cgraph">
 <area shape="rect" title="Get the unique set of end effector tips included in a particular joint model group as defined by the ..." alt="" coords="5,93,196,135"/>
 <area shape="rect" href="classmoveit_1_1core_1_1JointModelGroup.html#a71f71bbb186917dd5fcf41bf88b2e5fb" title="Get a joint by its name. Throw an exception if the joint is not part of this group." alt="" coords="244,5,425,47"/>
-<area shape="rect" href="classmoveit_1_1core_1_1JointModelGroup.html#a2f165c9374e28ac4052490819c790f45" title="Get the name of the joint group." alt="" coords="473,127,655,168"/>
-<area shape="rect" href="classmoveit_1_1core_1_1JointModel.html#a8e6b8bcc807187617b1b2e5242a4af69" title="Get the number of variables that describe this joint." alt="" coords="244,123,425,164"/>
-<area shape="rect" href="classmoveit_1_1core_1_1JointModelGroup.html#a7af014f4116c40ea1884cd7ae82f8da6" title="Check if a joint is part of this group." alt="" coords="244,188,425,229"/>
+<area shape="rect" href="classmoveit_1_1core_1_1JointModelGroup.html#a2f165c9374e28ac4052490819c790f45" title="Get the name of the joint group." alt="" coords="515,79,697,120"/>
+<area shape="rect" href="classmoveit_1_1core_1_1JointModel.html#a8e6b8bcc807187617b1b2e5242a4af69" title="Get the number of variables that describe this joint." alt="" coords="244,188,425,229"/>
+<area shape="rect" href="classmoveit_1_1core_1_1JointModelGroup.html#a7af014f4116c40ea1884cd7ae82f8da6" title="Check if a joint is part of this group." alt="" coords="244,123,425,164"/>
+<area shape="rect" href="classmoveit_1_1core_1_1JointModel.html#ab4ba9eac1f786fdeb152012f396daab8" title="Compute the distance between two joint states of the same model (represented by the variable values)" alt="" coords="515,173,697,215"/>
+<area shape="rect" href="classmoveit_1_1core_1_1JointModel.html#adaf152251e15131a66e48f5e1de98dbb" title="Provide random values for the joint variables (within default bounds). Enough memory is assumed to be..." alt="" coords="473,239,739,280"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1532,10 +1534,12 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classmoveit_1_1core_1_1JointModelGroup_a5c96362127bca0b1263983def71cf86a_icgraph.png" border="0" usemap="#classmoveit_1_1core_1_1JointModelGroup_a5c96362127bca0b1263983def71cf86a_icgraph" alt=""/></div>
 <map name="classmoveit_1_1core_1_1JointModelGroup_a5c96362127bca0b1263983def71cf86a_icgraph" id="classmoveit_1_1core_1_1JointModelGroup_a5c96362127bca0b1263983def71cf86a_icgraph">
-<area shape="rect" title="Get all the joints in this group (including fixed and mimic joints)." alt="" coords="280,79,461,120"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotModel.html#aa3b68bf0980355638f923091988992f5" title="Get a joint group from this model (by name)" alt="" coords="23,5,214,47"/>
-<area shape="rect" href="classmoveit__setup__assistant_1_1MoveItConfigData.html#a0cb060e532a3dbc7af728ea612de0d30" title=" " alt="" coords="5,71,232,127"/>
-<area shape="rect" href="test__kinematic__complex_8cpp.html#a21a56d609cf50d6d770a29e8edc10a43" title=" " alt="" coords="84,151,153,178"/>
+<area shape="rect" title="Get all the joints in this group (including fixed and mimic joints)." alt="" coords="280,144,461,185"/>
+<area shape="rect" href="classmoveit_1_1core_1_1RobotModel.html#ad17bd8a8142ec84e4d8d3eb1fdfe162a" title="Given a SRDF model describing the groups, build up the groups in this kinematic model." alt="" coords="23,5,214,47"/>
+<area shape="rect" href="classmoveit_1_1core_1_1RobotModel.html#aa3b68bf0980355638f923091988992f5" title="Get a joint group from this model (by name)" alt="" coords="23,71,214,112"/>
+<area shape="rect" href="classmoveit__setup__assistant_1_1MoveItConfigData.html#a0cb060e532a3dbc7af728ea612de0d30" title=" " alt="" coords="5,137,232,193"/>
+<area shape="rect" href="classmoveit_1_1core_1_1RobotModel.html#a4f9fd297ff68f24aab2e389beb5f04c8" title=" " alt="" coords="23,217,214,259"/>
+<area shape="rect" href="test__kinematic__complex_8cpp.html#a21a56d609cf50d6d770a29e8edc10a43" title=" " alt="" coords="84,283,153,310"/>
 </map>
 </div>
 
@@ -1858,18 +1862,19 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classmoveit_1_1core_1_1JointModelGroup_a2f165c9374e28ac4052490819c790f45_icgraph.png" border="0" usemap="#classmoveit_1_1core_1_1JointModelGroup_a2f165c9374e28ac4052490819c790f45_icgraph" alt=""/></div>
 <map name="classmoveit_1_1core_1_1JointModelGroup_a2f165c9374e28ac4052490819c790f45_icgraph" id="classmoveit_1_1core_1_1JointModelGroup_a2f165c9374e28ac4052490819c790f45_icgraph">
-<area shape="rect" title="Get the name of the joint group." alt="" coords="856,247,1037,288"/>
-<area shape="rect" href="classmoveit_1_1core_1_1JointModelGroup.html#a0f60ea765fd917f911480a7615f8ff32" title="Get the unique set of end effector tips included in a particular joint model group as defined by the ..." alt="" coords="304,87,495,128"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotModel.html#aa3b68bf0980355638f923091988992f5" title="Get a joint group from this model (by name)" alt="" coords="580,51,771,92"/>
-<area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#ab55ce7e184376b35659d0b5d6ac2fe81" title="Get vector of names of links available in move group." alt="" coords="543,116,808,158"/>
-<area shape="rect" href="classmoveit_1_1core_1_1JointModelGroup.html#a7af014f4116c40ea1884cd7ae82f8da6" title="Check if a joint is part of this group." alt="" coords="585,182,766,223"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotModel.html#a46cf302435b26e632ec4c70e35048e4a" title=" " alt="" coords="580,247,771,288"/>
-<area shape="rect" href="classkinematics__plugin__loader_1_1KinematicsPluginLoader_1_1KinematicsLoaderImpl.html#a7b716b617a08f6f7b3cfc09274470fdc" title="Pimpl Implementation of KinematicsLoader." alt="" coords="547,312,804,383"/>
-<area shape="rect" href="classompl__interface_1_1ModelBasedStateSpace.html#ab8f006a82a6b722625b1f4f393f4a8bc" title=" " alt="" coords="547,407,803,448"/>
-<area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a34e857711a8dca3e98635f4925abaf46" title="Set the starting state for planning to be that reported by the robot&#39;s joint state publication." alt="" coords="547,473,803,529"/>
-<area shape="rect" href="test__constraint__samplers_8cpp.html#a85db5a190e27663a9bf3727c8f667013" title=" " alt="" coords="641,553,710,580"/>
-<area shape="rect" href="classmoveit_1_1core_1_1JointModelGroup.html#a06509f71422b63c90552127ce2ca4cee" title="Compute the default values for the joint group." alt="" coords="5,54,256,95"/>
-<area shape="rect" href="classmoveit_1_1core_1_1JointModelGroup.html#a7dd1f78e9dfdbc0875d2f7edead6daca" title=" " alt="" coords="40,119,221,160"/>
+<area shape="rect" title="Get the name of the joint group." alt="" coords="856,287,1037,328"/>
+<area shape="rect" href="classmoveit_1_1core_1_1RobotModel.html#ad17bd8a8142ec84e4d8d3eb1fdfe162a" title="Given a SRDF model describing the groups, build up the groups in this kinematic model." alt="" coords="580,5,771,47"/>
+<area shape="rect" href="classmoveit_1_1core_1_1JointModelGroup.html#a0f60ea765fd917f911480a7615f8ff32" title="Get the unique set of end effector tips included in a particular joint model group as defined by the ..." alt="" coords="304,159,495,200"/>
+<area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#ab55ce7e184376b35659d0b5d6ac2fe81" title="Get vector of names of links available in move group." alt="" coords="543,123,808,164"/>
+<area shape="rect" href="classmoveit_1_1core_1_1RobotModel.html#ac09d17688cfe14b3b1b3dc8852b7642b" title="Get the index of a variable in the robot state." alt="" coords="580,188,771,229"/>
+<area shape="rect" href="classmoveit_1_1core_1_1JointModelGroup.html#a7af014f4116c40ea1884cd7ae82f8da6" title="Check if a joint is part of this group." alt="" coords="585,253,766,295"/>
+<area shape="rect" href="classmoveit_1_1core_1_1RobotModel.html#a46cf302435b26e632ec4c70e35048e4a" title=" " alt="" coords="580,319,771,360"/>
+<area shape="rect" href="classkinematics__plugin__loader_1_1KinematicsPluginLoader_1_1KinematicsLoaderImpl.html#a7b716b617a08f6f7b3cfc09274470fdc" title="Pimpl Implementation of KinematicsLoader." alt="" coords="547,384,804,455"/>
+<area shape="rect" href="classompl__interface_1_1ModelBasedStateSpace.html#ab8f006a82a6b722625b1f4f393f4a8bc" title=" " alt="" coords="547,479,803,520"/>
+<area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a34e857711a8dca3e98635f4925abaf46" title="Set the starting state for planning to be that reported by the robot&#39;s joint state publication." alt="" coords="547,545,803,601"/>
+<area shape="rect" href="test__constraint__samplers_8cpp.html#a85db5a190e27663a9bf3727c8f667013" title=" " alt="" coords="641,625,710,651"/>
+<area shape="rect" href="classmoveit_1_1core_1_1JointModelGroup.html#a06509f71422b63c90552127ce2ca4cee" title="Compute the default values for the joint group." alt="" coords="5,125,256,167"/>
+<area shape="rect" href="classmoveit_1_1core_1_1JointModelGroup.html#a7dd1f78e9dfdbc0875d2f7edead6daca" title=" " alt="" coords="40,191,221,232"/>
 </map>
 </div>
 
@@ -1891,7 +1896,7 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Get one end effector tip, throwing an error if there ends up being more in the joint model group This is a useful helper function because most planning groups (almost all) only have one tip. </p>
-<dl class="section return"><dt>Returns</dt><dd>pointer to <a class="el" href="classmoveit_1_1core_1_1LinkModel.html" title="A link from the robot. Contains the constant transform applied to the link and its geometry.">LinkModel</a>, or nullptr on failure </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>pointer to <a class="el" href="classmoveit_1_1core_1_1LinkModel.html" title="A link from the robot. Contains the constant transform applied to the link and its geometry.">LinkModel</a>, or NULL on failure </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="joint__model__group_8cpp_source.html#l00596">596</a> of file <a class="el" href="joint__model__group_8cpp_source.html">joint_model_group.cpp</a>.</p>
 <div class="dynheader">
@@ -2456,9 +2461,11 @@ Here is the call graph for this function:</div>
 <area shape="rect" title="Compute the default values for the joint group." alt="" coords="5,93,256,135"/>
 <area shape="rect" href="classmoveit_1_1core_1_1JointModelGroup.html#a0f60ea765fd917f911480a7615f8ff32" title="Get the unique set of end effector tips included in a particular joint model group as defined by the ..." alt="" coords="304,93,495,135"/>
 <area shape="rect" href="classmoveit_1_1core_1_1JointModelGroup.html#a71f71bbb186917dd5fcf41bf88b2e5fb" title="Get a joint by its name. Throw an exception if the joint is not part of this group." alt="" coords="543,5,724,47"/>
-<area shape="rect" href="classmoveit_1_1core_1_1JointModelGroup.html#a2f165c9374e28ac4052490819c790f45" title="Get the name of the joint group." alt="" coords="772,127,953,168"/>
-<area shape="rect" href="classmoveit_1_1core_1_1JointModel.html#a8e6b8bcc807187617b1b2e5242a4af69" title="Get the number of variables that describe this joint." alt="" coords="543,123,724,164"/>
-<area shape="rect" href="classmoveit_1_1core_1_1JointModelGroup.html#a7af014f4116c40ea1884cd7ae82f8da6" title="Check if a joint is part of this group." alt="" coords="543,188,724,229"/>
+<area shape="rect" href="classmoveit_1_1core_1_1JointModelGroup.html#a2f165c9374e28ac4052490819c790f45" title="Get the name of the joint group." alt="" coords="814,79,995,120"/>
+<area shape="rect" href="classmoveit_1_1core_1_1JointModel.html#a8e6b8bcc807187617b1b2e5242a4af69" title="Get the number of variables that describe this joint." alt="" coords="543,188,724,229"/>
+<area shape="rect" href="classmoveit_1_1core_1_1JointModelGroup.html#a7af014f4116c40ea1884cd7ae82f8da6" title="Check if a joint is part of this group." alt="" coords="543,123,724,164"/>
+<area shape="rect" href="classmoveit_1_1core_1_1JointModel.html#ab4ba9eac1f786fdeb152012f396daab8" title="Compute the distance between two joint states of the same model (represented by the variable values)" alt="" coords="814,173,995,215"/>
+<area shape="rect" href="classmoveit_1_1core_1_1JointModel.html#adaf152251e15131a66e48f5e1de98dbb" title="Provide random values for the joint variables (within default bounds). Enough memory is assumed to be..." alt="" coords="772,239,1037,280"/>
 </map>
 </div>
 
@@ -2587,30 +2594,27 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classmoveit_1_1core_1_1JointModelGroup_aaaeee5ac20a07f6d5c1fe43a892f005a_icgraph.png" border="0" usemap="#classmoveit_1_1core_1_1JointModelGroup_aaaeee5ac20a07f6d5c1fe43a892f005a_icgraph" alt=""/></div>
 <map name="classmoveit_1_1core_1_1JointModelGroup_aaaeee5ac20a07f6d5c1fe43a892f005a_icgraph" id="classmoveit_1_1core_1_1JointModelGroup_aaaeee5ac20a07f6d5c1fe43a892f005a_icgraph">
-<area shape="rect" title="Get the names of the variables that make up the joints included in this group. The number of returned..." alt="" coords="984,517,1173,559"/>
-<area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a0807e40ef8643d2d56b747d80883f7fd" title="Compute a Cartesian path that follows specified waypoints with a step size of at most eef_step meters..." alt="" coords="617,196,936,237"/>
-<area shape="rect" href="namespacekinematic__constraints.html#a449c87b5d209ba3b9a62d73b4278da77" title="Generates a constraint message intended to be used as a goal constraint for a joint group...." alt="" coords="679,452,874,493"/>
-<area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a59ec222a3d7610be7e5355f730160a09" title="Get vector of names of joints available in move group." alt="" coords="643,517,910,559"/>
-<area shape="rect" href="classsrv__kinematics__plugin_1_1SrvKinematicsPlugin.html#a89616843ed46d6ecc224e715ef6df401" title="Given a set of joint angles and a set of links, compute their pose." alt="" coords="693,583,861,639"/>
-<area shape="rect" href="test__kinematic__complex_8cpp.html#a21a56d609cf50d6d770a29e8edc10a43" title=" " alt="" coords="742,663,811,690"/>
-<area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a05cadb2504535bb77a7e124a2aaa3379" title="Given a plan, execute it without waiting for completion." alt="" coords="309,5,569,47"/>
-<area shape="rect" href="generate__state__database_8cpp.html#a82b7d814b7d1e65af86a269fc31283c3" title=" " alt="" coords="390,71,489,98"/>
-<area shape="rect" href="namespacekinematic__constraints.html#a14a9d99caa1840e95ccd1c01b08966e7" title="Generates a constraint message intended to be used as a goal constraint for a joint group...." alt="" coords="342,123,537,164"/>
-<area shape="rect" href="namespacetestutils.html#ae6f9c0bb1d0c74b4321a6a419f892a57" title=" " alt="" coords="339,189,540,215"/>
-<area shape="rect" href="pymoveit__core_8cpp.html#ada39b537dde95c26dc293c5bf705ff2e" title=" " alt="" coords="342,240,537,281"/>
-<area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl.html#ae26f3a6b60ca8da84829097eafba50d5" title=" " alt="" coords="316,306,563,362"/>
-<area shape="rect" href="classpick__place_1_1ReachableAndValidPoseFilter.html#a4ecb7c0e3270817ea4f5e4c3c0c40f7d" title=" " alt="" coords="343,387,535,428"/>
-<area shape="rect" href="namespacetestutils.html#a47e7d5ac95ce106e03eeca07873a8eef" title=" " alt="" coords="342,452,537,493"/>
-<area shape="rect" href="namespacetestutils.html#a4d7a40fa95d80d2748271e44a7b28588" title="generate two LIN trajectories from test data set" alt="" coords="341,517,538,559"/>
-<area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl.html#a43758a93035c24ec52ada30a73dea723" title=" " alt="" coords="310,583,569,639"/>
-<area shape="rect" href="classmoveit__cpp_1_1PlanningComponent.html#a1b48a15df3246b58b7ce1f58ecf501bd" title="Get the joint values for targets specified by name." alt="" coords="321,664,558,705"/>
-<area shape="rect" href="classPlanningContextTest.html#a007e70029a3f986a0596ff0a7feac14a" title="Generate a valid fully defined request." alt="" coords="362,729,517,771"/>
-<area shape="rect" href="classpilz__industrial__motion__planner__testutils_1_1CartesianConfiguration.html#a3867185866283c2b8afddd4dfdedba73" title=" " alt="" coords="335,795,543,851"/>
-<area shape="rect" href="classmoveit__cpp_1_1PlanningComponent.html#abd170717c8d7a0c91a1ee9fe1ffd2ad1" title="Specify the workspace bounding box. The box is specified in the planning frame (i...." alt="" coords="321,876,558,917"/>
-<area shape="rect" href="unittest__trajectory__generator__ptp_8cpp.html#afc270e6306260d6dfbe4f2eba872e929" title="test the ptp trajectory generator of Cartesian space goal" alt="" coords="405,942,474,969"/>
-<area shape="rect" href="pymoveit__core_8cpp.html#aae5c18014d007aef7676d42ced1ba2b0" title=" " alt="" coords="58,247,209,274"/>
-<area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a4530a0e30683a0d1ae47de1424a5a992" title="Specify that no path constraints are to be used. This removes any path constraints set in previous ca..." alt="" coords="18,306,249,362"/>
-<area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a71e3819bd31711dcb81c18305ca9a521" title="Set the JointValueTarget and use it for future planning requests." alt="" coords="5,583,261,639"/>
+<area shape="rect" title="Get the names of the variables that make up the joints included in this group. The number of returned..." alt="" coords="879,469,1068,511"/>
+<area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a0807e40ef8643d2d56b747d80883f7fd" title="Compute a Cartesian path that follows specified waypoints with a step size of at most eef_step meters..." alt="" coords="512,156,831,197"/>
+<area shape="rect" href="namespacekinematic__constraints.html#a449c87b5d209ba3b9a62d73b4278da77" title="Generates a constraint message intended to be used as a goal constraint for a joint group...." alt="" coords="574,404,769,445"/>
+<area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a59ec222a3d7610be7e5355f730160a09" title="Get vector of names of joints available in move group." alt="" coords="538,469,805,511"/>
+<area shape="rect" href="classsrv__kinematics__plugin_1_1SrvKinematicsPlugin.html#a89616843ed46d6ecc224e715ef6df401" title="Given a set of joint angles and a set of links, compute their pose." alt="" coords="587,535,755,591"/>
+<area shape="rect" href="test__kinematic__complex_8cpp.html#a21a56d609cf50d6d770a29e8edc10a43" title=" " alt="" coords="637,615,706,642"/>
+<area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a05cadb2504535bb77a7e124a2aaa3379" title="Given a plan, execute it without waiting for completion." alt="" coords="204,5,464,47"/>
+<area shape="rect" href="generate__state__database_8cpp.html#a82b7d814b7d1e65af86a269fc31283c3" title=" " alt="" coords="285,71,383,98"/>
+<area shape="rect" href="namespacekinematic__constraints.html#a14a9d99caa1840e95ccd1c01b08966e7" title="Generates a constraint message intended to be used as a goal constraint for a joint group...." alt="" coords="237,123,431,164"/>
+<area shape="rect" href="namespacetestutils.html#ae6f9c0bb1d0c74b4321a6a419f892a57" title=" " alt="" coords="233,189,435,215"/>
+<area shape="rect" href="pymoveit__core_8cpp.html#ada39b537dde95c26dc293c5bf705ff2e" title=" " alt="" coords="237,240,431,281"/>
+<area shape="rect" href="classpick__place_1_1ReachableAndValidPoseFilter.html#a4ecb7c0e3270817ea4f5e4c3c0c40f7d" title=" " alt="" coords="238,305,430,347"/>
+<area shape="rect" href="namespacetestutils.html#a47e7d5ac95ce106e03eeca07873a8eef" title=" " alt="" coords="237,371,431,412"/>
+<area shape="rect" href="namespacetestutils.html#a4d7a40fa95d80d2748271e44a7b28588" title="generate two LIN trajectories from test data set" alt="" coords="235,436,433,477"/>
+<area shape="rect" href="classmoveit__cpp_1_1PlanningComponent.html#a1b48a15df3246b58b7ce1f58ecf501bd" title="Get the joint values for targets specified by name." alt="" coords="215,501,453,543"/>
+<area shape="rect" href="classPlanningContextTest.html#a007e70029a3f986a0596ff0a7feac14a" title="Generate a valid fully defined request." alt="" coords="257,567,411,608"/>
+<area shape="rect" href="classpilz__industrial__motion__planner__testutils_1_1CartesianConfiguration.html#a3867185866283c2b8afddd4dfdedba73" title=" " alt="" coords="230,633,438,689"/>
+<area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl.html#ab8b8f9e55d80dcbd200d80f29050a750" title=" " alt="" coords="211,713,457,769"/>
+<area shape="rect" href="classmoveit__cpp_1_1PlanningComponent.html#abd170717c8d7a0c91a1ee9fe1ffd2ad1" title="Specify the workspace bounding box. The box is specified in the planning frame (i...." alt="" coords="215,793,453,835"/>
+<area shape="rect" href="unittest__trajectory__generator__ptp_8cpp.html#afc270e6306260d6dfbe4f2eba872e929" title="test the ptp trajectory generator of Cartesian space goal" alt="" coords="299,859,369,886"/>
+<area shape="rect" href="pymoveit__core_8cpp.html#aae5c18014d007aef7676d42ced1ba2b0" title=" " alt="" coords="5,247,156,274"/>
 </map>
 </div>
 
@@ -3323,9 +3327,11 @@ Here is the call graph for this function:</div>
 <area shape="rect" title=" " alt="" coords="5,93,187,135"/>
 <area shape="rect" href="classmoveit_1_1core_1_1JointModelGroup.html#a0f60ea765fd917f911480a7615f8ff32" title="Get the unique set of end effector tips included in a particular joint model group as defined by the ..." alt="" coords="235,93,425,135"/>
 <area shape="rect" href="classmoveit_1_1core_1_1JointModelGroup.html#a71f71bbb186917dd5fcf41bf88b2e5fb" title="Get a joint by its name. Throw an exception if the joint is not part of this group." alt="" coords="473,5,655,47"/>
-<area shape="rect" href="classmoveit_1_1core_1_1JointModelGroup.html#a2f165c9374e28ac4052490819c790f45" title="Get the name of the joint group." alt="" coords="703,127,884,168"/>
-<area shape="rect" href="classmoveit_1_1core_1_1JointModel.html#a8e6b8bcc807187617b1b2e5242a4af69" title="Get the number of variables that describe this joint." alt="" coords="473,123,655,164"/>
-<area shape="rect" href="classmoveit_1_1core_1_1JointModelGroup.html#a7af014f4116c40ea1884cd7ae82f8da6" title="Check if a joint is part of this group." alt="" coords="473,188,655,229"/>
+<area shape="rect" href="classmoveit_1_1core_1_1JointModelGroup.html#a2f165c9374e28ac4052490819c790f45" title="Get the name of the joint group." alt="" coords="745,79,926,120"/>
+<area shape="rect" href="classmoveit_1_1core_1_1JointModel.html#a8e6b8bcc807187617b1b2e5242a4af69" title="Get the number of variables that describe this joint." alt="" coords="473,188,655,229"/>
+<area shape="rect" href="classmoveit_1_1core_1_1JointModelGroup.html#a7af014f4116c40ea1884cd7ae82f8da6" title="Check if a joint is part of this group." alt="" coords="473,123,655,164"/>
+<area shape="rect" href="classmoveit_1_1core_1_1JointModel.html#ab4ba9eac1f786fdeb152012f396daab8" title="Compute the distance between two joint states of the same model (represented by the variable values)" alt="" coords="745,173,926,215"/>
+<area shape="rect" href="classmoveit_1_1core_1_1JointModel.html#adaf152251e15131a66e48f5e1de98dbb" title="Provide random values for the joint variables (within default bounds). Enough memory is assumed to be..." alt="" coords="703,239,968,280"/>
 </map>
 </div>
 
@@ -3873,8 +3879,9 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classmoveit_1_1core_1_1JointModelGroup_a4957d709813c2e4044fbfb28daf9d3a4_icgraph.png" border="0" usemap="#classmoveit_1_1core_1_1JointModelGroup_a4957d709813c2e4044fbfb28daf9d3a4_icgraph" alt=""/></div>
 <map name="classmoveit_1_1core_1_1JointModelGroup_a4957d709813c2e4044fbfb28daf9d3a4_icgraph" id="classmoveit_1_1core_1_1JointModelGroup_a4957d709813c2e4044fbfb28daf9d3a4_icgraph">
-<area shape="rect" title=" " alt="" coords="256,5,451,47"/>
+<area shape="rect" title=" " alt="" coords="256,39,451,80"/>
 <area shape="rect" href="classmoveit_1_1core_1_1JointModelGroup.html#a1bb12ff95e25c195b4780afd7eec11d1" title="Return the name of the end effector, if this group is an end&#45;effector." alt="" coords="5,5,208,47"/>
+<area shape="rect" href="classmoveit_1_1core_1_1RobotModel.html#ac09d17688cfe14b3b1b3dc8852b7642b" title="Get the index of a variable in the robot state." alt="" coords="11,71,202,112"/>
 </map>
 </div>
 
@@ -3919,15 +3926,6 @@ Here is the caller graph for this function:</div>
 <p>Set the names of the subgroups for this group. </p>
 
 <p class="definition">Definition at line <a class="el" href="joint__model__group_8cpp_source.html#l00335">335</a> of file <a class="el" href="joint__model__group_8cpp_source.html">joint_model_group.cpp</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classmoveit_1_1core_1_1JointModelGroup_ae4fe1ec476ac40a3d5c0c08482d71678_icgraph.png" border="0" usemap="#classmoveit_1_1core_1_1JointModelGroup_ae4fe1ec476ac40a3d5c0c08482d71678_icgraph" alt=""/></div>
-<map name="classmoveit_1_1core_1_1JointModelGroup_ae4fe1ec476ac40a3d5c0c08482d71678_icgraph" id="classmoveit_1_1core_1_1JointModelGroup_ae4fe1ec476ac40a3d5c0c08482d71678_icgraph">
-<area shape="rect" title="Set the names of the subgroups for this group." alt="" coords="244,5,440,47"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotModel.html#aa3b68bf0980355638f923091988992f5" title="Get a joint group from this model (by name)" alt="" coords="5,5,196,47"/>
-</map>
-</div>
 
 </div>
 </div>
@@ -4580,7 +4578,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespacemoveit_1_1core.html#a4bc26a7f9b3ac37afb7022d766fb307a">VariableIndexMap</a> moveit::core::JointModelGroup::joint_variables_index_map_</td>
+          <td class="memname"><a class="el" href="namespacemoveit_1_1core.html#ae101bd641ed50af6f5936c5a337ad3fd">VariableIndexMap</a> moveit::core::JointModelGroup::joint_variables_index_map_</td>
         </tr>
       </table>
   </td>

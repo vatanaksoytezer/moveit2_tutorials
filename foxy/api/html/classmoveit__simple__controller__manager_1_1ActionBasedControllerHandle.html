@@ -76,16 +76,13 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Base class for controller handles that interact with a controller through a ROS action server.  
- <a href="classmoveit__simple__controller__manager_1_1ActionBasedControllerHandle.html#details">More...</a></p>
-
 <p><code>#include &lt;<a class="el" href="action__based__controller__handle_8h_source.html">action_based_controller_handle.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for moveit_simple_controller_manager::ActionBasedControllerHandle&lt; T &gt;:</div>
 <div class="dyncontent">
 <div class="center"><img src="classmoveit__simple__controller__manager_1_1ActionBasedControllerHandle__inherit__graph.png" border="0" usemap="#moveit__simple__controller__manager_1_1ActionBasedControllerHandle_3_01T_01_4_inherit__map" alt="Inheritance graph"/></div>
 <map name="moveit__simple__controller__manager_1_1ActionBasedControllerHandle_3_01T_01_4_inherit__map" id="moveit__simple__controller__manager_1_1ActionBasedControllerHandle_3_01T_01_4_inherit__map">
-<area shape="rect" title="Base class for controller handles that interact with a controller through a ROS action server." alt="" coords="5,199,245,255"/>
+<area shape="rect" title=" " alt="" coords="5,199,245,255"/>
 <area shape="rect" href="classmoveit__simple__controller__manager_1_1ActionBasedControllerHandleBase.html" title=" " alt="" coords="5,95,245,151"/>
 <area shape="rect" href="classmoveit__controller__manager_1_1MoveItControllerHandle.html" title="MoveIt sends commands to a controller via a handle that satisfies this interface." alt="" coords="24,5,227,47"/>
 </map>
@@ -95,7 +92,7 @@ Collaboration diagram for moveit_simple_controller_manager::ActionBasedControlle
 <div class="dyncontent">
 <div class="center"><img src="classmoveit__simple__controller__manager_1_1ActionBasedControllerHandle__coll__graph.png" border="0" usemap="#moveit__simple__controller__manager_1_1ActionBasedControllerHandle_3_01T_01_4_coll__map" alt="Collaboration graph"/></div>
 <map name="moveit__simple__controller__manager_1_1ActionBasedControllerHandle_3_01T_01_4_coll__map" id="moveit__simple__controller__manager_1_1ActionBasedControllerHandle_3_01T_01_4_coll__map">
-<area shape="rect" title="Base class for controller handles that interact with a controller through a ROS action server." alt="" coords="619,61,859,117"/>
+<area shape="rect" title=" " alt="" coords="619,61,859,117"/>
 <area shape="rect" href="classmoveit__simple__controller__manager_1_1ActionBasedControllerHandleBase.html" title=" " alt="" coords="257,5,497,61"/>
 <area shape="rect" href="classmoveit__controller__manager_1_1MoveItControllerHandle.html" title="MoveIt sends commands to a controller via a handle that satisfies this interface." alt="" coords="5,13,208,54"/>
 <area shape="rect" href="structmoveit__controller__manager_1_1ExecutionStatus.html" title="The reported execution status." alt="" coords="276,86,479,127"/>
@@ -106,15 +103,16 @@ Collaboration diagram for moveit_simple_controller_manager::ActionBasedControlle
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa31e60f70f6d29daa0f66e69ac5e80d1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit__simple__controller__manager_1_1ActionBasedControllerHandle.html#aa31e60f70f6d29daa0f66e69ac5e80d1">ActionBasedControllerHandle</a> (const rclcpp::Node::SharedPtr &amp;node, const std::string &amp;name, const std::string &amp;ns, const std::string &amp;logger_name)</td></tr>
 <tr class="separator:aa31e60f70f6d29daa0f66e69ac5e80d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95e7132bcd0f2ad448cd3efaa7b8d68f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit__simple__controller__manager_1_1ActionBasedControllerHandle.html#a95e7132bcd0f2ad448cd3efaa7b8d68f">isConnected</a> () const</td></tr>
+<tr class="separator:a95e7132bcd0f2ad448cd3efaa7b8d68f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3680db7d456d98985f5dc779d52c769b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit__simple__controller__manager_1_1ActionBasedControllerHandle.html#a3680db7d456d98985f5dc779d52c769b">cancelExecution</a> () override</td></tr>
-<tr class="memdesc:a3680db7d456d98985f5dc779d52c769b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cancels trajectory execution by triggering the controller action server's cancellation callback.  <a href="classmoveit__simple__controller__manager_1_1ActionBasedControllerHandle.html#a3680db7d456d98985f5dc779d52c769b">More...</a><br /></td></tr>
+<tr class="memdesc:a3680db7d456d98985f5dc779d52c769b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cancel the execution of any motion using this controller.  <a href="classmoveit__simple__controller__manager_1_1ActionBasedControllerHandle.html#a3680db7d456d98985f5dc779d52c769b">More...</a><br /></td></tr>
 <tr class="separator:a3680db7d456d98985f5dc779d52c769b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a428084058d244f87dcbde662848c088f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit__simple__controller__manager_1_1ActionBasedControllerHandle.html#a428084058d244f87dcbde662848c088f">controllerDoneCallback</a> (const typename rclcpp_action::ClientGoalHandle&lt; T &gt;::WrappedResult &amp;wrapped_result)=0</td></tr>
-<tr class="memdesc:a428084058d244f87dcbde662848c088f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback function to call when the result is received from the controller action server.  <a href="classmoveit__simple__controller__manager_1_1ActionBasedControllerHandle.html#a428084058d244f87dcbde662848c088f">More...</a><br /></td></tr>
 <tr class="separator:a428084058d244f87dcbde662848c088f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a059ad990c4cf805204f07d5cdd5cb3f0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit__simple__controller__manager_1_1ActionBasedControllerHandle.html#a059ad990c4cf805204f07d5cdd5cb3f0">waitForExecution</a> (const rclcpp::Duration &amp;timeout=rclcpp::Duration::from_seconds(-1.0)) override</td></tr>
-<tr class="memdesc:a059ad990c4cf805204f07d5cdd5cb3f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blocks waiting for the action result to be received.  <a href="classmoveit__simple__controller__manager_1_1ActionBasedControllerHandle.html#a059ad990c4cf805204f07d5cdd5cb3f0">More...</a><br /></td></tr>
-<tr class="separator:a059ad990c4cf805204f07d5cdd5cb3f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9563dceb6992d945bff6d146d157a17e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit__simple__controller__manager_1_1ActionBasedControllerHandle.html#a9563dceb6992d945bff6d146d157a17e">waitForExecution</a> (const rclcpp::Duration &amp;timeout=rclcpp::Duration(-1)) override</td></tr>
+<tr class="memdesc:a9563dceb6992d945bff6d146d157a17e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait for the current execution to complete, or until the timeout is reached.  <a href="classmoveit__simple__controller__manager_1_1ActionBasedControllerHandle.html#a9563dceb6992d945bff6d146d157a17e">More...</a><br /></td></tr>
+<tr class="separator:a9563dceb6992d945bff6d146d157a17e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a80ea0bd1de4b19959d7a247a38a57f33"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmoveit__controller__manager_1_1ExecutionStatus.html">moveit_controller_manager::ExecutionStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit__simple__controller__manager_1_1ActionBasedControllerHandle.html#a80ea0bd1de4b19959d7a247a38a57f33">getLastExecutionStatus</a> () override</td></tr>
 <tr class="memdesc:a80ea0bd1de4b19959d7a247a38a57f33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the execution status of the last trajectory sent to the controller.  <a href="classmoveit__simple__controller__manager_1_1ActionBasedControllerHandle.html#a80ea0bd1de4b19959d7a247a38a57f33">More...</a><br /></td></tr>
 <tr class="separator:a80ea0bd1de4b19959d7a247a38a57f33"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -140,35 +138,26 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a95e7132bcd0f2ad448cd3efaa7b8d68f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit__simple__controller__manager_1_1ActionBasedControllerHandle.html#a95e7132bcd0f2ad448cd3efaa7b8d68f">isConnected</a> () const</td></tr>
-<tr class="memdesc:a95e7132bcd0f2ad448cd3efaa7b8d68f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the controller's action server is ready to receive action goals.  <a href="classmoveit__simple__controller__manager_1_1ActionBasedControllerHandle.html#a95e7132bcd0f2ad448cd3efaa7b8d68f">More...</a><br /></td></tr>
-<tr class="separator:a95e7132bcd0f2ad448cd3efaa7b8d68f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40be1bef8852e58d5e54c6d2caed1dc7"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit__simple__controller__manager_1_1ActionBasedControllerHandle.html#a40be1bef8852e58d5e54c6d2caed1dc7">getActionName</a> () const</td></tr>
-<tr class="memdesc:a40be1bef8852e58d5e54c6d2caed1dc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the full name of the action using the action namespace and base name.  <a href="classmoveit__simple__controller__manager_1_1ActionBasedControllerHandle.html#a40be1bef8852e58d5e54c6d2caed1dc7">More...</a><br /></td></tr>
 <tr class="separator:a40be1bef8852e58d5e54c6d2caed1dc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c3023be5bca46c2f45753a080a9c85d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit__simple__controller__manager_1_1ActionBasedControllerHandle.html#a4c3023be5bca46c2f45753a080a9c85d">finishControllerExecution</a> (const rclcpp_action::ResultCode &amp;state)</td></tr>
-<tr class="memdesc:a4c3023be5bca46c2f45753a080a9c85d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicate that the controller handle is done executing the trajectory and set the controller manager handle's ExecutionStatus based on the received action ResultCode.  <a href="classmoveit__simple__controller__manager_1_1ActionBasedControllerHandle.html#a4c3023be5bca46c2f45753a080a9c85d">More...</a><br /></td></tr>
 <tr class="separator:a4c3023be5bca46c2f45753a080a9c85d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
+<tr class="memitem:a90ee24a1f6225bb3da87cb62fbaf5d8f"><td class="memItemLeft" align="right" valign="top">const rclcpp::Node::SharedPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit__simple__controller__manager_1_1ActionBasedControllerHandle.html#a90ee24a1f6225bb3da87cb62fbaf5d8f">node_</a></td></tr>
+<tr class="separator:a90ee24a1f6225bb3da87cb62fbaf5d8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a042f1baa39541caa683259f8ad85fa9e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmoveit__controller__manager_1_1ExecutionStatus.html">moveit_controller_manager::ExecutionStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit__simple__controller__manager_1_1ActionBasedControllerHandle.html#a042f1baa39541caa683259f8ad85fa9e">last_exec_</a></td></tr>
-<tr class="memdesc:a042f1baa39541caa683259f8ad85fa9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Status after last trajectory execution.  <a href="classmoveit__simple__controller__manager_1_1ActionBasedControllerHandle.html#a042f1baa39541caa683259f8ad85fa9e">More...</a><br /></td></tr>
 <tr class="separator:a042f1baa39541caa683259f8ad85fa9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab15f0832d6ed1c8739d2336f123db771"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit__simple__controller__manager_1_1ActionBasedControllerHandle.html#ab15f0832d6ed1c8739d2336f123db771">done_</a></td></tr>
-<tr class="memdesc:ab15f0832d6ed1c8739d2336f123db771"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the controller handle is done executing its current trajectory.  <a href="classmoveit__simple__controller__manager_1_1ActionBasedControllerHandle.html#ab15f0832d6ed1c8739d2336f123db771">More...</a><br /></td></tr>
 <tr class="separator:ab15f0832d6ed1c8739d2336f123db771"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07df18472db0df009a2e25514582b815"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit__simple__controller__manager_1_1ActionBasedControllerHandle.html#a07df18472db0df009a2e25514582b815">namespace_</a></td></tr>
-<tr class="memdesc:a07df18472db0df009a2e25514582b815"><td class="mdescLeft">&#160;</td><td class="mdescRight">The controller namespace. The controller action server's topics will map to name/ns/goal, name/ns/result, etc.  <a href="classmoveit__simple__controller__manager_1_1ActionBasedControllerHandle.html#a07df18472db0df009a2e25514582b815">More...</a><br /></td></tr>
 <tr class="separator:a07df18472db0df009a2e25514582b815"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01c1a36b411567748ce4cfb92df27d83"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit__simple__controller__manager_1_1ActionBasedControllerHandle.html#a01c1a36b411567748ce4cfb92df27d83">joints_</a></td></tr>
-<tr class="memdesc:a01c1a36b411567748ce4cfb92df27d83"><td class="mdescLeft">&#160;</td><td class="mdescRight">The joints controlled by this controller.  <a href="classmoveit__simple__controller__manager_1_1ActionBasedControllerHandle.html#a01c1a36b411567748ce4cfb92df27d83">More...</a><br /></td></tr>
 <tr class="separator:a01c1a36b411567748ce4cfb92df27d83"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abdc910d3bb6a1076f2b81adfe2554558"><td class="memItemLeft" align="right" valign="top">rclcpp_action::Client&lt; T &gt;::SharedPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit__simple__controller__manager_1_1ActionBasedControllerHandle.html#abdc910d3bb6a1076f2b81adfe2554558">controller_action_client_</a></td></tr>
-<tr class="memdesc:abdc910d3bb6a1076f2b81adfe2554558"><td class="mdescLeft">&#160;</td><td class="mdescRight">Action client to send trajectories to the controller's action server.  <a href="classmoveit__simple__controller__manager_1_1ActionBasedControllerHandle.html#abdc910d3bb6a1076f2b81adfe2554558">More...</a><br /></td></tr>
 <tr class="separator:abdc910d3bb6a1076f2b81adfe2554558"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70e95f666a3a90f1e46aa14da6c51477"><td class="memItemLeft" align="right" valign="top">rclcpp_action::ClientGoalHandle&lt; T &gt;::SharedPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit__simple__controller__manager_1_1ActionBasedControllerHandle.html#a70e95f666a3a90f1e46aa14da6c51477">current_goal_</a></td></tr>
-<tr class="memdesc:a70e95f666a3a90f1e46aa14da6c51477"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current goal that has been sent to the action server.  <a href="classmoveit__simple__controller__manager_1_1ActionBasedControllerHandle.html#a70e95f666a3a90f1e46aa14da6c51477">More...</a><br /></td></tr>
 <tr class="separator:a70e95f666a3a90f1e46aa14da6c51477"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classmoveit__simple__controller__manager_1_1ActionBasedControllerHandleBase"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classmoveit__simple__controller__manager_1_1ActionBasedControllerHandleBase')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classmoveit__simple__controller__manager_1_1ActionBasedControllerHandleBase.html">moveit_simple_controller_manager::ActionBasedControllerHandleBase</a></td></tr>
 <tr class="memitem:ab86c6e76409047ff20533e79cfc6e190 inherit pro_attribs_classmoveit__simple__controller__manager_1_1ActionBasedControllerHandleBase"><td class="memItemLeft" align="right" valign="top">const rclcpp::Logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit__simple__controller__manager_1_1ActionBasedControllerHandleBase.html#ab86c6e76409047ff20533e79cfc6e190">LOGGER</a></td></tr>
@@ -181,7 +170,6 @@ Protected Attributes</h2></td></tr>
 <div class="textblock"><h3>template&lt;typename T&gt;<br />
 class moveit_simple_controller_manager::ActionBasedControllerHandle&lt; T &gt;</h3>
 
-<p>Base class for controller handles that interact with a controller through a ROS action server. </p>
 
 <p class="definition">Definition at line <a class="el" href="action__based__controller__handle_8h_source.html#l00110">110</a> of file <a class="el" href="action__based__controller__handle_8h_source.html">action_based_controller_handle.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -266,7 +254,7 @@ template&lt;typename T &gt; </div>
 
 <p>Implements <a class="el" href="classmoveit__simple__controller__manager_1_1ActionBasedControllerHandleBase.html#ac3564d45afaa499872345c3b1d244e2a">moveit_simple_controller_manager::ActionBasedControllerHandleBase</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="action__based__controller__handle_8h_source.html#l00189">189</a> of file <a class="el" href="action__based__controller__handle_8h_source.html">action_based_controller_handle.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="action__based__controller__handle_8h_source.html#l00206">206</a> of file <a class="el" href="action__based__controller__handle_8h_source.html">action_based_controller_handle.h</a>.</p>
 
 </div>
 </div>
@@ -295,12 +283,12 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Cancels trajectory execution by triggering the controller action server's cancellation callback. </p>
-<dl class="section return"><dt>Returns</dt><dd>True if cancellation was accepted, false if cancellation failed. </dd></dl>
+<p>Cancel the execution of any motion using this controller. </p>
+<p>Report false if canceling is not possible. If there is no execution in progress, this function is a no-op and returns true. </p>
 
 <p>Implements <a class="el" href="classmoveit__controller__manager_1_1MoveItControllerHandle.html#a9dc84b79d79cb87a155e694e1d391bcf">moveit_controller_manager::MoveItControllerHandle</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="action__based__controller__handle_8h_source.html#l00127">127</a> of file <a class="el" href="action__based__controller__handle_8h_source.html">action_based_controller_handle.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="action__based__controller__handle_8h_source.html#l00153">153</a> of file <a class="el" href="action__based__controller__handle_8h_source.html">action_based_controller_handle.h</a>.</p>
 
 </div>
 </div>
@@ -330,23 +318,6 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Callback function to call when the result is received from the controller action server. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">wrapped_result</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classmoveit__simple__controller__manager_1_1ActionBasedControllerHandle_a428084058d244f87dcbde662848c088f_icgraph.png" border="0" usemap="#classmoveit__simple__controller__manager_1_1ActionBasedControllerHandle_a428084058d244f87dcbde662848c088f_icgraph" alt=""/></div>
-<map name="classmoveit__simple__controller__manager_1_1ActionBasedControllerHandle_a428084058d244f87dcbde662848c088f_icgraph" id="classmoveit__simple__controller__manager_1_1ActionBasedControllerHandle_a428084058d244f87dcbde662848c088f_icgraph">
-<area shape="rect" title="Callback function to call when the result is received from the controller action server." alt="" coords="327,13,567,69"/>
-<area shape="rect" href="classmoveit__simple__controller__manager_1_1ActionBasedControllerHandle.html#a3680db7d456d98985f5dc779d52c769b" title="Cancels trajectory execution by triggering the controller action server&#39;s cancellation callback." alt="" coords="5,5,279,76"/>
-</map>
-</div>
-
 </div>
 </div>
 <a id="a4c3023be5bca46c2f45753a080a9c85d"></a>
@@ -374,14 +345,6 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Indicate that the controller handle is done executing the trajectory and set the controller manager handle's ExecutionStatus based on the received action ResultCode. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">rclcpp_action::ResultCode</td><td>to convert to <a class="el" href="structmoveit__controller__manager_1_1ExecutionStatus.html" title="The reported execution status.">moveit_controller_manager::ExecutionStatus</a>. </td></tr>
-  </table>
-  </dd>
-</dl>
 
 <p class="definition">Definition at line <a class="el" href="action__based__controller__handle_8h_source.html#l00226">226</a> of file <a class="el" href="action__based__controller__handle_8h_source.html">action_based_controller_handle.h</a>.</p>
 
@@ -412,10 +375,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Get the full name of the action using the action namespace and base name. </p>
-<dl class="section return"><dt>Returns</dt><dd>The action name. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="action__based__controller__handle_8h_source.html#l00213">213</a> of file <a class="el" href="action__based__controller__handle_8h_source.html">action_based_controller_handle.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="action__based__controller__handle_8h_source.html#l00218">218</a> of file <a class="el" href="action__based__controller__handle_8h_source.html">action_based_controller_handle.h</a>.</p>
 
 </div>
 </div>
@@ -447,7 +407,7 @@ template&lt;typename T &gt; </div>
 
 <p>Implements <a class="el" href="classmoveit__simple__controller__manager_1_1ActionBasedControllerHandleBase.html#adec17a9e3b8944b6cebd394f8921ee08">moveit_simple_controller_manager::ActionBasedControllerHandleBase</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="action__based__controller__handle_8h_source.html#l00194">194</a> of file <a class="el" href="action__based__controller__handle_8h_source.html">action_based_controller_handle.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="action__based__controller__handle_8h_source.html#l00211">211</a> of file <a class="el" href="action__based__controller__handle_8h_source.html">action_based_controller_handle.h</a>.</p>
 
 </div>
 </div>
@@ -480,7 +440,7 @@ template&lt;typename T &gt; </div>
 
 <p>Implements <a class="el" href="classmoveit__controller__manager_1_1MoveItControllerHandle.html#a026cb044e58469556dc815fcd3fc7ce8">moveit_controller_manager::MoveItControllerHandle</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="action__based__controller__handle_8h_source.html#l00184">184</a> of file <a class="el" href="action__based__controller__handle_8h_source.html">action_based_controller_handle.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="action__based__controller__handle_8h_source.html#l00201">201</a> of file <a class="el" href="action__based__controller__handle_8h_source.html">action_based_controller_handle.h</a>.</p>
 
 </div>
 </div>
@@ -504,20 +464,17 @@ template&lt;typename T &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Check if the controller's action server is ready to receive action goals. </p>
-<dl class="section return"><dt>Returns</dt><dd>True if the action server is ready, false if it is not ready or does not exist. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="action__based__controller__handle_8h_source.html#l00204">204</a> of file <a class="el" href="action__based__controller__handle_8h_source.html">action_based_controller_handle.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="action__based__controller__handle_8h_source.html#l00148">148</a> of file <a class="el" href="action__based__controller__handle_8h_source.html">action_based_controller_handle.h</a>.</p>
 
 </div>
 </div>
-<a id="a059ad990c4cf805204f07d5cdd5cb3f0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a059ad990c4cf805204f07d5cdd5cb3f0">&#9670;&nbsp;</a></span>waitForExecution()</h2>
+<a id="a9563dceb6992d945bff6d146d157a17e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9563dceb6992d945bff6d146d157a17e">&#9670;&nbsp;</a></span>waitForExecution()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -531,7 +488,7 @@ template&lt;typename T &gt; </div>
           <td class="memname">bool <a class="el" href="classmoveit__simple__controller__manager_1_1ActionBasedControllerHandle.html">moveit_simple_controller_manager::ActionBasedControllerHandle</a>&lt; T &gt;::waitForExecution </td>
           <td>(</td>
           <td class="paramtype">const rclcpp::Duration &amp;&#160;</td>
-          <td class="paramname"><em>timeout</em> = <code>rclcpp::Duration::from_seconds(-1.0)</code></td><td>)</td>
+          <td class="paramname"><em>timeout</em> = <code>rclcpp::Duration(-1)</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -542,18 +499,12 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Blocks waiting for the action result to be received. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">timeout</td><td>Duration to wait for a result before failing. Default value indicates no timeout. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>True if a result was received, false on timeout. </dd></dl>
+<p>Wait for the current execution to complete, or until the timeout is reached. </p>
+<p>Return true if the execution is complete (whether successful or not). Return false if timeout was reached. If timeout is -1 (default argument), wait until the execution is complete (no timeout). </p>
 
 <p>Implements <a class="el" href="classmoveit__controller__manager_1_1MoveItControllerHandle.html#a82a3c5d5146c8152255c8be68bd37d16">moveit_controller_manager::MoveItControllerHandle</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="action__based__controller__handle_8h_source.html#l00158">158</a> of file <a class="el" href="action__based__controller__handle_8h_source.html">action_based_controller_handle.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="action__based__controller__handle_8h_source.html#l00175">175</a> of file <a class="el" href="action__based__controller__handle_8h_source.html">action_based_controller_handle.h</a>.</p>
 
 </div>
 </div>
@@ -580,9 +531,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Action client to send trajectories to the controller's action server. </p>
-
-<p class="definition">Definition at line <a class="el" href="action__based__controller__handle_8h_source.html#l00265">265</a> of file <a class="el" href="action__based__controller__handle_8h_source.html">action_based_controller_handle.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="action__based__controller__handle_8h_source.html#l00254">254</a> of file <a class="el" href="action__based__controller__handle_8h_source.html">action_based_controller_handle.h</a>.</p>
 
 </div>
 </div>
@@ -608,9 +557,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Current goal that has been sent to the action server. </p>
-
-<p class="definition">Definition at line <a class="el" href="action__based__controller__handle_8h_source.html#l00270">270</a> of file <a class="el" href="action__based__controller__handle_8h_source.html">action_based_controller_handle.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="action__based__controller__handle_8h_source.html#l00256">256</a> of file <a class="el" href="action__based__controller__handle_8h_source.html">action_based_controller_handle.h</a>.</p>
 
 </div>
 </div>
@@ -636,9 +583,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Indicates whether the controller handle is done executing its current trajectory. </p>
-
-<p class="definition">Definition at line <a class="el" href="action__based__controller__handle_8h_source.html#l00250">250</a> of file <a class="el" href="action__based__controller__handle_8h_source.html">action_based_controller_handle.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="action__based__controller__handle_8h_source.html#l00244">244</a> of file <a class="el" href="action__based__controller__handle_8h_source.html">action_based_controller_handle.h</a>.</p>
 
 </div>
 </div>
@@ -664,9 +609,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>The joints controlled by this controller. </p>
-
-<p class="definition">Definition at line <a class="el" href="action__based__controller__handle_8h_source.html#l00260">260</a> of file <a class="el" href="action__based__controller__handle_8h_source.html">action_based_controller_handle.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="action__based__controller__handle_8h_source.html#l00251">251</a> of file <a class="el" href="action__based__controller__handle_8h_source.html">action_based_controller_handle.h</a>.</p>
 
 </div>
 </div>
@@ -692,9 +635,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Status after last trajectory execution. </p>
-
-<p class="definition">Definition at line <a class="el" href="action__based__controller__handle_8h_source.html#l00245">245</a> of file <a class="el" href="action__based__controller__handle_8h_source.html">action_based_controller_handle.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="action__based__controller__handle_8h_source.html#l00243">243</a> of file <a class="el" href="action__based__controller__handle_8h_source.html">action_based_controller_handle.h</a>.</p>
 
 </div>
 </div>
@@ -720,9 +661,33 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>The controller namespace. The controller action server's topics will map to name/ns/goal, name/ns/result, etc. </p>
+<p class="definition">Definition at line <a class="el" href="action__based__controller__handle_8h_source.html#l00248">248</a> of file <a class="el" href="action__based__controller__handle_8h_source.html">action_based_controller_handle.h</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="action__based__controller__handle_8h_source.html#l00255">255</a> of file <a class="el" href="action__based__controller__handle_8h_source.html">action_based_controller_handle.h</a>.</p>
+</div>
+</div>
+<a id="a90ee24a1f6225bb3da87cb62fbaf5d8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90ee24a1f6225bb3da87cb62fbaf5d8f">&#9670;&nbsp;</a></span>node_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const rclcpp::Node::SharedPtr <a class="el" href="classmoveit__simple__controller__manager_1_1ActionBasedControllerHandle.html">moveit_simple_controller_manager::ActionBasedControllerHandle</a>&lt; T &gt;::node_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="action__based__controller__handle_8h_source.html#l00217">217</a> of file <a class="el" href="action__based__controller__handle_8h_source.html">action_based_controller_handle.h</a>.</p>
 
 </div>
 </div>

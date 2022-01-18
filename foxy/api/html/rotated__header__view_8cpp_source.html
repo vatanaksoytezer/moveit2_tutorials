@@ -123,7 +123,7 @@ $(function() {
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  setDefaultSectionSize(27);</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmoveit__setup__assistant_1_1RotatedHeaderView.html#a5c5dd1a1618cd162fb16fd09a1e489c9">RotatedHeaderView::paintSection</a>(QPainter* painter, <span class="keyword">const</span> QRect&amp; rect, <span class="keywordtype">int</span> logicalIndex)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keywordtype">void</span> RotatedHeaderView::paintSection(QPainter* painter, <span class="keyword">const</span> QRect&amp; rect, <span class="keywordtype">int</span> logicalIndex)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordflow">if</span> (orientation() == Qt::Vertical)</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  {</div>
@@ -140,7 +140,7 @@ $(function() {
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  painter-&gt;restore();</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;QSize <a class="code" href="classmoveit__setup__assistant_1_1RotatedHeaderView.html#aa0088db785d1db096261aa0ae04229a9">RotatedHeaderView::sectionSizeFromContents</a>(<span class="keywordtype">int</span> logicalIndex)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;QSize RotatedHeaderView::sectionSizeFromContents(<span class="keywordtype">int</span> logicalIndex)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordflow">if</span> (orientation() == Qt::Vertical)</div>
 <div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="classmoveit__setup__assistant_1_1RotatedHeaderView.html#af5dbffb3c625ef50cb739a2de4989716">   74</a></span>&#160;    <span class="keywordflow">return</span> QHeaderView::sectionSizeFromContents(logicalIndex);</div>
@@ -183,7 +183,7 @@ $(function() {
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <span class="keywordflow">return</span> QSize(size.height(), size.width());</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="keywordtype">int</span> <a class="code" href="classmoveit__setup__assistant_1_1RotatedHeaderView.html#ac7e03f84b269ac66e95f16037872df76">RotatedHeaderView::sectionSizeHint</a>(<span class="keywordtype">int</span> logicalIndex)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="keywordtype">int</span> RotatedHeaderView::sectionSizeHint(<span class="keywordtype">int</span> logicalIndex)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <span class="keywordflow">if</span> (isSectionHidden(logicalIndex))</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">return</span> 0;</div>
@@ -194,17 +194,14 @@ $(function() {
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <span class="keywordflow">if</span> (value.isValid())</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    size = qvariant_cast&lt;QSize&gt;(value);</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    size = <a class="code" href="classmoveit__setup__assistant_1_1RotatedHeaderView.html#aa0088db785d1db096261aa0ae04229a9">sectionSizeFromContents</a>(logicalIndex);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    size = sectionSizeFromContents(logicalIndex);</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <span class="keywordtype">int</span> hint = size.height();</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  <span class="keywordflow">return</span> qMax(minimumSectionSize(), hint);</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;}</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;}  <span class="comment">// namespace moveit_setup_assistant</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassmoveit__setup__assistant_1_1RotatedHeaderView_html_ac7e03f84b269ac66e95f16037872df76"><div class="ttname"><a href="classmoveit__setup__assistant_1_1RotatedHeaderView.html#ac7e03f84b269ac66e95f16037872df76">moveit_setup_assistant::RotatedHeaderView::sectionSizeHint</a></div><div class="ttdeci">int sectionSizeHint(int logicalIndex) const</div><div class="ttdef"><b>Definition:</b> <a href="rotated__header__view_8cpp_source.html#l00146">rotated_header_view.cpp:146</a></div></div>
 <div class="ttc" id="anamespacemoveit__commander__cmdline_html_a76b84183c3f688c8a62245eac9b3d26c"><div class="ttname"><a href="namespacemoveit__commander__cmdline.html#a76b84183c3f688c8a62245eac9b3d26c">moveit_commander_cmdline.opt</a></div><div class="ttdeci">opt</div><div class="ttdef"><b>Definition:</b> <a href="moveit__commander__cmdline_8py_source.html#l00208">moveit_commander_cmdline.py:208</a></div></div>
-<div class="ttc" id="aclassmoveit__setup__assistant_1_1RotatedHeaderView_html_a5c5dd1a1618cd162fb16fd09a1e489c9"><div class="ttname"><a href="classmoveit__setup__assistant_1_1RotatedHeaderView.html#a5c5dd1a1618cd162fb16fd09a1e489c9">moveit_setup_assistant::RotatedHeaderView::paintSection</a></div><div class="ttdeci">void paintSection(QPainter *painter, const QRect &amp;rect, int logicalIndex) const override</div><div class="ttdef"><b>Definition:</b> <a href="rotated__header__view_8cpp_source.html#l00086">rotated_header_view.cpp:86</a></div></div>
-<div class="ttc" id="anamespacemoveit__setup__assistant_html"><div class="ttname"><a href="namespacemoveit__setup__assistant.html">moveit_setup_assistant</a></div><div class="ttdef"><b>Definition:</b> <a href="compute__default__collisions_8hpp_source.html#l00046">compute_default_collisions.hpp:46</a></div></div>
-<div class="ttc" id="aclassmoveit__setup__assistant_1_1RotatedHeaderView_html_aa0088db785d1db096261aa0ae04229a9"><div class="ttname"><a href="classmoveit__setup__assistant_1_1RotatedHeaderView.html#aa0088db785d1db096261aa0ae04229a9">moveit_setup_assistant::RotatedHeaderView::sectionSizeFromContents</a></div><div class="ttdeci">QSize sectionSizeFromContents(int logicalIndex) const override</div><div class="ttdef"><b>Definition:</b> <a href="rotated__header__view_8cpp_source.html#l00103">rotated_header_view.cpp:103</a></div></div>
+<div class="ttc" id="anamespacemoveit__setup__assistant_html"><div class="ttname"><a href="namespacemoveit__setup__assistant.html">moveit_setup_assistant</a></div><div class="ttdef"><b>Definition:</b> <a href="compute__default__collisions_8h_source.html#l00046">compute_default_collisions.h:46</a></div></div>
 <div class="ttc" id="arotated__header__view_8h_html"><div class="ttname"><a href="rotated__header__view_8h.html">rotated_header_view.h</a></div></div>
 <div class="ttc" id="aclassmoveit__setup__assistant_1_1RotatedHeaderView_html_af5dbffb3c625ef50cb739a2de4989716"><div class="ttname"><a href="classmoveit__setup__assistant_1_1RotatedHeaderView.html#af5dbffb3c625ef50cb739a2de4989716">moveit_setup_assistant::RotatedHeaderView::RotatedHeaderView</a></div><div class="ttdeci">RotatedHeaderView(Qt::Orientation orientation, QWidget *parent=nullptr)</div><div class="ttdef"><b>Definition:</b> <a href="rotated__header__view_8cpp_source.html#l00074">rotated_header_view.cpp:74</a></div></div>
 <!-- start footer part -->

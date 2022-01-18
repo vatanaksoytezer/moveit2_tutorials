@@ -1,4 +1,5 @@
 <map id="robot_trajectory::RobotTrajectory::getWayPointDurationFromStart" name="robot_trajectory::RobotTrajectory::getWayPointDurationFromStart">
-<area shape="rect" id="node1" title="Returns the duration after start that a waypoint will be reached." alt="" coords="108,5,343,47"/>
-<area shape="rect" id="node2" href="$test__time__parameterization_8cpp.html#aa51b79e24472e01dd59a8f68878e719e" title=" " alt="" coords="5,13,60,39"/>
+<area shape="rect" id="node1" title="Returns the duration after start that a waypoint will be reached." alt="" coords="272,23,507,65"/>
+<area shape="rect" id="node2" href="$test__time__parameterization_8cpp.html#a9e9c53951a8d9ae89aa8517fe0a63df8" title=" " alt="" coords="108,5,224,32"/>
+<area shape="rect" id="node3" href="$test__time__parameterization_8cpp.html#aa51b79e24472e01dd59a8f68878e719e" title=" " alt="" coords="5,31,60,57"/>
 </map>

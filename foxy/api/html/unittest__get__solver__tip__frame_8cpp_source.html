@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>moveit2: moveit2/moveit_planners/pilz_industrial_motion_planner/test/unit_tests/src/unittest_get_solver_tip_frame.cpp Source File</title>
+<title>moveit2: moveit2/moveit_planners/pilz_industrial_motion_planner/test/unittest_get_solver_tip_frame.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,7 +62,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_a604c952227cf87b5a3218a0034012e1.html">moveit2</a></li><li class="navelem"><a class="el" href="dir_397d57caa61a6ead544bb61b8030bf75.html">moveit_planners</a></li><li class="navelem"><a class="el" href="dir_b42145b99fa2fc2e1a9a76dd5d48e934.html">pilz_industrial_motion_planner</a></li><li class="navelem"><a class="el" href="dir_32106610d8bf69b1c283f4fa4bf1e70c.html">test</a></li><li class="navelem"><a class="el" href="dir_c0e323a8108843403cd65ddcf58c52bb.html">unit_tests</a></li><li class="navelem"><a class="el" href="dir_aeaf384bd36bd7964cb18f189c047c9e.html">src</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_a604c952227cf87b5a3218a0034012e1.html">moveit2</a></li><li class="navelem"><a class="el" href="dir_397d57caa61a6ead544bb61b8030bf75.html">moveit_planners</a></li><li class="navelem"><a class="el" href="dir_b42145b99fa2fc2e1a9a76dd5d48e934.html">pilz_industrial_motion_planner</a></li><li class="navelem"><a class="el" href="dir_32106610d8bf69b1c283f4fa4bf1e70c.html">test</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -155,12 +155,12 @@ $(function() {
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;{</div>
 <div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="classpilz__industrial__motion__planner_1_1JointModelGroupMock.html">   91</a></span>&#160;  {</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    std::shared_ptr&lt;NoSolverException&gt; nse_ex{ <span class="keyword">new</span> NoSolverException(<span class="stringliteral">&quot;&quot;</span>) };</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    EXPECT_EQ(nse_ex-&gt;getErrorCode(), moveit_msgs::msg::MoveItErrorCodes::FAILURE);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    EXPECT_EQ(nse_ex-&gt;getErrorCode(), moveit_msgs::MoveItErrorCodes::FAILURE);</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  }</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  {</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    std::shared_ptr&lt;MoreThanOneTipFrameException&gt; ex{ <span class="keyword">new</span> MoreThanOneTipFrameException(<span class="stringliteral">&quot;&quot;</span>) };</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    EXPECT_EQ(ex-&gt;getErrorCode(), moveit_msgs::msg::MoveItErrorCodes::FAILURE);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    EXPECT_EQ(ex-&gt;getErrorCode(), moveit_msgs::MoveItErrorCodes::FAILURE);</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  }</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
 <div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="classpilz__industrial__motion__planner_1_1GetSolverTipFrameTest.html">  101</a></span>&#160; </div>

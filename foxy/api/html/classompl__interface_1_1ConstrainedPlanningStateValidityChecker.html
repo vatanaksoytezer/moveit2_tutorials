@@ -120,8 +120,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aaa08f4937ebc581283f6610c9a0d4540"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af1430f5d46cc59da68fe1bd3ea99cd8b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl__interface_1_1ConstrainedPlanningStateValidityChecker.html#af1430f5d46cc59da68fe1bd3ea99cd8b">isValid</a> (const ompl::base::State *state, double &amp;dist) const override</td></tr>
 <tr class="separator:af1430f5d46cc59da68fe1bd3ea99cd8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9638ec97768046120d60a1ff80a69f7d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl__interface_1_1ConstrainedPlanningStateValidityChecker.html#a9638ec97768046120d60a1ff80a69f7d">isValid</a> (const ompl::base::State *state, double &amp;dist, ompl::base::State *, bool &amp;) const override</td></tr>
-<tr class="separator:a9638ec97768046120d60a1ff80a69f7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15ebcc222d3c8475ae0967b0e573cc44"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl__interface_1_1ConstrainedPlanningStateValidityChecker.html#a15ebcc222d3c8475ae0967b0e573cc44">isValid</a> (const ompl::base::State *state, bool verbose) const</td></tr>
 <tr class="separator:a15ebcc222d3c8475ae0967b0e573cc44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a899c4fa61690182b35bd18350ea97574"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl__interface_1_1ConstrainedPlanningStateValidityChecker.html#a899c4fa61690182b35bd18350ea97574">isValid</a> (const ompl::base::State *state, double &amp;dist, bool verbose) const</td></tr>
@@ -133,8 +131,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aaa08f4937ebc581283f6610c9a0d4540 inherit pub_methods_classompl__interface_1_1StateValidityChecker"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af1430f5d46cc59da68fe1bd3ea99cd8b inherit pub_methods_classompl__interface_1_1StateValidityChecker"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl__interface_1_1StateValidityChecker.html#af1430f5d46cc59da68fe1bd3ea99cd8b">isValid</a> (const ompl::base::State *state, double &amp;dist) const override</td></tr>
 <tr class="separator:af1430f5d46cc59da68fe1bd3ea99cd8b inherit pub_methods_classompl__interface_1_1StateValidityChecker"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9638ec97768046120d60a1ff80a69f7d inherit pub_methods_classompl__interface_1_1StateValidityChecker"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl__interface_1_1StateValidityChecker.html#a9638ec97768046120d60a1ff80a69f7d">isValid</a> (const ompl::base::State *state, double &amp;dist, ompl::base::State *, bool &amp;) const override</td></tr>
-<tr class="separator:a9638ec97768046120d60a1ff80a69f7d inherit pub_methods_classompl__interface_1_1StateValidityChecker"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8be48c39d7a73e73491e9b57346a156 inherit pub_methods_classompl__interface_1_1StateValidityChecker"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl__interface_1_1StateValidityChecker.html#aa8be48c39d7a73e73491e9b57346a156">cost</a> (const ompl::base::State *state) const</td></tr>
 <tr class="separator:aa8be48c39d7a73e73491e9b57346a156 inherit pub_methods_classompl__interface_1_1StateValidityChecker"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7efd299b3fbb14ce809baa8b9fbfa55f inherit pub_methods_classompl__interface_1_1StateValidityChecker"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl__interface_1_1StateValidityChecker.html#a7efd299b3fbb14ce809baa8b9fbfa55f">clearance</a> (const ompl::base::State *state) const override</td></tr>
@@ -171,7 +167,7 @@ Additional Inherited Members</h2></td></tr>
 </pre><p>requires accessing the underlying state by calling <code><a class="el" href="warehouse__services_8cpp.html#af57ee9bbd2b61c00ad3631b7aef040eb">getState()</a></code> on the constrained state space state. Therefore this class implements specific versions of the isValid methods.</p>
 <p>We still check the path constraints, because not all states sampled by the constrained state space satisfy the constraints unfortunately. This is a complicated issue. For more details see: <a href="https://github.com/ros-planning/moveit/issues/2092#issuecomment-669911722">https://github.com/ros-planning/moveit/issues/2092#issuecomment-669911722</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="state__validity__checker_8h_source.html#l00152">152</a> of file <a class="el" href="state__validity__checker_8h_source.html">state_validity_checker.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="state__validity__checker_8h_source.html#l00146">146</a> of file <a class="el" href="state__validity__checker_8h_source.html">state_validity_checker.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a901747679c903c48675e673dc074470f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a901747679c903c48675e673dc074470f">&#9670;&nbsp;</a></span>ConstrainedPlanningStateValidityChecker()</h2>
@@ -197,13 +193,13 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="state__validity__checker_8h_source.html#l00158">158</a> of file <a class="el" href="state__validity__checker_8h_source.html">state_validity_checker.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="state__validity__checker_8h_source.html#l00152">152</a> of file <a class="el" href="state__validity__checker_8h_source.html">state_validity_checker.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="aaa08f4937ebc581283f6610c9a0d4540"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaa08f4937ebc581283f6610c9a0d4540">&#9670;&nbsp;</a></span>isValid() <span class="overload">[1/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa08f4937ebc581283f6610c9a0d4540">&#9670;&nbsp;</a></span>isValid() <span class="overload">[1/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -227,7 +223,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a15ebcc222d3c8475ae0967b0e573cc44"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a15ebcc222d3c8475ae0967b0e573cc44">&#9670;&nbsp;</a></span>isValid() <span class="overload">[2/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a15ebcc222d3c8475ae0967b0e573cc44">&#9670;&nbsp;</a></span>isValid() <span class="overload">[2/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -243,7 +239,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="af1430f5d46cc59da68fe1bd3ea99cd8b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af1430f5d46cc59da68fe1bd3ea99cd8b">&#9670;&nbsp;</a></span>isValid() <span class="overload">[3/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af1430f5d46cc59da68fe1bd3ea99cd8b">&#9670;&nbsp;</a></span>isValid() <span class="overload">[3/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -267,7 +263,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a899c4fa61690182b35bd18350ea97574"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a899c4fa61690182b35bd18350ea97574">&#9670;&nbsp;</a></span>isValid() <span class="overload">[4/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a899c4fa61690182b35bd18350ea97574">&#9670;&nbsp;</a></span>isValid() <span class="overload">[4/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -282,32 +278,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a9638ec97768046120d60a1ff80a69f7d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9638ec97768046120d60a1ff80a69f7d">&#9670;&nbsp;</a></span>isValid() <span class="overload">[5/7]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool ompl_interface::StateValidityChecker::isValid</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="state__validity__checker_8h_source.html#l00107">107</a> of file <a class="el" href="state__validity__checker_8h_source.html">state_validity_checker.h</a>.</p>
-
-</div>
-</div>
 <a id="a83abce3fa859b7c2c3391323b9bcb909"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a83abce3fa859b7c2c3391323b9bcb909">&#9670;&nbsp;</a></span>isValid() <span class="overload">[6/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a83abce3fa859b7c2c3391323b9bcb909">&#9670;&nbsp;</a></span>isValid() <span class="overload">[5/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -354,7 +326,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="abe050a88b6af1dfdc8aeca74d8d95770"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abe050a88b6af1dfdc8aeca74d8d95770">&#9670;&nbsp;</a></span>isValid() <span class="overload">[7/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#abe050a88b6af1dfdc8aeca74d8d95770">&#9670;&nbsp;</a></span>isValid() <span class="overload">[6/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">

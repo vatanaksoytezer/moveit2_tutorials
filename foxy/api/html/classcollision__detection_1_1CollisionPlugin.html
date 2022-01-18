@@ -107,12 +107,9 @@ Public Member Functions</h2></td></tr>
     public collision_detection::CollisionDetectorAllocatorTemplate&lt;MyCollisionEnv, MyCollisionDetectorAllocator&gt;
   {
     public:
-      const std::string&amp; getName() const override {
-        static const std::string NAME = "my_checker";
-        return NAME;
-      }
       static const std::string NAME_;
-  };</pre><pre>  }</pre><pre>  namespace <a class="el" href="namespacecollision__detection.html">collision_detection</a>
+  };</pre><pre>  const std::string MyCollisionDetectorAllocator::NAME_("my_checker");
+  }</pre><pre>  namespace <a class="el" href="namespacecollision__detection.html">collision_detection</a>
   {</pre><pre>  class MyCollisionDetectionLoader : public <a class="el" href="classcollision__detection_1_1CollisionPlugin.html" title="Plugin API for loading a custom collision detection robot/world.">CollisionPlugin</a>
   {
   public:
@@ -123,7 +120,7 @@ Public Member Functions</h2></td></tr>
     }
   };
 </pre> 
-<p class="definition">Definition at line <a class="el" href="collision__plugin_8h_source.html#l00112">112</a> of file <a class="el" href="collision__plugin_8h_source.html">collision_plugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="collision__plugin_8h_source.html#l00109">109</a> of file <a class="el" href="collision__plugin_8h_source.html">collision_plugin.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad3312e457276a8254ebd85b847dd705e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad3312e457276a8254ebd85b847dd705e">&#9670;&nbsp;</a></span>CollisionPlugin()</h2>
@@ -148,7 +145,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="collision__plugin_8h_source.html#l00115">115</a> of file <a class="el" href="collision__plugin_8h_source.html">collision_plugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="collision__plugin_8h_source.html#l00112">112</a> of file <a class="el" href="collision__plugin_8h_source.html">collision_plugin.h</a>.</p>
 
 </div>
 </div>
@@ -175,7 +172,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="collision__plugin_8h_source.html#l00118">118</a> of file <a class="el" href="collision__plugin_8h_source.html">collision_plugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="collision__plugin_8h_source.html#l00115">115</a> of file <a class="el" href="collision__plugin_8h_source.html">collision_plugin.h</a>.</p>
 
 </div>
 </div>

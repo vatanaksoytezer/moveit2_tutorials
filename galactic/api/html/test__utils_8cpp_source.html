@@ -131,7 +131,7 @@ $(function() {
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">const</span> std::string&amp; name : joint_names)</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="structpilz__industrial__motion__planner_1_1joint__limits__interface_1_1JointLimits.html">pilz_industrial_motion_planner::JointLimit</a> limit;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="structpilz__industrial__motion__planner_1_1joint__limits__interface_1_1JointLimits.html">JointLimit</a> limit;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    limit.<a class="code" href="structjoint__limits_1_1JointLimits.html#af6c866a379ffc1f7a80a7dcb56ea08fd">has_position_limits</a> = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    limit.<a class="code" href="structjoint__limits_1_1JointLimits.html#a77dc908d317d7723cb4f763d5c4e9f20">max_position</a> = 2.967;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    limit.<a class="code" href="structjoint__limits_1_1JointLimits.html#ad34b33dfe2942132c5bb0624098fd1d3">min_position</a> = -2.967;</div>
@@ -172,7 +172,7 @@ $(function() {
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    link_name = robot_model-&gt;getJointModelGroup(req.group_name)-&gt;getSolverInstance()-&gt;getTipFrame();</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="namespacepilz__industrial__motion__planner.html#a846707e0c70fe0ce82d46c752642e37e">computeLinkFK</a>(robot_model, link_name, goal_joint_position, goal_pose_expect))</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="namespacepilz__industrial__motion__planner.html#a1f9f24ec7611a5e7888c3e1564457c44">computeLinkFK</a>(robot_model, link_name, goal_joint_position, goal_pose_expect))</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    {</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;      std::cerr &lt;&lt; <span class="stringliteral">&quot;Failed to compute forward kinematics for link in goal &quot;</span></div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                   <span class="stringliteral">&quot;constraints \n&quot;</span>;</div>
@@ -258,7 +258,7 @@ $(function() {
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    joint_state[trajectory.joint_names.at(i)] = last_point.positions.at(i);</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;  }</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;  <span class="keywordflow">if</span> (!<a class="code" href="namespacepilz__industrial__motion__planner.html#a846707e0c70fe0ce82d46c752642e37e">computeLinkFK</a>(robot_model, link_name, joint_state, goal_pose_actual))</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;  <span class="keywordflow">if</span> (!<a class="code" href="namespacepilz__industrial__motion__planner.html#a1f9f24ec7611a5e7888c3e1564457c44">computeLinkFK</a>(robot_model, link_name, joint_state, goal_pose_actual))</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  {</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    std::cerr &lt;&lt; <span class="stringliteral">&quot;[ Fail     ] forward kinematics computation failed for link: &quot;</span> &lt;&lt; link_name &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  }</div>
@@ -303,7 +303,7 @@ $(function() {
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                                        <span class="keyword">const</span> trajectory_msgs::msg::JointTrajectory&amp; trajectory,</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                                        <span class="keyword">const</span> <a class="code" href="namespaceplanning__interface.html#a1307e10a0a3b9ca03406d777b9a938a3">planning_interface::MotionPlanRequest</a>&amp; req,</div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                                        <span class="keyword">const</span> <span class="keywordtype">double</span> translation_norm_tolerance, <span class="keyword">const</span> <span class="keywordtype">double</span> rot_axis_norm_tolerance,</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                                        <span class="keyword">const</span> <span class="keywordtype">double</span> <span class="comment">/*rot_angle_tolerance*/</span>)</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                                        <span class="keyword">const</span> <span class="keywordtype">double</span> rot_angle_tolerance)</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;{</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;  std::string link_name;</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;  Eigen::Isometry3d goal_pose_expect;</div>
@@ -338,7 +338,7 @@ $(function() {
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;      way_point_joint_state[trajectory.joint_names.at(i)] = way_point.positions.at(i);</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    }</div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160; </div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="namespacepilz__industrial__motion__planner.html#a846707e0c70fe0ce82d46c752642e37e">computeLinkFK</a>(robot_model, link_name, way_point_joint_state, way_point_pose))</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="namespacepilz__industrial__motion__planner.html#a1f9f24ec7611a5e7888c3e1564457c44">computeLinkFK</a>(robot_model, link_name, way_point_joint_state, way_point_pose))</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    {</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;      std::cerr &lt;&lt; <span class="stringliteral">&quot;Failed to compute forward kinematics for link in goal &quot;</span></div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                   <span class="stringliteral">&quot;constraints \n&quot;</span>;</div>
@@ -398,15 +398,15 @@ $(function() {
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;}</div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160; </div>
-<div class="line"><a name="l00329"></a><span class="lineno"><a class="line" href="namespacetestutils.html#a1f9f24ec7611a5e7888c3e1564457c44">  329</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="namespacetestutils.html#a1f9f24ec7611a5e7888c3e1564457c44">testutils::computeLinkFK</a>(<span class="keyword">const</span> moveit::core::RobotModelConstPtr&amp; robot_model, <span class="keyword">const</span> std::string&amp; link_name,</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="namespacetestutils.html#a1f9f24ec7611a5e7888c3e1564457c44">testutils::computeLinkFK</a>(<span class="keyword">const</span> moveit::core::RobotModelConstPtr&amp; robot_model, <span class="keyword">const</span> std::string&amp; link_name,</div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;                              <span class="keyword">const</span> std::map&lt;std::string, double&gt;&amp; joint_state, Eigen::Isometry3d&amp; pose)</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;{</div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;  <span class="comment">// create robot state</span></div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;  <a class="code" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a> rstate(robot_model);</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;  rstate.<a class="code" href="classmoveit_1_1core_1_1RobotState.html#aba31c6f758e3dabd32c1acbd069e189e">setToDefaultValues</a>();</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;  rstate.setToDefaultValues();</div>
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160; </div>
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;  <span class="comment">// check the reference frame of the target pose</span></div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;  <span class="keywordflow">if</span> (!rstate.<a class="code" href="classmoveit_1_1core_1_1RobotState.html#acb5a70a55390ddecac5d79bbc1a929ba">knowsFrameTransform</a>(link_name))</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;  <span class="keywordflow">if</span> (!rstate.knowsFrameTransform(link_name))</div>
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;  {</div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    RCLCPP_ERROR_STREAM(LOGGER, <span class="stringliteral">&quot;The target link &quot;</span> &lt;&lt; link_name &lt;&lt; <span class="stringliteral">&quot; is not known by robot.&quot;</span>);</div>
 <div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
@@ -415,7 +415,7 @@ $(function() {
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;  <span class="comment">// set the joint positions</span></div>
 <div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;  <span class="keywordflow">try</span></div>
 <div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;  {</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    rstate.<a class="code" href="classmoveit_1_1core_1_1RobotState.html#a04b9343fdf57f04895fa21c326164d0f">setVariablePositions</a>(joint_state);</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    rstate.setVariablePositions(joint_state);</div>
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;  }</div>
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;  <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; e)</div>
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;  {</div>
@@ -424,8 +424,8 @@ $(function() {
 <div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;  }</div>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160; </div>
 <div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;  <span class="comment">// update the frame</span></div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;  rstate.<a class="code" href="classmoveit_1_1core_1_1RobotState.html#aaec5557d55b862d9dd832b3d4c221836">update</a>();</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;  pose = rstate.<a class="code" href="classmoveit_1_1core_1_1RobotState.html#aa0d9f132691a3f24186dcdff72be5d28">getFrameTransform</a>(link_name);</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;  rstate.update();</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;  pose = rstate.getFrameTransform(link_name);</div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160; </div>
 <div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;}</div>
@@ -1198,351 +1198,348 @@ $(function() {
 <div class="line"><a name="l01126"></a><span class="lineno"> 1126</span>&#160;                                 <span class="keyword">const</span> <a class="code" href="structpilz__industrial__motion__planner_1_1TrajectoryBlendResponse.html">pilz_industrial_motion_planner::TrajectoryBlendResponse</a>&amp; blend_res,</div>
 <div class="line"><a name="l01127"></a><span class="lineno"> 1127</span>&#160;                                 <span class="keyword">const</span> <a class="code" href="classpilz__industrial__motion__planner_1_1LimitsContainer.html">pilz_industrial_motion_planner::LimitsContainer</a>&amp; limits,</div>
 <div class="line"><a name="l01128"></a><span class="lineno"> 1128</span>&#160;                                 <span class="keywordtype">double</span> joint_velocity_tolerance, <span class="keywordtype">double</span> joint_acceleration_tolerance,</div>
-<div class="line"><a name="l01129"></a><span class="lineno"> 1129</span>&#160;                                 <span class="keywordtype">double</span> <span class="comment">/*cartesian_velocity_tolerance*/</span>,</div>
-<div class="line"><a name="l01130"></a><span class="lineno"> 1130</span>&#160;                                 <span class="keywordtype">double</span> <span class="comment">/*cartesian_angular_velocity_tolerance*/</span>)</div>
-<div class="line"><a name="l01131"></a><span class="lineno"> 1131</span>&#160;{</div>
-<div class="line"><a name="l01132"></a><span class="lineno"> 1132</span>&#160;  <span class="comment">// ++++++++++++++++++++++</span></div>
-<div class="line"><a name="l01133"></a><span class="lineno"> 1133</span>&#160;  <span class="comment">// + Check trajectories +</span></div>
-<div class="line"><a name="l01134"></a><span class="lineno"> 1134</span>&#160;  <span class="comment">// ++++++++++++++++++++++</span></div>
-<div class="line"><a name="l01135"></a><span class="lineno"> 1135</span>&#160;  moveit_msgs::msg::RobotTrajectory traj_msg;</div>
-<div class="line"><a name="l01136"></a><span class="lineno"> 1136</span>&#160;  blend_res.<a class="code" href="structpilz__industrial__motion__planner_1_1TrajectoryBlendResponse.html#a5b35f946912705b3e1aff8b8a039c5a4">first_trajectory</a>-&gt;getRobotTrajectoryMsg(traj_msg);</div>
-<div class="line"><a name="l01137"></a><span class="lineno"> 1137</span>&#160;  <span class="keywordflow">if</span> (!<a class="code" href="namespacetestutils.html#a6941dcc98ca4e3988e382fd3de978667">testutils::checkJointTrajectory</a>(traj_msg.joint_trajectory, limits.<a class="code" href="classpilz__industrial__motion__planner_1_1LimitsContainer.html#aa05824e7f6038376806adf1f3de49c90">getJointLimitContainer</a>()))</div>
-<div class="line"><a name="l01138"></a><span class="lineno"> 1138</span>&#160;  {</div>
-<div class="line"><a name="l01139"></a><span class="lineno"> 1139</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l01140"></a><span class="lineno"> 1140</span>&#160;  }</div>
-<div class="line"><a name="l01141"></a><span class="lineno"> 1141</span>&#160; </div>
-<div class="line"><a name="l01142"></a><span class="lineno"> 1142</span>&#160;  blend_res.<a class="code" href="structpilz__industrial__motion__planner_1_1TrajectoryBlendResponse.html#a7b0bec14cae29ea95e6387c8c7727d10">blend_trajectory</a>-&gt;getRobotTrajectoryMsg(traj_msg);</div>
-<div class="line"><a name="l01143"></a><span class="lineno"> 1143</span>&#160;  <span class="keywordflow">if</span> (!<a class="code" href="namespacetestutils.html#a6941dcc98ca4e3988e382fd3de978667">testutils::checkJointTrajectory</a>(traj_msg.joint_trajectory, limits.<a class="code" href="classpilz__industrial__motion__planner_1_1LimitsContainer.html#aa05824e7f6038376806adf1f3de49c90">getJointLimitContainer</a>()))</div>
-<div class="line"><a name="l01144"></a><span class="lineno"> 1144</span>&#160;  {</div>
-<div class="line"><a name="l01145"></a><span class="lineno"> 1145</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l01146"></a><span class="lineno"> 1146</span>&#160;  };</div>
-<div class="line"><a name="l01147"></a><span class="lineno"> 1147</span>&#160; </div>
-<div class="line"><a name="l01148"></a><span class="lineno"> 1148</span>&#160;  blend_res.<a class="code" href="structpilz__industrial__motion__planner_1_1TrajectoryBlendResponse.html#ad3a0996e3351fb8c56ed86364bde1a82">second_trajectory</a>-&gt;getRobotTrajectoryMsg(traj_msg);</div>
-<div class="line"><a name="l01149"></a><span class="lineno"> 1149</span>&#160;  <span class="keywordflow">if</span> (!<a class="code" href="namespacetestutils.html#a6941dcc98ca4e3988e382fd3de978667">testutils::checkJointTrajectory</a>(traj_msg.joint_trajectory, limits.<a class="code" href="classpilz__industrial__motion__planner_1_1LimitsContainer.html#aa05824e7f6038376806adf1f3de49c90">getJointLimitContainer</a>()))</div>
-<div class="line"><a name="l01150"></a><span class="lineno"> 1150</span>&#160;  {</div>
-<div class="line"><a name="l01151"></a><span class="lineno"> 1151</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l01152"></a><span class="lineno"> 1152</span>&#160;  };</div>
-<div class="line"><a name="l01153"></a><span class="lineno"> 1153</span>&#160; </div>
-<div class="line"><a name="l01154"></a><span class="lineno"> 1154</span>&#160;  Eigen::Isometry3d circ_pose =</div>
-<div class="line"><a name="l01155"></a><span class="lineno"> 1155</span>&#160;      blend_req.<a class="code" href="structpilz__industrial__motion__planner_1_1TrajectoryBlendRequest.html#ae14052e735ac8f44d39068d39c33b43e">first_trajectory</a>-&gt;getLastWayPointPtr()-&gt;getFrameTransform(blend_req.<a class="code" href="structpilz__industrial__motion__planner_1_1TrajectoryBlendRequest.html#a343c8131372dcb230ace4e809ab79fca">link_name</a>);</div>
-<div class="line"><a name="l01156"></a><span class="lineno"> 1156</span>&#160;  <span class="keywordflow">if</span> (!<a class="code" href="namespacetestutils.html#a41c248355164c56800214fd8e807827c">testutils::checkThatPointsInRadius</a>(blend_req.<a class="code" href="structpilz__industrial__motion__planner_1_1TrajectoryBlendRequest.html#a343c8131372dcb230ace4e809ab79fca">link_name</a>, blend_req.<a class="code" href="structpilz__industrial__motion__planner_1_1TrajectoryBlendRequest.html#a88c825708497b16ce670e9b149bb79e2">blend_radius</a>, circ_pose, blend_res))</div>
-<div class="line"><a name="l01157"></a><span class="lineno"> 1157</span>&#160;  {</div>
-<div class="line"><a name="l01158"></a><span class="lineno"> 1158</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l01159"></a><span class="lineno"> 1159</span>&#160;  }</div>
-<div class="line"><a name="l01160"></a><span class="lineno"> 1160</span>&#160; </div>
-<div class="line"><a name="l01161"></a><span class="lineno"> 1161</span>&#160;  <span class="comment">// check the first and second trajectories, if they are still the same before</span></div>
-<div class="line"><a name="l01162"></a><span class="lineno"> 1162</span>&#160;  <span class="comment">// and after the bendling phase</span></div>
-<div class="line"><a name="l01163"></a><span class="lineno"> 1163</span>&#160;  <span class="keywordflow">if</span> (!<a class="code" href="namespacetestutils.html#ada964043a384dfad06b0592e45fad947">testutils::checkOriginalTrajectoryAfterBlending</a>(blend_req, blend_res, 10e-5))</div>
-<div class="line"><a name="l01164"></a><span class="lineno"> 1164</span>&#160;  {</div>
-<div class="line"><a name="l01165"></a><span class="lineno"> 1165</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l01166"></a><span class="lineno"> 1166</span>&#160;  }</div>
-<div class="line"><a name="l01167"></a><span class="lineno"> 1167</span>&#160; </div>
-<div class="line"><a name="l01168"></a><span class="lineno"> 1168</span>&#160;  <span class="comment">// check the continuity between the trajectories in joint space</span></div>
-<div class="line"><a name="l01169"></a><span class="lineno"> 1169</span>&#160;  <span class="keywordflow">if</span> (!<a class="code" href="namespacetestutils.html#ae42679ba2fbc4ec4ebba750bee0c072f">testutils::checkBlendingJointSpaceContinuity</a>(blend_res, joint_velocity_tolerance, joint_acceleration_tolerance))</div>
-<div class="line"><a name="l01170"></a><span class="lineno"> 1170</span>&#160;  {</div>
-<div class="line"><a name="l01171"></a><span class="lineno"> 1171</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l01172"></a><span class="lineno"> 1172</span>&#160;  }</div>
-<div class="line"><a name="l01173"></a><span class="lineno"> 1173</span>&#160; </div>
-<div class="line"><a name="l01174"></a><span class="lineno"> 1174</span>&#160;  <span class="comment">// check the continuity between the trajectories in cart space</span></div>
-<div class="line"><a name="l01175"></a><span class="lineno"> 1175</span>&#160;  <span class="keywordflow">if</span> (!<a class="code" href="namespacetestutils.html#a0419dc6ce1ec6a05cbc92c75f965cbb4">testutils::checkBlendingCartSpaceContinuity</a>(blend_req, blend_res, limits))</div>
-<div class="line"><a name="l01176"></a><span class="lineno"> 1176</span>&#160;  {</div>
-<div class="line"><a name="l01177"></a><span class="lineno"> 1177</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l01178"></a><span class="lineno"> 1178</span>&#160;  }</div>
-<div class="line"><a name="l01179"></a><span class="lineno"> 1179</span>&#160; </div>
-<div class="line"><a name="l01180"></a><span class="lineno"> 1180</span>&#160;  <span class="comment">// ++++++++++++++++++++++++</span></div>
-<div class="line"><a name="l01181"></a><span class="lineno"> 1181</span>&#160;  <span class="comment">// + Visualize the result +</span></div>
-<div class="line"><a name="l01182"></a><span class="lineno"> 1182</span>&#160;  <span class="comment">// ++++++++++++++++++++++++</span></div>
-<div class="line"><a name="l01183"></a><span class="lineno"> 1183</span>&#160;  <span class="comment">//  ros::NodeHandle nh;</span></div>
-<div class="line"><a name="l01184"></a><span class="lineno"> 1184</span>&#160;  <span class="comment">//  ros::Publisher pub =</span></div>
-<div class="line"><a name="l01185"></a><span class="lineno"> 1185</span>&#160;  <span class="comment">//  nh.advertise&lt;moveit_msgs::msg::DisplayTrajectory&gt;(&quot;my_planned_path&quot;, 1);</span></div>
-<div class="line"><a name="l01186"></a><span class="lineno"> 1186</span>&#160;  <span class="comment">//  ros::Duration duration(1.0);</span></div>
-<div class="line"><a name="l01187"></a><span class="lineno"> 1187</span>&#160;  <span class="comment">//  duration.sleep();</span></div>
-<div class="line"><a name="l01188"></a><span class="lineno"> 1188</span>&#160; </div>
-<div class="line"><a name="l01189"></a><span class="lineno"> 1189</span>&#160;  <span class="comment">//  // visualize the joint trajectory</span></div>
-<div class="line"><a name="l01190"></a><span class="lineno"> 1190</span>&#160;  <span class="comment">//  moveit_msgs::msg::DisplayTrajectory displayTrajectory;</span></div>
-<div class="line"><a name="l01191"></a><span class="lineno"> 1191</span>&#160;  <span class="comment">//  moveit_msgs::msg::RobotTrajectory res_first_traj_msg, res_blend_traj_msg,</span></div>
-<div class="line"><a name="l01192"></a><span class="lineno"> 1192</span>&#160;  <span class="comment">//  res_second_traj_msg;</span></div>
-<div class="line"><a name="l01193"></a><span class="lineno"> 1193</span>&#160;  <span class="comment">//  blend_res.first_trajectory-&gt;getRobotTrajectoryMsg(res_first_traj_msg);</span></div>
-<div class="line"><a name="l01194"></a><span class="lineno"> 1194</span>&#160;  <span class="comment">//  blend_res.blend_trajectory-&gt;getRobotTrajectoryMsg(res_blend_traj_msg);</span></div>
-<div class="line"><a name="l01195"></a><span class="lineno"> 1195</span>&#160;  <span class="comment">//  blend_res.second_trajectory-&gt;getRobotTrajectoryMsg(res_second_traj_msg);</span></div>
-<div class="line"><a name="l01196"></a><span class="lineno"> 1196</span>&#160;  <span class="comment">//  displayTrajectory.trajectory.push_back(res_first_traj_msg);</span></div>
-<div class="line"><a name="l01197"></a><span class="lineno"> 1197</span>&#160;  <span class="comment">//  displayTrajectory.trajectory.push_back(res_blend_traj_msg);</span></div>
-<div class="line"><a name="l01198"></a><span class="lineno"> 1198</span>&#160;  <span class="comment">//  displayTrajectory.trajectory.push_back(res_second_traj_msg);</span></div>
-<div class="line"><a name="l01199"></a><span class="lineno"> 1199</span>&#160; </div>
-<div class="line"><a name="l01200"></a><span class="lineno"> 1200</span>&#160;  <span class="comment">//  pub.publish(displayTrajectory);</span></div>
-<div class="line"><a name="l01201"></a><span class="lineno"> 1201</span>&#160; </div>
-<div class="line"><a name="l01202"></a><span class="lineno"> 1202</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l01203"></a><span class="lineno"> 1203</span>&#160;}</div>
-<div class="line"><a name="l01204"></a><span class="lineno"> 1204</span>&#160; </div>
-<div class="line"><a name="l01205"></a><span class="lineno"><a class="line" href="namespacetestutils.html#a47e7d5ac95ce106e03eeca07873a8eef"> 1205</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacetestutils.html#a47e7d5ac95ce106e03eeca07873a8eef">testutils::generateRequestMsgFromBlendTestData</a>(<span class="keyword">const</span> moveit::core::RobotModelConstPtr&amp; robot_model,</div>
-<div class="line"><a name="l01206"></a><span class="lineno"> 1206</span>&#160;                                                    <span class="keyword">const</span> <a class="code" href="structtestutils_1_1BlendTestData.html">testutils::BlendTestData</a>&amp; data, <span class="keyword">const</span> std::string&amp; planner_id,</div>
-<div class="line"><a name="l01207"></a><span class="lineno"> 1207</span>&#160;                                                    <span class="keyword">const</span> std::string&amp; group_name, <span class="keyword">const</span> std::string&amp; link_name,</div>
-<div class="line"><a name="l01208"></a><span class="lineno"> 1208</span>&#160;                                                    moveit_msgs::msg::MotionSequenceRequest&amp; req_list)</div>
-<div class="line"><a name="l01209"></a><span class="lineno"> 1209</span>&#160;{</div>
-<div class="line"><a name="l01210"></a><span class="lineno"> 1210</span>&#160;  <span class="comment">// motion plan request of first trajectory</span></div>
-<div class="line"><a name="l01211"></a><span class="lineno"> 1211</span>&#160;  <a class="code" href="namespaceplanning__interface.html#a1307e10a0a3b9ca03406d777b9a938a3">planning_interface::MotionPlanRequest</a> req_1;</div>
-<div class="line"><a name="l01212"></a><span class="lineno"> 1212</span>&#160;  req_1.planner_id = planner_id;</div>
-<div class="line"><a name="l01213"></a><span class="lineno"> 1213</span>&#160;  req_1.group_name = group_name;</div>
-<div class="line"><a name="l01214"></a><span class="lineno"> 1214</span>&#160;  req_1.max_velocity_scaling_factor = 0.1;</div>
-<div class="line"><a name="l01215"></a><span class="lineno"> 1215</span>&#160;  req_1.max_acceleration_scaling_factor = 0.1;</div>
-<div class="line"><a name="l01216"></a><span class="lineno"> 1216</span>&#160;  <span class="comment">// start state</span></div>
-<div class="line"><a name="l01217"></a><span class="lineno"> 1217</span>&#160;  <a class="code" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a> start_state(robot_model);</div>
-<div class="line"><a name="l01218"></a><span class="lineno"> 1218</span>&#160;  start_state.<a class="code" href="classmoveit_1_1core_1_1RobotState.html#aba31c6f758e3dabd32c1acbd069e189e">setToDefaultValues</a>();</div>
-<div class="line"><a name="l01219"></a><span class="lineno"> 1219</span>&#160;  start_state.<a class="code" href="classmoveit_1_1core_1_1RobotState.html#a564140d144754d149b292e70c4c59b55">setJointGroupPositions</a>(group_name, data.<a class="code" href="structtestutils_1_1BlendTestData.html#ab054a7e298cdfc7f45f606c5a4ebdd52">start_position</a>);</div>
-<div class="line"><a name="l01220"></a><span class="lineno"> 1220</span>&#160;  <a class="code" href="namespacemoveit_1_1core.html#a0aafbf7242f36d6efd7bd73ecee400e8">moveit::core::robotStateToRobotStateMsg</a>(start_state, req_1.start_state, <span class="keyword">false</span>);</div>
-<div class="line"><a name="l01221"></a><span class="lineno"> 1221</span>&#160;  <span class="comment">// goal constraint</span></div>
-<div class="line"><a name="l01222"></a><span class="lineno"> 1222</span>&#160;  <a class="code" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a> goal_state_1(robot_model);</div>
-<div class="line"><a name="l01223"></a><span class="lineno"> 1223</span>&#160;  goal_state_1.<a class="code" href="classmoveit_1_1core_1_1RobotState.html#aba31c6f758e3dabd32c1acbd069e189e">setToDefaultValues</a>();</div>
-<div class="line"><a name="l01224"></a><span class="lineno"> 1224</span>&#160;  goal_state_1.<a class="code" href="classmoveit_1_1core_1_1RobotState.html#a564140d144754d149b292e70c4c59b55">setJointGroupPositions</a>(group_name, data.<a class="code" href="structtestutils_1_1BlendTestData.html#adbd614da7d41c31d186dc347650ee69a">mid_position</a>);</div>
-<div class="line"><a name="l01225"></a><span class="lineno"> 1225</span>&#160;  req_1.goal_constraints.push_back(<a class="code" href="namespacekinematic__constraints.html#a449c87b5d209ba3b9a62d73b4278da77">kinematic_constraints::constructGoalConstraints</a>(</div>
-<div class="line"><a name="l01226"></a><span class="lineno"> 1226</span>&#160;      goal_state_1, goal_state_1.<a class="code" href="classmoveit_1_1core_1_1RobotState.html#a5ecd3e71d7283f30be300c83cfd84041">getRobotModel</a>()-&gt;getJointModelGroup(group_name)));</div>
-<div class="line"><a name="l01227"></a><span class="lineno"> 1227</span>&#160; </div>
-<div class="line"><a name="l01228"></a><span class="lineno"> 1228</span>&#160;  <span class="comment">// motion plan request of second trajectory</span></div>
-<div class="line"><a name="l01229"></a><span class="lineno"> 1229</span>&#160;  <a class="code" href="namespaceplanning__interface.html#a1307e10a0a3b9ca03406d777b9a938a3">planning_interface::MotionPlanRequest</a> req_2;</div>
-<div class="line"><a name="l01230"></a><span class="lineno"> 1230</span>&#160;  req_2.planner_id = planner_id;</div>
-<div class="line"><a name="l01231"></a><span class="lineno"> 1231</span>&#160;  req_2.group_name = group_name;</div>
-<div class="line"><a name="l01232"></a><span class="lineno"> 1232</span>&#160;  req_2.max_velocity_scaling_factor = 0.1;</div>
-<div class="line"><a name="l01233"></a><span class="lineno"> 1233</span>&#160;  req_2.max_acceleration_scaling_factor = 0.1;</div>
-<div class="line"><a name="l01234"></a><span class="lineno"> 1234</span>&#160;  <span class="comment">// start state</span></div>
-<div class="line"><a name="l01235"></a><span class="lineno"> 1235</span>&#160;  <span class="comment">// moveit::core::robotStateToRobotStateMsg(goal_state_1, req_2.start_state,</span></div>
-<div class="line"><a name="l01236"></a><span class="lineno"> 1236</span>&#160;  <span class="comment">// false);</span></div>
-<div class="line"><a name="l01237"></a><span class="lineno"> 1237</span>&#160;  <span class="comment">// goal state</span></div>
-<div class="line"><a name="l01238"></a><span class="lineno"> 1238</span>&#160;  <a class="code" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a> goal_state_2(robot_model);</div>
-<div class="line"><a name="l01239"></a><span class="lineno"> 1239</span>&#160;  goal_state_2.<a class="code" href="classmoveit_1_1core_1_1RobotState.html#aba31c6f758e3dabd32c1acbd069e189e">setToDefaultValues</a>();</div>
-<div class="line"><a name="l01240"></a><span class="lineno"> 1240</span>&#160;  goal_state_2.<a class="code" href="classmoveit_1_1core_1_1RobotState.html#a564140d144754d149b292e70c4c59b55">setJointGroupPositions</a>(group_name, data.<a class="code" href="structtestutils_1_1BlendTestData.html#a37078536f3184e23afb6d548b5a7d564">end_position</a>);</div>
-<div class="line"><a name="l01241"></a><span class="lineno"> 1241</span>&#160;  req_2.goal_constraints.push_back(<a class="code" href="namespacekinematic__constraints.html#a449c87b5d209ba3b9a62d73b4278da77">kinematic_constraints::constructGoalConstraints</a>(</div>
-<div class="line"><a name="l01242"></a><span class="lineno"> 1242</span>&#160;      goal_state_2, goal_state_2.<a class="code" href="classmoveit_1_1core_1_1RobotState.html#a5ecd3e71d7283f30be300c83cfd84041">getRobotModel</a>()-&gt;getJointModelGroup(group_name)));</div>
-<div class="line"><a name="l01243"></a><span class="lineno"> 1243</span>&#160; </div>
-<div class="line"><a name="l01244"></a><span class="lineno"> 1244</span>&#160;  <span class="comment">// select a proper blending radius</span></div>
-<div class="line"><a name="l01245"></a><span class="lineno"> 1245</span>&#160;  <span class="comment">// estimate a proper blend radius</span></div>
-<div class="line"><a name="l01246"></a><span class="lineno"> 1246</span>&#160;  <span class="keywordtype">double</span> dis_1 =</div>
-<div class="line"><a name="l01247"></a><span class="lineno"> 1247</span>&#160;      (start_state.<a class="code" href="classmoveit_1_1core_1_1RobotState.html#aa0d9f132691a3f24186dcdff72be5d28">getFrameTransform</a>(link_name).translation() - goal_state_1.<a class="code" href="classmoveit_1_1core_1_1RobotState.html#aa0d9f132691a3f24186dcdff72be5d28">getFrameTransform</a>(link_name).translation())</div>
-<div class="line"><a name="l01248"></a><span class="lineno"> 1248</span>&#160;          .norm();</div>
-<div class="line"><a name="l01249"></a><span class="lineno"> 1249</span>&#160; </div>
-<div class="line"><a name="l01250"></a><span class="lineno"> 1250</span>&#160;  <span class="keywordtype">double</span> dis_2 = (goal_state_1.<a class="code" href="classmoveit_1_1core_1_1RobotState.html#aa0d9f132691a3f24186dcdff72be5d28">getFrameTransform</a>(link_name).translation() -</div>
-<div class="line"><a name="l01251"></a><span class="lineno"> 1251</span>&#160;                  goal_state_2.<a class="code" href="classmoveit_1_1core_1_1RobotState.html#aa0d9f132691a3f24186dcdff72be5d28">getFrameTransform</a>(link_name).translation())</div>
-<div class="line"><a name="l01252"></a><span class="lineno"> 1252</span>&#160;                     .norm();</div>
-<div class="line"><a name="l01253"></a><span class="lineno"> 1253</span>&#160; </div>
-<div class="line"><a name="l01254"></a><span class="lineno"> 1254</span>&#160;  <span class="keywordtype">double</span> blend_radius = 0.5 * std::min(dis_1, dis_2);</div>
-<div class="line"><a name="l01255"></a><span class="lineno"> 1255</span>&#160; </div>
-<div class="line"><a name="l01256"></a><span class="lineno"> 1256</span>&#160;  moveit_msgs::msg::MotionSequenceItem blend_req_1, blend_req_2;</div>
-<div class="line"><a name="l01257"></a><span class="lineno"> 1257</span>&#160;  blend_req_1.req = req_1;</div>
-<div class="line"><a name="l01258"></a><span class="lineno"> 1258</span>&#160;  blend_req_1.blend_radius = blend_radius;</div>
-<div class="line"><a name="l01259"></a><span class="lineno"> 1259</span>&#160;  blend_req_2.req = req_2;</div>
-<div class="line"><a name="l01260"></a><span class="lineno"> 1260</span>&#160;  blend_req_2.blend_radius = 0.0;</div>
-<div class="line"><a name="l01261"></a><span class="lineno"> 1261</span>&#160; </div>
-<div class="line"><a name="l01262"></a><span class="lineno"> 1262</span>&#160;  req_list.items.push_back(blend_req_1);</div>
-<div class="line"><a name="l01263"></a><span class="lineno"> 1263</span>&#160;  req_list.items.push_back(blend_req_2);</div>
-<div class="line"><a name="l01264"></a><span class="lineno"> 1264</span>&#160;}</div>
-<div class="line"><a name="l01265"></a><span class="lineno"> 1265</span>&#160; </div>
-<div class="line"><a name="l01266"></a><span class="lineno"><a class="line" href="namespacetestutils.html#aee400d4013caab0af4681d89dc96d66c"> 1266</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacetestutils.html#aee400d4013caab0af4681d89dc96d66c">testutils::checkRobotModel</a>(<span class="keyword">const</span> moveit::core::RobotModelConstPtr&amp; robot_model, <span class="keyword">const</span> std::string&amp; group_name,</div>
-<div class="line"><a name="l01267"></a><span class="lineno"> 1267</span>&#160;                                <span class="keyword">const</span> std::string&amp; link_name)</div>
-<div class="line"><a name="l01268"></a><span class="lineno"> 1268</span>&#160;{</div>
-<div class="line"><a name="l01269"></a><span class="lineno"> 1269</span>&#160;  ASSERT_TRUE(robot_model != <span class="keyword">nullptr</span>) &lt;&lt; <span class="stringliteral">&quot;failed to load robot model&quot;</span>;</div>
-<div class="line"><a name="l01270"></a><span class="lineno"> 1270</span>&#160;  ASSERT_FALSE(robot_model-&gt;isEmpty()) &lt;&lt; <span class="stringliteral">&quot;robot model is empty&quot;</span>;</div>
-<div class="line"><a name="l01271"></a><span class="lineno"> 1271</span>&#160;  ASSERT_TRUE(robot_model-&gt;hasJointModelGroup(group_name)) &lt;&lt; group_name &lt;&lt; <span class="stringliteral">&quot; is not known to robot&quot;</span>;</div>
-<div class="line"><a name="l01272"></a><span class="lineno"> 1272</span>&#160;  ASSERT_TRUE(robot_model-&gt;hasLinkModel(link_name)) &lt;&lt; link_name &lt;&lt; <span class="stringliteral">&quot; is not known to robot&quot;</span>;</div>
-<div class="line"><a name="l01273"></a><span class="lineno"> 1273</span>&#160;  ASSERT_TRUE(<a class="code" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a>(robot_model).knowsFrameTransform(link_name))</div>
-<div class="line"><a name="l01274"></a><span class="lineno"> 1274</span>&#160;      &lt;&lt; <span class="stringliteral">&quot;Transform of &quot;</span> &lt;&lt; link_name &lt;&lt; <span class="stringliteral">&quot; is unknown&quot;</span>;</div>
-<div class="line"><a name="l01275"></a><span class="lineno"> 1275</span>&#160;}</div>
-<div class="line"><a name="l01276"></a><span class="lineno"> 1276</span>&#160; </div>
-<div class="line"><a name="l01277"></a><span class="lineno"><a class="line" href="namespacetestutils.html#ad85119748f255af37a1ddca4b438962f"> 1277</a></span>&#160;::testing::AssertionResult <a class="code" href="namespacetestutils.html#ad85119748f255af37a1ddca4b438962f">testutils::hasTrapezoidVelocity</a>(std::vector&lt;double&gt; accelerations, <span class="keyword">const</span> <span class="keywordtype">double</span> acc_tol)</div>
-<div class="line"><a name="l01278"></a><span class="lineno"> 1278</span>&#160;{</div>
-<div class="line"><a name="l01279"></a><span class="lineno"> 1279</span>&#160;  <span class="comment">// Check that acceleration is monotonously decreasing</span></div>
-<div class="line"><a name="l01280"></a><span class="lineno"> 1280</span>&#160;  <span class="keywordflow">if</span> (!<a class="code" href="namespacetestutils.html#a0084beb9bba6496da596d6433544786e">isMonotonouslyDecreasing</a>(accelerations, acc_tol))</div>
-<div class="line"><a name="l01281"></a><span class="lineno"> 1281</span>&#160;  {</div>
-<div class="line"><a name="l01282"></a><span class="lineno"> 1282</span>&#160;    return ::testing::AssertionFailure() &lt;&lt; <span class="stringliteral">&quot;Cannot be a trapezoid since &quot;</span></div>
-<div class="line"><a name="l01283"></a><span class="lineno"> 1283</span>&#160;                                            <span class="stringliteral">&quot;acceleration is not monotonously &quot;</span></div>
-<div class="line"><a name="l01284"></a><span class="lineno"> 1284</span>&#160;                                            <span class="stringliteral">&quot;decreasing!&quot;</span>;</div>
-<div class="line"><a name="l01285"></a><span class="lineno"> 1285</span>&#160;  }</div>
-<div class="line"><a name="l01286"></a><span class="lineno"> 1286</span>&#160; </div>
-<div class="line"><a name="l01287"></a><span class="lineno"> 1287</span>&#160;  <span class="comment">// Check accelerations</span></div>
-<div class="line"><a name="l01288"></a><span class="lineno"> 1288</span>&#160;  <span class="keywordtype">double</span> first_acc = accelerations.front();</div>
-<div class="line"><a name="l01289"></a><span class="lineno"> 1289</span>&#160;  <span class="keyword">auto</span> it_last_acc = std::find_if(accelerations.begin(), accelerations.end(),</div>
-<div class="line"><a name="l01290"></a><span class="lineno"> 1290</span>&#160;                                  [first_acc, acc_tol](<span class="keywordtype">double</span> el) { return (std::abs(el - first_acc) &gt; acc_tol); }) -</div>
-<div class="line"><a name="l01291"></a><span class="lineno"> 1291</span>&#160;                     1;</div>
-<div class="line"><a name="l01292"></a><span class="lineno"> 1292</span>&#160; </div>
-<div class="line"><a name="l01293"></a><span class="lineno"> 1293</span>&#160;  <span class="keyword">auto</span> it_last_intermediate =</div>
-<div class="line"><a name="l01294"></a><span class="lineno"> 1294</span>&#160;      std::find_if(it_last_acc + 1, accelerations.end(), [acc_tol](<span class="keywordtype">double</span> el) { return (el &lt; acc_tol); }) - 1;</div>
-<div class="line"><a name="l01295"></a><span class="lineno"> 1295</span>&#160; </div>
-<div class="line"><a name="l01296"></a><span class="lineno"> 1296</span>&#160;  <span class="comment">// Check that there are 1 or 2 intermediate points</span></div>
-<div class="line"><a name="l01297"></a><span class="lineno"> 1297</span>&#160;  <span class="keyword">auto</span> n_intermediate_1 = <a class="code" href="namespacepr2__arm__kinematics.html#a24f684af4bcce4a6d0c945aa27d04550">std::distance</a>(it_last_acc, it_last_intermediate);</div>
-<div class="line"><a name="l01298"></a><span class="lineno"> 1298</span>&#160; </div>
-<div class="line"><a name="l01299"></a><span class="lineno"> 1299</span>&#160;  <span class="keywordflow">if</span> (n_intermediate_1 != 1 &amp;&amp; n_intermediate_1 != 2)</div>
-<div class="line"><a name="l01300"></a><span class="lineno"> 1300</span>&#160;  {</div>
-<div class="line"><a name="l01301"></a><span class="lineno"> 1301</span>&#160;    return ::testing::AssertionFailure() &lt;&lt; <span class="stringliteral">&quot;Expected 1 or 2 intermediate points between acceleration and &quot;</span></div>
-<div class="line"><a name="l01302"></a><span class="lineno"> 1302</span>&#160;                                            <span class="stringliteral">&quot;constant &quot;</span></div>
-<div class="line"><a name="l01303"></a><span class="lineno"> 1303</span>&#160;                                            <span class="stringliteral">&quot;velocity phase but found: &quot;</span></div>
-<div class="line"><a name="l01304"></a><span class="lineno"> 1304</span>&#160;                                         &lt;&lt; n_intermediate_1;</div>
-<div class="line"><a name="l01305"></a><span class="lineno"> 1305</span>&#160;  }</div>
-<div class="line"><a name="l01306"></a><span class="lineno"> 1306</span>&#160; </div>
-<div class="line"><a name="l01307"></a><span class="lineno"> 1307</span>&#160;  <span class="comment">// Const phase (vel == 0)</span></div>
-<div class="line"><a name="l01308"></a><span class="lineno"> 1308</span>&#160;  <span class="keyword">auto</span> it_first_const = it_last_intermediate + 1;</div>
-<div class="line"><a name="l01309"></a><span class="lineno"> 1309</span>&#160;  <span class="keyword">auto</span> it_last_const =</div>
-<div class="line"><a name="l01310"></a><span class="lineno"> 1310</span>&#160;      std::find_if(it_first_const, accelerations.end(), [acc_tol](<span class="keywordtype">double</span> el) { return (std::abs(el) &gt; acc_tol); }) - 1;</div>
-<div class="line"><a name="l01311"></a><span class="lineno"> 1311</span>&#160;  <span class="comment">// This test makes sense only if the generated traj has enough points such</span></div>
-<div class="line"><a name="l01312"></a><span class="lineno"> 1312</span>&#160;  <span class="comment">// that the trapezoid is not degenerated.</span></div>
-<div class="line"><a name="l01313"></a><span class="lineno"> 1313</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="namespacepr2__arm__kinematics.html#a24f684af4bcce4a6d0c945aa27d04550">std::distance</a>(it_first_const, it_last_const) &lt; 3)</div>
-<div class="line"><a name="l01314"></a><span class="lineno"> 1314</span>&#160;  {</div>
-<div class="line"><a name="l01315"></a><span class="lineno"> 1315</span>&#160;    return ::testing::AssertionFailure() &lt;&lt; <span class="stringliteral">&quot;Expected the have at least 3 points during the phase of &quot;</span></div>
-<div class="line"><a name="l01316"></a><span class="lineno"> 1316</span>&#160;                                            <span class="stringliteral">&quot;constant &quot;</span></div>
-<div class="line"><a name="l01317"></a><span class="lineno"> 1317</span>&#160;                                            <span class="stringliteral">&quot;velocity.&quot;</span>;</div>
-<div class="line"><a name="l01318"></a><span class="lineno"> 1318</span>&#160;  }</div>
-<div class="line"><a name="l01319"></a><span class="lineno"> 1319</span>&#160; </div>
-<div class="line"><a name="l01320"></a><span class="lineno"> 1320</span>&#160;  <span class="comment">// Deceleration</span></div>
-<div class="line"><a name="l01321"></a><span class="lineno"> 1321</span>&#160;  <span class="keywordtype">double</span> deceleration = accelerations.back();</div>
-<div class="line"><a name="l01322"></a><span class="lineno"> 1322</span>&#160;  <span class="keyword">auto</span> it_first_dec =</div>
-<div class="line"><a name="l01323"></a><span class="lineno"> 1323</span>&#160;      std::find_if(it_last_const + 1, accelerations.end(),</div>
-<div class="line"><a name="l01324"></a><span class="lineno"> 1324</span>&#160;                   [deceleration, acc_tol](<span class="keywordtype">double</span> el) { return (std::abs(el - deceleration) &gt; acc_tol); }) +</div>
-<div class="line"><a name="l01325"></a><span class="lineno"> 1325</span>&#160;      1;</div>
-<div class="line"><a name="l01326"></a><span class="lineno"> 1326</span>&#160; </div>
-<div class="line"><a name="l01327"></a><span class="lineno"> 1327</span>&#160;  <span class="comment">// Points between const and deceleration (again 1 or 2)</span></div>
-<div class="line"><a name="l01328"></a><span class="lineno"> 1328</span>&#160;  <span class="keyword">auto</span> n_intermediate_2 = <a class="code" href="namespacepr2__arm__kinematics.html#a24f684af4bcce4a6d0c945aa27d04550">std::distance</a>(it_last_const, it_first_dec);</div>
-<div class="line"><a name="l01329"></a><span class="lineno"> 1329</span>&#160;  <span class="keywordflow">if</span> (n_intermediate_2 != 1 &amp;&amp; n_intermediate_2 != 2)</div>
-<div class="line"><a name="l01330"></a><span class="lineno"> 1330</span>&#160;  {</div>
-<div class="line"><a name="l01331"></a><span class="lineno"> 1331</span>&#160;    return ::testing::AssertionFailure() &lt;&lt; <span class="stringliteral">&quot;Expected 1 or 2 intermediate points between constant velocity &quot;</span></div>
-<div class="line"><a name="l01332"></a><span class="lineno"> 1332</span>&#160;                                            <span class="stringliteral">&quot;and &quot;</span></div>
-<div class="line"><a name="l01333"></a><span class="lineno"> 1333</span>&#160;                                            <span class="stringliteral">&quot;deceleration phase but found: &quot;</span></div>
-<div class="line"><a name="l01334"></a><span class="lineno"> 1334</span>&#160;                                         &lt;&lt; n_intermediate_2;</div>
-<div class="line"><a name="l01335"></a><span class="lineno"> 1335</span>&#160;  }</div>
-<div class="line"><a name="l01336"></a><span class="lineno"> 1336</span>&#160; </div>
-<div class="line"><a name="l01337"></a><span class="lineno"> 1337</span>&#160;  std::stringstream debug_stream;</div>
-<div class="line"><a name="l01338"></a><span class="lineno"> 1338</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = accelerations.begin(); it != it_last_acc + 1; ++it)</div>
-<div class="line"><a name="l01339"></a><span class="lineno"> 1339</span>&#160;  {</div>
-<div class="line"><a name="l01340"></a><span class="lineno"> 1340</span>&#160;    debug_stream &lt;&lt; *it &lt;&lt; <span class="stringliteral">&quot;(Acc)&quot;</span> &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l01341"></a><span class="lineno"> 1341</span>&#160;  }</div>
-<div class="line"><a name="l01342"></a><span class="lineno"> 1342</span>&#160; </div>
-<div class="line"><a name="l01343"></a><span class="lineno"> 1343</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = it_last_acc + 1; it != it_last_intermediate + 1; ++it)</div>
-<div class="line"><a name="l01344"></a><span class="lineno"> 1344</span>&#160;  {</div>
-<div class="line"><a name="l01345"></a><span class="lineno"> 1345</span>&#160;    debug_stream &lt;&lt; *it &lt;&lt; <span class="stringliteral">&quot;(Inter1)&quot;</span> &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l01346"></a><span class="lineno"> 1346</span>&#160;  }</div>
-<div class="line"><a name="l01347"></a><span class="lineno"> 1347</span>&#160; </div>
-<div class="line"><a name="l01348"></a><span class="lineno"> 1348</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = it_first_const; it != it_last_const + 1; ++it)</div>
-<div class="line"><a name="l01349"></a><span class="lineno"> 1349</span>&#160;  {</div>
-<div class="line"><a name="l01350"></a><span class="lineno"> 1350</span>&#160;    debug_stream &lt;&lt; *it &lt;&lt; <span class="stringliteral">&quot;(Const)&quot;</span> &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l01351"></a><span class="lineno"> 1351</span>&#160;  }</div>
-<div class="line"><a name="l01352"></a><span class="lineno"> 1352</span>&#160; </div>
-<div class="line"><a name="l01353"></a><span class="lineno"> 1353</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = it_last_const + 1; it != it_first_dec; ++it)</div>
-<div class="line"><a name="l01354"></a><span class="lineno"> 1354</span>&#160;  {</div>
-<div class="line"><a name="l01355"></a><span class="lineno"> 1355</span>&#160;    debug_stream &lt;&lt; *it &lt;&lt; <span class="stringliteral">&quot;(Inter2)&quot;</span> &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l01356"></a><span class="lineno"> 1356</span>&#160;  }</div>
-<div class="line"><a name="l01357"></a><span class="lineno"> 1357</span>&#160; </div>
-<div class="line"><a name="l01358"></a><span class="lineno"> 1358</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = it_first_dec; it != accelerations.end(); ++it)</div>
-<div class="line"><a name="l01359"></a><span class="lineno"> 1359</span>&#160;  {</div>
-<div class="line"><a name="l01360"></a><span class="lineno"> 1360</span>&#160;    debug_stream &lt;&lt; *it &lt;&lt; <span class="stringliteral">&quot;(Dec)&quot;</span> &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l01361"></a><span class="lineno"> 1361</span>&#160;  }</div>
-<div class="line"><a name="l01362"></a><span class="lineno"> 1362</span>&#160; </div>
-<div class="line"><a name="l01363"></a><span class="lineno"> 1363</span>&#160;  RCLCPP_DEBUG_STREAM(LOGGER, debug_stream.str());</div>
-<div class="line"><a name="l01364"></a><span class="lineno"> 1364</span>&#160; </div>
-<div class="line"><a name="l01365"></a><span class="lineno"> 1365</span>&#160;  return ::testing::AssertionSuccess();</div>
-<div class="line"><a name="l01366"></a><span class="lineno"> 1366</span>&#160;}</div>
-<div class="line"><a name="l01367"></a><span class="lineno"> 1367</span>&#160; </div>
-<div class="line"><a name="l01368"></a><span class="lineno"> 1368</span>&#160;::testing::AssertionResult</div>
-<div class="line"><a name="l01369"></a><span class="lineno"><a class="line" href="namespacetestutils.html#a2fdced2dd08d4d1c6ba87e72c2096776"> 1369</a></span>&#160;<a class="code" href="namespacetestutils.html#a2fdced2dd08d4d1c6ba87e72c2096776">testutils::checkCartesianTranslationalPath</a>(<span class="keyword">const</span> robot_trajectory::RobotTrajectoryConstPtr&amp; trajectory,</div>
-<div class="line"><a name="l01370"></a><span class="lineno"> 1370</span>&#160;                                           <span class="keyword">const</span> std::string&amp; link_name, <span class="keyword">const</span> <span class="keywordtype">double</span> acc_tol)</div>
-<div class="line"><a name="l01371"></a><span class="lineno"> 1371</span>&#160;{</div>
-<div class="line"><a name="l01372"></a><span class="lineno"> 1372</span>&#160;  <span class="comment">// We require the following such that the test makes sense, else the traj</span></div>
-<div class="line"><a name="l01373"></a><span class="lineno"> 1373</span>&#160;  <span class="comment">// would have a degenerated velocity profile</span></div>
-<div class="line"><a name="l01374"></a><span class="lineno"> 1374</span>&#160;  EXPECT_GT(trajectory-&gt;getWayPointCount(), 9u);</div>
-<div class="line"><a name="l01375"></a><span class="lineno"> 1375</span>&#160; </div>
-<div class="line"><a name="l01376"></a><span class="lineno"> 1376</span>&#160;  std::vector&lt;double&gt; accelerations;</div>
-<div class="line"><a name="l01377"></a><span class="lineno"> 1377</span>&#160; </div>
-<div class="line"><a name="l01378"></a><span class="lineno"> 1378</span>&#160;  <span class="comment">// Iterate over waypoints collect accelerations</span></div>
-<div class="line"><a name="l01379"></a><span class="lineno"> 1379</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 2; i &lt; trajectory-&gt;getWayPointCount(); ++i)</div>
-<div class="line"><a name="l01380"></a><span class="lineno"> 1380</span>&#160;  {</div>
-<div class="line"><a name="l01381"></a><span class="lineno"> 1381</span>&#160;    <span class="keyword">auto</span> waypoint_pose_0 = trajectory-&gt;getWayPoint(i - 2).getFrameTransform(link_name);</div>
-<div class="line"><a name="l01382"></a><span class="lineno"> 1382</span>&#160;    <span class="keyword">auto</span> waypoint_pose_1 = trajectory-&gt;getWayPoint(i - 1).getFrameTransform(link_name);</div>
-<div class="line"><a name="l01383"></a><span class="lineno"> 1383</span>&#160;    <span class="keyword">auto</span> waypoint_pose_2 = trajectory-&gt;getWayPoint(i).getFrameTransform(link_name);</div>
-<div class="line"><a name="l01384"></a><span class="lineno"> 1384</span>&#160; </div>
-<div class="line"><a name="l01385"></a><span class="lineno"> 1385</span>&#160;    <span class="keyword">auto</span> t1 = trajectory-&gt;getWayPointDurationFromPrevious(i - 1);</div>
-<div class="line"><a name="l01386"></a><span class="lineno"> 1386</span>&#160;    <span class="keyword">auto</span> t2 = trajectory-&gt;getWayPointDurationFromPrevious(i);</div>
-<div class="line"><a name="l01387"></a><span class="lineno"> 1387</span>&#160; </div>
-<div class="line"><a name="l01388"></a><span class="lineno"> 1388</span>&#160;    <span class="keyword">auto</span> vel1 = (waypoint_pose_1.translation() - waypoint_pose_0.translation()).norm() / t1;</div>
-<div class="line"><a name="l01389"></a><span class="lineno"> 1389</span>&#160;    <span class="keyword">auto</span> vel2 = (waypoint_pose_2.translation() - waypoint_pose_1.translation()).norm() / t2;</div>
-<div class="line"><a name="l01390"></a><span class="lineno"> 1390</span>&#160;    <span class="keyword">auto</span> acc_transl = (vel2 - vel1) / (t1 + t2);</div>
-<div class="line"><a name="l01391"></a><span class="lineno"> 1391</span>&#160;    accelerations.push_back(acc_transl);</div>
-<div class="line"><a name="l01392"></a><span class="lineno"> 1392</span>&#160;  }</div>
-<div class="line"><a name="l01393"></a><span class="lineno"> 1393</span>&#160; </div>
-<div class="line"><a name="l01394"></a><span class="lineno"> 1394</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="namespacetestutils.html#ad85119748f255af37a1ddca4b438962f">hasTrapezoidVelocity</a>(accelerations, acc_tol);</div>
-<div class="line"><a name="l01395"></a><span class="lineno"> 1395</span>&#160;}</div>
-<div class="line"><a name="l01396"></a><span class="lineno"> 1396</span>&#160; </div>
-<div class="line"><a name="l01397"></a><span class="lineno"> 1397</span>&#160;::testing::AssertionResult</div>
-<div class="line"><a name="l01398"></a><span class="lineno"><a class="line" href="namespacetestutils.html#aff7e22a5989e2e292e9ce0b20b3fd195"> 1398</a></span>&#160;<a class="code" href="namespacetestutils.html#aff7e22a5989e2e292e9ce0b20b3fd195">testutils::checkCartesianRotationalPath</a>(<span class="keyword">const</span> robot_trajectory::RobotTrajectoryConstPtr&amp; trajectory,</div>
-<div class="line"><a name="l01399"></a><span class="lineno"> 1399</span>&#160;                                        <span class="keyword">const</span> std::string&amp; link_name, <span class="keyword">const</span> <span class="keywordtype">double</span> rot_axis_tol, <span class="keyword">const</span> <span class="keywordtype">double</span> acc_tol)</div>
-<div class="line"><a name="l01400"></a><span class="lineno"> 1400</span>&#160;{</div>
-<div class="line"><a name="l01401"></a><span class="lineno"> 1401</span>&#160;  <span class="comment">// skip computations if rotation angle is zero</span></div>
-<div class="line"><a name="l01402"></a><span class="lineno"> 1402</span>&#160;  <span class="keywordflow">if</span> (trajectory-&gt;getFirstWayPoint().getFrameTransform(link_name).rotation().isApprox(</div>
-<div class="line"><a name="l01403"></a><span class="lineno"> 1403</span>&#160;          trajectory-&gt;getLastWayPoint().getFrameTransform(link_name).rotation(), rot_axis_tol))</div>
-<div class="line"><a name="l01404"></a><span class="lineno"> 1404</span>&#160;  {</div>
-<div class="line"><a name="l01405"></a><span class="lineno"> 1405</span>&#160;    return ::testing::AssertionSuccess();</div>
-<div class="line"><a name="l01406"></a><span class="lineno"> 1406</span>&#160;  }</div>
-<div class="line"><a name="l01407"></a><span class="lineno"> 1407</span>&#160; </div>
-<div class="line"><a name="l01408"></a><span class="lineno"> 1408</span>&#160;  <span class="comment">// We require the following such that the test makes sense, else the traj</span></div>
-<div class="line"><a name="l01409"></a><span class="lineno"> 1409</span>&#160;  <span class="comment">// would have a degenerated velocity profile</span></div>
-<div class="line"><a name="l01410"></a><span class="lineno"> 1410</span>&#160;  EXPECT_GT(trajectory-&gt;getWayPointCount(), 9u);</div>
-<div class="line"><a name="l01411"></a><span class="lineno"> 1411</span>&#160; </div>
-<div class="line"><a name="l01412"></a><span class="lineno"> 1412</span>&#160;  std::vector&lt;double&gt; accelerations;</div>
-<div class="line"><a name="l01413"></a><span class="lineno"> 1413</span>&#160;  std::vector&lt;Eigen::AngleAxisd&gt; rotation_axes;</div>
-<div class="line"><a name="l01414"></a><span class="lineno"> 1414</span>&#160; </div>
-<div class="line"><a name="l01415"></a><span class="lineno"> 1415</span>&#160;  <span class="comment">// Iterate over waypoints collect accelerations and rotation axes</span></div>
-<div class="line"><a name="l01416"></a><span class="lineno"> 1416</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 2; i &lt; trajectory-&gt;getWayPointCount(); ++i)</div>
-<div class="line"><a name="l01417"></a><span class="lineno"> 1417</span>&#160;  {</div>
-<div class="line"><a name="l01418"></a><span class="lineno"> 1418</span>&#160;    <span class="keyword">auto</span> waypoint_pose_0 = trajectory-&gt;getWayPoint(i - 2).getFrameTransform(link_name);</div>
-<div class="line"><a name="l01419"></a><span class="lineno"> 1419</span>&#160;    <span class="keyword">auto</span> waypoint_pose_1 = trajectory-&gt;getWayPoint(i - 1).getFrameTransform(link_name);</div>
-<div class="line"><a name="l01420"></a><span class="lineno"> 1420</span>&#160;    <span class="keyword">auto</span> waypoint_pose_2 = trajectory-&gt;getWayPoint(i).getFrameTransform(link_name);</div>
-<div class="line"><a name="l01421"></a><span class="lineno"> 1421</span>&#160; </div>
-<div class="line"><a name="l01422"></a><span class="lineno"> 1422</span>&#160;    <span class="keyword">auto</span> t1 = trajectory-&gt;getWayPointDurationFromPrevious(i - 1);</div>
-<div class="line"><a name="l01423"></a><span class="lineno"> 1423</span>&#160;    <span class="keyword">auto</span> t2 = trajectory-&gt;getWayPointDurationFromPrevious(i);</div>
-<div class="line"><a name="l01424"></a><span class="lineno"> 1424</span>&#160; </div>
-<div class="line"><a name="l01425"></a><span class="lineno"> 1425</span>&#160;    Eigen::Quaterniond orientation0(waypoint_pose_0.rotation());</div>
-<div class="line"><a name="l01426"></a><span class="lineno"> 1426</span>&#160;    Eigen::Quaterniond orientation1(waypoint_pose_1.rotation());</div>
-<div class="line"><a name="l01427"></a><span class="lineno"> 1427</span>&#160;    Eigen::Quaterniond orientation2(waypoint_pose_2.rotation());</div>
-<div class="line"><a name="l01428"></a><span class="lineno"> 1428</span>&#160; </div>
-<div class="line"><a name="l01429"></a><span class="lineno"> 1429</span>&#160;    Eigen::AngleAxisd axis1(orientation0 * orientation1.inverse());</div>
-<div class="line"><a name="l01430"></a><span class="lineno"> 1430</span>&#160;    Eigen::AngleAxisd axis2(orientation1 * orientation2.inverse());</div>
-<div class="line"><a name="l01431"></a><span class="lineno"> 1431</span>&#160;    <span class="keywordflow">if</span> (i == 2)</div>
-<div class="line"><a name="l01432"></a><span class="lineno"> 1432</span>&#160;    {</div>
-<div class="line"><a name="l01433"></a><span class="lineno"> 1433</span>&#160;      rotation_axes.push_back(axis1);</div>
-<div class="line"><a name="l01434"></a><span class="lineno"> 1434</span>&#160;    }</div>
-<div class="line"><a name="l01435"></a><span class="lineno"> 1435</span>&#160;    rotation_axes.push_back(axis2);</div>
-<div class="line"><a name="l01436"></a><span class="lineno"> 1436</span>&#160; </div>
-<div class="line"><a name="l01437"></a><span class="lineno"> 1437</span>&#160;    <span class="keywordtype">double</span> angular_vel1 = axis1.angle() / t1;</div>
-<div class="line"><a name="l01438"></a><span class="lineno"> 1438</span>&#160;    <span class="keywordtype">double</span> angular_vel2 = axis2.angle() / t2;</div>
-<div class="line"><a name="l01439"></a><span class="lineno"> 1439</span>&#160;    <span class="keywordtype">double</span> angular_acc = (angular_vel2 - angular_vel1) / (t1 + t2);</div>
-<div class="line"><a name="l01440"></a><span class="lineno"> 1440</span>&#160;    accelerations.push_back(angular_acc);</div>
-<div class="line"><a name="l01441"></a><span class="lineno"> 1441</span>&#160;  }</div>
-<div class="line"><a name="l01442"></a><span class="lineno"> 1442</span>&#160; </div>
-<div class="line"><a name="l01443"></a><span class="lineno"> 1443</span>&#160;  <span class="comment">// Check that rotation axis is fixed</span></div>
-<div class="line"><a name="l01444"></a><span class="lineno"> 1444</span>&#160;  <span class="keywordflow">if</span> (std::adjacent_find(rotation_axes.begin(), rotation_axes.end(),</div>
-<div class="line"><a name="l01445"></a><span class="lineno"> 1445</span>&#160;                         [rot_axis_tol](<span class="keyword">const</span> Eigen::AngleAxisd&amp; axis1, <span class="keyword">const</span> Eigen::AngleAxisd&amp; axis2) {</div>
-<div class="line"><a name="l01446"></a><span class="lineno"> 1446</span>&#160;                           return ((axis1.axis() - axis2.axis()).norm() &gt; rot_axis_tol);</div>
-<div class="line"><a name="l01447"></a><span class="lineno"> 1447</span>&#160;                         }) != rotation_axes.end())</div>
-<div class="line"><a name="l01448"></a><span class="lineno"> 1448</span>&#160;  {</div>
-<div class="line"><a name="l01449"></a><span class="lineno"> 1449</span>&#160;    return ::testing::AssertionFailure() &lt;&lt; <span class="stringliteral">&quot;Rotational path of trajectory &quot;</span></div>
-<div class="line"><a name="l01450"></a><span class="lineno"> 1450</span>&#160;                                            <span class="stringliteral">&quot;does not have a fixed rotation &quot;</span></div>
-<div class="line"><a name="l01451"></a><span class="lineno"> 1451</span>&#160;                                            <span class="stringliteral">&quot;axis&quot;</span>;</div>
-<div class="line"><a name="l01452"></a><span class="lineno"> 1452</span>&#160;  }</div>
-<div class="line"><a name="l01453"></a><span class="lineno"> 1453</span>&#160; </div>
-<div class="line"><a name="l01454"></a><span class="lineno"> 1454</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="namespacetestutils.html#ad85119748f255af37a1ddca4b438962f">hasTrapezoidVelocity</a>(accelerations, acc_tol);</div>
-<div class="line"><a name="l01455"></a><span class="lineno"> 1455</span>&#160;}</div>
+<div class="line"><a name="l01129"></a><span class="lineno"> 1129</span>&#160;                                 <span class="keywordtype">double</span> cartesian_velocity_tolerance, <span class="keywordtype">double</span> cartesian_angular_velocity_tolerance)</div>
+<div class="line"><a name="l01130"></a><span class="lineno"> 1130</span>&#160;{</div>
+<div class="line"><a name="l01131"></a><span class="lineno"> 1131</span>&#160;  <span class="comment">// ++++++++++++++++++++++</span></div>
+<div class="line"><a name="l01132"></a><span class="lineno"> 1132</span>&#160;  <span class="comment">// + Check trajectories +</span></div>
+<div class="line"><a name="l01133"></a><span class="lineno"> 1133</span>&#160;  <span class="comment">// ++++++++++++++++++++++</span></div>
+<div class="line"><a name="l01134"></a><span class="lineno"> 1134</span>&#160;  moveit_msgs::msg::RobotTrajectory traj_msg;</div>
+<div class="line"><a name="l01135"></a><span class="lineno"> 1135</span>&#160;  blend_res.<a class="code" href="structpilz__industrial__motion__planner_1_1TrajectoryBlendResponse.html#a5b35f946912705b3e1aff8b8a039c5a4">first_trajectory</a>-&gt;getRobotTrajectoryMsg(traj_msg);</div>
+<div class="line"><a name="l01136"></a><span class="lineno"> 1136</span>&#160;  <span class="keywordflow">if</span> (!<a class="code" href="namespacetestutils.html#a6941dcc98ca4e3988e382fd3de978667">testutils::checkJointTrajectory</a>(traj_msg.joint_trajectory, limits.<a class="code" href="classpilz__industrial__motion__planner_1_1LimitsContainer.html#aa05824e7f6038376806adf1f3de49c90">getJointLimitContainer</a>()))</div>
+<div class="line"><a name="l01137"></a><span class="lineno"> 1137</span>&#160;  {</div>
+<div class="line"><a name="l01138"></a><span class="lineno"> 1138</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l01139"></a><span class="lineno"> 1139</span>&#160;  }</div>
+<div class="line"><a name="l01140"></a><span class="lineno"> 1140</span>&#160; </div>
+<div class="line"><a name="l01141"></a><span class="lineno"> 1141</span>&#160;  blend_res.<a class="code" href="structpilz__industrial__motion__planner_1_1TrajectoryBlendResponse.html#a7b0bec14cae29ea95e6387c8c7727d10">blend_trajectory</a>-&gt;getRobotTrajectoryMsg(traj_msg);</div>
+<div class="line"><a name="l01142"></a><span class="lineno"> 1142</span>&#160;  <span class="keywordflow">if</span> (!<a class="code" href="namespacetestutils.html#a6941dcc98ca4e3988e382fd3de978667">testutils::checkJointTrajectory</a>(traj_msg.joint_trajectory, limits.<a class="code" href="classpilz__industrial__motion__planner_1_1LimitsContainer.html#aa05824e7f6038376806adf1f3de49c90">getJointLimitContainer</a>()))</div>
+<div class="line"><a name="l01143"></a><span class="lineno"> 1143</span>&#160;  {</div>
+<div class="line"><a name="l01144"></a><span class="lineno"> 1144</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l01145"></a><span class="lineno"> 1145</span>&#160;  };</div>
+<div class="line"><a name="l01146"></a><span class="lineno"> 1146</span>&#160; </div>
+<div class="line"><a name="l01147"></a><span class="lineno"> 1147</span>&#160;  blend_res.<a class="code" href="structpilz__industrial__motion__planner_1_1TrajectoryBlendResponse.html#ad3a0996e3351fb8c56ed86364bde1a82">second_trajectory</a>-&gt;getRobotTrajectoryMsg(traj_msg);</div>
+<div class="line"><a name="l01148"></a><span class="lineno"> 1148</span>&#160;  <span class="keywordflow">if</span> (!<a class="code" href="namespacetestutils.html#a6941dcc98ca4e3988e382fd3de978667">testutils::checkJointTrajectory</a>(traj_msg.joint_trajectory, limits.<a class="code" href="classpilz__industrial__motion__planner_1_1LimitsContainer.html#aa05824e7f6038376806adf1f3de49c90">getJointLimitContainer</a>()))</div>
+<div class="line"><a name="l01149"></a><span class="lineno"> 1149</span>&#160;  {</div>
+<div class="line"><a name="l01150"></a><span class="lineno"> 1150</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l01151"></a><span class="lineno"> 1151</span>&#160;  };</div>
+<div class="line"><a name="l01152"></a><span class="lineno"> 1152</span>&#160; </div>
+<div class="line"><a name="l01153"></a><span class="lineno"> 1153</span>&#160;  Eigen::Isometry3d circ_pose =</div>
+<div class="line"><a name="l01154"></a><span class="lineno"> 1154</span>&#160;      blend_req.<a class="code" href="structpilz__industrial__motion__planner_1_1TrajectoryBlendRequest.html#ae14052e735ac8f44d39068d39c33b43e">first_trajectory</a>-&gt;getLastWayPointPtr()-&gt;getFrameTransform(blend_req.<a class="code" href="structpilz__industrial__motion__planner_1_1TrajectoryBlendRequest.html#a343c8131372dcb230ace4e809ab79fca">link_name</a>);</div>
+<div class="line"><a name="l01155"></a><span class="lineno"> 1155</span>&#160;  <span class="keywordflow">if</span> (!<a class="code" href="namespacetestutils.html#a41c248355164c56800214fd8e807827c">testutils::checkThatPointsInRadius</a>(blend_req.<a class="code" href="structpilz__industrial__motion__planner_1_1TrajectoryBlendRequest.html#a343c8131372dcb230ace4e809ab79fca">link_name</a>, blend_req.<a class="code" href="structpilz__industrial__motion__planner_1_1TrajectoryBlendRequest.html#a88c825708497b16ce670e9b149bb79e2">blend_radius</a>, circ_pose, blend_res))</div>
+<div class="line"><a name="l01156"></a><span class="lineno"> 1156</span>&#160;  {</div>
+<div class="line"><a name="l01157"></a><span class="lineno"> 1157</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l01158"></a><span class="lineno"> 1158</span>&#160;  }</div>
+<div class="line"><a name="l01159"></a><span class="lineno"> 1159</span>&#160; </div>
+<div class="line"><a name="l01160"></a><span class="lineno"> 1160</span>&#160;  <span class="comment">// check the first and second trajectories, if they are still the same before</span></div>
+<div class="line"><a name="l01161"></a><span class="lineno"> 1161</span>&#160;  <span class="comment">// and after the bendling phase</span></div>
+<div class="line"><a name="l01162"></a><span class="lineno"> 1162</span>&#160;  <span class="keywordflow">if</span> (!<a class="code" href="namespacetestutils.html#ada964043a384dfad06b0592e45fad947">testutils::checkOriginalTrajectoryAfterBlending</a>(blend_req, blend_res, 10e-5))</div>
+<div class="line"><a name="l01163"></a><span class="lineno"> 1163</span>&#160;  {</div>
+<div class="line"><a name="l01164"></a><span class="lineno"> 1164</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l01165"></a><span class="lineno"> 1165</span>&#160;  }</div>
+<div class="line"><a name="l01166"></a><span class="lineno"> 1166</span>&#160; </div>
+<div class="line"><a name="l01167"></a><span class="lineno"> 1167</span>&#160;  <span class="comment">// check the continuity between the trajectories in joint space</span></div>
+<div class="line"><a name="l01168"></a><span class="lineno"> 1168</span>&#160;  <span class="keywordflow">if</span> (!<a class="code" href="namespacetestutils.html#ae42679ba2fbc4ec4ebba750bee0c072f">testutils::checkBlendingJointSpaceContinuity</a>(blend_res, joint_velocity_tolerance, joint_acceleration_tolerance))</div>
+<div class="line"><a name="l01169"></a><span class="lineno"> 1169</span>&#160;  {</div>
+<div class="line"><a name="l01170"></a><span class="lineno"> 1170</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l01171"></a><span class="lineno"> 1171</span>&#160;  }</div>
+<div class="line"><a name="l01172"></a><span class="lineno"> 1172</span>&#160; </div>
+<div class="line"><a name="l01173"></a><span class="lineno"> 1173</span>&#160;  <span class="comment">// check the continuity between the trajectories in cart space</span></div>
+<div class="line"><a name="l01174"></a><span class="lineno"> 1174</span>&#160;  <span class="keywordflow">if</span> (!<a class="code" href="namespacetestutils.html#a0419dc6ce1ec6a05cbc92c75f965cbb4">testutils::checkBlendingCartSpaceContinuity</a>(blend_req, blend_res, limits))</div>
+<div class="line"><a name="l01175"></a><span class="lineno"> 1175</span>&#160;  {</div>
+<div class="line"><a name="l01176"></a><span class="lineno"> 1176</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l01177"></a><span class="lineno"> 1177</span>&#160;  }</div>
+<div class="line"><a name="l01178"></a><span class="lineno"> 1178</span>&#160; </div>
+<div class="line"><a name="l01179"></a><span class="lineno"> 1179</span>&#160;  <span class="comment">// ++++++++++++++++++++++++</span></div>
+<div class="line"><a name="l01180"></a><span class="lineno"> 1180</span>&#160;  <span class="comment">// + Visualize the result +</span></div>
+<div class="line"><a name="l01181"></a><span class="lineno"> 1181</span>&#160;  <span class="comment">// ++++++++++++++++++++++++</span></div>
+<div class="line"><a name="l01182"></a><span class="lineno"> 1182</span>&#160;  <span class="comment">//  ros::NodeHandle nh;</span></div>
+<div class="line"><a name="l01183"></a><span class="lineno"> 1183</span>&#160;  <span class="comment">//  ros::Publisher pub =</span></div>
+<div class="line"><a name="l01184"></a><span class="lineno"> 1184</span>&#160;  <span class="comment">//  nh.advertise&lt;moveit_msgs::msg::DisplayTrajectory&gt;(&quot;my_planned_path&quot;, 1);</span></div>
+<div class="line"><a name="l01185"></a><span class="lineno"> 1185</span>&#160;  <span class="comment">//  ros::Duration duration(1.0);</span></div>
+<div class="line"><a name="l01186"></a><span class="lineno"> 1186</span>&#160;  <span class="comment">//  duration.sleep();</span></div>
+<div class="line"><a name="l01187"></a><span class="lineno"> 1187</span>&#160; </div>
+<div class="line"><a name="l01188"></a><span class="lineno"> 1188</span>&#160;  <span class="comment">//  // visualize the joint trajectory</span></div>
+<div class="line"><a name="l01189"></a><span class="lineno"> 1189</span>&#160;  <span class="comment">//  moveit_msgs::msg::DisplayTrajectory displayTrajectory;</span></div>
+<div class="line"><a name="l01190"></a><span class="lineno"> 1190</span>&#160;  <span class="comment">//  moveit_msgs::msg::RobotTrajectory res_first_traj_msg, res_blend_traj_msg,</span></div>
+<div class="line"><a name="l01191"></a><span class="lineno"> 1191</span>&#160;  <span class="comment">//  res_second_traj_msg;</span></div>
+<div class="line"><a name="l01192"></a><span class="lineno"> 1192</span>&#160;  <span class="comment">//  blend_res.first_trajectory-&gt;getRobotTrajectoryMsg(res_first_traj_msg);</span></div>
+<div class="line"><a name="l01193"></a><span class="lineno"> 1193</span>&#160;  <span class="comment">//  blend_res.blend_trajectory-&gt;getRobotTrajectoryMsg(res_blend_traj_msg);</span></div>
+<div class="line"><a name="l01194"></a><span class="lineno"> 1194</span>&#160;  <span class="comment">//  blend_res.second_trajectory-&gt;getRobotTrajectoryMsg(res_second_traj_msg);</span></div>
+<div class="line"><a name="l01195"></a><span class="lineno"> 1195</span>&#160;  <span class="comment">//  displayTrajectory.trajectory.push_back(res_first_traj_msg);</span></div>
+<div class="line"><a name="l01196"></a><span class="lineno"> 1196</span>&#160;  <span class="comment">//  displayTrajectory.trajectory.push_back(res_blend_traj_msg);</span></div>
+<div class="line"><a name="l01197"></a><span class="lineno"> 1197</span>&#160;  <span class="comment">//  displayTrajectory.trajectory.push_back(res_second_traj_msg);</span></div>
+<div class="line"><a name="l01198"></a><span class="lineno"> 1198</span>&#160; </div>
+<div class="line"><a name="l01199"></a><span class="lineno"> 1199</span>&#160;  <span class="comment">//  pub.publish(displayTrajectory);</span></div>
+<div class="line"><a name="l01200"></a><span class="lineno"> 1200</span>&#160; </div>
+<div class="line"><a name="l01201"></a><span class="lineno"> 1201</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l01202"></a><span class="lineno"> 1202</span>&#160;}</div>
+<div class="line"><a name="l01203"></a><span class="lineno"> 1203</span>&#160; </div>
+<div class="line"><a name="l01204"></a><span class="lineno"><a class="line" href="namespacetestutils.html#a47e7d5ac95ce106e03eeca07873a8eef"> 1204</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacetestutils.html#a47e7d5ac95ce106e03eeca07873a8eef">testutils::generateRequestMsgFromBlendTestData</a>(<span class="keyword">const</span> moveit::core::RobotModelConstPtr&amp; robot_model,</div>
+<div class="line"><a name="l01205"></a><span class="lineno"> 1205</span>&#160;                                                    <span class="keyword">const</span> <a class="code" href="structtestutils_1_1BlendTestData.html">testutils::BlendTestData</a>&amp; data, <span class="keyword">const</span> std::string&amp; planner_id,</div>
+<div class="line"><a name="l01206"></a><span class="lineno"> 1206</span>&#160;                                                    <span class="keyword">const</span> std::string&amp; group_name, <span class="keyword">const</span> std::string&amp; link_name,</div>
+<div class="line"><a name="l01207"></a><span class="lineno"> 1207</span>&#160;                                                    moveit_msgs::msg::MotionSequenceRequest&amp; req_list)</div>
+<div class="line"><a name="l01208"></a><span class="lineno"> 1208</span>&#160;{</div>
+<div class="line"><a name="l01209"></a><span class="lineno"> 1209</span>&#160;  <span class="comment">// motion plan request of first trajectory</span></div>
+<div class="line"><a name="l01210"></a><span class="lineno"> 1210</span>&#160;  <a class="code" href="namespaceplanning__interface.html#a1307e10a0a3b9ca03406d777b9a938a3">planning_interface::MotionPlanRequest</a> req_1;</div>
+<div class="line"><a name="l01211"></a><span class="lineno"> 1211</span>&#160;  req_1.planner_id = planner_id;</div>
+<div class="line"><a name="l01212"></a><span class="lineno"> 1212</span>&#160;  req_1.group_name = group_name;</div>
+<div class="line"><a name="l01213"></a><span class="lineno"> 1213</span>&#160;  req_1.max_velocity_scaling_factor = 0.1;</div>
+<div class="line"><a name="l01214"></a><span class="lineno"> 1214</span>&#160;  req_1.max_acceleration_scaling_factor = 0.1;</div>
+<div class="line"><a name="l01215"></a><span class="lineno"> 1215</span>&#160;  <span class="comment">// start state</span></div>
+<div class="line"><a name="l01216"></a><span class="lineno"> 1216</span>&#160;  <a class="code" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a> start_state(robot_model);</div>
+<div class="line"><a name="l01217"></a><span class="lineno"> 1217</span>&#160;  start_state.<a class="code" href="classmoveit_1_1core_1_1RobotState.html#aba31c6f758e3dabd32c1acbd069e189e">setToDefaultValues</a>();</div>
+<div class="line"><a name="l01218"></a><span class="lineno"> 1218</span>&#160;  start_state.<a class="code" href="classmoveit_1_1core_1_1RobotState.html#a564140d144754d149b292e70c4c59b55">setJointGroupPositions</a>(group_name, data.<a class="code" href="structtestutils_1_1BlendTestData.html#ab054a7e298cdfc7f45f606c5a4ebdd52">start_position</a>);</div>
+<div class="line"><a name="l01219"></a><span class="lineno"> 1219</span>&#160;  <a class="code" href="namespacemoveit_1_1core.html#a0aafbf7242f36d6efd7bd73ecee400e8">moveit::core::robotStateToRobotStateMsg</a>(start_state, req_1.start_state, <span class="keyword">false</span>);</div>
+<div class="line"><a name="l01220"></a><span class="lineno"> 1220</span>&#160;  <span class="comment">// goal constraint</span></div>
+<div class="line"><a name="l01221"></a><span class="lineno"> 1221</span>&#160;  <a class="code" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a> goal_state_1(robot_model);</div>
+<div class="line"><a name="l01222"></a><span class="lineno"> 1222</span>&#160;  goal_state_1.<a class="code" href="classmoveit_1_1core_1_1RobotState.html#aba31c6f758e3dabd32c1acbd069e189e">setToDefaultValues</a>();</div>
+<div class="line"><a name="l01223"></a><span class="lineno"> 1223</span>&#160;  goal_state_1.<a class="code" href="classmoveit_1_1core_1_1RobotState.html#a564140d144754d149b292e70c4c59b55">setJointGroupPositions</a>(group_name, data.<a class="code" href="structtestutils_1_1BlendTestData.html#adbd614da7d41c31d186dc347650ee69a">mid_position</a>);</div>
+<div class="line"><a name="l01224"></a><span class="lineno"> 1224</span>&#160;  req_1.goal_constraints.push_back(<a class="code" href="namespacekinematic__constraints.html#a449c87b5d209ba3b9a62d73b4278da77">kinematic_constraints::constructGoalConstraints</a>(</div>
+<div class="line"><a name="l01225"></a><span class="lineno"> 1225</span>&#160;      goal_state_1, goal_state_1.<a class="code" href="classmoveit_1_1core_1_1RobotState.html#a5ecd3e71d7283f30be300c83cfd84041">getRobotModel</a>()-&gt;getJointModelGroup(group_name)));</div>
+<div class="line"><a name="l01226"></a><span class="lineno"> 1226</span>&#160; </div>
+<div class="line"><a name="l01227"></a><span class="lineno"> 1227</span>&#160;  <span class="comment">// motion plan request of second trajectory</span></div>
+<div class="line"><a name="l01228"></a><span class="lineno"> 1228</span>&#160;  <a class="code" href="namespaceplanning__interface.html#a1307e10a0a3b9ca03406d777b9a938a3">planning_interface::MotionPlanRequest</a> req_2;</div>
+<div class="line"><a name="l01229"></a><span class="lineno"> 1229</span>&#160;  req_2.planner_id = planner_id;</div>
+<div class="line"><a name="l01230"></a><span class="lineno"> 1230</span>&#160;  req_2.group_name = group_name;</div>
+<div class="line"><a name="l01231"></a><span class="lineno"> 1231</span>&#160;  req_2.max_velocity_scaling_factor = 0.1;</div>
+<div class="line"><a name="l01232"></a><span class="lineno"> 1232</span>&#160;  req_2.max_acceleration_scaling_factor = 0.1;</div>
+<div class="line"><a name="l01233"></a><span class="lineno"> 1233</span>&#160;  <span class="comment">// start state</span></div>
+<div class="line"><a name="l01234"></a><span class="lineno"> 1234</span>&#160;  <span class="comment">// moveit::core::robotStateToRobotStateMsg(goal_state_1, req_2.start_state,</span></div>
+<div class="line"><a name="l01235"></a><span class="lineno"> 1235</span>&#160;  <span class="comment">// false);</span></div>
+<div class="line"><a name="l01236"></a><span class="lineno"> 1236</span>&#160;  <span class="comment">// goal state</span></div>
+<div class="line"><a name="l01237"></a><span class="lineno"> 1237</span>&#160;  <a class="code" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a> goal_state_2(robot_model);</div>
+<div class="line"><a name="l01238"></a><span class="lineno"> 1238</span>&#160;  goal_state_2.<a class="code" href="classmoveit_1_1core_1_1RobotState.html#aba31c6f758e3dabd32c1acbd069e189e">setToDefaultValues</a>();</div>
+<div class="line"><a name="l01239"></a><span class="lineno"> 1239</span>&#160;  goal_state_2.<a class="code" href="classmoveit_1_1core_1_1RobotState.html#a564140d144754d149b292e70c4c59b55">setJointGroupPositions</a>(group_name, data.<a class="code" href="structtestutils_1_1BlendTestData.html#a37078536f3184e23afb6d548b5a7d564">end_position</a>);</div>
+<div class="line"><a name="l01240"></a><span class="lineno"> 1240</span>&#160;  req_2.goal_constraints.push_back(<a class="code" href="namespacekinematic__constraints.html#a449c87b5d209ba3b9a62d73b4278da77">kinematic_constraints::constructGoalConstraints</a>(</div>
+<div class="line"><a name="l01241"></a><span class="lineno"> 1241</span>&#160;      goal_state_2, goal_state_2.<a class="code" href="classmoveit_1_1core_1_1RobotState.html#a5ecd3e71d7283f30be300c83cfd84041">getRobotModel</a>()-&gt;getJointModelGroup(group_name)));</div>
+<div class="line"><a name="l01242"></a><span class="lineno"> 1242</span>&#160; </div>
+<div class="line"><a name="l01243"></a><span class="lineno"> 1243</span>&#160;  <span class="comment">// select a proper blending radius</span></div>
+<div class="line"><a name="l01244"></a><span class="lineno"> 1244</span>&#160;  <span class="comment">// estimate a proper blend radius</span></div>
+<div class="line"><a name="l01245"></a><span class="lineno"> 1245</span>&#160;  <span class="keywordtype">double</span> dis_1 =</div>
+<div class="line"><a name="l01246"></a><span class="lineno"> 1246</span>&#160;      (start_state.<a class="code" href="classmoveit_1_1core_1_1RobotState.html#aa0d9f132691a3f24186dcdff72be5d28">getFrameTransform</a>(link_name).translation() - goal_state_1.<a class="code" href="classmoveit_1_1core_1_1RobotState.html#aa0d9f132691a3f24186dcdff72be5d28">getFrameTransform</a>(link_name).translation())</div>
+<div class="line"><a name="l01247"></a><span class="lineno"> 1247</span>&#160;          .norm();</div>
+<div class="line"><a name="l01248"></a><span class="lineno"> 1248</span>&#160; </div>
+<div class="line"><a name="l01249"></a><span class="lineno"> 1249</span>&#160;  <span class="keywordtype">double</span> dis_2 = (goal_state_1.<a class="code" href="classmoveit_1_1core_1_1RobotState.html#aa0d9f132691a3f24186dcdff72be5d28">getFrameTransform</a>(link_name).translation() -</div>
+<div class="line"><a name="l01250"></a><span class="lineno"> 1250</span>&#160;                  goal_state_2.<a class="code" href="classmoveit_1_1core_1_1RobotState.html#aa0d9f132691a3f24186dcdff72be5d28">getFrameTransform</a>(link_name).translation())</div>
+<div class="line"><a name="l01251"></a><span class="lineno"> 1251</span>&#160;                     .norm();</div>
+<div class="line"><a name="l01252"></a><span class="lineno"> 1252</span>&#160; </div>
+<div class="line"><a name="l01253"></a><span class="lineno"> 1253</span>&#160;  <span class="keywordtype">double</span> blend_radius = 0.5 * std::min(dis_1, dis_2);</div>
+<div class="line"><a name="l01254"></a><span class="lineno"> 1254</span>&#160; </div>
+<div class="line"><a name="l01255"></a><span class="lineno"> 1255</span>&#160;  moveit_msgs::msg::MotionSequenceItem blend_req_1, blend_req_2;</div>
+<div class="line"><a name="l01256"></a><span class="lineno"> 1256</span>&#160;  blend_req_1.req = req_1;</div>
+<div class="line"><a name="l01257"></a><span class="lineno"> 1257</span>&#160;  blend_req_1.blend_radius = blend_radius;</div>
+<div class="line"><a name="l01258"></a><span class="lineno"> 1258</span>&#160;  blend_req_2.req = req_2;</div>
+<div class="line"><a name="l01259"></a><span class="lineno"> 1259</span>&#160;  blend_req_2.blend_radius = 0.0;</div>
+<div class="line"><a name="l01260"></a><span class="lineno"> 1260</span>&#160; </div>
+<div class="line"><a name="l01261"></a><span class="lineno"> 1261</span>&#160;  req_list.items.push_back(blend_req_1);</div>
+<div class="line"><a name="l01262"></a><span class="lineno"> 1262</span>&#160;  req_list.items.push_back(blend_req_2);</div>
+<div class="line"><a name="l01263"></a><span class="lineno"> 1263</span>&#160;}</div>
+<div class="line"><a name="l01264"></a><span class="lineno"> 1264</span>&#160; </div>
+<div class="line"><a name="l01265"></a><span class="lineno"><a class="line" href="namespacetestutils.html#aee400d4013caab0af4681d89dc96d66c"> 1265</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacetestutils.html#aee400d4013caab0af4681d89dc96d66c">testutils::checkRobotModel</a>(<span class="keyword">const</span> moveit::core::RobotModelConstPtr&amp; robot_model, <span class="keyword">const</span> std::string&amp; group_name,</div>
+<div class="line"><a name="l01266"></a><span class="lineno"> 1266</span>&#160;                                <span class="keyword">const</span> std::string&amp; link_name)</div>
+<div class="line"><a name="l01267"></a><span class="lineno"> 1267</span>&#160;{</div>
+<div class="line"><a name="l01268"></a><span class="lineno"> 1268</span>&#160;  ASSERT_TRUE(robot_model != <span class="keyword">nullptr</span>) &lt;&lt; <span class="stringliteral">&quot;failed to load robot model&quot;</span>;</div>
+<div class="line"><a name="l01269"></a><span class="lineno"> 1269</span>&#160;  ASSERT_FALSE(robot_model-&gt;isEmpty()) &lt;&lt; <span class="stringliteral">&quot;robot model is empty&quot;</span>;</div>
+<div class="line"><a name="l01270"></a><span class="lineno"> 1270</span>&#160;  ASSERT_TRUE(robot_model-&gt;hasJointModelGroup(group_name)) &lt;&lt; group_name &lt;&lt; <span class="stringliteral">&quot; is not known to robot&quot;</span>;</div>
+<div class="line"><a name="l01271"></a><span class="lineno"> 1271</span>&#160;  ASSERT_TRUE(robot_model-&gt;hasLinkModel(link_name)) &lt;&lt; link_name &lt;&lt; <span class="stringliteral">&quot; is not known to robot&quot;</span>;</div>
+<div class="line"><a name="l01272"></a><span class="lineno"> 1272</span>&#160;  ASSERT_TRUE(<a class="code" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a>(robot_model).knowsFrameTransform(link_name))</div>
+<div class="line"><a name="l01273"></a><span class="lineno"> 1273</span>&#160;      &lt;&lt; <span class="stringliteral">&quot;Transform of &quot;</span> &lt;&lt; link_name &lt;&lt; <span class="stringliteral">&quot; is unknown&quot;</span>;</div>
+<div class="line"><a name="l01274"></a><span class="lineno"> 1274</span>&#160;}</div>
+<div class="line"><a name="l01275"></a><span class="lineno"> 1275</span>&#160; </div>
+<div class="line"><a name="l01276"></a><span class="lineno"><a class="line" href="namespacetestutils.html#ad85119748f255af37a1ddca4b438962f"> 1276</a></span>&#160;::testing::AssertionResult <a class="code" href="namespacetestutils.html#ad85119748f255af37a1ddca4b438962f">testutils::hasTrapezoidVelocity</a>(std::vector&lt;double&gt; accelerations, <span class="keyword">const</span> <span class="keywordtype">double</span> acc_tol)</div>
+<div class="line"><a name="l01277"></a><span class="lineno"> 1277</span>&#160;{</div>
+<div class="line"><a name="l01278"></a><span class="lineno"> 1278</span>&#160;  <span class="comment">// Check that acceleration is monotonously decreasing</span></div>
+<div class="line"><a name="l01279"></a><span class="lineno"> 1279</span>&#160;  <span class="keywordflow">if</span> (!<a class="code" href="namespacetestutils.html#a0084beb9bba6496da596d6433544786e">isMonotonouslyDecreasing</a>(accelerations, acc_tol))</div>
+<div class="line"><a name="l01280"></a><span class="lineno"> 1280</span>&#160;  {</div>
+<div class="line"><a name="l01281"></a><span class="lineno"> 1281</span>&#160;    return ::testing::AssertionFailure() &lt;&lt; <span class="stringliteral">&quot;Cannot be a trapezoid since &quot;</span></div>
+<div class="line"><a name="l01282"></a><span class="lineno"> 1282</span>&#160;                                            <span class="stringliteral">&quot;acceleration is not monotonously &quot;</span></div>
+<div class="line"><a name="l01283"></a><span class="lineno"> 1283</span>&#160;                                            <span class="stringliteral">&quot;decreasing!&quot;</span>;</div>
+<div class="line"><a name="l01284"></a><span class="lineno"> 1284</span>&#160;  }</div>
+<div class="line"><a name="l01285"></a><span class="lineno"> 1285</span>&#160; </div>
+<div class="line"><a name="l01286"></a><span class="lineno"> 1286</span>&#160;  <span class="comment">// Check accelerations</span></div>
+<div class="line"><a name="l01287"></a><span class="lineno"> 1287</span>&#160;  <span class="keywordtype">double</span> first_acc = accelerations.front();</div>
+<div class="line"><a name="l01288"></a><span class="lineno"> 1288</span>&#160;  <span class="keyword">auto</span> it_last_acc = std::find_if(accelerations.begin(), accelerations.end(),</div>
+<div class="line"><a name="l01289"></a><span class="lineno"> 1289</span>&#160;                                  [first_acc, acc_tol](<span class="keywordtype">double</span> el) { return (std::abs(el - first_acc) &gt; acc_tol); }) -</div>
+<div class="line"><a name="l01290"></a><span class="lineno"> 1290</span>&#160;                     1;</div>
+<div class="line"><a name="l01291"></a><span class="lineno"> 1291</span>&#160; </div>
+<div class="line"><a name="l01292"></a><span class="lineno"> 1292</span>&#160;  <span class="keyword">auto</span> it_last_intermediate =</div>
+<div class="line"><a name="l01293"></a><span class="lineno"> 1293</span>&#160;      std::find_if(it_last_acc + 1, accelerations.end(), [acc_tol](<span class="keywordtype">double</span> el) { return (el &lt; acc_tol); }) - 1;</div>
+<div class="line"><a name="l01294"></a><span class="lineno"> 1294</span>&#160; </div>
+<div class="line"><a name="l01295"></a><span class="lineno"> 1295</span>&#160;  <span class="comment">// Check that there are 1 or 2 intermediate points</span></div>
+<div class="line"><a name="l01296"></a><span class="lineno"> 1296</span>&#160;  <span class="keyword">auto</span> n_intermediate_1 = <a class="code" href="namespacepr2__arm__kinematics.html#a24f684af4bcce4a6d0c945aa27d04550">std::distance</a>(it_last_acc, it_last_intermediate);</div>
+<div class="line"><a name="l01297"></a><span class="lineno"> 1297</span>&#160; </div>
+<div class="line"><a name="l01298"></a><span class="lineno"> 1298</span>&#160;  <span class="keywordflow">if</span> (n_intermediate_1 != 1 &amp;&amp; n_intermediate_1 != 2)</div>
+<div class="line"><a name="l01299"></a><span class="lineno"> 1299</span>&#160;  {</div>
+<div class="line"><a name="l01300"></a><span class="lineno"> 1300</span>&#160;    return ::testing::AssertionFailure() &lt;&lt; <span class="stringliteral">&quot;Expected 1 or 2 intermediate points between acceleration and &quot;</span></div>
+<div class="line"><a name="l01301"></a><span class="lineno"> 1301</span>&#160;                                            <span class="stringliteral">&quot;constant &quot;</span></div>
+<div class="line"><a name="l01302"></a><span class="lineno"> 1302</span>&#160;                                            <span class="stringliteral">&quot;velocity phase but found: &quot;</span></div>
+<div class="line"><a name="l01303"></a><span class="lineno"> 1303</span>&#160;                                         &lt;&lt; n_intermediate_1;</div>
+<div class="line"><a name="l01304"></a><span class="lineno"> 1304</span>&#160;  }</div>
+<div class="line"><a name="l01305"></a><span class="lineno"> 1305</span>&#160; </div>
+<div class="line"><a name="l01306"></a><span class="lineno"> 1306</span>&#160;  <span class="comment">// Const phase (vel == 0)</span></div>
+<div class="line"><a name="l01307"></a><span class="lineno"> 1307</span>&#160;  <span class="keyword">auto</span> it_first_const = it_last_intermediate + 1;</div>
+<div class="line"><a name="l01308"></a><span class="lineno"> 1308</span>&#160;  <span class="keyword">auto</span> it_last_const =</div>
+<div class="line"><a name="l01309"></a><span class="lineno"> 1309</span>&#160;      std::find_if(it_first_const, accelerations.end(), [acc_tol](<span class="keywordtype">double</span> el) { return (std::abs(el) &gt; acc_tol); }) - 1;</div>
+<div class="line"><a name="l01310"></a><span class="lineno"> 1310</span>&#160;  <span class="comment">// This test makes sense only if the generated traj has enough points such</span></div>
+<div class="line"><a name="l01311"></a><span class="lineno"> 1311</span>&#160;  <span class="comment">// that the trapezoid is not degenerated.</span></div>
+<div class="line"><a name="l01312"></a><span class="lineno"> 1312</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="namespacepr2__arm__kinematics.html#a24f684af4bcce4a6d0c945aa27d04550">std::distance</a>(it_first_const, it_last_const) &lt; 3)</div>
+<div class="line"><a name="l01313"></a><span class="lineno"> 1313</span>&#160;  {</div>
+<div class="line"><a name="l01314"></a><span class="lineno"> 1314</span>&#160;    return ::testing::AssertionFailure() &lt;&lt; <span class="stringliteral">&quot;Expected the have at least 3 points during the phase of &quot;</span></div>
+<div class="line"><a name="l01315"></a><span class="lineno"> 1315</span>&#160;                                            <span class="stringliteral">&quot;constant &quot;</span></div>
+<div class="line"><a name="l01316"></a><span class="lineno"> 1316</span>&#160;                                            <span class="stringliteral">&quot;velocity.&quot;</span>;</div>
+<div class="line"><a name="l01317"></a><span class="lineno"> 1317</span>&#160;  }</div>
+<div class="line"><a name="l01318"></a><span class="lineno"> 1318</span>&#160; </div>
+<div class="line"><a name="l01319"></a><span class="lineno"> 1319</span>&#160;  <span class="comment">// Deceleration</span></div>
+<div class="line"><a name="l01320"></a><span class="lineno"> 1320</span>&#160;  <span class="keywordtype">double</span> deceleration = accelerations.back();</div>
+<div class="line"><a name="l01321"></a><span class="lineno"> 1321</span>&#160;  <span class="keyword">auto</span> it_first_dec =</div>
+<div class="line"><a name="l01322"></a><span class="lineno"> 1322</span>&#160;      std::find_if(it_last_const + 1, accelerations.end(),</div>
+<div class="line"><a name="l01323"></a><span class="lineno"> 1323</span>&#160;                   [deceleration, acc_tol](<span class="keywordtype">double</span> el) { return (std::abs(el - deceleration) &gt; acc_tol); }) +</div>
+<div class="line"><a name="l01324"></a><span class="lineno"> 1324</span>&#160;      1;</div>
+<div class="line"><a name="l01325"></a><span class="lineno"> 1325</span>&#160; </div>
+<div class="line"><a name="l01326"></a><span class="lineno"> 1326</span>&#160;  <span class="comment">// Points between const and deceleration (again 1 or 2)</span></div>
+<div class="line"><a name="l01327"></a><span class="lineno"> 1327</span>&#160;  <span class="keyword">auto</span> n_intermediate_2 = <a class="code" href="namespacepr2__arm__kinematics.html#a24f684af4bcce4a6d0c945aa27d04550">std::distance</a>(it_last_const, it_first_dec);</div>
+<div class="line"><a name="l01328"></a><span class="lineno"> 1328</span>&#160;  <span class="keywordflow">if</span> (n_intermediate_2 != 1 &amp;&amp; n_intermediate_2 != 2)</div>
+<div class="line"><a name="l01329"></a><span class="lineno"> 1329</span>&#160;  {</div>
+<div class="line"><a name="l01330"></a><span class="lineno"> 1330</span>&#160;    return ::testing::AssertionFailure() &lt;&lt; <span class="stringliteral">&quot;Expected 1 or 2 intermediate points between constant velocity &quot;</span></div>
+<div class="line"><a name="l01331"></a><span class="lineno"> 1331</span>&#160;                                            <span class="stringliteral">&quot;and &quot;</span></div>
+<div class="line"><a name="l01332"></a><span class="lineno"> 1332</span>&#160;                                            <span class="stringliteral">&quot;deceleration phase but found: &quot;</span></div>
+<div class="line"><a name="l01333"></a><span class="lineno"> 1333</span>&#160;                                         &lt;&lt; n_intermediate_2;</div>
+<div class="line"><a name="l01334"></a><span class="lineno"> 1334</span>&#160;  }</div>
+<div class="line"><a name="l01335"></a><span class="lineno"> 1335</span>&#160; </div>
+<div class="line"><a name="l01336"></a><span class="lineno"> 1336</span>&#160;  std::stringstream debug_stream;</div>
+<div class="line"><a name="l01337"></a><span class="lineno"> 1337</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = accelerations.begin(); it != it_last_acc + 1; ++it)</div>
+<div class="line"><a name="l01338"></a><span class="lineno"> 1338</span>&#160;  {</div>
+<div class="line"><a name="l01339"></a><span class="lineno"> 1339</span>&#160;    debug_stream &lt;&lt; *it &lt;&lt; <span class="stringliteral">&quot;(Acc)&quot;</span> &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l01340"></a><span class="lineno"> 1340</span>&#160;  }</div>
+<div class="line"><a name="l01341"></a><span class="lineno"> 1341</span>&#160; </div>
+<div class="line"><a name="l01342"></a><span class="lineno"> 1342</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = it_last_acc + 1; it != it_last_intermediate + 1; ++it)</div>
+<div class="line"><a name="l01343"></a><span class="lineno"> 1343</span>&#160;  {</div>
+<div class="line"><a name="l01344"></a><span class="lineno"> 1344</span>&#160;    debug_stream &lt;&lt; *it &lt;&lt; <span class="stringliteral">&quot;(Inter1)&quot;</span> &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l01345"></a><span class="lineno"> 1345</span>&#160;  }</div>
+<div class="line"><a name="l01346"></a><span class="lineno"> 1346</span>&#160; </div>
+<div class="line"><a name="l01347"></a><span class="lineno"> 1347</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = it_first_const; it != it_last_const + 1; ++it)</div>
+<div class="line"><a name="l01348"></a><span class="lineno"> 1348</span>&#160;  {</div>
+<div class="line"><a name="l01349"></a><span class="lineno"> 1349</span>&#160;    debug_stream &lt;&lt; *it &lt;&lt; <span class="stringliteral">&quot;(Const)&quot;</span> &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l01350"></a><span class="lineno"> 1350</span>&#160;  }</div>
+<div class="line"><a name="l01351"></a><span class="lineno"> 1351</span>&#160; </div>
+<div class="line"><a name="l01352"></a><span class="lineno"> 1352</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = it_last_const + 1; it != it_first_dec; ++it)</div>
+<div class="line"><a name="l01353"></a><span class="lineno"> 1353</span>&#160;  {</div>
+<div class="line"><a name="l01354"></a><span class="lineno"> 1354</span>&#160;    debug_stream &lt;&lt; *it &lt;&lt; <span class="stringliteral">&quot;(Inter2)&quot;</span> &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l01355"></a><span class="lineno"> 1355</span>&#160;  }</div>
+<div class="line"><a name="l01356"></a><span class="lineno"> 1356</span>&#160; </div>
+<div class="line"><a name="l01357"></a><span class="lineno"> 1357</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = it_first_dec; it != accelerations.end(); ++it)</div>
+<div class="line"><a name="l01358"></a><span class="lineno"> 1358</span>&#160;  {</div>
+<div class="line"><a name="l01359"></a><span class="lineno"> 1359</span>&#160;    debug_stream &lt;&lt; *it &lt;&lt; <span class="stringliteral">&quot;(Dec)&quot;</span> &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l01360"></a><span class="lineno"> 1360</span>&#160;  }</div>
+<div class="line"><a name="l01361"></a><span class="lineno"> 1361</span>&#160; </div>
+<div class="line"><a name="l01362"></a><span class="lineno"> 1362</span>&#160;  RCLCPP_DEBUG_STREAM(LOGGER, debug_stream.str());</div>
+<div class="line"><a name="l01363"></a><span class="lineno"> 1363</span>&#160; </div>
+<div class="line"><a name="l01364"></a><span class="lineno"> 1364</span>&#160;  return ::testing::AssertionSuccess();</div>
+<div class="line"><a name="l01365"></a><span class="lineno"> 1365</span>&#160;}</div>
+<div class="line"><a name="l01366"></a><span class="lineno"> 1366</span>&#160; </div>
+<div class="line"><a name="l01367"></a><span class="lineno"> 1367</span>&#160;::testing::AssertionResult</div>
+<div class="line"><a name="l01368"></a><span class="lineno"><a class="line" href="namespacetestutils.html#a2fdced2dd08d4d1c6ba87e72c2096776"> 1368</a></span>&#160;<a class="code" href="namespacetestutils.html#a2fdced2dd08d4d1c6ba87e72c2096776">testutils::checkCartesianTranslationalPath</a>(<span class="keyword">const</span> robot_trajectory::RobotTrajectoryConstPtr&amp; trajectory,</div>
+<div class="line"><a name="l01369"></a><span class="lineno"> 1369</span>&#160;                                           <span class="keyword">const</span> std::string&amp; link_name, <span class="keyword">const</span> <span class="keywordtype">double</span> acc_tol)</div>
+<div class="line"><a name="l01370"></a><span class="lineno"> 1370</span>&#160;{</div>
+<div class="line"><a name="l01371"></a><span class="lineno"> 1371</span>&#160;  <span class="comment">// We require the following such that the test makes sense, else the traj</span></div>
+<div class="line"><a name="l01372"></a><span class="lineno"> 1372</span>&#160;  <span class="comment">// would have a degenerated velocity profile</span></div>
+<div class="line"><a name="l01373"></a><span class="lineno"> 1373</span>&#160;  EXPECT_GT(trajectory-&gt;getWayPointCount(), 9u);</div>
+<div class="line"><a name="l01374"></a><span class="lineno"> 1374</span>&#160; </div>
+<div class="line"><a name="l01375"></a><span class="lineno"> 1375</span>&#160;  std::vector&lt;double&gt; accelerations;</div>
+<div class="line"><a name="l01376"></a><span class="lineno"> 1376</span>&#160; </div>
+<div class="line"><a name="l01377"></a><span class="lineno"> 1377</span>&#160;  <span class="comment">// Iterate over waypoints collect accelerations</span></div>
+<div class="line"><a name="l01378"></a><span class="lineno"> 1378</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 2; i &lt; trajectory-&gt;getWayPointCount(); ++i)</div>
+<div class="line"><a name="l01379"></a><span class="lineno"> 1379</span>&#160;  {</div>
+<div class="line"><a name="l01380"></a><span class="lineno"> 1380</span>&#160;    <span class="keyword">auto</span> waypoint_pose_0 = trajectory-&gt;getWayPoint(i - 2).getFrameTransform(link_name);</div>
+<div class="line"><a name="l01381"></a><span class="lineno"> 1381</span>&#160;    <span class="keyword">auto</span> waypoint_pose_1 = trajectory-&gt;getWayPoint(i - 1).getFrameTransform(link_name);</div>
+<div class="line"><a name="l01382"></a><span class="lineno"> 1382</span>&#160;    <span class="keyword">auto</span> waypoint_pose_2 = trajectory-&gt;getWayPoint(i).getFrameTransform(link_name);</div>
+<div class="line"><a name="l01383"></a><span class="lineno"> 1383</span>&#160; </div>
+<div class="line"><a name="l01384"></a><span class="lineno"> 1384</span>&#160;    <span class="keyword">auto</span> t1 = trajectory-&gt;getWayPointDurationFromPrevious(i - 1);</div>
+<div class="line"><a name="l01385"></a><span class="lineno"> 1385</span>&#160;    <span class="keyword">auto</span> t2 = trajectory-&gt;getWayPointDurationFromPrevious(i);</div>
+<div class="line"><a name="l01386"></a><span class="lineno"> 1386</span>&#160; </div>
+<div class="line"><a name="l01387"></a><span class="lineno"> 1387</span>&#160;    <span class="keyword">auto</span> vel1 = (waypoint_pose_1.translation() - waypoint_pose_0.translation()).norm() / t1;</div>
+<div class="line"><a name="l01388"></a><span class="lineno"> 1388</span>&#160;    <span class="keyword">auto</span> vel2 = (waypoint_pose_2.translation() - waypoint_pose_1.translation()).norm() / t2;</div>
+<div class="line"><a name="l01389"></a><span class="lineno"> 1389</span>&#160;    <span class="keyword">auto</span> acc_transl = (vel2 - vel1) / (t1 + t2);</div>
+<div class="line"><a name="l01390"></a><span class="lineno"> 1390</span>&#160;    accelerations.push_back(acc_transl);</div>
+<div class="line"><a name="l01391"></a><span class="lineno"> 1391</span>&#160;  }</div>
+<div class="line"><a name="l01392"></a><span class="lineno"> 1392</span>&#160; </div>
+<div class="line"><a name="l01393"></a><span class="lineno"> 1393</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="namespacetestutils.html#ad85119748f255af37a1ddca4b438962f">hasTrapezoidVelocity</a>(accelerations, acc_tol);</div>
+<div class="line"><a name="l01394"></a><span class="lineno"> 1394</span>&#160;}</div>
+<div class="line"><a name="l01395"></a><span class="lineno"> 1395</span>&#160; </div>
+<div class="line"><a name="l01396"></a><span class="lineno"> 1396</span>&#160;::testing::AssertionResult</div>
+<div class="line"><a name="l01397"></a><span class="lineno"><a class="line" href="namespacetestutils.html#aff7e22a5989e2e292e9ce0b20b3fd195"> 1397</a></span>&#160;<a class="code" href="namespacetestutils.html#aff7e22a5989e2e292e9ce0b20b3fd195">testutils::checkCartesianRotationalPath</a>(<span class="keyword">const</span> robot_trajectory::RobotTrajectoryConstPtr&amp; trajectory,</div>
+<div class="line"><a name="l01398"></a><span class="lineno"> 1398</span>&#160;                                        <span class="keyword">const</span> std::string&amp; link_name, <span class="keyword">const</span> <span class="keywordtype">double</span> rot_axis_tol, <span class="keyword">const</span> <span class="keywordtype">double</span> acc_tol)</div>
+<div class="line"><a name="l01399"></a><span class="lineno"> 1399</span>&#160;{</div>
+<div class="line"><a name="l01400"></a><span class="lineno"> 1400</span>&#160;  <span class="comment">// skip computations if rotation angle is zero</span></div>
+<div class="line"><a name="l01401"></a><span class="lineno"> 1401</span>&#160;  <span class="keywordflow">if</span> (trajectory-&gt;getFirstWayPoint().getFrameTransform(link_name).rotation().isApprox(</div>
+<div class="line"><a name="l01402"></a><span class="lineno"> 1402</span>&#160;          trajectory-&gt;getLastWayPoint().getFrameTransform(link_name).rotation(), rot_axis_tol))</div>
+<div class="line"><a name="l01403"></a><span class="lineno"> 1403</span>&#160;  {</div>
+<div class="line"><a name="l01404"></a><span class="lineno"> 1404</span>&#160;    return ::testing::AssertionSuccess();</div>
+<div class="line"><a name="l01405"></a><span class="lineno"> 1405</span>&#160;  }</div>
+<div class="line"><a name="l01406"></a><span class="lineno"> 1406</span>&#160; </div>
+<div class="line"><a name="l01407"></a><span class="lineno"> 1407</span>&#160;  <span class="comment">// We require the following such that the test makes sense, else the traj</span></div>
+<div class="line"><a name="l01408"></a><span class="lineno"> 1408</span>&#160;  <span class="comment">// would have a degenerated velocity profile</span></div>
+<div class="line"><a name="l01409"></a><span class="lineno"> 1409</span>&#160;  EXPECT_GT(trajectory-&gt;getWayPointCount(), 9u);</div>
+<div class="line"><a name="l01410"></a><span class="lineno"> 1410</span>&#160; </div>
+<div class="line"><a name="l01411"></a><span class="lineno"> 1411</span>&#160;  std::vector&lt;double&gt; accelerations;</div>
+<div class="line"><a name="l01412"></a><span class="lineno"> 1412</span>&#160;  std::vector&lt;Eigen::AngleAxisd&gt; rotation_axes;</div>
+<div class="line"><a name="l01413"></a><span class="lineno"> 1413</span>&#160; </div>
+<div class="line"><a name="l01414"></a><span class="lineno"> 1414</span>&#160;  <span class="comment">// Iterate over waypoints collect accelerations and rotation axes</span></div>
+<div class="line"><a name="l01415"></a><span class="lineno"> 1415</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 2; i &lt; trajectory-&gt;getWayPointCount(); ++i)</div>
+<div class="line"><a name="l01416"></a><span class="lineno"> 1416</span>&#160;  {</div>
+<div class="line"><a name="l01417"></a><span class="lineno"> 1417</span>&#160;    <span class="keyword">auto</span> waypoint_pose_0 = trajectory-&gt;getWayPoint(i - 2).getFrameTransform(link_name);</div>
+<div class="line"><a name="l01418"></a><span class="lineno"> 1418</span>&#160;    <span class="keyword">auto</span> waypoint_pose_1 = trajectory-&gt;getWayPoint(i - 1).getFrameTransform(link_name);</div>
+<div class="line"><a name="l01419"></a><span class="lineno"> 1419</span>&#160;    <span class="keyword">auto</span> waypoint_pose_2 = trajectory-&gt;getWayPoint(i).getFrameTransform(link_name);</div>
+<div class="line"><a name="l01420"></a><span class="lineno"> 1420</span>&#160; </div>
+<div class="line"><a name="l01421"></a><span class="lineno"> 1421</span>&#160;    <span class="keyword">auto</span> t1 = trajectory-&gt;getWayPointDurationFromPrevious(i - 1);</div>
+<div class="line"><a name="l01422"></a><span class="lineno"> 1422</span>&#160;    <span class="keyword">auto</span> t2 = trajectory-&gt;getWayPointDurationFromPrevious(i);</div>
+<div class="line"><a name="l01423"></a><span class="lineno"> 1423</span>&#160; </div>
+<div class="line"><a name="l01424"></a><span class="lineno"> 1424</span>&#160;    Eigen::Quaterniond orientation0(waypoint_pose_0.rotation());</div>
+<div class="line"><a name="l01425"></a><span class="lineno"> 1425</span>&#160;    Eigen::Quaterniond orientation1(waypoint_pose_1.rotation());</div>
+<div class="line"><a name="l01426"></a><span class="lineno"> 1426</span>&#160;    Eigen::Quaterniond orientation2(waypoint_pose_2.rotation());</div>
+<div class="line"><a name="l01427"></a><span class="lineno"> 1427</span>&#160; </div>
+<div class="line"><a name="l01428"></a><span class="lineno"> 1428</span>&#160;    Eigen::AngleAxisd axis1(orientation0 * orientation1.inverse());</div>
+<div class="line"><a name="l01429"></a><span class="lineno"> 1429</span>&#160;    Eigen::AngleAxisd axis2(orientation1 * orientation2.inverse());</div>
+<div class="line"><a name="l01430"></a><span class="lineno"> 1430</span>&#160;    <span class="keywordflow">if</span> (i == 2)</div>
+<div class="line"><a name="l01431"></a><span class="lineno"> 1431</span>&#160;    {</div>
+<div class="line"><a name="l01432"></a><span class="lineno"> 1432</span>&#160;      rotation_axes.push_back(axis1);</div>
+<div class="line"><a name="l01433"></a><span class="lineno"> 1433</span>&#160;    }</div>
+<div class="line"><a name="l01434"></a><span class="lineno"> 1434</span>&#160;    rotation_axes.push_back(axis2);</div>
+<div class="line"><a name="l01435"></a><span class="lineno"> 1435</span>&#160; </div>
+<div class="line"><a name="l01436"></a><span class="lineno"> 1436</span>&#160;    <span class="keywordtype">double</span> angular_vel1 = axis1.angle() / t1;</div>
+<div class="line"><a name="l01437"></a><span class="lineno"> 1437</span>&#160;    <span class="keywordtype">double</span> angular_vel2 = axis2.angle() / t2;</div>
+<div class="line"><a name="l01438"></a><span class="lineno"> 1438</span>&#160;    <span class="keywordtype">double</span> angular_acc = (angular_vel2 - angular_vel1) / (t1 + t2);</div>
+<div class="line"><a name="l01439"></a><span class="lineno"> 1439</span>&#160;    accelerations.push_back(angular_acc);</div>
+<div class="line"><a name="l01440"></a><span class="lineno"> 1440</span>&#160;  }</div>
+<div class="line"><a name="l01441"></a><span class="lineno"> 1441</span>&#160; </div>
+<div class="line"><a name="l01442"></a><span class="lineno"> 1442</span>&#160;  <span class="comment">// Check that rotation axis is fixed</span></div>
+<div class="line"><a name="l01443"></a><span class="lineno"> 1443</span>&#160;  <span class="keywordflow">if</span> (std::adjacent_find(rotation_axes.begin(), rotation_axes.end(),</div>
+<div class="line"><a name="l01444"></a><span class="lineno"> 1444</span>&#160;                         [rot_axis_tol](<span class="keyword">const</span> Eigen::AngleAxisd&amp; axis1, <span class="keyword">const</span> Eigen::AngleAxisd&amp; axis2) {</div>
+<div class="line"><a name="l01445"></a><span class="lineno"> 1445</span>&#160;                           return ((axis1.axis() - axis2.axis()).norm() &gt; rot_axis_tol);</div>
+<div class="line"><a name="l01446"></a><span class="lineno"> 1446</span>&#160;                         }) != rotation_axes.end())</div>
+<div class="line"><a name="l01447"></a><span class="lineno"> 1447</span>&#160;  {</div>
+<div class="line"><a name="l01448"></a><span class="lineno"> 1448</span>&#160;    return ::testing::AssertionFailure() &lt;&lt; <span class="stringliteral">&quot;Rotational path of trajectory &quot;</span></div>
+<div class="line"><a name="l01449"></a><span class="lineno"> 1449</span>&#160;                                            <span class="stringliteral">&quot;does not have a fixed rotation &quot;</span></div>
+<div class="line"><a name="l01450"></a><span class="lineno"> 1450</span>&#160;                                            <span class="stringliteral">&quot;axis&quot;</span>;</div>
+<div class="line"><a name="l01451"></a><span class="lineno"> 1451</span>&#160;  }</div>
+<div class="line"><a name="l01452"></a><span class="lineno"> 1452</span>&#160; </div>
+<div class="line"><a name="l01453"></a><span class="lineno"> 1453</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="namespacetestutils.html#ad85119748f255af37a1ddca4b438962f">hasTrapezoidVelocity</a>(accelerations, acc_tol);</div>
+<div class="line"><a name="l01454"></a><span class="lineno"> 1454</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="anamespacetestutils_html_ad85119748f255af37a1ddca4b438962f"><div class="ttname"><a href="namespacetestutils.html#ad85119748f255af37a1ddca4b438962f">testutils::hasTrapezoidVelocity</a></div><div class="ttdeci">::testing::AssertionResult hasTrapezoidVelocity(std::vector&lt; double &gt; accelerations, const double acc_tol)</div><div class="ttdoc">Check that a given vector of accelerations represents a trapezoid velocity profile.</div><div class="ttdef"><b>Definition:</b> <a href="test__utils_8cpp_source.html#l01277">test_utils.cpp:1277</a></div></div>
+<div class="ttc" id="anamespacetestutils_html_ad85119748f255af37a1ddca4b438962f"><div class="ttname"><a href="namespacetestutils.html#ad85119748f255af37a1ddca4b438962f">testutils::hasTrapezoidVelocity</a></div><div class="ttdeci">::testing::AssertionResult hasTrapezoidVelocity(std::vector&lt; double &gt; accelerations, const double acc_tol)</div><div class="ttdoc">Check that a given vector of accelerations represents a trapezoid velocity profile.</div><div class="ttdef"><b>Definition:</b> <a href="test__utils_8cpp_source.html#l01276">test_utils.cpp:1276</a></div></div>
 <div class="ttc" id="astructtestutils_1_1BlendTestData_html"><div class="ttname"><a href="structtestutils_1_1BlendTestData.html">testutils::BlendTestData</a></div><div class="ttdoc">Test data for blending, which contains three joint position vectors of three robot state.</div><div class="ttdef"><b>Definition:</b> <a href="test__utils_8h_source.html#l00398">test_utils.h:398</a></div></div>
 <div class="ttc" id="anamespacetestutils_html_a8a63fe303986751918a4a9554924b9d4"><div class="ttname"><a href="namespacetestutils.html#a8a63fe303986751918a4a9554924b9d4">testutils::toTCPPose</a></div><div class="ttdeci">bool toTCPPose(const moveit::core::RobotModelConstPtr &amp;robot_model, const std::string &amp;link_name, const std::vector&lt; double &gt; &amp;joint_values, geometry_msgs::msg::Pose &amp;pose, const std::string &amp;joint_prefix=testutils::JOINT_NAME_PREFIX)</div><div class="ttdoc">compute the tcp pose from joint values</div><div class="ttdef"><b>Definition:</b> <a href="test__utils_8cpp_source.html#l00539">test_utils.cpp:539</a></div></div>
 <div class="ttc" id="anamespacetestutils_html_a5d16cd86a3cbc9dc92338716995f3eb3"><div class="ttname"><a href="namespacetestutils.html#a5d16cd86a3cbc9dc92338716995f3eb3">testutils::createFakeLimits</a></div><div class="ttdeci">pilz_industrial_motion_planner::JointLimitsContainer createFakeLimits(const std::vector&lt; std::string &gt; &amp;joint_names)</div><div class="ttdoc">Create limits for tests to avoid the need to get the limits from the node parameter.</div><div class="ttdef"><b>Definition:</b> <a href="test__utils_8cpp_source.html#l00056">test_utils.cpp:56</a></div></div>
 <div class="ttc" id="anamespacetestutils_html_a0419dc6ce1ec6a05cbc92c75f965cbb4"><div class="ttname"><a href="namespacetestutils.html#a0419dc6ce1ec6a05cbc92c75f965cbb4">testutils::checkBlendingCartSpaceContinuity</a></div><div class="ttdeci">bool checkBlendingCartSpaceContinuity(const pilz_industrial_motion_planner::TrajectoryBlendRequest &amp;req, const pilz_industrial_motion_planner::TrajectoryBlendResponse &amp;res, const pilz_industrial_motion_planner::LimitsContainer &amp;planner_limits)</div><div class="ttdef"><b>Definition:</b> <a href="test__utils_8cpp_source.html#l00783">test_utils.cpp:783</a></div></div>
 <div class="ttc" id="anamespacetestutils_html_a6941dcc98ca4e3988e382fd3de978667"><div class="ttname"><a href="namespacetestutils.html#a6941dcc98ca4e3988e382fd3de978667">testutils::checkJointTrajectory</a></div><div class="ttdeci">bool checkJointTrajectory(const trajectory_msgs::msg::JointTrajectory &amp;trajectory, const pilz_industrial_motion_planner::JointLimitsContainer &amp;joint_limits)</div><div class="ttdoc">check joint trajectory of consistency, position, velocity and acceleration limits</div><div class="ttdef"><b>Definition:</b> <a href="test__utils_8cpp_source.html#l00468">test_utils.cpp:468</a></div></div>
-<div class="ttc" id="aclassmoveit_1_1core_1_1RobotState_html_a04b9343fdf57f04895fa21c326164d0f"><div class="ttname"><a href="classmoveit_1_1core_1_1RobotState.html#a04b9343fdf57f04895fa21c326164d0f">moveit::core::RobotState::setVariablePositions</a></div><div class="ttdeci">void setVariablePositions(const double *position)</div><div class="ttdoc">It is assumed positions is an array containing the new positions for all variables in this state....</div><div class="ttdef"><b>Definition:</b> <a href="robot__state_8cpp_source.html#l00436">robot_state.cpp:436</a></div></div>
 <div class="ttc" id="aplanning__interface_8h_html"><div class="ttname"><a href="planning__interface_8h.html">planning_interface.h</a></div></div>
 <div class="ttc" id="astructjoint__limits_1_1JointLimits_html_af6c866a379ffc1f7a80a7dcb56ea08fd"><div class="ttname"><a href="structjoint__limits_1_1JointLimits.html#af6c866a379ffc1f7a80a7dcb56ea08fd">joint_limits::JointLimits::has_position_limits</a></div><div class="ttdeci">bool has_position_limits</div><div class="ttdef"><b>Definition:</b> <a href="joint__limits_8hpp_source.html#l00055">joint_limits.hpp:55</a></div></div>
 <div class="ttc" id="atest__utils_8h_html"><div class="ttname"><a href="test__utils_8h.html">test_utils.h</a></div></div>
 <div class="ttc" id="anamespacetestutils_html_a318192937ca55e8c39e41410d9de0f22"><div class="ttname"><a href="namespacetestutils.html#a318192937ca55e8c39e41410d9de0f22">testutils::isVelocityBounded</a></div><div class="ttdeci">bool isVelocityBounded(const trajectory_msgs::msg::JointTrajectory &amp;trajectory, const pilz_industrial_motion_planner::JointLimitsContainer &amp;joint_limits)</div><div class="ttdoc">is Velocity Bounded</div><div class="ttdef"><b>Definition:</b> <a href="test__utils_8cpp_source.html#l00361">test_utils.cpp:361</a></div></div>
 <div class="ttc" id="anamespacemoveit_1_1core_html_a5792ec6b3f0ca1dcb27eea3ff61315b6"><div class="ttname"><a href="namespacemoveit_1_1core.html#a5792ec6b3f0ca1dcb27eea3ff61315b6">moveit::core::jointStateToRobotState</a></div><div class="ttdeci">bool jointStateToRobotState(const sensor_msgs::msg::JointState &amp;joint_state, RobotState &amp;state)</div><div class="ttdoc">Convert a joint state to a MoveIt robot state.</div><div class="ttdef"><b>Definition:</b> <a href="conversions_8cpp_source.html#l00460">conversions.cpp:460</a></div></div>
-<div class="ttc" id="anamespacetestutils_html_a2fdced2dd08d4d1c6ba87e72c2096776"><div class="ttname"><a href="namespacetestutils.html#a2fdced2dd08d4d1c6ba87e72c2096776">testutils::checkCartesianTranslationalPath</a></div><div class="ttdeci">::testing::AssertionResult checkCartesianTranslationalPath(const robot_trajectory::RobotTrajectoryConstPtr &amp;trajectory, const std::string &amp;link_name, const double acc_tol=DEFAULT_ACCELERATION_EQUALITY_TOLERANCE)</div><div class="ttdoc">Check that the translational path of a given trajectory has a trapezoid velocity profile.</div><div class="ttdef"><b>Definition:</b> <a href="test__utils_8cpp_source.html#l01369">test_utils.cpp:1369</a></div></div>
+<div class="ttc" id="anamespacetestutils_html_a2fdced2dd08d4d1c6ba87e72c2096776"><div class="ttname"><a href="namespacetestutils.html#a2fdced2dd08d4d1c6ba87e72c2096776">testutils::checkCartesianTranslationalPath</a></div><div class="ttdeci">::testing::AssertionResult checkCartesianTranslationalPath(const robot_trajectory::RobotTrajectoryConstPtr &amp;trajectory, const std::string &amp;link_name, const double acc_tol=DEFAULT_ACCELERATION_EQUALITY_TOLERANCE)</div><div class="ttdoc">Check that the translational path of a given trajectory has a trapezoid velocity profile.</div><div class="ttdef"><b>Definition:</b> <a href="test__utils_8cpp_source.html#l01368">test_utils.cpp:1368</a></div></div>
 <div class="ttc" id="astructplanning__interface_1_1MotionPlanResponse_html"><div class="ttname"><a href="structplanning__interface_1_1MotionPlanResponse.html">planning_interface::MotionPlanResponse</a></div><div class="ttdef"><b>Definition:</b> <a href="planning__response_8h_source.html#l00078">planning_response.h:78</a></div></div>
 <div class="ttc" id="anamespacetestutils_html_a733d0e05b21e67360b6916fbe56e84ef"><div class="ttname"><a href="namespacetestutils.html#a733d0e05b21e67360b6916fbe56e84ef">testutils::getJointName</a></div><div class="ttdeci">std::string getJointName(size_t joint_number, const std::string &amp;joint_prefix)</div><div class="ttdef"><b>Definition:</b> <a href="test__utils_8h_source.html#l00084">test_utils.h:84</a></div></div>
-<div class="ttc" id="anamespacetestutils_html_aff7e22a5989e2e292e9ce0b20b3fd195"><div class="ttname"><a href="namespacetestutils.html#aff7e22a5989e2e292e9ce0b20b3fd195">testutils::checkCartesianRotationalPath</a></div><div class="ttdeci">::testing::AssertionResult checkCartesianRotationalPath(const robot_trajectory::RobotTrajectoryConstPtr &amp;trajectory, const std::string &amp;link_name, const double rot_axis_tol=DEFAULT_ROTATION_AXIS_EQUALITY_TOLERANCE, const double acc_tol=DEFAULT_ACCELERATION_EQUALITY_TOLERANCE)</div><div class="ttdoc">Check that the rotational path of a given trajectory is a quaternion slerp.</div><div class="ttdef"><b>Definition:</b> <a href="test__utils_8cpp_source.html#l01398">test_utils.cpp:1398</a></div></div>
-<div class="ttc" id="aclassmoveit_1_1core_1_1RobotState_html_acb5a70a55390ddecac5d79bbc1a929ba"><div class="ttname"><a href="classmoveit_1_1core_1_1RobotState.html#acb5a70a55390ddecac5d79bbc1a929ba">moveit::core::RobotState::knowsFrameTransform</a></div><div class="ttdeci">bool knowsFrameTransform(const std::string &amp;frame_id) const</div><div class="ttdoc">Check if a transformation matrix from the model frame (root of model) to frame frame_id is known.</div><div class="ttdef"><b>Definition:</b> <a href="robot__state_8cpp_source.html#l01210">robot_state.cpp:1210</a></div></div>
+<div class="ttc" id="anamespacetestutils_html_aff7e22a5989e2e292e9ce0b20b3fd195"><div class="ttname"><a href="namespacetestutils.html#aff7e22a5989e2e292e9ce0b20b3fd195">testutils::checkCartesianRotationalPath</a></div><div class="ttdeci">::testing::AssertionResult checkCartesianRotationalPath(const robot_trajectory::RobotTrajectoryConstPtr &amp;trajectory, const std::string &amp;link_name, const double rot_axis_tol=DEFAULT_ROTATION_AXIS_EQUALITY_TOLERANCE, const double acc_tol=DEFAULT_ACCELERATION_EQUALITY_TOLERANCE)</div><div class="ttdoc">Check that the rotational path of a given trajectory is a quaternion slerp.</div><div class="ttdef"><b>Definition:</b> <a href="test__utils_8cpp_source.html#l01397">test_utils.cpp:1397</a></div></div>
 <div class="ttc" id="astructjoint__limits_1_1JointLimits_html_acee21ef884d684906ac2fc0f7464d75b"><div class="ttname"><a href="structjoint__limits_1_1JointLimits.html#acee21ef884d684906ac2fc0f7464d75b">joint_limits::JointLimits::max_acceleration</a></div><div class="ttdeci">double max_acceleration</div><div class="ttdef"><b>Definition:</b> <a href="joint__limits_8hpp_source.html#l00051">joint_limits.hpp:51</a></div></div>
 <div class="ttc" id="anamespacepick_html_a1fb87d1de993e7365c6f8443cb97701c"><div class="ttname"><a href="namespacepick.html#a1fb87d1de993e7365c6f8443cb97701c">pick.w</a></div><div class="ttdeci">w</div><div class="ttdef"><b>Definition:</b> <a href="pick_8py_source.html#l00067">pick.py:67</a></div></div>
 <div class="ttc" id="aclasspilz__industrial__motion__planner_1_1JointLimitsContainer_html_a40383e43f2853d45c9456333cda2a537"><div class="ttname"><a href="classpilz__industrial__motion__planner_1_1JointLimitsContainer.html#a40383e43f2853d45c9456333cda2a537">pilz_industrial_motion_planner::JointLimitsContainer::addLimit</a></div><div class="ttdeci">bool addLimit(const std::string &amp;joint_name, JointLimit joint_limit)</div><div class="ttdoc">Add a limit.</div><div class="ttdef"><b>Definition:</b> <a href="joint__limits__container_8cpp_source.html#l00075">joint_limits_container.cpp:75</a></div></div>
@@ -1550,11 +1547,10 @@ $(function() {
 <div class="ttc" id="astructpilz__industrial__motion__planner_1_1TrajectoryBlendRequest_html_a88c825708497b16ce670e9b149bb79e2"><div class="ttname"><a href="structpilz__industrial__motion__planner_1_1TrajectoryBlendRequest.html#a88c825708497b16ce670e9b149bb79e2">pilz_industrial_motion_planner::TrajectoryBlendRequest::blend_radius</a></div><div class="ttdeci">double blend_radius</div><div class="ttdef"><b>Definition:</b> <a href="trajectory__blend__request_8h_source.html#l00120">trajectory_blend_request.h:120</a></div></div>
 <div class="ttc" id="anamespacepick_html_a2ee00a4cb697b06d098335ade68b33ae"><div class="ttname"><a href="namespacepick.html#a2ee00a4cb697b06d098335ade68b33ae">pick.scene</a></div><div class="ttdeci">scene</div><div class="ttdef"><b>Definition:</b> <a href="pick_8py_source.html#l00052">pick.py:52</a></div></div>
 <div class="ttc" id="aclassmoveit_1_1core_1_1RobotState_html"><div class="ttname"><a href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a></div><div class="ttdoc">Representation of a robot's state. This includes position, velocity, acceleration and effort.</div><div class="ttdef"><b>Definition:</b> <a href="robot__state_8h_source.html#l00155">robot_state.h:155</a></div></div>
-<div class="ttc" id="anamespacetestutils_html_a1f9f24ec7611a5e7888c3e1564457c44"><div class="ttname"><a href="namespacetestutils.html#a1f9f24ec7611a5e7888c3e1564457c44">testutils::computeLinkFK</a></div><div class="ttdeci">bool computeLinkFK(const moveit::core::RobotModelConstPtr &amp;robot_model, const std::string &amp;link_name, const std::map&lt; std::string, double &gt; &amp;joint_state, Eigen::Isometry3d &amp;pose)</div><div class="ttdoc">computeLinkFK</div><div class="ttdef"><b>Definition:</b> <a href="test__utils_8cpp_source.html#l00329">test_utils.cpp:329</a></div></div>
+<div class="ttc" id="anamespacetestutils_html_a1f9f24ec7611a5e7888c3e1564457c44"><div class="ttname"><a href="namespacetestutils.html#a1f9f24ec7611a5e7888c3e1564457c44">testutils::computeLinkFK</a></div><div class="ttdeci">bool computeLinkFK(const moveit::core::RobotModelConstPtr &amp;robot_model, const std::string &amp;link_name, const std::map&lt; std::string, double &gt; &amp;joint_state, Eigen::Isometry3d &amp;pose)</div><div class="ttdoc">computeLinkFK</div></div>
 <div class="ttc" id="astructpilz__industrial__motion__planner_1_1TrajectoryBlendResponse_html_a5b35f946912705b3e1aff8b8a039c5a4"><div class="ttname"><a href="structpilz__industrial__motion__planner_1_1TrajectoryBlendResponse.html#a5b35f946912705b3e1aff8b8a039c5a4">pilz_industrial_motion_planner::TrajectoryBlendResponse::first_trajectory</a></div><div class="ttdeci">robot_trajectory::RobotTrajectoryPtr first_trajectory</div><div class="ttdef"><b>Definition:</b> <a href="trajectory__blend__response_8h_source.html#l00113">trajectory_blend_response.h:113</a></div></div>
 <div class="ttc" id="astructpilz__industrial__motion__planner_1_1TrajectoryBlendResponse_html_ad3a0996e3351fb8c56ed86364bde1a82"><div class="ttname"><a href="structpilz__industrial__motion__planner_1_1TrajectoryBlendResponse.html#ad3a0996e3351fb8c56ed86364bde1a82">pilz_industrial_motion_planner::TrajectoryBlendResponse::second_trajectory</a></div><div class="ttdeci">robot_trajectory::RobotTrajectoryPtr second_trajectory</div><div class="ttdef"><b>Definition:</b> <a href="trajectory__blend__response_8h_source.html#l00115">trajectory_blend_response.h:115</a></div></div>
 <div class="ttc" id="aclasspilz__industrial__motion__planner_1_1CartesianLimit_html_a238c218afd7f810c629010bdd976443f"><div class="ttname"><a href="classpilz__industrial__motion__planner_1_1CartesianLimit.html#a238c218afd7f810c629010bdd976443f">pilz_industrial_motion_planner::CartesianLimit::getMaxRotationalVelocity</a></div><div class="ttdeci">double getMaxRotationalVelocity() const</div><div class="ttdoc">Return the maximal rotational velocity [rad/s], 0 if nothing was set.</div><div class="ttdef"><b>Definition:</b> <a href="cartesian__limit_8cpp_source.html#l00116">cartesian_limit.cpp:116</a></div></div>
-<div class="ttc" id="anamespacepilz__industrial__motion__planner_html_a846707e0c70fe0ce82d46c752642e37e"><div class="ttname"><a href="namespacepilz__industrial__motion__planner.html#a846707e0c70fe0ce82d46c752642e37e">pilz_industrial_motion_planner::computeLinkFK</a></div><div class="ttdeci">bool computeLinkFK(const moveit::core::RobotModelConstPtr &amp;robot_model, const std::string &amp;link_name, const std::map&lt; std::string, double &gt; &amp;joint_state, Eigen::Isometry3d &amp;pose)</div><div class="ttdoc">compute the pose of a link at give robot state</div><div class="ttdef"><b>Definition:</b> <a href="trajectory__functions_8cpp_source.html#l00123">trajectory_functions.cpp:123</a></div></div>
 <div class="ttc" id="aconversions_8h_html"><div class="ttname"><a href="conversions_8h.html">conversions.h</a></div></div>
 <div class="ttc" id="anamespacetestutils_html_ae42679ba2fbc4ec4ebba750bee0c072f"><div class="ttname"><a href="namespacetestutils.html#ae42679ba2fbc4ec4ebba750bee0c072f">testutils::checkBlendingJointSpaceContinuity</a></div><div class="ttdeci">bool checkBlendingJointSpaceContinuity(const pilz_industrial_motion_planner::TrajectoryBlendResponse &amp;res, double joint_velocity_tolerance, double joint_accleration_tolerance)</div><div class="ttdoc">check the blending result, if the joint space continuity is fulfilled</div><div class="ttdef"><b>Definition:</b> <a href="test__utils_8cpp_source.html#l00679">test_utils.cpp:679</a></div></div>
 <div class="ttc" id="anamespacetestutils_html_a3adb3ee10723d5a032569890776fc5ea"><div class="ttname"><a href="namespacetestutils.html#a3adb3ee10723d5a032569890776fc5ea">testutils::getExpectedGoalPose</a></div><div class="ttdeci">bool getExpectedGoalPose(const moveit::core::RobotModelConstPtr &amp;robot_model, const planning_interface::MotionPlanRequest &amp;req, std::string &amp;link_name, Eigen::Isometry3d &amp;goal_pose_expect)</div><div class="ttdoc">Determines the goal position from the given request. TRUE if successful, FALSE otherwise.</div><div class="ttdef"><b>Definition:</b> <a href="test__utils_8cpp_source.html#l00079">test_utils.cpp:79</a></div></div>
@@ -1566,7 +1562,6 @@ $(function() {
 <div class="ttc" id="anamespacetestutils_html_a3c3c86cff874d688226f74f9e8ea4b91"><div class="ttname"><a href="namespacetestutils.html#a3c3c86cff874d688226f74f9e8ea4b91">testutils::isAccelerationBounded</a></div><div class="ttdeci">bool isAccelerationBounded(const trajectory_msgs::msg::JointTrajectory &amp;trajectory, const pilz_industrial_motion_planner::JointLimitsContainer &amp;joint_limits)</div><div class="ttdoc">is Acceleration Bounded</div><div class="ttdef"><b>Definition:</b> <a href="test__utils_8cpp_source.html#l00401">test_utils.cpp:401</a></div></div>
 <div class="ttc" id="anamespacetestutils_html_a5c4819f2d9d1641cb281c6e7f41003b4"><div class="ttname"><a href="namespacetestutils.html#a5c4819f2d9d1641cb281c6e7f41003b4">testutils::getBlendTestData</a></div><div class="ttdeci">bool getBlendTestData(const rclcpp::Node::SharedPtr &amp;node, const size_t &amp;dataset_num, const std::string &amp;name_prefix, std::vector&lt; BlendTestData &gt; &amp;datasets)</div><div class="ttdoc">fetch test datasets from node parameters</div></div>
 <div class="ttc" id="astructpilz__industrial__motion__planner_1_1TrajectoryBlendResponse_html"><div class="ttname"><a href="structpilz__industrial__motion__planner_1_1TrajectoryBlendResponse.html">pilz_industrial_motion_planner::TrajectoryBlendResponse</a></div><div class="ttdef"><b>Definition:</b> <a href="trajectory__blend__response_8h_source.html#l00075">trajectory_blend_response.h:75</a></div></div>
-<div class="ttc" id="aclassmoveit_1_1core_1_1RobotState_html_aaec5557d55b862d9dd832b3d4c221836"><div class="ttname"><a href="classmoveit_1_1core_1_1RobotState.html#aaec5557d55b862d9dd832b3d4c221836">moveit::core::RobotState::update</a></div><div class="ttdeci">void update(bool force=false)</div><div class="ttdoc">Update all transforms.</div><div class="ttdef"><b>Definition:</b> <a href="robot__state_8cpp_source.html#l00722">robot_state.cpp:722</a></div></div>
 <div class="ttc" id="aclasspilz__industrial__motion__planner_1_1LimitsContainer_html_acb2ed704bda819986f21f7e836b5cce7"><div class="ttname"><a href="classpilz__industrial__motion__planner_1_1LimitsContainer.html#acb2ed704bda819986f21f7e836b5cce7">pilz_industrial_motion_planner::LimitsContainer::getCartesianLimits</a></div><div class="ttdeci">const CartesianLimit &amp; getCartesianLimits() const</div><div class="ttdoc">Return the cartesian limits.</div><div class="ttdef"><b>Definition:</b> <a href="limits__container_8cpp_source.html#l00075">limits_container.cpp:75</a></div></div>
 <div class="ttc" id="anamespacetestutils_html_a41c248355164c56800214fd8e807827c"><div class="ttname"><a href="namespacetestutils.html#a41c248355164c56800214fd8e807827c">testutils::checkThatPointsInRadius</a></div><div class="ttdeci">bool checkThatPointsInRadius(const std::string &amp;link_name, const double &amp;r, Eigen::Isometry3d &amp;circ_pose, const pilz_industrial_motion_planner::TrajectoryBlendResponse &amp;res)</div><div class="ttdoc">Checks if all points of the blending trajectory lie within the blending radius.</div><div class="ttdef"><b>Definition:</b> <a href="test__utils_8cpp_source.html#l00937">test_utils.cpp:937</a></div></div>
 <div class="ttc" id="anamespacepick_html_a01911c536f7e13362b4f9b5daf625515"><div class="ttname"><a href="namespacepick.html#a01911c536f7e13362b4f9b5daf625515">pick.frame_id</a></div><div class="ttdeci">frame_id</div><div class="ttdef"><b>Definition:</b> <a href="pick_8py_source.html#l00063">pick.py:63</a></div></div>
@@ -1575,7 +1570,7 @@ $(function() {
 <div class="ttc" id="aclasspilz__industrial__motion__planner_1_1CartesianLimit_html_ae271329c2a90afec8db744e9b3f53548"><div class="ttname"><a href="classpilz__industrial__motion__planner_1_1CartesianLimit.html#ae271329c2a90afec8db744e9b3f53548">pilz_industrial_motion_planner::CartesianLimit::getMaxTranslationalVelocity</a></div><div class="ttdeci">double getMaxTranslationalVelocity() const</div><div class="ttdoc">Return the maximal translational velocity [m/s], 0 if nothing was set.</div><div class="ttdef"><b>Definition:</b> <a href="cartesian__limit_8cpp_source.html#l00062">cartesian_limit.cpp:62</a></div></div>
 <div class="ttc" id="aclassmoveit_1_1core_1_1RobotState_html_a5ecd3e71d7283f30be300c83cfd84041"><div class="ttname"><a href="classmoveit_1_1core_1_1RobotState.html#a5ecd3e71d7283f30be300c83cfd84041">moveit::core::RobotState::getRobotModel</a></div><div class="ttdeci">const RobotModelConstPtr &amp; getRobotModel() const</div><div class="ttdoc">Get the robot model this state is constructed for.</div><div class="ttdef"><b>Definition:</b> <a href="robot__state_8h_source.html#l00170">robot_state.h:170</a></div></div>
 <div class="ttc" id="atrajectory__functions_8h_html_a2fe53a81df95276f6522dfe5ab280a6c"><div class="ttname"><a href="trajectory__functions_8h.html#a2fe53a81df95276f6522dfe5ab280a6c">normalizeQuaternion</a></div><div class="ttdeci">void normalizeQuaternion(geometry_msgs::msg::Quaternion &amp;quat)</div><div class="ttdef"><b>Definition:</b> <a href="trajectory__functions_8cpp_source.html#l00602">trajectory_functions.cpp:602</a></div></div>
-<div class="ttc" id="aclassmoveit_1_1core_1_1RobotState_html_aba31c6f758e3dabd32c1acbd069e189e"><div class="ttname"><a href="classmoveit_1_1core_1_1RobotState.html#aba31c6f758e3dabd32c1acbd069e189e">moveit::core::RobotState::setToDefaultValues</a></div><div class="ttdeci">void setToDefaultValues()</div><div class="ttdoc">Set all joints to their default positions. The default position is 0, or if that is not within bounds...</div><div class="ttdef"><b>Definition:</b> <a href="robot__state_8cpp_source.html#l00427">robot_state.cpp:427</a></div></div>
+<div class="ttc" id="aclassmoveit_1_1core_1_1RobotState_html_aba31c6f758e3dabd32c1acbd069e189e"><div class="ttname"><a href="classmoveit_1_1core_1_1RobotState.html#aba31c6f758e3dabd32c1acbd069e189e">moveit::core::RobotState::setToDefaultValues</a></div><div class="ttdeci">void setToDefaultValues()</div><div class="ttdoc">Set all joints to their default positions. The default position is 0, or if that is not within bounds...</div><div class="ttdef"><b>Definition:</b> <a href="robot__state_8cpp_source.html#l00428">robot_state.cpp:428</a></div></div>
 <div class="ttc" id="anamespacetestutils_html_a4e751de4aed185fae824adabe9f0d11f"><div class="ttname"><a href="namespacetestutils.html#a4e751de4aed185fae824adabe9f0d11f">testutils::createFakeCartTraj</a></div><div class="ttdeci">void createFakeCartTraj(const robot_trajectory::RobotTrajectoryPtr &amp;traj, const std::string &amp;link_name, moveit_msgs::msg::RobotTrajectory &amp;fake_traj)</div><div class="ttdef"><b>Definition:</b> <a href="test__utils_8cpp_source.html#l00998">test_utils.cpp:998</a></div></div>
 <div class="ttc" id="anamespacetestutils_html_a54e7536d058c6a6a0ddbc8fb2b21b58f"><div class="ttname"><a href="namespacetestutils.html#a54e7536d058c6a6a0ddbc8fb2b21b58f">testutils::checkBlendResult</a></div><div class="ttdeci">bool checkBlendResult(const pilz_industrial_motion_planner::TrajectoryBlendRequest &amp;blend_req, const pilz_industrial_motion_planner::TrajectoryBlendResponse &amp;blend_res, const pilz_industrial_motion_planner::LimitsContainer &amp;limits, double joint_velocity_tolerance, double joint_acceleration_tolerance, double cartesian_velocity_tolerance, double cartesian_angular_velocity_tolerance)</div><div class="ttdoc">check the blending result of lin-lin</div><div class="ttdef"><b>Definition:</b> <a href="test__utils_8cpp_source.html#l01125">test_utils.cpp:1125</a></div></div>
 <div class="ttc" id="anamespacetestutils_html_a0084beb9bba6496da596d6433544786e"><div class="ttname"><a href="namespacetestutils.html#a0084beb9bba6496da596d6433544786e">testutils::isMonotonouslyDecreasing</a></div><div class="ttdeci">bool isMonotonouslyDecreasing(const std::vector&lt; double &gt; &amp;vec, const double &amp;tol)</div><div class="ttdef"><b>Definition:</b> <a href="test__utils_8h_source.html#l00481">test_utils.h:481</a></div></div>
@@ -1584,13 +1579,14 @@ $(function() {
 <div class="ttc" id="astructpilz__industrial__motion__planner_1_1joint__limits__interface_1_1JointLimits_html_a0bad9925dd3e5cff03307acad71c8df7"><div class="ttname"><a href="structpilz__industrial__motion__planner_1_1joint__limits__interface_1_1JointLimits.html#a0bad9925dd3e5cff03307acad71c8df7">pilz_industrial_motion_planner::joint_limits_interface::JointLimits::has_deceleration_limits</a></div><div class="ttdeci">bool has_deceleration_limits</div><div class="ttdef"><b>Definition:</b> <a href="joint__limits__extension_8h_source.html#l00157">joint_limits_extension.h:157</a></div></div>
 <div class="ttc" id="anamespacetestutils_html_a3604c25908da745d6e201a35db05a990"><div class="ttname"><a href="namespacetestutils.html#a3604c25908da745d6e201a35db05a990">testutils::createDummyRequest</a></div><div class="ttdeci">void createDummyRequest(const moveit::core::RobotModelConstPtr &amp;robot_model, const std::string &amp;planning_group, planning_interface::MotionPlanRequest &amp;req)</div><div class="ttdoc">create a dummy motion plan request with zero start state No goal constraint is given.</div><div class="ttdef"><b>Definition:</b> <a href="test__utils_8cpp_source.html#l00512">test_utils.cpp:512</a></div></div>
 <div class="ttc" id="anamespaceplanning__request__adapter_html_af64b3fa8ebc256d9c5133c6c80ade28f"><div class="ttname"><a href="namespaceplanning__request__adapter.html#af64b3fa8ebc256d9c5133c6c80ade28f">planning_request_adapter::LOGGER</a></div><div class="ttdeci">rclcpp::Logger LOGGER</div><div class="ttdef"><b>Definition:</b> <a href="planning__request__adapter_8cpp_source.html#l00078">planning_request_adapter.cpp:78</a></div></div>
-<div class="ttc" id="anamespacetestutils_html_aee400d4013caab0af4681d89dc96d66c"><div class="ttname"><a href="namespacetestutils.html#aee400d4013caab0af4681d89dc96d66c">testutils::checkRobotModel</a></div><div class="ttdeci">void checkRobotModel(const moveit::core::RobotModelConstPtr &amp;robot_model, const std::string &amp;group_name, const std::string &amp;link_name)</div><div class="ttdef"><b>Definition:</b> <a href="test__utils_8cpp_source.html#l01266">test_utils.cpp:1266</a></div></div>
+<div class="ttc" id="anamespacetestutils_html_aee400d4013caab0af4681d89dc96d66c"><div class="ttname"><a href="namespacetestutils.html#aee400d4013caab0af4681d89dc96d66c">testutils::checkRobotModel</a></div><div class="ttdeci">void checkRobotModel(const moveit::core::RobotModelConstPtr &amp;robot_model, const std::string &amp;group_name, const std::string &amp;link_name)</div><div class="ttdef"><b>Definition:</b> <a href="test__utils_8cpp_source.html#l01265">test_utils.cpp:1265</a></div></div>
 <div class="ttc" id="anamespacetestutils_html_ac5d5277d059651d070458ced4dd21d3d"><div class="ttname"><a href="namespacetestutils.html#ac5d5277d059651d070458ced4dd21d3d">testutils::isPositionBounded</a></div><div class="ttdeci">bool isPositionBounded(const trajectory_msgs::msg::JointTrajectory &amp;trajectory, const pilz_industrial_motion_planner::JointLimitsContainer &amp;joint_limits)</div><div class="ttdoc">is Position Bounded</div><div class="ttdef"><b>Definition:</b> <a href="test__utils_8cpp_source.html#l00443">test_utils.cpp:443</a></div></div>
+<div class="ttc" id="anamespacepilz__industrial__motion__planner_html_a1f9f24ec7611a5e7888c3e1564457c44"><div class="ttname"><a href="namespacepilz__industrial__motion__planner.html#a1f9f24ec7611a5e7888c3e1564457c44">pilz_industrial_motion_planner::computeLinkFK</a></div><div class="ttdeci">bool computeLinkFK(const moveit::core::RobotModelConstPtr &amp;robot_model, const std::string &amp;link_name, const std::map&lt; std::string, double &gt; &amp;joint_state, Eigen::Isometry3d &amp;pose)</div><div class="ttdoc">compute the pose of a link at give robot state</div><div class="ttdef"><b>Definition:</b> <a href="trajectory__functions_8cpp_source.html#l00123">trajectory_functions.cpp:123</a></div></div>
 <div class="ttc" id="anamespacetestutils_html_a4dc6934eb856b588dbbef7744c766bb3"><div class="ttname"><a href="namespacetestutils.html#a4dc6934eb856b588dbbef7744c766bb3">testutils::isTrajectoryConsistent</a></div><div class="ttdeci">bool isTrajectoryConsistent(const trajectory_msgs::msg::JointTrajectory &amp;trajectory)</div><div class="ttdoc">check if the sizes of the joint position/veloicty/acceleration are correct</div><div class="ttdef"><b>Definition:</b> <a href="test__utils_8cpp_source.html#l00384">test_utils.cpp:384</a></div></div>
 <div class="ttc" id="anamespacetestutils_html_a4d7a40fa95d80d2748271e44a7b28588"><div class="ttname"><a href="namespacetestutils.html#a4d7a40fa95d80d2748271e44a7b28588">testutils::generateTrajFromBlendTestData</a></div><div class="ttdeci">bool generateTrajFromBlendTestData(const planning_scene::PlanningSceneConstPtr &amp;scene, const std::shared_ptr&lt; pilz_industrial_motion_planner::TrajectoryGenerator &gt; &amp;tg, const std::string &amp;group_name, const std::string &amp;link_name, const BlendTestData &amp;data, const double &amp;sampling_time_1, const double &amp;sampling_time_2, planning_interface::MotionPlanResponse &amp;res_lin_1, planning_interface::MotionPlanResponse &amp;res_lin_2, double &amp;dis_lin_1, double &amp;dis_lin_2)</div><div class="ttdoc">generate two LIN trajectories from test data set</div><div class="ttdef"><b>Definition:</b> <a href="test__utils_8cpp_source.html#l01060">test_utils.cpp:1060</a></div></div>
 <div class="ttc" id="anamespacetestutils_html_a6103ebf4ba5ba7a0b6e28c6c4f793bee"><div class="ttname"><a href="namespacetestutils.html#a6103ebf4ba5ba7a0b6e28c6c4f793bee">testutils::checkSLERP</a></div><div class="ttdeci">bool checkSLERP(const Eigen::Isometry3d &amp;start_pose, const Eigen::Isometry3d &amp;goal_pose, const Eigen::Isometry3d &amp;wp_pose, const double rot_axis_norm_tolerance, const double rot_angle_tolerance=10e-5)</div><div class="ttdoc">check SLERP. The orientation should rotate around the same axis linearly.</div><div class="ttdef"><b>Definition:</b> <a href="test__utils_8cpp_source.html#l00300">test_utils.cpp:300</a></div></div>
 <div class="ttc" id="astructpilz__industrial__motion__planner_1_1TrajectoryBlendRequest_html"><div class="ttname"><a href="structpilz__industrial__motion__planner_1_1TrajectoryBlendRequest.html">pilz_industrial_motion_planner::TrajectoryBlendRequest</a></div><div class="ttdef"><b>Definition:</b> <a href="trajectory__blend__request_8h_source.html#l00075">trajectory_blend_request.h:75</a></div></div>
-<div class="ttc" id="aclassmoveit_1_1core_1_1RobotState_html_aa0d9f132691a3f24186dcdff72be5d28"><div class="ttname"><a href="classmoveit_1_1core_1_1RobotState.html#aa0d9f132691a3f24186dcdff72be5d28">moveit::core::RobotState::getFrameTransform</a></div><div class="ttdeci">const Eigen::Isometry3d &amp; getFrameTransform(const std::string &amp;frame_id, bool *frame_found=nullptr)</div><div class="ttdoc">Get the transformation matrix from the model frame (root of model) to the frame identified by frame_i...</div><div class="ttdef"><b>Definition:</b> <a href="robot__state_8cpp_source.html#l01142">robot_state.cpp:1142</a></div></div>
+<div class="ttc" id="aclassmoveit_1_1core_1_1RobotState_html_aa0d9f132691a3f24186dcdff72be5d28"><div class="ttname"><a href="classmoveit_1_1core_1_1RobotState.html#aa0d9f132691a3f24186dcdff72be5d28">moveit::core::RobotState::getFrameTransform</a></div><div class="ttdeci">const Eigen::Isometry3d &amp; getFrameTransform(const std::string &amp;frame_id, bool *frame_found=nullptr)</div><div class="ttdoc">Get the transformation matrix from the model frame (root of model) to the frame identified by frame_i...</div><div class="ttdef"><b>Definition:</b> <a href="robot__state_8cpp_source.html#l01143">robot_state.cpp:1143</a></div></div>
 <div class="ttc" id="astructpilz__industrial__motion__planner_1_1joint__limits__interface_1_1JointLimits_html"><div class="ttname"><a href="structpilz__industrial__motion__planner_1_1joint__limits__interface_1_1JointLimits.html">pilz_industrial_motion_planner::joint_limits_interface::JointLimits</a></div><div class="ttdoc">Extends joint_limits_interface::JointLimits with a deceleration parameter.</div><div class="ttdef"><b>Definition:</b> <a href="joint__limits__extension_8h_source.html#l00116">joint_limits_extension.h:116</a></div></div>
 <div class="ttc" id="anamespaceplanning__interface_html_a1307e10a0a3b9ca03406d777b9a938a3"><div class="ttname"><a href="namespaceplanning__interface.html#a1307e10a0a3b9ca03406d777b9a938a3">planning_interface::MotionPlanRequest</a></div><div class="ttdeci">moveit_msgs::msg::MotionPlanRequest MotionPlanRequest</div><div class="ttdef"><b>Definition:</b> <a href="planning__request_8h_source.html#l00077">planning_request.h:77</a></div></div>
 <div class="ttc" id="anamespacetestutils_html_ab7d25fd55ae6f3eae408130aa6d91c2e"><div class="ttname"><a href="namespacetestutils.html#ab7d25fd55ae6f3eae408130aa6d91c2e">testutils::getLinLinPosesWithoutOriChange</a></div><div class="ttdeci">void getLinLinPosesWithoutOriChange(const std::string &amp;frame_id, sensor_msgs::msg::JointState &amp;initialJointState, geometry_msgs::msg::PoseStamped &amp;p1, geometry_msgs::msg::PoseStamped &amp;p2)</div><div class="ttdoc">Returns an initial joint state and two poses which can be used to perform a Lin-Lin movement.</div><div class="ttdef"><b>Definition:</b> <a href="test__utils_8cpp_source.html#l00972">test_utils.cpp:972</a></div></div>
@@ -1615,7 +1611,7 @@ $(function() {
 <div class="ttc" id="astructtestutils_1_1BlendTestData_html_adbd614da7d41c31d186dc347650ee69a"><div class="ttname"><a href="structtestutils_1_1BlendTestData.html#adbd614da7d41c31d186dc347650ee69a">testutils::BlendTestData::mid_position</a></div><div class="ttdeci">std::vector&lt; double &gt; mid_position</div><div class="ttdef"><b>Definition:</b> <a href="test__utils_8h_source.html#l00401">test_utils.h:401</a></div></div>
 <div class="ttc" id="astructjoint__limits_1_1JointLimits_html_ad34b33dfe2942132c5bb0624098fd1d3"><div class="ttname"><a href="structjoint__limits_1_1JointLimits.html#ad34b33dfe2942132c5bb0624098fd1d3">joint_limits::JointLimits::min_position</a></div><div class="ttdeci">double min_position</div><div class="ttdef"><b>Definition:</b> <a href="joint__limits_8hpp_source.html#l00048">joint_limits.hpp:48</a></div></div>
 <div class="ttc" id="anamespacetestutils_html_a7d42823122f458b262fae3503ae928df"><div class="ttname"><a href="namespacetestutils.html#a7d42823122f458b262fae3503ae928df">testutils::computeCartVelocity</a></div><div class="ttdeci">void computeCartVelocity(const Eigen::Isometry3d &amp;pose_1, const Eigen::Isometry3d &amp;pose_2, double duration, Eigen::Vector3d &amp;v, Eigen::Vector3d &amp;w)</div><div class="ttdoc">compute Cartesian velocity</div><div class="ttdef"><b>Definition:</b> <a href="test__utils_8cpp_source.html#l00954">test_utils.cpp:954</a></div></div>
-<div class="ttc" id="anamespacetestutils_html_a47e7d5ac95ce106e03eeca07873a8eef"><div class="ttname"><a href="namespacetestutils.html#a47e7d5ac95ce106e03eeca07873a8eef">testutils::generateRequestMsgFromBlendTestData</a></div><div class="ttdeci">void generateRequestMsgFromBlendTestData(const moveit::core::RobotModelConstPtr &amp;robot_model, const BlendTestData &amp;data, const std::string &amp;planner_id, const std::string &amp;group_name, const std::string &amp;link_name, moveit_msgs::msg::MotionSequenceRequest &amp;req_list)</div><div class="ttdef"><b>Definition:</b> <a href="test__utils_8cpp_source.html#l01205">test_utils.cpp:1205</a></div></div>
+<div class="ttc" id="anamespacetestutils_html_a47e7d5ac95ce106e03eeca07873a8eef"><div class="ttname"><a href="namespacetestutils.html#a47e7d5ac95ce106e03eeca07873a8eef">testutils::generateRequestMsgFromBlendTestData</a></div><div class="ttdeci">void generateRequestMsgFromBlendTestData(const moveit::core::RobotModelConstPtr &amp;robot_model, const BlendTestData &amp;data, const std::string &amp;planner_id, const std::string &amp;group_name, const std::string &amp;link_name, moveit_msgs::msg::MotionSequenceRequest &amp;req_list)</div><div class="ttdef"><b>Definition:</b> <a href="test__utils_8cpp_source.html#l01204">test_utils.cpp:1204</a></div></div>
 <div class="ttc" id="anamespacefcl_html_a0288e6b07bc0c851a9503dbaea7a0f19"><div class="ttname"><a href="namespacefcl.html#a0288e6b07bc0c851a9503dbaea7a0f19">fcl::Vector3d</a></div><div class="ttdeci">Vec3fX&lt; details::Vec3Data&lt; double &gt; &gt; Vector3d</div><div class="ttdef"><b>Definition:</b> <a href="fcl__compat_8h_source.html#l00089">fcl_compat.h:89</a></div></div>
 <div class="ttc" id="astructpilz__industrial__motion__planner_1_1TrajectoryBlendResponse_html_a7b0bec14cae29ea95e6387c8c7727d10"><div class="ttname"><a href="structpilz__industrial__motion__planner_1_1TrajectoryBlendResponse.html#a7b0bec14cae29ea95e6387c8c7727d10">pilz_industrial_motion_planner::TrajectoryBlendResponse::blend_trajectory</a></div><div class="ttdeci">robot_trajectory::RobotTrajectoryPtr blend_trajectory</div><div class="ttdef"><b>Definition:</b> <a href="trajectory__blend__response_8h_source.html#l00114">trajectory_blend_response.h:114</a></div></div>
 <!-- start footer part -->

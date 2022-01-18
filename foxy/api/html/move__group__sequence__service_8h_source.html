@@ -106,42 +106,39 @@ $(function() {
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;rclcpp/service.hpp&gt;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="move__group__capability_8h.html">moveit/move_group/move_group_capability.h</a>&gt;</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="move__group__capability_8h.html">moveit/move_group/move_group_capability.h</a>&gt;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &lt;moveit_msgs/GetMotionSequence.h&gt;</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &lt;moveit_msgs/srv/get_motion_sequence.hpp&gt;</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacepilz__industrial__motion__planner.html">pilz_industrial_motion_planner</a></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">// Forward declarations</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">class </span>CommandListManager;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">class </span>MoveGroupSequenceService : <span class="keyword">public</span> <a class="code" href="classmove__group_1_1MoveGroupCapability.html">move_group::MoveGroupCapability</a></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <a class="code" href="classpilz__industrial__motion__planner_1_1MoveGroupSequenceService.html#aedf749fb758249b808107ed1d0c32c1e">MoveGroupSequenceService</a>();</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <a class="code" href="classpilz__industrial__motion__planner_1_1MoveGroupSequenceService.html#aff107920ba852cda8d57d6d34234e2b0">~MoveGroupSequenceService</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacepilz__industrial__motion__planner.html">pilz_industrial_motion_planner</a></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">// Forward declarations</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">class </span>CommandListManager;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">class </span>MoveGroupSequenceService : <span class="keyword">public</span> <a class="code" href="classmove__group_1_1MoveGroupCapability.html">move_group::MoveGroupCapability</a></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <a class="code" href="classpilz__industrial__motion__planner_1_1MoveGroupSequenceService.html#aedf749fb758249b808107ed1d0c32c1e">MoveGroupSequenceService</a>();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <a class="code" href="classpilz__industrial__motion__planner_1_1MoveGroupSequenceService.html#aff107920ba852cda8d57d6d34234e2b0">~MoveGroupSequenceService</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classpilz__industrial__motion__planner_1_1MoveGroupSequenceService.html#a21c10419562f59c9aac81120df2bee12">initialize</a>() <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classpilz__industrial__motion__planner_1_1MoveGroupSequenceService.html#a21c10419562f59c9aac81120df2bee12">initialize</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="namespaceplan.html">plan</a>(<span class="keyword">const</span> moveit_msgs::srv::GetMotionSequence::Request::SharedPtr req,</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            moveit_msgs::srv::GetMotionSequence::Response::SharedPtr res);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  rclcpp::Service&lt;moveit_msgs::srv::GetMotionSequence&gt;::SharedPtr sequence_service_;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  std::unique_ptr&lt;CommandListManager&gt; command_list_manager_;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;};</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}  <span class="comment">// namespace pilz_industrial_motion_planner</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="namespaceplan.html">plan</a>(moveit_msgs::GetMotionSequence::Request&amp; req, moveit_msgs::GetMotionSequence::Response&amp; res);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  ros::ServiceServer sequence_service_;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  std::unique_ptr&lt;CommandListManager&gt; command_list_manager_;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;};</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}  <span class="comment">// namespace pilz_industrial_motion_planner</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassmove__group_1_1MoveGroupCapability_html"><div class="ttname"><a href="classmove__group_1_1MoveGroupCapability.html">move_group::MoveGroupCapability</a></div><div class="ttdef"><b>Definition:</b> <a href="move__group__capability_8h_source.html#l00089">move_group_capability.h:89</a></div></div>
 <div class="ttc" id="anamespacepilz__industrial__motion__planner_html"><div class="ttname"><a href="namespacepilz__industrial__motion__planner.html">pilz_industrial_motion_planner</a></div><div class="ttdef"><b>Definition:</b> <a href="moveit__planners_2pilz__industrial__motion__planner_2include_2pilz__industrial__motion__planner_2capability__names_8h_source.html#l00039">capability_names.h:39</a></div></div>
 <div class="ttc" id="amove__group__capability_8h_html"><div class="ttname"><a href="move__group__capability_8h.html">move_group_capability.h</a></div></div>
-<div class="ttc" id="aclasspilz__industrial__motion__planner_1_1MoveGroupSequenceService_html_aedf749fb758249b808107ed1d0c32c1e"><div class="ttname"><a href="classpilz__industrial__motion__planner_1_1MoveGroupSequenceService.html#aedf749fb758249b808107ed1d0c32c1e">pilz_industrial_motion_planner::MoveGroupSequenceService::MoveGroupSequenceService</a></div><div class="ttdeci">MoveGroupSequenceService()</div><div class="ttdef"><b>Definition:</b> <a href="move__group__sequence__service_8cpp_source.html#l00082">move_group_sequence_service.cpp:82</a></div></div>
-<div class="ttc" id="aclasspilz__industrial__motion__planner_1_1MoveGroupSequenceService_html_aff107920ba852cda8d57d6d34234e2b0"><div class="ttname"><a href="classpilz__industrial__motion__planner_1_1MoveGroupSequenceService.html#aff107920ba852cda8d57d6d34234e2b0">pilz_industrial_motion_planner::MoveGroupSequenceService::~MoveGroupSequenceService</a></div><div class="ttdeci">~MoveGroupSequenceService() override</div><div class="ttdef"><b>Definition:</b> <a href="move__group__sequence__service_8cpp_source.html#l00086">move_group_sequence_service.cpp:86</a></div></div>
-<div class="ttc" id="aclasspilz__industrial__motion__planner_1_1MoveGroupSequenceService_html_a21c10419562f59c9aac81120df2bee12"><div class="ttname"><a href="classpilz__industrial__motion__planner_1_1MoveGroupSequenceService.html#a21c10419562f59c9aac81120df2bee12">pilz_industrial_motion_planner::MoveGroupSequenceService::initialize</a></div><div class="ttdeci">void initialize() override</div><div class="ttdef"><b>Definition:</b> <a href="move__group__sequence__service_8cpp_source.html#l00090">move_group_sequence_service.cpp:90</a></div></div>
+<div class="ttc" id="aclasspilz__industrial__motion__planner_1_1MoveGroupSequenceService_html_aedf749fb758249b808107ed1d0c32c1e"><div class="ttname"><a href="classpilz__industrial__motion__planner_1_1MoveGroupSequenceService.html#aedf749fb758249b808107ed1d0c32c1e">pilz_industrial_motion_planner::MoveGroupSequenceService::MoveGroupSequenceService</a></div><div class="ttdeci">MoveGroupSequenceService()</div><div class="ttdef"><b>Definition:</b> <a href="move__group__sequence__service_8cpp_source.html#l00079">move_group_sequence_service.cpp:79</a></div></div>
+<div class="ttc" id="aclasspilz__industrial__motion__planner_1_1MoveGroupSequenceService_html_aff107920ba852cda8d57d6d34234e2b0"><div class="ttname"><a href="classpilz__industrial__motion__planner_1_1MoveGroupSequenceService.html#aff107920ba852cda8d57d6d34234e2b0">pilz_industrial_motion_planner::MoveGroupSequenceService::~MoveGroupSequenceService</a></div><div class="ttdeci">~MoveGroupSequenceService() override</div><div class="ttdef"><b>Definition:</b> <a href="move__group__sequence__service_8cpp_source.html#l00083">move_group_sequence_service.cpp:83</a></div></div>
+<div class="ttc" id="aclasspilz__industrial__motion__planner_1_1MoveGroupSequenceService_html_a21c10419562f59c9aac81120df2bee12"><div class="ttname"><a href="classpilz__industrial__motion__planner_1_1MoveGroupSequenceService.html#a21c10419562f59c9aac81120df2bee12">pilz_industrial_motion_planner::MoveGroupSequenceService::initialize</a></div><div class="ttdeci">void initialize() override</div><div class="ttdef"><b>Definition:</b> <a href="move__group__sequence__service_8cpp_source.html#l00087">move_group_sequence_service.cpp:87</a></div></div>
 <div class="ttc" id="anamespaceplan_html"><div class="ttname"><a href="namespaceplan.html">plan</a></div><div class="ttdef"><b>Definition:</b> <a href="plan_8py_source.html#l00001">plan.py:1</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

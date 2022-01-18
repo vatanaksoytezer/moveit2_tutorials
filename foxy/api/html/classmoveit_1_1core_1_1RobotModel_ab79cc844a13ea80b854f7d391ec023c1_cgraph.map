@@ -1,0 +1,5 @@
+<map id="moveit::core::RobotModel::computeCommonRoots" name="moveit::core::RobotModel::computeCommonRoots">
+<area shape="rect" id="node1" title="For every pair of joints, pre&#45;compute the common roots of the joints." alt="" coords="5,39,196,80"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1RobotModel.html#afd860df7ef193cce7aa74717e8579577" title="Get the model name." alt="" coords="244,5,435,47"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1core_1_1RobotModel.html#a0e6fe94c867b3452abdeecc2d7373ca2" title="Get the bounds for a specific variable. Throw an exception of variable is not found." alt="" coords="244,71,435,112"/>
+</map>

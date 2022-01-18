@@ -121,16 +121,16 @@ $(function() {
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;{</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;rclcpp::Logger <a class="code" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">LOGGER</a> = rclcpp::get_logger(<span class="stringliteral">&quot;kinematics_plugin_loader&quot;</span>);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">template</span> &lt;rclcpp::ParameterType ParamType&gt;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;rclcpp::Parameter <a class="code" href="namespacekinematics__plugin__loader.html#a4b7e3ede6a64d1e70f3072ec11708d72">declare_parameter</a>(<span class="keyword">const</span> rclcpp::Node::SharedPtr&amp; node, <span class="keyword">const</span> std::string&amp; parameter_name)</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;{</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordflow">if</span> (!node-&gt;has_parameter(parameter_name))</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    node-&gt;declare_parameter(parameter_name, ParamType);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  rclcpp::Parameter parameter;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordflow">if</span> (!node-&gt;get_parameter(parameter_name, parameter))</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    RCLCPP_DEBUG_STREAM(<a class="code" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">LOGGER</a>, <span class="stringliteral">&quot;Parameter `&quot;</span> &lt;&lt; parameter_name &lt;&lt; <span class="stringliteral">&quot;` doesn&#39;t exists&quot;</span>);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordflow">return</span> parameter;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;rclcpp::Parameter <a class="code" href="namespacekinematics__plugin__loader.html#ac73bfaeec99c68c9789f6b77e3172ee6">declare_parameter</a>(<span class="keyword">const</span> rclcpp::Node::SharedPtr&amp; node, <span class="keyword">const</span> std::string&amp; parameter_name)</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordflow">if</span> (!node-&gt;has_parameter(parameter_name))</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    node-&gt;declare_parameter(parameter_name);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  rclcpp::Parameter parameter;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordflow">if</span> (!node-&gt;get_parameter(parameter_name, parameter))</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    RCLCPP_DEBUG_STREAM(<a class="code" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">LOGGER</a>, <span class="stringliteral">&quot;Parameter `&quot;</span> &lt;&lt; parameter_name &lt;&lt; <span class="stringliteral">&quot;` doesn&#39;t exists&quot;</span>);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordflow">return</span> parameter;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">class </span>KinematicsPluginLoader::KinematicsLoaderImpl</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;{</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keyword">public</span>:</div>
@@ -146,379 +146,374 @@ $(function() {
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  {</div>
 <div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">   82</a></span>&#160;    <span class="keywordflow">try</span></div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;      kinematics_loader_ =</div>
-<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="namespacekinematics__plugin__loader.html#a4b7e3ede6a64d1e70f3072ec11708d72">   85</a></span>&#160;          std::make_shared&lt;pluginlib::ClassLoader&lt;kinematics::KinematicsBase&gt;&gt;(<span class="stringliteral">&quot;moveit_core&quot;</span>, <span class="stringliteral">&quot;kinematics::&quot;</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                                                                                              <span class="stringliteral">&quot;KinematicsBase&quot;</span>);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">catch</span> (pluginlib::PluginlibException&amp; e)</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;      RCLCPP_ERROR(<a class="code" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">LOGGER</a>, <span class="stringliteral">&quot;Unable to construct kinematics loader. Error: %s&quot;</span>, e.what());</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  }</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  std::vector&lt;std::string&gt; <a class="code" href="classkinematics__plugin__loader_1_1KinematicsPluginLoader_1_1KinematicsLoaderImpl.html#a21705804c3e5a36145996b1cbdf24f8b">chooseTipFrames</a>(<span class="keyword">const</span> <a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html">moveit::core::JointModelGroup</a>* jmg)</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  {</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    std::vector&lt;std::string&gt; tips;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    std::map&lt;std::string, std::vector&lt;std::string&gt;&gt;::const_iterator ik_it = iksolver_to_tip_links_.find(jmg-&gt;<a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html#a2f165c9374e28ac4052490819c790f45">getName</a>());</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="classkinematics__plugin__loader_1_1KinematicsPluginLoader_1_1KinematicsLoaderImpl.html#a7b716b617a08f6f7b3cfc09274470fdc">  104</a></span>&#160;    <span class="comment">// Check if tips were loaded onto the rosparam server previously</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordflow">if</span> (ik_it != iksolver_to_tip_links_.end())</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    {</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;      <span class="comment">// the tip is being chosen based on a corresponding rosparam ik link</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;      RCLCPP_DEBUG(<a class="code" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">LOGGER</a>,</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                   <span class="stringliteral">&quot;Choosing tip frame of kinematic solver for group %s&quot;</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                   <span class="stringliteral">&quot;based on values in rosparam server.&quot;</span>,</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                   jmg-&gt;<a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html#a2f165c9374e28ac4052490819c790f45">getName</a>().c_str());</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;      tips = ik_it-&gt;second;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    }</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    {</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;      <span class="comment">// get the last link in the chain</span></div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;      RCLCPP_DEBUG(<a class="code" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">LOGGER</a>,</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                   <span class="stringliteral">&quot;Choosing tip frame of kinematic solver for group %s&quot;</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                   <span class="stringliteral">&quot;based on last link in chain&quot;</span>,</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                   jmg-&gt;<a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html#a2f165c9374e28ac4052490819c790f45">getName</a>().c_str());</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;      tips.push_back(jmg-&gt;<a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html#a5ce4575b094d15163bd41744b0fa7fa6">getLinkModels</a>().back()-&gt;getName());</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    }</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="comment">// Error check</span></div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordflow">if</span> (tips.empty())</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    {</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;      RCLCPP_ERROR(<a class="code" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">LOGGER</a>, <span class="stringliteral">&quot;Error choosing kinematic solver tip frame(s).&quot;</span>);</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    }</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
-<div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="classkinematics__plugin__loader_1_1KinematicsPluginLoader_1_1KinematicsLoaderImpl.html#a21705804c3e5a36145996b1cbdf24f8b">  131</a></span>&#160;    <span class="comment">// Debug tip choices</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    std::stringstream tip_debug;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    tip_debug &lt;&lt; <span class="stringliteral">&quot;Planning group &#39;&quot;</span> &lt;&lt; jmg-&gt;<a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html#a2f165c9374e28ac4052490819c790f45">getName</a>() &lt;&lt; <span class="stringliteral">&quot;&#39; has tip(s): &quot;</span>;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; tip : tips)</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;      tip_debug &lt;&lt; tip &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    RCLCPP_DEBUG_STREAM(<a class="code" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">LOGGER</a>, tip_debug.str());</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordflow">return</span> tips;</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  }</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  kinematics::KinematicsBasePtr <a class="code" href="classkinematics__plugin__loader_1_1KinematicsPluginLoader_1_1KinematicsLoaderImpl.html#aee20108e28bea50867ee349bcd13851f">allocKinematicsSolver</a>(<span class="keyword">const</span> <a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html">moveit::core::JointModelGroup</a>* jmg)</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  {</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    kinematics::KinematicsBasePtr result;</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordflow">if</span> (!kinematics_loader_)</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    {</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;      RCLCPP_ERROR(<a class="code" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">LOGGER</a>, <span class="stringliteral">&quot;Invalid kinematics loader.&quot;</span>);</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;      <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    }</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordflow">if</span> (!jmg)</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    {</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;      RCLCPP_ERROR(<a class="code" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">LOGGER</a>, <span class="stringliteral">&quot;Specified group is nullptr. Cannot allocate kinematics solver.&quot;</span>);</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;      <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    }</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keyword">const</span> std::vector&lt;const moveit::core::LinkModel*&gt;&amp; links = jmg-&gt;<a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html#a5ce4575b094d15163bd41744b0fa7fa6">getLinkModels</a>();</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordflow">if</span> (links.empty())</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    {</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;      RCLCPP_ERROR(<a class="code" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">LOGGER</a>, <span class="stringliteral">&quot;No links specified for group &#39;%s&#39;. Cannot allocate kinematics solver.&quot;</span>,</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                   jmg-&gt;<a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html#a2f165c9374e28ac4052490819c790f45">getName</a>().c_str());</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;      <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    }</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    RCLCPP_DEBUG(<a class="code" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">LOGGER</a>, <span class="stringliteral">&quot;Trying to allocate kinematics solver for group &#39;%s&#39;&quot;</span>, jmg-&gt;<a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html#a2f165c9374e28ac4052490819c790f45">getName</a>().c_str());</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    std::map&lt;std::string, std::vector&lt;std::string&gt;&gt;::const_iterator it =</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        possible_kinematics_solvers_.find(jmg-&gt;<a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html#a2f165c9374e28ac4052490819c790f45">getName</a>());</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keywordflow">if</span> (it == possible_kinematics_solvers_.end())</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    {</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;      RCLCPP_DEBUG(<a class="code" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">LOGGER</a>, <span class="stringliteral">&quot;No kinematics solver available for this group&quot;</span>);</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;      <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    }</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keyword">const</span> std::string&amp; base = links.front()-&gt;getParentJointModel()-&gt;getParentLinkModel() ?</div>
-<div class="line"><a name="l00173"></a><span class="lineno"><a class="line" href="classkinematics__plugin__loader_1_1KinematicsPluginLoader_1_1KinematicsLoaderImpl.html#aee20108e28bea50867ee349bcd13851f">  173</a></span>&#160;                                  links.front()-&gt;getParentJointModel()-&gt;getParentLinkModel()-&gt;getName() :</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                                  jmg-&gt;<a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html#a854e1c3f7e18cd79755f3e687ad47ccd">getParentModel</a>().<a class="code" href="classmoveit_1_1core_1_1RobotModel.html#a12c6580c9ad13576e7e566cc9a899c7f">getModelFrame</a>();</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="comment">// just to be sure, do not call the same pluginlib instance allocation function in parallel</span></div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    boost::mutex::scoped_lock slock(lock_);</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="keywordflow">for</span> (std::size_t i = 0; !result &amp;&amp; i &lt; it-&gt;second.size(); ++i)</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    {</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;      <span class="keywordflow">try</span></div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;      {</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        result = kinematics_loader_-&gt;createUniqueInstance(it-&gt;second[i]);</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <span class="keywordflow">if</span> (result)</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        {</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;          <span class="comment">// choose the tip of the IK solver</span></div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;          <span class="keyword">const</span> std::vector&lt;std::string&gt; tips = <a class="code" href="classkinematics__plugin__loader_1_1KinematicsPluginLoader_1_1KinematicsLoaderImpl.html#a21705804c3e5a36145996b1cbdf24f8b">chooseTipFrames</a>(jmg);</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;          <span class="comment">// choose search resolution</span></div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;          <span class="keywordtype">double</span> search_res = search_res_.find(jmg-&gt;<a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html#a2f165c9374e28ac4052490819c790f45">getName</a>())-&gt;second[i];  <span class="comment">// we know this exists, by construction</span></div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;          <span class="keywordflow">if</span> (!result-&gt;initialize(node_, jmg-&gt;<a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html#a854e1c3f7e18cd79755f3e687ad47ccd">getParentModel</a>(), jmg-&gt;<a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html#a2f165c9374e28ac4052490819c790f45">getName</a>(),</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                                  (base.empty() || base[0] != <span class="charliteral">&#39;/&#39;</span>) ? base : base.substr(1), tips, search_res))</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;          {</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            RCLCPP_ERROR(<a class="code" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">LOGGER</a>, <span class="stringliteral">&quot;Kinematics solver of type &#39;%s&#39; could not be initialized for group &#39;%s&#39;&quot;</span>,</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                         it-&gt;second[i].c_str(), jmg-&gt;<a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html#a2f165c9374e28ac4052490819c790f45">getName</a>().c_str());</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            result.reset();</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;          }</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;          result-&gt;setDefaultTimeout(jmg-&gt;<a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html#a0a52d99429820b1c51838d9408078452">getDefaultIKTimeout</a>());</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;          RCLCPP_DEBUG(<a class="code" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">LOGGER</a>,</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                       <span class="stringliteral">&quot;Successfully allocated and initialized a kinematics solver of type &#39;%s&#39; with search &quot;</span></div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                       <span class="stringliteral">&quot;resolution %lf for group &#39;%s&#39; at address %p&quot;</span>,</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                       it-&gt;second[i].c_str(), search_res, jmg-&gt;<a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html#a2f165c9374e28ac4052490819c790f45">getName</a>().c_str(), result.get());</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;          <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        }</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;      }</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;      <span class="keywordflow">catch</span> (pluginlib::PluginlibException&amp; e)</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;      {</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        RCLCPP_ERROR(<a class="code" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">LOGGER</a>, <span class="stringliteral">&quot;The kinematics plugin (%s) failed to load. Error: %s&quot;</span>, it-&gt;first.c_str(), e.what());</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;      }</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    }</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160; </div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="keywordflow">if</span> (!result)</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    {</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;      RCLCPP_DEBUG(<a class="code" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">LOGGER</a>, <span class="stringliteral">&quot;No usable kinematics solver was found for this group.\n&quot;</span></div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                           <span class="stringliteral">&quot;Did you load kinematics.yaml into your node&#39;s namespace?&quot;</span>);</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    }</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;  }</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160; </div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;  <span class="comment">// cache solver between two consecutive calls</span></div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;  <span class="comment">// first call in RobotModelLoader::loadKinematicsSolvers() is just to check suitability for jmg</span></div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;  <span class="comment">// second call in JointModelGroup::setSolverAllocators() is to actually retrieve the instance for use</span></div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;  kinematics::KinematicsBasePtr <a class="code" href="classkinematics__plugin__loader_1_1KinematicsPluginLoader_1_1KinematicsLoaderImpl.html#a446a75b8254780e7c170bf509c87aa9e">allocKinematicsSolverWithCache</a>(<span class="keyword">const</span> <a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html">moveit::core::JointModelGroup</a>* jmg)</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;  {</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    boost::mutex::scoped_lock slock(cache_lock_);</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    kinematics::KinematicsBasePtr&amp; cached = instances_[jmg];</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="keywordflow">if</span> (cached.unique())</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;      <span class="keywordflow">return</span> std::move(cached);  <span class="comment">// pass on unique instance</span></div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160; </div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="comment">// create a new instance and store in instances_</span></div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    cached = <a class="code" href="classkinematics__plugin__loader_1_1KinematicsPluginLoader_1_1KinematicsLoaderImpl.html#aee20108e28bea50867ee349bcd13851f">allocKinematicsSolver</a>(jmg);</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="keywordflow">return</span> cached;</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;  }</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160; </div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classkinematics__plugin__loader_1_1KinematicsPluginLoader_1_1KinematicsLoaderImpl.html#a716f37721a9981571711abfdd63905c9">status</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="keyword">  </span>{</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <span class="keywordflow">for</span> (std::map&lt;std::string, std::vector&lt;std::string&gt;&gt;::const_iterator it = possible_kinematics_solvers_.begin();</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;         it != possible_kinematics_solvers_.end(); ++it)</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    {</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;      <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; it-&gt;second.size(); ++i)</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;      {</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        RCLCPP_INFO(<a class="code" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">LOGGER</a>, <span class="stringliteral">&quot;Solver for group &#39;%s&#39;: &#39;%s&#39; (search resolution = %lf)&quot;</span>, it-&gt;first.c_str(),</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                    it-&gt;second[i].c_str(), search_res_.at(it-&gt;first)[i]);</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;      }</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    }</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;  }</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160; </div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;  <span class="keyword">const</span> rclcpp::Node::SharedPtr node_;</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;  std::string robot_description_;</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;  std::map&lt;std::string, std::vector&lt;std::string&gt;&gt; possible_kinematics_solvers_;</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;  std::map&lt;std::string, std::vector&lt;double&gt;&gt; search_res_;</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;  std::map&lt;std::string, std::vector&lt;std::string&gt;&gt; iksolver_to_tip_links_;  <span class="comment">// a map between each ik solver and a vector</span></div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                                                                           <span class="comment">// of custom-specified tip link(s)</span></div>
-<div class="line"><a name="l00257"></a><span class="lineno"><a class="line" href="classkinematics__plugin__loader_1_1KinematicsPluginLoader_1_1KinematicsLoaderImpl.html#a446a75b8254780e7c170bf509c87aa9e">  257</a></span>&#160;  std::shared_ptr&lt;pluginlib::ClassLoader&lt;kinematics::KinematicsBase&gt;&gt; kinematics_loader_;</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;  std::map&lt;const moveit::core::JointModelGroup*, kinematics::KinematicsBasePtr&gt; instances_;</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;  boost::mutex lock_;</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;  boost::mutex cache_lock_;</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;};</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160; </div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;<span class="keywordtype">void</span> <a class="code" href="classkinematics__plugin__loader_1_1KinematicsPluginLoader.html#a27d6efeee21598435c52188f2361006b">KinematicsPluginLoader::status</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;  <span class="keywordflow">if</span> (loader_)</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    loader_-&gt;status();</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;  <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    RCLCPP_INFO(<a class="code" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">LOGGER</a>, <span class="stringliteral">&quot;Loader function was never required&quot;</span>);</div>
-<div class="line"><a name="l00269"></a><span class="lineno"><a class="line" href="classkinematics__plugin__loader_1_1KinematicsPluginLoader_1_1KinematicsLoaderImpl.html#a716f37721a9981571711abfdd63905c9">  269</a></span>&#160;}</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;<a class="code" href="namespacemoveit_1_1core.html#aee2fefede757f1b0b2e59fc9dce12fa7">moveit::core::SolverAllocatorFn</a> <a class="code" href="classkinematics__plugin__loader_1_1KinematicsPluginLoader.html#a5fbe986aeb678a96a3237b5e531ef75e">KinematicsPluginLoader::getLoaderFunction</a>()</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;{</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;  <a class="code" href="classmoveit_1_1tools_1_1Profiler_1_1ScopedStart.html">moveit::tools::Profiler::ScopedStart</a> prof_start;</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;  <a class="code" href="classmoveit_1_1tools_1_1Profiler_1_1ScopedBlock.html">moveit::tools::Profiler::ScopedBlock</a> prof_block(<span class="stringliteral">&quot;KinematicsPluginLoader::getLoaderFunction&quot;</span>);</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160; </div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;  <span class="keywordflow">if</span> (loader_)</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <span class="keywordflow">return</span> boost::bind(&amp;<a class="code" href="classkinematics__plugin__loader_1_1KinematicsPluginLoader_1_1KinematicsLoaderImpl.html#a446a75b8254780e7c170bf509c87aa9e">KinematicsLoaderImpl::allocKinematicsSolverWithCache</a>, loader_.get(), boost::placeholders::_1);</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; </div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;  <a class="code" href="classrdf__loader_1_1RDFLoader.html">rdf_loader::RDFLoader</a> rml(node_, robot_description_);</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;  robot_description_ = rml.<a class="code" href="classrdf__loader_1_1RDFLoader.html#a36747cc62618abeb838a2815a7650bd8">getRobotDescription</a>();</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classkinematics__plugin__loader_1_1KinematicsPluginLoader.html#a5fbe986aeb678a96a3237b5e531ef75e">getLoaderFunction</a>(rml.<a class="code" href="classrdf__loader_1_1RDFLoader.html#a0f8158d75c555baa1734da830b429089">getSRDF</a>());</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;}</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160; </div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;<a class="code" href="namespacemoveit_1_1core.html#aee2fefede757f1b0b2e59fc9dce12fa7">moveit::core::SolverAllocatorFn</a> <a class="code" href="classkinematics__plugin__loader_1_1KinematicsPluginLoader.html#a5fbe986aeb678a96a3237b5e531ef75e">KinematicsPluginLoader::getLoaderFunction</a>(<span class="keyword">const</span> srdf::ModelSharedPtr&amp; srdf_model)</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;{</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;  <a class="code" href="classmoveit_1_1tools_1_1Profiler_1_1ScopedStart.html">moveit::tools::Profiler::ScopedStart</a> prof_start;</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;  <a class="code" href="classmoveit_1_1tools_1_1Profiler_1_1ScopedBlock.html">moveit::tools::Profiler::ScopedBlock</a> prof_block(<span class="stringliteral">&quot;KinematicsPluginLoader::getLoaderFunction(SRDF)&quot;</span>);</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160; </div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;  <span class="keywordflow">if</span> (!loader_)</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;  {</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    RCLCPP_DEBUG(<a class="code" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">LOGGER</a>, <span class="stringliteral">&quot;Configuring kinematics solvers&quot;</span>);</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    groups_.clear();</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    std::map&lt;std::string, std::vector&lt;std::string&gt;&gt; possible_kinematics_solvers;</div>
-<div class="line"><a name="l00295"></a><span class="lineno"><a class="line" href="classkinematics__plugin__loader_1_1KinematicsPluginLoader.html#a27d6efeee21598435c52188f2361006b">  295</a></span>&#160;    std::map&lt;std::string, std::vector&lt;double&gt;&gt; search_res;</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    std::map&lt;std::string, std::vector&lt;std::string&gt;&gt; iksolver_to_tip_links;</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160; </div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    <span class="keywordflow">if</span> (srdf_model)</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    {</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;      <span class="keyword">const</span> std::vector&lt;srdf::Model::Group&gt;&amp; known_groups = srdf_model-&gt;getGroups();</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;      <span class="keywordflow">if</span> (default_search_resolution_ &lt;= std::numeric_limits&lt;double&gt;::epsilon())</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        default_search_resolution_ = <a class="code" href="classkinematics_1_1KinematicsBase.html#ad1cf8914589eaad778935c805300e243">kinematics::KinematicsBase::DEFAULT_SEARCH_DISCRETIZATION</a>;</div>
-<div class="line"><a name="l00303"></a><span class="lineno"><a class="line" href="classkinematics__plugin__loader_1_1KinematicsPluginLoader.html#a5fbe986aeb678a96a3237b5e531ef75e">  303</a></span>&#160; </div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;      <span class="keywordflow">if</span> (default_solver_plugin_.empty())</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;      {</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        RCLCPP_DEBUG(<a class="code" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">LOGGER</a>, <span class="stringliteral">&quot;Loading settings for kinematics solvers from the ROS param server ...&quot;</span>);</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        <span class="comment">// read the list of plugin names for possible kinematics solvers</span></div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> srdf::Model::Group&amp; known_group : known_groups)</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        {</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;          std::string base_param_name = known_group.name_;</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;          std::string ksolver_param_name = base_param_name + <span class="stringliteral">&quot;.kinematics_solver&quot;</span>;</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;          RCLCPP_DEBUG(<a class="code" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">LOGGER</a>, <span class="stringliteral">&quot;Looking for param %s &quot;</span>, ksolver_param_name.c_str());</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;          rclcpp::Parameter ksolver_param =</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;              declare_parameter&lt;rclcpp::ParameterType::PARAMETER_STRING&gt;(node_, ksolver_param_name);</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;          <span class="keywordflow">if</span> (ksolver_param.get_type() == rclcpp::ParameterType::PARAMETER_NOT_SET)</div>
-<div class="line"><a name="l00316"></a><span class="lineno"><a class="line" href="classkinematics__plugin__loader_1_1KinematicsPluginLoader.html#a881273360a5e71bb64062811fe60acf0">  316</a></span>&#160;          {</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;            base_param_name = robot_description_ + <span class="stringliteral">&quot;_kinematics.&quot;</span> + known_group.name_;</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;            ksolver_param_name = base_param_name + <span class="stringliteral">&quot;.kinematics_solver&quot;</span>;</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;            RCLCPP_DEBUG(<a class="code" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">LOGGER</a>, <span class="stringliteral">&quot;Looking for param %s &quot;</span>, ksolver_param_name.c_str());</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;            ksolver_param = declare_parameter&lt;rclcpp::ParameterType::PARAMETER_STRING&gt;(node_, ksolver_param_name);</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;          }</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;          <span class="keywordflow">if</span> (ksolver_param.get_type() != rclcpp::ParameterType::PARAMETER_NOT_SET)</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;          {</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;            RCLCPP_DEBUG(<a class="code" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">LOGGER</a>, <span class="stringliteral">&quot;Found param %s&quot;</span>, ksolver_param_name.c_str());</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160; </div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span>&amp; ksolver = ksolver_param.as_string();</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;            std::stringstream ss(ksolver);</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;            <span class="keywordtype">bool</span> first = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;            <span class="keywordflow">while</span> (ss.good() &amp;&amp; !ss.eof())</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;            {</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;              <span class="keywordflow">if</span> (first)</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;              {</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;                first = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;                groups_.push_back(known_group.name_);</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;              }</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;              std::string solver;</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;              ss &gt;&gt; solver &gt;&gt; std::ws;</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;              possible_kinematics_solvers[known_group.name_].push_back(solver);</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;              RCLCPP_DEBUG(<a class="code" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">LOGGER</a>, <span class="stringliteral">&quot;Using kinematics solver &#39;%s&#39; for group &#39;%s&#39;.&quot;</span>, solver.c_str(),</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;                           known_group.name_.c_str());</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;            }</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;          }</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160; </div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;          std::string ksolver_timeout_param_name = base_param_name + <span class="stringliteral">&quot;.kinematics_solver_timeout&quot;</span>;</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;          rclcpp::Parameter ksolver_timeout_param =</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;              declare_parameter&lt;rclcpp::ParameterType::PARAMETER_DOUBLE&gt;(node_, ksolver_timeout_param_name);</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;          <span class="keywordflow">if</span> (ksolver_timeout_param.get_type() != rclcpp::ParameterType::PARAMETER_NOT_SET)</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;          {</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;            <span class="keywordflow">if</span> (ksolver_timeout_param.get_type() == rclcpp::ParameterType::PARAMETER_DOUBLE)</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;            {</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;              ik_timeout_[known_group.name_] = ksolver_timeout_param.as_double();</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;            }</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ksolver_timeout_param.get_type() == rclcpp::ParameterType::PARAMETER_INTEGER)</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;            {  <span class="comment">// just in case this is an int</span></div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;              ik_timeout_[known_group.name_] = ksolver_timeout_param.as_int();</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;            }</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;          }</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160; </div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;          std::string ksolver_res_param_name = base_param_name + <span class="stringliteral">&quot;.kinematics_solver_search_resolution&quot;</span>;</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;          rclcpp::Parameter ksolver_res_param =</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;              declare_parameter&lt;rclcpp::ParameterType::PARAMETER_DOUBLE&gt;(node_, ksolver_res_param_name);</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;          <span class="keywordflow">if</span> (ksolver_res_param.get_type() != rclcpp::ParameterType::PARAMETER_NOT_SET)</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;          {</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;            <span class="keywordflow">if</span> (ksolver_res_param.get_type() == rclcpp::ParameterType::PARAMETER_STRING)</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;            {</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;              <span class="keyword">const</span> <span class="keyword">auto</span>&amp; ksolver_res = ksolver_res_param.as_string();</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;              std::stringstream ss(ksolver_res);</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;              <span class="keywordflow">while</span> (ss.good() &amp;&amp; !ss.eof())</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;              {</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;                <span class="keywordtype">double</span> res;</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;                ss &gt;&gt; res &gt;&gt; std::ws;</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;                search_res[known_group.name_].push_back(res);</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;              }</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;            }</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;            <span class="comment">// handle the case this param is just one value and parsed as a double</span></div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ksolver_res_param.get_type() == rclcpp::ParameterType::PARAMETER_DOUBLE)</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="namespacekinematics__plugin__loader.html#ac73bfaeec99c68c9789f6b77e3172ee6">   84</a></span>&#160;      kinematics_loader_.reset(<span class="keyword">new</span> pluginlib::ClassLoader&lt;kinematics::KinematicsBase&gt;(<span class="stringliteral">&quot;moveit_core&quot;</span>, <span class="stringliteral">&quot;kinematics::&quot;</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                                                                                                     <span class="stringliteral">&quot;KinematicsBase&quot;</span>));</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">catch</span> (pluginlib::PluginlibException&amp; e)</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;      RCLCPP_ERROR(<a class="code" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">LOGGER</a>, <span class="stringliteral">&quot;Unable to construct kinematics loader. Error: %s&quot;</span>, e.what());</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  std::vector&lt;std::string&gt; <a class="code" href="classkinematics__plugin__loader_1_1KinematicsPluginLoader_1_1KinematicsLoaderImpl.html#a21705804c3e5a36145996b1cbdf24f8b">chooseTipFrames</a>(<span class="keyword">const</span> <a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html">moveit::core::JointModelGroup</a>* jmg)</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    std::vector&lt;std::string&gt; tips;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    std::map&lt;std::string, std::vector&lt;std::string&gt;&gt;::const_iterator ik_it = iksolver_to_tip_links_.find(jmg-&gt;<a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html#a2f165c9374e28ac4052490819c790f45">getName</a>());</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="comment">// Check if tips were loaded onto the rosparam server previously</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="classkinematics__plugin__loader_1_1KinematicsPluginLoader_1_1KinematicsLoaderImpl.html#a7b716b617a08f6f7b3cfc09274470fdc">  104</a></span>&#160;    <span class="keywordflow">if</span> (ik_it != iksolver_to_tip_links_.end())</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    {</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;      <span class="comment">// the tip is being chosen based on a corresponding rosparam ik link</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;      RCLCPP_DEBUG(<a class="code" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">LOGGER</a>,</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                   <span class="stringliteral">&quot;Choosing tip frame of kinematic solver for group %s&quot;</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                   <span class="stringliteral">&quot;based on values in rosparam server.&quot;</span>,</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                   jmg-&gt;<a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html#a2f165c9374e28ac4052490819c790f45">getName</a>().c_str());</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;      tips = ik_it-&gt;second;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    }</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    {</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;      <span class="comment">// get the last link in the chain</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;      RCLCPP_DEBUG(<a class="code" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">LOGGER</a>,</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                   <span class="stringliteral">&quot;Choosing tip frame of kinematic solver for group %s&quot;</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                   <span class="stringliteral">&quot;based on last link in chain&quot;</span>,</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                   jmg-&gt;<a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html#a2f165c9374e28ac4052490819c790f45">getName</a>().c_str());</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;      tips.push_back(jmg-&gt;<a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html#a5ce4575b094d15163bd41744b0fa7fa6">getLinkModels</a>().back()-&gt;getName());</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    }</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="comment">// Error check</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordflow">if</span> (tips.empty())</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;      RCLCPP_ERROR(<a class="code" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">LOGGER</a>, <span class="stringliteral">&quot;Error choosing kinematic solver tip frame(s).&quot;</span>);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    }</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
+<div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="classkinematics__plugin__loader_1_1KinematicsPluginLoader_1_1KinematicsLoaderImpl.html#a21705804c3e5a36145996b1cbdf24f8b">  130</a></span>&#160;    <span class="comment">// Debug tip choices</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    std::stringstream tip_debug;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    tip_debug &lt;&lt; <span class="stringliteral">&quot;Planning group &#39;&quot;</span> &lt;&lt; jmg-&gt;<a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html#a2f165c9374e28ac4052490819c790f45">getName</a>() &lt;&lt; <span class="stringliteral">&quot;&#39; has tip(s): &quot;</span>;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; tip : tips)</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;      tip_debug &lt;&lt; tip &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    RCLCPP_DEBUG_STREAM(<a class="code" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">LOGGER</a>, tip_debug.str());</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordflow">return</span> tips;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  }</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  kinematics::KinematicsBasePtr <a class="code" href="classkinematics__plugin__loader_1_1KinematicsPluginLoader_1_1KinematicsLoaderImpl.html#aee20108e28bea50867ee349bcd13851f">allocKinematicsSolver</a>(<span class="keyword">const</span> <a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html">moveit::core::JointModelGroup</a>* jmg)</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  {</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    kinematics::KinematicsBasePtr result;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordflow">if</span> (!kinematics_loader_)</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    {</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;      RCLCPP_ERROR(<a class="code" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">LOGGER</a>, <span class="stringliteral">&quot;Invalid kinematics loader.&quot;</span>);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;      <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    }</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keywordflow">if</span> (!jmg)</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    {</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;      RCLCPP_ERROR(<a class="code" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">LOGGER</a>, <span class="stringliteral">&quot;Specified group is NULL. Cannot allocate kinematics solver.&quot;</span>);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;      <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    }</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keyword">const</span> std::vector&lt;const moveit::core::LinkModel*&gt;&amp; links = jmg-&gt;<a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html#a5ce4575b094d15163bd41744b0fa7fa6">getLinkModels</a>();</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordflow">if</span> (links.empty())</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    {</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;      RCLCPP_ERROR(<a class="code" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">LOGGER</a>, <span class="stringliteral">&quot;No links specified for group &#39;%s&#39;. Cannot allocate kinematics solver.&quot;</span>,</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                   jmg-&gt;<a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html#a2f165c9374e28ac4052490819c790f45">getName</a>().c_str());</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;      <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    }</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    RCLCPP_DEBUG(<a class="code" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">LOGGER</a>, <span class="stringliteral">&quot;Trying to allocate kinematics solver for group &#39;%s&#39;&quot;</span>, jmg-&gt;<a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html#a2f165c9374e28ac4052490819c790f45">getName</a>().c_str());</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    std::map&lt;std::string, std::vector&lt;std::string&gt;&gt;::const_iterator it =</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        possible_kinematics_solvers_.find(jmg-&gt;<a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html#a2f165c9374e28ac4052490819c790f45">getName</a>());</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordflow">if</span> (it == possible_kinematics_solvers_.end())</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    {</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;      RCLCPP_DEBUG(<a class="code" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">LOGGER</a>, <span class="stringliteral">&quot;No kinematics solver available for this group&quot;</span>);</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;      <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    }</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keyword">const</span> std::string&amp; base = links.front()-&gt;getParentJointModel()-&gt;getParentLinkModel() ?</div>
+<div class="line"><a name="l00172"></a><span class="lineno"><a class="line" href="classkinematics__plugin__loader_1_1KinematicsPluginLoader_1_1KinematicsLoaderImpl.html#aee20108e28bea50867ee349bcd13851f">  172</a></span>&#160;                                  links.front()-&gt;getParentJointModel()-&gt;getParentLinkModel()-&gt;getName() :</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                                  jmg-&gt;<a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html#a854e1c3f7e18cd79755f3e687ad47ccd">getParentModel</a>().<a class="code" href="classmoveit_1_1core_1_1RobotModel.html#a12c6580c9ad13576e7e566cc9a899c7f">getModelFrame</a>();</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="comment">// just to be sure, do not call the same pluginlib instance allocation function in parallel</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    boost::mutex::scoped_lock slock(lock_);</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keywordflow">for</span> (std::size_t i = 0; !result &amp;&amp; i &lt; it-&gt;second.size(); ++i)</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    {</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;      <span class="keywordflow">try</span></div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;      {</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        result = kinematics_loader_-&gt;createUniqueInstance(it-&gt;second[i]);</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        <span class="keywordflow">if</span> (result)</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        {</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;          <span class="comment">// choose the tip of the IK solver</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;          <span class="keyword">const</span> std::vector&lt;std::string&gt; tips = <a class="code" href="classkinematics__plugin__loader_1_1KinematicsPluginLoader_1_1KinematicsLoaderImpl.html#a21705804c3e5a36145996b1cbdf24f8b">chooseTipFrames</a>(jmg);</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;          <span class="comment">// choose search resolution</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;          <span class="keywordtype">double</span> search_res = search_res_.find(jmg-&gt;<a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html#a2f165c9374e28ac4052490819c790f45">getName</a>())-&gt;second[i];  <span class="comment">// we know this exists, by construction</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;          <span class="keywordflow">if</span> (!result-&gt;initialize(node_, jmg-&gt;<a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html#a854e1c3f7e18cd79755f3e687ad47ccd">getParentModel</a>(), jmg-&gt;<a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html#a2f165c9374e28ac4052490819c790f45">getName</a>(),</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                                  (base.empty() || base[0] != <span class="charliteral">&#39;/&#39;</span>) ? base : base.substr(1), tips, search_res))</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;          {</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            RCLCPP_ERROR(<a class="code" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">LOGGER</a>, <span class="stringliteral">&quot;Kinematics solver of type &#39;%s&#39; could not be initialized for group &#39;%s&#39;&quot;</span>,</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                         it-&gt;second[i].c_str(), jmg-&gt;<a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html#a2f165c9374e28ac4052490819c790f45">getName</a>().c_str());</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            result.reset();</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;          }</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;          result-&gt;setDefaultTimeout(jmg-&gt;<a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html#a0a52d99429820b1c51838d9408078452">getDefaultIKTimeout</a>());</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;          RCLCPP_DEBUG(<a class="code" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">LOGGER</a>,</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                       <span class="stringliteral">&quot;Successfully allocated and initialized a kinematics solver of type &#39;%s&#39; with search &quot;</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                       <span class="stringliteral">&quot;resolution %lf for group &#39;%s&#39; at address %p&quot;</span>,</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                       it-&gt;second[i].c_str(), search_res, jmg-&gt;<a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html#a2f165c9374e28ac4052490819c790f45">getName</a>().c_str(), result.get());</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;          <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        }</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;      }</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;      <span class="keywordflow">catch</span> (pluginlib::PluginlibException&amp; e)</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;      {</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        RCLCPP_ERROR(<a class="code" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">LOGGER</a>, <span class="stringliteral">&quot;The kinematics plugin (%s) failed to load. Error: %s&quot;</span>, it-&gt;first.c_str(), e.what());</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;      }</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    }</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160; </div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keywordflow">if</span> (!result)</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    {</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;      RCLCPP_DEBUG(<a class="code" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">LOGGER</a>, <span class="stringliteral">&quot;No usable kinematics solver was found for this group.\n&quot;</span></div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                           <span class="stringliteral">&quot;Did you load kinematics.yaml into your node&#39;s namespace?&quot;</span>);</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    }</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;  }</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;  <span class="comment">// cache solver between two consecutive calls</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;  <span class="comment">// first call in RobotModelLoader::loadKinematicsSolvers() is just to check suitability for jmg</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;  <span class="comment">// second call in JointModelGroup::setSolverAllocators() is to actually retrieve the instance for use</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;  kinematics::KinematicsBasePtr <a class="code" href="classkinematics__plugin__loader_1_1KinematicsPluginLoader_1_1KinematicsLoaderImpl.html#a446a75b8254780e7c170bf509c87aa9e">allocKinematicsSolverWithCache</a>(<span class="keyword">const</span> <a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html">moveit::core::JointModelGroup</a>* jmg)</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;  {</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    boost::mutex::scoped_lock slock(cache_lock_);</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    kinematics::KinematicsBasePtr&amp; cached = instances_[jmg];</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="keywordflow">if</span> (cached.unique())</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;      <span class="keywordflow">return</span> std::move(cached);  <span class="comment">// pass on unique instance</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160; </div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <span class="comment">// create a new instance and store in instances_</span></div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    cached = <a class="code" href="classkinematics__plugin__loader_1_1KinematicsPluginLoader_1_1KinematicsLoaderImpl.html#aee20108e28bea50867ee349bcd13851f">allocKinematicsSolver</a>(jmg);</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    <span class="keywordflow">return</span> cached;</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;  }</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160; </div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classkinematics__plugin__loader_1_1KinematicsPluginLoader_1_1KinematicsLoaderImpl.html#a716f37721a9981571711abfdd63905c9">status</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;<span class="keyword">  </span>{</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="keywordflow">for</span> (std::map&lt;std::string, std::vector&lt;std::string&gt;&gt;::const_iterator it = possible_kinematics_solvers_.begin();</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;         it != possible_kinematics_solvers_.end(); ++it)</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    {</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;      <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; it-&gt;second.size(); ++i)</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;      {</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        RCLCPP_INFO(<a class="code" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">LOGGER</a>, <span class="stringliteral">&quot;Solver for group &#39;%s&#39;: &#39;%s&#39; (search resolution = %lf)&quot;</span>, it-&gt;first.c_str(),</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                    it-&gt;second[i].c_str(), search_res_.at(it-&gt;first)[i]);</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;      }</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    }</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;  }</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; </div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;  <span class="keyword">const</span> rclcpp::Node::SharedPtr node_;</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;  std::string robot_description_;</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;  std::map&lt;std::string, std::vector&lt;std::string&gt;&gt; possible_kinematics_solvers_;</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;  std::map&lt;std::string, std::vector&lt;double&gt;&gt; search_res_;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;  std::map&lt;std::string, std::vector&lt;std::string&gt;&gt; iksolver_to_tip_links_;  <span class="comment">// a map between each ik solver and a vector</span></div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                                                                           <span class="comment">// of custom-specified tip link(s)</span></div>
+<div class="line"><a name="l00256"></a><span class="lineno"><a class="line" href="classkinematics__plugin__loader_1_1KinematicsPluginLoader_1_1KinematicsLoaderImpl.html#a446a75b8254780e7c170bf509c87aa9e">  256</a></span>&#160;  std::shared_ptr&lt;pluginlib::ClassLoader&lt;kinematics::KinematicsBase&gt;&gt; kinematics_loader_;</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;  std::map&lt;const moveit::core::JointModelGroup*, kinematics::KinematicsBasePtr&gt; instances_;</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;  boost::mutex lock_;</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;  boost::mutex cache_lock_;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;};</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160; </div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;<span class="keywordtype">void</span> <a class="code" href="classkinematics__plugin__loader_1_1KinematicsPluginLoader.html#a27d6efeee21598435c52188f2361006b">KinematicsPluginLoader::status</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;  <span class="keywordflow">if</span> (loader_)</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    loader_-&gt;status();</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    RCLCPP_INFO(<a class="code" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">LOGGER</a>, <span class="stringliteral">&quot;Loader function was never required&quot;</span>);</div>
+<div class="line"><a name="l00268"></a><span class="lineno"><a class="line" href="classkinematics__plugin__loader_1_1KinematicsPluginLoader_1_1KinematicsLoaderImpl.html#a716f37721a9981571711abfdd63905c9">  268</a></span>&#160;}</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160; </div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;<a class="code" href="namespacemoveit_1_1core.html#aee2fefede757f1b0b2e59fc9dce12fa7">moveit::core::SolverAllocatorFn</a> <a class="code" href="classkinematics__plugin__loader_1_1KinematicsPluginLoader.html#a5fbe986aeb678a96a3237b5e531ef75e">KinematicsPluginLoader::getLoaderFunction</a>()</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;{</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;  <a class="code" href="classmoveit_1_1tools_1_1Profiler_1_1ScopedStart.html">moveit::tools::Profiler::ScopedStart</a> prof_start;</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;  <a class="code" href="classmoveit_1_1tools_1_1Profiler_1_1ScopedBlock.html">moveit::tools::Profiler::ScopedBlock</a> prof_block(<span class="stringliteral">&quot;KinematicsPluginLoader::getLoaderFunction&quot;</span>);</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160; </div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;  <span class="keywordflow">if</span> (loader_)</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <span class="keywordflow">return</span> boost::bind(&amp;<a class="code" href="classkinematics__plugin__loader_1_1KinematicsPluginLoader_1_1KinematicsLoaderImpl.html#a446a75b8254780e7c170bf509c87aa9e">KinematicsLoaderImpl::allocKinematicsSolverWithCache</a>, loader_.get(), boost::placeholders::_1);</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160; </div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;  <a class="code" href="classrdf__loader_1_1RDFLoader.html">rdf_loader::RDFLoader</a> rml(node_, robot_description_);</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;  robot_description_ = rml.<a class="code" href="classrdf__loader_1_1RDFLoader.html#a36747cc62618abeb838a2815a7650bd8">getRobotDescription</a>();</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classkinematics__plugin__loader_1_1KinematicsPluginLoader.html#a5fbe986aeb678a96a3237b5e531ef75e">getLoaderFunction</a>(rml.<a class="code" href="classrdf__loader_1_1RDFLoader.html#a0f8158d75c555baa1734da830b429089">getSRDF</a>());</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;}</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160; </div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;<a class="code" href="namespacemoveit_1_1core.html#aee2fefede757f1b0b2e59fc9dce12fa7">moveit::core::SolverAllocatorFn</a> <a class="code" href="classkinematics__plugin__loader_1_1KinematicsPluginLoader.html#a5fbe986aeb678a96a3237b5e531ef75e">KinematicsPluginLoader::getLoaderFunction</a>(<span class="keyword">const</span> srdf::ModelSharedPtr&amp; srdf_model)</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;{</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;  <a class="code" href="classmoveit_1_1tools_1_1Profiler_1_1ScopedStart.html">moveit::tools::Profiler::ScopedStart</a> prof_start;</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;  <a class="code" href="classmoveit_1_1tools_1_1Profiler_1_1ScopedBlock.html">moveit::tools::Profiler::ScopedBlock</a> prof_block(<span class="stringliteral">&quot;KinematicsPluginLoader::getLoaderFunction(SRDF)&quot;</span>);</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160; </div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;  <span class="keywordflow">if</span> (!loader_)</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;  {</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    RCLCPP_DEBUG(<a class="code" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">LOGGER</a>, <span class="stringliteral">&quot;Configuring kinematics solvers&quot;</span>);</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    groups_.clear();</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160; </div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    std::map&lt;std::string, std::vector&lt;std::string&gt;&gt; possible_kinematics_solvers;</div>
+<div class="line"><a name="l00294"></a><span class="lineno"><a class="line" href="classkinematics__plugin__loader_1_1KinematicsPluginLoader.html#a27d6efeee21598435c52188f2361006b">  294</a></span>&#160;    std::map&lt;std::string, std::vector&lt;double&gt;&gt; search_res;</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    std::map&lt;std::string, std::vector&lt;std::string&gt;&gt; iksolver_to_tip_links;</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160; </div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    <span class="keywordflow">if</span> (srdf_model)</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    {</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;      <span class="keyword">const</span> std::vector&lt;srdf::Model::Group&gt;&amp; known_groups = srdf_model-&gt;getGroups();</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;      <span class="keywordflow">if</span> (default_search_resolution_ &lt;= std::numeric_limits&lt;double&gt;::epsilon())</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        default_search_resolution_ = <a class="code" href="classkinematics_1_1KinematicsBase.html#ad1cf8914589eaad778935c805300e243">kinematics::KinematicsBase::DEFAULT_SEARCH_DISCRETIZATION</a>;</div>
+<div class="line"><a name="l00302"></a><span class="lineno"><a class="line" href="classkinematics__plugin__loader_1_1KinematicsPluginLoader.html#a5fbe986aeb678a96a3237b5e531ef75e">  302</a></span>&#160; </div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;      <span class="keywordflow">if</span> (default_solver_plugin_.empty())</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;      {</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        RCLCPP_DEBUG(<a class="code" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">LOGGER</a>, <span class="stringliteral">&quot;Loading settings for kinematics solvers from the ROS param server ...&quot;</span>);</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        <span class="comment">// read the list of plugin names for possible kinematics solvers</span></div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> srdf::Model::Group&amp; known_group : known_groups)</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        {</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;          std::string base_param_name = known_group.name_;</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;          std::string ksolver_param_name = base_param_name + <span class="stringliteral">&quot;.kinematics_solver&quot;</span>;</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;          RCLCPP_DEBUG(<a class="code" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">LOGGER</a>, <span class="stringliteral">&quot;Looking for param %s &quot;</span>, ksolver_param_name.c_str());</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;          rclcpp::Parameter ksolver_param = <a class="code" href="namespacekinematics__plugin__loader.html#ac73bfaeec99c68c9789f6b77e3172ee6">declare_parameter</a>(node_, ksolver_param_name);</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;          <span class="keywordflow">if</span> (ksolver_param.get_type() == rclcpp::ParameterType::PARAMETER_NOT_SET)</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;          {</div>
+<div class="line"><a name="l00315"></a><span class="lineno"><a class="line" href="classkinematics__plugin__loader_1_1KinematicsPluginLoader.html#a881273360a5e71bb64062811fe60acf0">  315</a></span>&#160;            base_param_name = robot_description_ + <span class="stringliteral">&quot;_kinematics.&quot;</span> + known_group.name_;</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;            ksolver_param_name = base_param_name + <span class="stringliteral">&quot;.kinematics_solver&quot;</span>;</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;            RCLCPP_DEBUG(<a class="code" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">LOGGER</a>, <span class="stringliteral">&quot;Looking for param %s &quot;</span>, ksolver_param_name.c_str());</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;            ksolver_param = <a class="code" href="namespacekinematics__plugin__loader.html#ac73bfaeec99c68c9789f6b77e3172ee6">declare_parameter</a>(node_, ksolver_param_name);</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;          }</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;          <span class="keywordflow">if</span> (ksolver_param.get_type() != rclcpp::ParameterType::PARAMETER_NOT_SET)</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;          {</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;            RCLCPP_DEBUG(<a class="code" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">LOGGER</a>, <span class="stringliteral">&quot;Found param %s&quot;</span>, ksolver_param_name.c_str());</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160; </div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span>&amp; ksolver = ksolver_param.as_string();</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;            std::stringstream ss(ksolver);</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;            <span class="keywordtype">bool</span> first = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;            <span class="keywordflow">while</span> (ss.good() &amp;&amp; !ss.eof())</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;            {</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;              <span class="keywordflow">if</span> (first)</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;              {</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;                first = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;                groups_.push_back(known_group.name_);</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;              }</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;              std::string solver;</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;              ss &gt;&gt; solver &gt;&gt; std::ws;</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;              possible_kinematics_solvers[known_group.name_].push_back(solver);</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;              RCLCPP_DEBUG(<a class="code" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">LOGGER</a>, <span class="stringliteral">&quot;Using kinematics solver &#39;%s&#39; for group &#39;%s&#39;.&quot;</span>, solver.c_str(),</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;                           known_group.name_.c_str());</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;            }</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;          }</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160; </div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;          std::string ksolver_timeout_param_name = base_param_name + <span class="stringliteral">&quot;.kinematics_solver_timeout&quot;</span>;</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;          rclcpp::Parameter ksolver_timeout_param = <a class="code" href="namespacekinematics__plugin__loader.html#ac73bfaeec99c68c9789f6b77e3172ee6">declare_parameter</a>(node_, ksolver_timeout_param_name);</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;          <span class="keywordflow">if</span> (ksolver_timeout_param.get_type() != rclcpp::ParameterType::PARAMETER_NOT_SET)</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;          {</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;            <span class="keywordflow">if</span> (ksolver_timeout_param.get_type() == rclcpp::ParameterType::PARAMETER_DOUBLE)</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;            {</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;              ik_timeout_[known_group.name_] = ksolver_timeout_param.as_double();</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;            }</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ksolver_timeout_param.get_type() == rclcpp::ParameterType::PARAMETER_INTEGER)</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;            {  <span class="comment">// just in case this is an int</span></div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;              ik_timeout_[known_group.name_] = ksolver_timeout_param.as_int();</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;            }</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;          }</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160; </div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;          std::string ksolver_res_param_name = base_param_name + <span class="stringliteral">&quot;.kinematics_solver_search_resolution&quot;</span>;</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;          rclcpp::Parameter ksolver_res_param = <a class="code" href="namespacekinematics__plugin__loader.html#ac73bfaeec99c68c9789f6b77e3172ee6">declare_parameter</a>(node_, ksolver_res_param_name);</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;          <span class="keywordflow">if</span> (ksolver_res_param.get_type() != rclcpp::ParameterType::PARAMETER_NOT_SET)</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;          {</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;            <span class="keywordflow">if</span> (ksolver_res_param.get_type() == rclcpp::ParameterType::PARAMETER_STRING)</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;            {</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;              <span class="keyword">const</span> <span class="keyword">auto</span>&amp; ksolver_res = ksolver_res_param.as_string();</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;              std::stringstream ss(ksolver_res);</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;              <span class="keywordflow">while</span> (ss.good() &amp;&amp; !ss.eof())</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;              {</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;                <span class="keywordtype">double</span> res;</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;                ss &gt;&gt; res &gt;&gt; std::ws;</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;                search_res[known_group.name_].push_back(res);</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;              }</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;            }</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;            <span class="comment">// handle the case this param is just one value and parsed as a double</span></div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ksolver_res_param.get_type() == rclcpp::ParameterType::PARAMETER_DOUBLE)</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;            {</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;              search_res[known_group.name_].push_back(ksolver_res_param.as_double());</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;            }</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ksolver_res_param.get_type() == rclcpp::ParameterType::PARAMETER_INTEGER)</div>
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;            {</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;              search_res[known_group.name_].push_back(ksolver_res_param.as_double());</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;              search_res[known_group.name_].push_back(ksolver_res_param.as_int());</div>
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;            }</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ksolver_res_param.get_type() == rclcpp::ParameterType::PARAMETER_INTEGER)</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;            {</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;              search_res[known_group.name_].push_back(ksolver_res_param.as_int());</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;            }</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;          }</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160; </div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;          <span class="comment">// Allow a kinematic solver&#39;s tip links to be specified on the rosparam server as an array</span></div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;          std::string ksolver_ik_links_param_name = base_param_name + <span class="stringliteral">&quot;.kinematics_solver_ik_links&quot;</span>;</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;          rclcpp::Parameter ksolver_ik_links_param =</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;              declare_parameter&lt;rclcpp::ParameterType::PARAMETER_STRING_ARRAY&gt;(node_, ksolver_ik_links_param_name);</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;          <span class="keywordflow">if</span> (ksolver_ik_links_param.get_type() != rclcpp::ParameterType::PARAMETER_NOT_SET)</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;          {</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;            <span class="keywordflow">if</span> (ksolver_ik_links_param.get_type() == rclcpp::ParameterType::PARAMETER_STRING_ARRAY)</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;            {</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;              <span class="keyword">const</span> <span class="keyword">auto</span>&amp; ksolver_ik_links = ksolver_ik_links_param.as_string_array();</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;              <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; ksolver_ik_link : ksolver_ik_links)</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;              {</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;                RCLCPP_DEBUG(<a class="code" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">LOGGER</a>, <span class="stringliteral">&quot;found tip %s for group %s&quot;</span>, ksolver_ik_link.c_str(), known_group.name_.c_str());</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;                iksolver_to_tip_links[known_group.name_].push_back(ksolver_ik_link);</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;              }</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;          }</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160; </div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;          <span class="comment">// Allow a kinematic solver&#39;s tip links to be specified on the rosparam server as an array</span></div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;          std::string ksolver_ik_links_param_name = base_param_name + <span class="stringliteral">&quot;.kinematics_solver_ik_links&quot;</span>;</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;          rclcpp::Parameter ksolver_ik_links_param = <a class="code" href="namespacekinematics__plugin__loader.html#ac73bfaeec99c68c9789f6b77e3172ee6">declare_parameter</a>(node_, ksolver_ik_links_param_name);</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;          <span class="keywordflow">if</span> (ksolver_ik_links_param.get_type() != rclcpp::ParameterType::PARAMETER_NOT_SET)</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;          {</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;            <span class="keywordflow">if</span> (ksolver_ik_links_param.get_type() == rclcpp::ParameterType::PARAMETER_STRING_ARRAY)</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;            {</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;              <span class="keyword">const</span> <span class="keyword">auto</span>&amp; ksolver_ik_links = ksolver_ik_links_param.as_string_array();</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;              <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; ksolver_ik_link : ksolver_ik_links)</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;              {</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;                RCLCPP_DEBUG(<a class="code" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">LOGGER</a>, <span class="stringliteral">&quot;found tip %s for group %s&quot;</span>, ksolver_ik_link.c_str(), known_group.name_.c_str());</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;                iksolver_to_tip_links[known_group.name_].push_back(ksolver_ik_link);</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;              }</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;            }</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;            {</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;              RCLCPP_WARN(<a class="code" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">LOGGER</a>, <span class="stringliteral">&quot;the parameter &#39;%s&#39; needs to be of type &#39;STRING_ARRAY&#39;&quot;</span>,</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;                          ksolver_ik_links_param_name.c_str());</div>
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;            }</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;            <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;            {</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;              RCLCPP_WARN(<a class="code" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">LOGGER</a>, <span class="stringliteral">&quot;the parameter &#39;%s&#39; needs to be of type &#39;STRING_ARRAY&#39;&quot;</span>,</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;                          ksolver_ik_links_param_name.c_str());</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;            }</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;          }</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160; </div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;          <span class="comment">// make sure there is a default resolution at least specified for every solver (in case it was not specified</span></div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;          <span class="comment">// on the param server)</span></div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;          <span class="keywordflow">while</span> (search_res[known_group.name_].size() &lt; possible_kinematics_solvers[known_group.name_].size())</div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;            search_res[known_group.name_].push_back(default_search_resolution_);</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;        }</div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;      }</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;      <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;      {</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;        RCLCPP_DEBUG(<a class="code" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">LOGGER</a>, <span class="stringliteral">&quot;Using specified default settings for kinematics solvers ...&quot;</span>);</div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> srdf::Model::Group&amp; known_group : known_groups)</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;        {</div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;          possible_kinematics_solvers[known_group.name_].resize(1, default_solver_plugin_);</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;          search_res[known_group.name_].resize(1, default_search_resolution_);</div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;          ik_timeout_[known_group.name_] = default_solver_timeout_;</div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;          groups_.push_back(known_group.name_);</div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;        }</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;      }</div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;    }</div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160; </div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;    loader_ = std::make_shared&lt;KinematicsLoaderImpl&gt;(node_, robot_description_, possible_kinematics_solvers, search_res,</div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;                                                     iksolver_to_tip_links);</div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;  }</div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160; </div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;  <span class="keywordflow">return</span> boost::bind(&amp;<a class="code" href="classkinematics__plugin__loader_1_1KinematicsPluginLoader_1_1KinematicsLoaderImpl.html#a446a75b8254780e7c170bf509c87aa9e">KinematicsPluginLoader::KinematicsLoaderImpl::allocKinematicsSolverWithCache</a>, loader_.get(),</div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;                     boost::placeholders::_1);</div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;}</div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;}  <span class="comment">// namespace kinematics_plugin_loader</span></div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;          }</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160; </div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;          <span class="comment">// make sure there is a default resolution at least specified for every solver (in case it was not specified</span></div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;          <span class="comment">// on the param server)</span></div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;          <span class="keywordflow">while</span> (search_res[known_group.name_].size() &lt; possible_kinematics_solvers[known_group.name_].size())</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;            search_res[known_group.name_].push_back(default_search_resolution_);</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;        }</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;      }</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;      <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;      {</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;        RCLCPP_DEBUG(<a class="code" href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">LOGGER</a>, <span class="stringliteral">&quot;Using specified default settings for kinematics solvers ...&quot;</span>);</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> srdf::Model::Group&amp; known_group : known_groups)</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;        {</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;          possible_kinematics_solvers[known_group.name_].resize(1, default_solver_plugin_);</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;          search_res[known_group.name_].resize(1, default_search_resolution_);</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;          ik_timeout_[known_group.name_] = default_solver_timeout_;</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;          groups_.push_back(known_group.name_);</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;        }</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;      }</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;    }</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160; </div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    loader_.reset(<span class="keyword">new</span> KinematicsLoaderImpl(node_, robot_description_, possible_kinematics_solvers, search_res,</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;                                           iksolver_to_tip_links));</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;  }</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160; </div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;  <span class="keywordflow">return</span> boost::bind(&amp;<a class="code" href="classkinematics__plugin__loader_1_1KinematicsPluginLoader_1_1KinematicsLoaderImpl.html#a446a75b8254780e7c170bf509c87aa9e">KinematicsPluginLoader::KinematicsLoaderImpl::allocKinematicsSolverWithCache</a>, loader_.get(),</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;                     boost::placeholders::_1);</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;}</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;}  <span class="comment">// namespace kinematics_plugin_loader</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassmoveit_1_1core_1_1RobotModel_html_a12c6580c9ad13576e7e566cc9a899c7f"><div class="ttname"><a href="classmoveit_1_1core_1_1RobotModel.html#a12c6580c9ad13576e7e566cc9a899c7f">moveit::core::RobotModel::getModelFrame</a></div><div class="ttdeci">const std::string &amp; getModelFrame() const</div><div class="ttdoc">Get the frame in which the transforms for this model are computed (when using a RobotState)....</div><div class="ttdef"><b>Definition:</b> <a href="robot__model_8h_source.html#l00159">robot_model.h:159</a></div></div>
-<div class="ttc" id="aclasskinematics__plugin__loader_1_1KinematicsPluginLoader_1_1KinematicsLoaderImpl_html_a446a75b8254780e7c170bf509c87aa9e"><div class="ttname"><a href="classkinematics__plugin__loader_1_1KinematicsPluginLoader_1_1KinematicsLoaderImpl.html#a446a75b8254780e7c170bf509c87aa9e">kinematics_plugin_loader::KinematicsPluginLoader::KinematicsLoaderImpl::allocKinematicsSolverWithCache</a></div><div class="ttdeci">kinematics::KinematicsBasePtr allocKinematicsSolverWithCache(const moveit::core::JointModelGroup *jmg)</div><div class="ttdef"><b>Definition:</b> <a href="kinematics__plugin__loader_8cpp_source.html#l00257">kinematics_plugin_loader.cpp:257</a></div></div>
+<div class="ttc" id="aclasskinematics__plugin__loader_1_1KinematicsPluginLoader_1_1KinematicsLoaderImpl_html_a446a75b8254780e7c170bf509c87aa9e"><div class="ttname"><a href="classkinematics__plugin__loader_1_1KinematicsPluginLoader_1_1KinematicsLoaderImpl.html#a446a75b8254780e7c170bf509c87aa9e">kinematics_plugin_loader::KinematicsPluginLoader::KinematicsLoaderImpl::allocKinematicsSolverWithCache</a></div><div class="ttdeci">kinematics::KinematicsBasePtr allocKinematicsSolverWithCache(const moveit::core::JointModelGroup *jmg)</div><div class="ttdef"><b>Definition:</b> <a href="kinematics__plugin__loader_8cpp_source.html#l00256">kinematics_plugin_loader.cpp:256</a></div></div>
 <div class="ttc" id="aclasskinematics_1_1KinematicsBase_html_ad1cf8914589eaad778935c805300e243"><div class="ttname"><a href="classkinematics_1_1KinematicsBase.html#ad1cf8914589eaad778935c805300e243">kinematics::KinematicsBase::DEFAULT_SEARCH_DISCRETIZATION</a></div><div class="ttdeci">static const double DEFAULT_SEARCH_DISCRETIZATION</div><div class="ttdef"><b>Definition:</b> <a href="kinematics__base_8h_source.html#l00149">kinematics_base.h:149</a></div></div>
 <div class="ttc" id="aclassmoveit_1_1core_1_1JointModelGroup_html"><div class="ttname"><a href="classmoveit_1_1core_1_1JointModelGroup.html">moveit::core::JointModelGroup</a></div><div class="ttdef"><b>Definition:</b> <a href="joint__model__group_8h_source.html#l00134">joint_model_group.h:134</a></div></div>
 <div class="ttc" id="aclassmoveit_1_1core_1_1JointModelGroup_html_a854e1c3f7e18cd79755f3e687ad47ccd"><div class="ttname"><a href="classmoveit_1_1core_1_1JointModelGroup.html#a854e1c3f7e18cd79755f3e687ad47ccd">moveit::core::JointModelGroup::getParentModel</a></div><div class="ttdeci">const RobotModel &amp; getParentModel() const</div><div class="ttdoc">Get the kinematic model this group is part of.</div><div class="ttdef"><b>Definition:</b> <a href="joint__model__group_8h_source.html#l00179">joint_model_group.h:179</a></div></div>
 <div class="ttc" id="aclassmoveit_1_1tools_1_1Profiler_1_1ScopedStart_html"><div class="ttname"><a href="classmoveit_1_1tools_1_1Profiler_1_1ScopedStart.html">moveit::tools::Profiler::ScopedStart</a></div><div class="ttdoc">This instance will call Profiler::start() when constructed and Profiler::stop() when it goes out of s...</div><div class="ttdef"><b>Definition:</b> <a href="profiler_8h_source.html#l00098">profiler.h:98</a></div></div>
 <div class="ttc" id="anamespacekinematics__plugin__loader_html"><div class="ttname"><a href="namespacekinematics__plugin__loader.html">kinematics_plugin_loader</a></div><div class="ttdef"><b>Definition:</b> <a href="kinematics__plugin__loader_8h_source.html#l00044">kinematics_plugin_loader.h:44</a></div></div>
 <div class="ttc" id="aclassmoveit_1_1core_1_1JointModelGroup_html_a5ce4575b094d15163bd41744b0fa7fa6"><div class="ttname"><a href="classmoveit_1_1core_1_1JointModelGroup.html#a5ce4575b094d15163bd41744b0fa7fa6">moveit::core::JointModelGroup::getLinkModels</a></div><div class="ttdeci">const std::vector&lt; const LinkModel * &gt; &amp; getLinkModels() const</div><div class="ttdoc">Get the links that are part of this joint group.</div><div class="ttdef"><b>Definition:</b> <a href="joint__model__group_8h_source.html#l00278">joint_model_group.h:278</a></div></div>
-<div class="ttc" id="aclasskinematics__plugin__loader_1_1KinematicsPluginLoader_html_a5fbe986aeb678a96a3237b5e531ef75e"><div class="ttname"><a href="classkinematics__plugin__loader_1_1KinematicsPluginLoader.html#a5fbe986aeb678a96a3237b5e531ef75e">kinematics_plugin_loader::KinematicsPluginLoader::getLoaderFunction</a></div><div class="ttdeci">moveit::core::SolverAllocatorFn getLoaderFunction()</div><div class="ttdoc">Get a function pointer that allocates and initializes a kinematics solver. If not previously called,...</div><div class="ttdef"><b>Definition:</b> <a href="kinematics__plugin__loader_8cpp_source.html#l00303">kinematics_plugin_loader.cpp:303</a></div></div>
+<div class="ttc" id="aclasskinematics__plugin__loader_1_1KinematicsPluginLoader_html_a5fbe986aeb678a96a3237b5e531ef75e"><div class="ttname"><a href="classkinematics__plugin__loader_1_1KinematicsPluginLoader.html#a5fbe986aeb678a96a3237b5e531ef75e">kinematics_plugin_loader::KinematicsPluginLoader::getLoaderFunction</a></div><div class="ttdeci">moveit::core::SolverAllocatorFn getLoaderFunction()</div><div class="ttdoc">Get a function pointer that allocates and initializes a kinematics solver. If not previously called,...</div><div class="ttdef"><b>Definition:</b> <a href="kinematics__plugin__loader_8cpp_source.html#l00302">kinematics_plugin_loader.cpp:302</a></div></div>
 <div class="ttc" id="aclasskinematics__plugin__loader_1_1KinematicsPluginLoader_1_1KinematicsLoaderImpl_html_a7b716b617a08f6f7b3cfc09274470fdc"><div class="ttname"><a href="classkinematics__plugin__loader_1_1KinematicsPluginLoader_1_1KinematicsLoaderImpl.html#a7b716b617a08f6f7b3cfc09274470fdc">kinematics_plugin_loader::KinematicsPluginLoader::KinematicsLoaderImpl::KinematicsLoaderImpl</a></div><div class="ttdeci">KinematicsLoaderImpl(const rclcpp::Node::SharedPtr &amp;node, const std::string &amp;robot_description, const std::map&lt; std::string, std::vector&lt; std::string &gt;&gt; &amp;possible_kinematics_solvers, const std::map&lt; std::string, std::vector&lt; double &gt;&gt; &amp;search_res, const std::map&lt; std::string, std::vector&lt; std::string &gt;&gt; &amp;iksolver_to_tip_links)</div><div class="ttdoc">Pimpl Implementation of KinematicsLoader.</div><div class="ttdef"><b>Definition:</b> <a href="kinematics__plugin__loader_8cpp_source.html#l00104">kinematics_plugin_loader.cpp:104</a></div></div>
-<div class="ttc" id="aclasskinematics__plugin__loader_1_1KinematicsPluginLoader_1_1KinematicsLoaderImpl_html_aee20108e28bea50867ee349bcd13851f"><div class="ttname"><a href="classkinematics__plugin__loader_1_1KinematicsPluginLoader_1_1KinematicsLoaderImpl.html#aee20108e28bea50867ee349bcd13851f">kinematics_plugin_loader::KinematicsPluginLoader::KinematicsLoaderImpl::allocKinematicsSolver</a></div><div class="ttdeci">kinematics::KinematicsBasePtr allocKinematicsSolver(const moveit::core::JointModelGroup *jmg)</div><div class="ttdef"><b>Definition:</b> <a href="kinematics__plugin__loader_8cpp_source.html#l00173">kinematics_plugin_loader.cpp:173</a></div></div>
-<div class="ttc" id="aclassrdf__loader_1_1RDFLoader_html_a0f8158d75c555baa1734da830b429089"><div class="ttname"><a href="classrdf__loader_1_1RDFLoader.html#a0f8158d75c555baa1734da830b429089">rdf_loader::RDFLoader::getSRDF</a></div><div class="ttdeci">const srdf::ModelSharedPtr &amp; getSRDF() const</div><div class="ttdoc">Get the parsed SRDF model.</div><div class="ttdef"><b>Definition:</b> <a href="rdf__loader_8h_source.html#l00123">rdf_loader.h:123</a></div></div>
+<div class="ttc" id="aclasskinematics__plugin__loader_1_1KinematicsPluginLoader_1_1KinematicsLoaderImpl_html_aee20108e28bea50867ee349bcd13851f"><div class="ttname"><a href="classkinematics__plugin__loader_1_1KinematicsPluginLoader_1_1KinematicsLoaderImpl.html#aee20108e28bea50867ee349bcd13851f">kinematics_plugin_loader::KinematicsPluginLoader::KinematicsLoaderImpl::allocKinematicsSolver</a></div><div class="ttdeci">kinematics::KinematicsBasePtr allocKinematicsSolver(const moveit::core::JointModelGroup *jmg)</div><div class="ttdef"><b>Definition:</b> <a href="kinematics__plugin__loader_8cpp_source.html#l00172">kinematics_plugin_loader.cpp:172</a></div></div>
+<div class="ttc" id="aclassrdf__loader_1_1RDFLoader_html_a0f8158d75c555baa1734da830b429089"><div class="ttname"><a href="classrdf__loader_1_1RDFLoader.html#a0f8158d75c555baa1734da830b429089">rdf_loader::RDFLoader::getSRDF</a></div><div class="ttdeci">const srdf::ModelSharedPtr &amp; getSRDF() const</div><div class="ttdoc">Get the parsed SRDF model.</div><div class="ttdef"><b>Definition:</b> <a href="rdf__loader_8h_source.html#l00107">rdf_loader.h:107</a></div></div>
 <div class="ttc" id="aclassmoveit_1_1core_1_1JointModelGroup_html_a2f165c9374e28ac4052490819c790f45"><div class="ttname"><a href="classmoveit_1_1core_1_1JointModelGroup.html#a2f165c9374e28ac4052490819c790f45">moveit::core::JointModelGroup::getName</a></div><div class="ttdeci">const std::string &amp; getName() const</div><div class="ttdoc">Get the name of the joint group.</div><div class="ttdef"><b>Definition:</b> <a href="joint__model__group_8h_source.html#l00185">joint_model_group.h:185</a></div></div>
 <div class="ttc" id="aprofiler_8h_html"><div class="ttname"><a href="profiler_8h.html">profiler.h</a></div></div>
-<div class="ttc" id="aclasskinematics__plugin__loader_1_1KinematicsPluginLoader_1_1KinematicsLoaderImpl_html_a21705804c3e5a36145996b1cbdf24f8b"><div class="ttname"><a href="classkinematics__plugin__loader_1_1KinematicsPluginLoader_1_1KinematicsLoaderImpl.html#a21705804c3e5a36145996b1cbdf24f8b">kinematics_plugin_loader::KinematicsPluginLoader::KinematicsLoaderImpl::chooseTipFrames</a></div><div class="ttdeci">std::vector&lt; std::string &gt; chooseTipFrames(const moveit::core::JointModelGroup *jmg)</div><div class="ttdoc">Helper function to decide which, and how many, tip frames a planning group has.</div><div class="ttdef"><b>Definition:</b> <a href="kinematics__plugin__loader_8cpp_source.html#l00131">kinematics_plugin_loader.cpp:131</a></div></div>
+<div class="ttc" id="aclasskinematics__plugin__loader_1_1KinematicsPluginLoader_1_1KinematicsLoaderImpl_html_a21705804c3e5a36145996b1cbdf24f8b"><div class="ttname"><a href="classkinematics__plugin__loader_1_1KinematicsPluginLoader_1_1KinematicsLoaderImpl.html#a21705804c3e5a36145996b1cbdf24f8b">kinematics_plugin_loader::KinematicsPluginLoader::KinematicsLoaderImpl::chooseTipFrames</a></div><div class="ttdeci">std::vector&lt; std::string &gt; chooseTipFrames(const moveit::core::JointModelGroup *jmg)</div><div class="ttdoc">Helper function to decide which, and how many, tip frames a planning group has.</div><div class="ttdef"><b>Definition:</b> <a href="kinematics__plugin__loader_8cpp_source.html#l00130">kinematics_plugin_loader.cpp:130</a></div></div>
 <div class="ttc" id="anamespacemoveit_1_1core_html_aee2fefede757f1b0b2e59fc9dce12fa7"><div class="ttname"><a href="namespacemoveit_1_1core.html#aee2fefede757f1b0b2e59fc9dce12fa7">moveit::core::SolverAllocatorFn</a></div><div class="ttdeci">boost::function&lt; kinematics::KinematicsBasePtr(const JointModelGroup *)&gt; SolverAllocatorFn</div><div class="ttdoc">Function type that allocates a kinematics solver for a particular group.</div><div class="ttdef"><b>Definition:</b> <a href="joint__model__group_8h_source.html#l00118">joint_model_group.h:118</a></div></div>
+<div class="ttc" id="anamespacekinematics__plugin__loader_html_ac73bfaeec99c68c9789f6b77e3172ee6"><div class="ttname"><a href="namespacekinematics__plugin__loader.html#ac73bfaeec99c68c9789f6b77e3172ee6">kinematics_plugin_loader::declare_parameter</a></div><div class="ttdeci">rclcpp::Parameter declare_parameter(const rclcpp::Node::SharedPtr &amp;node, const std::string &amp;parameter_name)</div><div class="ttdef"><b>Definition:</b> <a href="kinematics__plugin__loader_8cpp_source.html#l00084">kinematics_plugin_loader.cpp:84</a></div></div>
 <div class="ttc" id="anamespacekinematics__plugin__loader_html_a8d8d96339f9de28d9a2851b869dec115"><div class="ttname"><a href="namespacekinematics__plugin__loader.html#a8d8d96339f9de28d9a2851b869dec115">kinematics_plugin_loader::LOGGER</a></div><div class="ttdeci">rclcpp::Logger LOGGER</div><div class="ttdef"><b>Definition:</b> <a href="kinematics__plugin__loader_8cpp_source.html#l00082">kinematics_plugin_loader.cpp:82</a></div></div>
-<div class="ttc" id="aclassrdf__loader_1_1RDFLoader_html"><div class="ttname"><a href="classrdf__loader_1_1RDFLoader.html">rdf_loader::RDFLoader</a></div><div class="ttdef"><b>Definition:</b> <a href="rdf__loader_8h_source.html#l00085">rdf_loader.h:85</a></div></div>
-<div class="ttc" id="aclassrdf__loader_1_1RDFLoader_html_a36747cc62618abeb838a2815a7650bd8"><div class="ttname"><a href="classrdf__loader_1_1RDFLoader.html#a36747cc62618abeb838a2815a7650bd8">rdf_loader::RDFLoader::getRobotDescription</a></div><div class="ttdeci">const std::string &amp; getRobotDescription() const</div><div class="ttdoc">Get the resolved parameter name for the robot description.</div><div class="ttdef"><b>Definition:</b> <a href="rdf__loader_8h_source.html#l00111">rdf_loader.h:111</a></div></div>
+<div class="ttc" id="aclassrdf__loader_1_1RDFLoader_html"><div class="ttname"><a href="classrdf__loader_1_1RDFLoader.html">rdf_loader::RDFLoader</a></div><div class="ttdoc">Default constructor.</div><div class="ttdef"><b>Definition:</b> <a href="rdf__loader_8h_source.html#l00083">rdf_loader.h:83</a></div></div>
+<div class="ttc" id="aclassrdf__loader_1_1RDFLoader_html_a36747cc62618abeb838a2815a7650bd8"><div class="ttname"><a href="classrdf__loader_1_1RDFLoader.html#a36747cc62618abeb838a2815a7650bd8">rdf_loader::RDFLoader::getRobotDescription</a></div><div class="ttdeci">const std::string &amp; getRobotDescription() const</div><div class="ttdoc">Get the resolved parameter name for the robot description.</div><div class="ttdef"><b>Definition:</b> <a href="rdf__loader_8h_source.html#l00095">rdf_loader.h:95</a></div></div>
 <div class="ttc" id="aclassmoveit_1_1core_1_1JointModelGroup_html_a0a52d99429820b1c51838d9408078452"><div class="ttname"><a href="classmoveit_1_1core_1_1JointModelGroup.html#a0a52d99429820b1c51838d9408078452">moveit::core::JointModelGroup::getDefaultIKTimeout</a></div><div class="ttdeci">double getDefaultIKTimeout() const</div><div class="ttdoc">Get the default IK timeout.</div><div class="ttdef"><b>Definition:</b> <a href="joint__model__group_8h_source.html#l00622">joint_model_group.h:622</a></div></div>
-<div class="ttc" id="aclasskinematics__plugin__loader_1_1KinematicsPluginLoader_html_a27d6efeee21598435c52188f2361006b"><div class="ttname"><a href="classkinematics__plugin__loader_1_1KinematicsPluginLoader.html#a27d6efeee21598435c52188f2361006b">kinematics_plugin_loader::KinematicsPluginLoader::status</a></div><div class="ttdeci">void status() const</div><div class="ttdef"><b>Definition:</b> <a href="kinematics__plugin__loader_8cpp_source.html#l00295">kinematics_plugin_loader.cpp:295</a></div></div>
+<div class="ttc" id="aclasskinematics__plugin__loader_1_1KinematicsPluginLoader_html_a27d6efeee21598435c52188f2361006b"><div class="ttname"><a href="classkinematics__plugin__loader_1_1KinematicsPluginLoader.html#a27d6efeee21598435c52188f2361006b">kinematics_plugin_loader::KinematicsPluginLoader::status</a></div><div class="ttdeci">void status() const</div><div class="ttdef"><b>Definition:</b> <a href="kinematics__plugin__loader_8cpp_source.html#l00294">kinematics_plugin_loader.cpp:294</a></div></div>
 <div class="ttc" id="akinematics__plugin__loader_8h_html"><div class="ttname"><a href="kinematics__plugin__loader_8h.html">kinematics_plugin_loader.h</a></div></div>
 <div class="ttc" id="aclassmoveit_1_1tools_1_1Profiler_1_1ScopedBlock_html"><div class="ttname"><a href="classmoveit_1_1tools_1_1Profiler_1_1ScopedBlock.html">moveit::tools::Profiler::ScopedBlock</a></div><div class="ttdoc">This instance will call Profiler::begin() when constructed and Profiler::end() when it goes out of sc...</div><div class="ttdef"><b>Definition:</b> <a href="profiler_8h_source.html#l00077">profiler.h:77</a></div></div>
-<div class="ttc" id="anamespacekinematics__plugin__loader_html_a4b7e3ede6a64d1e70f3072ec11708d72"><div class="ttname"><a href="namespacekinematics__plugin__loader.html#a4b7e3ede6a64d1e70f3072ec11708d72">kinematics_plugin_loader::declare_parameter</a></div><div class="ttdeci">rclcpp::Parameter declare_parameter(const rclcpp::Node::SharedPtr &amp;node, const std::string &amp;parameter_name)</div><div class="ttdef"><b>Definition:</b> <a href="kinematics__plugin__loader_8cpp_source.html#l00085">kinematics_plugin_loader.cpp:85</a></div></div>
 <div class="ttc" id="ardf__loader_8h_html"><div class="ttname"><a href="rdf__loader_8h.html">rdf_loader.h</a></div></div>
-<div class="ttc" id="aclasskinematics__plugin__loader_1_1KinematicsPluginLoader_1_1KinematicsLoaderImpl_html_a716f37721a9981571711abfdd63905c9"><div class="ttname"><a href="classkinematics__plugin__loader_1_1KinematicsPluginLoader_1_1KinematicsLoaderImpl.html#a716f37721a9981571711abfdd63905c9">kinematics_plugin_loader::KinematicsPluginLoader::KinematicsLoaderImpl::status</a></div><div class="ttdeci">void status() const</div><div class="ttdef"><b>Definition:</b> <a href="kinematics__plugin__loader_8cpp_source.html#l00269">kinematics_plugin_loader.cpp:269</a></div></div>
+<div class="ttc" id="aclasskinematics__plugin__loader_1_1KinematicsPluginLoader_1_1KinematicsLoaderImpl_html_a716f37721a9981571711abfdd63905c9"><div class="ttname"><a href="classkinematics__plugin__loader_1_1KinematicsPluginLoader_1_1KinematicsLoaderImpl.html#a716f37721a9981571711abfdd63905c9">kinematics_plugin_loader::KinematicsPluginLoader::KinematicsLoaderImpl::status</a></div><div class="ttdeci">void status() const</div><div class="ttdef"><b>Definition:</b> <a href="kinematics__plugin__loader_8cpp_source.html#l00268">kinematics_plugin_loader.cpp:268</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

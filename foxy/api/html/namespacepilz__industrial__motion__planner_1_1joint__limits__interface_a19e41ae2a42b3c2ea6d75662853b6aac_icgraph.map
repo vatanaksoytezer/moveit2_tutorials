@@ -1,0 +1,10 @@
+<map id="pilz_industrial_motion_planner::joint_limits_interface::getJointLimits" name="pilz_industrial_motion_planner::joint_limits_interface::getJointLimits">
+<area shape="rect" id="node1" title=" " alt="" coords="539,166,724,222"/>
+<area shape="rect" id="node2" href="$classpilz__industrial__motion__planner_1_1JointLimitsAggregator.html#ae40f9ed899b3e12fa7fb40f691a64d9a" title="Aggregates(combines) the joint limits from joint model and parameter server. The rules for the combin..." alt="" coords="264,129,491,185"/>
+<area shape="rect" id="node8" href="$namespacepilz__extensions__tests.html#ab8bb657c4c8cafe46eaf9e6ec46bd5be" title=" " alt="" coords="296,209,459,251"/>
+<area shape="rect" id="node3" href="$classTrajectoryBlenderTransitionWindowTest.html#a053df89241e6ed29c6d277de86a01f6e" title="Create test scenario for trajectory blender." alt="" coords="11,5,210,47"/>
+<area shape="rect" id="node4" href="$classTrajectoryGeneratorCIRCTest.html#a23026b4e6ff9c4dc0d949a6965227cdb" title="Create test scenario for circ trajectory generator." alt="" coords="7,71,215,112"/>
+<area shape="rect" id="node5" href="$classTrajectoryGeneratorLINTest.html#aa501c1263458d8ae0807e10ee79a569b" title="Create test scenario for lin trajectory generator." alt="" coords="11,136,210,177"/>
+<area shape="rect" id="node6" href="$classTrajectoryGeneratorCommonTest.html#a80e3885bdb7b0ce80bc85c3a75e0e28b" title=" " alt="" coords="5,201,216,243"/>
+<area shape="rect" id="node7" href="$unittest__joint__limits__aggregator_8cpp.html#a0a5b27dc7195a628f23dc3763bd898a3" title="Check for that the size of the map and the size of the given joint models is equal." alt="" coords="76,267,145,294"/>
+</map>

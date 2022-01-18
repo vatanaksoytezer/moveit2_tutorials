@@ -393,68 +393,67 @@ $(function() {
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;  std::unique_ptr&lt;pluginlib::ClassLoader&lt;kinematics::KinematicsBase&gt;&gt; loader;</div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;  <span class="keywordflow">try</span></div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;  {</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    loader = std::make_unique&lt;pluginlib::ClassLoader&lt;kinematics::KinematicsBase&gt;&gt;(<span class="stringliteral">&quot;moveit_core&quot;</span>,</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;                                                                                  <span class="stringliteral">&quot;kinematics::KinematicsBase&quot;</span>);</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;  }</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;  <span class="keywordflow">catch</span> (pluginlib::PluginlibException&amp; ex)</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;  {</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    QMessageBox::warning(<span class="keyword">this</span>, <span class="stringliteral">&quot;Missing Kinematic Solvers&quot;</span>,</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;                         <span class="stringliteral">&quot;Exception while creating class loader for kinematic &quot;</span></div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;                         <span class="stringliteral">&quot;solver plugins&quot;</span>);</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    ROS_ERROR_STREAM(ex.what());</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;  }</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160; </div>
-<div class="line"><a name="l00336"></a><span class="lineno"><a class="line" href="classmoveit__setup__assistant_1_1GroupEditWidget.html#a5efd39461f96021edddd387b46af9ba8">  336</a></span>&#160;  <span class="comment">// Get classes</span></div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;  <span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; classes = loader-&gt;getDeclaredClasses();</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160; </div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;  <span class="comment">// Warn if no plugins are found</span></div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;  <span class="keywordflow">if</span> (classes.empty())</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;  {</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    QMessageBox::warning(<span class="keyword">this</span>, <span class="stringliteral">&quot;Missing Kinematic Solvers&quot;</span>,</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                         <span class="stringliteral">&quot;No MoveIt-compatible kinematics solvers found. Try &quot;</span></div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;                         <span class="stringliteral">&quot;installing moveit_kinematics (sudo apt-get install &quot;</span></div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                         <span class="stringliteral">&quot;ros-${ROS_DISTRO}-moveit-kinematics)&quot;</span>);</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;  }</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160; </div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;  <span class="comment">// Loop through all planners and add to combo box</span></div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">const</span> std::string&amp; kinematics_plugin_name : classes)</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;  {</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    <a class="code" href="classmoveit__setup__assistant_1_1GroupEditWidget.html#a0b0eafd023d4940d562ad8cdca19f09e">kinematics_solver_field_</a>-&gt;addItem(kinematics_plugin_name.c_str());</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;  }</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160; </div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;  std::vector&lt;OMPLPlannerDescription&gt; planners = config_data_-&gt;getOMPLPlanners();</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;  <span class="keywordflow">for</span> (OMPLPlannerDescription&amp; planner : planners)</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;  {</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    std::string planner_name = planner.name_;</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    <a class="code" href="classmoveit__setup__assistant_1_1GroupEditWidget.html#a7fe617510f924879e21eaa2a164e7971">default_planner_field_</a>-&gt;addItem(planner_name.c_str());</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;  }</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;}</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160; </div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;<span class="keywordtype">void</span> GroupEditWidget::selectKinematicsFile()</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;{</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;  QString filename = QFileDialog::getOpenFileName(<span class="keyword">this</span>, <span class="stringliteral">&quot;Select a parameter file&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;YAML files (*.yaml)&quot;</span>);</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160; </div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;  <span class="keywordflow">if</span> (filename.isEmpty())</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;  {</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;  }</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160; </div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;  std::string package_name;</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;  std::string relative_filename;</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;  <span class="keywordtype">bool</span> package_found =</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;      config_data_-&gt;extractPackageNameFromPath(filename.toStdString(), package_name, relative_filename);</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160; </div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;  QString lookup_path = filename;</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;  <span class="keywordflow">if</span> (package_found)</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;  {</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    lookup_path = QString(<span class="stringliteral">&quot;$(find %1)/%2&quot;</span>).arg(package_name.c_str()).arg(relative_filename.c_str());</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;  }</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;  <a class="code" href="classmoveit__setup__assistant_1_1GroupEditWidget.html#ae20ca5580c503fa0a15eff376fcbc46d">kinematics_parameters_file_field_</a>-&gt;setText(lookup_path);</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;}</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160; </div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;}  <span class="comment">// namespace moveit_setup_assistant</span></div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    loader.reset(<span class="keyword">new</span> pluginlib::ClassLoader&lt;kinematics::KinematicsBase&gt;(<span class="stringliteral">&quot;moveit_core&quot;</span>, <span class="stringliteral">&quot;kinematics::KinematicsBase&quot;</span>));</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;  }</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;  <span class="keywordflow">catch</span> (pluginlib::PluginlibException&amp; ex)</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;  {</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    QMessageBox::warning(<span class="keyword">this</span>, <span class="stringliteral">&quot;Missing Kinematic Solvers&quot;</span>,</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;                         <span class="stringliteral">&quot;Exception while creating class loader for kinematic &quot;</span></div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;                         <span class="stringliteral">&quot;solver plugins&quot;</span>);</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    ROS_ERROR_STREAM(ex.what());</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;  }</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160; </div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;  <span class="comment">// Get classes</span></div>
+<div class="line"><a name="l00336"></a><span class="lineno"><a class="line" href="classmoveit__setup__assistant_1_1GroupEditWidget.html#a5efd39461f96021edddd387b46af9ba8">  336</a></span>&#160;  <span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; classes = loader-&gt;getDeclaredClasses();</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160; </div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;  <span class="comment">// Warn if no plugins are found</span></div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;  <span class="keywordflow">if</span> (classes.empty())</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;  {</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    QMessageBox::warning(<span class="keyword">this</span>, <span class="stringliteral">&quot;Missing Kinematic Solvers&quot;</span>,</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                         <span class="stringliteral">&quot;No MoveIt-compatible kinematics solvers found. Try &quot;</span></div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                         <span class="stringliteral">&quot;installing moveit_kinematics (sudo apt-get install &quot;</span></div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;                         <span class="stringliteral">&quot;ros-${ROS_DISTRO}-moveit-kinematics)&quot;</span>);</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;  }</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160; </div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;  <span class="comment">// Loop through all planners and add to combo box</span></div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">const</span> std::string&amp; kinematics_plugin_name : classes)</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;  {</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    <a class="code" href="classmoveit__setup__assistant_1_1GroupEditWidget.html#a0b0eafd023d4940d562ad8cdca19f09e">kinematics_solver_field_</a>-&gt;addItem(kinematics_plugin_name.c_str());</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;  }</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160; </div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;  std::vector&lt;OMPLPlannerDescription&gt; planners = config_data_-&gt;getOMPLPlanners();</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;  <span class="keywordflow">for</span> (OMPLPlannerDescription&amp; planner : planners)</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;  {</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    std::string planner_name = planner.name_;</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    <a class="code" href="classmoveit__setup__assistant_1_1GroupEditWidget.html#a7fe617510f924879e21eaa2a164e7971">default_planner_field_</a>-&gt;addItem(planner_name.c_str());</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;  }</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;}</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160; </div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;<span class="keywordtype">void</span> GroupEditWidget::selectKinematicsFile()</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;{</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;  QString filename = QFileDialog::getOpenFileName(<span class="keyword">this</span>, <span class="stringliteral">&quot;Select a parameter file&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;YAML files (*.yaml)&quot;</span>);</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160; </div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;  <span class="keywordflow">if</span> (filename.isEmpty())</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;  {</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;  }</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160; </div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;  std::string package_name;</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;  std::string relative_filename;</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;  <span class="keywordtype">bool</span> package_found =</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;      config_data_-&gt;extractPackageNameFromPath(filename.toStdString(), package_name, relative_filename);</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160; </div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;  QString lookup_path = filename;</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;  <span class="keywordflow">if</span> (package_found)</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;  {</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    lookup_path = QString(<span class="stringliteral">&quot;$(find %1)/%2&quot;</span>).arg(package_name.c_str()).arg(relative_filename.c_str());</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;  }</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;  <a class="code" href="classmoveit__setup__assistant_1_1GroupEditWidget.html#ae20ca5580c503fa0a15eff376fcbc46d">kinematics_parameters_file_field_</a>-&gt;setText(lookup_path);</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;}</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160; </div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;}  <span class="comment">// namespace moveit_setup_assistant</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassmoveit__setup__assistant_1_1GroupEditWidget_html_a7c42fdaf26a3436c6c887234463a0aa6"><div class="ttname"><a href="classmoveit__setup__assistant_1_1GroupEditWidget.html#a7c42fdaf26a3436c6c887234463a0aa6">moveit_setup_assistant::GroupEditWidget::kinematics_resolution_field_</a></div><div class="ttdeci">QLineEdit * kinematics_resolution_field_</div><div class="ttdef"><b>Definition:</b> <a href="group__edit__widget_8h_source.html#l00076">group_edit_widget.h:76</a></div></div>
 <div class="ttc" id="aclassmoveit__setup__assistant_1_1GroupEditWidget_html_a0b0eafd023d4940d562ad8cdca19f09e"><div class="ttname"><a href="classmoveit__setup__assistant_1_1GroupEditWidget.html#a0b0eafd023d4940d562ad8cdca19f09e">moveit_setup_assistant::GroupEditWidget::kinematics_solver_field_</a></div><div class="ttdeci">QComboBox * kinematics_solver_field_</div><div class="ttdef"><b>Definition:</b> <a href="group__edit__widget_8h_source.html#l00075">group_edit_widget.h:75</a></div></div>
@@ -466,7 +465,7 @@ $(function() {
 <div class="ttc" id="aclassmoveit__setup__assistant_1_1GroupEditWidget_html_ae20ca5580c503fa0a15eff376fcbc46d"><div class="ttname"><a href="classmoveit__setup__assistant_1_1GroupEditWidget.html#ae20ca5580c503fa0a15eff376fcbc46d">moveit_setup_assistant::GroupEditWidget::kinematics_parameters_file_field_</a></div><div class="ttdeci">QLineEdit * kinematics_parameters_file_field_</div><div class="ttdef"><b>Definition:</b> <a href="group__edit__widget_8h_source.html#l00078">group_edit_widget.h:78</a></div></div>
 <div class="ttc" id="aclassmoveit__setup__assistant_1_1GroupEditWidget_html_a515d217e372bc97b023894b9f17af1ac"><div class="ttname"><a href="classmoveit__setup__assistant_1_1GroupEditWidget.html#a515d217e372bc97b023894b9f17af1ac">moveit_setup_assistant::GroupEditWidget::group_name_field_</a></div><div class="ttdeci">QLineEdit * group_name_field_</div><div class="ttdef"><b>Definition:</b> <a href="group__edit__widget_8h_source.html#l00074">group_edit_widget.h:74</a></div></div>
 <div class="ttc" id="anamespacerclcpp_1_1names_html_a4c3e21517afd9a6909de322da95c5e81"><div class="ttname"><a href="namespacerclcpp_1_1names.html#a4c3e21517afd9a6909de322da95c5e81">rclcpp::names::append</a></div><div class="ttdeci">std::string append(const std::string &amp;left, const std::string &amp;right)</div><div class="ttdef"><b>Definition:</b> <a href="rclcpp__utils_8cpp_source.html#l00053">rclcpp_utils.cpp:53</a></div></div>
-<div class="ttc" id="anamespacemoveit__setup__assistant_html"><div class="ttname"><a href="namespacemoveit__setup__assistant.html">moveit_setup_assistant</a></div><div class="ttdef"><b>Definition:</b> <a href="compute__default__collisions_8hpp_source.html#l00046">compute_default_collisions.hpp:46</a></div></div>
+<div class="ttc" id="anamespacemoveit__setup__assistant_html"><div class="ttname"><a href="namespacemoveit__setup__assistant.html">moveit_setup_assistant</a></div><div class="ttdef"><b>Definition:</b> <a href="compute__default__collisions_8h_source.html#l00046">compute_default_collisions.h:46</a></div></div>
 <div class="ttc" id="aclassmoveit__setup__assistant_1_1EndEffectorsWidget_html_ac9794ba989abaf1802202716504d1760"><div class="ttname"><a href="classmoveit__setup__assistant_1_1EndEffectorsWidget.html#ac9794ba989abaf1802202716504d1760">moveit_setup_assistant::EndEffectorsWidget::btn_save_</a></div><div class="ttdeci">QPushButton * btn_save_</div><div class="ttdef"><b>Definition:</b> <a href="end__effectors__widget_8h_source.html#l00075">end_effectors_widget.h:75</a></div></div>
 <div class="ttc" id="aclassmoveit__setup__assistant_1_1GroupEditWidget_html_a7fe617510f924879e21eaa2a164e7971"><div class="ttname"><a href="classmoveit__setup__assistant_1_1GroupEditWidget.html#a7fe617510f924879e21eaa2a164e7971">moveit_setup_assistant::GroupEditWidget::default_planner_field_</a></div><div class="ttdeci">QComboBox * default_planner_field_</div><div class="ttdef"><b>Definition:</b> <a href="group__edit__widget_8h_source.html#l00079">group_edit_widget.h:79</a></div></div>
 <div class="ttc" id="aclassmoveit__setup__assistant_1_1EndEffectorsWidget_html_a1c54ce0b260068daf91104437b7666b9"><div class="ttname"><a href="classmoveit__setup__assistant_1_1EndEffectorsWidget.html#a1c54ce0b260068daf91104437b7666b9">moveit_setup_assistant::EndEffectorsWidget::btn_delete_</a></div><div class="ttdeci">QPushButton * btn_delete_</div><div class="ttdef"><b>Definition:</b> <a href="end__effectors__widget_8h_source.html#l00074">end_effectors_widget.h:74</a></div></div>

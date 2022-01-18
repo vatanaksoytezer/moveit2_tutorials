@@ -97,22 +97,25 @@ $(function() {
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * POSSIBILITY OF SUCH DAMAGE.</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">// TODO(JafarAbdi): This&#39;s taken from ros_comm/../names.cpp for MoveIt 2 beta release -- remove when it&#39;s ported</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="namespacerclcpp.html">   33</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacerclcpp.html">rclcpp</a></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="namespacerclcpp_1_1names.html">   35</a></span>&#160;<span class="keyword">namespace </span>names</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;std::string <a class="code" href="namespacerclcpp_1_1names.html#a80893fadce35db823b13c8ddd4be2104">clean</a>(<span class="keyword">const</span> std::string&amp; name);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;std::string <a class="code" href="namespacerclcpp_1_1names.html#a4c3e21517afd9a6909de322da95c5e81">append</a>(<span class="keyword">const</span> std::string&amp; left, <span class="keyword">const</span> std::string&amp; right);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}  <span class="comment">// namespace names</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}  <span class="comment">// namespace rclcpp</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#ifndef ROSCPP_NAMES_H</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#define ROSCPP_NAMES_H</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">// TODO(JafarAbdi): This&#39;s taken from ros_comm/../names.cpp for MoveIt 2 beta release -- remove when it&#39;s ported</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="namespacerclcpp.html">   34</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacerclcpp.html">rclcpp</a></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="namespacerclcpp_1_1names.html">   36</a></span>&#160;<span class="keyword">namespace </span>names</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;{</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;std::string <a class="code" href="namespacerclcpp_1_1names.html#a80893fadce35db823b13c8ddd4be2104">clean</a>(<span class="keyword">const</span> std::string&amp; name);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;std::string <a class="code" href="namespacerclcpp_1_1names.html#a4c3e21517afd9a6909de322da95c5e81">append</a>(<span class="keyword">const</span> std::string&amp; left, <span class="keyword">const</span> std::string&amp; right);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}  <span class="comment">// namespace names</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}  <span class="comment">// namespace rclcpp</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif  // ROSCPP_NAMES_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="anamespacerclcpp_html"><div class="ttname"><a href="namespacerclcpp.html">rclcpp</a></div><div class="ttdef"><b>Definition:</b> <a href="rclcpp__utils_8h_source.html#l00033">rclcpp_utils.h:33</a></div></div>
+<div class="ttc" id="anamespacerclcpp_html"><div class="ttname"><a href="namespacerclcpp.html">rclcpp</a></div><div class="ttdef"><b>Definition:</b> <a href="rclcpp__utils_8h_source.html#l00034">rclcpp_utils.h:34</a></div></div>
 <div class="ttc" id="anamespacerclcpp_1_1names_html_a4c3e21517afd9a6909de322da95c5e81"><div class="ttname"><a href="namespacerclcpp_1_1names.html#a4c3e21517afd9a6909de322da95c5e81">rclcpp::names::append</a></div><div class="ttdeci">std::string append(const std::string &amp;left, const std::string &amp;right)</div><div class="ttdef"><b>Definition:</b> <a href="rclcpp__utils_8cpp_source.html#l00053">rclcpp_utils.cpp:53</a></div></div>
 <div class="ttc" id="anamespacerclcpp_1_1names_html_a80893fadce35db823b13c8ddd4be2104"><div class="ttname"><a href="namespacerclcpp_1_1names.html#a80893fadce35db823b13c8ddd4be2104">rclcpp::names::clean</a></div><div class="ttdeci">std::string clean(const std::string &amp;name)</div><div class="ttdef"><b>Definition:</b> <a href="rclcpp__utils_8cpp_source.html#l00034">rclcpp_utils.cpp:34</a></div></div>
 <!-- start footer part -->

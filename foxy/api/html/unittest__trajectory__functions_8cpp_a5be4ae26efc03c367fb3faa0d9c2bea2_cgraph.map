@@ -1,0 +1,7 @@
+<map id="TEST_P" name="TEST_P">
+<area shape="rect" id="node1" title="Test if activated self collision for a pose that would be in self collision without the check results..." alt="" coords="5,78,75,105"/>
+<area shape="rect" id="node2" href="$classplanning__scene_1_1PlanningScene.html#aea9edbc5c65137a736db5a86bd1fed08" title="Check whether the current state is in self collision." alt="" coords="123,5,311,47"/>
+<area shape="rect" id="node4" href="$namespacepilz__industrial__motion__planner.html#a2e27e4f0615a094f669c0cfb12f83725" title="compute the inverse kinematics of a given pose, also check robot self collision" alt="" coords="123,71,310,112"/>
+<area shape="rect" id="node5" href="$trajectory__functions_8h.html#adbc6c11b26dd0f3116a0f20a352a1f03" title=" " alt="" coords="137,137,296,163"/>
+<area shape="rect" id="node3" href="$classplanning__scene_1_1PlanningScene.html#a6841b7eae6f77d00e36d30ea255bb053" title="Get the active collision detector for the robot." alt="" coords="359,5,595,47"/>
+</map>

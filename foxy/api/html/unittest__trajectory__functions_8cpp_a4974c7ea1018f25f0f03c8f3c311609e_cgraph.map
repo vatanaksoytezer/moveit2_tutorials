@@ -1,0 +1,7 @@
+<map id="TEST_P" name="TEST_P">
+<area shape="rect" id="node1" title="Check that function VerifySampleJointLimits() returns &#39;false&#39; in case of a deceleration violation." alt="" coords="5,57,75,84"/>
+<area shape="rect" id="node2" href="$classpilz__industrial__motion__planner_1_1JointLimitsContainer.html#a40383e43f2853d45c9456333cda2a537" title="Add a limit." alt="" coords="134,5,353,61"/>
+<area shape="rect" id="node3" href="$namespacepilz__industrial__motion__planner.html#ac442f8c60e0f733e280bbed7ba51bbb2" title="verify the velocity/acceleration limits of current sample (based on backward difference computation) ..." alt="" coords="123,86,364,127"/>
+<area shape="rect" id="node4" href="$classpilz__industrial__motion__planner_1_1JointLimitsContainer.html#a040d5fa11dbedd32a857862bd4ce0b67" title="getLimit get the limit for the given joint name" alt="" coords="412,39,631,95"/>
+<area shape="rect" id="node5" href="$classpilz__industrial__motion__planner_1_1JointLimitsContainer.html#a11ae34fba2acfa928a8e27d8f654671d" title="verify position limit of single joint" alt="" coords="412,119,631,175"/>
+</map>

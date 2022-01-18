@@ -116,11 +116,11 @@ $(function() {
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <a class="code" href="classcollision__detection_1_1CollisionDetectorAllocatorAllValid.html">CollisionDetectorAllocatorAllValid</a> allocator;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  urdf::ModelInterfaceSharedPtr urdf_model;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  urdf_model = std::make_shared&lt;urdf::ModelInterface&gt;();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  urdf_model.reset(<span class="keyword">new</span> urdf::ModelInterface());</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  srdf::ModelConstSharedPtr srdf_model;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  srdf_model = std::make_shared&lt;srdf::Model&gt;();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  srdf_model.reset(<span class="keyword">new</span> srdf::Model());</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  moveit::core::RobotModelConstPtr robot_model;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  robot_model = std::make_shared&lt;moveit::core::RobotModel&gt;(urdf_model, srdf_model);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  robot_model.reset(<span class="keyword">new</span> <a class="code" href="classmoveit_1_1core_1_1RobotModel.html">moveit::core::RobotModel</a>(urdf_model, srdf_model));</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <a class="code" href="classcollision__detection_1_1CollisionEnvAllValid.html">CollisionEnvAllValid</a> env(robot_model);</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
@@ -131,6 +131,7 @@ $(function() {
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="acollision__detector__allocator__allvalid_8h_html"><div class="ttname"><a href="collision__detector__allocator__allvalid_8h.html">collision_detector_allocator_allvalid.h</a></div></div>
+<div class="ttc" id="aclassmoveit_1_1core_1_1RobotModel_html"><div class="ttname"><a href="classmoveit_1_1core_1_1RobotModel.html">moveit::core::RobotModel</a></div><div class="ttdoc">Definition of a kinematic model. This class is not thread safe, however multiple instances can be cre...</div><div class="ttdef"><b>Definition:</b> <a href="robot__model_8h_source.html#l00140">robot_model.h:140</a></div></div>
 <div class="ttc" id="acollision__env__allvalid_8h_html"><div class="ttname"><a href="collision__env__allvalid_8h.html">collision_env_allvalid.h</a></div></div>
 <div class="ttc" id="atest__all__valid_8cpp_html_a3c04138a5bfe5d72780bb7e82a18e627"><div class="ttname"><a href="test__all__valid_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></div><div class="ttdeci">int main(int argc, char **argv)</div><div class="ttdef"><b>Definition:</b> <a href="test__all__valid_8cpp_source.html#l00055">test_all_valid.cpp:55</a></div></div>
 <div class="ttc" id="aclasscollision__detection_1_1CollisionDetectorAllocatorAllValid_html"><div class="ttname"><a href="classcollision__detection_1_1CollisionDetectorAllocatorAllValid.html">collision_detection::CollisionDetectorAllocatorAllValid</a></div><div class="ttdoc">An allocator for AllValid collision detectors.</div><div class="ttdef"><b>Definition:</b> <a href="collision__detector__allocator__allvalid_8h_source.html#l00079">collision_detector_allocator_allvalid.h:79</a></div></div>

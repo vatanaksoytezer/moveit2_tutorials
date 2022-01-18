@@ -75,8 +75,8 @@ Inheritance diagram for TrajectoryGeneratorPTPTest:</div>
 <div class="dyncontent">
 <div class="center"><img src="classTrajectoryGeneratorPTPTest__inherit__graph.png" border="0" usemap="#TrajectoryGeneratorPTPTest_inherit__map" alt="Inheritance graph"/></div>
 <map name="TrajectoryGeneratorPTPTest_inherit__map" id="TrajectoryGeneratorPTPTest_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,80,207,107"/>
-<area shape="rect" title=" " alt="" coords="82,5,130,32"/>
+<area shape="rect" title=" " alt="" coords="5,95,207,121"/>
+<area shape="rect" title=" " alt="" coords="20,5,192,47"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -84,9 +84,9 @@ Collaboration diagram for TrajectoryGeneratorPTPTest:</div>
 <div class="dyncontent">
 <div class="center"><img src="classTrajectoryGeneratorPTPTest__coll__graph.png" border="0" usemap="#TrajectoryGeneratorPTPTest_coll__map" alt="Collaboration graph"/></div>
 <map name="TrajectoryGeneratorPTPTest_coll__map" id="TrajectoryGeneratorPTPTest_coll__map">
-<area shape="rect" title=" " alt="" coords="5,109,207,136"/>
-<area shape="rect" title=" " alt="" coords="11,13,59,39"/>
-<area shape="rect" href="classpilz__industrial__motion__planner_1_1LimitsContainer.html" title="This class combines CartesianLimit and JointLimits into on single class." alt="" coords="83,5,273,47"/>
+<area shape="rect" title=" " alt="" coords="348,46,549,73"/>
+<area shape="rect" title=" " alt="" coords="14,5,186,47"/>
+<area shape="rect" href="classpilz__industrial__motion__planner_1_1LimitsContainer.html" title="This class combines CartesianLimit and JointLimits into on single class." alt="" coords="5,71,195,112"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -95,18 +95,16 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:ae6cc9df0fa26934396e9ddf0b3439e3d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrajectoryGeneratorPTPTest.html#ae6cc9df0fa26934396e9ddf0b3439e3d">SetUp</a> () override</td></tr>
 <tr class="memdesc:ae6cc9df0fa26934396e9ddf0b3439e3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create test fixture for ptp trajectory generator.  <a href="classTrajectoryGeneratorPTPTest.html#ae6cc9df0fa26934396e9ddf0b3439e3d">More...</a><br /></td></tr>
 <tr class="separator:ae6cc9df0fa26934396e9ddf0b3439e3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5cba4ed8fd22991f343f606768348f87"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrajectoryGeneratorPTPTest.html#a5cba4ed8fd22991f343f606768348f87">checkTrajectory</a> (const trajectory_msgs::msg::JointTrajectory &amp;trajectory, const <a class="el" href="namespaceplanning__interface.html#a1307e10a0a3b9ca03406d777b9a938a3">planning_interface::MotionPlanRequest</a> &amp;req, const <a class="el" href="classpilz__industrial__motion__planner_1_1JointLimitsContainer.html">JointLimitsContainer</a> &amp;joint_limits)</td></tr>
-<tr class="memdesc:a5cba4ed8fd22991f343f606768348f87"><td class="mdescLeft">&#160;</td><td class="mdescRight">check the resulted joint trajectory  <a href="classTrajectoryGeneratorPTPTest.html#a5cba4ed8fd22991f343f606768348f87">More...</a><br /></td></tr>
-<tr class="separator:a5cba4ed8fd22991f343f606768348f87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99179b9475e70c01313db6139e95b076"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrajectoryGeneratorPTPTest.html#a99179b9475e70c01313db6139e95b076">checkTrajectory</a> (const trajectory_msgs::JointTrajectory &amp;trajectory, const <a class="el" href="namespaceplanning__interface.html#a1307e10a0a3b9ca03406d777b9a938a3">planning_interface::MotionPlanRequest</a> &amp;req, const <a class="el" href="classpilz__industrial__motion__planner_1_1JointLimitsContainer.html">JointLimitsContainer</a> &amp;joint_limits)</td></tr>
+<tr class="memdesc:a99179b9475e70c01313db6139e95b076"><td class="mdescLeft">&#160;</td><td class="mdescRight">check the resulted joint trajectory  <a href="classTrajectoryGeneratorPTPTest.html#a99179b9475e70c01313db6139e95b076">More...</a><br /></td></tr>
+<tr class="separator:a99179b9475e70c01313db6139e95b076"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a59f489fb47535ebe60252fec85d8377d"><td class="memItemLeft" align="right" valign="top">rclcpp::Node::SharedPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrajectoryGeneratorPTPTest.html#a59f489fb47535ebe60252fec85d8377d">node_</a></td></tr>
-<tr class="separator:a59f489fb47535ebe60252fec85d8377d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1274578f1335ab4aa032477d17d5e7a9"><td class="memItemLeft" align="right" valign="top">moveit::core::RobotModelConstPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrajectoryGeneratorPTPTest.html#a1274578f1335ab4aa032477d17d5e7a9">robot_model_</a></td></tr>
-<tr class="separator:a1274578f1335ab4aa032477d17d5e7a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa64449a0ec7ec81e90137e121825c904"><td class="memItemLeft" align="right" valign="top">planning_scene::PlanningSceneConstPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrajectoryGeneratorPTPTest.html#aa64449a0ec7ec81e90137e121825c904">planning_scene_</a></td></tr>
-<tr class="separator:aa64449a0ec7ec81e90137e121825c904"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac406c803fda52aab4992862e61bb68a4"><td class="memItemLeft" align="right" valign="top">ros::NodeHandle&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrajectoryGeneratorPTPTest.html#ac406c803fda52aab4992862e61bb68a4">ph_</a> { &quot;~&quot; }</td></tr>
+<tr class="separator:ac406c803fda52aab4992862e61bb68a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac96db4df4fe0d7b1f091a853c7b431f6"><td class="memItemLeft" align="right" valign="top">robot_model::RobotModelConstPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrajectoryGeneratorPTPTest.html#ac96db4df4fe0d7b1f091a853c7b431f6">robot_model_</a> { <a class="el" href="classrobot__model__loader_1_1RobotModelLoader.html">robot_model_loader::RobotModelLoader</a>(GetParam()).getModel() }</td></tr>
+<tr class="separator:ac96db4df4fe0d7b1f091a853c7b431f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab93eccc0ca928cb242b791bc34f918eb"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classpilz__industrial__motion__planner_1_1TrajectoryGenerator.html">TrajectoryGenerator</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrajectoryGeneratorPTPTest.html#ab93eccc0ca928cb242b791bc34f918eb">ptp_</a></td></tr>
 <tr class="separator:ab93eccc0ca928cb242b791bc34f918eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a502e1aba6ac030bc841f31f7ff4aa346"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classpilz__industrial__motion__planner_1_1LimitsContainer.html">LimitsContainer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrajectoryGeneratorPTPTest.html#a502e1aba6ac030bc841f31f7ff4aa346">planner_limits_</a></td></tr>
@@ -126,10 +124,10 @@ Protected Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html#l00060">60</a> of file <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html">unittest_trajectory_generator_ptp.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html#l00062">62</a> of file <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html">unittest_trajectory_generator_ptp.cpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a5cba4ed8fd22991f343f606768348f87"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5cba4ed8fd22991f343f606768348f87">&#9670;&nbsp;</a></span>checkTrajectory()</h2>
+<a id="a99179b9475e70c01313db6139e95b076"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99179b9475e70c01313db6139e95b076">&#9670;&nbsp;</a></span>checkTrajectory()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -140,7 +138,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="memname">bool TrajectoryGeneratorPTPTest::checkTrajectory </td>
           <td>(</td>
-          <td class="paramtype">const trajectory_msgs::msg::JointTrajectory &amp;&#160;</td>
+          <td class="paramtype">const trajectory_msgs::JointTrajectory &amp;&#160;</td>
           <td class="paramname"><em>trajectory</em>, </td>
         </tr>
         <tr>
@@ -163,7 +161,7 @@ Protected Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -173,24 +171,25 @@ Protected Attributes</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">trajectory</td><td></td></tr>
     <tr><td class="paramname">req</td><td></td></tr>
-    <tr><td class="paramname"><a class="el" href="namespacejoint__limits.html">joint_limits</a></td><td></td></tr>
+    <tr><td class="paramname">joint_limits</td><td></td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html#l00128">128</a> of file <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html">unittest_trajectory_generator_ptp.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html#l00133">133</a> of file <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html">unittest_trajectory_generator_ptp.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classTrajectoryGeneratorPTPTest_a5cba4ed8fd22991f343f606768348f87_cgraph.png" border="0" usemap="#classTrajectoryGeneratorPTPTest_a5cba4ed8fd22991f343f606768348f87_cgraph" alt=""/></div>
-<map name="classTrajectoryGeneratorPTPTest_a5cba4ed8fd22991f343f606768348f87_cgraph" id="classTrajectoryGeneratorPTPTest_a5cba4ed8fd22991f343f606768348f87_cgraph">
+<div class="center"><img src="classTrajectoryGeneratorPTPTest_a99179b9475e70c01313db6139e95b076_cgraph.png" border="0" usemap="#classTrajectoryGeneratorPTPTest_a99179b9475e70c01313db6139e95b076_cgraph" alt=""/></div>
+<map name="classTrajectoryGeneratorPTPTest_a99179b9475e70c01313db6139e95b076_cgraph" id="classTrajectoryGeneratorPTPTest_a99179b9475e70c01313db6139e95b076_cgraph">
 <area shape="rect" title="check the resulted joint trajectory" alt="" coords="5,115,207,156"/>
-<area shape="rect" href="namespacetestutils.html#a3c3c86cff874d688226f74f9e8ea4b91" title="is Acceleration Bounded" alt="" coords="281,5,455,47"/>
-<area shape="rect" href="namespacetestutils.html#a16cef7d20ff377c527415f1898b6d740" title="check if the goal given in joint space is reached Only the last point in the trajectory is veryfied." alt="" coords="278,71,458,98"/>
-<area shape="rect" href="namespacetestutils.html#ac5d5277d059651d070458ced4dd21d3d" title="is Position Bounded" alt="" coords="267,122,469,149"/>
-<area shape="rect" href="namespacetestutils.html#a4dc6934eb856b588dbbef7744c766bb3" title="check if the sizes of the joint position/veloicty/acceleration are correct" alt="" coords="255,173,481,199"/>
-<area shape="rect" href="namespacetestutils.html#a318192937ca55e8c39e41410d9de0f22" title="is Velocity Bounded" alt="" coords="267,223,469,250"/>
+<area shape="rect" href="namespacetestutils.html#acf76645b0c371ee65aa05732ed6ad6e8" title="is Acceleration Bounded" alt="" coords="281,5,455,47"/>
+<area shape="rect" href="namespacetestutils.html#a9181f5d8223138bace67ea54a4789c59" title="check if the goal given in joint space is reached Only the last point in the trajectory is veryfied." alt="" coords="278,71,458,98"/>
+<area shape="rect" href="namespacetestutils.html#a92afbd45dfbe849ac79e2f71d3cb16db" title="is Position Bounded" alt="" coords="267,122,469,149"/>
+<area shape="rect" href="namespacetestutils.html#aae843ff794dfbc3b5ead9ddc6f98529d" title="check if the sizes of the joint position/veloicty/acceleration are correct" alt="" coords="255,173,481,199"/>
+<area shape="rect" href="namespacetestutils.html#ab5e2d5d8565b6d76e95a7dcddc8af2b5" title="is Velocity Bounded" alt="" coords="267,223,469,250"/>
+<area shape="rect" href="classpilz__industrial__motion__planner_1_1JointLimitsContainer.html#a040d5fa11dbedd32a857862bd4ce0b67" title="getLimit get the limit for the given joint name" alt="" coords="529,107,748,163"/>
 </map>
 </div>
 
@@ -214,22 +213,28 @@ Here is the call graph for this function:</div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Create test fixture for ptp trajectory generator. </p>
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html#l00067">67</a> of file <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html">unittest_trajectory_generator_ptp.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html#l00095">95</a> of file <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html">unittest_trajectory_generator_ptp.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classTrajectoryGeneratorPTPTest_ae6cc9df0fa26934396e9ddf0b3439e3d_cgraph.png" border="0" usemap="#classTrajectoryGeneratorPTPTest_ae6cc9df0fa26934396e9ddf0b3439e3d_cgraph" alt=""/></div>
 <map name="classTrajectoryGeneratorPTPTest_ae6cc9df0fa26934396e9ddf0b3439e3d_cgraph" id="classTrajectoryGeneratorPTPTest_ae6cc9df0fa26934396e9ddf0b3439e3d_cgraph">
-<area shape="rect" title="Create test fixture for ptp trajectory generator." alt="" coords="5,31,207,73"/>
-<area shape="rect" href="namespacetestutils.html#aee400d4013caab0af4681d89dc96d66c" title=" " alt="" coords="255,5,453,32"/>
-<area shape="rect" href="classrobot__model__loader_1_1RobotModelLoader.html#a40e202c404ae62a984861b273a401fcd" title="Get the constructed planning_models::RobotModel." alt="" coords="274,56,434,112"/>
+<area shape="rect" title="Create test fixture for ptp trajectory generator." alt="" coords="5,221,207,262"/>
+<area shape="rect" href="classpilz__industrial__motion__planner_1_1JointLimitsContainer.html#a40383e43f2853d45c9456333cda2a537" title="Add a limit." alt="" coords="267,5,486,61"/>
+<area shape="rect" href="namespacetestutils.html#aee400d4013caab0af4681d89dc96d66c" title=" " alt="" coords="277,85,476,112"/>
+<area shape="rect" href="unittest__trajectory__generator__ptp_8cpp.html#a50c36a4a78465728ec01b75416c540b3" title=" " alt="" coords="295,137,459,178"/>
+<area shape="rect" href="unittest__trajectory__generator__ptp_8cpp.html#a34130ca374ad83542f688d26fe11071f" title=" " alt="" coords="271,203,483,229"/>
+<area shape="rect" href="unittest__trajectory__generator__ptp_8cpp.html#afae7457c0e74df612a6a1af7289b8cfa" title=" " alt="" coords="270,253,483,280"/>
+<area shape="rect" href="unittest__trajectory__generator__ptp_8cpp.html#a0258d4e48c5d63bd1bb8c56e97bd09af" title=" " alt="" coords="255,304,499,331"/>
+<area shape="rect" href="unittest__trajectory__generator__ptp_8cpp.html#a3ef26f92433dcdbf9ac9c73dfdf72ac8" title=" " alt="" coords="272,355,481,381"/>
+<area shape="rect" href="unittest__trajectory__generator__ptp_8cpp.html#a71fba2ed2fe2866bdf3b45cce5e02e66" title=" " alt="" coords="275,406,478,447"/>
 </map>
 </div>
 
@@ -256,7 +261,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html#l00151">151</a> of file <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html">unittest_trajectory_generator_ptp.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html#l00092">92</a> of file <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html">unittest_trajectory_generator_ptp.cpp</a>.</p>
 
 </div>
 </div>
@@ -280,7 +285,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html#l00151">151</a> of file <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html">unittest_trajectory_generator_ptp.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html#l00092">92</a> of file <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html">unittest_trajectory_generator_ptp.cpp</a>.</p>
 
 </div>
 </div>
@@ -304,12 +309,12 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html#l00151">151</a> of file <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html">unittest_trajectory_generator_ptp.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html#l00092">92</a> of file <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html">unittest_trajectory_generator_ptp.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a59f489fb47535ebe60252fec85d8377d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a59f489fb47535ebe60252fec85d8377d">&#9670;&nbsp;</a></span>node_</h2>
+<a id="ac406c803fda52aab4992862e61bb68a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac406c803fda52aab4992862e61bb68a4">&#9670;&nbsp;</a></span>ph_</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -318,7 +323,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">rclcpp::Node::SharedPtr TrajectoryGeneratorPTPTest::node_</td>
+          <td class="memname">ros::NodeHandle TrajectoryGeneratorPTPTest::ph_ { &quot;~&quot; }</td>
         </tr>
       </table>
   </td>
@@ -328,7 +333,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html#l00141">141</a> of file <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html">unittest_trajectory_generator_ptp.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html#l00083">83</a> of file <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html">unittest_trajectory_generator_ptp.cpp</a>.</p>
 
 </div>
 </div>
@@ -352,7 +357,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html#l00149">149</a> of file <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html">unittest_trajectory_generator_ptp.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html#l00090">90</a> of file <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html">unittest_trajectory_generator_ptp.cpp</a>.</p>
 
 </div>
 </div>
@@ -376,31 +381,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html#l00150">150</a> of file <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html">unittest_trajectory_generator_ptp.cpp</a>.</p>
-
-</div>
-</div>
-<a id="aa64449a0ec7ec81e90137e121825c904"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa64449a0ec7ec81e90137e121825c904">&#9670;&nbsp;</a></span>planning_scene_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">planning_scene::PlanningSceneConstPtr TrajectoryGeneratorPTPTest::planning_scene_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html#l00143">143</a> of file <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html">unittest_trajectory_generator_ptp.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html#l00091">91</a> of file <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html">unittest_trajectory_generator_ptp.cpp</a>.</p>
 
 </div>
 </div>
@@ -424,7 +405,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html#l00151">151</a> of file <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html">unittest_trajectory_generator_ptp.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html#l00092">92</a> of file <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html">unittest_trajectory_generator_ptp.cpp</a>.</p>
 
 </div>
 </div>
@@ -448,12 +429,12 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html#l00146">146</a> of file <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html">unittest_trajectory_generator_ptp.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html#l00087">87</a> of file <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html">unittest_trajectory_generator_ptp.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a1274578f1335ab4aa032477d17d5e7a9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1274578f1335ab4aa032477d17d5e7a9">&#9670;&nbsp;</a></span>robot_model_</h2>
+<a id="ac96db4df4fe0d7b1f091a853c7b431f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac96db4df4fe0d7b1f091a853c7b431f6">&#9670;&nbsp;</a></span>robot_model_</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -462,7 +443,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">moveit::core::RobotModelConstPtr TrajectoryGeneratorPTPTest::robot_model_</td>
+          <td class="memname">robot_model::RobotModelConstPtr TrajectoryGeneratorPTPTest::robot_model_ { <a class="el" href="classrobot__model__loader_1_1RobotModelLoader.html">robot_model_loader::RobotModelLoader</a>(GetParam()).getModel() }</td>
         </tr>
       </table>
   </td>
@@ -472,7 +453,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html#l00142">142</a> of file <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html">unittest_trajectory_generator_ptp.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html#l00084">84</a> of file <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html">unittest_trajectory_generator_ptp.cpp</a>.</p>
 
 </div>
 </div>
@@ -496,12 +477,12 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html#l00150">150</a> of file <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html">unittest_trajectory_generator_ptp.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html#l00091">91</a> of file <a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html">unittest_trajectory_generator_ptp.cpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>moveit2/moveit_planners/pilz_industrial_motion_planner/test/unit_tests/src/<a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html">unittest_trajectory_generator_ptp.cpp</a></li>
+<li>moveit2/moveit_planners/pilz_industrial_motion_planner/test/<a class="el" href="unittest__trajectory__generator__ptp_8cpp_source.html">unittest_trajectory_generator_ptp.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

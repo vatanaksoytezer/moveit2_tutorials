@@ -66,11 +66,11 @@ $(function() {
 <div class="title">Utility Scripts for MoveIt </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md12"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md11"></a>
 README Markdown Buildfarm Table Generator</h1>
 <p>This Python script will generate Github-style Markdown table with Jenkins badges for every package recursively from the current folder. It will order all packages alphabetically, but start with all MoveIt packages first. For generating an updated README for a new ROS distribution: First update the <code><a class="el" href="create__readme__table_8py.html">create_readme_table.py</a></code> script and add/remove the current MoveIt-supported ROS distros and their corresponding Ubuntu distribution in the specified Python dictionary. Then, in the main MoveIt <code>README.md</code> file, remove the "## ROS Buildfarm" header and the following table. Finally, from your catkin workspace with every MoveIt package, run the <code><a class="el" href="create__readme__table_8py.html">create_readme_table.py</a></code> script. For example: </p><pre class="fragment">cd ~/ws_moveit/src
 python moveit/moveit/scripts/create_readme_table.py &gt;&gt; moveit/README.md
-</pre><h1><a class="anchor" id="autotoc_md13"></a>
+</pre><h1><a class="anchor" id="autotoc_md12"></a>
 HTML Table Generator</h1>
 <p>This python script will generate an html page with useful data about every package in the current folder the script is run in. Therefore, to summarize moveit, run within a catkin workspace. For example: </p><pre class="fragment">cd ~/ws_moveit/src
 python moveit/moveit/scripts/create_maintainer_table.py

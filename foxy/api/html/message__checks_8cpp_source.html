@@ -141,21 +141,11 @@ $(function() {
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;         constr.visibility_constraints.empty() &amp;&amp; constr.joint_constraints.empty();</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="namespacemoveit_1_1core.html#a192b65b3ebc8eb7b6ccd155808c68aa1">isEmpty</a>(<span class="keyword">const</span> geometry_msgs::msg::Quaternion&amp; msg)</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;{</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keywordflow">return</span> msg.x == 0.0 &amp;&amp; msg.y == 0.0 &amp;&amp; msg.z == 0.0 &amp;&amp; msg.w == 0.0;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="namespacemoveit_1_1core.html#a192b65b3ebc8eb7b6ccd155808c68aa1">isEmpty</a>(<span class="keyword">const</span> geometry_msgs::msg::Pose&amp; msg)</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;{</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keywordflow">return</span> msg.position.x == 0.0 &amp;&amp; msg.position.y == 0.0 &amp;&amp; msg.position.z == 0.0 &amp;&amp; <a class="code" href="namespacemoveit_1_1core.html#a192b65b3ebc8eb7b6ccd155808c68aa1">isEmpty</a>(msg.orientation);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}  <span class="comment">// namespace core</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}  <span class="comment">// namespace moveit</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}  <span class="comment">// namespace core</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}  <span class="comment">// namespace moveit</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="anamespacemoveit_1_1core_html_a192b65b3ebc8eb7b6ccd155808c68aa1"><div class="ttname"><a href="namespacemoveit_1_1core.html#a192b65b3ebc8eb7b6ccd155808c68aa1">moveit::core::isEmpty</a></div><div class="ttdeci">bool isEmpty(const moveit_msgs::msg::PlanningScene &amp;msg)</div><div class="ttdoc">Check if a message includes any information about a planning scene, or whether it is empty.</div><div class="ttdef"><b>Definition:</b> <a href="message__checks_8cpp_source.html#l00107">message_checks.cpp:107</a></div></div>
-<div class="ttc" id="anamespacemoveit_html"><div class="ttname"><a href="namespacemoveit.html">moveit</a></div><div class="ttdoc">Main namespace for MoveIt.</div><div class="ttdef"><b>Definition:</b> <a href="exceptions_8h_source.html#l00042">exceptions.h:42</a></div></div>
+<div class="ttc" id="anamespacemoveit_html"><div class="ttname"><a href="namespacemoveit.html">moveit</a></div><div class="ttdoc">Main namespace for MoveIt.</div><div class="ttdef"><b>Definition:</b> <a href="background__processing_8h_source.html#l00046">background_processing.h:46</a></div></div>
 <div class="ttc" id="amessage__checks_8h_html"><div class="ttname"><a href="message__checks_8h.html">message_checks.h</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

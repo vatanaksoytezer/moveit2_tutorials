@@ -69,8 +69,7 @@ $(function() {
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#define-members">Macros</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#define-members">Macros</a>  </div>
   <div class="headertitle">
 <div class="title">async_test.h File Reference</div>  </div>
 </div><!--header-->
@@ -81,7 +80,7 @@ $(function() {
 <code>#include &lt;chrono&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;gmock/gmock.h&gt;</code><br />
-<code>#include &lt;rclcpp/logging.hpp&gt;</code><br />
+<code>#include &lt;ros/ros.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for async_test.h:</div>
 <div class="dyncontent">
@@ -94,7 +93,7 @@ Include dependency graph for async_test.h:</div>
 <area shape="rect" title=" " alt="" coords="371,139,437,165"/>
 <area shape="rect" title=" " alt="" coords="461,139,520,165"/>
 <area shape="rect" title=" " alt="" coords="545,139,671,165"/>
-<area shape="rect" title=" " alt="" coords="696,139,837,165"/>
+<area shape="rect" title=" " alt="" coords="695,139,774,165"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -102,9 +101,9 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="async__test_8h__dep__incl.png" border="0" usemap="#moveit2_2moveit__planners_2pilz__industrial__motion__planner__testutils_2include_2pilz__industrial__motion__planner__testutils_2async__test_8hdep" alt=""/></div>
 <map name="moveit2_2moveit__planners_2pilz__industrial__motion__planner__testutils_2include_2pilz__industrial__motion__planner__testutils_2async__test_8hdep" id="moveit2_2moveit__planners_2pilz__industrial__motion__planner__testutils_2include_2pilz__industrial__motion__planner__testutils_2async__test_8hdep">
-<area shape="rect" title=" " alt="" coords="108,5,335,91"/>
-<area shape="rect" href="integrationtest__sequence__action_8cpp.html" title=" " alt="" coords="5,139,195,224"/>
-<area shape="rect" href="integrationtest__sequence__action__preemption_8cpp.html" title=" " alt="" coords="219,139,466,224"/>
+<area shape="rect" title=" " alt="" coords="121,5,347,91"/>
+<area shape="rect" href="integrationtest__sequence__action_8cpp.html" title=" " alt="" coords="5,139,212,209"/>
+<area shape="rect" href="integrationtest__sequence__action__preemption_8cpp.html" title=" " alt="" coords="236,139,483,209"/>
 </map>
 </div>
 </div>
@@ -129,13 +128,8 @@ Macros</h2></td></tr>
 <tr class="separator:aab21908d5128dff6ae3685898c58c4b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab90038ade00393cd4e78fc3184b843f9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="async__test_8h.html#ab90038ade00393cd4e78fc3184b843f9">ACTION_OPEN_BARRIER</a>(str)</td></tr>
 <tr class="separator:ab90038ade00393cd4e78fc3184b843f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a05fc9a603aacee7206587615a0260ac9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="async__test_8h.html#a05fc9a603aacee7206587615a0260ac9">ACTION_OPEN_BARRIER_VOID</a>(str)&#160;&#160;&#160;::testing::InvokeWithoutArgs([this]() { this-&gt;triggerClearEvent(str); })</td></tr>
+<tr class="memitem:a05fc9a603aacee7206587615a0260ac9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="async__test_8h.html#a05fc9a603aacee7206587615a0260ac9">ACTION_OPEN_BARRIER_VOID</a>(str)&#160;&#160;&#160;::testing::InvokeWithoutArgs([this](void) { this-&gt;triggerClearEvent(str); })</td></tr>
 <tr class="separator:a05fc9a603aacee7206587615a0260ac9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a7521d672438393dc482f070b1e811179"><td class="memItemLeft" align="right" valign="top">const rclcpp::Logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetesting.html#a7521d672438393dc482f070b1e811179">testing::LOGGER</a> = rclcpp::get_logger(&quot;moveit.pilz_industrial_motion_planner.async_test&quot;)</td></tr>
-<tr class="separator:a7521d672438393dc482f070b1e811179"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ab90038ade00393cd4e78fc3184b843f9"></a>
@@ -173,7 +167,7 @@ Variables</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">str</td><td>)</td>
-          <td>&#160;&#160;&#160;::testing::InvokeWithoutArgs([this]() { this-&gt;triggerClearEvent(str); })</td>
+          <td>&#160;&#160;&#160;::testing::InvokeWithoutArgs([this](void) { this-&gt;triggerClearEvent(str); })</td>
         </tr>
       </table>
 </div><div class="memdoc">

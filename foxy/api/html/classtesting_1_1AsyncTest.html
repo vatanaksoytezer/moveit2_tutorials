@@ -92,7 +92,7 @@ Inheritance diagram for testing::AsyncTest:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a4912b2272227e05cc40782cb0723b67e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtesting_1_1AsyncTest.html#a4912b2272227e05cc40782cb0723b67e">triggerClearEvent</a> (const std::string &amp;event)</td></tr>
-<tr class="memdesc:a4912b2272227e05cc40782cb0723b67e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Triggers a clear event. If a call to barricade is currently pending it will unblock as soon as all clear events are triggered. Else the event is put on the waitlist. This waitlist is emptied upon a call to barricade.  <a href="classtesting_1_1AsyncTest.html#a4912b2272227e05cc40782cb0723b67e">More...</a><br /></td></tr>
+<tr class="memdesc:a4912b2272227e05cc40782cb0723b67e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Triggeres a clear event. If a call to barricade is currently pending it will unblock as soon as all clear events are triggered. Else the event is put on the waitlist. This waitlist is emptied upon a call to barricade.  <a href="classtesting_1_1AsyncTest.html#a4912b2272227e05cc40782cb0723b67e">More...</a><br /></td></tr>
 <tr class="separator:a4912b2272227e05cc40782cb0723b67e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5846c0b4d7c69f61d6292af422273237"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtesting_1_1AsyncTest.html#a5846c0b4d7c69f61d6292af422273237">barricade</a> (const std::string &amp;clear_event, const int timeout_ms=-1)</td></tr>
 <tr class="memdesc:a5846c0b4d7c69f61d6292af422273237"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will block until the event given by clear_event is triggered or a timeout is reached. Unblocks immediately, if the event was on the waitlist.  <a href="classtesting_1_1AsyncTest.html#a5846c0b4d7c69f61d6292af422273237">More...</a><br /></td></tr>
@@ -107,14 +107,14 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:aaa48425ff9a17df93bd87bddf194ec85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab54422f9956c7bb69b47d9226897aac"><td class="memItemLeft" align="right" valign="top">std::condition_variable&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtesting_1_1AsyncTest.html#aab54422f9956c7bb69b47d9226897aac">cv_</a></td></tr>
 <tr class="separator:aab54422f9956c7bb69b47d9226897aac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0b9b36af9527148c38c644a6eee9977"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ros_2warehouse_2warehouse_2CMakeLists_8txt.html#af4423e580afb68aec7c40fb0bce7d5d4">std::set</a>&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtesting_1_1AsyncTest.html#ab0b9b36af9527148c38c644a6eee9977">clear_events_</a> {}</td></tr>
+<tr class="memitem:ab0b9b36af9527148c38c644a6eee9977"><td class="memItemLeft" align="right" valign="top"><a class="el" href="setup__assistant_2CMakeLists_8txt.html#a58ab708fe5c1f47f0642bdaee3056d3b">std::set</a>&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtesting_1_1AsyncTest.html#ab0b9b36af9527148c38c644a6eee9977">clear_events_</a> {}</td></tr>
 <tr class="separator:ab0b9b36af9527148c38c644a6eee9977"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c84b7d83711b69248bb156984e6f725"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ros_2warehouse_2warehouse_2CMakeLists_8txt.html#af4423e580afb68aec7c40fb0bce7d5d4">std::set</a>&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtesting_1_1AsyncTest.html#a7c84b7d83711b69248bb156984e6f725">waitlist_</a> {}</td></tr>
+<tr class="memitem:a7c84b7d83711b69248bb156984e6f725"><td class="memItemLeft" align="right" valign="top"><a class="el" href="setup__assistant_2CMakeLists_8txt.html#a58ab708fe5c1f47f0642bdaee3056d3b">std::set</a>&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtesting_1_1AsyncTest.html#a7c84b7d83711b69248bb156984e6f725">waitlist_</a> {}</td></tr>
 <tr class="separator:a7c84b7d83711b69248bb156984e6f725"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Test class that allows the handling of asynchronous test objects. </p>
-<p>The class provides the two basic functions <a class="el" href="classtesting_1_1AsyncTest.html#a5846c0b4d7c69f61d6292af422273237" title="Will block until the event given by clear_event is triggered or a timeout is reached....">AsyncTest::barricade</a> and <a class="el" href="classtesting_1_1AsyncTest.html#a4912b2272227e05cc40782cb0723b67e" title="Triggers a clear event. If a call to barricade is currently pending it will unblock as soon as all cl...">AsyncTest::triggerClearEvent</a>. During the test setup gates between the steps with one or more clear events. Allow passing on by calling triggerClearEvent after a test.</p>
+<p>The class provides the two basic functions <a class="el" href="classtesting_1_1AsyncTest.html#a5846c0b4d7c69f61d6292af422273237" title="Will block until the event given by clear_event is triggered or a timeout is reached....">AsyncTest::barricade</a> and <a class="el" href="classtesting_1_1AsyncTest.html#a4912b2272227e05cc40782cb0723b67e" title="Triggeres a clear event. If a call to barricade is currently pending it will unblock as soon as all c...">AsyncTest::triggerClearEvent</a>. During the test setup gates between the steps with one or more clear events. Allow passing on by calling triggerClearEvent after a test.</p>
 <p><em>Usage:</em> <br  />
  Suppose you want to test a function that calls another function asynchronously, like the following example:</p>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> asyncCall(std::function&lt;<span class="keywordtype">void</span>()&gt; fun)</div>
@@ -259,7 +259,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Triggers a clear event. If a call to barricade is currently pending it will unblock as soon as all clear events are triggered. Else the event is put on the waitlist. This waitlist is emptied upon a call to barricade. </p>
+<p>Triggeres a clear event. If a call to barricade is currently pending it will unblock as soon as all clear events are triggered. Else the event is put on the waitlist. This waitlist is emptied upon a call to barricade. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">event</td><td>The event that is triggered </td></tr>
@@ -282,7 +282,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ros_2warehouse_2warehouse_2CMakeLists_8txt.html#af4423e580afb68aec7c40fb0bce7d5d4">std::set</a>&lt;std::string&gt; testing::AsyncTest::clear_events_ {}</td>
+          <td class="memname"><a class="el" href="setup__assistant_2CMakeLists_8txt.html#a58ab708fe5c1f47f0642bdaee3056d3b">std::set</a>&lt;std::string&gt; testing::AsyncTest::clear_events_ {}</td>
         </tr>
       </table>
   </td>
@@ -354,7 +354,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ros_2warehouse_2warehouse_2CMakeLists_8txt.html#af4423e580afb68aec7c40fb0bce7d5d4">std::set</a>&lt;std::string&gt; testing::AsyncTest::waitlist_ {}</td>
+          <td class="memname"><a class="el" href="setup__assistant_2CMakeLists_8txt.html#a58ab708fe5c1f47f0642bdaee3056d3b">std::set</a>&lt;std::string&gt; testing::AsyncTest::waitlist_ {}</td>
         </tr>
       </table>
   </td>
@@ -374,7 +374,7 @@ Protected Attributes</h2></td></tr>
 </div><!-- contents -->
 <div class="ttc" id="aasync__test_8h_html_a2b751e6f7e36d7125bdac33f7a202f1b"><div class="ttname"><a href="async__test_8h.html#a2b751e6f7e36d7125bdac33f7a202f1b">BARRIER</a></div><div class="ttdeci">#define BARRIER(...)</div><div class="ttdef"><b>Definition:</b> <a href="async__test_8h_source.html#l00108">async_test.h:108</a></div></div>
 <div class="ttc" id="aclasstesting_1_1AsyncTest_html"><div class="ttname"><a href="classtesting_1_1AsyncTest.html">testing::AsyncTest</a></div><div class="ttdoc">Test class that allows the handling of asynchronous test objects.</div><div class="ttdef"><b>Definition:</b> <a href="async__test_8h_source.html#l00069">async_test.h:69</a></div></div>
-<div class="ttc" id="atest__bullet__continuous__collision__checking_8cpp_html_ac603f07e4fe91e8b8704f211fb3479b3"><div class="ttname"><a href="test__bullet__continuous__collision__checking_8cpp.html#ac603f07e4fe91e8b8704f211fb3479b3">TEST_F</a></div><div class="ttdeci">TEST_F(BulletCollisionDetectionTester, DISABLED_ContinuousCollisionSelf)</div><div class="ttdoc">Continuous self collision checks are not supported yet by the bullet integration.</div><div class="ttdef"><b>Definition:</b> <a href="test__bullet__continuous__collision__checking_8cpp_source.html#l00230">test_bullet_continuous_collision_checking.cpp:230</a></div></div>
+<div class="ttc" id="atest__bullet__continuous__collision__checking_8cpp_html_ac603f07e4fe91e8b8704f211fb3479b3"><div class="ttname"><a href="test__bullet__continuous__collision__checking_8cpp.html#ac603f07e4fe91e8b8704f211fb3479b3">TEST_F</a></div><div class="ttdeci">TEST_F(BulletCollisionDetectionTester, DISABLED_ContinuousCollisionSelf)</div><div class="ttdoc">Continuous self collision checks are not supported yet by the bullet integration.</div><div class="ttdef"><b>Definition:</b> <a href="test__bullet__continuous__collision__checking_8cpp_source.html#l00231">test_bullet_continuous_collision_checking.cpp:231</a></div></div>
 <div class="ttc" id="aasync__test_8h_html_a05fc9a603aacee7206587615a0260ac9"><div class="ttname"><a href="async__test_8h.html#a05fc9a603aacee7206587615a0260ac9">ACTION_OPEN_BARRIER_VOID</a></div><div class="ttdeci">#define ACTION_OPEN_BARRIER_VOID(str)</div><div class="ttdef"><b>Definition:</b> <a href="async__test_8h_source.html#l00116">async_test.h:116</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -176,8 +176,8 @@ $(function() {
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="comment">// if ROS (cpp) is not initialized, we initialize it</span></div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordflow">if</span> (!ros::isInitialized())</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    {</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;      proxy = std::make_unique&lt;InitProxy&gt;();</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;      spinner = std::make_unique&lt;ros::AsyncSpinner&gt;(1);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;      proxy.reset(<span class="keyword">new</span> InitProxy());</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;      spinner.reset(<span class="keyword">new</span> ros::AsyncSpinner(1));</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;      spinner-&gt;start();</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    }</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  }</div>

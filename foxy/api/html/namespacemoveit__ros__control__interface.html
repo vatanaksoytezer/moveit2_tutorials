@@ -72,94 +72,87 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit__ros__control__interface_1_1ControllerHandleAllocator.html">ControllerHandleAllocator</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit__ros__control__interface_1_1GripperControllerAllocator.html">GripperControllerAllocator</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple allocator for <a class="el" href="classmoveit__simple__controller__manager_1_1FollowJointTrajectoryControllerHandle.html">moveit_simple_controller_manager::FollowJointTrajectoryControllerHandle</a> instances.  <a href="classmoveit__ros__control__interface_1_1GripperControllerAllocator.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit__ros__control__interface_1_1JointTrajectoryControllerAllocator.html">JointTrajectoryControllerAllocator</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple allocator for <a class="el" href="classmoveit__simple__controller__manager_1_1FollowJointTrajectoryControllerHandle.html">moveit_simple_controller_manager::FollowJointTrajectoryControllerHandle</a> instances.  <a href="classmoveit__ros__control__interface_1_1JointTrajectoryControllerAllocator.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit__ros__control__interface_1_1MoveItControllerManager.html">MoveItControllerManager</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classmoveit__controller__manager_1_1MoveItControllerManager.html" title="MoveIt does not enforce how controllers are implemented. To make your controllers usable by MoveIt,...">moveit_controller_manager::MoveItControllerManager</a> sub class that interfaces one ros_control controller_manager instance. All services and names are relative to ns_.  <a href="classmoveit__ros__control__interface_1_1MoveItControllerManager.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit__ros__control__interface_1_1MoveItMultiControllerManager.html">MoveItMultiControllerManager</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classmoveit__ros__control__interface_1_1MoveItMultiControllerManager.html" title="MoveItMultiControllerManager discovers all running ros_control node and delegates member function to ...">MoveItMultiControllerManager</a> discovers all running ros_control node and delegates member function to the corresponding <a class="el" href="classmoveit__ros__control__interface_1_1MoveItControllerManager.html" title="moveit_controller_manager::MoveItControllerManager sub class that interfaces one ros_control controll...">MoveItControllerManager</a> instances.  <a href="classmoveit__ros__control__interface_1_1MoveItMultiControllerManager.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classmoveit__controller__manager_1_1MoveItControllerManager.html" title="MoveIt does not enforce how controllers are implemented. To make your controllers usable by MoveIt,...">moveit_controller_manager::MoveItControllerManager</a> sub class that interfaces one ros_control controller_manager instance. All services and names are relative to ns_.  <a href="classmoveit__ros__control__interface_1_1MoveItMultiControllerManager.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a53bf69039098ec9b2875488095d977c5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemoveit__ros__control__interface.html#a53bf69039098ec9b2875488095d977c5">MOVEIT_CLASS_FORWARD</a> (<a class="el" href="classmoveit__ros__control__interface_1_1ControllerHandleAllocator.html">ControllerHandleAllocator</a>)</td></tr>
-<tr class="separator:a53bf69039098ec9b2875488095d977c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a05e6ae5ede13fe1a1c8b80645844c2cb"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemoveit__ros__control__interface.html#a05e6ae5ede13fe1a1c8b80645844c2cb">parseJointNameFromResource</a> (const std::string &amp;claimed_interface)</td></tr>
-<tr class="memdesc:a05e6ae5ede13fe1a1c8b80645844c2cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get joint name from resource name reported by ros2_control, since claimed_interfaces return by ros2_control will have the interface name as suffix joint_name/INTERFACE_TYPE.  <a href="namespacemoveit__ros__control__interface.html#a05e6ae5ede13fe1a1c8b80645844c2cb">More...</a><br /></td></tr>
-<tr class="separator:a05e6ae5ede13fe1a1c8b80645844c2cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2eaa975ae3e93aba9cefd961e0a162eb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemoveit__ros__control__interface.html#a2eaa975ae3e93aba9cefd961e0a162eb">MOVEIT_CLASS_FORWARD</a> (<a class="el" href="classmoveit__ros__control__interface_1_1MoveItControllerManager.html">MoveItControllerManager</a>)</td></tr>
-<tr class="separator:a2eaa975ae3e93aba9cefd961e0a162eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f439c7737e17cb569a3d3408685308a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemoveit__ros__control__interface.html#a3f439c7737e17cb569a3d3408685308a">MOVEIT_CLASS_FORWARD</a> (ControllerHandleAllocator) class ControllerHandleAllocator</td></tr>
+<tr class="separator:a3f439c7737e17cb569a3d3408685308a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78ed95e0b19f4813a09cb88eb28dbb85"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemoveit__ros__control__interface.html#a78ed95e0b19f4813a09cb88eb28dbb85">checkTimeout</a> (ros::Time &amp;t, double timeout, bool force=false)</td></tr>
+<tr class="memdesc:a78ed95e0b19f4813a09cb88eb28dbb85"><td class="mdescLeft">&#160;</td><td class="mdescRight">check for timeout  <a href="namespacemoveit__ros__control__interface.html#a78ed95e0b19f4813a09cb88eb28dbb85">More...</a><br /></td></tr>
+<tr class="separator:a78ed95e0b19f4813a09cb88eb28dbb85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a53bf69039098ec9b2875488095d977c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a53bf69039098ec9b2875488095d977c5">&#9670;&nbsp;</a></span>MOVEIT_CLASS_FORWARD() <span class="overload">[1/2]</span></h2>
+<a id="a78ed95e0b19f4813a09cb88eb28dbb85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78ed95e0b19f4813a09cb88eb28dbb85">&#9670;&nbsp;</a></span>checkTimeout()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">moveit_ros_control_interface::MOVEIT_CLASS_FORWARD </td>
+          <td class="memname">bool moveit_ros_control_interface::checkTimeout </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classmoveit__ros__control__interface_1_1ControllerHandleAllocator.html">ControllerHandleAllocator</a>&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="paramtype">ros::Time &amp;&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
         </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a2eaa975ae3e93aba9cefd961e0a162eb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2eaa975ae3e93aba9cefd961e0a162eb">&#9670;&nbsp;</a></span>MOVEIT_CLASS_FORWARD() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
         <tr>
-          <td class="memname">moveit_ros_control_interface::MOVEIT_CLASS_FORWARD </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classmoveit__ros__control__interface_1_1MoveItControllerManager.html">MoveItControllerManager</a>&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>timeout</em>, </td>
         </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a05e6ae5ede13fe1a1c8b80645844c2cb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a05e6ae5ede13fe1a1c8b80645844c2cb">&#9670;&nbsp;</a></span>parseJointNameFromResource()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
         <tr>
-          <td class="memname">std::string moveit_ros_control_interface::parseJointNameFromResource </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>claimed_interface</em></td><td>)</td>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>force</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get joint name from resource name reported by ros2_control, since claimed_interfaces return by ros2_control will have the interface name as suffix joint_name/INTERFACE_TYPE. </p>
+<p>check for timeout </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">claimed_interface</td><td>claimed interface as joint_name/INTERFACE_TYPE </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">t</td><td>timestamp to check, is update if timeout duration was passed </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">timeout</td><td>timeout duration in seconds </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">force</td><td>force timeout </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>joint_name part of the /p claimed_interface </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True if timeout duration was passed </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="controller__manager__plugin_8cpp_source.html#l00069">69</a> of file <a class="el" href="controller__manager__plugin_8cpp_source.html">controller_manager_plugin.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="controller__manager__plugin_8cpp_source.html#l00097">97</a> of file <a class="el" href="controller__manager__plugin_8cpp_source.html">controller_manager_plugin.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a3f439c7737e17cb569a3d3408685308a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f439c7737e17cb569a3d3408685308a">&#9670;&nbsp;</a></span>MOVEIT_CLASS_FORWARD()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">moveit_ros_control_interface::MOVEIT_CLASS_FORWARD </td>
+          <td>(</td>
+          <td class="paramtype">ControllerHandleAllocator&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Base class for MoveItControllerHandle allocators </p>
+
+<p class="definition">Definition at line <a class="el" href="ControllerHandle_8h_source.html#l00076">76</a> of file <a class="el" href="ControllerHandle_8h_source.html">ControllerHandle.h</a>.</p>
 
 </div>
 </div>

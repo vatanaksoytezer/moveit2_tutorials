@@ -193,8 +193,8 @@ $(function() {
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  {</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordflow">try</span></div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    {</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;      capability_plugin_loader_ = std::make_shared&lt;pluginlib::ClassLoader&lt;MoveGroupCapability&gt;&gt;(</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;          <span class="stringliteral">&quot;moveit_ros_move_group&quot;</span>, <span class="stringliteral">&quot;move_group::MoveGroupCapability&quot;</span>);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;      capability_plugin_loader_.reset(</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;          <span class="keyword">new</span> pluginlib::ClassLoader&lt;MoveGroupCapability&gt;(<span class="stringliteral">&quot;moveit_ros_move_group&quot;</span>, <span class="stringliteral">&quot;move_group::MoveGroupCapability&quot;</span>));</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    }</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordflow">catch</span> (pluginlib::PluginlibException&amp; ex)</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    {</div>
@@ -213,7 +213,7 @@ $(function() {
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keywordflow">if</span> (context_-&gt;moveit_cpp_-&gt;getNode()-&gt;get_parameter(<span class="stringliteral">&quot;capabilities&quot;</span>, capability_plugins))</div>
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    {</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;      boost::char_separator&lt;char&gt; sep(<span class="stringliteral">&quot; &quot;</span>);</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;      boost::tokenizer&lt;boost::char_separator&lt;char&gt;&gt; tok(capability_plugins, sep);</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;      boost::tokenizer&lt;boost::char_separator&lt;char&gt; &gt; tok(capability_plugins, sep);</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;      capabilities.insert(tok.begin(), tok.end());</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    }</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
@@ -226,7 +226,7 @@ $(function() {
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                                                          pipeline_capabilities))</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;      {</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        boost::char_separator&lt;char&gt; sep(<span class="stringliteral">&quot; &quot;</span>);</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        boost::tokenizer&lt;boost::char_separator&lt;char&gt;&gt; tok(pipeline_capabilities, sep);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        boost::tokenizer&lt;boost::char_separator&lt;char&gt; &gt; tok(pipeline_capabilities, sep);</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        capabilities.insert(tok.begin(), tok.end());</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;      }</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    }</div>
@@ -235,8 +235,8 @@ $(function() {
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordflow">if</span> (context_-&gt;moveit_cpp_-&gt;getNode()-&gt;get_parameter(<span class="stringliteral">&quot;disable_capabilities&quot;</span>, capability_plugins))</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    {</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;      boost::char_separator&lt;char&gt; sep(<span class="stringliteral">&quot; &quot;</span>);</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;      boost::tokenizer&lt;boost::char_separator&lt;char&gt;&gt; tok(capability_plugins, sep);</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;      <span class="keywordflow">for</span> (boost::tokenizer&lt;boost::char_separator&lt;char&gt;&gt;::iterator cap_name = tok.begin(); cap_name != tok.end();</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;      boost::tokenizer&lt;boost::char_separator&lt;char&gt; &gt; tok(capability_plugins, sep);</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;      <span class="keywordflow">for</span> (boost::tokenizer&lt;boost::char_separator&lt;char&gt; &gt;::iterator cap_name = tok.begin(); cap_name != tok.end();</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;           ++cap_name)</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        capabilities.erase(*cap_name);</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    }</div>
@@ -259,18 +259,18 @@ $(function() {
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    }</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    std::stringstream ss;</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    ss &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    ss &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    ss &lt;&lt; <span class="stringliteral">&quot;********************************************************&quot;</span> &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    ss &lt;&lt; <span class="stringliteral">&quot;* MoveGroup using: &quot;</span> &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    ss &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    ss &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    ss &lt;&lt; <span class="stringliteral">&quot;********************************************************&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    ss &lt;&lt; <span class="stringliteral">&quot;* MoveGroup using: &quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> MoveGroupCapabilityPtr&amp; cap : capabilities_)</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;      ss &lt;&lt; <span class="stringliteral">&quot;*     - &quot;</span> &lt;&lt; cap-&gt;getName() &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    ss &lt;&lt; <span class="stringliteral">&quot;********************************************************&quot;</span> &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;      ss &lt;&lt; <span class="stringliteral">&quot;*     - &quot;</span> &lt;&lt; cap-&gt;getName() &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    ss &lt;&lt; <span class="stringliteral">&quot;********************************************************&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    RCLCPP_INFO(LOGGER, <span class="stringliteral">&quot;%s&quot;</span>, ss.str().c_str());</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  }</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;  MoveGroupContextPtr context_;</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;  std::shared_ptr&lt;pluginlib::ClassLoader&lt;MoveGroupCapability&gt;&gt; capability_plugin_loader_;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;  std::shared_ptr&lt;pluginlib::ClassLoader&lt;MoveGroupCapability&gt; &gt; capability_plugin_loader_;</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;  std::vector&lt;MoveGroupCapabilityPtr&gt; capabilities_;</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;};</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;}  <span class="comment">// namespace move_group</span></div>
@@ -384,7 +384,7 @@ $(function() {
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="anamespaceplanning__scene__monitor_html"><div class="ttname"><a href="namespaceplanning__scene__monitor.html">planning_scene_monitor</a></div><div class="ttdef"><b>Definition:</b> <a href="move__group__context_8h_source.html#l00047">move_group_context.h:47</a></div></div>
-<div class="ttc" id="astructmoveit__cpp_1_1MoveItCpp_1_1Options_html"><div class="ttname"><a href="structmoveit__cpp_1_1MoveItCpp_1_1Options.html">moveit_cpp::MoveItCpp::Options</a></div><div class="ttdoc">Parameter container for initializing MoveItCpp.</div><div class="ttdef"><b>Definition:</b> <a href="moveit__cpp_8h_source.html#l00129">moveit_cpp.h:129</a></div></div>
+<div class="ttc" id="astructmoveit__cpp_1_1MoveItCpp_1_1Options_html"><div class="ttname"><a href="structmoveit__cpp_1_1MoveItCpp_1_1Options.html">moveit_cpp::MoveItCpp::Options</a></div><div class="ttdoc">Parameter container for initializing MoveItCpp.</div><div class="ttdef"><b>Definition:</b> <a href="moveit__cpp_8h_source.html#l00130">moveit_cpp.h:130</a></div></div>
 <div class="ttc" id="aclassmove__group_1_1MoveGroupExe_html_a9c8bca4e1a244ee202211f98c582ecf9"><div class="ttname"><a href="classmove__group_1_1MoveGroupExe.html#a9c8bca4e1a244ee202211f98c582ecf9">move_group::MoveGroupExe::MoveGroupExe</a></div><div class="ttdeci">MoveGroupExe(const moveit_cpp::MoveItCppPtr &amp;moveit_cpp, const std::string &amp;default_planning_pipeline, bool debug)</div><div class="ttdef"><b>Definition:</b> <a href="move__group_8cpp_source.html#l00076">move_group.cpp:76</a></div></div>
 <div class="ttc" id="aclassmove__group_1_1MoveGroupExe_html_af52b8f9d9b37d25b5bb62e9cb36ee927"><div class="ttname"><a href="classmove__group_1_1MoveGroupExe.html#af52b8f9d9b37d25b5bb62e9cb36ee927">move_group::MoveGroupExe::~MoveGroupExe</a></div><div class="ttdeci">~MoveGroupExe()</div><div class="ttdef"><b>Definition:</b> <a href="move__group_8cpp_source.html#l00089">move_group.cpp:89</a></div></div>
 <div class="ttc" id="amove__group_8cpp_html_a3c04138a5bfe5d72780bb7e82a18e627"><div class="ttname"><a href="move__group_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></div><div class="ttdeci">int main(int argc, char **argv)</div><div class="ttdef"><b>Definition:</b> <a href="move__group_8cpp_source.html#l00206">move_group.cpp:206</a></div></div>
@@ -396,17 +396,17 @@ $(function() {
 <div class="ttc" id="anamespacemoveit__cpp_html"><div class="ttname"><a href="namespacemoveit__cpp.html">moveit_cpp</a></div><div class="ttdef"><b>Definition:</b> <a href="move__group__context_8h_source.html#l00042">move_group_context.h:42</a></div></div>
 <div class="ttc" id="aconsole__colors_8h_html_a107e352abeddb266b1af4c515275d482"><div class="ttname"><a href="console__colors_8h.html#a107e352abeddb266b1af4c515275d482">MOVEIT_CONSOLE_COLOR_GREEN</a></div><div class="ttdeci">#define MOVEIT_CONSOLE_COLOR_GREEN</div><div class="ttdef"><b>Definition:</b> <a href="console__colors_8h_source.html#l00042">console_colors.h:42</a></div></div>
 <div class="ttc" id="aclassmove__group_1_1MoveGroupExe_html"><div class="ttname"><a href="classmove__group_1_1MoveGroupExe.html">move_group::MoveGroupExe</a></div><div class="ttdef"><b>Definition:</b> <a href="move__group_8cpp_source.html#l00073">move_group.cpp:73</a></div></div>
-<div class="ttc" id="astructmoveit__cpp_1_1MoveItCpp_1_1PlanningPipelineOptions_html_a61064276be8b4f47e06f851778259e52"><div class="ttname"><a href="structmoveit__cpp_1_1MoveItCpp_1_1PlanningPipelineOptions.html#a61064276be8b4f47e06f851778259e52">moveit_cpp::MoveItCpp::PlanningPipelineOptions::pipeline_names</a></div><div class="ttdeci">std::vector&lt; std::string &gt; pipeline_names</div><div class="ttdef"><b>Definition:</b> <a href="moveit__cpp_8h_source.html#l00124">moveit_cpp.h:124</a></div></div>
+<div class="ttc" id="astructmoveit__cpp_1_1MoveItCpp_1_1PlanningPipelineOptions_html_a61064276be8b4f47e06f851778259e52"><div class="ttname"><a href="structmoveit__cpp_1_1MoveItCpp_1_1PlanningPipelineOptions.html#a61064276be8b4f47e06f851778259e52">moveit_cpp::MoveItCpp::PlanningPipelineOptions::pipeline_names</a></div><div class="ttdeci">std::vector&lt; std::string &gt; pipeline_names</div><div class="ttdef"><b>Definition:</b> <a href="moveit__cpp_8h_source.html#l00125">moveit_cpp.h:125</a></div></div>
 <div class="ttc" id="aconsole__colors_8h_html"><div class="ttname"><a href="console__colors_8h.html">console_colors.h</a></div></div>
 <div class="ttc" id="aconsole__colors_8h_html_a0f646276ce8f87d71714512be38161d4"><div class="ttname"><a href="console__colors_8h.html#a0f646276ce8f87d71714512be38161d4">MOVEIT_CONSOLE_COLOR_BLUE</a></div><div class="ttdeci">#define MOVEIT_CONSOLE_COLOR_BLUE</div><div class="ttdef"><b>Definition:</b> <a href="console__colors_8h_source.html#l00045">console_colors.h:45</a></div></div>
 <div class="ttc" id="aplanning__scene__monitor_8h_html"><div class="ttname"><a href="planning__scene__monitor_8h.html">planning_scene_monitor.h</a></div></div>
 <div class="ttc" id="anamespacemove__group_html"><div class="ttname"><a href="namespacemove__group.html">move_group</a></div><div class="ttdef"><b>Definition:</b> <a href="moveit__ros_2manipulation_2move__group__pick__place__capability_2include_2moveit_2move__group__p1b056d628d05eb4e49371d3e49c40101_source.html#l00041">capability_names.h:41</a></div></div>
 <div class="ttc" id="anamespaceplanning__request__adapter_html_af64b3fa8ebc256d9c5133c6c80ade28f"><div class="ttname"><a href="namespaceplanning__request__adapter.html#af64b3fa8ebc256d9c5133c6c80ade28f">planning_request_adapter::LOGGER</a></div><div class="ttdeci">rclcpp::Logger LOGGER</div><div class="ttdef"><b>Definition:</b> <a href="planning__request__adapter_8cpp_source.html#l00078">planning_request_adapter.cpp:78</a></div></div>
-<div class="ttc" id="astructmoveit__cpp_1_1MoveItCpp_1_1Options_html_a1e47ab69986df4bd7cb1923a588d9698"><div class="ttname"><a href="structmoveit__cpp_1_1MoveItCpp_1_1Options.html#a1e47ab69986df4bd7cb1923a588d9698">moveit_cpp::MoveItCpp::Options::planning_pipeline_options</a></div><div class="ttdeci">PlanningPipelineOptions planning_pipeline_options</div><div class="ttdef"><b>Definition:</b> <a href="moveit__cpp_8h_source.html#l00138">moveit_cpp.h:138</a></div></div>
+<div class="ttc" id="astructmoveit__cpp_1_1MoveItCpp_1_1Options_html_a1e47ab69986df4bd7cb1923a588d9698"><div class="ttname"><a href="structmoveit__cpp_1_1MoveItCpp_1_1Options.html#a1e47ab69986df4bd7cb1923a588d9698">moveit_cpp::MoveItCpp::Options::planning_pipeline_options</a></div><div class="ttdeci">PlanningPipelineOptions planning_pipeline_options</div><div class="ttdef"><b>Definition:</b> <a href="moveit__cpp_8h_source.html#l00139">moveit_cpp.h:139</a></div></div>
 <div class="ttc" id="aconsole__colors_8h_html_a4c8b7e5b8c82147a00464e5f2f1599cd"><div class="ttname"><a href="console__colors_8h.html#a4c8b7e5b8c82147a00464e5f2f1599cd">MOVEIT_CONSOLE_COLOR_CYAN</a></div><div class="ttdeci">#define MOVEIT_CONSOLE_COLOR_CYAN</div><div class="ttdef"><b>Definition:</b> <a href="console__colors_8h_source.html#l00047">console_colors.h:47</a></div></div>
 <div class="ttc" id="amoveit__cpp_8h_html"><div class="ttname"><a href="moveit__cpp_8h.html">moveit_cpp.h</a></div></div>
 <div class="ttc" id="atrajectory__execution__manager_8h_html"><div class="ttname"><a href="trajectory__execution__manager_8h.html">trajectory_execution_manager.h</a></div></div>
-<div class="ttc" id="astructmoveit__cpp_1_1MoveItCpp_1_1PlanningPipelineOptions_html_aa6b08105ac6bdf3507cddd166037272b"><div class="ttname"><a href="structmoveit__cpp_1_1MoveItCpp_1_1PlanningPipelineOptions.html#aa6b08105ac6bdf3507cddd166037272b">moveit_cpp::MoveItCpp::PlanningPipelineOptions::parent_namespace</a></div><div class="ttdeci">std::string parent_namespace</div><div class="ttdef"><b>Definition:</b> <a href="moveit__cpp_8h_source.html#l00125">moveit_cpp.h:125</a></div></div>
+<div class="ttc" id="astructmoveit__cpp_1_1MoveItCpp_1_1PlanningPipelineOptions_html_aa6b08105ac6bdf3507cddd166037272b"><div class="ttname"><a href="structmoveit__cpp_1_1MoveItCpp_1_1PlanningPipelineOptions.html#aa6b08105ac6bdf3507cddd166037272b">moveit_cpp::MoveItCpp::PlanningPipelineOptions::parent_namespace</a></div><div class="ttdeci">std::string parent_namespace</div><div class="ttdef"><b>Definition:</b> <a href="moveit__cpp_8h_source.html#l00126">moveit_cpp.h:126</a></div></div>
 <div class="ttc" id="aclassmove__group_1_1MoveGroupExe_html_a246b0c15148b979425fd39a6e8a027ba"><div class="ttname"><a href="classmove__group_1_1MoveGroupExe.html#a246b0c15148b979425fd39a6e8a027ba">move_group::MoveGroupExe::getContext</a></div><div class="ttdeci">MoveGroupContextPtr getContext()</div><div class="ttdef"><b>Definition:</b> <a href="move__group_8cpp_source.html#l00114">move_group.cpp:114</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

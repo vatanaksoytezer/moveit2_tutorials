@@ -79,24 +79,10 @@ $(function() {
 <p>holds function pointers for all the exported functions of ikfast  
  <a href="classikfast_1_1IkFastFunctions.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html">ikfast.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="ikfast_8h_source.html">ikfast.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:aed283615c59d1cf876a7640a7b245a4b"><td class="memItemLeft" align="right" valign="top">typedef bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classikfast_1_1IkFastFunctions.html#aed283615c59d1cf876a7640a7b245a4b">ComputeIkFn</a>) (const T *, const T *, const T *, <a class="el" href="classikfast_1_1IkSolutionListBase.html">IkSolutionListBase</a>&lt; T &gt; &amp;)</td></tr>
-<tr class="separator:aed283615c59d1cf876a7640a7b245a4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64230b13b0cf43660d806a334fa3a304"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classikfast_1_1IkFastFunctions.html#a64230b13b0cf43660d806a334fa3a304">ComputeFkFn</a>) (const T *, T *, T *)</td></tr>
-<tr class="separator:a64230b13b0cf43660d806a334fa3a304"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58ce4fc02928e9474fb07879df050b3d"><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classikfast_1_1IkFastFunctions.html#a58ce4fc02928e9474fb07879df050b3d">GetNumFreeParametersFn</a>) ()</td></tr>
-<tr class="separator:a58ce4fc02928e9474fb07879df050b3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac08677cae4d5c096a210b0748b053b94"><td class="memItemLeft" align="right" valign="top">typedef int *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classikfast_1_1IkFastFunctions.html#ac08677cae4d5c096a210b0748b053b94">GetFreeParametersFn</a>) ()</td></tr>
-<tr class="separator:ac08677cae4d5c096a210b0748b053b94"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c8f833a979943fcd89ab3bbb559ed3c"><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classikfast_1_1IkFastFunctions.html#a1c8f833a979943fcd89ab3bbb559ed3c">GetNumJointsFn</a>) ()</td></tr>
-<tr class="separator:a1c8f833a979943fcd89ab3bbb559ed3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4430676454369afb285aead8a6a4e6c6"><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classikfast_1_1IkFastFunctions.html#a4430676454369afb285aead8a6a4e6c6">GetIkRealSizeFn</a>) ()</td></tr>
-<tr class="separator:a4430676454369afb285aead8a6a4e6c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a913b447c96c988e2df6a55ad5c7223b2"><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classikfast_1_1IkFastFunctions.html#a913b447c96c988e2df6a55ad5c7223b2">GetIkTypeFn</a>) ()</td></tr>
-<tr class="separator:a913b447c96c988e2df6a55ad5c7223b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed283615c59d1cf876a7640a7b245a4b"><td class="memItemLeft" align="right" valign="top">typedef bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classikfast_1_1IkFastFunctions.html#aed283615c59d1cf876a7640a7b245a4b">ComputeIkFn</a>) (const T *, const T *, const T *, <a class="el" href="classikfast_1_1IkSolutionListBase.html">IkSolutionListBase</a>&lt; T &gt; &amp;)</td></tr>
 <tr class="separator:aed283615c59d1cf876a7640a7b245a4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a64230b13b0cf43660d806a334fa3a304"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classikfast_1_1IkFastFunctions.html#a64230b13b0cf43660d806a334fa3a304">ComputeFkFn</a>) (const T *, T *, T *)</td></tr>
@@ -118,17 +104,13 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ae5fdd9b86135849b887ae95f8abdfcee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a811179abadd14264edd35248914e65bd"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classikfast_1_1IkFastFunctions.html#a811179abadd14264edd35248914e65bd">~IkFastFunctions</a> ()</td></tr>
 <tr class="separator:a811179abadd14264edd35248914e65bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5fdd9b86135849b887ae95f8abdfcee"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classikfast_1_1IkFastFunctions.html#ae5fdd9b86135849b887ae95f8abdfcee">IkFastFunctions</a> ()</td></tr>
-<tr class="separator:ae5fdd9b86135849b887ae95f8abdfcee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a811179abadd14264edd35248914e65bd"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classikfast_1_1IkFastFunctions.html#a811179abadd14264edd35248914e65bd">~IkFastFunctions</a> ()</td></tr>
-<tr class="separator:a811179abadd14264edd35248914e65bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a7c1a94f1aa64971231e894c1c43b7653"><td class="memItemLeft" align="right" valign="top">const typedef char *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classikfast_1_1IkFastFunctions.html#a7c1a94f1aa64971231e894c1c43b7653">GetIkFastVersionFn</a> )()</td></tr>
-<tr class="separator:a7c1a94f1aa64971231e894c1c43b7653"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a650bbdef66ea07bc8f46b709d3cb8765"><td class="memItemLeft" align="right" valign="top">const typedef char *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classikfast_1_1IkFastFunctions.html#a650bbdef66ea07bc8f46b709d3cb8765">GetKinematicsHashFn</a> )()</td></tr>
-<tr class="separator:a650bbdef66ea07bc8f46b709d3cb8765"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05300a9e1a8bd541813297150da76fed"><td class="memItemLeft" align="right" valign="top">const typedef char *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classikfast_1_1IkFastFunctions.html#a05300a9e1a8bd541813297150da76fed">GetIkFastVersionFn</a> )()</td></tr>
+<tr class="separator:a05300a9e1a8bd541813297150da76fed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f745b02718dc3945f6f076ead7e5fa9"><td class="memItemLeft" align="right" valign="top">const typedef char *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classikfast_1_1IkFastFunctions.html#a8f745b02718dc3945f6f076ead7e5fa9">GetKinematicsHashFn</a> )()</td></tr>
+<tr class="separator:a8f745b02718dc3945f6f076ead7e5fa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75775a9a8c284f52cb6cc473c434163c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classikfast_1_1IkFastFunctions.html#aed283615c59d1cf876a7640a7b245a4b">ComputeIkFn</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classikfast_1_1IkFastFunctions.html#a75775a9a8c284f52cb6cc473c434163c">_ComputeIk</a></td></tr>
 <tr class="separator:a75775a9a8c284f52cb6cc473c434163c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a30a89afe6314eb86a05c3bd5a1a303"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classikfast_1_1IkFastFunctions.html#a64230b13b0cf43660d806a334fa3a304">ComputeFkFn</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classikfast_1_1IkFastFunctions.html#a5a30a89afe6314eb86a05c3bd5a1a303">_ComputeFk</a></td></tr>
@@ -141,11 +123,11 @@ Public Attributes</h2></td></tr>
 <tr class="separator:aa7aadc4d797b2ecc3811a7887b0b0dfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e0b57e5123af02f5d27c894eac23181"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classikfast_1_1IkFastFunctions.html#a4430676454369afb285aead8a6a4e6c6">GetIkRealSizeFn</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classikfast_1_1IkFastFunctions.html#a6e0b57e5123af02f5d27c894eac23181">_GetIkRealSize</a></td></tr>
 <tr class="separator:a6e0b57e5123af02f5d27c894eac23181"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1deac46b905d3d6fa2186e4fb52a75a4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classikfast_1_1IkFastFunctions.html#a7c1a94f1aa64971231e894c1c43b7653">GetIkFastVersionFn</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classikfast_1_1IkFastFunctions.html#a1deac46b905d3d6fa2186e4fb52a75a4">_GetIkFastVersion</a></td></tr>
+<tr class="memitem:a1deac46b905d3d6fa2186e4fb52a75a4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classikfast_1_1IkFastFunctions.html#a05300a9e1a8bd541813297150da76fed">GetIkFastVersionFn</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classikfast_1_1IkFastFunctions.html#a1deac46b905d3d6fa2186e4fb52a75a4">_GetIkFastVersion</a></td></tr>
 <tr class="separator:a1deac46b905d3d6fa2186e4fb52a75a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22b3424efa52b1c611ad6ec426259aca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classikfast_1_1IkFastFunctions.html#a913b447c96c988e2df6a55ad5c7223b2">GetIkTypeFn</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classikfast_1_1IkFastFunctions.html#a22b3424efa52b1c611ad6ec426259aca">_GetIkType</a></td></tr>
 <tr class="separator:a22b3424efa52b1c611ad6ec426259aca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a838b34f459abceb7b0f537ad3d4f834b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classikfast_1_1IkFastFunctions.html#a650bbdef66ea07bc8f46b709d3cb8765">GetKinematicsHashFn</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classikfast_1_1IkFastFunctions.html#a838b34f459abceb7b0f537ad3d4f834b">_GetKinematicsHash</a></td></tr>
+<tr class="memitem:a838b34f459abceb7b0f537ad3d4f834b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classikfast_1_1IkFastFunctions.html#a8f745b02718dc3945f6f076ead7e5fa9">GetKinematicsHashFn</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classikfast_1_1IkFastFunctions.html#a838b34f459abceb7b0f537ad3d4f834b">_GetKinematicsHash</a></td></tr>
 <tr class="separator:a838b34f459abceb7b0f537ad3d4f834b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -154,10 +136,10 @@ class ikfast::IkFastFunctions&lt; T &gt;</h3>
 
 <p>holds function pointers for all the exported functions of ikfast </p>
 
-<p class="definition">Definition at line <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html#l00130">130</a> of file <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html">ikfast.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ikfast_8h_source.html#l00127">127</a> of file <a class="el" href="ikfast_8h_source.html">ikfast.h</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a64230b13b0cf43660d806a334fa3a304"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a64230b13b0cf43660d806a334fa3a304">&#9670;&nbsp;</a></span>ComputeFkFn <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a64230b13b0cf43660d806a334fa3a304">&#9670;&nbsp;</a></span>ComputeFkFn</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -170,30 +152,12 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="moveit__planners_2test__configs_2prbt__ikfast__manipulator__plugin_2include_2ikfast_8h_source.html#l00147">147</a> of file <a class="el" href="moveit__planners_2test__configs_2prbt__ikfast__manipulator__plugin_2include_2ikfast_8h_source.html">ikfast.h</a>.</p>
-
-</div>
-</div>
-<a id="a64230b13b0cf43660d806a334fa3a304"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a64230b13b0cf43660d806a334fa3a304">&#9670;&nbsp;</a></span>ComputeFkFn <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef void(* <a class="el" href="classikfast_1_1IkFastFunctions.html">ikfast::IkFastFunctions</a>&lt; T &gt;::ComputeFkFn) (const T *, T *, T *)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html#l00150">150</a> of file <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html">ikfast.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ikfast_8h_source.html#l00147">147</a> of file <a class="el" href="ikfast_8h_source.html">ikfast.h</a>.</p>
 
 </div>
 </div>
 <a id="aed283615c59d1cf876a7640a7b245a4b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aed283615c59d1cf876a7640a7b245a4b">&#9670;&nbsp;</a></span>ComputeIkFn <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aed283615c59d1cf876a7640a7b245a4b">&#9670;&nbsp;</a></span>ComputeIkFn</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -206,30 +170,12 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="moveit__planners_2test__configs_2prbt__ikfast__manipulator__plugin_2include_2ikfast_8h_source.html#l00145">145</a> of file <a class="el" href="moveit__planners_2test__configs_2prbt__ikfast__manipulator__plugin_2include_2ikfast_8h_source.html">ikfast.h</a>.</p>
-
-</div>
-</div>
-<a id="aed283615c59d1cf876a7640a7b245a4b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aed283615c59d1cf876a7640a7b245a4b">&#9670;&nbsp;</a></span>ComputeIkFn <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef bool(* <a class="el" href="classikfast_1_1IkFastFunctions.html">ikfast::IkFastFunctions</a>&lt; T &gt;::ComputeIkFn) (const T *, const T *, const T *, <a class="el" href="classikfast_1_1IkSolutionListBase.html">IkSolutionListBase</a>&lt; T &gt; &amp;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html#l00148">148</a> of file <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html">ikfast.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ikfast_8h_source.html#l00145">145</a> of file <a class="el" href="ikfast_8h_source.html">ikfast.h</a>.</p>
 
 </div>
 </div>
 <a id="ac08677cae4d5c096a210b0748b053b94"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac08677cae4d5c096a210b0748b053b94">&#9670;&nbsp;</a></span>GetFreeParametersFn <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac08677cae4d5c096a210b0748b053b94">&#9670;&nbsp;</a></span>GetFreeParametersFn</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -242,30 +188,12 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="moveit__planners_2test__configs_2prbt__ikfast__manipulator__plugin_2include_2ikfast_8h_source.html#l00151">151</a> of file <a class="el" href="moveit__planners_2test__configs_2prbt__ikfast__manipulator__plugin_2include_2ikfast_8h_source.html">ikfast.h</a>.</p>
-
-</div>
-</div>
-<a id="ac08677cae4d5c096a210b0748b053b94"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac08677cae4d5c096a210b0748b053b94">&#9670;&nbsp;</a></span>GetFreeParametersFn <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef int*(* <a class="el" href="classikfast_1_1IkFastFunctions.html">ikfast::IkFastFunctions</a>&lt; T &gt;::GetFreeParametersFn) ()</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html#l00154">154</a> of file <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html">ikfast.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ikfast_8h_source.html#l00151">151</a> of file <a class="el" href="ikfast_8h_source.html">ikfast.h</a>.</p>
 
 </div>
 </div>
 <a id="a4430676454369afb285aead8a6a4e6c6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4430676454369afb285aead8a6a4e6c6">&#9670;&nbsp;</a></span>GetIkRealSizeFn <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4430676454369afb285aead8a6a4e6c6">&#9670;&nbsp;</a></span>GetIkRealSizeFn</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -278,30 +206,12 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="moveit__planners_2test__configs_2prbt__ikfast__manipulator__plugin_2include_2ikfast_8h_source.html#l00155">155</a> of file <a class="el" href="moveit__planners_2test__configs_2prbt__ikfast__manipulator__plugin_2include_2ikfast_8h_source.html">ikfast.h</a>.</p>
-
-</div>
-</div>
-<a id="a4430676454369afb285aead8a6a4e6c6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4430676454369afb285aead8a6a4e6c6">&#9670;&nbsp;</a></span>GetIkRealSizeFn <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef int(* <a class="el" href="classikfast_1_1IkFastFunctions.html">ikfast::IkFastFunctions</a>&lt; T &gt;::GetIkRealSizeFn) ()</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html#l00158">158</a> of file <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html">ikfast.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ikfast_8h_source.html#l00155">155</a> of file <a class="el" href="ikfast_8h_source.html">ikfast.h</a>.</p>
 
 </div>
 </div>
 <a id="a913b447c96c988e2df6a55ad5c7223b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a913b447c96c988e2df6a55ad5c7223b2">&#9670;&nbsp;</a></span>GetIkTypeFn <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a913b447c96c988e2df6a55ad5c7223b2">&#9670;&nbsp;</a></span>GetIkTypeFn</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -314,30 +224,12 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="moveit__planners_2test__configs_2prbt__ikfast__manipulator__plugin_2include_2ikfast_8h_source.html#l00159">159</a> of file <a class="el" href="moveit__planners_2test__configs_2prbt__ikfast__manipulator__plugin_2include_2ikfast_8h_source.html">ikfast.h</a>.</p>
-
-</div>
-</div>
-<a id="a913b447c96c988e2df6a55ad5c7223b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a913b447c96c988e2df6a55ad5c7223b2">&#9670;&nbsp;</a></span>GetIkTypeFn <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef int(* <a class="el" href="classikfast_1_1IkFastFunctions.html">ikfast::IkFastFunctions</a>&lt; T &gt;::GetIkTypeFn) ()</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html#l00162">162</a> of file <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html">ikfast.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ikfast_8h_source.html#l00159">159</a> of file <a class="el" href="ikfast_8h_source.html">ikfast.h</a>.</p>
 
 </div>
 </div>
 <a id="a58ce4fc02928e9474fb07879df050b3d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a58ce4fc02928e9474fb07879df050b3d">&#9670;&nbsp;</a></span>GetNumFreeParametersFn <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a58ce4fc02928e9474fb07879df050b3d">&#9670;&nbsp;</a></span>GetNumFreeParametersFn</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -350,30 +242,12 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="moveit__planners_2test__configs_2prbt__ikfast__manipulator__plugin_2include_2ikfast_8h_source.html#l00149">149</a> of file <a class="el" href="moveit__planners_2test__configs_2prbt__ikfast__manipulator__plugin_2include_2ikfast_8h_source.html">ikfast.h</a>.</p>
-
-</div>
-</div>
-<a id="a58ce4fc02928e9474fb07879df050b3d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a58ce4fc02928e9474fb07879df050b3d">&#9670;&nbsp;</a></span>GetNumFreeParametersFn <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef int(* <a class="el" href="classikfast_1_1IkFastFunctions.html">ikfast::IkFastFunctions</a>&lt; T &gt;::GetNumFreeParametersFn) ()</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html#l00152">152</a> of file <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html">ikfast.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ikfast_8h_source.html#l00149">149</a> of file <a class="el" href="ikfast_8h_source.html">ikfast.h</a>.</p>
 
 </div>
 </div>
 <a id="a1c8f833a979943fcd89ab3bbb559ed3c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1c8f833a979943fcd89ab3bbb559ed3c">&#9670;&nbsp;</a></span>GetNumJointsFn <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c8f833a979943fcd89ab3bbb559ed3c">&#9670;&nbsp;</a></span>GetNumJointsFn</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -386,31 +260,13 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="moveit__planners_2test__configs_2prbt__ikfast__manipulator__plugin_2include_2ikfast_8h_source.html#l00153">153</a> of file <a class="el" href="moveit__planners_2test__configs_2prbt__ikfast__manipulator__plugin_2include_2ikfast_8h_source.html">ikfast.h</a>.</p>
-
-</div>
-</div>
-<a id="a1c8f833a979943fcd89ab3bbb559ed3c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1c8f833a979943fcd89ab3bbb559ed3c">&#9670;&nbsp;</a></span>GetNumJointsFn <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef int(* <a class="el" href="classikfast_1_1IkFastFunctions.html">ikfast::IkFastFunctions</a>&lt; T &gt;::GetNumJointsFn) ()</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html#l00156">156</a> of file <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html">ikfast.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ikfast_8h_source.html#l00153">153</a> of file <a class="el" href="ikfast_8h_source.html">ikfast.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ae5fdd9b86135849b887ae95f8abdfcee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae5fdd9b86135849b887ae95f8abdfcee">&#9670;&nbsp;</a></span>IkFastFunctions() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5fdd9b86135849b887ae95f8abdfcee">&#9670;&nbsp;</a></span>IkFastFunctions()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -434,12 +290,12 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html#l00133">133</a> of file <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html">ikfast.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ikfast_8h_source.html#l00130">130</a> of file <a class="el" href="ikfast_8h_source.html">ikfast.h</a>.</p>
 
 </div>
 </div>
 <a id="a811179abadd14264edd35248914e65bd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a811179abadd14264edd35248914e65bd">&#9670;&nbsp;</a></span>~IkFastFunctions() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a811179abadd14264edd35248914e65bd">&#9670;&nbsp;</a></span>~IkFastFunctions()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -463,65 +319,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html#l00145">145</a> of file <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html">ikfast.h</a>.</p>
-
-</div>
-</div>
-<a id="ae5fdd9b86135849b887ae95f8abdfcee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae5fdd9b86135849b887ae95f8abdfcee">&#9670;&nbsp;</a></span>IkFastFunctions() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classikfast_1_1IkFastFunctions.html">ikfast::IkFastFunctions</a>&lt; T &gt;::<a class="el" href="classikfast_1_1IkFastFunctions.html">IkFastFunctions</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="moveit__planners_2test__configs_2prbt__ikfast__manipulator__plugin_2include_2ikfast_8h_source.html#l00130">130</a> of file <a class="el" href="moveit__planners_2test__configs_2prbt__ikfast__manipulator__plugin_2include_2ikfast_8h_source.html">ikfast.h</a>.</p>
-
-</div>
-</div>
-<a id="a811179abadd14264edd35248914e65bd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a811179abadd14264edd35248914e65bd">&#9670;&nbsp;</a></span>~IkFastFunctions() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual <a class="el" href="classikfast_1_1IkFastFunctions.html">ikfast::IkFastFunctions</a>&lt; T &gt;::~<a class="el" href="classikfast_1_1IkFastFunctions.html">IkFastFunctions</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="moveit__planners_2test__configs_2prbt__ikfast__manipulator__plugin_2include_2ikfast_8h_source.html#l00142">142</a> of file <a class="el" href="moveit__planners_2test__configs_2prbt__ikfast__manipulator__plugin_2include_2ikfast_8h_source.html">ikfast.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ikfast_8h_source.html#l00142">142</a> of file <a class="el" href="ikfast_8h_source.html">ikfast.h</a>.</p>
 
 </div>
 </div>
@@ -540,7 +338,7 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html#l00151">151</a> of file <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html">ikfast.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ikfast_8h_source.html#l00148">148</a> of file <a class="el" href="ikfast_8h_source.html">ikfast.h</a>.</p>
 
 </div>
 </div>
@@ -558,7 +356,7 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html#l00149">149</a> of file <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html">ikfast.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ikfast_8h_source.html#l00146">146</a> of file <a class="el" href="ikfast_8h_source.html">ikfast.h</a>.</p>
 
 </div>
 </div>
@@ -576,7 +374,7 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html#l00155">155</a> of file <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html">ikfast.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ikfast_8h_source.html#l00152">152</a> of file <a class="el" href="ikfast_8h_source.html">ikfast.h</a>.</p>
 
 </div>
 </div>
@@ -589,12 +387,12 @@ template&lt;typename T &gt; </div>
 template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classikfast_1_1IkFastFunctions.html#a7c1a94f1aa64971231e894c1c43b7653">GetIkFastVersionFn</a> <a class="el" href="classikfast_1_1IkFastFunctions.html">ikfast::IkFastFunctions</a>&lt; T &gt;::_GetIkFastVersion</td>
+          <td class="memname"><a class="el" href="classikfast_1_1IkFastFunctions.html#a05300a9e1a8bd541813297150da76fed">GetIkFastVersionFn</a> <a class="el" href="classikfast_1_1IkFastFunctions.html">ikfast::IkFastFunctions</a>&lt; T &gt;::_GetIkFastVersion</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html#l00161">161</a> of file <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html">ikfast.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ikfast_8h_source.html#l00158">158</a> of file <a class="el" href="ikfast_8h_source.html">ikfast.h</a>.</p>
 
 </div>
 </div>
@@ -612,7 +410,7 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html#l00159">159</a> of file <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html">ikfast.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ikfast_8h_source.html#l00156">156</a> of file <a class="el" href="ikfast_8h_source.html">ikfast.h</a>.</p>
 
 </div>
 </div>
@@ -630,7 +428,7 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html#l00163">163</a> of file <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html">ikfast.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ikfast_8h_source.html#l00160">160</a> of file <a class="el" href="ikfast_8h_source.html">ikfast.h</a>.</p>
 
 </div>
 </div>
@@ -643,12 +441,12 @@ template&lt;typename T &gt; </div>
 template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classikfast_1_1IkFastFunctions.html#a650bbdef66ea07bc8f46b709d3cb8765">GetKinematicsHashFn</a> <a class="el" href="classikfast_1_1IkFastFunctions.html">ikfast::IkFastFunctions</a>&lt; T &gt;::_GetKinematicsHash</td>
+          <td class="memname"><a class="el" href="classikfast_1_1IkFastFunctions.html#a8f745b02718dc3945f6f076ead7e5fa9">GetKinematicsHashFn</a> <a class="el" href="classikfast_1_1IkFastFunctions.html">ikfast::IkFastFunctions</a>&lt; T &gt;::_GetKinematicsHash</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html#l00165">165</a> of file <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html">ikfast.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ikfast_8h_source.html#l00162">162</a> of file <a class="el" href="ikfast_8h_source.html">ikfast.h</a>.</p>
 
 </div>
 </div>
@@ -666,7 +464,7 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html#l00153">153</a> of file <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html">ikfast.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ikfast_8h_source.html#l00150">150</a> of file <a class="el" href="ikfast_8h_source.html">ikfast.h</a>.</p>
 
 </div>
 </div>
@@ -684,12 +482,12 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html#l00157">157</a> of file <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html">ikfast.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ikfast_8h_source.html#l00154">154</a> of file <a class="el" href="ikfast_8h_source.html">ikfast.h</a>.</p>
 
 </div>
 </div>
-<a id="a7c1a94f1aa64971231e894c1c43b7653"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7c1a94f1aa64971231e894c1c43b7653">&#9670;&nbsp;</a></span>GetIkFastVersionFn</h2>
+<a id="a05300a9e1a8bd541813297150da76fed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05300a9e1a8bd541813297150da76fed">&#9670;&nbsp;</a></span>GetIkFastVersionFn</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -697,17 +495,17 @@ template&lt;typename T &gt; </div>
 template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">const typedef char *(* <a class="el" href="classikfast_1_1IkFastFunctions.html">ikfast::IkFastFunctions</a>&lt; T &gt;::GetIkFastVersionFn)()</td>
+          <td class="memname">const typedef char*(* <a class="el" href="classikfast_1_1IkFastFunctions.html">ikfast::IkFastFunctions</a>&lt; T &gt;::GetIkFastVersionFn) ()</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html#l00160">160</a> of file <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html">ikfast.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ikfast_8h_source.html#l00157">157</a> of file <a class="el" href="ikfast_8h_source.html">ikfast.h</a>.</p>
 
 </div>
 </div>
-<a id="a650bbdef66ea07bc8f46b709d3cb8765"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a650bbdef66ea07bc8f46b709d3cb8765">&#9670;&nbsp;</a></span>GetKinematicsHashFn</h2>
+<a id="a8f745b02718dc3945f6f076ead7e5fa9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f745b02718dc3945f6f076ead7e5fa9">&#9670;&nbsp;</a></span>GetKinematicsHashFn</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -715,17 +513,17 @@ template&lt;typename T &gt; </div>
 template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">const typedef char *(* <a class="el" href="classikfast_1_1IkFastFunctions.html">ikfast::IkFastFunctions</a>&lt; T &gt;::GetKinematicsHashFn)()</td>
+          <td class="memname">const typedef char*(* <a class="el" href="classikfast_1_1IkFastFunctions.html">ikfast::IkFastFunctions</a>&lt; T &gt;::GetKinematicsHashFn) ()</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html#l00164">164</a> of file <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html">ikfast.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ikfast_8h_source.html#l00161">161</a> of file <a class="el" href="ikfast_8h_source.html">ikfast.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>moveit2/moveit_kinematics/ikfast_kinematics_plugin/templates/<a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html">ikfast.h</a></li>
+<li>moveit2/moveit_kinematics/ikfast_kinematics_plugin/templates/<a class="el" href="ikfast_8h_source.html">ikfast.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

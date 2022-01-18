@@ -99,15 +99,17 @@ Protected Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:abe981e1b43df42fa068852425347f645"><td class="memItemLeft" align="right" valign="top">rclcpp::Node::SharedPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJointLimitsAggregator.html#abe981e1b43df42fa068852425347f645">node_</a></td></tr>
-<tr class="separator:abe981e1b43df42fa068852425347f645"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0dbeebc414480beeddb5cc3ba7966365"><td class="memItemLeft" align="right" valign="top">moveit::core::RobotModelConstPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJointLimitsAggregator.html#a0dbeebc414480beeddb5cc3ba7966365">robot_model_</a></td></tr>
-<tr class="separator:a0dbeebc414480beeddb5cc3ba7966365"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7728571c68693927911efe691017347"><td class="memItemLeft" align="right" valign="top">robot_model_loader::RobotModelLoaderPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJointLimitsAggregator.html#aa7728571c68693927911efe691017347">model_loader_</a></td></tr>
+<tr class="memdesc:aa7728571c68693927911efe691017347"><td class="mdescLeft">&#160;</td><td class="mdescRight">The robot model loader.  <a href="classJointLimitsAggregator.html#aa7728571c68693927911efe691017347">More...</a><br /></td></tr>
+<tr class="separator:aa7728571c68693927911efe691017347"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dc3a579a51d6203fc11dffe7f4f4aeb"><td class="memItemLeft" align="right" valign="top">robot_model::RobotModelConstPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJointLimitsAggregator.html#a2dc3a579a51d6203fc11dffe7f4f4aeb">robot_model_</a></td></tr>
+<tr class="memdesc:a2dc3a579a51d6203fc11dffe7f4f4aeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">The robot model.  <a href="classJointLimitsAggregator.html#a2dc3a579a51d6203fc11dffe7f4f4aeb">More...</a><br /></td></tr>
+<tr class="separator:a2dc3a579a51d6203fc11dffe7f4f4aeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Unittest of the <a class="el" href="classJointLimitsAggregator.html" title="Unittest of the JointLimitsAggregator class.">JointLimitsAggregator</a> class. </p>
 
-<p class="definition">Definition at line <a class="el" href="unittest__joint__limits__aggregator_8cpp_source.html#l00049">49</a> of file <a class="el" href="unittest__joint__limits__aggregator_8cpp_source.html">unittest_joint_limits_aggregator.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__joint__limits__aggregator_8cpp_source.html#l00047">47</a> of file <a class="el" href="unittest__joint__limits__aggregator_8cpp_source.html">unittest_joint_limits_aggregator.cpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a6e1ed238fab265dc4bc02d2dbb170d8d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6e1ed238fab265dc4bc02d2dbb170d8d">&#9670;&nbsp;</a></span>SetUp()</h2>
@@ -132,13 +134,13 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="unittest__joint__limits__aggregator_8cpp_source.html#l00084">84</a> of file <a class="el" href="unittest__joint__limits__aggregator_8cpp_source.html">unittest_joint_limits_aggregator.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__joint__limits__aggregator_8cpp_source.html#l00082">82</a> of file <a class="el" href="unittest__joint__limits__aggregator_8cpp_source.html">unittest_joint_limits_aggregator.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="abe981e1b43df42fa068852425347f645"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abe981e1b43df42fa068852425347f645">&#9670;&nbsp;</a></span>node_</h2>
+<a id="aa7728571c68693927911efe691017347"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7728571c68693927911efe691017347">&#9670;&nbsp;</a></span>model_loader_</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -147,7 +149,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">rclcpp::Node::SharedPtr JointLimitsAggregator::node_</td>
+          <td class="memname">robot_model_loader::RobotModelLoaderPtr JointLimitsAggregator::model_loader_</td>
         </tr>
       </table>
   </td>
@@ -157,12 +159,14 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="unittest__joint__limits__aggregator_8cpp_source.html#l00097">97</a> of file <a class="el" href="unittest__joint__limits__aggregator_8cpp_source.html">unittest_joint_limits_aggregator.cpp</a>.</p>
+<p>The robot model loader. </p>
+
+<p class="definition">Definition at line <a class="el" href="unittest__joint__limits__aggregator_8cpp_source.html#l00095">95</a> of file <a class="el" href="unittest__joint__limits__aggregator_8cpp_source.html">unittest_joint_limits_aggregator.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a0dbeebc414480beeddb5cc3ba7966365"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0dbeebc414480beeddb5cc3ba7966365">&#9670;&nbsp;</a></span>robot_model_</h2>
+<a id="a2dc3a579a51d6203fc11dffe7f4f4aeb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dc3a579a51d6203fc11dffe7f4f4aeb">&#9670;&nbsp;</a></span>robot_model_</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -171,7 +175,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">moveit::core::RobotModelConstPtr JointLimitsAggregator::robot_model_</td>
+          <td class="memname">robot_model::RobotModelConstPtr JointLimitsAggregator::robot_model_</td>
         </tr>
       </table>
   </td>
@@ -180,13 +184,15 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The robot model. </p>
 
 <p class="definition">Definition at line <a class="el" href="unittest__joint__limits__aggregator_8cpp_source.html#l00098">98</a> of file <a class="el" href="unittest__joint__limits__aggregator_8cpp_source.html">unittest_joint_limits_aggregator.cpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>moveit2/moveit_planners/pilz_industrial_motion_planner/test/unit_tests/src/<a class="el" href="unittest__joint__limits__aggregator_8cpp_source.html">unittest_joint_limits_aggregator.cpp</a></li>
+<li>moveit2/moveit_planners/pilz_industrial_motion_planner/test/<a class="el" href="unittest__joint__limits__aggregator_8cpp_source.html">unittest_joint_limits_aggregator.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

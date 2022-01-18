@@ -117,11 +117,11 @@ $(function() {
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    pluginlib::ClassLoader&lt;move_group::MoveGroupCapability&gt; capability_plugin_loader(<span class="stringliteral">&quot;moveit_ros_move_group&quot;</span>,</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                                                                                     <span class="stringliteral">&quot;move_group::MoveGroupCapability&quot;</span>);</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Available capabilities:\n&quot;</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;              &lt;&lt; boost::algorithm::join(capability_plugin_loader.getDeclaredClasses(), <span class="stringliteral">&quot;\n&quot;</span>) &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;              &lt;&lt; boost::algorithm::join(capability_plugin_loader.getDeclaredClasses(), <span class="stringliteral">&quot;\n&quot;</span>) &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  }</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordflow">catch</span> (pluginlib::PluginlibException&amp; ex)</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    std::cerr &lt;&lt; <span class="stringliteral">&quot;Exception while creating plugin loader for move_group capabilities: &quot;</span> &lt;&lt; ex.what() &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    std::cerr &lt;&lt; <span class="stringliteral">&quot;Exception while creating plugin loader for move_group capabilities: &quot;</span> &lt;&lt; ex.what() &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  }</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordflow">return</span> 0;</div>

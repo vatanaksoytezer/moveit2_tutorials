@@ -125,48 +125,47 @@ $(function() {
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                              <span class="keyword">const</span> std::string&amp; kinematics_solver_name, <span class="keyword">const</span> std::string&amp; group_name,</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                              <span class="keyword">const</span> std::string&amp; base_frame, <span class="keyword">const</span> std::string&amp; tip_frame, <span class="keywordtype">double</span> search_discretization)</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  kinematics_loader_ =</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      std::make_shared&lt;pluginlib::ClassLoader&lt;kinematics::KinematicsBase&gt;&gt;(<span class="stringliteral">&quot;kinematics_base&quot;</span>, <span class="stringliteral">&quot;kinematics::&quot;</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                                                                              <span class="stringliteral">&quot;KinematicsBase&quot;</span>);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordflow">try</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    kinematics_solver_ = kinematics_loader_-&gt;createClassInstance(kinematics_solver_name);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordflow">catch</span> (pluginlib::PluginlibException&amp; ex)  <span class="comment">// handle the class failing to load</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    ROS_ERROR(<span class="stringliteral">&quot;The plugin failed to load. Error: %s&quot;</span>, ex.what());</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordflow">if</span> (!kinematics_solver_-&gt;<a class="code" href="classkinematics_1_1KinematicsBase.html#a8097b63569cba39c6b5e4b29e8c6bd82">initialize</a>(group_name, base_frame, tip_frame, search_discretization))</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    ROS_ERROR(<span class="stringliteral">&quot;Could not initialize solver&quot;</span>);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <a class="code" href="classrdf__loader_1_1RDFLoader.html">rdf_loader::RDFLoader</a> <a class="code" href="namespacerdf__loader.html">rdf_loader</a>;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keyword">const</span> srdf::ModelSharedPtr&amp; srdf = <a class="code" href="namespacerdf__loader.html">rdf_loader</a>.getSRDF();</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keyword">const</span> urdf::ModelInterfaceSharedPtr&amp; urdf_model = <a class="code" href="namespacerdf__loader.html">rdf_loader</a>.getURDF();</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  kinematic_model_ = std::make_shared&lt;planning_models::RobotModel&gt;(urdf_model, srdf);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keywordflow">if</span> (!<a class="code" href="classkinematics__cache_1_1KinematicsCache.html#a3fb3f00c24cb8d1a8ba1ec1e54d38e4b">initialize</a>((kinematics::KinematicsBaseConstPtr&amp;)kinematics_solver_,</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                  (planning_models::RobotModelConstPtr&amp;)kinematic_model_, <a class="code" href="namespacemoveit__commander__cmdline.html#a76b84183c3f688c8a62245eac9b3d26c">opt</a>))</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  }</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="classkinematics__cache__ros_1_1KinematicsCacheROS.html#adaad7fb176ba75d5c6de69a76a6a6173">   87</a></span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}  <span class="comment">// namespace kinematics_cache_ros</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  kinematics_loader_.reset(<span class="keyword">new</span> pluginlib::ClassLoader&lt;kinematics::KinematicsBase&gt;(<span class="stringliteral">&quot;kinematics_base&quot;</span>, <span class="stringliteral">&quot;kinematics::&quot;</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                                                                                     <span class="stringliteral">&quot;KinematicsBase&quot;</span>));</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordflow">try</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    kinematics_solver_ = kinematics_loader_-&gt;createClassInstance(kinematics_solver_name);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keywordflow">catch</span> (pluginlib::PluginlibException&amp; ex)  <span class="comment">// handle the class failing to load</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    ROS_ERROR(<span class="stringliteral">&quot;The plugin failed to load. Error: %s&quot;</span>, ex.what());</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordflow">if</span> (!kinematics_solver_-&gt;<a class="code" href="classkinematics_1_1KinematicsBase.html#a8097b63569cba39c6b5e4b29e8c6bd82">initialize</a>(group_name, base_frame, tip_frame, search_discretization))</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    ROS_ERROR(<span class="stringliteral">&quot;Could not initialize solver&quot;</span>);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <a class="code" href="classrdf__loader_1_1RDFLoader.html">rdf_loader::RDFLoader</a> <a class="code" href="namespacerdf__loader.html">rdf_loader</a>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keyword">const</span> srdf::ModelSharedPtr&amp; srdf = <a class="code" href="namespacerdf__loader.html">rdf_loader</a>.getSRDF();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keyword">const</span> urdf::ModelInterfaceSharedPtr&amp; urdf_model = <a class="code" href="namespacerdf__loader.html">rdf_loader</a>.getURDF();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  kinematic_model_.reset(<span class="keyword">new</span> planning_models::RobotModel(urdf_model, srdf));</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keywordflow">if</span> (!<a class="code" href="classkinematics__cache_1_1KinematicsCache.html#a3fb3f00c24cb8d1a8ba1ec1e54d38e4b">initialize</a>((kinematics::KinematicsBaseConstPtr&amp;)kinematics_solver_,</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                  (planning_models::RobotModelConstPtr&amp;)kinematic_model_, <a class="code" href="namespacemoveit__commander__cmdline.html#a76b84183c3f688c8a62245eac9b3d26c">opt</a>))</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="classkinematics__cache__ros_1_1KinematicsCacheROS.html#adaad7fb176ba75d5c6de69a76a6a6173">   87</a></span>&#160;}</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}  <span class="comment">// namespace kinematics_cache_ros</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclasskinematics__cache_1_1KinematicsCache_html_a3fb3f00c24cb8d1a8ba1ec1e54d38e4b"><div class="ttname"><a href="classkinematics__cache_1_1KinematicsCache.html#a3fb3f00c24cb8d1a8ba1ec1e54d38e4b">kinematics_cache::KinematicsCache::initialize</a></div><div class="ttdeci">bool initialize(kinematics::KinematicsBaseConstPtr &amp;solver, const planning_models::RobotModelConstPtr &amp;kinematic_model, const KinematicsCache::Options &amp;opt)</div><div class="ttdoc">Initialize the cache class.</div><div class="ttdef"><b>Definition:</b> <a href="v1_2kinematics__cache_2src_2kinematics__cache_8cpp_source.html#l00083">kinematics_cache.cpp:83</a></div></div>
 <div class="ttc" id="astructkinematics__cache_1_1KinematicsCache_1_1Options_html"><div class="ttname"><a href="structkinematics__cache_1_1KinematicsCache_1_1Options.html">kinematics_cache::KinematicsCache::Options</a></div><div class="ttdef"><b>Definition:</b> <a href="v1_2kinematics__cache_2include_2kinematics__cache_2kinematics__cache_8h_source.html#l00121">kinematics_cache.h:121</a></div></div>
 <div class="ttc" id="anamespacemoveit__commander__cmdline_html_a76b84183c3f688c8a62245eac9b3d26c"><div class="ttname"><a href="namespacemoveit__commander__cmdline.html#a76b84183c3f688c8a62245eac9b3d26c">moveit_commander_cmdline.opt</a></div><div class="ttdeci">opt</div><div class="ttdef"><b>Definition:</b> <a href="moveit__commander__cmdline_8py_source.html#l00208">moveit_commander_cmdline.py:208</a></div></div>
 <div class="ttc" id="akinematics__cache__ros_8h_html"><div class="ttname"><a href="kinematics__cache__ros_8h.html">kinematics_cache_ros.h</a></div></div>
 <div class="ttc" id="aclasskinematics__cache__ros_1_1KinematicsCacheROS_html_adaad7fb176ba75d5c6de69a76a6a6173"><div class="ttname"><a href="classkinematics__cache__ros_1_1KinematicsCacheROS.html#adaad7fb176ba75d5c6de69a76a6a6173">kinematics_cache_ros::KinematicsCacheROS::init</a></div><div class="ttdeci">bool init(const kinematics_cache::KinematicsCache::Options &amp;opt, const std::string &amp;kinematics_solver_name, const std::string &amp;group_name, const std::string &amp;base_frame, const std::string &amp;tip_frame, double search_discretization)</div><div class="ttdoc">Initialization function.</div><div class="ttdef"><b>Definition:</b> <a href="kinematics__cache__ros_8cpp_source.html#l00087">kinematics_cache_ros.cpp:87</a></div></div>
-<div class="ttc" id="aclassrdf__loader_1_1RDFLoader_html"><div class="ttname"><a href="classrdf__loader_1_1RDFLoader.html">rdf_loader::RDFLoader</a></div><div class="ttdef"><b>Definition:</b> <a href="rdf__loader_8h_source.html#l00085">rdf_loader.h:85</a></div></div>
-<div class="ttc" id="anamespacerdf__loader_html"><div class="ttname"><a href="namespacerdf__loader.html">rdf_loader</a></div><div class="ttdef"><b>Definition:</b> <a href="rdf__loader_8h_source.html#l00045">rdf_loader.h:45</a></div></div>
+<div class="ttc" id="aclassrdf__loader_1_1RDFLoader_html"><div class="ttname"><a href="classrdf__loader_1_1RDFLoader.html">rdf_loader::RDFLoader</a></div><div class="ttdoc">Default constructor.</div><div class="ttdef"><b>Definition:</b> <a href="rdf__loader_8h_source.html#l00083">rdf_loader.h:83</a></div></div>
+<div class="ttc" id="anamespacerdf__loader_html"><div class="ttname"><a href="namespacerdf__loader.html">rdf_loader</a></div><div class="ttdef"><b>Definition:</b> <a href="rdf__loader_8h_source.html#l00044">rdf_loader.h:44</a></div></div>
 <div class="ttc" id="aclasskinematics_1_1KinematicsBase_html_a8097b63569cba39c6b5e4b29e8c6bd82"><div class="ttname"><a href="classkinematics_1_1KinematicsBase.html#a8097b63569cba39c6b5e4b29e8c6bd82">kinematics::KinematicsBase::initialize</a></div><div class="ttdeci">virtual bool initialize(const rclcpp::Node::SharedPtr &amp;node, const moveit::core::RobotModel &amp;robot_model, const std::string &amp;group_name, const std::string &amp;base_frame, const std::vector&lt; std::string &gt; &amp;tip_frames, double search_discretization)</div><div class="ttdoc">Initialization function for the kinematics, for use with kinematic chain IK solvers.</div><div class="ttdef"><b>Definition:</b> <a href="kinematics__base_8cpp_source.html#l00115">kinematics_base.cpp:115</a></div></div>
 <div class="ttc" id="ardf__loader_8h_html"><div class="ttname"><a href="rdf__loader_8h.html">rdf_loader.h</a></div></div>
 <div class="ttc" id="anamespacekinematics__cache__ros_html"><div class="ttname"><a href="namespacekinematics__cache__ros.html">kinematics_cache_ros</a></div><div class="ttdef"><b>Definition:</b> <a href="kinematics__cache__ros_8h_source.html#l00044">kinematics_cache_ros.h:44</a></div></div>

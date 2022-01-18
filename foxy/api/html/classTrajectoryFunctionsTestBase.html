@@ -78,9 +78,10 @@ Inheritance diagram for TrajectoryFunctionsTestBase:</div>
 <div class="dyncontent">
 <div class="center"><img src="classTrajectoryFunctionsTestBase__inherit__graph.png" border="0" usemap="#TrajectoryFunctionsTestBase_inherit__map" alt="Inheritance graph"/></div>
 <map name="TrajectoryFunctionsTestBase_inherit__map" id="TrajectoryFunctionsTestBase_inherit__map">
-<area shape="rect" title="test fixtures base class" alt="" coords="11,80,218,107"/>
-<area shape="rect" href="classTrajectoryFunctionsTestFlangeAndGripper.html" title="Parametrized class for tests with and without gripper." alt="" coords="5,155,224,196"/>
-<area shape="rect" title=" " alt="" coords="91,5,139,32"/>
+<area shape="rect" title="test fixtures base class" alt="" coords="129,95,335,121"/>
+<area shape="rect" href="classTrajectoryFunctionsTestFlangeAndGripper.html" title="Parametrized class for tests with and without gripper." alt="" coords="5,169,224,211"/>
+<area shape="rect" href="classTrajectoryFunctionsTestOnlyGripper.html" title="Parametrized class for tests, that only run with a gripper." alt="" coords="249,169,453,211"/>
+<area shape="rect" title=" " alt="" coords="146,5,318,47"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -88,8 +89,8 @@ Collaboration diagram for TrajectoryFunctionsTestBase:</div>
 <div class="dyncontent">
 <div class="center"><img src="classTrajectoryFunctionsTestBase__coll__graph.png" border="0" usemap="#TrajectoryFunctionsTestBase_coll__map" alt="Collaboration graph"/></div>
 <map name="TrajectoryFunctionsTestBase_coll__map" id="TrajectoryFunctionsTestBase_coll__map">
-<area shape="rect" title="test fixtures base class" alt="" coords="5,80,212,107"/>
-<area shape="rect" title=" " alt="" coords="85,5,133,32"/>
+<area shape="rect" title="test fixtures base class" alt="" coords="5,95,212,121"/>
+<area shape="rect" title=" " alt="" coords="23,5,195,47"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -104,12 +105,10 @@ Protected Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a349a8f0eada9c178502b0c86568284d1"><td class="memItemLeft" align="right" valign="top">rclcpp::Node::SharedPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrajectoryFunctionsTestBase.html#a349a8f0eada9c178502b0c86568284d1">node_</a></td></tr>
-<tr class="separator:a349a8f0eada9c178502b0c86568284d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a96d62807b3ef413710a86e76d1886608"><td class="memItemLeft" align="right" valign="top">moveit::core::RobotModelConstPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrajectoryFunctionsTestBase.html#a96d62807b3ef413710a86e76d1886608">robot_model_</a></td></tr>
-<tr class="separator:a96d62807b3ef413710a86e76d1886608"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2cd3237eaca6aa48fa2a083f43cfe99"><td class="memItemLeft" align="right" valign="top">planning_scene::PlanningSceneConstPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrajectoryFunctionsTestBase.html#ac2cd3237eaca6aa48fa2a083f43cfe99">planning_scene_</a></td></tr>
-<tr class="separator:ac2cd3237eaca6aa48fa2a083f43cfe99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cfcb049e59e19504fb922bd533e3614"><td class="memItemLeft" align="right" valign="top">ros::NodeHandle&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrajectoryFunctionsTestBase.html#a0cfcb049e59e19504fb922bd533e3614">ph_</a> { &quot;~&quot; }</td></tr>
+<tr class="separator:a0cfcb049e59e19504fb922bd533e3614"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca69da9f036724a5eb7312a28dd45317"><td class="memItemLeft" align="right" valign="top">robot_model::RobotModelConstPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrajectoryFunctionsTestBase.html#aca69da9f036724a5eb7312a28dd45317">robot_model_</a> { <a class="el" href="classrobot__model__loader_1_1RobotModelLoader.html">robot_model_loader::RobotModelLoader</a>(GetParam()).getModel() }</td></tr>
+<tr class="separator:aca69da9f036724a5eb7312a28dd45317"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4eb3b7603a9c1e40bfa3aae2ce8e251e"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrajectoryFunctionsTestBase.html#a4eb3b7603a9c1e40bfa3aae2ce8e251e">planning_group_</a></td></tr>
 <tr class="separator:a4eb3b7603a9c1e40bfa3aae2ce8e251e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27afba9311992c4ee7841fbcafe18cb9"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrajectoryFunctionsTestBase.html#a27afba9311992c4ee7841fbcafe18cb9">group_tip_link_</a></td></tr>
@@ -132,7 +131,7 @@ Protected Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>test fixtures base class </p>
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__functions_8cpp_source.html#l00090">90</a> of file <a class="el" href="unittest__trajectory__functions_8cpp_source.html">unittest_trajectory_functions.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__functions_8cpp_source.html#l00086">86</a> of file <a class="el" href="unittest__trajectory__functions_8cpp_source.html">unittest_trajectory_functions.cpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a2200d66e974e12266afd4e792570ca50"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2200d66e974e12266afd4e792570ca50">&#9670;&nbsp;</a></span>SetUp()</h2>
@@ -152,22 +151,26 @@ Protected Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Create test scenario for trajectory functions. </p>
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__functions_8cpp_source.html#l00097">97</a> of file <a class="el" href="unittest__trajectory__functions_8cpp_source.html">unittest_trajectory_functions.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__functions_8cpp_source.html#l00120">120</a> of file <a class="el" href="unittest__trajectory__functions_8cpp_source.html">unittest_trajectory_functions.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classTrajectoryFunctionsTestBase_a2200d66e974e12266afd4e792570ca50_cgraph.png" border="0" usemap="#classTrajectoryFunctionsTestBase_a2200d66e974e12266afd4e792570ca50_cgraph" alt=""/></div>
 <map name="classTrajectoryFunctionsTestBase_a2200d66e974e12266afd4e792570ca50_cgraph" id="classTrajectoryFunctionsTestBase_a2200d66e974e12266afd4e792570ca50_cgraph">
-<area shape="rect" title="Create test scenario for trajectory functions." alt="" coords="5,31,212,73"/>
-<area shape="rect" href="namespacetestutils.html#aee400d4013caab0af4681d89dc96d66c" title=" " alt="" coords="260,5,459,32"/>
-<area shape="rect" href="classrobot__model__loader_1_1RobotModelLoader.html#a40e202c404ae62a984861b273a401fcd" title="Get the constructed planning_models::RobotModel." alt="" coords="279,56,439,112"/>
+<area shape="rect" title="Create test scenario for trajectory functions." alt="" coords="5,125,212,166"/>
+<area shape="rect" href="namespacetestutils.html#aee400d4013caab0af4681d89dc96d66c" title=" " alt="" coords="283,5,481,32"/>
+<area shape="rect" href="unittest__trajectory__functions_8cpp.html#acf2b5c0d2d5dbbb125ecd5ca414ccf90" title=" " alt="" coords="293,56,471,83"/>
+<area shape="rect" href="unittest__trajectory__functions_8cpp.html#a91c670f159bbf8aacc71c608fdf8452e" title=" " alt="" coords="304,107,460,133"/>
+<area shape="rect" href="unittest__trajectory__functions_8cpp.html#a0258d4e48c5d63bd1bb8c56e97bd09af" title=" " alt="" coords="260,157,504,184"/>
+<area shape="rect" href="unittest__trajectory__functions_8cpp.html#a2797d23c11f11cb9f484a5d650f420eb" title=" " alt="" coords="289,208,475,235"/>
+<area shape="rect" href="unittest__trajectory__functions_8cpp.html#aa41cfebdb8cc2010a6e112d9085e39be" title=" " alt="" coords="291,259,473,285"/>
 </map>
 </div>
 
@@ -224,7 +227,7 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__functions_8cpp_source.html#l00158">158</a> of file <a class="el" href="unittest__trajectory__functions_8cpp_source.html">unittest_trajectory_functions.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__functions_8cpp_source.html#l00140">140</a> of file <a class="el" href="unittest__trajectory__functions_8cpp_source.html">unittest_trajectory_functions.cpp</a>.</p>
 
 </div>
 </div>
@@ -249,7 +252,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__functions_8cpp_source.html#l00148">148</a> of file <a class="el" href="unittest__trajectory__functions_8cpp_source.html">unittest_trajectory_functions.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__functions_8cpp_source.html#l00110">110</a> of file <a class="el" href="unittest__trajectory__functions_8cpp_source.html">unittest_trajectory_functions.cpp</a>.</p>
 
 </div>
 </div>
@@ -273,7 +276,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__functions_8cpp_source.html#l00148">148</a> of file <a class="el" href="unittest__trajectory__functions_8cpp_source.html">unittest_trajectory_functions.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__functions_8cpp_source.html#l00110">110</a> of file <a class="el" href="unittest__trajectory__functions_8cpp_source.html">unittest_trajectory_functions.cpp</a>.</p>
 
 </div>
 </div>
@@ -297,12 +300,12 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__functions_8cpp_source.html#l00150">150</a> of file <a class="el" href="unittest__trajectory__functions_8cpp_source.html">unittest_trajectory_functions.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__functions_8cpp_source.html#l00112">112</a> of file <a class="el" href="unittest__trajectory__functions_8cpp_source.html">unittest_trajectory_functions.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a349a8f0eada9c178502b0c86568284d1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a349a8f0eada9c178502b0c86568284d1">&#9670;&nbsp;</a></span>node_</h2>
+<a id="a0cfcb049e59e19504fb922bd533e3614"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cfcb049e59e19504fb922bd533e3614">&#9670;&nbsp;</a></span>ph_</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -311,7 +314,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">rclcpp::Node::SharedPtr TrajectoryFunctionsTestBase::node_</td>
+          <td class="memname">ros::NodeHandle TrajectoryFunctionsTestBase::ph_ { &quot;~&quot; }</td>
         </tr>
       </table>
   </td>
@@ -321,7 +324,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__functions_8cpp_source.html#l00143">143</a> of file <a class="el" href="unittest__trajectory__functions_8cpp_source.html">unittest_trajectory_functions.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__functions_8cpp_source.html#l00106">106</a> of file <a class="el" href="unittest__trajectory__functions_8cpp_source.html">unittest_trajectory_functions.cpp</a>.</p>
 
 </div>
 </div>
@@ -345,31 +348,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__functions_8cpp_source.html#l00148">148</a> of file <a class="el" href="unittest__trajectory__functions_8cpp_source.html">unittest_trajectory_functions.cpp</a>.</p>
-
-</div>
-</div>
-<a id="ac2cd3237eaca6aa48fa2a083f43cfe99"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac2cd3237eaca6aa48fa2a083f43cfe99">&#9670;&nbsp;</a></span>planning_scene_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">planning_scene::PlanningSceneConstPtr TrajectoryFunctionsTestBase::planning_scene_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__functions_8cpp_source.html#l00145">145</a> of file <a class="el" href="unittest__trajectory__functions_8cpp_source.html">unittest_trajectory_functions.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__functions_8cpp_source.html#l00110">110</a> of file <a class="el" href="unittest__trajectory__functions_8cpp_source.html">unittest_trajectory_functions.cpp</a>.</p>
 
 </div>
 </div>
@@ -393,7 +372,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__functions_8cpp_source.html#l00154">154</a> of file <a class="el" href="unittest__trajectory__functions_8cpp_source.html">unittest_trajectory_functions.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__functions_8cpp_source.html#l00116">116</a> of file <a class="el" href="unittest__trajectory__functions_8cpp_source.html">unittest_trajectory_functions.cpp</a>.</p>
 
 </div>
 </div>
@@ -417,7 +396,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__functions_8cpp_source.html#l00149">149</a> of file <a class="el" href="unittest__trajectory__functions_8cpp_source.html">unittest_trajectory_functions.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__functions_8cpp_source.html#l00111">111</a> of file <a class="el" href="unittest__trajectory__functions_8cpp_source.html">unittest_trajectory_functions.cpp</a>.</p>
 
 </div>
 </div>
@@ -441,12 +420,12 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__functions_8cpp_source.html#l00155">155</a> of file <a class="el" href="unittest__trajectory__functions_8cpp_source.html">unittest_trajectory_functions.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__functions_8cpp_source.html#l00117">117</a> of file <a class="el" href="unittest__trajectory__functions_8cpp_source.html">unittest_trajectory_functions.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a96d62807b3ef413710a86e76d1886608"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a96d62807b3ef413710a86e76d1886608">&#9670;&nbsp;</a></span>robot_model_</h2>
+<a id="aca69da9f036724a5eb7312a28dd45317"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca69da9f036724a5eb7312a28dd45317">&#9670;&nbsp;</a></span>robot_model_</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -455,7 +434,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">moveit::core::RobotModelConstPtr TrajectoryFunctionsTestBase::robot_model_</td>
+          <td class="memname">robot_model::RobotModelConstPtr TrajectoryFunctionsTestBase::robot_model_ { <a class="el" href="classrobot__model__loader_1_1RobotModelLoader.html">robot_model_loader::RobotModelLoader</a>(GetParam()).getModel() }</td>
         </tr>
       </table>
   </td>
@@ -465,7 +444,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__functions_8cpp_source.html#l00144">144</a> of file <a class="el" href="unittest__trajectory__functions_8cpp_source.html">unittest_trajectory_functions.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__functions_8cpp_source.html#l00107">107</a> of file <a class="el" href="unittest__trajectory__functions_8cpp_source.html">unittest_trajectory_functions.cpp</a>.</p>
 
 </div>
 </div>
@@ -489,7 +468,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__functions_8cpp_source.html#l00148">148</a> of file <a class="el" href="unittest__trajectory__functions_8cpp_source.html">unittest_trajectory_functions.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__functions_8cpp_source.html#l00110">110</a> of file <a class="el" href="unittest__trajectory__functions_8cpp_source.html">unittest_trajectory_functions.cpp</a>.</p>
 
 </div>
 </div>
@@ -513,12 +492,12 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__functions_8cpp_source.html#l00151">151</a> of file <a class="el" href="unittest__trajectory__functions_8cpp_source.html">unittest_trajectory_functions.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__functions_8cpp_source.html#l00113">113</a> of file <a class="el" href="unittest__trajectory__functions_8cpp_source.html">unittest_trajectory_functions.cpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>moveit2/moveit_planners/pilz_industrial_motion_planner/test/unit_tests/src/<a class="el" href="unittest__trajectory__functions_8cpp_source.html">unittest_trajectory_functions.cpp</a></li>
+<li>moveit2/moveit_planners/pilz_industrial_motion_planner/test/<a class="el" href="unittest__trajectory__functions_8cpp_source.html">unittest_trajectory_functions.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -74,14 +74,14 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p><a class="el" href="classmoveit__ros__control__interface_1_1MoveItMultiControllerManager.html" title="MoveItMultiControllerManager discovers all running ros_control node and delegates member function to ...">MoveItMultiControllerManager</a> discovers all running ros_control node and delegates member function to the corresponding <a class="el" href="classmoveit__ros__control__interface_1_1MoveItControllerManager.html" title="moveit_controller_manager::MoveItControllerManager sub class that interfaces one ros_control controll...">MoveItControllerManager</a> instances.  
+<p><a class="el" href="classmoveit__controller__manager_1_1MoveItControllerManager.html" title="MoveIt does not enforce how controllers are implemented. To make your controllers usable by MoveIt,...">moveit_controller_manager::MoveItControllerManager</a> sub class that interfaces one ros_control controller_manager instance. All services and names are relative to ns_.  
  <a href="classmoveit__ros__control__interface_1_1MoveItMultiControllerManager.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for moveit_ros_control_interface::MoveItMultiControllerManager:</div>
 <div class="dyncontent">
 <div class="center"><img src="classmoveit__ros__control__interface_1_1MoveItMultiControllerManager__inherit__graph.png" border="0" usemap="#moveit__ros__control__interface_1_1MoveItMultiControllerManager_inherit__map" alt="Inheritance graph"/></div>
 <map name="moveit__ros__control__interface_1_1MoveItMultiControllerManager_inherit__map" id="moveit__ros__control__interface_1_1MoveItMultiControllerManager_inherit__map">
-<area shape="rect" title="MoveItMultiControllerManager discovers all running ros_control node and delegates member function to ..." alt="" coords="5,95,243,151"/>
+<area shape="rect" title="moveit_controller_manager::MoveItControllerManager sub class that interfaces one ros_control controll..." alt="" coords="5,95,243,151"/>
 <area shape="rect" href="classmoveit__controller__manager_1_1MoveItControllerManager.html" title="MoveIt does not enforce how controllers are implemented. To make your controllers usable by MoveIt,..." alt="" coords="23,5,225,47"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
@@ -90,7 +90,7 @@ Collaboration diagram for moveit_ros_control_interface::MoveItMultiControllerMan
 <div class="dyncontent">
 <div class="center"><img src="classmoveit__ros__control__interface_1_1MoveItMultiControllerManager__coll__graph.png" border="0" usemap="#moveit__ros__control__interface_1_1MoveItMultiControllerManager_coll__map" alt="Collaboration graph"/></div>
 <map name="moveit__ros__control__interface_1_1MoveItMultiControllerManager_coll__map" id="moveit__ros__control__interface_1_1MoveItMultiControllerManager_coll__map">
-<area shape="rect" title="MoveItMultiControllerManager discovers all running ros_control node and delegates member function to ..." alt="" coords="5,95,243,151"/>
+<area shape="rect" title="moveit_controller_manager::MoveItControllerManager sub class that interfaces one ros_control controll..." alt="" coords="5,95,243,151"/>
 <area shape="rect" href="classmoveit__controller__manager_1_1MoveItControllerManager.html" title="MoveIt does not enforce how controllers are implemented. To make your controllers usable by MoveIt,..." alt="" coords="23,5,225,47"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
@@ -121,11 +121,14 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab217085309a95bc44ea9c1b89e8dd5e3 inherit pub_methods_classmoveit__controller__manager_1_1MoveItControllerManager"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa273cdf29bd9a2b034ffce591ab57e17 inherit pub_methods_classmoveit__controller__manager_1_1MoveItControllerManager"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit__controller__manager_1_1MoveItControllerManager.html#aa273cdf29bd9a2b034ffce591ab57e17">~MoveItControllerManager</a> ()</td></tr>
 <tr class="separator:aa273cdf29bd9a2b034ffce591ab57e17 inherit pub_methods_classmoveit__controller__manager_1_1MoveItControllerManager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9302d1c736db36b8088ab0f324d1a38 inherit pub_methods_classmoveit__controller__manager_1_1MoveItControllerManager"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit__controller__manager_1_1MoveItControllerManager.html#af9302d1c736db36b8088ab0f324d1a38">initialize</a> (const rclcpp::Node::SharedPtr &amp;node)=0</td></tr>
+<tr class="separator:af9302d1c736db36b8088ab0f324d1a38 inherit pub_methods_classmoveit__controller__manager_1_1MoveItControllerManager"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="classmoveit__ros__control__interface_1_1MoveItMultiControllerManager.html" title="MoveItMultiControllerManager discovers all running ros_control node and delegates member function to ...">MoveItMultiControllerManager</a> discovers all running ros_control node and delegates member function to the corresponding <a class="el" href="classmoveit__ros__control__interface_1_1MoveItControllerManager.html" title="moveit_controller_manager::MoveItControllerManager sub class that interfaces one ros_control controll...">MoveItControllerManager</a> instances. </p>
+<div class="textblock"><p><a class="el" href="classmoveit__controller__manager_1_1MoveItControllerManager.html" title="MoveIt does not enforce how controllers are implemented. To make your controllers usable by MoveIt,...">moveit_controller_manager::MoveItControllerManager</a> sub class that interfaces one ros_control controller_manager instance. All services and names are relative to ns_. </p>
+<p><a class="el" href="classmoveit__ros__control__interface_1_1MoveItMultiControllerManager.html" title="moveit_controller_manager::MoveItControllerManager sub class that interfaces one ros_control controll...">MoveItMultiControllerManager</a> discovers all running ros_control node and delegates member function to the corresponding MoveItControllerManager instances </p>
 
-<p class="definition">Definition at line <a class="el" href="controller__manager__plugin_8cpp_source.html#l00428">428</a> of file <a class="el" href="controller__manager__plugin_8cpp_source.html">controller_manager_plugin.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="controller__manager__plugin_8cpp_source.html#l00406">406</a> of file <a class="el" href="controller__manager__plugin_8cpp_source.html">controller_manager_plugin.cpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="aeb4c5c2a7be1d01b19d7f8372e3e4dd3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeb4c5c2a7be1d01b19d7f8372e3e4dd3">&#9670;&nbsp;</a></span>getActiveControllers()</h2>
@@ -161,7 +164,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="classmoveit__controller__manager_1_1MoveItControllerManager.html#a0552af3c5fbccbb402882472bc28cc19">moveit_controller_manager::MoveItControllerManager</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="controller__manager__plugin_8cpp_source.html#l00525">525</a> of file <a class="el" href="controller__manager__plugin_8cpp_source.html">controller_manager_plugin.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="controller__manager__plugin_8cpp_source.html#l00502">502</a> of file <a class="el" href="controller__manager__plugin_8cpp_source.html">controller_manager_plugin.cpp</a>.</p>
 
 </div>
 </div>
@@ -200,7 +203,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="classmoveit__controller__manager_1_1MoveItControllerManager.html#a69b5304cc24a1f06938061c8ed2e9bec">moveit_controller_manager::MoveItControllerManager</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="controller__manager__plugin_8cpp_source.html#l00492">492</a> of file <a class="el" href="controller__manager__plugin_8cpp_source.html">controller_manager_plugin.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="controller__manager__plugin_8cpp_source.html#l00469">469</a> of file <a class="el" href="controller__manager__plugin_8cpp_source.html">controller_manager_plugin.cpp</a>.</p>
 
 </div>
 </div>
@@ -249,7 +252,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="classmoveit__controller__manager_1_1MoveItControllerManager.html#af839f3623557bda10e57f4fb8f18b67c">moveit_controller_manager::MoveItControllerManager</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="controller__manager__plugin_8cpp_source.html#l00542">542</a> of file <a class="el" href="controller__manager__plugin_8cpp_source.html">controller_manager_plugin.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="controller__manager__plugin_8cpp_source.html#l00519">519</a> of file <a class="el" href="controller__manager__plugin_8cpp_source.html">controller_manager_plugin.cpp</a>.</p>
 
 </div>
 </div>
@@ -287,7 +290,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="classmoveit__controller__manager_1_1MoveItControllerManager.html#a4875f8a6aaea5445ed521595dce8f67d">moveit_controller_manager::MoveItControllerManager</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="controller__manager__plugin_8cpp_source.html#l00509">509</a> of file <a class="el" href="controller__manager__plugin_8cpp_source.html">controller_manager_plugin.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="controller__manager__plugin_8cpp_source.html#l00486">486</a> of file <a class="el" href="controller__manager__plugin_8cpp_source.html">controller_manager_plugin.cpp</a>.</p>
 
 </div>
 </div>
@@ -326,7 +329,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="classmoveit__controller__manager_1_1MoveItControllerManager.html#a82a519ae13cdcf4db79e3460fa31456e">moveit_controller_manager::MoveItControllerManager</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="controller__manager__plugin_8cpp_source.html#l00559">559</a> of file <a class="el" href="controller__manager__plugin_8cpp_source.html">controller_manager_plugin.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="controller__manager__plugin_8cpp_source.html#l00536">536</a> of file <a class="el" href="controller__manager__plugin_8cpp_source.html">controller_manager_plugin.cpp</a>.</p>
 
 </div>
 </div>
@@ -376,7 +379,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="classmoveit__controller__manager_1_1MoveItControllerManager.html#ae42e4f2824c9707cc52ab61853a9a85e">moveit_controller_manager::MoveItControllerManager</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="controller__manager__plugin_8cpp_source.html#l00578">578</a> of file <a class="el" href="controller__manager__plugin_8cpp_source.html">controller_manager_plugin.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="controller__manager__plugin_8cpp_source.html#l00555">555</a> of file <a class="el" href="controller__manager__plugin_8cpp_source.html">controller_manager_plugin.cpp</a>.</p>
 
 </div>
 </div>

@@ -67,7 +67,6 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classrobot__trajectory_1_1RobotTrajectory-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -80,21 +79,11 @@ $(function() {
 
 <p><code>#include &lt;<a class="el" href="robot__trajectory_8h_source.html">robot_trajectory.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory_1_1Iterator.html">Iterator</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a37fe5e5942bdc97164af3756c698c2c7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#a37fe5e5942bdc97164af3756c698c2c7">RobotTrajectory</a> (const moveit::core::RobotModelConstPtr &amp;robot_model)</td></tr>
-<tr class="memdesc:a37fe5e5942bdc97164af3756c698c2c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">construct a trajectory for the whole robot  <a href="classrobot__trajectory_1_1RobotTrajectory.html#a37fe5e5942bdc97164af3756c698c2c7">More...</a><br /></td></tr>
-<tr class="separator:a37fe5e5942bdc97164af3756c698c2c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c3ba0827032d19c887844a1d4a5739b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#a7c3ba0827032d19c887844a1d4a5739b">RobotTrajectory</a> (const moveit::core::RobotModelConstPtr &amp;robot_model, const std::string &amp;group)</td></tr>
-<tr class="memdesc:a7c3ba0827032d19c887844a1d4a5739b"><td class="mdescLeft">&#160;</td><td class="mdescRight">construct a trajectory for the named JointModelGroup If group is an empty string, this is equivalent to the first constructor, otherwise it is equivalent to <code><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html" title="Maintain a sequence of waypoints and the time durations between these waypoints.">RobotTrajectory</a>(robot_model, robot_model-&gt;getJointModelGroup(group))</code>.  <a href="classrobot__trajectory_1_1RobotTrajectory.html#a7c3ba0827032d19c887844a1d4a5739b">More...</a><br /></td></tr>
 <tr class="separator:a7c3ba0827032d19c887844a1d4a5739b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b3e019c71b262f3161ea6fffa9d44e9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#a0b3e019c71b262f3161ea6fffa9d44e9">RobotTrajectory</a> (const moveit::core::RobotModelConstPtr &amp;robot_model, const <a class="el" href="classmoveit_1_1core_1_1JointModelGroup.html">moveit::core::JointModelGroup</a> *group)</td></tr>
-<tr class="memdesc:a0b3e019c71b262f3161ea6fffa9d44e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">construct a trajectory for the JointModelGroup Only joints from the specified group will be considered in this trajectory, even though all waypoints still consist of full RobotStates (representing all joints).  <a href="classrobot__trajectory_1_1RobotTrajectory.html#a0b3e019c71b262f3161ea6fffa9d44e9">More...</a><br /></td></tr>
 <tr class="separator:a0b3e019c71b262f3161ea6fffa9d44e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ce86c4ab97a92ab71f74b2820385f2b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html">RobotTrajectory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#a9ce86c4ab97a92ab71f74b2820385f2b">operator=</a> (const <a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html">RobotTrajectory</a> &amp;)=default</td></tr>
 <tr class="separator:a9ce86c4ab97a92ab71f74b2820385f2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -107,12 +96,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a6eaef50c3127c83dbc5ca393376435b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a197a5c3e1d46aa07e05a6014f7b526dc"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#a197a5c3e1d46aa07e05a6014f7b526dc">getGroupName</a> () const</td></tr>
 <tr class="separator:a197a5c3e1d46aa07e05a6014f7b526dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e570f027e761c1eb0aa9cb3cf1b6814"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html">RobotTrajectory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#a7e570f027e761c1eb0aa9cb3cf1b6814">setGroupName</a> (const std::string &amp;group_name)</td></tr>
-<tr class="separator:a7e570f027e761c1eb0aa9cb3cf1b6814"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad48d78ec3d3f6f14174fc61d6cfa664"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#aad48d78ec3d3f6f14174fc61d6cfa664">setGroupName</a> (const std::string &amp;group_name)</td></tr>
+<tr class="separator:aad48d78ec3d3f6f14174fc61d6cfa664"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ababf812aa287c586d9ad0b190e1d2482"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#ababf812aa287c586d9ad0b190e1d2482">getWayPointCount</a> () const</td></tr>
 <tr class="separator:ababf812aa287c586d9ad0b190e1d2482"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a393208ca7b2061818c0c2691e3fd5bde"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#a393208ca7b2061818c0c2691e3fd5bde">size</a> () const</td></tr>
-<tr class="separator:a393208ca7b2061818c0c2691e3fd5bde"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af356952b9847bc920b773f2f83cb9943"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#af356952b9847bc920b773f2f83cb9943">getWayPoint</a> (std::size_t index) const</td></tr>
 <tr class="separator:af356952b9847bc920b773f2f83cb9943"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb03cf629e9928eacae97f6821ebdeb2"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#afb03cf629e9928eacae97f6821ebdeb2">getLastWayPoint</a> () const</td></tr>
@@ -134,103 +121,66 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a10ba8e841d92a2f6e0a355625beaec8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abec675e916c243304ad0bf76d91392e7"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#abec675e916c243304ad0bf76d91392e7">getWayPointDurationFromPrevious</a> (std::size_t index) const</td></tr>
 <tr class="separator:abec675e916c243304ad0bf76d91392e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a108b7e9d9698f221c3b569b7882bfab8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html">RobotTrajectory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#a108b7e9d9698f221c3b569b7882bfab8">setWayPointDurationFromPrevious</a> (std::size_t index, double value)</td></tr>
-<tr class="separator:a108b7e9d9698f221c3b569b7882bfab8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e99bb2d46afb55c48f259e008f18e06"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#a5e99bb2d46afb55c48f259e008f18e06">setWayPointDurationFromPrevious</a> (std::size_t index, double value)</td></tr>
+<tr class="separator:a5e99bb2d46afb55c48f259e008f18e06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afdd5cc4e84e484af2dc6ea337f62719e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#afdd5cc4e84e484af2dc6ea337f62719e">empty</a> () const</td></tr>
 <tr class="separator:afdd5cc4e84e484af2dc6ea337f62719e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d818ea730ce7620ca2b15edd70f774e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html">RobotTrajectory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#a8d818ea730ce7620ca2b15edd70f774e">addSuffixWayPoint</a> (const <a class="el" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a> &amp;state, double dt)</td></tr>
-<tr class="memdesc:a8d818ea730ce7620ca2b15edd70f774e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a point to the trajectory.  <a href="classrobot__trajectory_1_1RobotTrajectory.html#a8d818ea730ce7620ca2b15edd70f774e">More...</a><br /></td></tr>
-<tr class="separator:a8d818ea730ce7620ca2b15edd70f774e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5cc6fdaddd35ad2901072d6ca0800ae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html">RobotTrajectory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#ad5cc6fdaddd35ad2901072d6ca0800ae">addSuffixWayPoint</a> (const moveit::core::RobotStatePtr &amp;state, double dt)</td></tr>
-<tr class="memdesc:ad5cc6fdaddd35ad2901072d6ca0800ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a point to the trajectory.  <a href="classrobot__trajectory_1_1RobotTrajectory.html#ad5cc6fdaddd35ad2901072d6ca0800ae">More...</a><br /></td></tr>
-<tr class="separator:ad5cc6fdaddd35ad2901072d6ca0800ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:accf27ac273f3490a8aaa1ee1a60dc43b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html">RobotTrajectory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#accf27ac273f3490a8aaa1ee1a60dc43b">addPrefixWayPoint</a> (const <a class="el" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a> &amp;state, double dt)</td></tr>
-<tr class="separator:accf27ac273f3490a8aaa1ee1a60dc43b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a130189b581f38a77dad88b18f6a4df23"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html">RobotTrajectory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#a130189b581f38a77dad88b18f6a4df23">addPrefixWayPoint</a> (const moveit::core::RobotStatePtr &amp;state, double dt)</td></tr>
-<tr class="separator:a130189b581f38a77dad88b18f6a4df23"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1e226f85689e3f9058a6b807f309a64"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html">RobotTrajectory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#ab1e226f85689e3f9058a6b807f309a64">insertWayPoint</a> (std::size_t index, const <a class="el" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a> &amp;state, double dt)</td></tr>
-<tr class="separator:ab1e226f85689e3f9058a6b807f309a64"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a03959bef929a092a7229d5a3e5e86ab1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html">RobotTrajectory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#a03959bef929a092a7229d5a3e5e86ab1">insertWayPoint</a> (std::size_t index, const moveit::core::RobotStatePtr &amp;state, double dt)</td></tr>
-<tr class="separator:a03959bef929a092a7229d5a3e5e86ab1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f13f4305a66b59b8f0d4c30e26125a8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html">RobotTrajectory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#a9f13f4305a66b59b8f0d4c30e26125a8">append</a> (const <a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html">RobotTrajectory</a> &amp;source, double dt, size_t start_index=0, size_t end_index=std::numeric_limits&lt; std::size_t &gt;::max())</td></tr>
-<tr class="memdesc:a9f13f4305a66b59b8f0d4c30e26125a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a specified part of a trajectory to the end of the current trajectory. The default (when <code>start_index</code> and <code>end_index</code> are omitted) is to add the whole trajectory.  <a href="classrobot__trajectory_1_1RobotTrajectory.html#a9f13f4305a66b59b8f0d4c30e26125a8">More...</a><br /></td></tr>
-<tr class="separator:a9f13f4305a66b59b8f0d4c30e26125a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a204b84ddf1178a6c055fb824ed3b5147"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#a204b84ddf1178a6c055fb824ed3b5147">addSuffixWayPoint</a> (const <a class="el" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a> &amp;state, double dt)</td></tr>
+<tr class="memdesc:a204b84ddf1178a6c055fb824ed3b5147"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a point to the trajectory.  <a href="classrobot__trajectory_1_1RobotTrajectory.html#a204b84ddf1178a6c055fb824ed3b5147">More...</a><br /></td></tr>
+<tr class="separator:a204b84ddf1178a6c055fb824ed3b5147"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f70f1a1d2f691019a9ec6f751224550"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#a5f70f1a1d2f691019a9ec6f751224550">addSuffixWayPoint</a> (const moveit::core::RobotStatePtr &amp;state, double dt)</td></tr>
+<tr class="memdesc:a5f70f1a1d2f691019a9ec6f751224550"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a point to the trajectory.  <a href="classrobot__trajectory_1_1RobotTrajectory.html#a5f70f1a1d2f691019a9ec6f751224550">More...</a><br /></td></tr>
+<tr class="separator:a5f70f1a1d2f691019a9ec6f751224550"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65998f536a5c4ec7890925746b0dc724"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#a65998f536a5c4ec7890925746b0dc724">addPrefixWayPoint</a> (const <a class="el" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a> &amp;state, double dt)</td></tr>
+<tr class="separator:a65998f536a5c4ec7890925746b0dc724"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6740841fbe40c9ae04159567b0e3dbad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#a6740841fbe40c9ae04159567b0e3dbad">addPrefixWayPoint</a> (const moveit::core::RobotStatePtr &amp;state, double dt)</td></tr>
+<tr class="separator:a6740841fbe40c9ae04159567b0e3dbad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24aade5f0024f638baa0ac5d19188b5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#a24aade5f0024f638baa0ac5d19188b5d">insertWayPoint</a> (std::size_t index, const <a class="el" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a> &amp;state, double dt)</td></tr>
+<tr class="separator:a24aade5f0024f638baa0ac5d19188b5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4834f60d6ab5955c5687dfadec607fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#ae4834f60d6ab5955c5687dfadec607fd">insertWayPoint</a> (std::size_t index, const moveit::core::RobotStatePtr &amp;state, double dt)</td></tr>
+<tr class="separator:ae4834f60d6ab5955c5687dfadec607fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c192f96ee85ff1efa61de92f99c3959"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#a6c192f96ee85ff1efa61de92f99c3959">append</a> (const <a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html">RobotTrajectory</a> &amp;source, double dt, size_t start_index=0, size_t end_index=std::numeric_limits&lt; std::size_t &gt;::max())</td></tr>
+<tr class="memdesc:a6c192f96ee85ff1efa61de92f99c3959"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a specified part of a trajectory to the end of the current trajectory. The default (when <code>start_index</code> and <code>end_index</code> are omitted) is to add the whole trajectory.  <a href="classrobot__trajectory_1_1RobotTrajectory.html#a6c192f96ee85ff1efa61de92f99c3959">More...</a><br /></td></tr>
+<tr class="separator:a6c192f96ee85ff1efa61de92f99c3959"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09dbe23704a5bd0cf4d49a114a3e62de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#a09dbe23704a5bd0cf4d49a114a3e62de">swap</a> (<a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html">robot_trajectory::RobotTrajectory</a> &amp;other)</td></tr>
 <tr class="separator:a09dbe23704a5bd0cf4d49a114a3e62de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae07ca729ccee3748d65abe389de3b8e1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html">RobotTrajectory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#ae07ca729ccee3748d65abe389de3b8e1">clear</a> ()</td></tr>
-<tr class="separator:ae07ca729ccee3748d65abe389de3b8e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac95d7d9d74d13c2e31bcc5b1f6aaee6f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#ac95d7d9d74d13c2e31bcc5b1f6aaee6f">clear</a> ()</td></tr>
+<tr class="separator:ac95d7d9d74d13c2e31bcc5b1f6aaee6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af827ef5d4a1a30176f2599c701683f27"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#af827ef5d4a1a30176f2599c701683f27">getDuration</a> () const</td></tr>
 <tr class="separator:af827ef5d4a1a30176f2599c701683f27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a49c02c0642eaf05ab71f1ca1759cb472"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#a49c02c0642eaf05ab71f1ca1759cb472">getAverageSegmentDuration</a> () const</td></tr>
 <tr class="separator:a49c02c0642eaf05ab71f1ca1759cb472"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7315e0ff4705f4c9b6f6871b0b584b88"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#a7315e0ff4705f4c9b6f6871b0b584b88">getRobotTrajectoryMsg</a> (moveit_msgs::msg::RobotTrajectory &amp;trajectory, const std::vector&lt; std::string &gt; &amp;joint_filter=std::vector&lt; std::string &gt;()) const</td></tr>
 <tr class="separator:a7315e0ff4705f4c9b6f6871b0b584b88"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99b9016fc88eebd0646d701d3868febf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html">RobotTrajectory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#a99b9016fc88eebd0646d701d3868febf">setRobotTrajectoryMsg</a> (const <a class="el" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a> &amp;reference_state, const trajectory_msgs::msg::JointTrajectory &amp;trajectory)</td></tr>
-<tr class="memdesc:a99b9016fc88eebd0646d701d3868febf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy the content of the trajectory message into this class. The trajectory message itself is not required to contain the values for all joints. For this reason a full starting state must be specified as reference (<em>reference_state</em>). Each point in the trajectory to be constructed internally is obtained by copying the reference state and overwriting the content from a trajectory point in <em>trajectory</em>.  <a href="classrobot__trajectory_1_1RobotTrajectory.html#a99b9016fc88eebd0646d701d3868febf">More...</a><br /></td></tr>
-<tr class="separator:a99b9016fc88eebd0646d701d3868febf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad098851ea4318783fbe321a0fcb44be4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html">RobotTrajectory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#ad098851ea4318783fbe321a0fcb44be4">setRobotTrajectoryMsg</a> (const <a class="el" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a> &amp;reference_state, const moveit_msgs::msg::RobotTrajectory &amp;trajectory)</td></tr>
-<tr class="memdesc:ad098851ea4318783fbe321a0fcb44be4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy the content of the trajectory message into this class. The trajectory message itself is not required to contain the values for all joints. For this reason a full starting state must be specified as reference (<em>reference_state</em>). Each point in the trajectory to be constructed internally is obtained by copying the reference state and overwriting the content from a trajectory point in <em>trajectory</em>.  <a href="classrobot__trajectory_1_1RobotTrajectory.html#ad098851ea4318783fbe321a0fcb44be4">More...</a><br /></td></tr>
-<tr class="separator:ad098851ea4318783fbe321a0fcb44be4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4331283ac92f8e48bb14fdc80f38c9f6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html">RobotTrajectory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#a4331283ac92f8e48bb14fdc80f38c9f6">setRobotTrajectoryMsg</a> (const <a class="el" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a> &amp;reference_state, const moveit_msgs::msg::RobotState &amp;state, const moveit_msgs::msg::RobotTrajectory &amp;trajectory)</td></tr>
-<tr class="memdesc:a4331283ac92f8e48bb14fdc80f38c9f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy the content of the trajectory message into this class. The trajectory message itself is not required to contain the values for all joints. For this reason a full starting state must be specified as reference (<em>reference_state</em>). Before use, the reference state is updated using <em>state</em>. Each point in the trajectory to be constructed internally is obtained by copying the reference state and overwriting the content from a trajectory point in <em>trajectory</em>.  <a href="classrobot__trajectory_1_1RobotTrajectory.html#a4331283ac92f8e48bb14fdc80f38c9f6">More...</a><br /></td></tr>
-<tr class="separator:a4331283ac92f8e48bb14fdc80f38c9f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08f715d9f69b89d53983fe9c8c54db33"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html">RobotTrajectory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#a08f715d9f69b89d53983fe9c8c54db33">reverse</a> ()</td></tr>
-<tr class="separator:a08f715d9f69b89d53983fe9c8c54db33"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7804317b96eb6c13639839b1276ac04c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html">RobotTrajectory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#a7804317b96eb6c13639839b1276ac04c">unwind</a> ()</td></tr>
-<tr class="separator:a7804317b96eb6c13639839b1276ac04c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a03bdc1bacaac6a465b8f6d2347236537"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html">RobotTrajectory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#a03bdc1bacaac6a465b8f6d2347236537">unwind</a> (const <a class="el" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a> &amp;state)</td></tr>
-<tr class="separator:a03bdc1bacaac6a465b8f6d2347236537"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4556a5245c841731bce178c0d235a721"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#a4556a5245c841731bce178c0d235a721">setRobotTrajectoryMsg</a> (const <a class="el" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a> &amp;reference_state, const trajectory_msgs::msg::JointTrajectory &amp;trajectory)</td></tr>
+<tr class="memdesc:a4556a5245c841731bce178c0d235a721"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy the content of the trajectory message into this class. The trajectory message itself is not required to contain the values for all joints. For this reason a full starting state must be specified as reference (<em>reference_state</em>). Each point in the trajectory to be constructed internally is obtained by copying the reference state and overwriting the content from a trajectory point in <em>trajectory</em>.  <a href="classrobot__trajectory_1_1RobotTrajectory.html#a4556a5245c841731bce178c0d235a721">More...</a><br /></td></tr>
+<tr class="separator:a4556a5245c841731bce178c0d235a721"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a315f362659e8eeef34665ad53a21d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#a3a315f362659e8eeef34665ad53a21d9">setRobotTrajectoryMsg</a> (const <a class="el" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a> &amp;reference_state, const moveit_msgs::msg::RobotTrajectory &amp;trajectory)</td></tr>
+<tr class="memdesc:a3a315f362659e8eeef34665ad53a21d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy the content of the trajectory message into this class. The trajectory message itself is not required to contain the values for all joints. For this reason a full starting state must be specified as reference (<em>reference_state</em>). Each point in the trajectory to be constructed internally is obtained by copying the reference state and overwriting the content from a trajectory point in <em>trajectory</em>.  <a href="classrobot__trajectory_1_1RobotTrajectory.html#a3a315f362659e8eeef34665ad53a21d9">More...</a><br /></td></tr>
+<tr class="separator:a3a315f362659e8eeef34665ad53a21d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac383404e17a747498146c8963b614ad3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#ac383404e17a747498146c8963b614ad3">setRobotTrajectoryMsg</a> (const <a class="el" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a> &amp;reference_state, const moveit_msgs::msg::RobotState &amp;state, const moveit_msgs::msg::RobotTrajectory &amp;trajectory)</td></tr>
+<tr class="memdesc:ac383404e17a747498146c8963b614ad3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy the content of the trajectory message into this class. The trajectory message itself is not required to contain the values for all joints. For this reason a full starting state must be specified as reference (<em>reference_state</em>). Before use, the reference state is updated using <em>state</em>. Each point in the trajectory to be constructed internally is obtained by copying the reference state and overwriting the content from a trajectory point in <em>trajectory</em>.  <a href="classrobot__trajectory_1_1RobotTrajectory.html#ac383404e17a747498146c8963b614ad3">More...</a><br /></td></tr>
+<tr class="separator:ac383404e17a747498146c8963b614ad3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefd8daff105ef04ea3242c17c9601475"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#aefd8daff105ef04ea3242c17c9601475">reverse</a> ()</td></tr>
+<tr class="separator:aefd8daff105ef04ea3242c17c9601475"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a336c915269b3139b7ae53fb2af6ab5a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#a336c915269b3139b7ae53fb2af6ab5a0">unwind</a> ()</td></tr>
+<tr class="separator:a336c915269b3139b7ae53fb2af6ab5a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09281e7fd6e8b6b30e09d54e6f5f052e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#a09281e7fd6e8b6b30e09d54e6f5f052e">unwind</a> (const <a class="el" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a> &amp;state)</td></tr>
+<tr class="separator:a09281e7fd6e8b6b30e09d54e6f5f052e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acba72355e16bd0aa963c8a99ce8f941c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#acba72355e16bd0aa963c8a99ce8f941c">findWayPointIndicesForDurationAfterStart</a> (const double &amp;duration, int &amp;before, int &amp;after, double &amp;blend) const</td></tr>
-<tr class="memdesc:acba72355e16bd0aa963c8a99ce8f941c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the waypoint indices before and after a duration from start.  <a href="classrobot__trajectory_1_1RobotTrajectory.html#acba72355e16bd0aa963c8a99ce8f941c">More...</a><br /></td></tr>
+<tr class="memdesc:acba72355e16bd0aa963c8a99ce8f941c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the waypoint indicies before and after a duration from start.  <a href="classrobot__trajectory_1_1RobotTrajectory.html#acba72355e16bd0aa963c8a99ce8f941c">More...</a><br /></td></tr>
 <tr class="separator:acba72355e16bd0aa963c8a99ce8f941c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a63a1b941a949379a408bf10f97aa2267"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#a63a1b941a949379a408bf10f97aa2267">getStateAtDurationFromStart</a> (const double request_duration, moveit::core::RobotStatePtr &amp;output_state) const</td></tr>
 <tr class="memdesc:a63a1b941a949379a408bf10f97aa2267"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a robot state corresponding to a supplied duration from start for the trajectory, using linear time interpolation.  <a href="classrobot__trajectory_1_1RobotTrajectory.html#a63a1b941a949379a408bf10f97aa2267">More...</a><br /></td></tr>
 <tr class="separator:a63a1b941a949379a408bf10f97aa2267"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a392ffbd99be7cf8064e0fd027780a5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory_1_1Iterator.html">RobotTrajectory::Iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#a9a392ffbd99be7cf8064e0fd027780a5">begin</a> ()</td></tr>
-<tr class="separator:a9a392ffbd99be7cf8064e0fd027780a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4729fd90e86f37fb4762a7dac5baa9db"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory_1_1Iterator.html">RobotTrajectory::Iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#a4729fd90e86f37fb4762a7dac5baa9db">end</a> ()</td></tr>
-<tr class="separator:a4729fd90e86f37fb4762a7dac5baa9db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55e7beedfc60e0a6e523bd7d9278d884"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html#a55e7beedfc60e0a6e523bd7d9278d884">print</a> (std::ostream &amp;out, std::vector&lt; int &gt; variable_indexes=std::vector&lt; int &gt;()) const</td></tr>
-<tr class="memdesc:a55e7beedfc60e0a6e523bd7d9278d884"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print information about the trajectory.  <a href="classrobot__trajectory_1_1RobotTrajectory.html#a55e7beedfc60e0a6e523bd7d9278d884">More...</a><br /></td></tr>
-<tr class="separator:a55e7beedfc60e0a6e523bd7d9278d884"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Maintain a sequence of waypoints and the time durations between these waypoints. </p>
 
-<p class="definition">Definition at line <a class="el" href="robot__trajectory_8h_source.html#l00091">91</a> of file <a class="el" href="robot__trajectory_8h_source.html">robot_trajectory.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__trajectory_8h_source.html#l00090">90</a> of file <a class="el" href="robot__trajectory_8h_source.html">robot_trajectory.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a37fe5e5942bdc97164af3756c698c2c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a37fe5e5942bdc97164af3756c698c2c7">&#9670;&nbsp;</a></span>RobotTrajectory() <span class="overload">[1/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">robot_trajectory::RobotTrajectory::RobotTrajectory </td>
-          <td>(</td>
-          <td class="paramtype">const moveit::core::RobotModelConstPtr &amp;&#160;</td>
-          <td class="paramname"><em>robot_model</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>construct a trajectory for the whole robot </p>
-
-<p class="definition">Definition at line <a class="el" href="robot__trajectory_8cpp_source.html#l00082">82</a> of file <a class="el" href="robot__trajectory_8cpp_source.html">robot_trajectory.cpp</a>.</p>
-
-</div>
-</div>
 <a id="a7c3ba0827032d19c887844a1d4a5739b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7c3ba0827032d19c887844a1d4a5739b">&#9670;&nbsp;</a></span>RobotTrajectory() <span class="overload">[2/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c3ba0827032d19c887844a1d4a5739b">&#9670;&nbsp;</a></span>RobotTrajectory() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -255,14 +205,12 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>construct a trajectory for the named JointModelGroup If group is an empty string, this is equivalent to the first constructor, otherwise it is equivalent to <code><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html" title="Maintain a sequence of waypoints and the time durations between these waypoints.">RobotTrajectory</a>(robot_model, robot_model-&gt;getJointModelGroup(group))</code>. </p>
-
-<p class="definition">Definition at line <a class="el" href="robot__trajectory_8cpp_source.html#l00087">87</a> of file <a class="el" href="robot__trajectory_8cpp_source.html">robot_trajectory.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__trajectory_8cpp_source.html#l00078">78</a> of file <a class="el" href="robot__trajectory_8cpp_source.html">robot_trajectory.cpp</a>.</p>
 
 </div>
 </div>
 <a id="a0b3e019c71b262f3161ea6fffa9d44e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0b3e019c71b262f3161ea6fffa9d44e9">&#9670;&nbsp;</a></span>RobotTrajectory() <span class="overload">[3/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b3e019c71b262f3161ea6fffa9d44e9">&#9670;&nbsp;</a></span>RobotTrajectory() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -287,24 +235,12 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>construct a trajectory for the JointModelGroup Only joints from the specified group will be considered in this trajectory, even though all waypoints still consist of full RobotStates (representing all joints). </p>
-<p>If group is nullptr this is equivalent to the first constructor. </p>
-
-<p class="definition">Definition at line <a class="el" href="robot__trajectory_8cpp_source.html#l00092">92</a> of file <a class="el" href="robot__trajectory_8cpp_source.html">robot_trajectory.cpp</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classrobot__trajectory_1_1RobotTrajectory_a0b3e019c71b262f3161ea6fffa9d44e9_cgraph.png" border="0" usemap="#classrobot__trajectory_1_1RobotTrajectory_a0b3e019c71b262f3161ea6fffa9d44e9_cgraph" alt=""/></div>
-<map name="classrobot__trajectory_1_1RobotTrajectory_a0b3e019c71b262f3161ea6fffa9d44e9_cgraph" id="classrobot__trajectory_1_1RobotTrajectory_a0b3e019c71b262f3161ea6fffa9d44e9_cgraph">
-<area shape="rect" title="construct a trajectory for the JointModelGroup Only joints from the specified group will be considere..." alt="" coords="5,5,240,47"/>
-<area shape="rect" href="classrobot__trajectory_1_1RobotTrajectory.html#af827ef5d4a1a30176f2599c701683f27" title=" " alt="" coords="288,5,523,47"/>
-</map>
-</div>
+<p class="definition">Definition at line <a class="el" href="robot__trajectory_8cpp_source.html#l00083">83</a> of file <a class="el" href="robot__trajectory_8cpp_source.html">robot_trajectory.cpp</a>.</p>
 
 </div>
 </div>
 <a id="a528e2f0e1805049429327fa7c7e56964"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a528e2f0e1805049429327fa7c7e56964">&#9670;&nbsp;</a></span>RobotTrajectory() <span class="overload">[4/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a528e2f0e1805049429327fa7c7e56964">&#9670;&nbsp;</a></span>RobotTrajectory() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -338,13 +274,22 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="robot__trajectory_8cpp_source.html#l00098">98</a> of file <a class="el" href="robot__trajectory_8cpp_source.html">robot_trajectory.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__trajectory_8cpp_source.html#l00089">89</a> of file <a class="el" href="robot__trajectory_8cpp_source.html">robot_trajectory.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrobot__trajectory_1_1RobotTrajectory_a528e2f0e1805049429327fa7c7e56964_cgraph.png" border="0" usemap="#classrobot__trajectory_1_1RobotTrajectory_a528e2f0e1805049429327fa7c7e56964_cgraph" alt=""/></div>
+<map name="classrobot__trajectory_1_1RobotTrajectory_a528e2f0e1805049429327fa7c7e56964_cgraph" id="classrobot__trajectory_1_1RobotTrajectory_a528e2f0e1805049429327fa7c7e56964_cgraph">
+<area shape="rect" title="Copy constructor allowing a shallow or deep copy of waypoints." alt="" coords="5,5,240,47"/>
+<area shape="rect" href="classrobot__trajectory_1_1RobotTrajectory.html#af827ef5d4a1a30176f2599c701683f27" title=" " alt="" coords="288,5,523,47"/>
+</map>
+</div>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="accf27ac273f3490a8aaa1ee1a60dc43b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#accf27ac273f3490a8aaa1ee1a60dc43b">&#9670;&nbsp;</a></span>addPrefixWayPoint() <span class="overload">[1/2]</span></h2>
+<a id="a65998f536a5c4ec7890925746b0dc724"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65998f536a5c4ec7890925746b0dc724">&#9670;&nbsp;</a></span>addPrefixWayPoint() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -353,7 +298,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html">RobotTrajectory</a>&amp; robot_trajectory::RobotTrajectory::addPrefixWayPoint </td>
+          <td class="memname">void robot_trajectory::RobotTrajectory::addPrefixWayPoint </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a> &amp;&#160;</td>
           <td class="paramname"><em>state</em>, </td>
@@ -377,21 +322,12 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="robot__trajectory_8h_source.html#l00236">236</a> of file <a class="el" href="robot__trajectory_8h_source.html">robot_trajectory.h</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classrobot__trajectory_1_1RobotTrajectory_accf27ac273f3490a8aaa1ee1a60dc43b_icgraph.png" border="0" usemap="#classrobot__trajectory_1_1RobotTrajectory_accf27ac273f3490a8aaa1ee1a60dc43b_icgraph" alt=""/></div>
-<map name="classrobot__trajectory_1_1RobotTrajectory_accf27ac273f3490a8aaa1ee1a60dc43b_icgraph" id="classrobot__trajectory_1_1RobotTrajectory_accf27ac273f3490a8aaa1ee1a60dc43b_icgraph">
-<area shape="rect" title=" " alt="" coords="123,5,357,47"/>
-<area shape="rect" href="test__robot__trajectory_8cpp.html#ac2eca9d77186f589d9148d63fbef0006" title=" " alt="" coords="5,13,75,39"/>
-</map>
-</div>
+<p class="definition">Definition at line <a class="el" href="robot__trajectory_8h_source.html#l00210">210</a> of file <a class="el" href="robot__trajectory_8h_source.html">robot_trajectory.h</a>.</p>
 
 </div>
 </div>
-<a id="a130189b581f38a77dad88b18f6a4df23"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a130189b581f38a77dad88b18f6a4df23">&#9670;&nbsp;</a></span>addPrefixWayPoint() <span class="overload">[2/2]</span></h2>
+<a id="a6740841fbe40c9ae04159567b0e3dbad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6740841fbe40c9ae04159567b0e3dbad">&#9670;&nbsp;</a></span>addPrefixWayPoint() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -400,7 +336,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html">RobotTrajectory</a>&amp; robot_trajectory::RobotTrajectory::addPrefixWayPoint </td>
+          <td class="memname">void robot_trajectory::RobotTrajectory::addPrefixWayPoint </td>
           <td>(</td>
           <td class="paramtype">const moveit::core::RobotStatePtr &amp;&#160;</td>
           <td class="paramname"><em>state</em>, </td>
@@ -424,12 +360,12 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="robot__trajectory_8h_source.html#l00241">241</a> of file <a class="el" href="robot__trajectory_8h_source.html">robot_trajectory.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__trajectory_8h_source.html#l00215">215</a> of file <a class="el" href="robot__trajectory_8h_source.html">robot_trajectory.h</a>.</p>
 
 </div>
 </div>
-<a id="a8d818ea730ce7620ca2b15edd70f774e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8d818ea730ce7620ca2b15edd70f774e">&#9670;&nbsp;</a></span>addSuffixWayPoint() <span class="overload">[1/2]</span></h2>
+<a id="a204b84ddf1178a6c055fb824ed3b5147"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a204b84ddf1178a6c055fb824ed3b5147">&#9670;&nbsp;</a></span>addSuffixWayPoint() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -438,7 +374,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html">RobotTrajectory</a>&amp; robot_trajectory::RobotTrajectory::addSuffixWayPoint </td>
+          <td class="memname">void robot_trajectory::RobotTrajectory::addSuffixWayPoint </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a> &amp;&#160;</td>
           <td class="paramname"><em>state</em>, </td>
@@ -471,33 +407,23 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="robot__trajectory_8h_source.html#l00218">218</a> of file <a class="el" href="robot__trajectory_8h_source.html">robot_trajectory.h</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classrobot__trajectory_1_1RobotTrajectory_a8d818ea730ce7620ca2b15edd70f774e_cgraph.png" border="0" usemap="#classrobot__trajectory_1_1RobotTrajectory_a8d818ea730ce7620ca2b15edd70f774e_cgraph" alt=""/></div>
-<map name="classrobot__trajectory_1_1RobotTrajectory_a8d818ea730ce7620ca2b15edd70f774e_cgraph" id="classrobot__trajectory_1_1RobotTrajectory_a8d818ea730ce7620ca2b15edd70f774e_cgraph">
-<area shape="rect" title="Add a point to the trajectory." alt="" coords="5,5,240,47"/>
-<area shape="rect" href="classrobot__trajectory_1_1RobotTrajectory.html#ab1e226f85689e3f9058a6b807f309a64" title=" " alt="" coords="288,5,523,47"/>
-</map>
-</div>
+<p class="definition">Definition at line <a class="el" href="robot__trajectory_8h_source.html#l00193">193</a> of file <a class="el" href="robot__trajectory_8h_source.html">robot_trajectory.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classrobot__trajectory_1_1RobotTrajectory_a8d818ea730ce7620ca2b15edd70f774e_icgraph.png" border="0" usemap="#classrobot__trajectory_1_1RobotTrajectory_a8d818ea730ce7620ca2b15edd70f774e_icgraph" alt=""/></div>
-<map name="classrobot__trajectory_1_1RobotTrajectory_a8d818ea730ce7620ca2b15edd70f774e_icgraph" id="classrobot__trajectory_1_1RobotTrajectory_a8d818ea730ce7620ca2b15edd70f774e_icgraph">
-<area shape="rect" title="Add a point to the trajectory." alt="" coords="304,119,539,161"/>
+<div class="center"><img src="classrobot__trajectory_1_1RobotTrajectory_a204b84ddf1178a6c055fb824ed3b5147_icgraph.png" border="0" usemap="#classrobot__trajectory_1_1RobotTrajectory_a204b84ddf1178a6c055fb824ed3b5147_icgraph" alt=""/></div>
+<map name="classrobot__trajectory_1_1RobotTrajectory_a204b84ddf1178a6c055fb824ed3b5147_icgraph" id="classrobot__trajectory_1_1RobotTrajectory_a204b84ddf1178a6c055fb824ed3b5147_icgraph">
+<area shape="rect" title="Add a point to the trajectory." alt="" coords="304,86,539,127"/>
 <area shape="rect" href="classtrajectory__processing_1_1TimeOptimalTrajectoryGeneration.html#a5ad18a23d5b6f0beedaa4b6e20f8b01b" title=" " alt="" coords="5,5,256,61"/>
 <area shape="rect" href="classompl__interface_1_1ModelBasedPlanningContext.html#a7c98e2b24df6a458e5b43654905aaebc" title=" " alt="" coords="23,86,238,127"/>
-<area shape="rect" href="classmoveit_1_1hybrid__planning_1_1ForwardTrajectory.html#a49dba1b9183969a92b7a8c9c23cb2fed" title=" " alt="" coords="37,151,225,193"/>
-<area shape="rect" href="test__robot__trajectory_8cpp.html#ac2eca9d77186f589d9148d63fbef0006" title=" " alt="" coords="96,217,165,244"/>
+<area shape="rect" href="classrobot__trajectory_1_1RobotTrajectory.html#aadb9e545e2128a99bf54a7526401a0b7" title=" " alt="" coords="13,151,248,193"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="ad5cc6fdaddd35ad2901072d6ca0800ae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad5cc6fdaddd35ad2901072d6ca0800ae">&#9670;&nbsp;</a></span>addSuffixWayPoint() <span class="overload">[2/2]</span></h2>
+<a id="a5f70f1a1d2f691019a9ec6f751224550"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f70f1a1d2f691019a9ec6f751224550">&#9670;&nbsp;</a></span>addSuffixWayPoint() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -506,7 +432,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html">RobotTrajectory</a>&amp; robot_trajectory::RobotTrajectory::addSuffixWayPoint </td>
+          <td class="memname">void robot_trajectory::RobotTrajectory::addSuffixWayPoint </td>
           <td>(</td>
           <td class="paramtype">const moveit::core::RobotStatePtr &amp;&#160;</td>
           <td class="paramname"><em>state</em>, </td>
@@ -539,18 +465,18 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="robot__trajectory_8h_source.html#l00228">228</a> of file <a class="el" href="robot__trajectory_8h_source.html">robot_trajectory.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__trajectory_8h_source.html#l00203">203</a> of file <a class="el" href="robot__trajectory_8h_source.html">robot_trajectory.h</a>.</p>
 
 </div>
 </div>
-<a id="a9f13f4305a66b59b8f0d4c30e26125a8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9f13f4305a66b59b8f0d4c30e26125a8">&#9670;&nbsp;</a></span>append()</h2>
+<a id="a6c192f96ee85ff1efa61de92f99c3959"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c192f96ee85ff1efa61de92f99c3959">&#9670;&nbsp;</a></span>append()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html">RobotTrajectory</a> &amp; robot_trajectory::RobotTrajectory::append </td>
+          <td class="memname">void robot_trajectory::RobotTrajectory::append </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html">RobotTrajectory</a> &amp;&#160;</td>
           <td class="paramname"><em>source</em>, </td>
@@ -592,81 +518,43 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="robot__trajectory_8cpp_source.html#l00140">140</a> of file <a class="el" href="robot__trajectory_8cpp_source.html">robot_trajectory.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__trajectory_8cpp_source.html#l00136">136</a> of file <a class="el" href="robot__trajectory_8cpp_source.html">robot_trajectory.cpp</a>.</p>
 <div class="dynheader">
-Here is the caller graph for this function:</div>
+Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classrobot__trajectory_1_1RobotTrajectory_a9f13f4305a66b59b8f0d4c30e26125a8_icgraph.png" border="0" usemap="#classrobot__trajectory_1_1RobotTrajectory_a9f13f4305a66b59b8f0d4c30e26125a8_icgraph" alt=""/></div>
-<map name="classrobot__trajectory_1_1RobotTrajectory_a9f13f4305a66b59b8f0d4c30e26125a8_icgraph" id="classrobot__trajectory_1_1RobotTrajectory_a9f13f4305a66b59b8f0d4c30e26125a8_icgraph">
-<area shape="rect" title="Add a specified part of a trajectory to the end of the current trajectory. The default (when start_in..." alt="" coords="483,46,717,87"/>
-<area shape="rect" href="classmoveit__rviz__plugin_1_1TrajectoryVisualization.html#a80365577e8df5a14cbcaff9b9cf2d295" title="ROS callback for an incoming path message." alt="" coords="232,5,435,61"/>
-<area shape="rect" href="test__robot__trajectory_8cpp.html#ac2eca9d77186f589d9148d63fbef0006" title=" " alt="" coords="299,85,368,112"/>
-<area shape="rect" href="classmoveit__rviz__plugin_1_1TrajectoryVisualization.html#a576b9af1c11d3dc9aae1facf1b211a8a" title=" " alt="" coords="5,5,184,61"/>
+<div class="center"><img src="classrobot__trajectory_1_1RobotTrajectory_a6c192f96ee85ff1efa61de92f99c3959_cgraph.png" border="0" usemap="#classrobot__trajectory_1_1RobotTrajectory_a6c192f96ee85ff1efa61de92f99c3959_cgraph" alt=""/></div>
+<map name="classrobot__trajectory_1_1RobotTrajectory_a6c192f96ee85ff1efa61de92f99c3959_cgraph" id="classrobot__trajectory_1_1RobotTrajectory_a6c192f96ee85ff1efa61de92f99c3959_cgraph">
+<area shape="rect" title="Add a specified part of a trajectory to the end of the current trajectory. The default (when start_in..." alt="" coords="5,5,240,47"/>
+<area shape="rect" href="classmoveit_1_1core_1_1JointModelGroup.html#a53c98940d80e6dd37cbe787f86d4155d" title="Get the array of continuous joints used in this group (may include mimic joints)." alt="" coords="288,5,527,47"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a9a392ffbd99be7cf8064e0fd027780a5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9a392ffbd99be7cf8064e0fd027780a5">&#9670;&nbsp;</a></span>begin()</h2>
+<a id="ac95d7d9d74d13c2e31bcc5b1f6aaee6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac95d7d9d74d13c2e31bcc5b1f6aaee6f">&#9670;&nbsp;</a></span>clear()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory_1_1Iterator.html">RobotTrajectory::Iterator</a> robot_trajectory::RobotTrajectory::begin </td>
+          <td class="memname">void robot_trajectory::RobotTrajectory::clear </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="robot__trajectory_8h_source.html#l00386">386</a> of file <a class="el" href="robot__trajectory_8h_source.html">robot_trajectory.h</a>.</p>
-
-</div>
-</div>
-<a id="ae07ca729ccee3748d65abe389de3b8e1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae07ca729ccee3748d65abe389de3b8e1">&#9670;&nbsp;</a></span>clear()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html">RobotTrajectory</a>&amp; robot_trajectory::RobotTrajectory::clear </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="robot__trajectory_8h_source.html#l00277">277</a> of file <a class="el" href="robot__trajectory_8h_source.html">robot_trajectory.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__trajectory_8cpp_source.html#l00248">248</a> of file <a class="el" href="robot__trajectory_8cpp_source.html">robot_trajectory.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classrobot__trajectory_1_1RobotTrajectory_ae07ca729ccee3748d65abe389de3b8e1_icgraph.png" border="0" usemap="#classrobot__trajectory_1_1RobotTrajectory_ae07ca729ccee3748d65abe389de3b8e1_icgraph" alt=""/></div>
-<map name="classrobot__trajectory_1_1RobotTrajectory_ae07ca729ccee3748d65abe389de3b8e1_icgraph" id="classrobot__trajectory_1_1RobotTrajectory_ae07ca729ccee3748d65abe389de3b8e1_icgraph">
-<area shape="rect" title=" " alt="" coords="304,86,539,127"/>
+<div class="center"><img src="classrobot__trajectory_1_1RobotTrajectory_ac95d7d9d74d13c2e31bcc5b1f6aaee6f_icgraph.png" border="0" usemap="#classrobot__trajectory_1_1RobotTrajectory_ac95d7d9d74d13c2e31bcc5b1f6aaee6f_icgraph" alt=""/></div>
+<map name="classrobot__trajectory_1_1RobotTrajectory_ac95d7d9d74d13c2e31bcc5b1f6aaee6f_icgraph" id="classrobot__trajectory_1_1RobotTrajectory_ac95d7d9d74d13c2e31bcc5b1f6aaee6f_icgraph">
+<area shape="rect" title=" " alt="" coords="304,50,539,91"/>
 <area shape="rect" href="classtrajectory__processing_1_1TimeOptimalTrajectoryGeneration.html#a5ad18a23d5b6f0beedaa4b6e20f8b01b" title=" " alt="" coords="5,5,256,61"/>
 <area shape="rect" href="classompl__interface_1_1ModelBasedPlanningContext.html#a2427bec09b70fb0a7524487f827016bf" title=" " alt="" coords="11,86,250,127"/>
-<area shape="rect" href="test__robot__trajectory_8cpp.html#ac2eca9d77186f589d9148d63fbef0006" title=" " alt="" coords="96,152,165,179"/>
 </map>
 </div>
 
@@ -695,47 +583,19 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="robot__trajectory_8h_source.html#l00208">208</a> of file <a class="el" href="robot__trajectory_8h_source.html">robot_trajectory.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__trajectory_8h_source.html#l00183">183</a> of file <a class="el" href="robot__trajectory_8h_source.html">robot_trajectory.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classrobot__trajectory_1_1RobotTrajectory_afdd5cc4e84e484af2dc6ea337f62719e_icgraph.png" border="0" usemap="#classrobot__trajectory_1_1RobotTrajectory_afdd5cc4e84e484af2dc6ea337f62719e_icgraph" alt=""/></div>
 <map name="classrobot__trajectory_1_1RobotTrajectory_afdd5cc4e84e484af2dc6ea337f62719e_icgraph" id="classrobot__trajectory_1_1RobotTrajectory_afdd5cc4e84e484af2dc6ea337f62719e_icgraph">
-<area shape="rect" title=" " alt="" coords="407,133,641,174"/>
+<area shape="rect" title=" " alt="" coords="407,93,641,134"/>
 <area shape="rect" href="classtrajectory__processing_1_1IterativeSplineParameterization.html#ab01c18e50f1663358c658651e1fde2c5" title=" " alt="" coords="115,5,351,61"/>
 <area shape="rect" href="classtrajectory__processing_1_1TimeOptimalTrajectoryGeneration.html#a5ad18a23d5b6f0beedaa4b6e20f8b01b" title=" " alt="" coords="108,85,359,141"/>
 <area shape="rect" href="classmoveit__ros__benchmarks_1_1BenchmarkExecutor.html#a4602671783e5fdb62207685fbaea5dce" title=" " alt="" coords="133,165,333,221"/>
-<area shape="rect" href="classmoveit_1_1hybrid__planning_1_1ForwardTrajectory.html#a49dba1b9183969a92b7a8c9c23cb2fed" title=" " alt="" coords="139,246,327,287"/>
 <area shape="rect" href="test__time__parameterization_8cpp.html#a1fb67aa34417d03016c74d44bd7f54e0" title=" " alt="" coords="5,20,60,47"/>
 </map>
 </div>
-
-</div>
-</div>
-<a id="a4729fd90e86f37fb4762a7dac5baa9db"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4729fd90e86f37fb4762a7dac5baa9db">&#9670;&nbsp;</a></span>end()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory_1_1Iterator.html">RobotTrajectory::Iterator</a> robot_trajectory::RobotTrajectory::end </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="robot__trajectory_8h_source.html#l00391">391</a> of file <a class="el" href="robot__trajectory_8h_source.html">robot_trajectory.h</a>.</p>
 
 </div>
 </div>
@@ -777,7 +637,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Finds the waypoint indices before and after a duration from start. </p>
+<p>Finds the waypoint indicies before and after a duration from start. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">The</td><td>duration from start. </td></tr>
@@ -788,7 +648,7 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="robot__trajectory_8cpp_source.html#l00479">479</a> of file <a class="el" href="robot__trajectory_8cpp_source.html">robot_trajectory.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__trajectory_8cpp_source.html#l00470">470</a> of file <a class="el" href="robot__trajectory_8cpp_source.html">robot_trajectory.cpp</a>.</p>
 
 </div>
 </div>
@@ -807,7 +667,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="robot__trajectory_8cpp_source.html#l00124">124</a> of file <a class="el" href="robot__trajectory_8cpp_source.html">robot_trajectory.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__trajectory_8cpp_source.html#l00120">120</a> of file <a class="el" href="robot__trajectory_8cpp_source.html">robot_trajectory.cpp</a>.</p>
 
 </div>
 </div>
@@ -826,14 +686,14 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="robot__trajectory_8cpp_source.html#l00119">119</a> of file <a class="el" href="robot__trajectory_8cpp_source.html">robot_trajectory.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__trajectory_8cpp_source.html#l00115">115</a> of file <a class="el" href="robot__trajectory_8cpp_source.html">robot_trajectory.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classrobot__trajectory_1_1RobotTrajectory_af827ef5d4a1a30176f2599c701683f27_icgraph.png" border="0" usemap="#classrobot__trajectory_1_1RobotTrajectory_af827ef5d4a1a30176f2599c701683f27_icgraph" alt=""/></div>
 <map name="classrobot__trajectory_1_1RobotTrajectory_af827ef5d4a1a30176f2599c701683f27_icgraph" id="classrobot__trajectory_1_1RobotTrajectory_af827ef5d4a1a30176f2599c701683f27_icgraph">
 <area shape="rect" title=" " alt="" coords="288,5,523,47"/>
-<area shape="rect" href="classrobot__trajectory_1_1RobotTrajectory.html#a0b3e019c71b262f3161ea6fffa9d44e9" title="construct a trajectory for the JointModelGroup Only joints from the specified group will be considere..." alt="" coords="5,5,240,47"/>
+<area shape="rect" href="classrobot__trajectory_1_1RobotTrajectory.html#a528e2f0e1805049429327fa7c7e56964" title="Copy constructor allowing a shallow or deep copy of waypoints." alt="" coords="5,5,240,47"/>
 </map>
 </div>
 
@@ -862,7 +722,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="robot__trajectory_8h_source.html#l00159">159</a> of file <a class="el" href="robot__trajectory_8h_source.html">robot_trajectory.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__trajectory_8h_source.html#l00135">135</a> of file <a class="el" href="robot__trajectory_8h_source.html">robot_trajectory.h</a>.</p>
 
 </div>
 </div>
@@ -889,16 +749,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="robot__trajectory_8h_source.html#l00174">174</a> of file <a class="el" href="robot__trajectory_8h_source.html">robot_trajectory.h</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classrobot__trajectory_1_1RobotTrajectory_af3a1d752806538d7db0ed93acc32d92f_icgraph.png" border="0" usemap="#classrobot__trajectory_1_1RobotTrajectory_af3a1d752806538d7db0ed93acc32d92f_icgraph" alt=""/></div>
-<map name="classrobot__trajectory_1_1RobotTrajectory_af3a1d752806538d7db0ed93acc32d92f_icgraph" id="classrobot__trajectory_1_1RobotTrajectory_af3a1d752806538d7db0ed93acc32d92f_icgraph">
-<area shape="rect" title=" " alt="" coords="241,5,476,47"/>
-<area shape="rect" href="classmoveit_1_1hybrid__planning_1_1ForwardTrajectory.html#a49dba1b9183969a92b7a8c9c23cb2fed" title=" " alt="" coords="5,5,193,47"/>
-</map>
-</div>
+<p class="definition">Definition at line <a class="el" href="robot__trajectory_8h_source.html#l00150">150</a> of file <a class="el" href="robot__trajectory_8h_source.html">robot_trajectory.h</a>.</p>
 
 </div>
 </div>
@@ -925,7 +776,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="robot__trajectory_8h_source.html#l00125">125</a> of file <a class="el" href="robot__trajectory_8h_source.html">robot_trajectory.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__trajectory_8h_source.html#l00111">111</a> of file <a class="el" href="robot__trajectory_8h_source.html">robot_trajectory.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -935,7 +786,7 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="classtrajectory__processing_1_1IterativeSplineParameterization.html#ab01c18e50f1663358c658651e1fde2c5" title=" " alt="" coords="115,5,351,61"/>
 <area shape="rect" href="classtrajectory__processing_1_1TimeOptimalTrajectoryGeneration.html#a5ad18a23d5b6f0beedaa4b6e20f8b01b" title=" " alt="" coords="108,85,359,141"/>
 <area shape="rect" href="test__time__parameterization_8cpp.html#af5870b8c7d637a7126165e5e5f4c8372" title=" " alt="" coords="132,165,335,192"/>
-<area shape="rect" href="test__time__parameterization_8cpp.html#a4b1491b3237644945d82573be3cd6d77" title=" " alt="" coords="154,216,313,243"/>
+<area shape="rect" href="test__time__parameterization_8cpp.html#acb889f094d85f84db6287ea06e3a69c6" title=" " alt="" coords="154,216,313,243"/>
 <area shape="rect" href="test__time__parameterization_8cpp.html#a9e9c53951a8d9ae89aa8517fe0a63df8" title=" " alt="" coords="175,267,291,293"/>
 <area shape="rect" href="test__time__parameterization_8cpp.html#a1fb67aa34417d03016c74d44bd7f54e0" title=" " alt="" coords="5,20,60,47"/>
 <area shape="rect" href="test__time__parameterization_8cpp.html#ab781032eb35a81d9e63d273589f28f8f" title=" " alt="" coords="5,165,60,192"/>
@@ -960,16 +811,14 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="robot__trajectory_8cpp_source.html#l00111">111</a> of file <a class="el" href="robot__trajectory_8cpp_source.html">robot_trajectory.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__trajectory_8cpp_source.html#l00107">107</a> of file <a class="el" href="robot__trajectory_8cpp_source.html">robot_trajectory.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classrobot__trajectory_1_1RobotTrajectory_a197a5c3e1d46aa07e05a6014f7b526dc_icgraph.png" border="0" usemap="#classrobot__trajectory_1_1RobotTrajectory_a197a5c3e1d46aa07e05a6014f7b526dc_icgraph" alt=""/></div>
 <map name="classrobot__trajectory_1_1RobotTrajectory_a197a5c3e1d46aa07e05a6014f7b526dc_icgraph" id="classrobot__trajectory_1_1RobotTrajectory_a197a5c3e1d46aa07e05a6014f7b526dc_icgraph">
-<area shape="rect" title=" " alt="" coords="287,79,521,120"/>
-<area shape="rect" href="classmoveit_1_1hybrid__planning_1_1ForwardTrajectory.html#a49dba1b9183969a92b7a8c9c23cb2fed" title=" " alt="" coords="28,5,216,47"/>
-<area shape="rect" href="classpilz__industrial__motion__planner_1_1CommandListManager.html#ac0f2cad43f58d5128c65578133f07ea7" title="Generates trajectories for the specified list of motion commands." alt="" coords="5,71,239,127"/>
-<area shape="rect" href="test__robot__trajectory_8cpp.html#ac2eca9d77186f589d9148d63fbef0006" title=" " alt="" coords="87,151,157,178"/>
+<area shape="rect" title=" " alt="" coords="287,13,521,54"/>
+<area shape="rect" href="classpilz__industrial__motion__planner_1_1CommandListManager.html#a08d133923cf9a22e55f582ccb48e9e3f" title="Generates trajectories for the specified list of motion commands." alt="" coords="5,5,239,61"/>
 </map>
 </div>
 
@@ -998,14 +847,14 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="robot__trajectory_8h_source.html#l00154">154</a> of file <a class="el" href="robot__trajectory_8h_source.html">robot_trajectory.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__trajectory_8h_source.html#l00130">130</a> of file <a class="el" href="robot__trajectory_8h_source.html">robot_trajectory.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classrobot__trajectory_1_1RobotTrajectory_afb03cf629e9928eacae97f6821ebdeb2_icgraph.png" border="0" usemap="#classrobot__trajectory_1_1RobotTrajectory_afb03cf629e9928eacae97f6821ebdeb2_icgraph" alt=""/></div>
 <map name="classrobot__trajectory_1_1RobotTrajectory_afb03cf629e9928eacae97f6821ebdeb2_icgraph" id="classrobot__trajectory_1_1RobotTrajectory_afb03cf629e9928eacae97f6821ebdeb2_icgraph">
 <area shape="rect" title=" " alt="" coords="287,13,521,54"/>
-<area shape="rect" href="classpilz__industrial__motion__planner_1_1CommandListManager.html#ac0f2cad43f58d5128c65578133f07ea7" title="Generates trajectories for the specified list of motion commands." alt="" coords="5,5,239,61"/>
+<area shape="rect" href="classpilz__industrial__motion__planner_1_1CommandListManager.html#a08d133923cf9a22e55f582ccb48e9e3f" title="Generates trajectories for the specified list of motion commands." alt="" coords="5,5,239,61"/>
 </map>
 </div>
 
@@ -1034,7 +883,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="robot__trajectory_8h_source.html#l00169">169</a> of file <a class="el" href="robot__trajectory_8h_source.html">robot_trajectory.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__trajectory_8h_source.html#l00145">145</a> of file <a class="el" href="robot__trajectory_8h_source.html">robot_trajectory.h</a>.</p>
 
 </div>
 </div>
@@ -1061,16 +910,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="robot__trajectory_8h_source.html#l00120">120</a> of file <a class="el" href="robot__trajectory_8h_source.html">robot_trajectory.h</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classrobot__trajectory_1_1RobotTrajectory_a216fc759b1f79f0d70a0509766d80fcc_icgraph.png" border="0" usemap="#classrobot__trajectory_1_1RobotTrajectory_a216fc759b1f79f0d70a0509766d80fcc_icgraph" alt=""/></div>
-<map name="classrobot__trajectory_1_1RobotTrajectory_a216fc759b1f79f0d70a0509766d80fcc_icgraph" id="classrobot__trajectory_1_1RobotTrajectory_a216fc759b1f79f0d70a0509766d80fcc_icgraph">
-<area shape="rect" title=" " alt="" coords="241,5,476,47"/>
-<area shape="rect" href="classmoveit_1_1hybrid__planning_1_1ForwardTrajectory.html#a49dba1b9183969a92b7a8c9c23cb2fed" title=" " alt="" coords="5,5,193,47"/>
-</map>
-</div>
+<p class="definition">Definition at line <a class="el" href="robot__trajectory_8h_source.html#l00106">106</a> of file <a class="el" href="robot__trajectory_8h_source.html">robot_trajectory.h</a>.</p>
 
 </div>
 </div>
@@ -1100,16 +940,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="robot__trajectory_8cpp_source.html#l00260">260</a> of file <a class="el" href="robot__trajectory_8cpp_source.html">robot_trajectory.cpp</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classrobot__trajectory_1_1RobotTrajectory_a7315e0ff4705f4c9b6f6871b0b584b88_icgraph.png" border="0" usemap="#classrobot__trajectory_1_1RobotTrajectory_a7315e0ff4705f4c9b6f6871b0b584b88_icgraph" alt=""/></div>
-<map name="classrobot__trajectory_1_1RobotTrajectory_a7315e0ff4705f4c9b6f6871b0b584b88_icgraph" id="classrobot__trajectory_1_1RobotTrajectory_a7315e0ff4705f4c9b6f6871b0b584b88_icgraph">
-<area shape="rect" title=" " alt="" coords="241,5,476,47"/>
-<area shape="rect" href="classmoveit_1_1hybrid__planning_1_1ForwardTrajectory.html#a49dba1b9183969a92b7a8c9c23cb2fed" title=" " alt="" coords="5,5,193,47"/>
-</map>
-</div>
+<p class="definition">Definition at line <a class="el" href="robot__trajectory_8cpp_source.html#l00254">254</a> of file <a class="el" href="robot__trajectory_8cpp_source.html">robot_trajectory.cpp</a>.</p>
 
 </div>
 </div>
@@ -1149,16 +980,7 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if state is valid, false otherwise (trajectory is empty). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="robot__trajectory_8cpp_source.html#l00528">528</a> of file <a class="el" href="robot__trajectory_8cpp_source.html">robot_trajectory.cpp</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classrobot__trajectory_1_1RobotTrajectory_a63a1b941a949379a408bf10f97aa2267_cgraph.png" border="0" usemap="#classrobot__trajectory_1_1RobotTrajectory_a63a1b941a949379a408bf10f97aa2267_cgraph" alt=""/></div>
-<map name="classrobot__trajectory_1_1RobotTrajectory_a63a1b941a949379a408bf10f97aa2267_cgraph" id="classrobot__trajectory_1_1RobotTrajectory_a63a1b941a949379a408bf10f97aa2267_cgraph">
-<area shape="rect" title="Gets a robot state corresponding to a supplied duration from start for the trajectory,..." alt="" coords="5,5,240,47"/>
-<area shape="rect" href="classmoveit_1_1core_1_1JointModelGroup.html#ab0d0e29514820e4ccb2647456ba5cc25" title="Get the index locations in the complete robot state for all the variables in this group." alt="" coords="288,5,491,47"/>
-</map>
-</div>
+<p class="definition">Definition at line <a class="el" href="robot__trajectory_8cpp_source.html#l00519">519</a> of file <a class="el" href="robot__trajectory_8cpp_source.html">robot_trajectory.cpp</a>.</p>
 
 </div>
 </div>
@@ -1186,18 +1008,17 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="robot__trajectory_8h_source.html#l00149">149</a> of file <a class="el" href="robot__trajectory_8h_source.html">robot_trajectory.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__trajectory_8h_source.html#l00125">125</a> of file <a class="el" href="robot__trajectory_8h_source.html">robot_trajectory.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classrobot__trajectory_1_1RobotTrajectory_af356952b9847bc920b773f2f83cb9943_icgraph.png" border="0" usemap="#classrobot__trajectory_1_1RobotTrajectory_af356952b9847bc920b773f2f83cb9943_icgraph" alt=""/></div>
 <map name="classrobot__trajectory_1_1RobotTrajectory_af356952b9847bc920b773f2f83cb9943_icgraph" id="classrobot__trajectory_1_1RobotTrajectory_af356952b9847bc920b773f2f83cb9943_icgraph">
-<area shape="rect" title=" " alt="" coords="407,173,641,214"/>
+<area shape="rect" title=" " alt="" coords="407,133,641,174"/>
 <area shape="rect" href="classtrajectory__processing_1_1IterativeSplineParameterization.html#ab01c18e50f1663358c658651e1fde2c5" title=" " alt="" coords="115,5,351,61"/>
 <area shape="rect" href="classtrajectory__processing_1_1TimeOptimalTrajectoryGeneration.html#a5ad18a23d5b6f0beedaa4b6e20f8b01b" title=" " alt="" coords="108,85,359,141"/>
 <area shape="rect" href="classmoveit__ros__benchmarks_1_1BenchmarkExecutor.html#a4602671783e5fdb62207685fbaea5dce" title=" " alt="" coords="133,165,333,221"/>
 <area shape="rect" href="classplanning__scene_1_1PlanningScene.html#ac58ce6668c2eb6866ad78a1c8c60c5a5" title="Check if a given path is valid. Each state is checked for validity (collision avoidance,..." alt="" coords="140,246,327,287"/>
-<area shape="rect" href="classmoveit_1_1hybrid__planning_1_1ForwardTrajectory.html#a49dba1b9183969a92b7a8c9c23cb2fed" title=" " alt="" coords="139,311,327,353"/>
 <area shape="rect" href="test__time__parameterization_8cpp.html#a1fb67aa34417d03016c74d44bd7f54e0" title=" " alt="" coords="5,20,60,47"/>
 </map>
 </div>
@@ -1227,7 +1048,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="robot__trajectory_8h_source.html#l00138">138</a> of file <a class="el" href="robot__trajectory_8h_source.html">robot_trajectory.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__trajectory_8h_source.html#l00120">120</a> of file <a class="el" href="robot__trajectory_8h_source.html">robot_trajectory.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1237,8 +1058,8 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="classtrajectory__processing_1_1IterativeSplineParameterization.html#ab01c18e50f1663358c658651e1fde2c5" title=" " alt="" coords="115,5,351,61"/>
 <area shape="rect" href="classtrajectory__processing_1_1TimeOptimalTrajectoryGeneration.html#a5ad18a23d5b6f0beedaa4b6e20f8b01b" title=" " alt="" coords="108,85,359,141"/>
 <area shape="rect" href="classmoveit__ros__benchmarks_1_1BenchmarkExecutor.html#a4602671783e5fdb62207685fbaea5dce" title=" " alt="" coords="133,165,333,221"/>
-<area shape="rect" href="test__time__parameterization_8cpp.html#aa51b79e24472e01dd59a8f68878e719e" title=" " alt="" coords="206,245,261,272"/>
-<area shape="rect" href="test__robot__trajectory_8cpp.html#ac2eca9d77186f589d9148d63fbef0006" title=" " alt="" coords="199,296,268,323"/>
+<area shape="rect" href="test__time__parameterization_8cpp.html#a9e9c53951a8d9ae89aa8517fe0a63df8" title=" " alt="" coords="175,245,291,272"/>
+<area shape="rect" href="test__time__parameterization_8cpp.html#aa51b79e24472e01dd59a8f68878e719e" title=" " alt="" coords="5,271,60,297"/>
 <area shape="rect" href="test__time__parameterization_8cpp.html#a1fb67aa34417d03016c74d44bd7f54e0" title=" " alt="" coords="5,20,60,47"/>
 </map>
 </div>
@@ -1269,7 +1090,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="robot__trajectory_8h_source.html#l00192">192</a> of file <a class="el" href="robot__trajectory_8h_source.html">robot_trajectory.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__trajectory_8h_source.html#l00168">168</a> of file <a class="el" href="robot__trajectory_8h_source.html">robot_trajectory.h</a>.</p>
 
 </div>
 </div>
@@ -1298,14 +1119,15 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The duration from start; returns overall duration if index is out of range. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="robot__trajectory_8cpp_source.html#l00510">510</a> of file <a class="el" href="robot__trajectory_8cpp_source.html">robot_trajectory.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__trajectory_8cpp_source.html#l00501">501</a> of file <a class="el" href="robot__trajectory_8cpp_source.html">robot_trajectory.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classrobot__trajectory_1_1RobotTrajectory_a23eca045c783372e4869cd3cccb2fb66_icgraph.png" border="0" usemap="#classrobot__trajectory_1_1RobotTrajectory_a23eca045c783372e4869cd3cccb2fb66_icgraph" alt=""/></div>
 <map name="classrobot__trajectory_1_1RobotTrajectory_a23eca045c783372e4869cd3cccb2fb66_icgraph" id="classrobot__trajectory_1_1RobotTrajectory_a23eca045c783372e4869cd3cccb2fb66_icgraph">
-<area shape="rect" title="Returns the duration after start that a waypoint will be reached." alt="" coords="108,5,343,47"/>
-<area shape="rect" href="test__time__parameterization_8cpp.html#aa51b79e24472e01dd59a8f68878e719e" title=" " alt="" coords="5,13,60,39"/>
+<area shape="rect" title="Returns the duration after start that a waypoint will be reached." alt="" coords="272,23,507,65"/>
+<area shape="rect" href="test__time__parameterization_8cpp.html#a9e9c53951a8d9ae89aa8517fe0a63df8" title=" " alt="" coords="108,5,224,32"/>
+<area shape="rect" href="test__time__parameterization_8cpp.html#aa51b79e24472e01dd59a8f68878e719e" title=" " alt="" coords="5,31,60,57"/>
 </map>
 </div>
 
@@ -1327,7 +1149,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="robot__trajectory_8cpp_source.html#l00523">523</a> of file <a class="el" href="robot__trajectory_8cpp_source.html">robot_trajectory.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__trajectory_8cpp_source.html#l00514">514</a> of file <a class="el" href="robot__trajectory_8cpp_source.html">robot_trajectory.cpp</a>.</p>
 
 </div>
 </div>
@@ -1354,7 +1176,16 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="robot__trajectory_8h_source.html#l00179">179</a> of file <a class="el" href="robot__trajectory_8h_source.html">robot_trajectory.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__trajectory_8h_source.html#l00155">155</a> of file <a class="el" href="robot__trajectory_8h_source.html">robot_trajectory.h</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrobot__trajectory_1_1RobotTrajectory_aadb9e545e2128a99bf54a7526401a0b7_cgraph.png" border="0" usemap="#classrobot__trajectory_1_1RobotTrajectory_aadb9e545e2128a99bf54a7526401a0b7_cgraph" alt=""/></div>
+<map name="classrobot__trajectory_1_1RobotTrajectory_aadb9e545e2128a99bf54a7526401a0b7_cgraph" id="classrobot__trajectory_1_1RobotTrajectory_aadb9e545e2128a99bf54a7526401a0b7_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,240,47"/>
+<area shape="rect" href="classrobot__trajectory_1_1RobotTrajectory.html#a204b84ddf1178a6c055fb824ed3b5147" title="Add a point to the trajectory." alt="" coords="288,5,523,47"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1382,23 +1213,25 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="robot__trajectory_8h_source.html#l00164">164</a> of file <a class="el" href="robot__trajectory_8h_source.html">robot_trajectory.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__trajectory_8h_source.html#l00140">140</a> of file <a class="el" href="robot__trajectory_8h_source.html">robot_trajectory.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classrobot__trajectory_1_1RobotTrajectory_aa02527d5b79f3249febefb4780743746_icgraph.png" border="0" usemap="#classrobot__trajectory_1_1RobotTrajectory_aa02527d5b79f3249febefb4780743746_icgraph" alt=""/></div>
 <map name="classrobot__trajectory_1_1RobotTrajectory_aa02527d5b79f3249febefb4780743746_icgraph" id="classrobot__trajectory_1_1RobotTrajectory_aa02527d5b79f3249febefb4780743746_icgraph">
-<area shape="rect" title=" " alt="" coords="407,53,641,94"/>
+<area shape="rect" title=" " alt="" coords="407,93,641,134"/>
 <area shape="rect" href="classtrajectory__processing_1_1IterativeSplineParameterization.html#ab01c18e50f1663358c658651e1fde2c5" title=" " alt="" coords="115,5,351,61"/>
 <area shape="rect" href="classtrajectory__processing_1_1TimeOptimalTrajectoryGeneration.html#a5ad18a23d5b6f0beedaa4b6e20f8b01b" title=" " alt="" coords="108,85,359,141"/>
+<area shape="rect" href="test__time__parameterization_8cpp.html#a9e9c53951a8d9ae89aa8517fe0a63df8" title=" " alt="" coords="175,165,291,192"/>
 <area shape="rect" href="test__time__parameterization_8cpp.html#a1fb67aa34417d03016c74d44bd7f54e0" title=" " alt="" coords="5,20,60,47"/>
+<area shape="rect" href="test__time__parameterization_8cpp.html#aa51b79e24472e01dd59a8f68878e719e" title=" " alt="" coords="5,165,60,192"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="ab1e226f85689e3f9058a6b807f309a64"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab1e226f85689e3f9058a6b807f309a64">&#9670;&nbsp;</a></span>insertWayPoint() <span class="overload">[1/2]</span></h2>
+<a id="a24aade5f0024f638baa0ac5d19188b5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24aade5f0024f638baa0ac5d19188b5d">&#9670;&nbsp;</a></span>insertWayPoint() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1407,7 +1240,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html">RobotTrajectory</a>&amp; robot_trajectory::RobotTrajectory::insertWayPoint </td>
+          <td class="memname">void robot_trajectory::RobotTrajectory::insertWayPoint </td>
           <td>(</td>
           <td class="paramtype">std::size_t&#160;</td>
           <td class="paramname"><em>index</em>, </td>
@@ -1437,27 +1270,22 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="robot__trajectory_8h_source.html#l00249">249</a> of file <a class="el" href="robot__trajectory_8h_source.html">robot_trajectory.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__trajectory_8h_source.html#l00222">222</a> of file <a class="el" href="robot__trajectory_8h_source.html">robot_trajectory.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classrobot__trajectory_1_1RobotTrajectory_ab1e226f85689e3f9058a6b807f309a64_icgraph.png" border="0" usemap="#classrobot__trajectory_1_1RobotTrajectory_ab1e226f85689e3f9058a6b807f309a64_icgraph" alt=""/></div>
-<map name="classrobot__trajectory_1_1RobotTrajectory_ab1e226f85689e3f9058a6b807f309a64_icgraph" id="classrobot__trajectory_1_1RobotTrajectory_ab1e226f85689e3f9058a6b807f309a64_icgraph">
-<area shape="rect" title=" " alt="" coords="588,210,823,251"/>
-<area shape="rect" href="classrobot__trajectory_1_1RobotTrajectory.html#a8d818ea730ce7620ca2b15edd70f774e" title="Add a point to the trajectory." alt="" coords="305,151,539,193"/>
-<area shape="rect" href="test__robot__trajectory_8cpp.html#ac2eca9d77186f589d9148d63fbef0006" title=" " alt="" coords="96,217,165,244"/>
-<area shape="rect" href="classtrajectory__processing_1_1IterativeSplineParameterization.html#ab01c18e50f1663358c658651e1fde2c5" title=" " alt="" coords="304,268,540,324"/>
-<area shape="rect" href="classtrajectory__processing_1_1TimeOptimalTrajectoryGeneration.html#a5ad18a23d5b6f0beedaa4b6e20f8b01b" title=" " alt="" coords="5,5,256,61"/>
-<area shape="rect" href="classompl__interface_1_1ModelBasedPlanningContext.html#a7c98e2b24df6a458e5b43654905aaebc" title=" " alt="" coords="23,86,238,127"/>
-<area shape="rect" href="classmoveit_1_1hybrid__planning_1_1ForwardTrajectory.html#a49dba1b9183969a92b7a8c9c23cb2fed" title=" " alt="" coords="37,151,225,193"/>
-<area shape="rect" href="test__time__parameterization_8cpp.html#a1fb67aa34417d03016c74d44bd7f54e0" title=" " alt="" coords="103,283,158,309"/>
+<div class="center"><img src="classrobot__trajectory_1_1RobotTrajectory_a24aade5f0024f638baa0ac5d19188b5d_icgraph.png" border="0" usemap="#classrobot__trajectory_1_1RobotTrajectory_a24aade5f0024f638baa0ac5d19188b5d_icgraph" alt=""/></div>
+<map name="classrobot__trajectory_1_1RobotTrajectory_a24aade5f0024f638baa0ac5d19188b5d_icgraph" id="classrobot__trajectory_1_1RobotTrajectory_a24aade5f0024f638baa0ac5d19188b5d_icgraph">
+<area shape="rect" title=" " alt="" coords="392,13,627,54"/>
+<area shape="rect" href="classtrajectory__processing_1_1IterativeSplineParameterization.html#ab01c18e50f1663358c658651e1fde2c5" title=" " alt="" coords="108,5,344,61"/>
+<area shape="rect" href="test__time__parameterization_8cpp.html#a1fb67aa34417d03016c74d44bd7f54e0" title=" " alt="" coords="5,20,60,47"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a03959bef929a092a7229d5a3e5e86ab1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a03959bef929a092a7229d5a3e5e86ab1">&#9670;&nbsp;</a></span>insertWayPoint() <span class="overload">[2/2]</span></h2>
+<a id="ae4834f60d6ab5955c5687dfadec607fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4834f60d6ab5955c5687dfadec607fd">&#9670;&nbsp;</a></span>insertWayPoint() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1466,7 +1294,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html">RobotTrajectory</a>&amp; robot_trajectory::RobotTrajectory::insertWayPoint </td>
+          <td class="memname">void robot_trajectory::RobotTrajectory::insertWayPoint </td>
           <td>(</td>
           <td class="paramtype">std::size_t&#160;</td>
           <td class="paramname"><em>index</em>, </td>
@@ -1496,7 +1324,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="robot__trajectory_8h_source.html#l00254">254</a> of file <a class="el" href="robot__trajectory_8h_source.html">robot_trajectory.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__trajectory_8h_source.html#l00227">227</a> of file <a class="el" href="robot__trajectory_8h_source.html">robot_trajectory.h</a>.</p>
 
 </div>
 </div>
@@ -1527,64 +1355,14 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a55e7beedfc60e0a6e523bd7d9278d884"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a55e7beedfc60e0a6e523bd7d9278d884">&#9670;&nbsp;</a></span>print()</h2>
+<a id="aefd8daff105ef04ea3242c17c9601475"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefd8daff105ef04ea3242c17c9601475">&#9670;&nbsp;</a></span>reverse()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void robot_trajectory::RobotTrajectory::print </td>
-          <td>(</td>
-          <td class="paramtype">std::ostream &amp;&#160;</td>
-          <td class="paramname"><em>out</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::vector&lt; int &gt;&#160;</td>
-          <td class="paramname"><em>variable_indexes</em> = <code>std::vector&lt;int&gt;()</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Print information about the trajectory. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">out</td><td>Stream to print to </td></tr>
-    <tr><td class="paramname">variable_indexes</td><td>The indexes of the variables to print. If empty/not specified and the group is defined, then uses the indexes for the group If empty and the group is not defined, uses ALL variables in robot_model</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>e.g. Trajectory has 13 points over 2.965 seconds waypoint 0 time 0.000 pos 0.000 vel 0.000 acc 0.000 waypoint 1 time 0.067 pos 0.001 vel 0.033 acc 1.000 waypoint 2 time 0.665 pos 0.200 vel 0.632 acc 1.000 ... </p>
-
-<p class="definition">Definition at line <a class="el" href="robot__trajectory_8cpp_source.html#l00544">544</a> of file <a class="el" href="robot__trajectory_8cpp_source.html">robot_trajectory.cpp</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classrobot__trajectory_1_1RobotTrajectory_a55e7beedfc60e0a6e523bd7d9278d884_icgraph.png" border="0" usemap="#classrobot__trajectory_1_1RobotTrajectory_a55e7beedfc60e0a6e523bd7d9278d884_icgraph" alt=""/></div>
-<map name="classrobot__trajectory_1_1RobotTrajectory_a55e7beedfc60e0a6e523bd7d9278d884_icgraph" id="classrobot__trajectory_1_1RobotTrajectory_a55e7beedfc60e0a6e523bd7d9278d884_icgraph">
-<area shape="rect" title="Print information about the trajectory." alt="" coords="272,5,507,47"/>
-<area shape="rect" href="test__time__parameterization_8cpp.html#a9e9c53951a8d9ae89aa8517fe0a63df8" title=" " alt="" coords="108,13,224,39"/>
-<area shape="rect" href="test__time__parameterization_8cpp.html#aa51b79e24472e01dd59a8f68878e719e" title=" " alt="" coords="5,13,60,39"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a08f715d9f69b89d53983fe9c8c54db33"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a08f715d9f69b89d53983fe9c8c54db33">&#9670;&nbsp;</a></span>reverse()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html">RobotTrajectory</a> &amp; robot_trajectory::RobotTrajectory::reverse </td>
+          <td class="memname">void robot_trajectory::RobotTrajectory::reverse </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -1592,64 +1370,38 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="robot__trajectory_8cpp_source.html#l00157">157</a> of file <a class="el" href="robot__trajectory_8cpp_source.html">robot_trajectory.cpp</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classrobot__trajectory_1_1RobotTrajectory_a08f715d9f69b89d53983fe9c8c54db33_icgraph.png" border="0" usemap="#classrobot__trajectory_1_1RobotTrajectory_a08f715d9f69b89d53983fe9c8c54db33_icgraph" alt=""/></div>
-<map name="classrobot__trajectory_1_1RobotTrajectory_a08f715d9f69b89d53983fe9c8c54db33_icgraph" id="classrobot__trajectory_1_1RobotTrajectory_a08f715d9f69b89d53983fe9c8c54db33_icgraph">
-<area shape="rect" title=" " alt="" coords="123,5,357,47"/>
-<area shape="rect" href="test__robot__trajectory_8cpp.html#ac2eca9d77186f589d9148d63fbef0006" title=" " alt="" coords="5,13,75,39"/>
-</map>
-</div>
+<p class="definition">Definition at line <a class="el" href="robot__trajectory_8cpp_source.html#l00151">151</a> of file <a class="el" href="robot__trajectory_8cpp_source.html">robot_trajectory.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a7e570f027e761c1eb0aa9cb3cf1b6814"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7e570f027e761c1eb0aa9cb3cf1b6814">&#9670;&nbsp;</a></span>setGroupName()</h2>
+<a id="aad48d78ec3d3f6f14174fc61d6cfa664"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad48d78ec3d3f6f14174fc61d6cfa664">&#9670;&nbsp;</a></span>setGroupName()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html">RobotTrajectory</a>&amp; robot_trajectory::RobotTrajectory::setGroupName </td>
+          <td class="memname">void robot_trajectory::RobotTrajectory::setGroupName </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>group_name</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="robot__trajectory_8h_source.html#l00132">132</a> of file <a class="el" href="robot__trajectory_8h_source.html">robot_trajectory.h</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classrobot__trajectory_1_1RobotTrajectory_a7e570f027e761c1eb0aa9cb3cf1b6814_icgraph.png" border="0" usemap="#classrobot__trajectory_1_1RobotTrajectory_a7e570f027e761c1eb0aa9cb3cf1b6814_icgraph" alt=""/></div>
-<map name="classrobot__trajectory_1_1RobotTrajectory_a7e570f027e761c1eb0aa9cb3cf1b6814_icgraph" id="classrobot__trajectory_1_1RobotTrajectory_a7e570f027e761c1eb0aa9cb3cf1b6814_icgraph">
-<area shape="rect" title=" " alt="" coords="123,5,357,47"/>
-<area shape="rect" href="test__robot__trajectory_8cpp.html#ac2eca9d77186f589d9148d63fbef0006" title=" " alt="" coords="5,13,75,39"/>
-</map>
-</div>
+<p class="definition">Definition at line <a class="el" href="robot__trajectory_8cpp_source.html#l00102">102</a> of file <a class="el" href="robot__trajectory_8cpp_source.html">robot_trajectory.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a4331283ac92f8e48bb14fdc80f38c9f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4331283ac92f8e48bb14fdc80f38c9f6">&#9670;&nbsp;</a></span>setRobotTrajectoryMsg() <span class="overload">[1/3]</span></h2>
+<a id="ac383404e17a747498146c8963b614ad3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac383404e17a747498146c8963b614ad3">&#9670;&nbsp;</a></span>setRobotTrajectoryMsg() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html">RobotTrajectory</a> &amp; robot_trajectory::RobotTrajectory::setRobotTrajectoryMsg </td>
+          <td class="memname">void robot_trajectory::RobotTrajectory::setRobotTrajectoryMsg </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a> &amp;&#160;</td>
           <td class="paramname"><em>reference_state</em>, </td>
@@ -1676,18 +1428,18 @@ Here is the caller graph for this function:</div>
 
 <p>Copy the content of the trajectory message into this class. The trajectory message itself is not required to contain the values for all joints. For this reason a full starting state must be specified as reference (<em>reference_state</em>). Before use, the reference state is updated using <em>state</em>. Each point in the trajectory to be constructed internally is obtained by copying the reference state and overwriting the content from a trajectory point in <em>trajectory</em>. </p>
 
-<p class="definition">Definition at line <a class="el" href="robot__trajectory_8cpp_source.html#l00470">470</a> of file <a class="el" href="robot__trajectory_8cpp_source.html">robot_trajectory.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__trajectory_8cpp_source.html#l00461">461</a> of file <a class="el" href="robot__trajectory_8cpp_source.html">robot_trajectory.cpp</a>.</p>
 
 </div>
 </div>
-<a id="ad098851ea4318783fbe321a0fcb44be4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad098851ea4318783fbe321a0fcb44be4">&#9670;&nbsp;</a></span>setRobotTrajectoryMsg() <span class="overload">[2/3]</span></h2>
+<a id="a3a315f362659e8eeef34665ad53a21d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a315f362659e8eeef34665ad53a21d9">&#9670;&nbsp;</a></span>setRobotTrajectoryMsg() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html">RobotTrajectory</a> &amp; robot_trajectory::RobotTrajectory::setRobotTrajectoryMsg </td>
+          <td class="memname">void robot_trajectory::RobotTrajectory::setRobotTrajectoryMsg </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a> &amp;&#160;</td>
           <td class="paramname"><em>reference_state</em>, </td>
@@ -1708,18 +1460,18 @@ Here is the caller graph for this function:</div>
 
 <p>Copy the content of the trajectory message into this class. The trajectory message itself is not required to contain the values for all joints. For this reason a full starting state must be specified as reference (<em>reference_state</em>). Each point in the trajectory to be constructed internally is obtained by copying the reference state and overwriting the content from a trajectory point in <em>trajectory</em>. </p>
 
-<p class="definition">Definition at line <a class="el" href="robot__trajectory_8cpp_source.html#l00422">422</a> of file <a class="el" href="robot__trajectory_8cpp_source.html">robot_trajectory.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__trajectory_8cpp_source.html#l00414">414</a> of file <a class="el" href="robot__trajectory_8cpp_source.html">robot_trajectory.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a99b9016fc88eebd0646d701d3868febf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a99b9016fc88eebd0646d701d3868febf">&#9670;&nbsp;</a></span>setRobotTrajectoryMsg() <span class="overload">[3/3]</span></h2>
+<a id="a4556a5245c841731bce178c0d235a721"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4556a5245c841731bce178c0d235a721">&#9670;&nbsp;</a></span>setRobotTrajectoryMsg() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html">RobotTrajectory</a> &amp; robot_trajectory::RobotTrajectory::setRobotTrajectoryMsg </td>
+          <td class="memname">void robot_trajectory::RobotTrajectory::setRobotTrajectoryMsg </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a> &amp;&#160;</td>
           <td class="paramname"><em>reference_state</em>, </td>
@@ -1740,16 +1492,15 @@ Here is the caller graph for this function:</div>
 
 <p>Copy the content of the trajectory message into this class. The trajectory message itself is not required to contain the values for all joints. For this reason a full starting state must be specified as reference (<em>reference_state</em>). Each point in the trajectory to be constructed internally is obtained by copying the reference state and overwriting the content from a trajectory point in <em>trajectory</em>. </p>
 
-<p class="definition">Definition at line <a class="el" href="robot__trajectory_8cpp_source.html#l00394">394</a> of file <a class="el" href="robot__trajectory_8cpp_source.html">robot_trajectory.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__trajectory_8cpp_source.html#l00388">388</a> of file <a class="el" href="robot__trajectory_8cpp_source.html">robot_trajectory.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classrobot__trajectory_1_1RobotTrajectory_a99b9016fc88eebd0646d701d3868febf_icgraph.png" border="0" usemap="#classrobot__trajectory_1_1RobotTrajectory_a99b9016fc88eebd0646d701d3868febf_icgraph" alt=""/></div>
-<map name="classrobot__trajectory_1_1RobotTrajectory_a99b9016fc88eebd0646d701d3868febf_icgraph" id="classrobot__trajectory_1_1RobotTrajectory_a99b9016fc88eebd0646d701d3868febf_icgraph">
-<area shape="rect" title="Copy the content of the trajectory message into this class. The trajectory message itself is not requ..." alt="" coords="491,86,725,127"/>
+<div class="center"><img src="classrobot__trajectory_1_1RobotTrajectory_a4556a5245c841731bce178c0d235a721_icgraph.png" border="0" usemap="#classrobot__trajectory_1_1RobotTrajectory_a4556a5245c841731bce178c0d235a721_icgraph" alt=""/></div>
+<map name="classrobot__trajectory_1_1RobotTrajectory_a4556a5245c841731bce178c0d235a721_icgraph" id="classrobot__trajectory_1_1RobotTrajectory_a4556a5245c841731bce178c0d235a721_icgraph">
+<area shape="rect" title="Copy the content of the trajectory message into this class. The trajectory message itself is not requ..." alt="" coords="491,50,725,91"/>
 <area shape="rect" href="classmoveit__rviz__plugin_1_1TrajectoryVisualization.html#a80365577e8df5a14cbcaff9b9cf2d295" title="ROS callback for an incoming path message." alt="" coords="240,5,443,61"/>
 <area shape="rect" href="classplanning__scene_1_1PlanningScene.html#a46f024838af9e42c7afb0950c11a97f7" title="Check if a given path is valid. Each state is checked for validity (collision avoidance and feasibili..." alt="" coords="248,86,435,127"/>
-<area shape="rect" href="test__robot__trajectory_8cpp.html#ac2eca9d77186f589d9148d63fbef0006" title=" " alt="" coords="307,152,376,179"/>
 <area shape="rect" href="classmoveit__rviz__plugin_1_1TrajectoryVisualization.html#a576b9af1c11d3dc9aae1facf1b211a8a" title=" " alt="" coords="9,5,188,61"/>
 <area shape="rect" href="classplanning__scene_1_1PlanningScene.html#ad4bd37ca382d39ef17072e73e806cc3b" title="Check if a given state is valid. This means checking for collisions, feasibility and whether the user..." alt="" coords="5,86,192,127"/>
 </map>
@@ -1757,8 +1508,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a108b7e9d9698f221c3b569b7882bfab8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a108b7e9d9698f221c3b569b7882bfab8">&#9670;&nbsp;</a></span>setWayPointDurationFromPrevious()</h2>
+<a id="a5e99bb2d46afb55c48f259e008f18e06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e99bb2d46afb55c48f259e008f18e06">&#9670;&nbsp;</a></span>setWayPointDurationFromPrevious()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1767,7 +1518,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html">RobotTrajectory</a>&amp; robot_trajectory::RobotTrajectory::setWayPointDurationFromPrevious </td>
+          <td class="memname">void robot_trajectory::RobotTrajectory::setWayPointDurationFromPrevious </td>
           <td>(</td>
           <td class="paramtype">std::size_t&#160;</td>
           <td class="paramname"><em>index</em>, </td>
@@ -1791,34 +1542,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="robot__trajectory_8h_source.html#l00200">200</a> of file <a class="el" href="robot__trajectory_8h_source.html">robot_trajectory.h</a>.</p>
-
-</div>
-</div>
-<a id="a393208ca7b2061818c0c2691e3fd5bde"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a393208ca7b2061818c0c2691e3fd5bde">&#9670;&nbsp;</a></span>size()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::size_t robot_trajectory::RobotTrajectory::size </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="robot__trajectory_8h_source.html#l00143">143</a> of file <a class="el" href="robot__trajectory_8h_source.html">robot_trajectory.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__trajectory_8h_source.html#l00176">176</a> of file <a class="el" href="robot__trajectory_8h_source.html">robot_trajectory.h</a>.</p>
 
 </div>
 </div>
@@ -1838,18 +1562,18 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="robot__trajectory_8cpp_source.html#l00132">132</a> of file <a class="el" href="robot__trajectory_8cpp_source.html">robot_trajectory.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__trajectory_8cpp_source.html#l00128">128</a> of file <a class="el" href="robot__trajectory_8cpp_source.html">robot_trajectory.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a7804317b96eb6c13639839b1276ac04c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7804317b96eb6c13639839b1276ac04c">&#9670;&nbsp;</a></span>unwind() <span class="overload">[1/2]</span></h2>
+<a id="a336c915269b3139b7ae53fb2af6ab5a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a336c915269b3139b7ae53fb2af6ab5a0">&#9670;&nbsp;</a></span>unwind() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html">RobotTrajectory</a> &amp; robot_trajectory::RobotTrajectory::unwind </td>
+          <td class="memname">void robot_trajectory::RobotTrajectory::unwind </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -1857,12 +1581,12 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="robot__trajectory_8cpp_source.html#l00175">175</a> of file <a class="el" href="robot__trajectory_8cpp_source.html">robot_trajectory.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__trajectory_8cpp_source.html#l00167">167</a> of file <a class="el" href="robot__trajectory_8cpp_source.html">robot_trajectory.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classrobot__trajectory_1_1RobotTrajectory_a7804317b96eb6c13639839b1276ac04c_icgraph.png" border="0" usemap="#classrobot__trajectory_1_1RobotTrajectory_a7804317b96eb6c13639839b1276ac04c_icgraph" alt=""/></div>
-<map name="classrobot__trajectory_1_1RobotTrajectory_a7804317b96eb6c13639839b1276ac04c_icgraph" id="classrobot__trajectory_1_1RobotTrajectory_a7804317b96eb6c13639839b1276ac04c_icgraph">
+<div class="center"><img src="classrobot__trajectory_1_1RobotTrajectory_a336c915269b3139b7ae53fb2af6ab5a0_icgraph.png" border="0" usemap="#classrobot__trajectory_1_1RobotTrajectory_a336c915269b3139b7ae53fb2af6ab5a0_icgraph" alt=""/></div>
+<map name="classrobot__trajectory_1_1RobotTrajectory_a336c915269b3139b7ae53fb2af6ab5a0_icgraph" id="classrobot__trajectory_1_1RobotTrajectory_a336c915269b3139b7ae53fb2af6ab5a0_icgraph">
 <area shape="rect" title=" " alt="" coords="407,53,641,94"/>
 <area shape="rect" href="classtrajectory__processing_1_1IterativeSplineParameterization.html#ab01c18e50f1663358c658651e1fde2c5" title=" " alt="" coords="115,5,351,61"/>
 <area shape="rect" href="classtrajectory__processing_1_1TimeOptimalTrajectoryGeneration.html#a5ad18a23d5b6f0beedaa4b6e20f8b01b" title=" " alt="" coords="108,85,359,141"/>
@@ -1872,14 +1596,14 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a03bdc1bacaac6a465b8f6d2347236537"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a03bdc1bacaac6a465b8f6d2347236537">&#9670;&nbsp;</a></span>unwind() <span class="overload">[2/2]</span></h2>
+<a id="a09281e7fd6e8b6b30e09d54e6f5f052e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09281e7fd6e8b6b30e09d54e6f5f052e">&#9670;&nbsp;</a></span>unwind() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html">RobotTrajectory</a> &amp; robot_trajectory::RobotTrajectory::unwind </td>
+          <td class="memname">void robot_trajectory::RobotTrajectory::unwind </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a> &amp;&#160;</td>
           <td class="paramname"><em>state</em></td><td>)</td>
@@ -1888,7 +1612,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="robot__trajectory_8cpp_source.html#l00212">212</a> of file <a class="el" href="robot__trajectory_8cpp_source.html">robot_trajectory.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__trajectory_8cpp_source.html#l00202">202</a> of file <a class="el" href="robot__trajectory_8cpp_source.html">robot_trajectory.cpp</a>.</p>
 
 </div>
 </div>

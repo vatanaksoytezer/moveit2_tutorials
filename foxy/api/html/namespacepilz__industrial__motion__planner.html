@@ -88,7 +88,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set of cartesian limits, has values for velocity, acceleration and deceleration of both the translational and rotational part.  <a href="classpilz__industrial__motion__planner_1_1CartesianLimit.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpilz__industrial__motion__planner_1_1CartesianLimitsAggregator.html">CartesianLimitsAggregator</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtains cartesian limits from the node parameters.  <a href="classpilz__industrial__motion__planner_1_1CartesianLimitsAggregator.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtains cartesian limits from the parameter server.  <a href="classpilz__industrial__motion__planner_1_1CartesianLimitsAggregator.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpilz__industrial__motion__planner_1_1CartesianTrajectory.html">CartesianTrajectory</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -98,7 +98,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class orchestrates the planning of single commands and command lists.  <a href="classpilz__industrial__motion__planner_1_1CommandListManager.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpilz__industrial__motion__planner_1_1CommandPlanner.html">CommandPlanner</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">MoveIt Plugin for Planning with Standard Robot Commands This planner is dedicated to return a instance of PlanningContext that corresponds to the requested motion command set as planner_id in the MotionPlanRequest). It can be easily extended with additional commands by creating a class inheriting from <a class="el" href="classpilz__industrial__motion__planner_1_1PlanningContextLoader.html" title="Base class for all PlanningContextLoaders. Since planning_interface::PlanningContext has a non empty ...">PlanningContextLoader</a>.  <a href="classpilz__industrial__motion__planner_1_1CommandPlanner.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">MoveIt Plugin for Planning with Standard Robot Commands This planner is dedicated to return a instance of PlanningContext that corresponds to the requested motion command set as planner_id in the MotionPlanRequest). It can be easily extended with additional commands by creating a class inherting from <a class="el" href="classpilz__industrial__motion__planner_1_1PlanningContextLoader.html" title="Base class for all PlanningContextLoaders. Since planning_interface::PlanningContext has a non empty ...">PlanningContextLoader</a>.  <a href="classpilz__industrial__motion__planner_1_1CommandPlanner.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpilz__industrial__motion__planner_1_1ContextLoaderRegistrationException.html">ContextLoaderRegistrationException</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -108,7 +108,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test fixture for getSolverTipFrame tests.  <a href="classpilz__industrial__motion__planner_1_1GetSolverTipFrameTest.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpilz__industrial__motion__planner_1_1JointLimitsAggregator.html">JointLimitsAggregator</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unifies the joint limits from the given joint models with joint limits from the node parameters.  <a href="classpilz__industrial__motion__planner_1_1JointLimitsAggregator.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unifies the joint limits from the given joint models with joint limits from the parameter server.  <a href="classpilz__industrial__motion__planner_1_1JointLimitsAggregator.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpilz__industrial__motion__planner_1_1JointLimitsContainer.html">JointLimitsContainer</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Container for JointLimits, essentially a map with convenience functions. Adds the ability to as for limits and get a common limit that unifies all given limits.  <a href="classpilz__industrial__motion__planner_1_1JointLimitsContainer.html#details">More...</a><br /></td></tr>
@@ -128,7 +128,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provide service to blend multiple trajectories in the form of a MoveGroup capability (plugin).  <a href="classpilz__industrial__motion__planner_1_1MoveGroupSequenceService.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpilz__industrial__motion__planner_1_1MoveItErrorCodeException.html">MoveItErrorCodeException</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exception storing an moveit_msgs::msg::MoveItErrorCodes value.  <a href="classpilz__industrial__motion__planner_1_1MoveItErrorCodeException.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exception storing an moveit_msgs::MoveItErrorCodes value.  <a href="classpilz__industrial__motion__planner_1_1MoveItErrorCodeException.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpilz__industrial__motion__planner_1_1PathCircleGenerator.html">PathCircleGenerator</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generator class for KDL::Path_Circle from different circle representations.  <a href="classpilz__industrial__motion__planner_1_1PathCircleGenerator.html#details">More...</a><br /></td></tr>
@@ -146,7 +146,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">PlanningContext for obtaining LIN trajectories.  <a href="classpilz__industrial__motion__planner_1_1PlanningContextLIN.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpilz__industrial__motion__planner_1_1PlanningContextLoader.html">PlanningContextLoader</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for all PlanningContextLoaders. Since <a class="el" href="classplanning__interface_1_1PlanningContext.html" title="Representation of a particular planning context – the planning scene and the request are known,...">planning_interface::PlanningContext</a> has a non empty ctor, classes derived from it can not be plugins. This class serves as base class for wrappers.  <a href="classpilz__industrial__motion__planner_1_1PlanningContextLoader.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for all PlanningContextLoaders. Since <a class="el" href="classplanning__interface_1_1PlanningContext.html" title="Representation of a particular planning context – the planning scene and the request are known,...">planning_interface::PlanningContext</a> has a non empty ctor classes derived from it can not be plugins. This class serves as base class for wrappers.  <a href="classpilz__industrial__motion__planner_1_1PlanningContextLoader.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpilz__industrial__motion__planner_1_1PlanningContextLoaderCIRC.html">PlanningContextLoaderCIRC</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Plugin that can generate instances of <a class="el" href="classpilz__industrial__motion__planner_1_1PlanningContextCIRC.html" title="PlanningContext for obtaining CIRC trajectories.">PlanningContextCIRC</a>. Generates instances of <a class="el" href="classpilz__industrial__motion__planner_1_1PlanningContextLIN.html" title="PlanningContext for obtaining LIN trajectories.">PlanningContextLIN</a>.  <a href="classpilz__industrial__motion__planner_1_1PlanningContextLoaderCIRC.html#details">More...</a><br /></td></tr>
@@ -199,7 +199,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classA.html">A</a> base class for all validations exceptions inheriting from std::runtime_exception.  <a href="classpilz__industrial__motion__planner_1_1ValidationException.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpilz__industrial__motion__planner_1_1ValidationJointMissingException.html">ValidationJointMissingException</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Thrown the limits for a joint are defined in the urdf but not in the node parameters (loaded from yaml)  <a href="classpilz__industrial__motion__planner_1_1ValidationJointMissingException.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Thrown the limits for a joint are defined in the urdf but not on the parameter server (loaded from yaml)  <a href="classpilz__industrial__motion__planner_1_1ValidationJointMissingException.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpilz__industrial__motion__planner_1_1VelocityProfileATrap.html">VelocityProfileATrap</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classA.html">A</a> PTP Trajectory Generator of Asymmetric Trapezoidal Velocity Profile. Differences to VelocityProfile_Trap:  <a href="classpilz__industrial__motion__planner_1_1VelocityProfileATrap.html#details">More...</a><br /></td></tr>
@@ -213,14 +213,12 @@ Typedefs</h2></td></tr>
 <tr class="separator:a0f8b526ffc08448480547106674a4bdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0376a6e126bc40f48da77c7f58f1df5c"><td class="memItemLeft" align="right" valign="top">typedef std::map&lt; std::string, <a class="el" href="namespacepilz__industrial__motion__planner.html#a0f8b526ffc08448480547106674a4bdc">JointLimit</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a0376a6e126bc40f48da77c7f58f1df5c">JointLimitsMap</a></td></tr>
 <tr class="separator:a0376a6e126bc40f48da77c7f58f1df5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afcc68f91f054fc04fe9a63d67a1b1c77"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#afcc68f91f054fc04fe9a63d67a1b1c77">MoveGroupSequenceGoalHandle</a> = rclcpp_action::ServerGoalHandle&lt; moveit_msgs::action::MoveGroupSequence &gt;</td></tr>
-<tr class="separator:afcc68f91f054fc04fe9a63d67a1b1c77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7512727325ef18faaed63333673288d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#ad7512727325ef18faaed63333673288d">TipFrameFunc_t</a> = std::function&lt; const std::string &amp;(const std::string &amp;)&gt;</td></tr>
 <tr class="separator:ad7512727325ef18faaed63333673288d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a78b5690d96e1f88fe5f7f98555367fd1"><td class="memItemLeft" align="right" valign="top">typedef std::shared_ptr&lt; <a class="el" href="classpilz__industrial__motion__planner_1_1PlanningContextLoader.html">PlanningContextLoader</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a78b5690d96e1f88fe5f7f98555367fd1">PlanningContextLoaderPtr</a></td></tr>
-<tr class="separator:a78b5690d96e1f88fe5f7f98555367fd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aacbf0044f96cc3095c1afcadaa18d202"><td class="memItemLeft" align="right" valign="top">typedef std::shared_ptr&lt; const <a class="el" href="classpilz__industrial__motion__planner_1_1PlanningContextLoader.html">PlanningContextLoader</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#aacbf0044f96cc3095c1afcadaa18d202">PlanningContextLoaderConstPtr</a></td></tr>
-<tr class="separator:aacbf0044f96cc3095c1afcadaa18d202"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af351fa28118b138319387c7a8423b0f7"><td class="memItemLeft" align="right" valign="top">typedef boost::shared_ptr&lt; <a class="el" href="classpilz__industrial__motion__planner_1_1PlanningContextLoader.html">PlanningContextLoader</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#af351fa28118b138319387c7a8423b0f7">PlanningContextLoaderPtr</a></td></tr>
+<tr class="separator:af351fa28118b138319387c7a8423b0f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36bc248ea45a9287f5a17a8b1c67e24e"><td class="memItemLeft" align="right" valign="top">typedef boost::shared_ptr&lt; const <a class="el" href="classpilz__industrial__motion__planner_1_1PlanningContextLoader.html">PlanningContextLoader</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a36bc248ea45a9287f5a17a8b1c67e24e">PlanningContextLoaderConstPtr</a></td></tr>
+<tr class="separator:a36bc248ea45a9287f5a17a8b1c67e24e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1f91f1ccb709aa6029cba7b48b17471"><td class="memItemLeft" align="right" valign="top">typedef boost::shared_ptr&lt; <a class="el" href="classpilz__industrial__motion__planner_1_1PlanningContextLoaderCIRC.html">PlanningContextLoaderCIRC</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#ad1f91f1ccb709aa6029cba7b48b17471">PlanningContextLoaderCIRCPtr</a></td></tr>
 <tr class="separator:ad1f91f1ccb709aa6029cba7b48b17471"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c64fc17abcb0530d77a668173a0fa11"><td class="memItemLeft" align="right" valign="top">typedef boost::shared_ptr&lt; const <a class="el" href="classpilz__industrial__motion__planner_1_1PlanningContextLoaderCIRC.html">PlanningContextLoaderCIRC</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a4c64fc17abcb0530d77a668173a0fa11">PlanningContextLoaderCIRCConstPtr</a></td></tr>
@@ -238,138 +236,138 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a7709ca99fcb9b60a3418abf4567231ca"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a7709ca99fcb9b60a3418abf4567231ca">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (NegativeBlendRadiusException, moveit_msgs::msg::MoveItErrorCodes::INVALID_MOTION_PLAN)</td></tr>
-<tr class="separator:a7709ca99fcb9b60a3418abf4567231ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc0442699a6797be6212047365955182"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#afc0442699a6797be6212047365955182">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (LastBlendRadiusNotZeroException, moveit_msgs::msg::MoveItErrorCodes::INVALID_MOTION_PLAN)</td></tr>
-<tr class="separator:afc0442699a6797be6212047365955182"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a91db6c5d9f59ded10ff68e76c2588b75"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a91db6c5d9f59ded10ff68e76c2588b75">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (StartStateSetException, moveit_msgs::msg::MoveItErrorCodes::INVALID_ROBOT_STATE)</td></tr>
-<tr class="separator:a91db6c5d9f59ded10ff68e76c2588b75"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d17b8fc0752ab7460c9c1c10e544606"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a6d17b8fc0752ab7460c9c1c10e544606">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (OverlappingBlendRadiiException, moveit_msgs::msg::MoveItErrorCodes::INVALID_MOTION_PLAN)</td></tr>
-<tr class="separator:a6d17b8fc0752ab7460c9c1c10e544606"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0285bf5b65dc49958597976ecf3ba7fd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a0285bf5b65dc49958597976ecf3ba7fd">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (PlanningPipelineException, moveit_msgs::msg::MoveItErrorCodes::FAILURE)</td></tr>
-<tr class="separator:a0285bf5b65dc49958597976ecf3ba7fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54bf11828cd2edde80431e36bc0ec2e7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a54bf11828cd2edde80431e36bc0ec2e7">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (NegativeBlendRadiusException, moveit_msgs::MoveItErrorCodes::INVALID_MOTION_PLAN)</td></tr>
+<tr class="separator:a54bf11828cd2edde80431e36bc0ec2e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b06cc4346c485bb1e3b33e0974ac344"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a9b06cc4346c485bb1e3b33e0974ac344">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (LastBlendRadiusNotZeroException, moveit_msgs::MoveItErrorCodes::INVALID_MOTION_PLAN)</td></tr>
+<tr class="separator:a9b06cc4346c485bb1e3b33e0974ac344"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22fef2cc04d06734532a26a96827ca72"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a22fef2cc04d06734532a26a96827ca72">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (StartStateSetException, moveit_msgs::MoveItErrorCodes::INVALID_ROBOT_STATE)</td></tr>
+<tr class="separator:a22fef2cc04d06734532a26a96827ca72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cb8d52c9e1761f6eb7ef0145a37cd58"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a0cb8d52c9e1761f6eb7ef0145a37cd58">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (OverlappingBlendRadiiException, moveit_msgs::MoveItErrorCodes::INVALID_MOTION_PLAN)</td></tr>
+<tr class="separator:a0cb8d52c9e1761f6eb7ef0145a37cd58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9af3ca03064ba85c7b812bf725909534"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a9af3ca03064ba85c7b812bf725909534">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (PlanningPipelineException, moveit_msgs::MoveItErrorCodes::FAILURE)</td></tr>
+<tr class="separator:a9af3ca03064ba85c7b812bf725909534"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69ade17b677033f603e8fef3f7a967cc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a69ade17b677033f603e8fef3f7a967cc">MOVEIT_CLASS_FORWARD</a> (<a class="el" href="classpilz__industrial__motion__planner_1_1CommandPlanner.html">CommandPlanner</a>)</td></tr>
 <tr class="separator:a69ade17b677033f603e8fef3f7a967cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a082f12fe12eb22b9f4853111c9ce1396"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a082f12fe12eb22b9f4853111c9ce1396">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (NoBlenderSetException, moveit_msgs::msg::MoveItErrorCodes::FAILURE)</td></tr>
-<tr class="separator:a082f12fe12eb22b9f4853111c9ce1396"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a71e899e691f5c4d61b4a68e2c02b3154"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a71e899e691f5c4d61b4a68e2c02b3154">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (NoTipFrameFunctionSetException, moveit_msgs::msg::MoveItErrorCodes::FAILURE)</td></tr>
-<tr class="separator:a71e899e691f5c4d61b4a68e2c02b3154"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac273b95052ceae6ed501768e4a86df2d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#ac273b95052ceae6ed501768e4a86df2d">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (NoRobotModelSetException, moveit_msgs::msg::MoveItErrorCodes::FAILURE)</td></tr>
-<tr class="separator:ac273b95052ceae6ed501768e4a86df2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a59e2132b763722f15d70cbc44208b3ba"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a59e2132b763722f15d70cbc44208b3ba">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (BlendingFailedException, moveit_msgs::msg::MoveItErrorCodes::FAILURE)</td></tr>
-<tr class="separator:a59e2132b763722f15d70cbc44208b3ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9282117f9a449af4df4763c36f81d5ea"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a9282117f9a449af4df4763c36f81d5ea">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (NoBlenderSetException, moveit_msgs::MoveItErrorCodes::FAILURE)</td></tr>
+<tr class="separator:a9282117f9a449af4df4763c36f81d5ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac117960733a37df8b913ebc0519fde10"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#ac117960733a37df8b913ebc0519fde10">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (NoTipFrameFunctionSetException, moveit_msgs::MoveItErrorCodes::FAILURE)</td></tr>
+<tr class="separator:ac117960733a37df8b913ebc0519fde10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d24b90aab817a2f8d990e005084b3c4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a0d24b90aab817a2f8d990e005084b3c4">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (NoRobotModelSetException, moveit_msgs::MoveItErrorCodes::FAILURE)</td></tr>
+<tr class="separator:a0d24b90aab817a2f8d990e005084b3c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac267d5ab0dddc7bd06db87b329d6efdc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#ac267d5ab0dddc7bd06db87b329d6efdc">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (BlendingFailedException, moveit_msgs::MoveItErrorCodes::FAILURE)</td></tr>
+<tr class="separator:ac267d5ab0dddc7bd06db87b329d6efdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25a2ef7d36df956e28e5f036b8627b3a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a25a2ef7d36df956e28e5f036b8627b3a">MOVEIT_CLASS_FORWARD</a> (PlanningContext)</td></tr>
 <tr class="separator:a25a2ef7d36df956e28e5f036b8627b3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1faafbc948224d471043d4ca270129a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#af1faafbc948224d471043d4ca270129a">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (NoSolverException, moveit_msgs::msg::MoveItErrorCodes::FAILURE)</td></tr>
-<tr class="separator:af1faafbc948224d471043d4ca270129a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afed976231acd655df4910a8a07d04513"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#afed976231acd655df4910a8a07d04513">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (MoreThanOneTipFrameException, moveit_msgs::msg::MoveItErrorCodes::FAILURE)</td></tr>
-<tr class="separator:afed976231acd655df4910a8a07d04513"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aefc542cd82d60b584e7977e23d7e0403"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#aefc542cd82d60b584e7977e23d7e0403">computePoseIK</a> (const planning_scene::PlanningSceneConstPtr &amp;scene, const std::string &amp;group_name, const std::string &amp;link_name, const Eigen::Isometry3d &amp;pose, const std::string &amp;frame_id, const std::map&lt; std::string, double &gt; &amp;seed, std::map&lt; std::string, double &gt; &amp;solution, bool check_self_collision=true, const double timeout=0.0)</td></tr>
-<tr class="memdesc:aefc542cd82d60b584e7977e23d7e0403"><td class="mdescLeft">&#160;</td><td class="mdescRight">compute the inverse kinematics of a given pose, also check robot self collision  <a href="namespacepilz__industrial__motion__planner.html#aefc542cd82d60b584e7977e23d7e0403">More...</a><br /></td></tr>
-<tr class="separator:aefc542cd82d60b584e7977e23d7e0403"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40ec128f5a3915c2d1d4ad2148a6b05a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a40ec128f5a3915c2d1d4ad2148a6b05a">computePoseIK</a> (const planning_scene::PlanningSceneConstPtr &amp;scene, const std::string &amp;group_name, const std::string &amp;link_name, const geometry_msgs::msg::Pose &amp;pose, const std::string &amp;frame_id, const std::map&lt; std::string, double &gt; &amp;seed, std::map&lt; std::string, double &gt; &amp;solution, bool check_self_collision=true, const double timeout=0.0)</td></tr>
-<tr class="separator:a40ec128f5a3915c2d1d4ad2148a6b05a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a846707e0c70fe0ce82d46c752642e37e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a846707e0c70fe0ce82d46c752642e37e">computeLinkFK</a> (const moveit::core::RobotModelConstPtr &amp;robot_model, const std::string &amp;link_name, const std::map&lt; std::string, double &gt; &amp;joint_state, Eigen::Isometry3d &amp;pose)</td></tr>
-<tr class="memdesc:a846707e0c70fe0ce82d46c752642e37e"><td class="mdescLeft">&#160;</td><td class="mdescRight">compute the pose of a link at give robot state  <a href="namespacepilz__industrial__motion__planner.html#a846707e0c70fe0ce82d46c752642e37e">More...</a><br /></td></tr>
-<tr class="separator:a846707e0c70fe0ce82d46c752642e37e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adef2b7361e2dba8f6bc99e5785cf5dc8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#adef2b7361e2dba8f6bc99e5785cf5dc8">computeLinkFK</a> (const moveit::core::RobotModelConstPtr &amp;robot_model, const std::string &amp;link_name, const std::vector&lt; std::string &gt; &amp;joint_names, const std::vector&lt; double &gt; &amp;joint_positions, Eigen::Isometry3d &amp;pose)</td></tr>
-<tr class="separator:adef2b7361e2dba8f6bc99e5785cf5dc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56991335038346615078e4d54cafce56"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a56991335038346615078e4d54cafce56">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (NoSolverException, moveit_msgs::MoveItErrorCodes::FAILURE)</td></tr>
+<tr class="separator:a56991335038346615078e4d54cafce56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad84687a758fdd755862b14f8891e0f2c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#ad84687a758fdd755862b14f8891e0f2c">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (MoreThanOneTipFrameException, moveit_msgs::MoveItErrorCodes::FAILURE)</td></tr>
+<tr class="separator:ad84687a758fdd755862b14f8891e0f2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e27e4f0615a094f669c0cfb12f83725"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a2e27e4f0615a094f669c0cfb12f83725">computePoseIK</a> (const robot_model::RobotModelConstPtr &amp;robot_model, const std::string &amp;group_name, const std::string &amp;link_name, const Eigen::Isometry3d &amp;pose, const std::string &amp;frame_id, const std::map&lt; std::string, double &gt; &amp;seed, std::map&lt; std::string, double &gt; &amp;solution, bool check_self_collision=true, const double timeout=0.0)</td></tr>
+<tr class="memdesc:a2e27e4f0615a094f669c0cfb12f83725"><td class="mdescLeft">&#160;</td><td class="mdescRight">compute the inverse kinematics of a given pose, also check robot self collision  <a href="namespacepilz__industrial__motion__planner.html#a2e27e4f0615a094f669c0cfb12f83725">More...</a><br /></td></tr>
+<tr class="separator:a2e27e4f0615a094f669c0cfb12f83725"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb2c389d60ea23fe5f6b76c5580a5387"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#adb2c389d60ea23fe5f6b76c5580a5387">computePoseIK</a> (const robot_model::RobotModelConstPtr &amp;robot_model, const std::string &amp;group_name, const std::string &amp;link_name, const geometry_msgs::Pose &amp;pose, const std::string &amp;frame_id, const std::map&lt; std::string, double &gt; &amp;seed, std::map&lt; std::string, double &gt; &amp;solution, bool check_self_collision=true, const double timeout=0.0)</td></tr>
+<tr class="separator:adb2c389d60ea23fe5f6b76c5580a5387"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e42c374549cddb4e16420c7e0b021cf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a0e42c374549cddb4e16420c7e0b021cf">computeLinkFK</a> (const robot_model::RobotModelConstPtr &amp;robot_model, const std::string &amp;link_name, const std::map&lt; std::string, double &gt; &amp;joint_state, Eigen::Isometry3d &amp;pose)</td></tr>
+<tr class="memdesc:a0e42c374549cddb4e16420c7e0b021cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">compute the pose of a link at give robot state  <a href="namespacepilz__industrial__motion__planner.html#a0e42c374549cddb4e16420c7e0b021cf">More...</a><br /></td></tr>
+<tr class="separator:a0e42c374549cddb4e16420c7e0b021cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4355674794a756756647047d01d68347"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a4355674794a756756647047d01d68347">computeLinkFK</a> (const robot_model::RobotModelConstPtr &amp;robot_model, const std::string &amp;link_name, const std::vector&lt; std::string &gt; &amp;joint_names, const std::vector&lt; double &gt; &amp;joint_positions, Eigen::Isometry3d &amp;pose)</td></tr>
+<tr class="separator:a4355674794a756756647047d01d68347"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac442f8c60e0f733e280bbed7ba51bbb2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#ac442f8c60e0f733e280bbed7ba51bbb2">verifySampleJointLimits</a> (const std::map&lt; std::string, double &gt; &amp;position_last, const std::map&lt; std::string, double &gt; &amp;velocity_last, const std::map&lt; std::string, double &gt; &amp;position_current, double duration_last, double duration_current, const <a class="el" href="classpilz__industrial__motion__planner_1_1JointLimitsContainer.html">JointLimitsContainer</a> &amp;joint_limits)</td></tr>
 <tr class="memdesc:ac442f8c60e0f733e280bbed7ba51bbb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">verify the velocity/acceleration limits of current sample (based on backward difference computation) v(k) = [x(k) - x(k-1)]/[t(k) - t(k-1)] a(k) = [v(k) - v(k-1)]/[t(k) - t(k-2)]*2  <a href="namespacepilz__industrial__motion__planner.html#ac442f8c60e0f733e280bbed7ba51bbb2">More...</a><br /></td></tr>
 <tr class="separator:ac442f8c60e0f733e280bbed7ba51bbb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64b959a9147984677d281a476dfd981e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a64b959a9147984677d281a476dfd981e">generateJointTrajectory</a> (const planning_scene::PlanningSceneConstPtr &amp;scene, const <a class="el" href="classpilz__industrial__motion__planner_1_1JointLimitsContainer.html">JointLimitsContainer</a> &amp;joint_limits, const KDL::Trajectory &amp;trajectory, const std::string &amp;group_name, const std::string &amp;link_name, const std::map&lt; std::string, double &gt; &amp;initial_joint_position, const double &amp;sampling_time, trajectory_msgs::msg::JointTrajectory &amp;joint_trajectory, moveit_msgs::msg::MoveItErrorCodes &amp;error_code, bool check_self_collision=false)</td></tr>
-<tr class="memdesc:a64b959a9147984677d281a476dfd981e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate joint trajectory from a <a class="el" href="namespaceKDL.html">KDL</a> Cartesian trajectory.  <a href="namespacepilz__industrial__motion__planner.html#a64b959a9147984677d281a476dfd981e">More...</a><br /></td></tr>
-<tr class="separator:a64b959a9147984677d281a476dfd981e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afcf834b07fd8b4b9e279ff3f67f39fea"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#afcf834b07fd8b4b9e279ff3f67f39fea">generateJointTrajectory</a> (const planning_scene::PlanningSceneConstPtr &amp;scene, const <a class="el" href="classpilz__industrial__motion__planner_1_1JointLimitsContainer.html">JointLimitsContainer</a> &amp;joint_limits, const <a class="el" href="structpilz__industrial__motion__planner_1_1CartesianTrajectory.html">pilz_industrial_motion_planner::CartesianTrajectory</a> &amp;trajectory, const std::string &amp;group_name, const std::string &amp;link_name, const std::map&lt; std::string, double &gt; &amp;initial_joint_position, const std::map&lt; std::string, double &gt; &amp;initial_joint_velocity, trajectory_msgs::msg::JointTrajectory &amp;joint_trajectory, moveit_msgs::msg::MoveItErrorCodes &amp;error_code, bool check_self_collision=false)</td></tr>
-<tr class="memdesc:afcf834b07fd8b4b9e279ff3f67f39fea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate joint trajectory from a MultiDOFJointTrajectory.  <a href="namespacepilz__industrial__motion__planner.html#afcf834b07fd8b4b9e279ff3f67f39fea">More...</a><br /></td></tr>
-<tr class="separator:afcf834b07fd8b4b9e279ff3f67f39fea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85ea227cb54bc473b76cd7efd652ead0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a85ea227cb54bc473b76cd7efd652ead0">generateJointTrajectory</a> (const robot_model::RobotModelConstPtr &amp;robot_model, const <a class="el" href="classpilz__industrial__motion__planner_1_1JointLimitsContainer.html">JointLimitsContainer</a> &amp;joint_limits, const KDL::Trajectory &amp;trajectory, const std::string &amp;group_name, const std::string &amp;link_name, const std::map&lt; std::string, double &gt; &amp;initial_joint_position, const double &amp;sampling_time, trajectory_msgs::JointTrajectory &amp;joint_trajectory, moveit_msgs::MoveItErrorCodes &amp;error_code, bool check_self_collision=false)</td></tr>
+<tr class="memdesc:a85ea227cb54bc473b76cd7efd652ead0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate joint trajectory from a <a class="el" href="namespaceKDL.html">KDL</a> Cartesian trajectory.  <a href="namespacepilz__industrial__motion__planner.html#a85ea227cb54bc473b76cd7efd652ead0">More...</a><br /></td></tr>
+<tr class="separator:a85ea227cb54bc473b76cd7efd652ead0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3404524804a1bc8ddc36d05be6765be8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a3404524804a1bc8ddc36d05be6765be8">generateJointTrajectory</a> (const robot_model::RobotModelConstPtr &amp;robot_model, const <a class="el" href="classpilz__industrial__motion__planner_1_1JointLimitsContainer.html">JointLimitsContainer</a> &amp;joint_limits, const <a class="el" href="structpilz__industrial__motion__planner_1_1CartesianTrajectory.html">pilz_industrial_motion_planner::CartesianTrajectory</a> &amp;trajectory, const std::string &amp;group_name, const std::string &amp;link_name, const std::map&lt; std::string, double &gt; &amp;initial_joint_position, const std::map&lt; std::string, double &gt; &amp;initial_joint_velocity, trajectory_msgs::JointTrajectory &amp;joint_trajectory, moveit_msgs::MoveItErrorCodes &amp;error_code, bool check_self_collision=false)</td></tr>
+<tr class="memdesc:a3404524804a1bc8ddc36d05be6765be8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate joint trajectory from a MultiDOFJointTrajectory.  <a href="namespacepilz__industrial__motion__planner.html#a3404524804a1bc8ddc36d05be6765be8">More...</a><br /></td></tr>
+<tr class="separator:a3404524804a1bc8ddc36d05be6765be8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9c9a8fb1cd62cdbb1ded425c87a20b6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#ab9c9a8fb1cd62cdbb1ded425c87a20b6">determineAndCheckSamplingTime</a> (const robot_trajectory::RobotTrajectoryPtr &amp;first_trajectory, const robot_trajectory::RobotTrajectoryPtr &amp;second_trajectory, double <a class="el" href="subframes__test_8cpp.html#a75f355966e0a97665eaf5a4c79baa7af">EPSILON</a>, double &amp;sampling_time)</td></tr>
 <tr class="memdesc:ab9c9a8fb1cd62cdbb1ded425c87a20b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines the sampling time and checks that both trajectroies use the same sampling time.  <a href="namespacepilz__industrial__motion__planner.html#ab9c9a8fb1cd62cdbb1ded425c87a20b6">More...</a><br /></td></tr>
 <tr class="separator:ab9c9a8fb1cd62cdbb1ded425c87a20b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af67e0fa074dd44691f84cfdb63c10798"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#af67e0fa074dd44691f84cfdb63c10798">isRobotStateEqual</a> (const <a class="el" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a> &amp;state1, const <a class="el" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a> &amp;state2, const std::string &amp;joint_group_name, double epsilon)</td></tr>
-<tr class="memdesc:af67e0fa074dd44691f84cfdb63c10798"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the two robot states have the same joint position/velocity/acceleration.  <a href="namespacepilz__industrial__motion__planner.html#af67e0fa074dd44691f84cfdb63c10798">More...</a><br /></td></tr>
-<tr class="separator:af67e0fa074dd44691f84cfdb63c10798"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab65e34755a367305a8e8f7a98a2c2ba7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#ab65e34755a367305a8e8f7a98a2c2ba7">isRobotStateStationary</a> (const <a class="el" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a> &amp;state, const std::string &amp;group, double <a class="el" href="subframes__test_8cpp.html#a75f355966e0a97665eaf5a4c79baa7af">EPSILON</a>)</td></tr>
-<tr class="memdesc:ab65e34755a367305a8e8f7a98a2c2ba7"><td class="mdescLeft">&#160;</td><td class="mdescRight">check if the robot state have zero velocity/acceleration  <a href="namespacepilz__industrial__motion__planner.html#ab65e34755a367305a8e8f7a98a2c2ba7">More...</a><br /></td></tr>
-<tr class="separator:ab65e34755a367305a8e8f7a98a2c2ba7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab26b39419b9de19e1c1f911ea07f50d9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#ab26b39419b9de19e1c1f911ea07f50d9">isRobotStateEqual</a> (const robot_state::RobotState &amp;state1, const robot_state::RobotState &amp;state2, const std::string &amp;joint_group_name, double epsilon)</td></tr>
+<tr class="memdesc:ab26b39419b9de19e1c1f911ea07f50d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the two robot states have the same joint position/velocity/acceleration.  <a href="namespacepilz__industrial__motion__planner.html#ab26b39419b9de19e1c1f911ea07f50d9">More...</a><br /></td></tr>
+<tr class="separator:ab26b39419b9de19e1c1f911ea07f50d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada743ad2d61eeafe011e7a59f92f0508"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#ada743ad2d61eeafe011e7a59f92f0508">isRobotStateStationary</a> (const robot_state::RobotState &amp;state, const std::string &amp;group, double <a class="el" href="subframes__test_8cpp.html#a75f355966e0a97665eaf5a4c79baa7af">EPSILON</a>)</td></tr>
+<tr class="memdesc:ada743ad2d61eeafe011e7a59f92f0508"><td class="mdescLeft">&#160;</td><td class="mdescRight">check if the robot state have zero velocity/acceleartion  <a href="namespacepilz__industrial__motion__planner.html#ada743ad2d61eeafe011e7a59f92f0508">More...</a><br /></td></tr>
+<tr class="separator:ada743ad2d61eeafe011e7a59f92f0508"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a78473ece5d28134b5a9dafad73327a7a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a78473ece5d28134b5a9dafad73327a7a">linearSearchIntersectionPoint</a> (const std::string &amp;link_name, const Eigen::Vector3d &amp;center_position, const double &amp;r, const robot_trajectory::RobotTrajectoryPtr &amp;traj, bool inverseOrder, std::size_t &amp;index)</td></tr>
 <tr class="memdesc:a78473ece5d28134b5a9dafad73327a7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a linear search for the intersection point of the trajectory with the blending radius.  <a href="namespacepilz__industrial__motion__planner.html#a78473ece5d28134b5a9dafad73327a7a">More...</a><br /></td></tr>
 <tr class="separator:a78473ece5d28134b5a9dafad73327a7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef290855095fbf0f2bc6bc90326f53d3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#aef290855095fbf0f2bc6bc90326f53d3">intersectionFound</a> (const Eigen::Vector3d &amp;p_center, const Eigen::Vector3d &amp;p_current, const Eigen::Vector3d &amp;p_next, const double &amp;r)</td></tr>
 <tr class="separator:aef290855095fbf0f2bc6bc90326f53d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c92ab367085e62823804a18f42772ae"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a5c92ab367085e62823804a18f42772ae">isStateColliding</a> (const bool test_for_self_collision, const planning_scene::PlanningSceneConstPtr &amp;scene, <a class="el" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a> *state, const <a class="el" href="classmoveit_1_1core_1_1JointModelGroup.html">moveit::core::JointModelGroup</a> *const group, const double *const ik_solution)</td></tr>
-<tr class="memdesc:a5c92ab367085e62823804a18f42772ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if current robot state is in self collision.  <a href="namespacepilz__industrial__motion__planner.html#a5c92ab367085e62823804a18f42772ae">More...</a><br /></td></tr>
-<tr class="separator:a5c92ab367085e62823804a18f42772ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac194337e3351fbc7fc53d940959a081d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#ac194337e3351fbc7fc53d940959a081d">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (TrajectoryGeneratorInvalidLimitsException, moveit_msgs::msg::MoveItErrorCodes::FAILURE)</td></tr>
-<tr class="separator:ac194337e3351fbc7fc53d940959a081d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad32755c2304f98e2bcc709fcfcaa4783"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#ad32755c2304f98e2bcc709fcfcaa4783">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (VelocityScalingIncorrect, moveit_msgs::msg::MoveItErrorCodes::INVALID_MOTION_PLAN)</td></tr>
-<tr class="separator:ad32755c2304f98e2bcc709fcfcaa4783"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1586023c86d2f369bb93cb49c5259408"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a1586023c86d2f369bb93cb49c5259408">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (AccelerationScalingIncorrect, moveit_msgs::msg::MoveItErrorCodes::INVALID_MOTION_PLAN)</td></tr>
-<tr class="separator:a1586023c86d2f369bb93cb49c5259408"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad0d1e317a9e3f49713a2c29653708b99"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#ad0d1e317a9e3f49713a2c29653708b99">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (UnknownPlanningGroup, moveit_msgs::msg::MoveItErrorCodes::INVALID_GROUP_NAME)</td></tr>
-<tr class="separator:ad0d1e317a9e3f49713a2c29653708b99"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c125cff34352036b977ea3b954d5949"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a2c125cff34352036b977ea3b954d5949">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (NoJointNamesInStartState, moveit_msgs::msg::MoveItErrorCodes::INVALID_ROBOT_STATE)</td></tr>
-<tr class="separator:a2c125cff34352036b977ea3b954d5949"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21871580464ddcb3bbd51acbf081c947"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a21871580464ddcb3bbd51acbf081c947">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (SizeMismatchInStartState, moveit_msgs::msg::MoveItErrorCodes::INVALID_ROBOT_STATE)</td></tr>
-<tr class="separator:a21871580464ddcb3bbd51acbf081c947"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a87e5cb4483d22169dc3e7e27781961be"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a87e5cb4483d22169dc3e7e27781961be">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (JointsOfStartStateOutOfRange, moveit_msgs::msg::MoveItErrorCodes::INVALID_ROBOT_STATE)</td></tr>
-<tr class="separator:a87e5cb4483d22169dc3e7e27781961be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a233a13f5e7357edd2bbf75f464b02ad4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a233a13f5e7357edd2bbf75f464b02ad4">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (NonZeroVelocityInStartState, moveit_msgs::msg::MoveItErrorCodes::INVALID_ROBOT_STATE)</td></tr>
-<tr class="separator:a233a13f5e7357edd2bbf75f464b02ad4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ac836db0a1d4154eefd99bd447fd981"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a7ac836db0a1d4154eefd99bd447fd981">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (NotExactlyOneGoalConstraintGiven, moveit_msgs::msg::MoveItErrorCodes::INVALID_GOAL_CONSTRAINTS)</td></tr>
-<tr class="separator:a7ac836db0a1d4154eefd99bd447fd981"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c75249f76123dabeabc8a8cd881bc56"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a5c75249f76123dabeabc8a8cd881bc56">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (OnlyOneGoalTypeAllowed, moveit_msgs::msg::MoveItErrorCodes::INVALID_GOAL_CONSTRAINTS)</td></tr>
-<tr class="separator:a5c75249f76123dabeabc8a8cd881bc56"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0869c394ab556a01c7d64eca636f1132"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a0869c394ab556a01c7d64eca636f1132">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (StartStateGoalStateMismatch, moveit_msgs::msg::MoveItErrorCodes::INVALID_GOAL_CONSTRAINTS)</td></tr>
-<tr class="separator:a0869c394ab556a01c7d64eca636f1132"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ad013f02632a7e5c124fddbb28d22b7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a7ad013f02632a7e5c124fddbb28d22b7">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (JointConstraintDoesNotBelongToGroup, moveit_msgs::msg::MoveItErrorCodes::INVALID_GOAL_CONSTRAINTS)</td></tr>
-<tr class="separator:a7ad013f02632a7e5c124fddbb28d22b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adce0406291e20e533934ff4dead92383"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#adce0406291e20e533934ff4dead92383">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (JointsOfGoalOutOfRange, moveit_msgs::msg::MoveItErrorCodes::INVALID_GOAL_CONSTRAINTS)</td></tr>
-<tr class="separator:adce0406291e20e533934ff4dead92383"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a148e890bdffe6ea953cb42fbe84c1f55"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a148e890bdffe6ea953cb42fbe84c1f55">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (PositionConstraintNameMissing, moveit_msgs::msg::MoveItErrorCodes::INVALID_GOAL_CONSTRAINTS)</td></tr>
-<tr class="separator:a148e890bdffe6ea953cb42fbe84c1f55"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b011288aefa68ebae78512cabaead33"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a6b011288aefa68ebae78512cabaead33">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (OrientationConstraintNameMissing, moveit_msgs::msg::MoveItErrorCodes::INVALID_GOAL_CONSTRAINTS)</td></tr>
-<tr class="separator:a6b011288aefa68ebae78512cabaead33"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aecf4a3eb115c4d7ed0b35b6a900ea4ec"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#aecf4a3eb115c4d7ed0b35b6a900ea4ec">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (PositionOrientationConstraintNameMismatch, moveit_msgs::msg::MoveItErrorCodes::INVALID_GOAL_CONSTRAINTS)</td></tr>
-<tr class="separator:aecf4a3eb115c4d7ed0b35b6a900ea4ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a605a209e7f92df3f3b2c4ed7b27eadad"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a605a209e7f92df3f3b2c4ed7b27eadad">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (NoIKSolverAvailable, moveit_msgs::msg::MoveItErrorCodes::NO_IK_SOLUTION)</td></tr>
-<tr class="separator:a605a209e7f92df3f3b2c4ed7b27eadad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7de5297bf414672874ba4803b93e0a89"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a7de5297bf414672874ba4803b93e0a89">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (NoPrimitivePoseGiven, moveit_msgs::msg::MoveItErrorCodes::INVALID_GOAL_CONSTRAINTS)</td></tr>
-<tr class="separator:a7de5297bf414672874ba4803b93e0a89"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c186ec2ad2ebbfc99cae99a9db9240f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a4c186ec2ad2ebbfc99cae99a9db9240f">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (CircleNoPlane, moveit_msgs::msg::MoveItErrorCodes::INVALID_MOTION_PLAN)</td></tr>
-<tr class="separator:a4c186ec2ad2ebbfc99cae99a9db9240f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6091ab437532ea9c2ff115a8d7b5dd46"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a6091ab437532ea9c2ff115a8d7b5dd46">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (CircleToSmall, moveit_msgs::msg::MoveItErrorCodes::INVALID_MOTION_PLAN)</td></tr>
-<tr class="separator:a6091ab437532ea9c2ff115a8d7b5dd46"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abfee450a176f7b30d22e8db333e85b0d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#abfee450a176f7b30d22e8db333e85b0d">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (CenterPointDifferentRadius, moveit_msgs::msg::MoveItErrorCodes::INVALID_MOTION_PLAN)</td></tr>
-<tr class="separator:abfee450a176f7b30d22e8db333e85b0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57488a709f391dac2014d54499654013"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a57488a709f391dac2014d54499654013">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (CircTrajectoryConversionFailure, moveit_msgs::msg::MoveItErrorCodes::INVALID_MOTION_PLAN)</td></tr>
-<tr class="separator:a57488a709f391dac2014d54499654013"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a49062877ba625c4e79b0ceb5e914d666"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a49062877ba625c4e79b0ceb5e914d666">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (UnknownPathConstraintName, moveit_msgs::msg::MoveItErrorCodes::INVALID_MOTION_PLAN)</td></tr>
-<tr class="separator:a49062877ba625c4e79b0ceb5e914d666"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f9e88edd95b47b67216d85484a54405"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a2f9e88edd95b47b67216d85484a54405">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (NoPositionConstraints, moveit_msgs::msg::MoveItErrorCodes::INVALID_MOTION_PLAN)</td></tr>
-<tr class="separator:a2f9e88edd95b47b67216d85484a54405"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1eec222da7295e30e1f1f9b61a8dfa78"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a1eec222da7295e30e1f1f9b61a8dfa78">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (NoPrimitivePose, moveit_msgs::msg::MoveItErrorCodes::INVALID_MOTION_PLAN)</td></tr>
-<tr class="separator:a1eec222da7295e30e1f1f9b61a8dfa78"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3faa8fb12ad479de1b7fd2c4d5ba60f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#ae3faa8fb12ad479de1b7fd2c4d5ba60f">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (UnknownLinkNameOfAuxiliaryPoint, moveit_msgs::msg::MoveItErrorCodes::INVALID_LINK_NAME)</td></tr>
-<tr class="separator:ae3faa8fb12ad479de1b7fd2c4d5ba60f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad6aae2e7770d904525f7fe4622da14e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#aad6aae2e7770d904525f7fe4622da14e">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (NumberOfConstraintsMismatch, moveit_msgs::msg::MoveItErrorCodes::INVALID_GOAL_CONSTRAINTS)</td></tr>
-<tr class="separator:aad6aae2e7770d904525f7fe4622da14e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:accc2a0c0a6edfbc4df110b863d4570df"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#accc2a0c0a6edfbc4df110b863d4570df">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (CircJointMissingInStartState, moveit_msgs::msg::MoveItErrorCodes::INVALID_ROBOT_STATE)</td></tr>
-<tr class="separator:accc2a0c0a6edfbc4df110b863d4570df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af38dfabfc42383a382d84acf6ce7686f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#af38dfabfc42383a382d84acf6ce7686f">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (CircInverseForGoalIncalculable, moveit_msgs::msg::MoveItErrorCodes::NO_IK_SOLUTION)</td></tr>
-<tr class="separator:af38dfabfc42383a382d84acf6ce7686f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a60234bee40a00977b08fd25228e325"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a2a60234bee40a00977b08fd25228e325">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (LinTrajectoryConversionFailure, moveit_msgs::msg::MoveItErrorCodes::FAILURE)</td></tr>
-<tr class="separator:a2a60234bee40a00977b08fd25228e325"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f0874b8a5fe7dde5ed2e81ec6cc79be"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a9f0874b8a5fe7dde5ed2e81ec6cc79be">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (JointNumberMismatch, moveit_msgs::msg::MoveItErrorCodes::INVALID_GOAL_CONSTRAINTS)</td></tr>
-<tr class="separator:a9f0874b8a5fe7dde5ed2e81ec6cc79be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68e8c42bf7c1f33871e6f99ed2989e9c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a68e8c42bf7c1f33871e6f99ed2989e9c">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (LinJointMissingInStartState, moveit_msgs::msg::MoveItErrorCodes::INVALID_ROBOT_STATE)</td></tr>
-<tr class="separator:a68e8c42bf7c1f33871e6f99ed2989e9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd87181ed9c41196627a25a2a86146a6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#abd87181ed9c41196627a25a2a86146a6">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (LinInverseForGoalIncalculable, moveit_msgs::msg::MoveItErrorCodes::NO_IK_SOLUTION)</td></tr>
-<tr class="separator:abd87181ed9c41196627a25a2a86146a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7ded662fce39322d1b52f6045b08c65"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#ad7ded662fce39322d1b52f6045b08c65">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (PtpVelocityProfileSyncFailed, moveit_msgs::msg::MoveItErrorCodes::FAILURE)</td></tr>
-<tr class="separator:ad7ded662fce39322d1b52f6045b08c65"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a5a7d0ea1272ec2fc8c65449c20b230"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a0a5a7d0ea1272ec2fc8c65449c20b230">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (PtpNoIkSolutionForGoalPose, moveit_msgs::msg::MoveItErrorCodes::NO_IK_SOLUTION)</td></tr>
-<tr class="separator:a0a5a7d0ea1272ec2fc8c65449c20b230"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1500d3ef06f2a3bfe55be9fcba90460e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a1500d3ef06f2a3bfe55be9fcba90460e">isStateColliding</a> (const bool test_for_self_collision, const moveit::core::RobotModelConstPtr &amp;robot_model, robot_state::RobotState *state, const robot_state::JointModelGroup *const group, const double *const ik_solution)</td></tr>
+<tr class="memdesc:a1500d3ef06f2a3bfe55be9fcba90460e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if current robot state is in self collision.  <a href="namespacepilz__industrial__motion__planner.html#a1500d3ef06f2a3bfe55be9fcba90460e">More...</a><br /></td></tr>
+<tr class="separator:a1500d3ef06f2a3bfe55be9fcba90460e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c82867fcb639342e761aca6f1a3565c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a8c82867fcb639342e761aca6f1a3565c">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (TrajectoryGeneratorInvalidLimitsException, moveit_msgs::MoveItErrorCodes::FAILURE)</td></tr>
+<tr class="separator:a8c82867fcb639342e761aca6f1a3565c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af91488f66d1e16f0137a5070c4f3313e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#af91488f66d1e16f0137a5070c4f3313e">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (VelocityScalingIncorrect, moveit_msgs::MoveItErrorCodes::INVALID_MOTION_PLAN)</td></tr>
+<tr class="separator:af91488f66d1e16f0137a5070c4f3313e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad93a7d508795e9c105b548363e94ef80"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#ad93a7d508795e9c105b548363e94ef80">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (AccelerationScalingIncorrect, moveit_msgs::MoveItErrorCodes::INVALID_MOTION_PLAN)</td></tr>
+<tr class="separator:ad93a7d508795e9c105b548363e94ef80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdf8c7d63091bf1e42c5dd2de136b808"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#abdf8c7d63091bf1e42c5dd2de136b808">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (UnknownPlanningGroup, moveit_msgs::MoveItErrorCodes::INVALID_GROUP_NAME)</td></tr>
+<tr class="separator:abdf8c7d63091bf1e42c5dd2de136b808"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac99018a4f3e3a6a62d1b2d64e9312dad"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#ac99018a4f3e3a6a62d1b2d64e9312dad">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (NoJointNamesInStartState, moveit_msgs::MoveItErrorCodes::INVALID_ROBOT_STATE)</td></tr>
+<tr class="separator:ac99018a4f3e3a6a62d1b2d64e9312dad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac1d3f60edf1a2bb998a3b11d82d1a57"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#aac1d3f60edf1a2bb998a3b11d82d1a57">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (SizeMismatchInStartState, moveit_msgs::MoveItErrorCodes::INVALID_ROBOT_STATE)</td></tr>
+<tr class="separator:aac1d3f60edf1a2bb998a3b11d82d1a57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a050890c0a5fa771ab566c10bbd4689ab"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a050890c0a5fa771ab566c10bbd4689ab">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (JointsOfStartStateOutOfRange, moveit_msgs::MoveItErrorCodes::INVALID_ROBOT_STATE)</td></tr>
+<tr class="separator:a050890c0a5fa771ab566c10bbd4689ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f2028f0cfee37b1932662c3cadded82"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a5f2028f0cfee37b1932662c3cadded82">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (NonZeroVelocityInStartState, moveit_msgs::MoveItErrorCodes::INVALID_ROBOT_STATE)</td></tr>
+<tr class="separator:a5f2028f0cfee37b1932662c3cadded82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa74ff4e44c823b3127238c3c6aa8c675"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#aa74ff4e44c823b3127238c3c6aa8c675">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (NotExactlyOneGoalConstraintGiven, moveit_msgs::MoveItErrorCodes::INVALID_GOAL_CONSTRAINTS)</td></tr>
+<tr class="separator:aa74ff4e44c823b3127238c3c6aa8c675"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bc770a03ededb6e4673303a8b647917"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a8bc770a03ededb6e4673303a8b647917">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (OnlyOneGoalTypeAllowed, moveit_msgs::MoveItErrorCodes::INVALID_GOAL_CONSTRAINTS)</td></tr>
+<tr class="separator:a8bc770a03ededb6e4673303a8b647917"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae38a1eb33901ed6ed2ac579fc6f03f06"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#ae38a1eb33901ed6ed2ac579fc6f03f06">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (StartStateGoalStateMismatch, moveit_msgs::MoveItErrorCodes::INVALID_GOAL_CONSTRAINTS)</td></tr>
+<tr class="separator:ae38a1eb33901ed6ed2ac579fc6f03f06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab17b36be37bba5be6a0e5b5207b2a59e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#ab17b36be37bba5be6a0e5b5207b2a59e">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (JointConstraintDoesNotBelongToGroup, moveit_msgs::MoveItErrorCodes::INVALID_GOAL_CONSTRAINTS)</td></tr>
+<tr class="separator:ab17b36be37bba5be6a0e5b5207b2a59e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a099d5435a88c9516539ea8c1f5df7ca2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a099d5435a88c9516539ea8c1f5df7ca2">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (JointsOfGoalOutOfRange, moveit_msgs::MoveItErrorCodes::INVALID_GOAL_CONSTRAINTS)</td></tr>
+<tr class="separator:a099d5435a88c9516539ea8c1f5df7ca2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43cb31edaa6cf3411531e2c4ccd845ff"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a43cb31edaa6cf3411531e2c4ccd845ff">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (PositionConstraintNameMissing, moveit_msgs::MoveItErrorCodes::INVALID_GOAL_CONSTRAINTS)</td></tr>
+<tr class="separator:a43cb31edaa6cf3411531e2c4ccd845ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a0e2cc612a3aea222c68e4bb006d284"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a6a0e2cc612a3aea222c68e4bb006d284">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (OrientationConstraintNameMissing, moveit_msgs::MoveItErrorCodes::INVALID_GOAL_CONSTRAINTS)</td></tr>
+<tr class="separator:a6a0e2cc612a3aea222c68e4bb006d284"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f3b9085e9af8f0d327823fc42769d60"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a1f3b9085e9af8f0d327823fc42769d60">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (PositionOrientationConstraintNameMismatch, moveit_msgs::MoveItErrorCodes::INVALID_GOAL_CONSTRAINTS)</td></tr>
+<tr class="separator:a1f3b9085e9af8f0d327823fc42769d60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a285a7dcf77eff576c07fb903a808e80b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a285a7dcf77eff576c07fb903a808e80b">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (NoIKSolverAvailable, moveit_msgs::MoveItErrorCodes::NO_IK_SOLUTION)</td></tr>
+<tr class="separator:a285a7dcf77eff576c07fb903a808e80b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f4de10bddc07163c2f95c6eac2436b9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a8f4de10bddc07163c2f95c6eac2436b9">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (NoPrimitivePoseGiven, moveit_msgs::MoveItErrorCodes::INVALID_GOAL_CONSTRAINTS)</td></tr>
+<tr class="separator:a8f4de10bddc07163c2f95c6eac2436b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03238e99d3e1ed0a79ee99f0d5cc2f90"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a03238e99d3e1ed0a79ee99f0d5cc2f90">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (CircleNoPlane, moveit_msgs::MoveItErrorCodes::INVALID_MOTION_PLAN)</td></tr>
+<tr class="separator:a03238e99d3e1ed0a79ee99f0d5cc2f90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8563630d6d8763869065e8fc9e78fa01"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a8563630d6d8763869065e8fc9e78fa01">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (CircleToSmall, moveit_msgs::MoveItErrorCodes::INVALID_MOTION_PLAN)</td></tr>
+<tr class="separator:a8563630d6d8763869065e8fc9e78fa01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a698ba6b9f508c3d1f1d1a8aeafb3e1db"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a698ba6b9f508c3d1f1d1a8aeafb3e1db">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (CenterPointDifferentRadius, moveit_msgs::MoveItErrorCodes::INVALID_MOTION_PLAN)</td></tr>
+<tr class="separator:a698ba6b9f508c3d1f1d1a8aeafb3e1db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac78bd8aa82f37f2611e7254b55bc91d0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#ac78bd8aa82f37f2611e7254b55bc91d0">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (CircTrajectoryConversionFailure, moveit_msgs::MoveItErrorCodes::INVALID_MOTION_PLAN)</td></tr>
+<tr class="separator:ac78bd8aa82f37f2611e7254b55bc91d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a347cd206da1f745daee7098d495792c0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a347cd206da1f745daee7098d495792c0">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (UnknownPathConstraintName, moveit_msgs::MoveItErrorCodes::INVALID_MOTION_PLAN)</td></tr>
+<tr class="separator:a347cd206da1f745daee7098d495792c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55868199520470350643eb330e47f108"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a55868199520470350643eb330e47f108">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (NoPositionConstraints, moveit_msgs::MoveItErrorCodes::INVALID_MOTION_PLAN)</td></tr>
+<tr class="separator:a55868199520470350643eb330e47f108"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3d0015135c128660f5f712634387837"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#ad3d0015135c128660f5f712634387837">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (NoPrimitivePose, moveit_msgs::MoveItErrorCodes::INVALID_MOTION_PLAN)</td></tr>
+<tr class="separator:ad3d0015135c128660f5f712634387837"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ee8d7556fee82b9fc798e4e22f1e76b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a1ee8d7556fee82b9fc798e4e22f1e76b">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (UnknownLinkNameOfAuxiliaryPoint, moveit_msgs::MoveItErrorCodes::INVALID_LINK_NAME)</td></tr>
+<tr class="separator:a1ee8d7556fee82b9fc798e4e22f1e76b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90c2bacface50ec1b78e5d4c000e0123"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a90c2bacface50ec1b78e5d4c000e0123">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (NumberOfConstraintsMismatch, moveit_msgs::MoveItErrorCodes::INVALID_GOAL_CONSTRAINTS)</td></tr>
+<tr class="separator:a90c2bacface50ec1b78e5d4c000e0123"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40028b4fc3e5121e116e06887cf17e24"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a40028b4fc3e5121e116e06887cf17e24">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (CircJointMissingInStartState, moveit_msgs::MoveItErrorCodes::INVALID_ROBOT_STATE)</td></tr>
+<tr class="separator:a40028b4fc3e5121e116e06887cf17e24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf50f0beb7f7aa550a8b4248d65b5240"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#acf50f0beb7f7aa550a8b4248d65b5240">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (CircInverseForGoalIncalculable, moveit_msgs::MoveItErrorCodes::NO_IK_SOLUTION)</td></tr>
+<tr class="separator:acf50f0beb7f7aa550a8b4248d65b5240"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad96d8fd3a8689d8076b68ab833896cce"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#ad96d8fd3a8689d8076b68ab833896cce">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (LinTrajectoryConversionFailure, moveit_msgs::MoveItErrorCodes::FAILURE)</td></tr>
+<tr class="separator:ad96d8fd3a8689d8076b68ab833896cce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10ab3e105b02dd56d6ccf4561f289b71"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a10ab3e105b02dd56d6ccf4561f289b71">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (JointNumberMismatch, moveit_msgs::MoveItErrorCodes::INVALID_GOAL_CONSTRAINTS)</td></tr>
+<tr class="separator:a10ab3e105b02dd56d6ccf4561f289b71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa28e253554ce746f13583d5386c319a8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#aa28e253554ce746f13583d5386c319a8">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (LinJointMissingInStartState, moveit_msgs::MoveItErrorCodes::INVALID_ROBOT_STATE)</td></tr>
+<tr class="separator:aa28e253554ce746f13583d5386c319a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ddff3d3b9cd318455e80a5b166561da"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a3ddff3d3b9cd318455e80a5b166561da">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (LinInverseForGoalIncalculable, moveit_msgs::MoveItErrorCodes::NO_IK_SOLUTION)</td></tr>
+<tr class="separator:a3ddff3d3b9cd318455e80a5b166561da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67cc2452ad0310a3a4ab068020247fc9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a67cc2452ad0310a3a4ab068020247fc9">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (PtpVelocityProfileSyncFailed, moveit_msgs::MoveItErrorCodes::FAILURE)</td></tr>
+<tr class="separator:a67cc2452ad0310a3a4ab068020247fc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b00c954a7e2da79fb78961f7d6cd097"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a8b00c954a7e2da79fb78961f7d6cd097">CREATE_MOVEIT_ERROR_CODE_EXCEPTION</a> (PtpNoIkSolutionForGoalPose, moveit_msgs::MoveItErrorCodes::NO_IK_SOLUTION)</td></tr>
+<tr class="separator:a8b00c954a7e2da79fb78961f7d6cd097"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2be4327f12d8d35009459fa03429815f"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#a2be4327f12d8d35009459fa03429815f">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classpilz__industrial__motion__planner_1_1VelocityProfileATrap.html">VelocityProfileATrap</a> &amp;p)</td></tr>
 <tr class="separator:a2be4327f12d8d35009459fa03429815f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc5c3aaa78d0c5aa7bbbb5e4185ac2cd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#afc5c3aaa78d0c5aa7bbbb5e4185ac2cd">TEST_F</a> (<a class="el" href="classpilz__industrial__motion__planner_1_1GetSolverTipFrameIntegrationTest.html">GetSolverTipFrameIntegrationTest</a>, TestHasSolverManipulator)</td></tr>
@@ -385,7 +383,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:a54b5ba86ba3a5e1b00e1e55e6c4f6745"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if getSolverTipFrame() fails for gripper group.  <a href="namespacepilz__industrial__motion__planner.html#a54b5ba86ba3a5e1b00e1e55e6c4f6745">More...</a><br /></td></tr>
 <tr class="separator:a54b5ba86ba3a5e1b00e1e55e6c4f6745"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2ad1057a8c29c6b62e25c452ea3eebe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#ab2ad1057a8c29c6b62e25c452ea3eebe">TEST_F</a> (<a class="el" href="classpilz__industrial__motion__planner_1_1GetSolverTipFrameTest.html">GetSolverTipFrameTest</a>, TestExceptionErrorCodeMapping)</td></tr>
-<tr class="memdesc:ab2ad1057a8c29c6b62e25c452ea3eebe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks that each derived <a class="el" href="classpilz__industrial__motion__planner_1_1MoveItErrorCodeException.html" title="Exception storing an moveit_msgs::msg::MoveItErrorCodes value.">MoveItErrorCodeException</a> contains the correct error code.  <a href="namespacepilz__industrial__motion__planner.html#ab2ad1057a8c29c6b62e25c452ea3eebe">More...</a><br /></td></tr>
+<tr class="memdesc:ab2ad1057a8c29c6b62e25c452ea3eebe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks that each derived <a class="el" href="classpilz__industrial__motion__planner_1_1MoveItErrorCodeException.html" title="Exception storing an moveit_msgs::MoveItErrorCodes value.">MoveItErrorCodeException</a> contains the correct error code.  <a href="namespacepilz__industrial__motion__planner.html#ab2ad1057a8c29c6b62e25c452ea3eebe">More...</a><br /></td></tr>
 <tr class="separator:ab2ad1057a8c29c6b62e25c452ea3eebe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acde27a361e3e02dd615dee6c1a7a6db3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepilz__industrial__motion__planner.html#acde27a361e3e02dd615dee6c1a7a6db3">TEST_F</a> (<a class="el" href="classpilz__industrial__motion__planner_1_1GetSolverTipFrameTest.html">GetSolverTipFrameTest</a>, TestExceptionMoreThanOneTipFrame)</td></tr>
 <tr class="memdesc:acde27a361e3e02dd615dee6c1a7a6db3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks that an exceptions is thrown in case a group has more than one tip frame.  <a href="namespacepilz__industrial__motion__planner.html#acde27a361e3e02dd615dee6c1a7a6db3">More...</a><br /></td></tr>
@@ -410,7 +408,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="joint__limits__extension_8h_source.html#l00097">97</a> of file <a class="el" href="joint__limits__extension_8h_source.html">joint_limits_extension.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__limits__extension_8h_source.html#l00095">95</a> of file <a class="el" href="joint__limits__extension_8h_source.html">joint_limits_extension.h</a>.</p>
 
 </div>
 </div>
@@ -426,23 +424,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="joint__limits__extension_8h_source.html#l00098">98</a> of file <a class="el" href="joint__limits__extension_8h_source.html">joint_limits_extension.h</a>.</p>
-
-</div>
-</div>
-<a id="afcc68f91f054fc04fe9a63d67a1b1c77"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afcc68f91f054fc04fe9a63d67a1b1c77">&#9670;&nbsp;</a></span>MoveGroupSequenceGoalHandle</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="namespacepilz__industrial__motion__planner.html#afcc68f91f054fc04fe9a63d67a1b1c77">pilz_industrial_motion_planner::MoveGroupSequenceGoalHandle</a> = typedef rclcpp_action::ServerGoalHandle&lt;moveit_msgs::action::MoveGroupSequence&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="move__group__sequence__action_8h_source.html#l00079">79</a> of file <a class="el" href="move__group__sequence__action_8h_source.html">move_group_sequence_action.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__limits__extension_8h_source.html#l00096">96</a> of file <a class="el" href="joint__limits__extension_8h_source.html">joint_limits_extension.h</a>.</p>
 
 </div>
 </div>
@@ -478,14 +460,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aacbf0044f96cc3095c1afcadaa18d202"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aacbf0044f96cc3095c1afcadaa18d202">&#9670;&nbsp;</a></span>PlanningContextLoaderConstPtr</h2>
+<a id="a36bc248ea45a9287f5a17a8b1c67e24e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36bc248ea45a9287f5a17a8b1c67e24e">&#9670;&nbsp;</a></span>PlanningContextLoaderConstPtr</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef std::shared_ptr&lt;const <a class="el" href="classpilz__industrial__motion__planner_1_1PlanningContextLoader.html">PlanningContextLoader</a>&gt; <a class="el" href="namespacepilz__industrial__motion__planner.html#aacbf0044f96cc3095c1afcadaa18d202">pilz_industrial_motion_planner::PlanningContextLoaderConstPtr</a></td>
+          <td class="memname">typedef boost::shared_ptr&lt;const <a class="el" href="classpilz__industrial__motion__planner_1_1PlanningContextLoader.html">PlanningContextLoader</a>&gt; <a class="el" href="namespacepilz__industrial__motion__planner.html#a36bc248ea45a9287f5a17a8b1c67e24e">pilz_industrial_motion_planner::PlanningContextLoaderConstPtr</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -558,14 +540,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a78b5690d96e1f88fe5f7f98555367fd1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a78b5690d96e1f88fe5f7f98555367fd1">&#9670;&nbsp;</a></span>PlanningContextLoaderPtr</h2>
+<a id="af351fa28118b138319387c7a8423b0f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af351fa28118b138319387c7a8423b0f7">&#9670;&nbsp;</a></span>PlanningContextLoaderPtr</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef std::shared_ptr&lt;<a class="el" href="classpilz__industrial__motion__planner_1_1PlanningContextLoader.html">PlanningContextLoader</a>&gt; <a class="el" href="namespacepilz__industrial__motion__planner.html#a78b5690d96e1f88fe5f7f98555367fd1">pilz_industrial_motion_planner::PlanningContextLoaderPtr</a></td>
+          <td class="memname">typedef boost::shared_ptr&lt;<a class="el" href="classpilz__industrial__motion__planner_1_1PlanningContextLoader.html">PlanningContextLoader</a>&gt; <a class="el" href="namespacepilz__industrial__motion__planner.html#af351fa28118b138319387c7a8423b0f7">pilz_industrial_motion_planner::PlanningContextLoaderPtr</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -602,7 +584,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="plan__components__builder_8h_source.html#l00083">83</a> of file <a class="el" href="plan__components__builder_8h_source.html">plan_components_builder.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="plan__components__builder_8h_source.html#l00082">82</a> of file <a class="el" href="plan__components__builder_8h_source.html">plan_components_builder.h</a>.</p>
 
 </div>
 </div>
@@ -618,13 +600,13 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="trajectory__blender_8h_source.html#l00107">107</a> of file <a class="el" href="trajectory__blender_8h_source.html">trajectory_blender.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trajectory__blender_8h_source.html#l00104">104</a> of file <a class="el" href="trajectory__blender_8h_source.html">trajectory_blender.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a846707e0c70fe0ce82d46c752642e37e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a846707e0c70fe0ce82d46c752642e37e">&#9670;&nbsp;</a></span>computeLinkFK() <span class="overload">[1/2]</span></h2>
+<a id="a0e42c374549cddb4e16420c7e0b021cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e42c374549cddb4e16420c7e0b021cf">&#9670;&nbsp;</a></span>computeLinkFK() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -632,7 +614,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">bool pilz_industrial_motion_planner::computeLinkFK </td>
           <td>(</td>
-          <td class="paramtype">const moveit::core::RobotModelConstPtr &amp;&#160;</td>
+          <td class="paramtype">const robot_model::RobotModelConstPtr &amp;&#160;</td>
           <td class="paramname"><em>robot_model</em>, </td>
         </tr>
         <tr>
@@ -666,42 +648,27 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">robot_model</td><td>kinematic model of the robot </td></tr>
     <tr><td class="paramname">link_name</td><td>target link name </td></tr>
-    <tr><td class="paramname">joint_state</td><td>joint positions of this group </td></tr>
+    <tr><td class="paramname">joint_state</td><td>joint positons of this group </td></tr>
     <tr><td class="paramname">pose</td><td>pose of the link in base frame of robot model </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if succeed </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="trajectory__functions_8cpp_source.html#l00123">123</a> of file <a class="el" href="trajectory__functions_8cpp_source.html">trajectory_functions.cpp</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="namespacepilz__industrial__motion__planner_a846707e0c70fe0ce82d46c752642e37e_cgraph.png" border="0" usemap="#namespacepilz__industrial__motion__planner_a846707e0c70fe0ce82d46c752642e37e_cgraph" alt=""/></div>
-<map name="namespacepilz__industrial__motion__planner_a846707e0c70fe0ce82d46c752642e37e_cgraph" id="namespacepilz__industrial__motion__planner_a846707e0c70fe0ce82d46c752642e37e_cgraph">
-<area shape="rect" title="compute the pose of a link at give robot state" alt="" coords="5,5,192,47"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#acb5a70a55390ddecac5d79bbc1a929ba" title="Check if a transformation matrix from the model frame (root of model) to frame frame_id is known." alt="" coords="240,5,424,47"/>
-</map>
-</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="namespacepilz__industrial__motion__planner_a846707e0c70fe0ce82d46c752642e37e_icgraph.png" border="0" usemap="#namespacepilz__industrial__motion__planner_a846707e0c70fe0ce82d46c752642e37e_icgraph" alt=""/></div>
-<map name="namespacepilz__industrial__motion__planner_a846707e0c70fe0ce82d46c752642e37e_icgraph" id="namespacepilz__industrial__motion__planner_a846707e0c70fe0ce82d46c752642e37e_icgraph">
-<area shape="rect" title="compute the pose of a link at give robot state" alt="" coords="756,100,943,141"/>
-<area shape="rect" href="namespacetestutils.html#ab92bd7b28971f78ffe134429c7e3d333" title="Check that given trajectory is straight line." alt="" coords="252,35,435,76"/>
-<area shape="rect" href="namespacetestutils.html#a3adb3ee10723d5a032569890776fc5ea" title="Determines the goal position from the given request. TRUE if successful, FALSE otherwise." alt="" coords="483,82,708,109"/>
-<area shape="rect" href="namespacetestutils.html#a435b47ce199b64cc63117aad099c5cbf" title="check if the goal given in cartesian space is reached Only the last point in the trajectory is veryfi..." alt="" coords="253,111,433,138"/>
-<area shape="rect" href="unittest__trajectory__functions_8cpp.html#a97f5be5b84f257c321d7d165d032d9e8" title="Test the forward kinematics function with simple robot poses for robot tip link using robot model wit..." alt="" coords="561,183,630,210"/>
-<area shape="rect" href="classTrajectoryGeneratorLINTest.html#a3341aac2919075600b39a93fa18247b1" title=" " alt="" coords="5,5,204,47"/>
-<area shape="rect" href="integrationtest__command__planning_8cpp.html#abbde4091052e784704a49966ba151392" title="Tests if linear motions with start and goal state given as joint configuration are executed correctly..." alt="" coords="70,71,139,98"/>
+<div class="center"><img src="namespacepilz__industrial__motion__planner_a0e42c374549cddb4e16420c7e0b021cf_icgraph.png" border="0" usemap="#namespacepilz__industrial__motion__planner_a0e42c374549cddb4e16420c7e0b021cf_icgraph" alt=""/></div>
+<map name="namespacepilz__industrial__motion__planner_a0e42c374549cddb4e16420c7e0b021cf_icgraph" id="namespacepilz__industrial__motion__planner_a0e42c374549cddb4e16420c7e0b021cf_icgraph">
+<area shape="rect" title="compute the pose of a link at give robot state" alt="" coords="279,23,465,65"/>
+<area shape="rect" href="namespacetestutils.html#a3adb3ee10723d5a032569890776fc5ea" title="Determines the goal position from the given request. TRUE if successful, FALSE otherwise." alt="" coords="5,5,231,32"/>
+<area shape="rect" href="unittest__trajectory__functions_8cpp.html#ae6810e16c9a332a8edf1de75e41b0656" title="Test the forward kinematics function with simple robot poses for robot tip link using robot model wit..." alt="" coords="83,56,153,83"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="adef2b7361e2dba8f6bc99e5785cf5dc8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adef2b7361e2dba8f6bc99e5785cf5dc8">&#9670;&nbsp;</a></span>computeLinkFK() <span class="overload">[2/2]</span></h2>
+<a id="a4355674794a756756647047d01d68347"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4355674794a756756647047d01d68347">&#9670;&nbsp;</a></span>computeLinkFK() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -709,7 +676,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">bool pilz_industrial_motion_planner::computeLinkFK </td>
           <td>(</td>
-          <td class="paramtype">const moveit::core::RobotModelConstPtr &amp;&#160;</td>
+          <td class="paramtype">const robot_model::RobotModelConstPtr &amp;&#160;</td>
           <td class="paramname"><em>robot_model</em>, </td>
         </tr>
         <tr>
@@ -746,8 +713,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="aefc542cd82d60b584e7977e23d7e0403"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aefc542cd82d60b584e7977e23d7e0403">&#9670;&nbsp;</a></span>computePoseIK() <span class="overload">[1/2]</span></h2>
+<a id="a2e27e4f0615a094f669c0cfb12f83725"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e27e4f0615a094f669c0cfb12f83725">&#9670;&nbsp;</a></span>computePoseIK() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -755,8 +722,8 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">bool pilz_industrial_motion_planner::computePoseIK </td>
           <td>(</td>
-          <td class="paramtype">const planning_scene::PlanningSceneConstPtr &amp;&#160;</td>
-          <td class="paramname"><em>scene</em>, </td>
+          <td class="paramtype">const robot_model::RobotModelConstPtr &amp;&#160;</td>
+          <td class="paramname"><em>robot_model</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -817,7 +784,7 @@ Here is the caller graph for this function:</div>
 <p>compute the inverse kinematics of a given pose, also check robot self collision </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">scene</td><td>planning scene </td></tr>
+    <tr><td class="paramname">robot_model</td><td>kinematic model of the robot </td></tr>
     <tr><td class="paramname">group_name</td><td>name of planning group </td></tr>
     <tr><td class="paramname">link_name</td><td>name of target link </td></tr>
     <tr><td class="paramname">pose</td><td>target pose in IK solver Frame </td></tr>
@@ -830,23 +797,20 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if succeed </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="trajectory__functions_8cpp_source.html#l00054">54</a> of file <a class="el" href="trajectory__functions_8cpp_source.html">trajectory_functions.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="namespacepilz__industrial__motion__planner_aefc542cd82d60b584e7977e23d7e0403_icgraph.png" border="0" usemap="#namespacepilz__industrial__motion__planner_aefc542cd82d60b584e7977e23d7e0403_icgraph" alt=""/></div>
-<map name="namespacepilz__industrial__motion__planner_aefc542cd82d60b584e7977e23d7e0403_icgraph" id="namespacepilz__industrial__motion__planner_aefc542cd82d60b584e7977e23d7e0403_icgraph">
-<area shape="rect" title="compute the inverse kinematics of a given pose, also check robot self collision" alt="" coords="240,35,427,76"/>
-<area shape="rect" href="namespacepilz__industrial__motion__planner.html#a40ec128f5a3915c2d1d4ad2148a6b05a" title=" " alt="" coords="5,5,192,47"/>
-<area shape="rect" href="unittest__trajectory__functions_8cpp.html#a8507caaa36989e2a020f3836bf2e34f6" title="Test computePoseIK for invalid group_name." alt="" coords="64,71,133,98"/>
+<div class="center"><img src="namespacepilz__industrial__motion__planner_a2e27e4f0615a094f669c0cfb12f83725_icgraph.png" border="0" usemap="#namespacepilz__industrial__motion__planner_a2e27e4f0615a094f669c0cfb12f83725_icgraph" alt=""/></div>
+<map name="namespacepilz__industrial__motion__planner_a2e27e4f0615a094f669c0cfb12f83725_icgraph" id="namespacepilz__industrial__motion__planner_a2e27e4f0615a094f669c0cfb12f83725_icgraph">
+<area shape="rect" title="compute the inverse kinematics of a given pose, also check robot self collision" alt="" coords="123,5,309,47"/>
+<area shape="rect" href="unittest__trajectory__functions_8cpp.html#a9e31ee75d919bc705866662f807fbde9" title="Test computePoseIK for invalid group_name." alt="" coords="5,13,75,39"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a40ec128f5a3915c2d1d4ad2148a6b05a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a40ec128f5a3915c2d1d4ad2148a6b05a">&#9670;&nbsp;</a></span>computePoseIK() <span class="overload">[2/2]</span></h2>
+<a id="adb2c389d60ea23fe5f6b76c5580a5387"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb2c389d60ea23fe5f6b76c5580a5387">&#9670;&nbsp;</a></span>computePoseIK() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -854,8 +818,8 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">bool pilz_industrial_motion_planner::computePoseIK </td>
           <td>(</td>
-          <td class="paramtype">const planning_scene::PlanningSceneConstPtr &amp;&#160;</td>
-          <td class="paramname"><em>scene</em>, </td>
+          <td class="paramtype">const robot_model::RobotModelConstPtr &amp;&#160;</td>
+          <td class="paramname"><em>robot_model</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -872,7 +836,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const geometry_msgs::msg::Pose &amp;&#160;</td>
+          <td class="paramtype">const geometry_msgs::Pose &amp;&#160;</td>
           <td class="paramname"><em>pose</em>, </td>
         </tr>
         <tr>
@@ -913,21 +877,10 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="trajectory__functions_8cpp_source.html#l00110">110</a> of file <a class="el" href="trajectory__functions_8cpp_source.html">trajectory_functions.cpp</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="namespacepilz__industrial__motion__planner_a40ec128f5a3915c2d1d4ad2148a6b05a_cgraph.png" border="0" usemap="#namespacepilz__industrial__motion__planner_a40ec128f5a3915c2d1d4ad2148a6b05a_cgraph" alt=""/></div>
-<map name="namespacepilz__industrial__motion__planner_a40ec128f5a3915c2d1d4ad2148a6b05a_cgraph" id="namespacepilz__industrial__motion__planner_a40ec128f5a3915c2d1d4ad2148a6b05a_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,192,47"/>
-<area shape="rect" href="namespacepilz__industrial__motion__planner.html#aefc542cd82d60b584e7977e23d7e0403" title="compute the inverse kinematics of a given pose, also check robot self collision" alt="" coords="240,5,427,47"/>
-</map>
-</div>
-
 </div>
 </div>
-<a id="a1586023c86d2f369bb93cb49c5259408"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1586023c86d2f369bb93cb49c5259408">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[1/46]</span></h2>
+<a id="ad93a7d508795e9c105b548363e94ef80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad93a7d508795e9c105b548363e94ef80">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[1/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -941,7 +894,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">moveit_msgs::msg::MoveItErrorCodes::INVALID_MOTION_PLAN&#160;</td>
+          <td class="paramtype">moveit_msgs::MoveItErrorCodes::INVALID_MOTION_PLAN&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -954,8 +907,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a59e2132b763722f15d70cbc44208b3ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a59e2132b763722f15d70cbc44208b3ba">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[2/46]</span></h2>
+<a id="ac267d5ab0dddc7bd06db87b329d6efdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac267d5ab0dddc7bd06db87b329d6efdc">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[2/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -969,7 +922,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">moveit_msgs::msg::MoveItErrorCodes::FAILURE&#160;</td>
+          <td class="paramtype">moveit_msgs::MoveItErrorCodes::FAILURE&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -982,8 +935,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="abfee450a176f7b30d22e8db333e85b0d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abfee450a176f7b30d22e8db333e85b0d">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[3/46]</span></h2>
+<a id="a698ba6b9f508c3d1f1d1a8aeafb3e1db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a698ba6b9f508c3d1f1d1a8aeafb3e1db">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[3/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -997,7 +950,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">moveit_msgs::msg::MoveItErrorCodes::INVALID_MOTION_PLAN&#160;</td>
+          <td class="paramtype">moveit_msgs::MoveItErrorCodes::INVALID_MOTION_PLAN&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1010,8 +963,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="af38dfabfc42383a382d84acf6ce7686f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af38dfabfc42383a382d84acf6ce7686f">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[4/46]</span></h2>
+<a id="acf50f0beb7f7aa550a8b4248d65b5240"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf50f0beb7f7aa550a8b4248d65b5240">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[4/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1025,7 +978,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">moveit_msgs::msg::MoveItErrorCodes::NO_IK_SOLUTION&#160;</td>
+          <td class="paramtype">moveit_msgs::MoveItErrorCodes::NO_IK_SOLUTION&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1038,8 +991,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="accc2a0c0a6edfbc4df110b863d4570df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#accc2a0c0a6edfbc4df110b863d4570df">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[5/46]</span></h2>
+<a id="a40028b4fc3e5121e116e06887cf17e24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40028b4fc3e5121e116e06887cf17e24">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[5/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1053,7 +1006,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">moveit_msgs::msg::MoveItErrorCodes::INVALID_ROBOT_STATE&#160;</td>
+          <td class="paramtype">moveit_msgs::MoveItErrorCodes::INVALID_ROBOT_STATE&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1066,8 +1019,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a4c186ec2ad2ebbfc99cae99a9db9240f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4c186ec2ad2ebbfc99cae99a9db9240f">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[6/46]</span></h2>
+<a id="a03238e99d3e1ed0a79ee99f0d5cc2f90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03238e99d3e1ed0a79ee99f0d5cc2f90">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[6/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1081,7 +1034,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">moveit_msgs::msg::MoveItErrorCodes::INVALID_MOTION_PLAN&#160;</td>
+          <td class="paramtype">moveit_msgs::MoveItErrorCodes::INVALID_MOTION_PLAN&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1094,8 +1047,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a6091ab437532ea9c2ff115a8d7b5dd46"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6091ab437532ea9c2ff115a8d7b5dd46">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[7/46]</span></h2>
+<a id="a8563630d6d8763869065e8fc9e78fa01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8563630d6d8763869065e8fc9e78fa01">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[7/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1109,7 +1062,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">moveit_msgs::msg::MoveItErrorCodes::INVALID_MOTION_PLAN&#160;</td>
+          <td class="paramtype">moveit_msgs::MoveItErrorCodes::INVALID_MOTION_PLAN&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1122,8 +1075,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a57488a709f391dac2014d54499654013"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a57488a709f391dac2014d54499654013">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[8/46]</span></h2>
+<a id="ac78bd8aa82f37f2611e7254b55bc91d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac78bd8aa82f37f2611e7254b55bc91d0">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[8/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1137,7 +1090,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">moveit_msgs::msg::MoveItErrorCodes::INVALID_MOTION_PLAN&#160;</td>
+          <td class="paramtype">moveit_msgs::MoveItErrorCodes::INVALID_MOTION_PLAN&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1150,8 +1103,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a7ad013f02632a7e5c124fddbb28d22b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7ad013f02632a7e5c124fddbb28d22b7">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[9/46]</span></h2>
+<a id="ab17b36be37bba5be6a0e5b5207b2a59e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab17b36be37bba5be6a0e5b5207b2a59e">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[9/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1165,7 +1118,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">moveit_msgs::msg::MoveItErrorCodes::INVALID_GOAL_CONSTRAINTS&#160;</td>
+          <td class="paramtype">moveit_msgs::MoveItErrorCodes::INVALID_GOAL_CONSTRAINTS&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1178,8 +1131,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a9f0874b8a5fe7dde5ed2e81ec6cc79be"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9f0874b8a5fe7dde5ed2e81ec6cc79be">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[10/46]</span></h2>
+<a id="a10ab3e105b02dd56d6ccf4561f289b71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10ab3e105b02dd56d6ccf4561f289b71">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[10/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1193,7 +1146,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">moveit_msgs::msg::MoveItErrorCodes::INVALID_GOAL_CONSTRAINTS&#160;</td>
+          <td class="paramtype">moveit_msgs::MoveItErrorCodes::INVALID_GOAL_CONSTRAINTS&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1206,8 +1159,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="adce0406291e20e533934ff4dead92383"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adce0406291e20e533934ff4dead92383">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[11/46]</span></h2>
+<a id="a099d5435a88c9516539ea8c1f5df7ca2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a099d5435a88c9516539ea8c1f5df7ca2">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[11/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1221,7 +1174,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">moveit_msgs::msg::MoveItErrorCodes::INVALID_GOAL_CONSTRAINTS&#160;</td>
+          <td class="paramtype">moveit_msgs::MoveItErrorCodes::INVALID_GOAL_CONSTRAINTS&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1234,8 +1187,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a87e5cb4483d22169dc3e7e27781961be"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a87e5cb4483d22169dc3e7e27781961be">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[12/46]</span></h2>
+<a id="a050890c0a5fa771ab566c10bbd4689ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a050890c0a5fa771ab566c10bbd4689ab">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[12/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1249,7 +1202,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">moveit_msgs::msg::MoveItErrorCodes::INVALID_ROBOT_STATE&#160;</td>
+          <td class="paramtype">moveit_msgs::MoveItErrorCodes::INVALID_ROBOT_STATE&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1262,8 +1215,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="afc0442699a6797be6212047365955182"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afc0442699a6797be6212047365955182">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[13/46]</span></h2>
+<a id="a9b06cc4346c485bb1e3b33e0974ac344"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b06cc4346c485bb1e3b33e0974ac344">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[13/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1277,7 +1230,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">moveit_msgs::msg::MoveItErrorCodes::INVALID_MOTION_PLAN&#160;</td>
+          <td class="paramtype">moveit_msgs::MoveItErrorCodes::INVALID_MOTION_PLAN&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1290,8 +1243,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="abd87181ed9c41196627a25a2a86146a6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abd87181ed9c41196627a25a2a86146a6">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[14/46]</span></h2>
+<a id="a3ddff3d3b9cd318455e80a5b166561da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ddff3d3b9cd318455e80a5b166561da">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[14/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1305,7 +1258,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">moveit_msgs::msg::MoveItErrorCodes::NO_IK_SOLUTION&#160;</td>
+          <td class="paramtype">moveit_msgs::MoveItErrorCodes::NO_IK_SOLUTION&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1318,8 +1271,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a68e8c42bf7c1f33871e6f99ed2989e9c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a68e8c42bf7c1f33871e6f99ed2989e9c">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[15/46]</span></h2>
+<a id="aa28e253554ce746f13583d5386c319a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa28e253554ce746f13583d5386c319a8">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[15/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1333,7 +1286,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">moveit_msgs::msg::MoveItErrorCodes::INVALID_ROBOT_STATE&#160;</td>
+          <td class="paramtype">moveit_msgs::MoveItErrorCodes::INVALID_ROBOT_STATE&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1346,8 +1299,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a2a60234bee40a00977b08fd25228e325"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2a60234bee40a00977b08fd25228e325">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[16/46]</span></h2>
+<a id="ad96d8fd3a8689d8076b68ab833896cce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad96d8fd3a8689d8076b68ab833896cce">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[16/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1361,7 +1314,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">moveit_msgs::msg::MoveItErrorCodes::FAILURE&#160;</td>
+          <td class="paramtype">moveit_msgs::MoveItErrorCodes::FAILURE&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1374,8 +1327,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="afed976231acd655df4910a8a07d04513"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afed976231acd655df4910a8a07d04513">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[17/46]</span></h2>
+<a id="ad84687a758fdd755862b14f8891e0f2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad84687a758fdd755862b14f8891e0f2c">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[17/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1389,7 +1342,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">moveit_msgs::msg::MoveItErrorCodes::FAILURE&#160;</td>
+          <td class="paramtype">moveit_msgs::MoveItErrorCodes::FAILURE&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1402,8 +1355,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a7709ca99fcb9b60a3418abf4567231ca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7709ca99fcb9b60a3418abf4567231ca">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[18/46]</span></h2>
+<a id="a54bf11828cd2edde80431e36bc0ec2e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54bf11828cd2edde80431e36bc0ec2e7">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[18/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1417,7 +1370,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">moveit_msgs::msg::MoveItErrorCodes::INVALID_MOTION_PLAN&#160;</td>
+          <td class="paramtype">moveit_msgs::MoveItErrorCodes::INVALID_MOTION_PLAN&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1430,8 +1383,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a082f12fe12eb22b9f4853111c9ce1396"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a082f12fe12eb22b9f4853111c9ce1396">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[19/46]</span></h2>
+<a id="a9282117f9a449af4df4763c36f81d5ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9282117f9a449af4df4763c36f81d5ea">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[19/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1445,7 +1398,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">moveit_msgs::msg::MoveItErrorCodes::FAILURE&#160;</td>
+          <td class="paramtype">moveit_msgs::MoveItErrorCodes::FAILURE&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1458,8 +1411,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a605a209e7f92df3f3b2c4ed7b27eadad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a605a209e7f92df3f3b2c4ed7b27eadad">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[20/46]</span></h2>
+<a id="a285a7dcf77eff576c07fb903a808e80b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a285a7dcf77eff576c07fb903a808e80b">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[20/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1473,7 +1426,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">moveit_msgs::msg::MoveItErrorCodes::NO_IK_SOLUTION&#160;</td>
+          <td class="paramtype">moveit_msgs::MoveItErrorCodes::NO_IK_SOLUTION&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1486,8 +1439,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a2c125cff34352036b977ea3b954d5949"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2c125cff34352036b977ea3b954d5949">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[21/46]</span></h2>
+<a id="ac99018a4f3e3a6a62d1b2d64e9312dad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac99018a4f3e3a6a62d1b2d64e9312dad">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[21/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1501,7 +1454,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">moveit_msgs::msg::MoveItErrorCodes::INVALID_ROBOT_STATE&#160;</td>
+          <td class="paramtype">moveit_msgs::MoveItErrorCodes::INVALID_ROBOT_STATE&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1514,8 +1467,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a233a13f5e7357edd2bbf75f464b02ad4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a233a13f5e7357edd2bbf75f464b02ad4">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[22/46]</span></h2>
+<a id="a5f2028f0cfee37b1932662c3cadded82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f2028f0cfee37b1932662c3cadded82">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[22/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1529,7 +1482,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">moveit_msgs::msg::MoveItErrorCodes::INVALID_ROBOT_STATE&#160;</td>
+          <td class="paramtype">moveit_msgs::MoveItErrorCodes::INVALID_ROBOT_STATE&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1542,8 +1495,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a2f9e88edd95b47b67216d85484a54405"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2f9e88edd95b47b67216d85484a54405">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[23/46]</span></h2>
+<a id="a55868199520470350643eb330e47f108"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55868199520470350643eb330e47f108">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[23/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1557,7 +1510,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">moveit_msgs::msg::MoveItErrorCodes::INVALID_MOTION_PLAN&#160;</td>
+          <td class="paramtype">moveit_msgs::MoveItErrorCodes::INVALID_MOTION_PLAN&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1570,8 +1523,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a1eec222da7295e30e1f1f9b61a8dfa78"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1eec222da7295e30e1f1f9b61a8dfa78">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[24/46]</span></h2>
+<a id="ad3d0015135c128660f5f712634387837"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3d0015135c128660f5f712634387837">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[24/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1585,7 +1538,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">moveit_msgs::msg::MoveItErrorCodes::INVALID_MOTION_PLAN&#160;</td>
+          <td class="paramtype">moveit_msgs::MoveItErrorCodes::INVALID_MOTION_PLAN&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1598,8 +1551,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a7de5297bf414672874ba4803b93e0a89"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7de5297bf414672874ba4803b93e0a89">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[25/46]</span></h2>
+<a id="a8f4de10bddc07163c2f95c6eac2436b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f4de10bddc07163c2f95c6eac2436b9">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[25/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1613,7 +1566,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">moveit_msgs::msg::MoveItErrorCodes::INVALID_GOAL_CONSTRAINTS&#160;</td>
+          <td class="paramtype">moveit_msgs::MoveItErrorCodes::INVALID_GOAL_CONSTRAINTS&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1626,8 +1579,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="ac273b95052ceae6ed501768e4a86df2d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac273b95052ceae6ed501768e4a86df2d">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[26/46]</span></h2>
+<a id="a0d24b90aab817a2f8d990e005084b3c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d24b90aab817a2f8d990e005084b3c4">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[26/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1641,7 +1594,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">moveit_msgs::msg::MoveItErrorCodes::FAILURE&#160;</td>
+          <td class="paramtype">moveit_msgs::MoveItErrorCodes::FAILURE&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1654,8 +1607,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="af1faafbc948224d471043d4ca270129a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af1faafbc948224d471043d4ca270129a">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[27/46]</span></h2>
+<a id="a56991335038346615078e4d54cafce56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56991335038346615078e4d54cafce56">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[27/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1669,7 +1622,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">moveit_msgs::msg::MoveItErrorCodes::FAILURE&#160;</td>
+          <td class="paramtype">moveit_msgs::MoveItErrorCodes::FAILURE&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1682,8 +1635,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a7ac836db0a1d4154eefd99bd447fd981"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7ac836db0a1d4154eefd99bd447fd981">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[28/46]</span></h2>
+<a id="aa74ff4e44c823b3127238c3c6aa8c675"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa74ff4e44c823b3127238c3c6aa8c675">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[28/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1697,7 +1650,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">moveit_msgs::msg::MoveItErrorCodes::INVALID_GOAL_CONSTRAINTS&#160;</td>
+          <td class="paramtype">moveit_msgs::MoveItErrorCodes::INVALID_GOAL_CONSTRAINTS&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1710,8 +1663,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a71e899e691f5c4d61b4a68e2c02b3154"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a71e899e691f5c4d61b4a68e2c02b3154">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[29/46]</span></h2>
+<a id="ac117960733a37df8b913ebc0519fde10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac117960733a37df8b913ebc0519fde10">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[29/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1725,7 +1678,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">moveit_msgs::msg::MoveItErrorCodes::FAILURE&#160;</td>
+          <td class="paramtype">moveit_msgs::MoveItErrorCodes::FAILURE&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1738,8 +1691,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="aad6aae2e7770d904525f7fe4622da14e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad6aae2e7770d904525f7fe4622da14e">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[30/46]</span></h2>
+<a id="a90c2bacface50ec1b78e5d4c000e0123"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90c2bacface50ec1b78e5d4c000e0123">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[30/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1753,7 +1706,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">moveit_msgs::msg::MoveItErrorCodes::INVALID_GOAL_CONSTRAINTS&#160;</td>
+          <td class="paramtype">moveit_msgs::MoveItErrorCodes::INVALID_GOAL_CONSTRAINTS&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1766,8 +1719,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a5c75249f76123dabeabc8a8cd881bc56"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5c75249f76123dabeabc8a8cd881bc56">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[31/46]</span></h2>
+<a id="a8bc770a03ededb6e4673303a8b647917"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bc770a03ededb6e4673303a8b647917">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[31/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1781,7 +1734,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">moveit_msgs::msg::MoveItErrorCodes::INVALID_GOAL_CONSTRAINTS&#160;</td>
+          <td class="paramtype">moveit_msgs::MoveItErrorCodes::INVALID_GOAL_CONSTRAINTS&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1794,8 +1747,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a6b011288aefa68ebae78512cabaead33"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6b011288aefa68ebae78512cabaead33">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[32/46]</span></h2>
+<a id="a6a0e2cc612a3aea222c68e4bb006d284"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a0e2cc612a3aea222c68e4bb006d284">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[32/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1809,7 +1762,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">moveit_msgs::msg::MoveItErrorCodes::INVALID_GOAL_CONSTRAINTS&#160;</td>
+          <td class="paramtype">moveit_msgs::MoveItErrorCodes::INVALID_GOAL_CONSTRAINTS&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1822,8 +1775,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a6d17b8fc0752ab7460c9c1c10e544606"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6d17b8fc0752ab7460c9c1c10e544606">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[33/46]</span></h2>
+<a id="a0cb8d52c9e1761f6eb7ef0145a37cd58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cb8d52c9e1761f6eb7ef0145a37cd58">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[33/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1837,7 +1790,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">moveit_msgs::msg::MoveItErrorCodes::INVALID_MOTION_PLAN&#160;</td>
+          <td class="paramtype">moveit_msgs::MoveItErrorCodes::INVALID_MOTION_PLAN&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1850,8 +1803,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a0285bf5b65dc49958597976ecf3ba7fd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0285bf5b65dc49958597976ecf3ba7fd">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[34/46]</span></h2>
+<a id="a9af3ca03064ba85c7b812bf725909534"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9af3ca03064ba85c7b812bf725909534">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[34/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1865,7 +1818,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">moveit_msgs::msg::MoveItErrorCodes::FAILURE&#160;</td>
+          <td class="paramtype">moveit_msgs::MoveItErrorCodes::FAILURE&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1878,8 +1831,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a148e890bdffe6ea953cb42fbe84c1f55"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a148e890bdffe6ea953cb42fbe84c1f55">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[35/46]</span></h2>
+<a id="a43cb31edaa6cf3411531e2c4ccd845ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43cb31edaa6cf3411531e2c4ccd845ff">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[35/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1893,7 +1846,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">moveit_msgs::msg::MoveItErrorCodes::INVALID_GOAL_CONSTRAINTS&#160;</td>
+          <td class="paramtype">moveit_msgs::MoveItErrorCodes::INVALID_GOAL_CONSTRAINTS&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1906,8 +1859,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="aecf4a3eb115c4d7ed0b35b6a900ea4ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aecf4a3eb115c4d7ed0b35b6a900ea4ec">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[36/46]</span></h2>
+<a id="a1f3b9085e9af8f0d327823fc42769d60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f3b9085e9af8f0d327823fc42769d60">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[36/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1921,7 +1874,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">moveit_msgs::msg::MoveItErrorCodes::INVALID_GOAL_CONSTRAINTS&#160;</td>
+          <td class="paramtype">moveit_msgs::MoveItErrorCodes::INVALID_GOAL_CONSTRAINTS&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1934,8 +1887,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a0a5a7d0ea1272ec2fc8c65449c20b230"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0a5a7d0ea1272ec2fc8c65449c20b230">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[37/46]</span></h2>
+<a id="a8b00c954a7e2da79fb78961f7d6cd097"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b00c954a7e2da79fb78961f7d6cd097">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[37/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1949,7 +1902,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">moveit_msgs::msg::MoveItErrorCodes::NO_IK_SOLUTION&#160;</td>
+          <td class="paramtype">moveit_msgs::MoveItErrorCodes::NO_IK_SOLUTION&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1962,8 +1915,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="ad7ded662fce39322d1b52f6045b08c65"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad7ded662fce39322d1b52f6045b08c65">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[38/46]</span></h2>
+<a id="a67cc2452ad0310a3a4ab068020247fc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67cc2452ad0310a3a4ab068020247fc9">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[38/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1977,7 +1930,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">moveit_msgs::msg::MoveItErrorCodes::FAILURE&#160;</td>
+          <td class="paramtype">moveit_msgs::MoveItErrorCodes::FAILURE&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1990,8 +1943,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a21871580464ddcb3bbd51acbf081c947"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a21871580464ddcb3bbd51acbf081c947">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[39/46]</span></h2>
+<a id="aac1d3f60edf1a2bb998a3b11d82d1a57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac1d3f60edf1a2bb998a3b11d82d1a57">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[39/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2005,7 +1958,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">moveit_msgs::msg::MoveItErrorCodes::INVALID_ROBOT_STATE&#160;</td>
+          <td class="paramtype">moveit_msgs::MoveItErrorCodes::INVALID_ROBOT_STATE&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -2018,8 +1971,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a0869c394ab556a01c7d64eca636f1132"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0869c394ab556a01c7d64eca636f1132">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[40/46]</span></h2>
+<a id="ae38a1eb33901ed6ed2ac579fc6f03f06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae38a1eb33901ed6ed2ac579fc6f03f06">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[40/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2033,7 +1986,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">moveit_msgs::msg::MoveItErrorCodes::INVALID_GOAL_CONSTRAINTS&#160;</td>
+          <td class="paramtype">moveit_msgs::MoveItErrorCodes::INVALID_GOAL_CONSTRAINTS&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -2046,8 +1999,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a91db6c5d9f59ded10ff68e76c2588b75"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a91db6c5d9f59ded10ff68e76c2588b75">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[41/46]</span></h2>
+<a id="a22fef2cc04d06734532a26a96827ca72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22fef2cc04d06734532a26a96827ca72">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[41/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2061,7 +2014,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">moveit_msgs::msg::MoveItErrorCodes::INVALID_ROBOT_STATE&#160;</td>
+          <td class="paramtype">moveit_msgs::MoveItErrorCodes::INVALID_ROBOT_STATE&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -2074,8 +2027,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="ac194337e3351fbc7fc53d940959a081d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac194337e3351fbc7fc53d940959a081d">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[42/46]</span></h2>
+<a id="a8c82867fcb639342e761aca6f1a3565c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c82867fcb639342e761aca6f1a3565c">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[42/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2089,7 +2042,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">moveit_msgs::msg::MoveItErrorCodes::FAILURE&#160;</td>
+          <td class="paramtype">moveit_msgs::MoveItErrorCodes::FAILURE&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -2102,8 +2055,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="ae3faa8fb12ad479de1b7fd2c4d5ba60f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae3faa8fb12ad479de1b7fd2c4d5ba60f">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[43/46]</span></h2>
+<a id="a1ee8d7556fee82b9fc798e4e22f1e76b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ee8d7556fee82b9fc798e4e22f1e76b">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[43/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2117,7 +2070,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">moveit_msgs::msg::MoveItErrorCodes::INVALID_LINK_NAME&#160;</td>
+          <td class="paramtype">moveit_msgs::MoveItErrorCodes::INVALID_LINK_NAME&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -2130,8 +2083,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a49062877ba625c4e79b0ceb5e914d666"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a49062877ba625c4e79b0ceb5e914d666">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[44/46]</span></h2>
+<a id="a347cd206da1f745daee7098d495792c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a347cd206da1f745daee7098d495792c0">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[44/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2145,7 +2098,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">moveit_msgs::msg::MoveItErrorCodes::INVALID_MOTION_PLAN&#160;</td>
+          <td class="paramtype">moveit_msgs::MoveItErrorCodes::INVALID_MOTION_PLAN&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -2158,8 +2111,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="ad0d1e317a9e3f49713a2c29653708b99"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad0d1e317a9e3f49713a2c29653708b99">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[45/46]</span></h2>
+<a id="abdf8c7d63091bf1e42c5dd2de136b808"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdf8c7d63091bf1e42c5dd2de136b808">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[45/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2173,7 +2126,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">moveit_msgs::msg::MoveItErrorCodes::INVALID_GROUP_NAME&#160;</td>
+          <td class="paramtype">moveit_msgs::MoveItErrorCodes::INVALID_GROUP_NAME&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -2186,8 +2139,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="ad32755c2304f98e2bcc709fcfcaa4783"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad32755c2304f98e2bcc709fcfcaa4783">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[46/46]</span></h2>
+<a id="af91488f66d1e16f0137a5070c4f3313e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af91488f66d1e16f0137a5070c4f3313e">&#9670;&nbsp;</a></span>CREATE_MOVEIT_ERROR_CODE_EXCEPTION() <span class="overload">[46/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2201,7 +2154,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">moveit_msgs::msg::MoveItErrorCodes::INVALID_MOTION_PLAN&#160;</td>
+          <td class="paramtype">moveit_msgs::MoveItErrorCodes::INVALID_MOTION_PLAN&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -2255,21 +2208,21 @@ Here is the call graph for this function:</div>
 <p>Determines the sampling time and checks that both trajectroies use the same sampling time. </p>
 <dl class="section return"><dt>Returns</dt><dd>TRUE if the sampling time is equal between all given points (except the last two points of each trajectory), otherwise FALSE. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="trajectory__functions_8cpp_source.html#l00423">423</a> of file <a class="el" href="trajectory__functions_8cpp_source.html">trajectory_functions.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trajectory__functions_8cpp_source.html#l00401">401</a> of file <a class="el" href="trajectory__functions_8cpp_source.html">trajectory_functions.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespacepilz__industrial__motion__planner_ab9c9a8fb1cd62cdbb1ded425c87a20b6_icgraph.png" border="0" usemap="#namespacepilz__industrial__motion__planner_ab9c9a8fb1cd62cdbb1ded425c87a20b6_icgraph" alt=""/></div>
 <map name="namespacepilz__industrial__motion__planner_ab9c9a8fb1cd62cdbb1ded425c87a20b6_icgraph" id="namespacepilz__industrial__motion__planner_ab9c9a8fb1cd62cdbb1ded425c87a20b6_icgraph">
 <area shape="rect" title="Determines the sampling time and checks that both trajectroies use the same sampling time." alt="" coords="123,5,435,47"/>
-<area shape="rect" href="unittest__trajectory__functions_8cpp.html#ae16ad53116511c214504f8232f40e9ef" title="Check that function determineAndCheckSamplingTime() returns &#39;false&#39; if both of the needed vectors hav..." alt="" coords="5,13,75,39"/>
+<area shape="rect" href="unittest__trajectory__functions_8cpp.html#a1498526557efaab1af7568425d826b53" title="Check that function determineAndCheckSamplingTime() returns &#39;false&#39; if both of the needed vectors hav..." alt="" coords="5,13,75,39"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a64b959a9147984677d281a476dfd981e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a64b959a9147984677d281a476dfd981e">&#9670;&nbsp;</a></span>generateJointTrajectory() <span class="overload">[1/2]</span></h2>
+<a id="a85ea227cb54bc473b76cd7efd652ead0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85ea227cb54bc473b76cd7efd652ead0">&#9670;&nbsp;</a></span>generateJointTrajectory() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2277,8 +2230,8 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">bool pilz_industrial_motion_planner::generateJointTrajectory </td>
           <td>(</td>
-          <td class="paramtype">const planning_scene::PlanningSceneConstPtr &amp;&#160;</td>
-          <td class="paramname"><em>scene</em>, </td>
+          <td class="paramtype">const robot_model::RobotModelConstPtr &amp;&#160;</td>
+          <td class="paramname"><em>robot_model</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -2319,13 +2272,13 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">trajectory_msgs::msg::JointTrajectory &amp;&#160;</td>
+          <td class="paramtype">trajectory_msgs::JointTrajectory &amp;&#160;</td>
           <td class="paramname"><em>joint_trajectory</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">moveit_msgs::msg::MoveItErrorCodes &amp;&#160;</td>
+          <td class="paramtype">moveit_msgs::MoveItErrorCodes &amp;&#160;</td>
           <td class="paramname"><em>error_code</em>, </td>
         </tr>
         <tr>
@@ -2345,8 +2298,8 @@ Here is the caller graph for this function:</div>
 <p>Generate joint trajectory from a <a class="el" href="namespaceKDL.html">KDL</a> Cartesian trajectory. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">scene</td><td>planning scene </td></tr>
-    <tr><td class="paramname"><a class="el" href="namespacejoint__limits.html">joint_limits</a></td><td>joint limits </td></tr>
+    <tr><td class="paramname">robot_model</td><td>robot kinematics model </td></tr>
+    <tr><td class="paramname">joint_limits</td><td>joint limits </td></tr>
     <tr><td class="paramname">trajectory</td><td><a class="el" href="namespaceKDL.html">KDL</a> Cartesian trajectory </td></tr>
     <tr><td class="paramname">group_name</td><td>name of the planning group </td></tr>
     <tr><td class="paramname">link_name</td><td>name of the target robot link </td></tr>
@@ -2359,23 +2312,21 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if succeed </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="trajectory__functions_8cpp_source.html#l00209">209</a> of file <a class="el" href="trajectory__functions_8cpp_source.html">trajectory_functions.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="namespacepilz__industrial__motion__planner_a64b959a9147984677d281a476dfd981e_icgraph.png" border="0" usemap="#namespacepilz__industrial__motion__planner_a64b959a9147984677d281a476dfd981e_icgraph" alt=""/></div>
-<map name="namespacepilz__industrial__motion__planner_a64b959a9147984677d281a476dfd981e_icgraph" id="namespacepilz__industrial__motion__planner_a64b959a9147984677d281a476dfd981e_icgraph">
+<div class="center"><img src="namespacepilz__industrial__motion__planner_a85ea227cb54bc473b76cd7efd652ead0_icgraph.png" border="0" usemap="#namespacepilz__industrial__motion__planner_a85ea227cb54bc473b76cd7efd652ead0_icgraph" alt=""/></div>
+<map name="namespacepilz__industrial__motion__planner_a85ea227cb54bc473b76cd7efd652ead0_icgraph" id="namespacepilz__industrial__motion__planner_a85ea227cb54bc473b76cd7efd652ead0_icgraph">
 <area shape="rect" title="Generate joint trajectory from a KDL Cartesian trajectory." alt="" coords="316,46,553,87"/>
-<area shape="rect" href="classpilz__industrial__motion__planner_1_1TrajectoryBlenderTransitionWindow.html#a9d63c28af784da96600f19b2d3ca33b0" title="Blend two trajectories using transition window. The trajectories have to be equally and uniformly dis..." alt="" coords="5,5,268,61"/>
-<area shape="rect" href="unittest__trajectory__blender__transition__window_8cpp.html#a7d39ac8fe9fc6f0c8607fe4f76d3bcc9" title="Tests the blending of two cartesian trajectories which differ from a straight line." alt="" coords="102,85,171,112"/>
+<area shape="rect" href="classpilz__industrial__motion__planner_1_1TrajectoryBlenderTransitionWindow.html#ab629385032502582a0b993ac0e18ca9a" title="Blend two trajectories using transition window. The trajectories have to be equally and uniformly dis..." alt="" coords="5,5,268,61"/>
+<area shape="rect" href="unittest__trajectory__blender__transition__window_8cpp.html#a6a436482e83696016c97dfd59b8d990c" title="Tests the blending of two cartesian trajectories which differ from a straight line." alt="" coords="102,85,171,112"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="afcf834b07fd8b4b9e279ff3f67f39fea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afcf834b07fd8b4b9e279ff3f67f39fea">&#9670;&nbsp;</a></span>generateJointTrajectory() <span class="overload">[2/2]</span></h2>
+<a id="a3404524804a1bc8ddc36d05be6765be8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3404524804a1bc8ddc36d05be6765be8">&#9670;&nbsp;</a></span>generateJointTrajectory() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2383,8 +2334,8 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">bool pilz_industrial_motion_planner::generateJointTrajectory </td>
           <td>(</td>
-          <td class="paramtype">const planning_scene::PlanningSceneConstPtr &amp;&#160;</td>
-          <td class="paramname"><em>scene</em>, </td>
+          <td class="paramtype">const robot_model::RobotModelConstPtr &amp;&#160;</td>
+          <td class="paramname"><em>robot_model</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -2425,13 +2376,13 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">trajectory_msgs::msg::JointTrajectory &amp;&#160;</td>
+          <td class="paramtype">trajectory_msgs::JointTrajectory &amp;&#160;</td>
           <td class="paramname"><em>joint_trajectory</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">moveit_msgs::msg::MoveItErrorCodes &amp;&#160;</td>
+          <td class="paramtype">moveit_msgs::MoveItErrorCodes &amp;&#160;</td>
           <td class="paramname"><em>error_code</em>, </td>
         </tr>
         <tr>
@@ -2451,7 +2402,6 @@ Here is the caller graph for this function:</div>
 <p>Generate joint trajectory from a MultiDOFJointTrajectory. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">scene</td><td>planning scene </td></tr>
     <tr><td class="paramname">trajectory</td><td>Cartesian trajectory </td></tr>
     <tr><td class="paramname">info</td><td>motion plan information </td></tr>
     <tr><td class="paramname">sampling_time</td><td></td></tr>
@@ -2461,8 +2411,6 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if succeed </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="trajectory__functions_8cpp_source.html#l00326">326</a> of file <a class="el" href="trajectory__functions_8cpp_source.html">trajectory_functions.cpp</a>.</p>
 
 </div>
 </div>
@@ -2504,12 +2452,21 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="trajectory__functions_8cpp_source.html#l00574">574</a> of file <a class="el" href="trajectory__functions_8cpp_source.html">trajectory_functions.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trajectory__functions_8cpp_source.html#l00551">551</a> of file <a class="el" href="trajectory__functions_8cpp_source.html">trajectory_functions.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacepilz__industrial__motion__planner_aef290855095fbf0f2bc6bc90326f53d3_icgraph.png" border="0" usemap="#namespacepilz__industrial__motion__planner_aef290855095fbf0f2bc6bc90326f53d3_icgraph" alt=""/></div>
+<map name="namespacepilz__industrial__motion__planner_aef290855095fbf0f2bc6bc90326f53d3_icgraph" id="namespacepilz__industrial__motion__planner_aef290855095fbf0f2bc6bc90326f53d3_icgraph">
+<area shape="rect" title=" " alt="" coords="331,5,533,47"/>
+<area shape="rect" href="namespacepilz__industrial__motion__planner.html#a78473ece5d28134b5a9dafad73327a7a" title="Performs a linear search for the intersection point of the trajectory with the blending radius." alt="" coords="5,5,283,47"/>
+</map>
+</div>
 
 </div>
 </div>
-<a id="af67e0fa074dd44691f84cfdb63c10798"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af67e0fa074dd44691f84cfdb63c10798">&#9670;&nbsp;</a></span>isRobotStateEqual()</h2>
+<a id="ab26b39419b9de19e1c1f911ea07f50d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab26b39419b9de19e1c1f911ea07f50d9">&#9670;&nbsp;</a></span>isRobotStateEqual()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2517,13 +2474,13 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">bool pilz_industrial_motion_planner::isRobotStateEqual </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a> &amp;&#160;</td>
+          <td class="paramtype">const robot_state::RobotState &amp;&#160;</td>
           <td class="paramname"><em>state1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a> &amp;&#160;</td>
+          <td class="paramtype">const robot_state::RobotState &amp;&#160;</td>
           <td class="paramname"><em>state2</em>, </td>
         </tr>
         <tr>
@@ -2555,35 +2512,20 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if joint positions, joint velocities and joint accelerations are equal, otherwise false. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="trajectory__functions_8cpp_source.html#l00474">474</a> of file <a class="el" href="trajectory__functions_8cpp_source.html">trajectory_functions.cpp</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="namespacepilz__industrial__motion__planner_af67e0fa074dd44691f84cfdb63c10798_cgraph.png" border="0" usemap="#namespacepilz__industrial__motion__planner_af67e0fa074dd44691f84cfdb63c10798_cgraph" alt=""/></div>
-<map name="namespacepilz__industrial__motion__planner_af67e0fa074dd44691f84cfdb63c10798_cgraph" id="namespacepilz__industrial__motion__planner_af67e0fa074dd44691f84cfdb63c10798_cgraph">
-<area shape="rect" title="Check if the two robot states have the same joint position/velocity/acceleration." alt="" coords="5,5,211,47"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#a5902793ed7f64dfc073e37c91154c497" title="For a given group, copy the position values of the variables that make up the group into another loca..." alt="" coords="259,5,447,47"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#a4c3dc21cb7e8b21d0552677a3aeb819e" title="Given velocities for the variables that make up a group, in the order found in the group (including v..." alt="" coords="495,5,679,47"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#a3c2938fb8c9467dff253db4b5c1992ca" title="For a given group, copy the velocity values of the variables that make up the group into another loca..." alt="" coords="727,5,919,47"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#a47eb1edf2046387de44c3a9dee3433e6" title="Given accelerations for the variables that make up a group, in the order found in the group (includin..." alt="" coords="967,5,1173,47"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#ac39ff2e3e4801ba1092a4c8eb44dd071" title="For a given group, copy the acceleration values of the variables that make up the group into another ..." alt="" coords="1221,5,1439,47"/>
-</map>
-</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="namespacepilz__industrial__motion__planner_af67e0fa074dd44691f84cfdb63c10798_icgraph.png" border="0" usemap="#namespacepilz__industrial__motion__planner_af67e0fa074dd44691f84cfdb63c10798_icgraph" alt=""/></div>
-<map name="namespacepilz__industrial__motion__planner_af67e0fa074dd44691f84cfdb63c10798_icgraph" id="namespacepilz__industrial__motion__planner_af67e0fa074dd44691f84cfdb63c10798_icgraph">
+<div class="center"><img src="namespacepilz__industrial__motion__planner_ab26b39419b9de19e1c1f911ea07f50d9_icgraph.png" border="0" usemap="#namespacepilz__industrial__motion__planner_ab26b39419b9de19e1c1f911ea07f50d9_icgraph" alt=""/></div>
+<map name="namespacepilz__industrial__motion__planner_ab26b39419b9de19e1c1f911ea07f50d9_icgraph" id="namespacepilz__industrial__motion__planner_ab26b39419b9de19e1c1f911ea07f50d9_icgraph">
 <area shape="rect" title="Check if the two robot states have the same joint position/velocity/acceleration." alt="" coords="123,5,328,47"/>
-<area shape="rect" href="unittest__trajectory__functions_8cpp.html#a740e85b52d45b6c074ad5ff1fe158eba" title="Check that function isRobotStateEqual() returns &#39;false&#39; if the positions of the robot states are not ..." alt="" coords="5,13,75,39"/>
+<area shape="rect" href="unittest__trajectory__functions_8cpp.html#ac0d24b83022ac7c0737fca937b460500" title="Check that function isRobotStateEqual() returns &#39;false&#39; if the positions of the robot states are not ..." alt="" coords="5,13,75,39"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="ab65e34755a367305a8e8f7a98a2c2ba7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab65e34755a367305a8e8f7a98a2c2ba7">&#9670;&nbsp;</a></span>isRobotStateStationary()</h2>
+<a id="ada743ad2d61eeafe011e7a59f92f0508"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada743ad2d61eeafe011e7a59f92f0508">&#9670;&nbsp;</a></span>isRobotStateStationary()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2591,7 +2533,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">bool pilz_industrial_motion_planner::isRobotStateStationary </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a> &amp;&#160;</td>
+          <td class="paramtype">const robot_state::RobotState &amp;&#160;</td>
           <td class="paramname"><em>state</em>, </td>
         </tr>
         <tr>
@@ -2614,7 +2556,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>check if the robot state have zero velocity/acceleration </p>
+<p>check if the robot state have zero velocity/acceleartion </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">state</td><td></td></tr>
@@ -2624,33 +2566,20 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="trajectory__functions_8cpp_source.html#l00517">517</a> of file <a class="el" href="trajectory__functions_8cpp_source.html">trajectory_functions.cpp</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="namespacepilz__industrial__motion__planner_ab65e34755a367305a8e8f7a98a2c2ba7_cgraph.png" border="0" usemap="#namespacepilz__industrial__motion__planner_ab65e34755a367305a8e8f7a98a2c2ba7_cgraph" alt=""/></div>
-<map name="namespacepilz__industrial__motion__planner_ab65e34755a367305a8e8f7a98a2c2ba7_cgraph" id="namespacepilz__industrial__motion__planner_ab65e34755a367305a8e8f7a98a2c2ba7_cgraph">
-<area shape="rect" title="check if the robot state have zero velocity/acceleration" alt="" coords="5,5,241,47"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#a3c2938fb8c9467dff253db4b5c1992ca" title="For a given group, copy the velocity values of the variables that make up the group into another loca..." alt="" coords="289,5,481,47"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#a47eb1edf2046387de44c3a9dee3433e6" title="Given accelerations for the variables that make up a group, in the order found in the group (includin..." alt="" coords="529,5,736,47"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#ac39ff2e3e4801ba1092a4c8eb44dd071" title="For a given group, copy the acceleration values of the variables that make up the group into another ..." alt="" coords="784,5,1001,47"/>
-</map>
-</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="namespacepilz__industrial__motion__planner_ab65e34755a367305a8e8f7a98a2c2ba7_icgraph.png" border="0" usemap="#namespacepilz__industrial__motion__planner_ab65e34755a367305a8e8f7a98a2c2ba7_icgraph" alt=""/></div>
-<map name="namespacepilz__industrial__motion__planner_ab65e34755a367305a8e8f7a98a2c2ba7_icgraph" id="namespacepilz__industrial__motion__planner_ab65e34755a367305a8e8f7a98a2c2ba7_icgraph">
-<area shape="rect" title="check if the robot state have zero velocity/acceleration" alt="" coords="123,5,359,47"/>
-<area shape="rect" href="unittest__trajectory__functions_8cpp.html#a8b52b4b0b26ac0d624a7fab82f42dde7" title="Check that function isRobotStateStationary() returns &#39;false&#39; if the joint velocities are not equal to..." alt="" coords="5,13,75,39"/>
+<div class="center"><img src="namespacepilz__industrial__motion__planner_ada743ad2d61eeafe011e7a59f92f0508_icgraph.png" border="0" usemap="#namespacepilz__industrial__motion__planner_ada743ad2d61eeafe011e7a59f92f0508_icgraph" alt=""/></div>
+<map name="namespacepilz__industrial__motion__planner_ada743ad2d61eeafe011e7a59f92f0508_icgraph" id="namespacepilz__industrial__motion__planner_ada743ad2d61eeafe011e7a59f92f0508_icgraph">
+<area shape="rect" title="check if the robot state have zero velocity/acceleartion" alt="" coords="123,5,359,47"/>
+<area shape="rect" href="unittest__trajectory__functions_8cpp.html#a1d1b5c0bad58891afeed104e8611f542" title="Check that function isRobotStateStationary() returns &#39;false&#39; if the joint velocities are not equal to..." alt="" coords="5,13,75,39"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a5c92ab367085e62823804a18f42772ae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5c92ab367085e62823804a18f42772ae">&#9670;&nbsp;</a></span>isStateColliding()</h2>
+<a id="a1500d3ef06f2a3bfe55be9fcba90460e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1500d3ef06f2a3bfe55be9fcba90460e">&#9670;&nbsp;</a></span>isStateColliding()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2664,19 +2593,19 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const planning_scene::PlanningSceneConstPtr &amp;&#160;</td>
-          <td class="paramname"><em>scene</em>, </td>
+          <td class="paramtype">const moveit::core::RobotModelConstPtr &amp;&#160;</td>
+          <td class="paramname"><em>robot_model</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a> *&#160;</td>
+          <td class="paramtype">robot_state::RobotState *&#160;</td>
           <td class="paramname"><em>state</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classmoveit_1_1core_1_1JointModelGroup.html">moveit::core::JointModelGroup</a> *const&#160;</td>
+          <td class="paramtype">const robot_state::JointModelGroup *const&#160;</td>
           <td class="paramname"><em>group</em>, </td>
         </tr>
         <tr>
@@ -2696,7 +2625,6 @@ Here is the caller graph for this function:</div>
 <p>Checks if current robot state is in self collision. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">scene</td><td>planning scene. </td></tr>
     <tr><td class="paramname">test_for_self_collision</td><td>Flag to deactivate this check during IK. </td></tr>
     <tr><td class="paramname">robot_model</td><td>robot kinematics model. </td></tr>
     <tr><td class="paramname">state</td><td>Robot state instance used for . </td></tr>
@@ -2707,22 +2635,22 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="trajectory__functions_8cpp_source.html#l00581">581</a> of file <a class="el" href="trajectory__functions_8cpp_source.html">trajectory_functions.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trajectory__functions_8cpp_source.html#l00558">558</a> of file <a class="el" href="trajectory__functions_8cpp_source.html">trajectory_functions.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="namespacepilz__industrial__motion__planner_a5c92ab367085e62823804a18f42772ae_cgraph.png" border="0" usemap="#namespacepilz__industrial__motion__planner_a5c92ab367085e62823804a18f42772ae_cgraph" alt=""/></div>
-<map name="namespacepilz__industrial__motion__planner_a5c92ab367085e62823804a18f42772ae_cgraph" id="namespacepilz__industrial__motion__planner_a5c92ab367085e62823804a18f42772ae_cgraph">
-<area shape="rect" title="Checks if current robot state is in self collision." alt="" coords="5,39,193,80"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#a564140d144754d149b292e70c4c59b55" title="Given positions for the variables that make up a group, in the order found in the group (including va..." alt="" coords="241,5,425,47"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#aaec5557d55b862d9dd832b3d4c221836" title="Update all transforms." alt="" coords="241,71,425,112"/>
+<div class="center"><img src="namespacepilz__industrial__motion__planner_a1500d3ef06f2a3bfe55be9fcba90460e_cgraph.png" border="0" usemap="#namespacepilz__industrial__motion__planner_a1500d3ef06f2a3bfe55be9fcba90460e_cgraph" alt=""/></div>
+<map name="namespacepilz__industrial__motion__planner_a1500d3ef06f2a3bfe55be9fcba90460e_cgraph" id="namespacepilz__industrial__motion__planner_a1500d3ef06f2a3bfe55be9fcba90460e_cgraph">
+<area shape="rect" title="Checks if current robot state is in self collision." alt="" coords="5,5,193,47"/>
+<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#aea9edbc5c65137a736db5a86bd1fed08" title="Check whether the current state is in self collision." alt="" coords="241,5,429,47"/>
+<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#a6841b7eae6f77d00e36d30ea255bb053" title="Get the active collision detector for the robot." alt="" coords="477,5,713,47"/>
 </map>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="namespacepilz__industrial__motion__planner_a5c92ab367085e62823804a18f42772ae_icgraph.png" border="0" usemap="#namespacepilz__industrial__motion__planner_a5c92ab367085e62823804a18f42772ae_icgraph" alt=""/></div>
-<map name="namespacepilz__industrial__motion__planner_a5c92ab367085e62823804a18f42772ae_icgraph" id="namespacepilz__industrial__motion__planner_a5c92ab367085e62823804a18f42772ae_icgraph">
+<div class="center"><img src="namespacepilz__industrial__motion__planner_a1500d3ef06f2a3bfe55be9fcba90460e_icgraph.png" border="0" usemap="#namespacepilz__industrial__motion__planner_a1500d3ef06f2a3bfe55be9fcba90460e_icgraph" alt=""/></div>
+<map name="namespacepilz__industrial__motion__planner_a1500d3ef06f2a3bfe55be9fcba90460e_icgraph" id="namespacepilz__industrial__motion__planner_a1500d3ef06f2a3bfe55be9fcba90460e_icgraph">
 <area shape="rect" title="Checks if current robot state is in self collision." alt="" coords="691,5,879,47"/>
 <area shape="rect" href="classplanning__scene_1_1PlanningScene.html#a7a90a85d8dcfd1f2aea3cd019db399c8" title="Get the allowed collision matrix." alt="" coords="403,5,643,47"/>
 <area shape="rect" href="pymoveit__core_8cpp.html#acdb1e01a5a6ec640937d8c69c0f7d045" title=" " alt="" coords="204,5,355,47"/>
@@ -2794,7 +2722,16 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="trajectory__functions_8cpp_source.html#l00536">536</a> of file <a class="el" href="trajectory__functions_8cpp_source.html">trajectory_functions.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trajectory__functions_8cpp_source.html#l00513">513</a> of file <a class="el" href="trajectory__functions_8cpp_source.html">trajectory_functions.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacepilz__industrial__motion__planner_a78473ece5d28134b5a9dafad73327a7a_cgraph.png" border="0" usemap="#namespacepilz__industrial__motion__planner_a78473ece5d28134b5a9dafad73327a7a_cgraph" alt=""/></div>
+<map name="namespacepilz__industrial__motion__planner_a78473ece5d28134b5a9dafad73327a7a_cgraph" id="namespacepilz__industrial__motion__planner_a78473ece5d28134b5a9dafad73327a7a_cgraph">
+<area shape="rect" title="Performs a linear search for the intersection point of the trajectory with the blending radius." alt="" coords="5,5,283,47"/>
+<area shape="rect" href="namespacepilz__industrial__motion__planner.html#aef290855095fbf0f2bc6bc90326f53d3" title=" " alt="" coords="331,5,533,47"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -3050,7 +2987,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Checks that each derived <a class="el" href="classpilz__industrial__motion__planner_1_1MoveItErrorCodeException.html" title="Exception storing an moveit_msgs::msg::MoveItErrorCodes value.">MoveItErrorCodeException</a> contains the correct error code. </p>
+<p>Checks that each derived <a class="el" href="classpilz__industrial__motion__planner_1_1MoveItErrorCodeException.html" title="Exception storing an moveit_msgs::MoveItErrorCodes value.">MoveItErrorCodeException</a> contains the correct error code. </p>
 
 <p class="definition">Definition at line <a class="el" href="unittest__get__solver__tip__frame_8cpp_source.html#l00121">121</a> of file <a class="el" href="unittest__get__solver__tip__frame_8cpp_source.html">unittest_get_solver_tip_frame.cpp</a>.</p>
 
@@ -3178,20 +3115,30 @@ Here is the caller graph for this function:</div>
     <tr><td class="paramname">position_current</td><td>position of current sample </td></tr>
     <tr><td class="paramname">duration_last</td><td>duration of last sample </td></tr>
     <tr><td class="paramname">duration_current</td><td>duration of current sample </td></tr>
-    <tr><td class="paramname"><a class="el" href="namespacejoint__limits.html">joint_limits</a></td><td>joint limits </td></tr>
+    <tr><td class="paramname">joint_limits</td><td>joint limits </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="trajectory__functions_8cpp_source.html#l00148">148</a> of file <a class="el" href="trajectory__functions_8cpp_source.html">trajectory_functions.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trajectory__functions_8cpp_source.html#l00134">134</a> of file <a class="el" href="trajectory__functions_8cpp_source.html">trajectory_functions.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacepilz__industrial__motion__planner_ac442f8c60e0f733e280bbed7ba51bbb2_cgraph.png" border="0" usemap="#namespacepilz__industrial__motion__planner_ac442f8c60e0f733e280bbed7ba51bbb2_cgraph" alt=""/></div>
+<map name="namespacepilz__industrial__motion__planner_ac442f8c60e0f733e280bbed7ba51bbb2_cgraph" id="namespacepilz__industrial__motion__planner_ac442f8c60e0f733e280bbed7ba51bbb2_cgraph">
+<area shape="rect" title="verify the velocity/acceleration limits of current sample (based on backward difference computation) ..." alt="" coords="5,53,247,94"/>
+<area shape="rect" href="classpilz__industrial__motion__planner_1_1JointLimitsContainer.html#a040d5fa11dbedd32a857862bd4ce0b67" title="getLimit get the limit for the given joint name" alt="" coords="295,5,513,61"/>
+<area shape="rect" href="classpilz__industrial__motion__planner_1_1JointLimitsContainer.html#a11ae34fba2acfa928a8e27d8f654671d" title="verify position limit of single joint" alt="" coords="295,85,513,141"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespacepilz__industrial__motion__planner_ac442f8c60e0f733e280bbed7ba51bbb2_icgraph.png" border="0" usemap="#namespacepilz__industrial__motion__planner_ac442f8c60e0f733e280bbed7ba51bbb2_icgraph" alt=""/></div>
 <map name="namespacepilz__industrial__motion__planner_ac442f8c60e0f733e280bbed7ba51bbb2_icgraph" id="namespacepilz__industrial__motion__planner_ac442f8c60e0f733e280bbed7ba51bbb2_icgraph">
 <area shape="rect" title="verify the velocity/acceleration limits of current sample (based on backward difference computation) ..." alt="" coords="123,5,364,47"/>
-<area shape="rect" href="unittest__trajectory__functions_8cpp.html#a29502e662a0a9caa0f8803a4c6794f72" title="Check that function VerifySampleJointLimits() returns &#39;false&#39; in case of very small sample duration." alt="" coords="5,13,75,39"/>
+<area shape="rect" href="unittest__trajectory__functions_8cpp.html#a9248f3ada14eacaf704a746f25751fd0" title="Check that function VerifySampleJointLimits() returns &#39;false&#39; in case of very small sample duration." alt="" coords="5,13,75,39"/>
 </map>
 </div>
 

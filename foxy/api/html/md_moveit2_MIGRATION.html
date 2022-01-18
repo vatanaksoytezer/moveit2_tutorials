@@ -68,20 +68,6 @@ $(function() {
 <div class="contents">
 <div class="textblock"><p>API changes in MoveIt releases</p>
 <h1><a class="anchor" id="autotoc_md7"></a>
-ROS Rolling</h1>
-<ul>
-<li>ServoServer was renamed to ServoNode</li>
-<li><code>CollisionObject</code> messages are now defined with a <code>Pose</code>, and shapes and subframes are defined relative to the object's pose. This makes it easier to place objects with subframes and multiple shapes in the scene. This causes several changes:<ul>
-<li><code>getFrameTransform()</code> now returns this pose instead of the first shape's pose.</li>
-<li>The Rviz plugin's manipulation tab now uses the object's pose instead of the shape pose to evaluate if object's are in the region of interest.</li>
-<li>Planning scene geometry text files (<code>.scene</code>) have changed format. Add a line <code>0 0 0 0 0 0 1</code> under each line with an asterisk to upgrade old files if required.</li>
-</ul>
-</li>
-<li>add API for passing RNG to setToRandomPositionsNearBy</li>
-<li>Static member variable interface of the CollisionDetectorAllocatorTemplate for the string NAME was replaced with a virtual method <code>getName</code>.</li>
-<li>Enhance <code>RDFLoader</code> to load from string parameter OR string topic (and add the ability to publish a string topic).</li>
-</ul>
-<h1><a class="anchor" id="autotoc_md8"></a>
 ROS Noetic</h1>
 <ul>
 <li>RobotModel no longer overrides empty URDF collision geometry by matching the visual geometry of the link.</li>
@@ -98,13 +84,12 @@ ROS Noetic</h1>
 <li>The joint states of <code>passive</code> joints must be published in ROS and the CurrentStateMonitor will now wait for them as well. Their semantics dictate that they cannot be actively controlled, but they must be known to use the full robot state in collision checks. (<a href="https://github.com/ros-planning/moveit/pull/2663">https://github.com/ros-planning/moveit/pull/2663</a>)</li>
 <li>Removed deprecated header <code><a class="el" href="deprecation_8h.html">moveit/macros/deprecation.h</a></code>. Use <code>[[deprecated]]</code> instead.</li>
 <li>All uses of <code>MOVEIT_CLASS_FORWARD</code> et. al. must now be followed by a semicolon for consistency (and to get -pedantic builds to pass for the codebase).</li>
-<li>In case you start RViz in a namespace, the default topic for the trajectory visualization display now uses the relative instead of the absolute namespace (i.e. <code>&lt;ns&gt;/move_group/display_planned_path</code> instead of <code>/move_group/display_planned_path</code>).</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md9"></a>
+<h1><a class="anchor" id="autotoc_md8"></a>
 ROS Melodic</h1>
 <ul>
 <li>Migration to <code>tf2</code> API.</li>
-<li>Replaced Eigen::Affine3d with Eigen::Isometry3d, which is computationally more efficient. Simply find-replace occurrences of Affine3d: <code>find . -iname "*.[hc]*" -print0 | xargs -0 sed -i 's#Affine3#Isometry3#g'</code></li>
+<li>Replaced Eigen::Affine3d with Eigen::Isometry3d, which is computationally more efficient. Simply find-replace occurences of Affine3d: <code>find . -iname "*.[hc]*" -print0 | xargs -0 sed -i 's#Affine3#Isometry3#g'</code></li>
 <li>The <a class="el" href="namespacemove__group.html">move_group</a> capability <code>ExecuteTrajectoryServiceCapability</code> has been removed in favor of the improved <code>ExecuteTrajectoryActionCapability</code> capability. Since Indigo, both capabilities were supported. If you still load default capabilities in your <code>config/launch/move_group.launch</code>, you can just remove them from the capabilities parameter. The correct default capabilities will be loaded automatically.</li>
 <li>Deprecated method <code>CurrentStateMonitor::waitForCurrentState(double wait_time)</code> was finally removed.</li>
 <li>Renamed <code>RobotState::getCollisionBodyTransforms</code> to <code>getCollisionBodyTransform</code> as it returns a single transform only.</li>
@@ -115,7 +100,7 @@ ROS Melodic</h1>
 <li><code>RDFLoader</code> / <code>RobotModelLoader</code>: removed TinyXML-based API (<a href="https://github.com/ros-planning/moveit/pull/1254">https://github.com/ros-planning/moveit/pull/1254</a>)</li>
 <li>Deprecated <code>EndEffectorInteractionStyle</code> got removed from <code>RobotInteraction</code> (<a href="https://github.com/ros-planning/moveit/pull/1287">https://github.com/ros-planning/moveit/pull/1287</a>) Use <a href="https://github.com/ros-planning/moveit/pull/1287/files#diff-24e57a8ea7f2f2d8a63cfc31580d09ddL240">the corresponding <code>InteractionStyle</code> definitions</a> instead</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md10"></a>
+<h1><a class="anchor" id="autotoc_md9"></a>
 ROS Kinetic</h1>
 <ul>
 <li>In the C++ MoveGroupInterface class the <code><a class="el" href="namespaceplan__with__constraints.html#ad98040293eeabd17f40a72a60f1146c4">plan()</a></code> method returns a <code>MoveItErrorCode</code> object and not a boolean. <code>static_cast&lt;bool&gt;(<a class="el" href="namespaceplan__with__constraints.html#ad98040293eeabd17f40a72a60f1146c4">mgi.plan()</a>)</code> can be used to achieve the old behavior.</li>

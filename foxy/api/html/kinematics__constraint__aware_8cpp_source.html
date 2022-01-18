@@ -112,346 +112,342 @@ $(function() {
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="robot__model_8h.html">moveit/robot_model/robot_model.h</a>&gt;</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="planning__scene_8h.html">moveit/planning_scene/planning_scene.h</a>&gt;</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &lt;Eigen/Geometry.h&gt;</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#if __has_include(&lt;tf2_eigen/tf2_eigen.hpp&gt;)</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &lt;tf2_eigen/tf2_eigen.hpp&gt;</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &lt;tf2_eigen/tf2_eigen.h&gt;</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#include &lt;boost/bind.hpp&gt;</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacekinematics__constraint__aware.html">kinematics_constraint_aware</a></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<a class="code" href="classkinematics__constraint__aware_1_1KinematicsConstraintAware.html#a59fc953286b6bece5513d122aaa50475">KinematicsConstraintAware::KinematicsConstraintAware</a>(<span class="keyword">const</span> moveit::core::RobotModelConstPtr&amp; kinematic_model,</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                                                     <span class="keyword">const</span> std::string&amp; group_name)</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;{</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordflow">if</span> (!kinematic_model-&gt;hasJointModelGroup(group_name))</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    ROS_ERROR_NAMED(<span class="stringliteral">&quot;kinematics_constraint_aware&quot;</span>, <span class="stringliteral">&quot;The group %s does not exist&quot;</span>, group_name.c_str());</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    joint_model_group_ = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  }</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  kinematic_model_ = kinematic_model;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  group_name_ = group_name;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  joint_model_group_ = kinematic_model_-&gt;getJointModelGroup(group_name);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordflow">if</span> (joint_model_group_-&gt;<a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html#a7a1da3da39218d07e79f7d26ed5d4d16">getSolverInstance</a>())</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    has_sub_groups_ = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    sub_groups_names_.push_back(group_name_);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    ROS_DEBUG_NAMED(<span class="stringliteral">&quot;kinematics_constraint_aware&quot;</span>, <span class="stringliteral">&quot;No kinematics solver instance defined for group %s&quot;</span>,</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                    group_name.c_str());</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">bool</span> is_solvable_group = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">if</span> (!(joint_model_group_-&gt;<a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html#acbdd820932769bf05d316ddfed2cde93">getSubgroupNames</a>().empty()))</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;      <span class="keyword">const</span> std::vector&lt;std::string&gt; sub_groups_names = joint_model_group_-&gt;<a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html#acbdd820932769bf05d316ddfed2cde93">getSubgroupNames</a>();</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; sub_groups_names.size(); ++i)</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;      {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">if</span> (!kinematic_model_-&gt;getJointModelGroup(sub_groups_names[i])-&gt;getSolverInstance())</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;          is_solvable_group = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;          <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;      }</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;      <span class="keywordflow">if</span> (is_solvable_group)</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      {</div>
-<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="classkinematics__constraint__aware_1_1KinematicsConstraintAware.html#a59fc953286b6bece5513d122aaa50475">   87</a></span>&#160;        ROS_DEBUG_NAMED(<span class="stringliteral">&quot;kinematics_constraint_aware&quot;</span>, <span class="stringliteral">&quot;Group %s is a group for which we can solve IK&quot;</span>,</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                        joint_model_group_-&gt;<a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html#a2f165c9374e28ac4052490819c790f45">getName</a>().c_str());</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        sub_groups_names_ = sub_groups_names;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;      }</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;      <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;      {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        joint_model_group_ = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;      }</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;      joint_model_group_ = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;      ROS_INFO_NAMED(<span class="stringliteral">&quot;kinematics_constraint_aware&quot;</span>, <span class="stringliteral">&quot;No solver allocated for group %s&quot;</span>, group_name.c_str());</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    }</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    has_sub_groups_ = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  }</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  ik_attempts_ = 10;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classkinematics__constraint__aware_1_1KinematicsConstraintAware.html#a60970cf672ef9c8a46171b62bd821eea">KinematicsConstraintAware::getIK</a>(<span class="keyword">const</span> planning_scene::PlanningSceneConstPtr&amp; <a class="code" href="namespaceplanning__scene.html">planning_scene</a>,</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                                      <span class="keyword">const</span> <a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html">kinematics_constraint_aware::KinematicsRequest</a>&amp; request,</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                                      <a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html">kinematics_constraint_aware::KinematicsResponse</a>&amp; response)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <span class="keywordflow">if</span> (!joint_model_group_)</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  {</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    ROS_ERROR_NAMED(<span class="stringliteral">&quot;kinematics_constraint_aware&quot;</span>, <span class="stringliteral">&quot;This solver has not been constructed properly&quot;</span>);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  }</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  <span class="keywordflow">if</span> (!<a class="code" href="namespaceplanning__scene.html">planning_scene</a>)</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  {</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    ROS_ERROR_NAMED(<span class="stringliteral">&quot;kinematics_constraint_aware&quot;</span>, <span class="stringliteral">&quot;Planning scene must be allocated&quot;</span>);</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  }</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <span class="keywordflow">if</span> (!response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#a4f9a95995cfb9b7a831057e08fe9369a">solution_</a>)</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  {</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#a4f9a95995cfb9b7a831057e08fe9369a">solution_</a> = std::make_shared&lt;moveit::core::RobotState&gt;(<a class="code" href="namespaceplanning__scene.html">planning_scene</a>-&gt;getCurrentState());</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  }</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  ros::WallTime start_time = ros::WallTime::now();</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <span class="keywordflow">if</span> (request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#a3b11cae0bc01b9dbad00c2df9b42c7f8">group_name_</a> != group_name_)</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  {</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#ae1c2df874b4adde3f642d6d3d41bf601">error_code_</a>.val = response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#ae1c2df874b4adde3f642d6d3d41bf601">error_code_</a>.INVALID_GROUP_NAME;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &lt;tf2_eigen/tf2_eigen.h&gt;</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &lt;boost/bind.hpp&gt;</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacekinematics__constraint__aware.html">kinematics_constraint_aware</a></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<a class="code" href="classkinematics__constraint__aware_1_1KinematicsConstraintAware.html#a59fc953286b6bece5513d122aaa50475">KinematicsConstraintAware::KinematicsConstraintAware</a>(<span class="keyword">const</span> moveit::core::RobotModelConstPtr&amp; kinematic_model,</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                                     <span class="keyword">const</span> std::string&amp; group_name)</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordflow">if</span> (!kinematic_model-&gt;hasJointModelGroup(group_name))</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    ROS_ERROR_NAMED(<span class="stringliteral">&quot;kinematics_constraint_aware&quot;</span>, <span class="stringliteral">&quot;The group %s does not exist&quot;</span>, group_name.c_str());</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    joint_model_group_ = NULL;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  kinematic_model_ = kinematic_model;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  group_name_ = group_name;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  joint_model_group_ = kinematic_model_-&gt;getJointModelGroup(group_name);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordflow">if</span> (joint_model_group_-&gt;<a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html#a7a1da3da39218d07e79f7d26ed5d4d16">getSolverInstance</a>())</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    has_sub_groups_ = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    sub_groups_names_.push_back(group_name_);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    ROS_DEBUG_NAMED(<span class="stringliteral">&quot;kinematics_constraint_aware&quot;</span>, <span class="stringliteral">&quot;No kinematics solver instance defined for group %s&quot;</span>,</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                    group_name.c_str());</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">bool</span> is_solvable_group = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">if</span> (!(joint_model_group_-&gt;<a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html#acbdd820932769bf05d316ddfed2cde93">getSubgroupNames</a>().empty()))</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      <span class="keyword">const</span> std::vector&lt;std::string&gt; sub_groups_names = joint_model_group_-&gt;<a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html#acbdd820932769bf05d316ddfed2cde93">getSubgroupNames</a>();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; sub_groups_names.size(); ++i)</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;      {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">if</span> (!kinematic_model_-&gt;getJointModelGroup(sub_groups_names[i])-&gt;getSolverInstance())</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;          is_solvable_group = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;          <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;      }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;      <span class="keywordflow">if</span> (is_solvable_group)</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;      {</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="classkinematics__constraint__aware_1_1KinematicsConstraintAware.html#a59fc953286b6bece5513d122aaa50475">   83</a></span>&#160;        ROS_DEBUG_NAMED(<span class="stringliteral">&quot;kinematics_constraint_aware&quot;</span>, <span class="stringliteral">&quot;Group %s is a group for which we can solve IK&quot;</span>,</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                        joint_model_group_-&gt;<a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html#a2f165c9374e28ac4052490819c790f45">getName</a>().c_str());</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        sub_groups_names_ = sub_groups_names;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;      <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;      {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        joint_model_group_ = NULL;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;      }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;      joint_model_group_ = NULL;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;      ROS_INFO_NAMED(<span class="stringliteral">&quot;kinematics_constraint_aware&quot;</span>, <span class="stringliteral">&quot;No solver allocated for group %s&quot;</span>, group_name.c_str());</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    has_sub_groups_ = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  ik_attempts_ = 10;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classkinematics__constraint__aware_1_1KinematicsConstraintAware.html#a60970cf672ef9c8a46171b62bd821eea">KinematicsConstraintAware::getIK</a>(<span class="keyword">const</span> planning_scene::PlanningSceneConstPtr&amp; <a class="code" href="namespaceplanning__scene.html">planning_scene</a>,</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                                      <span class="keyword">const</span> <a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html">kinematics_constraint_aware::KinematicsRequest</a>&amp; request,</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                                      <a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html">kinematics_constraint_aware::KinematicsResponse</a>&amp; response)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <span class="keywordflow">if</span> (!joint_model_group_)</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  {</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    ROS_ERROR_NAMED(<span class="stringliteral">&quot;kinematics_constraint_aware&quot;</span>, <span class="stringliteral">&quot;This solver has not been constructed properly&quot;</span>);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  }</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <span class="keywordflow">if</span> (!<a class="code" href="namespaceplanning__scene.html">planning_scene</a>)</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  {</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    ROS_ERROR_NAMED(<span class="stringliteral">&quot;kinematics_constraint_aware&quot;</span>, <span class="stringliteral">&quot;Planning scene must be allocated&quot;</span>);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <span class="keywordflow">if</span> (!response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#a4f9a95995cfb9b7a831057e08fe9369a">solution_</a>)</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  {</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#a4f9a95995cfb9b7a831057e08fe9369a">solution_</a>.reset(<span class="keyword">new</span> <a class="code" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a>(<a class="code" href="namespaceplanning__scene.html">planning_scene</a>-&gt;getCurrentState()));</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  }</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  ros::WallTime start_time = ros::WallTime::now();</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <span class="keywordflow">if</span> (request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#a3b11cae0bc01b9dbad00c2df9b42c7f8">group_name_</a> != group_name_)</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#ae1c2df874b4adde3f642d6d3d41bf601">error_code_</a>.val = response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#ae1c2df874b4adde3f642d6d3d41bf601">error_code_</a>.INVALID_GROUP_NAME;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  }</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  <span class="comment">// Setup the seed and the values for all other joints in the robot</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  <a class="code" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a> kinematic_state = *request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#a2366b998f8ec413e8853563d160205b8">robot_state_</a>;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  std::vector&lt;std::string&gt; ik_link_names = request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#a610d11ebdd8d31ea29cf567cbd0cd386">ik_link_names_</a>;</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  <span class="comment">// Setup the seed and the values for all other joints in the robot</span></div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  <a class="code" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a> kinematic_state = *request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#a2366b998f8ec413e8853563d160205b8">robot_state_</a>;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  std::vector&lt;std::string&gt; ik_link_names = request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#a610d11ebdd8d31ea29cf567cbd0cd386">ik_link_names_</a>;</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  <span class="comment">// Transform request to tip frame if necessary</span></div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  <span class="keywordflow">if</span> (!request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#a610d11ebdd8d31ea29cf567cbd0cd386">ik_link_names_</a>.empty())</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  {</div>
-<div class="line"><a name="l00142"></a><span class="lineno"><a class="line" href="classkinematics__constraint__aware_1_1KinematicsConstraintAware.html#a60970cf672ef9c8a46171b62bd821eea">  142</a></span>&#160;    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#abde165fad36329e910c131b83e53f03b">pose_stamped_vector_</a>.size(); ++i)</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    {</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;      geometry_msgs::PoseStamped tmp_pose = request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#abde165fad36329e910c131b83e53f03b">pose_stamped_vector_</a>[i];</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;      <span class="comment">// The assumption is that this new link is rigidly attached to the tip link for the group</span></div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;      <span class="keywordflow">if</span> (!kinematic_model_-&gt;getJointModelGroup(sub_groups_names_[i])-&gt;hasLinkModel(request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#a610d11ebdd8d31ea29cf567cbd0cd386">ik_link_names_</a>[i]) &amp;&amp;</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;          kinematic_model_-&gt;getJointModelGroup(sub_groups_names_[i])-&gt;isLinkUpdated(request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#a610d11ebdd8d31ea29cf567cbd0cd386">ik_link_names_</a>[i]))</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;      {</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        tmp_pose.pose = getTipFramePose(<a class="code" href="namespaceplanning__scene.html">planning_scene</a>, kinematic_state, request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#abde165fad36329e910c131b83e53f03b">pose_stamped_vector_</a>[i].pose,</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                                        request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#a610d11ebdd8d31ea29cf567cbd0cd386">ik_link_names_</a>[i], i);</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        ik_link_names[i] =</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            kinematic_model_-&gt;getJointModelGroup(sub_groups_names_[i])-&gt;getSolverInstance()-&gt;getTipFrame();</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;      }</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!kinematic_model_-&gt;getJointModelGroup(sub_groups_names_[i])-&gt;canSetStateFromIK(request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#a610d11ebdd8d31ea29cf567cbd0cd386">ik_link_names_</a>[i]))</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;      {</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        ROS_ERROR_NAMED(<span class="stringliteral">&quot;kinematics_constraint_aware&quot;</span>, <span class="stringliteral">&quot;Could not find IK solver for link %s for group %s&quot;</span>,</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                        request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#a610d11ebdd8d31ea29cf567cbd0cd386">ik_link_names_</a>[i].c_str(), sub_groups_names_[i].c_str());</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;      }</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    }</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  }</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  <span class="comment">// Transform request to tip frame if necessary</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  <span class="keywordflow">if</span> (!request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#a610d11ebdd8d31ea29cf567cbd0cd386">ik_link_names_</a>.empty())</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  {</div>
+<div class="line"><a name="l00138"></a><span class="lineno"><a class="line" href="classkinematics__constraint__aware_1_1KinematicsConstraintAware.html#a60970cf672ef9c8a46171b62bd821eea">  138</a></span>&#160;    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#abde165fad36329e910c131b83e53f03b">pose_stamped_vector_</a>.size(); ++i)</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    {</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;      geometry_msgs::PoseStamped tmp_pose = request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#abde165fad36329e910c131b83e53f03b">pose_stamped_vector_</a>[i];</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;      <span class="comment">// The assumption is that this new link is rigidly attached to the tip link for the group</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;      <span class="keywordflow">if</span> (!kinematic_model_-&gt;getJointModelGroup(sub_groups_names_[i])-&gt;hasLinkModel(request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#a610d11ebdd8d31ea29cf567cbd0cd386">ik_link_names_</a>[i]) &amp;&amp;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;          kinematic_model_-&gt;getJointModelGroup(sub_groups_names_[i])-&gt;isLinkUpdated(request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#a610d11ebdd8d31ea29cf567cbd0cd386">ik_link_names_</a>[i]))</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;      {</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        tmp_pose.pose = getTipFramePose(<a class="code" href="namespaceplanning__scene.html">planning_scene</a>, kinematic_state, request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#abde165fad36329e910c131b83e53f03b">pose_stamped_vector_</a>[i].pose,</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                                        request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#a610d11ebdd8d31ea29cf567cbd0cd386">ik_link_names_</a>[i], i);</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        ik_link_names[i] =</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            kinematic_model_-&gt;getJointModelGroup(sub_groups_names_[i])-&gt;getSolverInstance()-&gt;getTipFrame();</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;      }</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!kinematic_model_-&gt;getJointModelGroup(sub_groups_names_[i])-&gt;canSetStateFromIK(request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#a610d11ebdd8d31ea29cf567cbd0cd386">ik_link_names_</a>[i]))</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;      {</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        ROS_ERROR_NAMED(<span class="stringliteral">&quot;kinematics_constraint_aware&quot;</span>, <span class="stringliteral">&quot;Could not find IK solver for link %s for group %s&quot;</span>,</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                        request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#a610d11ebdd8d31ea29cf567cbd0cd386">ik_link_names_</a>[i].c_str(), sub_groups_names_[i].c_str());</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;      }</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    }</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  }</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  <span class="comment">// Transform the requests to the base frame of the kinematic model</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  EigenSTL::vector_Isometry3d goals =</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;      transformPoses(<a class="code" href="namespaceplanning__scene.html">planning_scene</a>, kinematic_state, request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#abde165fad36329e910c131b83e53f03b">pose_stamped_vector_</a>, kinematic_model_-&gt;getModelFrame());</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;  <span class="comment">// Transform the requests to the base frame of the kinematic model</span></div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;  EigenSTL::vector_Isometry3d goals =</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;      transformPoses(<a class="code" href="namespaceplanning__scene.html">planning_scene</a>, kinematic_state, request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#abde165fad36329e910c131b83e53f03b">pose_stamped_vector_</a>, kinematic_model_-&gt;getModelFrame());</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  moveit::core::StateValidityCallbackFn constraint_callback_fn =</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;      boost::bind(&amp;KinematicsConstraintAware::validityCallbackFn, <span class="keyword">this</span>, <a class="code" href="namespaceplanning__scene.html">planning_scene</a>, request, response, _1, _2);</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  <span class="keywordtype">bool</span> result = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  <span class="keywordflow">if</span> (has_sub_groups_)</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;  {</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    result = kinematic_state.getJointStateGroup(group_name_)</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                 -&gt;<a class="code" href="classmoveit_1_1core_1_1RobotState.html#a7af4b38e8bbc441f5aa646878cc023c7">setFromIK</a>(goals, ik_link_names, ik_attempts_, request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#a3dfa46806edf7307e59ff3affad2b40a">timeout_</a>.toSec(), constraint_callback_fn);</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;  }</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;  <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;  {</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    result =</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        ik_link_names.empty() ?</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;            kinematic_state.getJointStateGroup(group_name_)</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                -&gt;<a class="code" href="classmoveit_1_1core_1_1RobotState.html#a7af4b38e8bbc441f5aa646878cc023c7">setFromIK</a>(goals[0], ik_attempts_, request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#a3dfa46806edf7307e59ff3affad2b40a">timeout_</a>.toSec(), constraint_callback_fn) :</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;            kinematic_state.getJointStateGroup(group_name_)</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                -&gt;<a class="code" href="classmoveit_1_1core_1_1RobotState.html#a7af4b38e8bbc441f5aa646878cc023c7">setFromIK</a>(goals[0], ik_link_names[0], ik_attempts_, request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#a3dfa46806edf7307e59ff3affad2b40a">timeout_</a>.toSec(), constraint_callback_fn);</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;  }</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;  <span class="keywordflow">if</span> (result)</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;  {</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    std::vector&lt;double&gt; solution_values;</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    kinematic_state.getJointStateGroup(group_name_)-&gt;getVariableValues(solution_values);</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#a4f9a95995cfb9b7a831057e08fe9369a">solution_</a>-&gt;getJointStateGroup(group_name_)-&gt;setVariableValues(solution_values);</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#ae1c2df874b4adde3f642d6d3d41bf601">error_code_</a>.val = response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#ae1c2df874b4adde3f642d6d3d41bf601">error_code_</a>.SUCCESS;</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  }</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  <span class="keywordflow">if</span> (response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#ae1c2df874b4adde3f642d6d3d41bf601">error_code_</a>.val == 0)</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;  {</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#ae1c2df874b4adde3f642d6d3d41bf601">error_code_</a>.val = response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#ae1c2df874b4adde3f642d6d3d41bf601">error_code_</a>.NO_IK_SOLUTION;</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;  }</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;}</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="keywordtype">bool</span> KinematicsConstraintAware::validityCallbackFn(<span class="keyword">const</span> planning_scene::PlanningSceneConstPtr&amp; <a class="code" href="namespaceplanning__scene.html">planning_scene</a>,</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                                                   <span class="keyword">const</span> <a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html">kinematics_constraint_aware::KinematicsRequest</a>&amp; request,</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                                                   <a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html">kinematics_constraint_aware::KinematicsResponse</a>&amp; response,</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                                                   moveit::core::JointStateGroup* joint_state_group,</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                                                   <span class="keyword">const</span> std::vector&lt;double&gt;&amp; joint_group_variable_values)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;  joint_state_group-&gt;setVariableValues(joint_group_variable_values);</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;  <span class="comment">// Now check for collisions</span></div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;  <span class="keywordflow">if</span> (request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#a38a38f456421df21b09e26b046322f5b">check_for_collisions_</a>)</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;  {</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <a class="code" href="structcollision__detection_1_1CollisionRequest.html">collision_detection::CollisionRequest</a> collision_request;</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <a class="code" href="structcollision__detection_1_1CollisionResult.html">collision_detection::CollisionResult</a> collision_result;</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    collision_request.<a class="code" href="structcollision__detection_1_1CollisionRequest.html#a1c9c857d83d4f98bef7a1fb586561fa8">group_name</a> = request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#a3b11cae0bc01b9dbad00c2df9b42c7f8">group_name_</a>;</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <a class="code" href="namespaceplanning__scene.html">planning_scene</a>-&gt;checkCollision(collision_request, collision_result, *joint_state_group-&gt;getRobotState());</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <span class="keywordflow">if</span> (collision_result.<a class="code" href="structcollision__detection_1_1CollisionResult.html#ad68db09bcc111730f7c4ab1bdff31e67">collision</a>)</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    {</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;      ROS_DEBUG_NAMED(<span class="stringliteral">&quot;kinematics_constraint_aware&quot;</span>, <span class="stringliteral">&quot;IK solution is in collision&quot;</span>);</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;      response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#ae1c2df874b4adde3f642d6d3d41bf601">error_code_</a>.val = response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#ae1c2df874b4adde3f642d6d3d41bf601">error_code_</a>.GOAL_IN_COLLISION;</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    }</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;  }</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160; </div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;  <span class="comment">// Now check for constraints</span></div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;  <span class="keywordflow">if</span> (request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#a2f1a2e0c7c110f039e865a24d6860eba">constraints_</a>)</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;  {</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <a class="code" href="structkinematic__constraints_1_1ConstraintEvaluationResult.html">kinematic_constraints::ConstraintEvaluationResult</a> constraint_result;</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    constraint_result =</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#a2f1a2e0c7c110f039e865a24d6860eba">constraints_</a>-&gt;decide(*joint_state_group-&gt;getRobotState(), response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#a7ae0a18a2604910741dbe47644f7eca6">constraint_eval_results_</a>);</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="keywordflow">if</span> (!constraint_result.<a class="code" href="structkinematic__constraints_1_1ConstraintEvaluationResult.html#a6e75dfd6bc22e54b0fb643ae2f094072">satisfied</a>)</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    {</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;      ROS_DEBUG_NAMED(<span class="stringliteral">&quot;kinematics_constraint_aware&quot;</span>, <span class="stringliteral">&quot;IK solution violates constraints&quot;</span>);</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;      response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#ae1c2df874b4adde3f642d6d3d41bf601">error_code_</a>.val = response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#ae1c2df874b4adde3f642d6d3d41bf601">error_code_</a>.GOAL_VIOLATES_PATH_CONSTRAINTS;</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    }</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;  }</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;  <span class="comment">// Now check for user specified constraints</span></div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;  <span class="keywordflow">if</span> (request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#aa26e226ab1af7a84f4fa554c08110150">constraint_callback_</a>)</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;  {</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <span class="keywordflow">if</span> (!request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#aa26e226ab1af7a84f4fa554c08110150">constraint_callback_</a>(joint_state_group, joint_group_variable_values))</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    {</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;      ROS_DEBUG_NAMED(<span class="stringliteral">&quot;kinematics_constraint_aware&quot;</span>, <span class="stringliteral">&quot;IK solution violates user specified constraints&quot;</span>);</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;      response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#ae1c2df874b4adde3f642d6d3d41bf601">error_code_</a>.val = response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#ae1c2df874b4adde3f642d6d3d41bf601">error_code_</a>.GOAL_VIOLATES_PATH_CONSTRAINTS;</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    }</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;  }</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; </div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;}</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160; </div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classkinematics__constraint__aware_1_1KinematicsConstraintAware.html#a60970cf672ef9c8a46171b62bd821eea">KinematicsConstraintAware::getIK</a>(<span class="keyword">const</span> planning_scene::PlanningSceneConstPtr&amp; <a class="code" href="namespaceplanning__scene.html">planning_scene</a>,</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                                      <span class="keyword">const</span> moveit_msgs::msg::GetConstraintAwarePositionIK::Request&amp; request,</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                                      moveit_msgs::msg::GetConstraintAwarePositionIK::Response&amp; response)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;  <span class="keywordflow">if</span> (!joint_model_group_)</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;  {</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    ROS_ERROR_NAMED(<span class="stringliteral">&quot;kinematics_constraint_aware&quot;</span>, <span class="stringliteral">&quot;This solver has not been constructed properly&quot;</span>);</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;  }</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160; </div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;  <span class="keywordflow">if</span> (!<a class="code" href="namespaceplanning__scene.html">planning_scene</a>)</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;  {</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    ROS_ERROR_NAMED(<span class="stringliteral">&quot;kinematics_constraint_aware&quot;</span>, <span class="stringliteral">&quot;Planning scene must be allocated&quot;</span>);</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;  }</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;  <a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html">kinematics_constraint_aware::KinematicsRequest</a> kinematics_request;</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;  <a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html">kinematics_constraint_aware::KinematicsResponse</a> kinematics_response;</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;  <span class="keywordflow">if</span> (!convertServiceRequest(<a class="code" href="namespaceplanning__scene.html">planning_scene</a>, request, kinematics_request, kinematics_response))</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;  {</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    response.error_code = kinematics_response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#ae1c2df874b4adde3f642d6d3d41bf601">error_code_</a>;</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;  }</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160; </div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;  <span class="keywordtype">bool</span> result = <a class="code" href="classkinematics__constraint__aware_1_1KinematicsConstraintAware.html#a60970cf672ef9c8a46171b62bd821eea">getIK</a>(<a class="code" href="namespaceplanning__scene.html">planning_scene</a>, kinematics_request, kinematics_response);</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;  response.error_code = kinematics_response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#ae1c2df874b4adde3f642d6d3d41bf601">error_code_</a>;</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;  kinematics_response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#a4f9a95995cfb9b7a831057e08fe9369a">solution_</a>-&gt;getStateValues(response.solution.joint_state);</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;  <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;}</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160; </div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;<span class="keywordtype">bool</span> KinematicsConstraintAware::convertServiceRequest(</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <span class="keyword">const</span> planning_scene::PlanningSceneConstPtr&amp; <a class="code" href="namespaceplanning__scene.html">planning_scene</a>,</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <span class="keyword">const</span> moveit_msgs::msg::GetConstraintAwarePositionIK::Request&amp; request,</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    <a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html">kinematics_constraint_aware::KinematicsRequest</a>&amp; kinematics_request,</div>
-<div class="line"><a name="l00287"></a><span class="lineno"><a class="line" href="classkinematics__constraint__aware_1_1KinematicsConstraintAware.html#af7683e839962989bf8b90377e9368a00">  287</a></span>&#160;    <a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html">kinematics_constraint_aware::KinematicsResponse</a>&amp; kinematics_response)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;  <span class="keywordflow">if</span> (request.ik_request.group_name != group_name_)</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;  {</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    ROS_ERROR_NAMED(<span class="stringliteral">&quot;kinematics_constraint_aware&quot;</span>, <span class="stringliteral">&quot;This kinematics solver does not support requests for group: %s&quot;</span>,</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                    request.ik_request.group_name.c_str());</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    kinematics_response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#ae1c2df874b4adde3f642d6d3d41bf601">error_code_</a>.val = kinematics_response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#ae1c2df874b4adde3f642d6d3d41bf601">error_code_</a>.INVALID_GROUP_NAME;</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;  }</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160; </div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;  <span class="keywordflow">if</span> (!request.ik_request.pose_stamped_vector.empty() &amp;&amp;</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;      request.ik_request.pose_stamped_vector.size() != sub_groups_names_.size())</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;  {</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    ROS_ERROR_NAMED(<span class="stringliteral">&quot;kinematics_constraint_aware&quot;</span>,</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                    <span class="stringliteral">&quot;Number of poses in request: %d must match number of sub groups %d in this group&quot;</span>,</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                    request.ik_request.pose_stamped_vector.size(), sub_groups_names_.size());</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    kinematics_response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#ae1c2df874b4adde3f642d6d3d41bf601">error_code_</a>.val = kinematics_response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#ae1c2df874b4adde3f642d6d3d41bf601">error_code_</a>.INVALID_GROUP_NAME;</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;  }</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160; </div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;  <span class="keywordflow">if</span> (!request.ik_request.ik_link_names.empty() &amp;&amp; request.ik_request.ik_link_names.size() != sub_groups_names_.size())</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;  {</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    ROS_ERROR_NAMED(<span class="stringliteral">&quot;kinematics_constraint_aware&quot;</span>,</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                    <span class="stringliteral">&quot;Number of ik_link_names in request: &quot;</span></div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                    <span class="stringliteral">&quot;%d must match number of sub groups %d in this group or must be zero&quot;</span>,</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;                    request.ik_request.ik_link_names.size(), sub_groups_names_.size());</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    kinematics_response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#ae1c2df874b4adde3f642d6d3d41bf601">error_code_</a>.val = kinematics_response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#ae1c2df874b4adde3f642d6d3d41bf601">error_code_</a>.INVALID_GROUP_NAME;</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;  }</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160; </div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;  <span class="keywordflow">if</span> (request.ik_request.ik_link_names.empty() &amp;&amp; request.ik_request.ik_link_name != <span class="stringliteral">&quot;&quot;</span>)</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    kinematics_request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#a610d11ebdd8d31ea29cf567cbd0cd386">ik_link_names_</a>.push_back(request.ik_request.ik_link_name);</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;  <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    kinematics_request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#a610d11ebdd8d31ea29cf567cbd0cd386">ik_link_names_</a> = request.ik_request.ik_link_names;</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160; </div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;  <span class="keywordflow">if</span> (request.ik_request.pose_stamped_vector.empty())</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    kinematics_request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#abde165fad36329e910c131b83e53f03b">pose_stamped_vector_</a>.push_back(request.ik_request.pose_stamped);</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;  <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    kinematics_request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#abde165fad36329e910c131b83e53f03b">pose_stamped_vector_</a> = request.ik_request.pose_stamped_vector;</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160; </div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;  kinematics_request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#a2366b998f8ec413e8853563d160205b8">robot_state_</a> = std::make_shared&lt;moveit::core::RobotState&gt;(<a class="code" href="namespaceplanning__scene.html">planning_scene</a>-&gt;getCurrentState());</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;  kinematics_request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#a2366b998f8ec413e8853563d160205b8">robot_state_</a>-&gt;setStateValues(request.ik_request.robot_state.joint_state);</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;  kinematics_request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#a2f1a2e0c7c110f039e865a24d6860eba">constraints_</a> = std::make_shared&lt;kinematic_constraints::KinematicConstraintSet&gt;(</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;      kinematic_model_, <a class="code" href="namespaceplanning__scene.html">planning_scene</a>-&gt;getTransforms());</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;  kinematics_request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#a2f1a2e0c7c110f039e865a24d6860eba">constraints_</a>-&gt;add(request.constraints);</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;  kinematics_request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#a3dfa46806edf7307e59ff3affad2b40a">timeout_</a> = request.ik_request.timeout;</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;  kinematics_request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#a3b11cae0bc01b9dbad00c2df9b42c7f8">group_name_</a> = request.ik_request.group_name;</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;  kinematics_request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#a38a38f456421df21b09e26b046322f5b">check_for_collisions_</a> = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160; </div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;  kinematics_response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#a4f9a95995cfb9b7a831057e08fe9369a">solution_</a> = std::make_shared&lt;moveit::core::RobotState&gt;(<a class="code" href="namespaceplanning__scene.html">planning_scene</a>-&gt;getCurrentState());</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160; </div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;}</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160; </div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;EigenSTL::vector_Isometry3d KinematicsConstraintAware::transformPoses(</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    <span class="keyword">const</span> planning_scene::PlanningSceneConstPtr&amp; <a class="code" href="namespaceplanning__scene.html">planning_scene</a>, <span class="keyword">const</span> <a class="code" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a>&amp; kinematic_state,</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    <span class="keyword">const</span> std::vector&lt;geometry_msgs::PoseStamped&gt;&amp; poses, <span class="keyword">const</span> std::string&amp; target_frame)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;  Eigen::Isometry3d eigen_pose, eigen_pose_2;</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;  EigenSTL::vector_Isometry3d result(poses.size());</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;  <span class="keywordtype">bool</span> target_frame_is_root_frame = (target_frame == kinematic_state.<a class="code" href="classmoveit_1_1core_1_1RobotState.html#a5ecd3e71d7283f30be300c83cfd84041">getRobotModel</a>()-&gt;getModelFrame());</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;  <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; poses.size(); ++i)</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;  {</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    geometry_msgs::Pose pose = poses[i].pose;</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    tf2::fromMsg(pose, eigen_pose_2);</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    <a class="code" href="namespaceplanning__scene.html">planning_scene</a>-&gt;getTransforms()-&gt;transformPose(kinematic_state, poses[i].header.frame_id, eigen_pose_2, eigen_pose);</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    <span class="keywordflow">if</span> (!target_frame_is_root_frame)</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    {</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;      eigen_pose_2 = <a class="code" href="namespaceplanning__scene.html">planning_scene</a>-&gt;getTransforms()-&gt;getTransform(kinematic_state, target_frame);</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;      eigen_pose = eigen_pose_2.inverse() * eigen_pose;</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    }</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    result[i] = eigen_pose;</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;  }</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;  <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;}</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160; </div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;geometry_msgs::Pose KinematicsConstraintAware::getTipFramePose(</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    <span class="keyword">const</span> planning_scene::PlanningSceneConstPtr&amp; <a class="code" href="namespaceplanning__scene.html">planning_scene</a>, <span class="keyword">const</span> <a class="code" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a>&amp; kinematic_state,</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    <span class="keyword">const</span> geometry_msgs::Pose&amp; pose, <span class="keyword">const</span> std::string&amp; link_name, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> sub_group_index)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;  geometry_msgs::Pose result;</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;  Eigen::Isometry3d eigen_pose_in, eigen_pose_link, eigen_pose_tip;</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;  std::string tip_name =</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;      kinematic_model_-&gt;getJointModelGroup(sub_groups_names_[sub_group_index])-&gt;getSolverInstance()-&gt;getTipFrame();</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;  tf2::fromMsg(pose, eigen_pose_in);</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;  eigen_pose_link = <a class="code" href="namespaceplanning__scene.html">planning_scene</a>-&gt;getTransforms()-&gt;getTransform(kinematic_state, link_name);</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;  eigen_pose_tip = <a class="code" href="namespaceplanning__scene.html">planning_scene</a>-&gt;getTransforms()-&gt;getTransform(kinematic_state, tip_name);</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;  eigen_pose_in = eigen_pose_in * (eigen_pose_link.inverse() * eigen_pose_tip);</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;  result = tf2::toMsg(eigen_pose_in, result);</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;  <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;}</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;}  <span class="comment">// namespace kinematics_constraint_aware</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;  moveit::core::StateValidityCallbackFn constraint_callback_fn =</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;      boost::bind(&amp;KinematicsConstraintAware::validityCallbackFn, <span class="keyword">this</span>, <a class="code" href="namespaceplanning__scene.html">planning_scene</a>, request, response, _1, _2);</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  <span class="keywordtype">bool</span> result = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  <span class="keywordflow">if</span> (has_sub_groups_)</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  {</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    result = kinematic_state.getJointStateGroup(group_name_)</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                 -&gt;<a class="code" href="classmoveit_1_1core_1_1RobotState.html#a7af4b38e8bbc441f5aa646878cc023c7">setFromIK</a>(goals, ik_link_names, ik_attempts_, request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#a3dfa46806edf7307e59ff3affad2b40a">timeout_</a>.toSec(), constraint_callback_fn);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  }</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;  {</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    result =</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        ik_link_names.empty() ?</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            kinematic_state.getJointStateGroup(group_name_)</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                -&gt;<a class="code" href="classmoveit_1_1core_1_1RobotState.html#a7af4b38e8bbc441f5aa646878cc023c7">setFromIK</a>(goals[0], ik_attempts_, request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#a3dfa46806edf7307e59ff3affad2b40a">timeout_</a>.toSec(), constraint_callback_fn) :</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            kinematic_state.getJointStateGroup(group_name_)</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                -&gt;<a class="code" href="classmoveit_1_1core_1_1RobotState.html#a7af4b38e8bbc441f5aa646878cc023c7">setFromIK</a>(goals[0], ik_link_names[0], ik_attempts_, request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#a3dfa46806edf7307e59ff3affad2b40a">timeout_</a>.toSec(), constraint_callback_fn);</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;  }</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;  <span class="keywordflow">if</span> (result)</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;  {</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    std::vector&lt;double&gt; solution_values;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    kinematic_state.getJointStateGroup(group_name_)-&gt;getVariableValues(solution_values);</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#a4f9a95995cfb9b7a831057e08fe9369a">solution_</a>-&gt;getJointStateGroup(group_name_)-&gt;setVariableValues(solution_values);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#ae1c2df874b4adde3f642d6d3d41bf601">error_code_</a>.val = response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#ae1c2df874b4adde3f642d6d3d41bf601">error_code_</a>.SUCCESS;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  }</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  <span class="keywordflow">if</span> (response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#ae1c2df874b4adde3f642d6d3d41bf601">error_code_</a>.val == 0)</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  {</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#ae1c2df874b4adde3f642d6d3d41bf601">error_code_</a>.val = response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#ae1c2df874b4adde3f642d6d3d41bf601">error_code_</a>.NO_IK_SOLUTION;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  }</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;}</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="keywordtype">bool</span> KinematicsConstraintAware::validityCallbackFn(<span class="keyword">const</span> planning_scene::PlanningSceneConstPtr&amp; <a class="code" href="namespaceplanning__scene.html">planning_scene</a>,</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                                                   <span class="keyword">const</span> <a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html">kinematics_constraint_aware::KinematicsRequest</a>&amp; request,</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                                                   <a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html">kinematics_constraint_aware::KinematicsResponse</a>&amp; response,</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                                                   moveit::core::JointStateGroup* joint_state_group,</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                                                   <span class="keyword">const</span> std::vector&lt;double&gt;&amp; joint_group_variable_values)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;  joint_state_group-&gt;setVariableValues(joint_group_variable_values);</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;  <span class="comment">// Now check for collisions</span></div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;  <span class="keywordflow">if</span> (request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#a38a38f456421df21b09e26b046322f5b">check_for_collisions_</a>)</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;  {</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <a class="code" href="structcollision__detection_1_1CollisionRequest.html">collision_detection::CollisionRequest</a> collision_request;</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <a class="code" href="structcollision__detection_1_1CollisionResult.html">collision_detection::CollisionResult</a> collision_result;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    collision_request.<a class="code" href="structcollision__detection_1_1CollisionRequest.html#a1c9c857d83d4f98bef7a1fb586561fa8">group_name</a> = request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#a3b11cae0bc01b9dbad00c2df9b42c7f8">group_name_</a>;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <a class="code" href="namespaceplanning__scene.html">planning_scene</a>-&gt;checkCollision(collision_request, collision_result, *joint_state_group-&gt;getRobotState());</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="keywordflow">if</span> (collision_result.<a class="code" href="structcollision__detection_1_1CollisionResult.html#ad68db09bcc111730f7c4ab1bdff31e67">collision</a>)</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    {</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;      ROS_DEBUG_NAMED(<span class="stringliteral">&quot;kinematics_constraint_aware&quot;</span>, <span class="stringliteral">&quot;IK solution is in collision&quot;</span>);</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;      response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#ae1c2df874b4adde3f642d6d3d41bf601">error_code_</a>.val = response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#ae1c2df874b4adde3f642d6d3d41bf601">error_code_</a>.GOAL_IN_COLLISION;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    }</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;  }</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;  <span class="comment">// Now check for constraints</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;  <span class="keywordflow">if</span> (request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#a2f1a2e0c7c110f039e865a24d6860eba">constraints_</a>)</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;  {</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <a class="code" href="structkinematic__constraints_1_1ConstraintEvaluationResult.html">kinematic_constraints::ConstraintEvaluationResult</a> constraint_result;</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    constraint_result =</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#a2f1a2e0c7c110f039e865a24d6860eba">constraints_</a>-&gt;decide(*joint_state_group-&gt;getRobotState(), response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#a7ae0a18a2604910741dbe47644f7eca6">constraint_eval_results_</a>);</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <span class="keywordflow">if</span> (!constraint_result.<a class="code" href="structkinematic__constraints_1_1ConstraintEvaluationResult.html#a6e75dfd6bc22e54b0fb643ae2f094072">satisfied</a>)</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    {</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;      ROS_DEBUG_NAMED(<span class="stringliteral">&quot;kinematics_constraint_aware&quot;</span>, <span class="stringliteral">&quot;IK solution violates constraints&quot;</span>);</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;      response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#ae1c2df874b4adde3f642d6d3d41bf601">error_code_</a>.val = response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#ae1c2df874b4adde3f642d6d3d41bf601">error_code_</a>.GOAL_VIOLATES_PATH_CONSTRAINTS;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    }</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;  }</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160; </div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;  <span class="comment">// Now check for user specified constraints</span></div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;  <span class="keywordflow">if</span> (request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#aa26e226ab1af7a84f4fa554c08110150">constraint_callback_</a>)</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;  {</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="keywordflow">if</span> (!request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#aa26e226ab1af7a84f4fa554c08110150">constraint_callback_</a>(joint_state_group, joint_group_variable_values))</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    {</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;      ROS_DEBUG_NAMED(<span class="stringliteral">&quot;kinematics_constraint_aware&quot;</span>, <span class="stringliteral">&quot;IK solution violates user specified constraints&quot;</span>);</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;      response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#ae1c2df874b4adde3f642d6d3d41bf601">error_code_</a>.val = response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#ae1c2df874b4adde3f642d6d3d41bf601">error_code_</a>.GOAL_VIOLATES_PATH_CONSTRAINTS;</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    }</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;  }</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160; </div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;}</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classkinematics__constraint__aware_1_1KinematicsConstraintAware.html#a60970cf672ef9c8a46171b62bd821eea">KinematicsConstraintAware::getIK</a>(<span class="keyword">const</span> planning_scene::PlanningSceneConstPtr&amp; <a class="code" href="namespaceplanning__scene.html">planning_scene</a>,</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                                      <span class="keyword">const</span> moveit_msgs::msg::GetConstraintAwarePositionIK::Request&amp; request,</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                                      moveit_msgs::msg::GetConstraintAwarePositionIK::Response&amp; response)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;  <span class="keywordflow">if</span> (!joint_model_group_)</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;  {</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    ROS_ERROR_NAMED(<span class="stringliteral">&quot;kinematics_constraint_aware&quot;</span>, <span class="stringliteral">&quot;This solver has not been constructed properly&quot;</span>);</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;  }</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160; </div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;  <span class="keywordflow">if</span> (!<a class="code" href="namespaceplanning__scene.html">planning_scene</a>)</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;  {</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    ROS_ERROR_NAMED(<span class="stringliteral">&quot;kinematics_constraint_aware&quot;</span>, <span class="stringliteral">&quot;Planning scene must be allocated&quot;</span>);</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;  }</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160; </div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;  <a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html">kinematics_constraint_aware::KinematicsRequest</a> kinematics_request;</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;  <a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html">kinematics_constraint_aware::KinematicsResponse</a> kinematics_response;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160; </div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;  <span class="keywordflow">if</span> (!convertServiceRequest(<a class="code" href="namespaceplanning__scene.html">planning_scene</a>, request, kinematics_request, kinematics_response))</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;  {</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    response.error_code = kinematics_response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#ae1c2df874b4adde3f642d6d3d41bf601">error_code_</a>;</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;  }</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160; </div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;  <span class="keywordtype">bool</span> result = <a class="code" href="classkinematics__constraint__aware_1_1KinematicsConstraintAware.html#a60970cf672ef9c8a46171b62bd821eea">getIK</a>(<a class="code" href="namespaceplanning__scene.html">planning_scene</a>, kinematics_request, kinematics_response);</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;  response.error_code = kinematics_response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#ae1c2df874b4adde3f642d6d3d41bf601">error_code_</a>;</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;  kinematics_response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#a4f9a95995cfb9b7a831057e08fe9369a">solution_</a>-&gt;getStateValues(response.solution.joint_state);</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;  <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;}</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; </div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;<span class="keywordtype">bool</span> KinematicsConstraintAware::convertServiceRequest(</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <span class="keyword">const</span> planning_scene::PlanningSceneConstPtr&amp; <a class="code" href="namespaceplanning__scene.html">planning_scene</a>,</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    <span class="keyword">const</span> moveit_msgs::msg::GetConstraintAwarePositionIK::Request&amp; request,</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html">kinematics_constraint_aware::KinematicsRequest</a>&amp; kinematics_request,</div>
+<div class="line"><a name="l00283"></a><span class="lineno"><a class="line" href="classkinematics__constraint__aware_1_1KinematicsConstraintAware.html#af7683e839962989bf8b90377e9368a00">  283</a></span>&#160;    <a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html">kinematics_constraint_aware::KinematicsResponse</a>&amp; kinematics_response)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;  <span class="keywordflow">if</span> (request.ik_request.group_name != group_name_)</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;  {</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    ROS_ERROR_NAMED(<span class="stringliteral">&quot;kinematics_constraint_aware&quot;</span>, <span class="stringliteral">&quot;This kinematics solver does not support requests for group: %s&quot;</span>,</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                    request.ik_request.group_name.c_str());</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    kinematics_response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#ae1c2df874b4adde3f642d6d3d41bf601">error_code_</a>.val = kinematics_response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#ae1c2df874b4adde3f642d6d3d41bf601">error_code_</a>.INVALID_GROUP_NAME;</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;  }</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160; </div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;  <span class="keywordflow">if</span> (!request.ik_request.pose_stamped_vector.empty() &amp;&amp;</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;      request.ik_request.pose_stamped_vector.size() != sub_groups_names_.size())</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;  {</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    ROS_ERROR_NAMED(<span class="stringliteral">&quot;kinematics_constraint_aware&quot;</span>,</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                    <span class="stringliteral">&quot;Number of poses in request: %d must match number of sub groups %d in this group&quot;</span>,</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                    request.ik_request.pose_stamped_vector.size(), sub_groups_names_.size());</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    kinematics_response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#ae1c2df874b4adde3f642d6d3d41bf601">error_code_</a>.val = kinematics_response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#ae1c2df874b4adde3f642d6d3d41bf601">error_code_</a>.INVALID_GROUP_NAME;</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;  }</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160; </div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;  <span class="keywordflow">if</span> (!request.ik_request.ik_link_names.empty() &amp;&amp; request.ik_request.ik_link_names.size() != sub_groups_names_.size())</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;  {</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    ROS_ERROR_NAMED(<span class="stringliteral">&quot;kinematics_constraint_aware&quot;</span>,</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;                    <span class="stringliteral">&quot;Number of ik_link_names in request: &quot;</span></div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                    <span class="stringliteral">&quot;%d must match number of sub groups %d in this group or must be zero&quot;</span>,</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                    request.ik_request.ik_link_names.size(), sub_groups_names_.size());</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    kinematics_response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#ae1c2df874b4adde3f642d6d3d41bf601">error_code_</a>.val = kinematics_response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#ae1c2df874b4adde3f642d6d3d41bf601">error_code_</a>.INVALID_GROUP_NAME;</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;  }</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160; </div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;  <span class="keywordflow">if</span> (request.ik_request.ik_link_names.empty() &amp;&amp; request.ik_request.ik_link_name != <span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    kinematics_request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#a610d11ebdd8d31ea29cf567cbd0cd386">ik_link_names_</a>.push_back(request.ik_request.ik_link_name);</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    kinematics_request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#a610d11ebdd8d31ea29cf567cbd0cd386">ik_link_names_</a> = request.ik_request.ik_link_names;</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160; </div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;  <span class="keywordflow">if</span> (request.ik_request.pose_stamped_vector.empty())</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    kinematics_request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#abde165fad36329e910c131b83e53f03b">pose_stamped_vector_</a>.push_back(request.ik_request.pose_stamped);</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    kinematics_request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#abde165fad36329e910c131b83e53f03b">pose_stamped_vector_</a> = request.ik_request.pose_stamped_vector;</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160; </div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;  kinematics_request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#a2366b998f8ec413e8853563d160205b8">robot_state_</a>.reset(<span class="keyword">new</span> <a class="code" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a>(<a class="code" href="namespaceplanning__scene.html">planning_scene</a>-&gt;getCurrentState()));</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;  kinematics_request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#a2366b998f8ec413e8853563d160205b8">robot_state_</a>-&gt;setStateValues(request.ik_request.robot_state.joint_state);</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;  kinematics_request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#a2f1a2e0c7c110f039e865a24d6860eba">constraints_</a>.reset(</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;      <span class="keyword">new</span> <a class="code" href="classkinematic__constraints_1_1KinematicConstraintSet.html">kinematic_constraints::KinematicConstraintSet</a>(kinematic_model_, <a class="code" href="namespaceplanning__scene.html">planning_scene</a>-&gt;getTransforms()));</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;  kinematics_request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#a2f1a2e0c7c110f039e865a24d6860eba">constraints_</a>-&gt;add(request.constraints);</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;  kinematics_request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#a3dfa46806edf7307e59ff3affad2b40a">timeout_</a> = request.ik_request.timeout;</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;  kinematics_request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#a3b11cae0bc01b9dbad00c2df9b42c7f8">group_name_</a> = request.ik_request.group_name;</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;  kinematics_request.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsRequest.html#a38a38f456421df21b09e26b046322f5b">check_for_collisions_</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160; </div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;  kinematics_response.<a class="code" href="classkinematics__constraint__aware_1_1KinematicsResponse.html#a4f9a95995cfb9b7a831057e08fe9369a">solution_</a>.reset(<span class="keyword">new</span> <a class="code" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a>(<a class="code" href="namespaceplanning__scene.html">planning_scene</a>-&gt;getCurrentState()));</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; </div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;}</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160; </div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;EigenSTL::vector_Isometry3d KinematicsConstraintAware::transformPoses(</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <span class="keyword">const</span> planning_scene::PlanningSceneConstPtr&amp; <a class="code" href="namespaceplanning__scene.html">planning_scene</a>, <span class="keyword">const</span> <a class="code" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a>&amp; kinematic_state,</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    <span class="keyword">const</span> std::vector&lt;geometry_msgs::PoseStamped&gt;&amp; poses, <span class="keyword">const</span> std::string&amp; target_frame)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;  Eigen::Isometry3d eigen_pose, eigen_pose_2;</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;  EigenSTL::vector_Isometry3d result(poses.size());</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;  <span class="keywordtype">bool</span> target_frame_is_root_frame = (target_frame == kinematic_state.<a class="code" href="classmoveit_1_1core_1_1RobotState.html#a5ecd3e71d7283f30be300c83cfd84041">getRobotModel</a>()-&gt;getModelFrame());</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;  <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; poses.size(); ++i)</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;  {</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    geometry_msgs::Pose pose = poses[i].pose;</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    tf2::fromMsg(pose, eigen_pose_2);</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    <a class="code" href="namespaceplanning__scene.html">planning_scene</a>-&gt;getTransforms()-&gt;transformPose(kinematic_state, poses[i].header.frame_id, eigen_pose_2, eigen_pose);</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    <span class="keywordflow">if</span> (!target_frame_is_root_frame)</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    {</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;      eigen_pose_2 = <a class="code" href="namespaceplanning__scene.html">planning_scene</a>-&gt;getTransforms()-&gt;getTransform(kinematic_state, target_frame);</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;      eigen_pose = eigen_pose_2.inverse() * eigen_pose;</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    }</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    result[i] = eigen_pose;</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;  }</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;  <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;}</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160; </div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;geometry_msgs::Pose KinematicsConstraintAware::getTipFramePose(</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    <span class="keyword">const</span> planning_scene::PlanningSceneConstPtr&amp; <a class="code" href="namespaceplanning__scene.html">planning_scene</a>, <span class="keyword">const</span> <a class="code" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a>&amp; kinematic_state,</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    <span class="keyword">const</span> geometry_msgs::Pose&amp; pose, <span class="keyword">const</span> std::string&amp; link_name, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> sub_group_index)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;  geometry_msgs::Pose result;</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;  Eigen::Isometry3d eigen_pose_in, eigen_pose_link, eigen_pose_tip;</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;  std::string tip_name =</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;      kinematic_model_-&gt;getJointModelGroup(sub_groups_names_[sub_group_index])-&gt;getSolverInstance()-&gt;getTipFrame();</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;  tf2::fromMsg(pose, eigen_pose_in);</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;  eigen_pose_link = <a class="code" href="namespaceplanning__scene.html">planning_scene</a>-&gt;getTransforms()-&gt;getTransform(kinematic_state, link_name);</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;  eigen_pose_tip = <a class="code" href="namespaceplanning__scene.html">planning_scene</a>-&gt;getTransforms()-&gt;getTransform(kinematic_state, tip_name);</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;  eigen_pose_in = eigen_pose_in * (eigen_pose_link.inverse() * eigen_pose_tip);</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;  result = tf2::toMsg(eigen_pose_in, result);</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;  <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;}</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;}  <span class="comment">// namespace kinematics_constraint_aware</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclasskinematics__constraint__aware_1_1KinematicsRequest_html_abde165fad36329e910c131b83e53f03b"><div class="ttname"><a href="classkinematics__constraint__aware_1_1KinematicsRequest.html#abde165fad36329e910c131b83e53f03b">kinematics_constraint_aware::KinematicsRequest::pose_stamped_vector_</a></div><div class="ttdeci">std::vector&lt; geometry_msgs::PoseStamped &gt; pose_stamped_vector_</div><div class="ttdef"><b>Definition:</b> <a href="kinematics__request__response_8h_source.html#l00100">kinematics_request_response.h:100</a></div></div>
 <div class="ttc" id="aclasskinematics__constraint__aware_1_1KinematicsRequest_html_aa26e226ab1af7a84f4fa554c08110150"><div class="ttname"><a href="classkinematics__constraint__aware_1_1KinematicsRequest.html#aa26e226ab1af7a84f4fa554c08110150">kinematics_constraint_aware::KinematicsRequest::constraint_callback_</a></div><div class="ttdeci">moveit::core::StateValidityCallbackFn constraint_callback_</div><div class="ttdef"><b>Definition:</b> <a href="kinematics__request__response_8h_source.html#l00116">kinematics_request_response.h:116</a></div></div>
-<div class="ttc" id="aclasskinematics__constraint__aware_1_1KinematicsConstraintAware_html_a60970cf672ef9c8a46171b62bd821eea"><div class="ttname"><a href="classkinematics__constraint__aware_1_1KinematicsConstraintAware.html#a60970cf672ef9c8a46171b62bd821eea">kinematics_constraint_aware::KinematicsConstraintAware::getIK</a></div><div class="ttdeci">bool getIK(const planning_scene::PlanningSceneConstPtr &amp;planning_scene, const kinematics_constraint_aware::KinematicsRequest &amp;request, kinematics_constraint_aware::KinematicsResponse &amp;response) const</div><div class="ttdoc">Solve the planning problem.</div><div class="ttdef"><b>Definition:</b> <a href="kinematics__constraint__aware_8cpp_source.html#l00142">kinematics_constraint_aware.cpp:142</a></div></div>
+<div class="ttc" id="aclasskinematics__constraint__aware_1_1KinematicsConstraintAware_html_a60970cf672ef9c8a46171b62bd821eea"><div class="ttname"><a href="classkinematics__constraint__aware_1_1KinematicsConstraintAware.html#a60970cf672ef9c8a46171b62bd821eea">kinematics_constraint_aware::KinematicsConstraintAware::getIK</a></div><div class="ttdeci">bool getIK(const planning_scene::PlanningSceneConstPtr &amp;planning_scene, const kinematics_constraint_aware::KinematicsRequest &amp;request, kinematics_constraint_aware::KinematicsResponse &amp;response) const</div><div class="ttdoc">Solve the planning problem.</div><div class="ttdef"><b>Definition:</b> <a href="kinematics__constraint__aware_8cpp_source.html#l00138">kinematics_constraint_aware.cpp:138</a></div></div>
 <div class="ttc" id="aclassmoveit_1_1core_1_1JointModelGroup_html_acbdd820932769bf05d316ddfed2cde93"><div class="ttname"><a href="classmoveit_1_1core_1_1JointModelGroup.html#acbdd820932769bf05d316ddfed2cde93">moveit::core::JointModelGroup::getSubgroupNames</a></div><div class="ttdeci">const std::vector&lt; std::string &gt; &amp; getSubgroupNames() const</div><div class="ttdoc">Get the names of the groups that are subsets of this one (in terms of joints set)</div><div class="ttdef"><b>Definition:</b> <a href="joint__model__group_8h_source.html#l00491">joint_model_group.h:491</a></div></div>
 <div class="ttc" id="aclasskinematics__constraint__aware_1_1KinematicsResponse_html_a4f9a95995cfb9b7a831057e08fe9369a"><div class="ttname"><a href="classkinematics__constraint__aware_1_1KinematicsResponse.html#a4f9a95995cfb9b7a831057e08fe9369a">kinematics_constraint_aware::KinematicsResponse::solution_</a></div><div class="ttdeci">moveit::core::RobotStatePtr solution_</div><div class="ttdef"><b>Definition:</b> <a href="kinematics__request__response_8h_source.html#l00129">kinematics_request_response.h:129</a></div></div>
 <div class="ttc" id="aclasskinematics__constraint__aware_1_1KinematicsResponse_html_a7ae0a18a2604910741dbe47644f7eca6"><div class="ttname"><a href="classkinematics__constraint__aware_1_1KinematicsResponse.html#a7ae0a18a2604910741dbe47644f7eca6">kinematics_constraint_aware::KinematicsResponse::constraint_eval_results_</a></div><div class="ttdeci">std::vector&lt; kinematic_constraints::ConstraintEvaluationResult &gt; constraint_eval_results_</div><div class="ttdef"><b>Definition:</b> <a href="kinematics__request__response_8h_source.html#l00133">kinematics_request_response.h:133</a></div></div>
@@ -462,10 +458,10 @@ $(function() {
 <div class="ttc" id="aclassmoveit_1_1core_1_1RobotState_html"><div class="ttname"><a href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a></div><div class="ttdoc">Representation of a robot's state. This includes position, velocity, acceleration and effort.</div><div class="ttdef"><b>Definition:</b> <a href="robot__state_8h_source.html#l00155">robot_state.h:155</a></div></div>
 <div class="ttc" id="astructkinematic__constraints_1_1ConstraintEvaluationResult_html_a6e75dfd6bc22e54b0fb643ae2f094072"><div class="ttname"><a href="structkinematic__constraints_1_1ConstraintEvaluationResult.html#a6e75dfd6bc22e54b0fb643ae2f094072">kinematic_constraints::ConstraintEvaluationResult::satisfied</a></div><div class="ttdeci">bool satisfied</div><div class="ttdoc">Whether or not the constraint or constraints were satisfied.</div><div class="ttdef"><b>Definition:</b> <a href="kinematic__constraint_8h_source.html#l00134">kinematic_constraint.h:134</a></div></div>
 <div class="ttc" id="aclasskinematics__constraint__aware_1_1KinematicsRequest_html_a610d11ebdd8d31ea29cf567cbd0cd386"><div class="ttname"><a href="classkinematics__constraint__aware_1_1KinematicsRequest.html#a610d11ebdd8d31ea29cf567cbd0cd386">kinematics_constraint_aware::KinematicsRequest::ik_link_names_</a></div><div class="ttdeci">std::vector&lt; std::string &gt; ik_link_names_</div><div class="ttdef"><b>Definition:</b> <a href="kinematics__request__response_8h_source.html#l00104">kinematics_request_response.h:104</a></div></div>
-<div class="ttc" id="aclasskinematics__constraint__aware_1_1KinematicsConstraintAware_html_a59fc953286b6bece5513d122aaa50475"><div class="ttname"><a href="classkinematics__constraint__aware_1_1KinematicsConstraintAware.html#a59fc953286b6bece5513d122aaa50475">kinematics_constraint_aware::KinematicsConstraintAware::KinematicsConstraintAware</a></div><div class="ttdeci">KinematicsConstraintAware(const moveit::core::RobotModelConstPtr &amp;kinematic_model, const std::string &amp;group_name)</div><div class="ttdoc">Default constructor.</div><div class="ttdef"><b>Definition:</b> <a href="kinematics__constraint__aware_8cpp_source.html#l00087">kinematics_constraint_aware.cpp:87</a></div></div>
+<div class="ttc" id="aclasskinematics__constraint__aware_1_1KinematicsConstraintAware_html_a59fc953286b6bece5513d122aaa50475"><div class="ttname"><a href="classkinematics__constraint__aware_1_1KinematicsConstraintAware.html#a59fc953286b6bece5513d122aaa50475">kinematics_constraint_aware::KinematicsConstraintAware::KinematicsConstraintAware</a></div><div class="ttdeci">KinematicsConstraintAware(const moveit::core::RobotModelConstPtr &amp;kinematic_model, const std::string &amp;group_name)</div><div class="ttdoc">Default constructor.</div><div class="ttdef"><b>Definition:</b> <a href="kinematics__constraint__aware_8cpp_source.html#l00083">kinematics_constraint_aware.cpp:83</a></div></div>
 <div class="ttc" id="astructcollision__detection_1_1CollisionRequest_html"><div class="ttname"><a href="structcollision__detection_1_1CollisionRequest.html">collision_detection::CollisionRequest</a></div><div class="ttdoc">Representation of a collision checking request.</div><div class="ttdef"><b>Definition:</b> <a href="include_2moveit_2collision__detection_2collision__common_8h_source.html#l00216">collision_common.h:216</a></div></div>
 <div class="ttc" id="arobot__model_8h_html"><div class="ttname"><a href="robot__model_8h.html">robot_model.h</a></div></div>
-<div class="ttc" id="aclassmoveit_1_1core_1_1RobotState_html_a7af4b38e8bbc441f5aa646878cc023c7"><div class="ttname"><a href="classmoveit_1_1core_1_1RobotState.html#a7af4b38e8bbc441f5aa646878cc023c7">moveit::core::RobotState::setFromIK</a></div><div class="ttdeci">bool setFromIK(const JointModelGroup *group, const geometry_msgs::msg::Pose &amp;pose, double timeout=0.0, const GroupStateValidityCallbackFn &amp;constraint=GroupStateValidityCallbackFn(), const kinematics::KinematicsQueryOptions &amp;options=kinematics::KinematicsQueryOptions())</div><div class="ttdoc">If the group this state corresponds to is a chain and a solver is available, then the joint values ca...</div><div class="ttdef"><b>Definition:</b> <a href="robot__state_8cpp_source.html#l01509">robot_state.cpp:1509</a></div></div>
+<div class="ttc" id="aclassmoveit_1_1core_1_1RobotState_html_a7af4b38e8bbc441f5aa646878cc023c7"><div class="ttname"><a href="classmoveit_1_1core_1_1RobotState.html#a7af4b38e8bbc441f5aa646878cc023c7">moveit::core::RobotState::setFromIK</a></div><div class="ttdeci">bool setFromIK(const JointModelGroup *group, const geometry_msgs::msg::Pose &amp;pose, double timeout=0.0, const GroupStateValidityCallbackFn &amp;constraint=GroupStateValidityCallbackFn(), const kinematics::KinematicsQueryOptions &amp;options=kinematics::KinematicsQueryOptions())</div><div class="ttdoc">If the group this state corresponds to is a chain and a solver is available, then the joint values ca...</div><div class="ttdef"><b>Definition:</b> <a href="robot__state_8cpp_source.html#l01507">robot_state.cpp:1507</a></div></div>
 <div class="ttc" id="aclassmoveit_1_1core_1_1JointModelGroup_html_a2f165c9374e28ac4052490819c790f45"><div class="ttname"><a href="classmoveit_1_1core_1_1JointModelGroup.html#a2f165c9374e28ac4052490819c790f45">moveit::core::JointModelGroup::getName</a></div><div class="ttdeci">const std::string &amp; getName() const</div><div class="ttdoc">Get the name of the joint group.</div><div class="ttdef"><b>Definition:</b> <a href="joint__model__group_8h_source.html#l00185">joint_model_group.h:185</a></div></div>
 <div class="ttc" id="akinematics__constraint__aware_8h_html"><div class="ttname"><a href="kinematics__constraint__aware_8h.html">kinematics_constraint_aware.h</a></div></div>
 <div class="ttc" id="astructcollision__detection_1_1CollisionResult_html"><div class="ttname"><a href="structcollision__detection_1_1CollisionResult.html">collision_detection::CollisionResult</a></div><div class="ttdoc">Representation of a collision checking result.</div><div class="ttdef"><b>Definition:</b> <a href="include_2moveit_2collision__detection_2collision__common_8h_source.html#l00177">collision_common.h:177</a></div></div>
@@ -474,6 +470,7 @@ $(function() {
 <div class="ttc" id="astructcollision__detection_1_1CollisionRequest_html_a1c9c857d83d4f98bef7a1fb586561fa8"><div class="ttname"><a href="structcollision__detection_1_1CollisionRequest.html#a1c9c857d83d4f98bef7a1fb586561fa8">collision_detection::CollisionRequest::group_name</a></div><div class="ttdeci">std::string group_name</div><div class="ttdoc">The group name to check collisions for (optional; if empty, assume the complete robot)</div><div class="ttdef"><b>Definition:</b> <a href="include_2moveit_2collision__detection_2collision__common_8h_source.html#l00233">collision_common.h:233</a></div></div>
 <div class="ttc" id="aclasskinematics__constraint__aware_1_1KinematicsRequest_html_a38a38f456421df21b09e26b046322f5b"><div class="ttname"><a href="classkinematics__constraint__aware_1_1KinematicsRequest.html#a38a38f456421df21b09e26b046322f5b">kinematics_constraint_aware::KinematicsRequest::check_for_collisions_</a></div><div class="ttdeci">bool check_for_collisions_</div><div class="ttdef"><b>Definition:</b> <a href="kinematics__request__response_8h_source.html#l00114">kinematics_request_response.h:114</a></div></div>
 <div class="ttc" id="anamespacekinematics__constraint__aware_html"><div class="ttname"><a href="namespacekinematics__constraint__aware.html">kinematics_constraint_aware</a></div><div class="ttdef"><b>Definition:</b> <a href="kinematics__constraint__aware_8h_source.html#l00060">kinematics_constraint_aware.h:60</a></div></div>
+<div class="ttc" id="aclasskinematic__constraints_1_1KinematicConstraintSet_html"><div class="ttname"><a href="classkinematic__constraints_1_1KinematicConstraintSet.html">kinematic_constraints::KinematicConstraintSet</a></div><div class="ttdoc">A class that contains many different constraints, and can check RobotState *versus the full set....</div><div class="ttdef"><b>Definition:</b> <a href="kinematic__constraint_8h_source.html#l00897">kinematic_constraint.h:897</a></div></div>
 <div class="ttc" id="aclassmoveit_1_1core_1_1JointModelGroup_html_a7a1da3da39218d07e79f7d26ed5d4d16"><div class="ttname"><a href="classmoveit_1_1core_1_1JointModelGroup.html#a7a1da3da39218d07e79f7d26ed5d4d16">moveit::core::JointModelGroup::getSolverInstance</a></div><div class="ttdeci">const kinematics::KinematicsBaseConstPtr getSolverInstance() const</div><div class="ttdef"><b>Definition:</b> <a href="joint__model__group_8h_source.html#l00602">joint_model_group.h:602</a></div></div>
 <div class="ttc" id="aclasskinematics__constraint__aware_1_1KinematicsResponse_html_ae1c2df874b4adde3f642d6d3d41bf601"><div class="ttname"><a href="classkinematics__constraint__aware_1_1KinematicsResponse.html#ae1c2df874b4adde3f642d6d3d41bf601">kinematics_constraint_aware::KinematicsResponse::error_code_</a></div><div class="ttdeci">moveit_msgs::msg::MoveItErrorCodes error_code_</div><div class="ttdef"><b>Definition:</b> <a href="kinematics__request__response_8h_source.html#l00137">kinematics_request_response.h:137</a></div></div>
 <div class="ttc" id="aclasskinematics__constraint__aware_1_1KinematicsRequest_html_a2366b998f8ec413e8853563d160205b8"><div class="ttname"><a href="classkinematics__constraint__aware_1_1KinematicsRequest.html#a2366b998f8ec413e8853563d160205b8">kinematics_constraint_aware::KinematicsRequest::robot_state_</a></div><div class="ttdeci">moveit::core::RobotStatePtr robot_state_</div><div class="ttdef"><b>Definition:</b> <a href="kinematics__request__response_8h_source.html#l00106">kinematics_request_response.h:106</a></div></div>

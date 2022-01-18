@@ -139,9 +139,9 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aad144f0d55db346503612164e88d8772"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemoveit__servo.html#aad144f0d55db346503612164e88d8772">enforceVelocityLimits</a> (const <a class="el" href="classmoveit_1_1core_1_1JointModelGroup.html">moveit::core::JointModelGroup</a> *joint_model_group, const double publish_period, sensor_msgs::msg::JointState &amp;joint_state)</td></tr>
-<tr class="memdesc:aad144f0d55db346503612164e88d8772"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrease robot position change and velocity, if needed, to satisfy joint velocity limits.  <a href="namespacemoveit__servo.html#aad144f0d55db346503612164e88d8772">More...</a><br /></td></tr>
-<tr class="separator:aad144f0d55db346503612164e88d8772"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3650f7acc84c4ea2183ec75ee28b17d3"><td class="memItemLeft" align="right" valign="top">Eigen::ArrayXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemoveit__servo.html#a3650f7acc84c4ea2183ec75ee28b17d3">enforceVelocityLimits</a> (const <a class="el" href="classmoveit_1_1core_1_1JointModelGroup.html">moveit::core::JointModelGroup</a> *joint_model_group, double publish_period, const Eigen::ArrayXd &amp;delta_theta)</td></tr>
+<tr class="memdesc:a3650f7acc84c4ea2183ec75ee28b17d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scale the delta theta to match joint velocity/acceleration limits.  <a href="namespacemoveit__servo.html#a3650f7acc84c4ea2183ec75ee28b17d3">More...</a><br /></td></tr>
+<tr class="separator:a3650f7acc84c4ea2183ec75ee28b17d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a10063149c6b08a77854ceafff0b68e14"><td class="memItemLeft" align="right" valign="top">const std::unordered_map&lt; <a class="el" href="namespacemoveit__servo.html#a72baa5ed9c5fc60a76a9cddfce6b5548">PoseTrackingStatusCode</a>, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemoveit__servo.html#a10063149c6b08a77854ceafff0b68e14">POSE_TRACKING_STATUS_CODE_MAP</a> ({ { <a class="el" href="namespacemoveit__servo.html#a72baa5ed9c5fc60a76a9cddfce6b5548accc0377a8afbf50e7094f5c23a8af223">PoseTrackingStatusCode::INVALID</a>, &quot;Invalid&quot; }, { PoseTrackingStatusCode::SUCCESS, &quot;Success&quot; }, { PoseTrackingStatusCode::NO_RECENT_TARGET_POSE, &quot;No recent target pose&quot; }, { PoseTrackingStatusCode::NO_RECENT_END_EFFECTOR_POSE, &quot;No recent end effector pose&quot; }, { PoseTrackingStatusCode::STOP_REQUESTED, &quot;Stop requested&quot; } })</td></tr>
 <tr class="separator:a10063149c6b08a77854ceafff0b68e14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7fbffcbbd4f9cea09e63e0a1c81c624"><td class="memItemLeft" align="right" valign="top">const std::unordered_map&lt; <a class="el" href="namespacemoveit__servo.html#a645be72fe1553806404002b7cb52b43f">StatusCode</a>, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemoveit__servo.html#ad7fbffcbbd4f9cea09e63e0a1c81c624">SERVO_STATUS_CODE_MAP</a> ({ { <a class="el" href="namespacemoveit__servo.html#a645be72fe1553806404002b7cb52b43faccc0377a8afbf50e7094f5c23a8af223">StatusCode::INVALID</a>, &quot;Invalid&quot; }, { StatusCode::NO_WARNING, &quot;No warnings&quot; }, { StatusCode::DECELERATE_FOR_SINGULARITY, &quot;Close to a singularity, decelerating&quot; }, { StatusCode::HALT_FOR_SINGULARITY, &quot;Very close to a singularity, emergency stop&quot; }, { StatusCode::DECELERATE_FOR_COLLISION, &quot;Close to a collision, decelerating&quot; }, { StatusCode::HALT_FOR_COLLISION, &quot;Collision detected, emergency stop&quot; }, { StatusCode::JOINT_BOUND, &quot;Close to a joint bound (position or velocity), halting&quot; } })</td></tr>
@@ -320,14 +320,14 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="aad144f0d55db346503612164e88d8772"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad144f0d55db346503612164e88d8772">&#9670;&nbsp;</a></span>enforceVelocityLimits()</h2>
+<a id="a3650f7acc84c4ea2183ec75ee28b17d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3650f7acc84c4ea2183ec75ee28b17d3">&#9670;&nbsp;</a></span>enforceVelocityLimits()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void moveit_servo::enforceVelocityLimits </td>
+          <td class="memname">Eigen::ArrayXd moveit_servo::enforceVelocityLimits </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classmoveit_1_1core_1_1JointModelGroup.html">moveit::core::JointModelGroup</a> *&#160;</td>
           <td class="paramname"><em>joint_model_group</em>, </td>
@@ -335,14 +335,14 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const double&#160;</td>
+          <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>publish_period</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">sensor_msgs::msg::JointState &amp;&#160;</td>
-          <td class="paramname"><em>joint_state</em>&#160;</td>
+          <td class="paramtype">const Eigen::ArrayXd &amp;&#160;</td>
+          <td class="paramname"><em>delta_theta</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -352,23 +352,31 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Decrease robot position change and velocity, if needed, to satisfy joint velocity limits. </p>
+<p>Scale the delta theta to match joint velocity/acceleration limits. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">joint_model_group</td><td>Active joint group. Used to retrieve limits. </td></tr>
-    <tr><td class="paramname">joint_state</td><td>The command that will go to the robot. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">joint_model_group</td><td>The joint model group </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">publish_period</td><td>The publish period of servo (used for calculating joint velocity) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">delta_theta</td><td>The delta theta input</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>The delta theta output </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="enforce__limits_8cpp_source.html#l00103">103</a> of file <a class="el" href="enforce__limits_8cpp_source.html">enforce_limits.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="namespacemoveit__servo_aad144f0d55db346503612164e88d8772_icgraph.png" border="0" usemap="#namespacemoveit__servo_aad144f0d55db346503612164e88d8772_icgraph" alt=""/></div>
-<map name="namespacemoveit__servo_aad144f0d55db346503612164e88d8772_icgraph" id="namespacemoveit__servo_aad144f0d55db346503612164e88d8772_icgraph">
-<area shape="rect" title="Decrease robot position change and velocity, if needed, to satisfy joint velocity limits." alt="" coords="123,5,343,47"/>
-<area shape="rect" href="enforce__limits__tests_8cpp.html#ac2637e106557268dacb4887a8dda41ea" title=" " alt="" coords="5,13,75,39"/>
+<div class="center"><img src="namespacemoveit__servo_a3650f7acc84c4ea2183ec75ee28b17d3_icgraph.png" border="0" usemap="#namespacemoveit__servo_a3650f7acc84c4ea2183ec75ee28b17d3_icgraph" alt=""/></div>
+<map name="namespacemoveit__servo_a3650f7acc84c4ea2183ec75ee28b17d3_icgraph" id="namespacemoveit__servo_a3650f7acc84c4ea2183ec75ee28b17d3_icgraph">
+<area shape="rect" title="Scale the delta theta to match joint velocity/acceleration limits." alt="" coords="1199,68,1419,109"/>
+<area shape="rect" href="classmoveit__servo_1_1ServoCalcs.html#ab0f0d493e2cf6af1059b0c8a72235cca" title="Handles all aspects of the servoing after the desired joint commands are established Joint and Cartes..." alt="" coords="960,39,1151,80"/>
+<area shape="rect" href="enforce__limits__tests_8cpp.html#ac2637e106557268dacb4887a8dda41ea" title=" " alt="" coords="1021,105,1090,131"/>
+<area shape="rect" href="classmoveit__servo_1_1ServoCalcs.html#a5b6e7595d763abd516731e7d1987961f" title="Do servoing calculations for Cartesian twist commands." alt="" coords="721,5,912,47"/>
+<area shape="rect" href="classmoveit__servo_1_1ServoCalcs.html#a5871836138647004b7b32cb2905144ca" title="Do servoing calculations for direct commands to a joint." alt="" coords="721,71,912,112"/>
+<area shape="rect" href="classmoveit__servo_1_1ServoCalcs.html#abc7fc9277c10322e7af56c7e889c2cd8" title="Do calculations for a single iteration. Publish one outgoing command." alt="" coords="483,39,673,80"/>
+<area shape="rect" href="classmoveit__servo_1_1ServoCalcs.html#abada414babad9c28179c0ce88ca6917b" title="Run the main calculation loop." alt="" coords="244,39,435,80"/>
+<area shape="rect" href="classmoveit__servo_1_1ServoCalcs.html#ad942432113d0c473d1b04acfcb21e052" title="Start the timer where we do work and publish outputs." alt="" coords="5,39,196,80"/>
 </map>
 </div>
 
@@ -466,7 +474,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="test__servo__interface_8cpp_source.html#l00147">147</a> of file <a class="el" href="test__servo__interface_8cpp_source.html">test_servo_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="test__servo__interface_8cpp_source.html#l00177">177</a> of file <a class="el" href="test__servo__interface_8cpp_source.html">test_servo_interface.cpp</a>.</p>
 
 </div>
 </div>

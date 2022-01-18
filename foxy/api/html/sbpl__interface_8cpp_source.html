@@ -124,11 +124,11 @@ $(function() {
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  boost::shared_ptr&lt;EnvironmentChain3D&gt; env_chain(<span class="keyword">new</span> EnvironmentChain3D(<a class="code" href="namespaceplanning__scene.html">planning_scene</a>));</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keywordflow">if</span> (!env_chain-&gt;setupForMotionPlan(<a class="code" href="namespaceplanning__scene.html">planning_scene</a>, req, res, params))</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">// std::cerr &lt;&lt; &quot;Env chain setup failing&quot; &lt;&lt; &#39;\n&#39;;</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">// std::cerr &lt;&lt; &quot;Env chain setup failing&quot; &lt;&lt; std::endl;</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  }</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="comment">// std::cerr &lt;&lt; &quot;Creation with params &quot; &lt;&lt; params.use_bfs_ &lt;&lt; &quot; took &quot; &lt;&lt; (ros::WallTime::now()-wt).toSec() &lt;&lt;</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="comment">// &#39;\n&#39;;</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="comment">// std::endl;</span></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  boost::this_thread::interruption_point();</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="comment">// DummyEnvironment* dummy_env = new DummyEnvironment();</span></div>
@@ -138,7 +138,7 @@ $(function() {
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  planner-&gt;force_planning_from_scratch();</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  planner-&gt;set_start(env_chain-&gt;getPlanningData().start_hash_entry_-&gt;stateID);</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  planner-&gt;set_goal(env_chain-&gt;getPlanningData().goal_hash_entry_-&gt;stateID);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="comment">// std::cerr &lt;&lt; &quot;Creation took &quot; &lt;&lt; (ros::WallTime::now()-wt) &lt;&lt; &#39;\n&#39;;</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="comment">// std::cerr &lt;&lt; &quot;Creation took &quot; &lt;&lt; (ros::WallTime::now()-wt) &lt;&lt; std::endl;</span></div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  std::vector&lt;int&gt; solution_state_ids;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordtype">int</span> solution_cost;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  wt = ros::WallTime::now();</div>
@@ -146,19 +146,19 @@ $(function() {
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keywordtype">bool</span> b_ret = planner-&gt;replan(10.0, &amp;solution_state_ids, &amp;solution_cost);</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="comment">// CALLGRIND_STOP_INSTRUMENTATION;</span></div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordtype">double</span> el = (ros::WallTime::now() - wt).toSec();</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  std::cerr &lt;&lt; <span class="stringliteral">&quot;B ret is &quot;</span> &lt;&lt; b_ret &lt;&lt; <span class="stringliteral">&quot; planning time &quot;</span> &lt;&lt; el &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  std::cerr &lt;&lt; <span class="stringliteral">&quot;B ret is &quot;</span> &lt;&lt; b_ret &lt;&lt; <span class="stringliteral">&quot; planning time &quot;</span> &lt;&lt; el &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  std::cerr &lt;&lt; <span class="stringliteral">&quot;Expansions &quot;</span> &lt;&lt; env_chain-&gt;getPlanningStatistics().total_expansions_ &lt;&lt; <span class="stringliteral">&quot; average time &quot;</span></div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            &lt;&lt; (env_chain-&gt;getPlanningStatistics().total_expansion_time_.toSec() /</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                (env_chain-&gt;getPlanningStatistics().total_expansions_ * 1.0))</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            &lt;&lt; <span class="stringliteral">&quot; hz &quot;</span></div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            &lt;&lt; 1.0 / (env_chain-&gt;getPlanningStatistics().total_expansion_time_.toSec() /</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                      (env_chain-&gt;getPlanningStatistics().total_expansions_ * 1.0))</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  std::cerr &lt;&lt; <span class="stringliteral">&quot;Total coll checks &quot;</span> &lt;&lt; env_chain-&gt;getPlanningStatistics().coll_checks_ &lt;&lt; <span class="stringliteral">&quot; hz &quot;</span></div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            &lt;&lt; 1.0 / (env_chain-&gt;getPlanningStatistics().total_coll_check_time_.toSec() /</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                      (env_chain-&gt;getPlanningStatistics().coll_checks_ * 1.0))</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  std::cerr &lt;&lt; <span class="stringliteral">&quot;Path length is &quot;</span> &lt;&lt; solution_state_ids.size() &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  std::cerr &lt;&lt; <span class="stringliteral">&quot;Path length is &quot;</span> &lt;&lt; solution_state_ids.size() &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keywordflow">if</span> (!b_ret)</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  {</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    res.error_code.val = moveit_msgs::msg::MoveItErrorCodes::PLANNING_FAILED;</div>
@@ -166,22 +166,22 @@ $(function() {
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  }</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="keywordflow">if</span> (solution_state_ids.size() == 0)</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  {</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    std::cerr &lt;&lt; <span class="stringliteral">&quot;Success but no path&quot;</span> &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    std::cerr &lt;&lt; <span class="stringliteral">&quot;Success but no path&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    res.error_code.val = moveit_msgs::msg::MoveItErrorCodes::INVALID_MOTION_PLAN;</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  }</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <span class="keywordflow">if</span> (!env_chain-&gt;populateTrajectoryFromStateIDSequence(solution_state_ids, res.trajectory.joint_trajectory))</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  {</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    std::cerr &lt;&lt; <span class="stringliteral">&quot;Success but path bad&quot;</span> &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    std::cerr &lt;&lt; <span class="stringliteral">&quot;Success but path bad&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    res.error_code.val = moveit_msgs::msg::MoveItErrorCodes::INVALID_MOTION_PLAN;</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  }</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  ros::WallTime pre_short = ros::WallTime::now();</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <span class="comment">// std::cerr &lt;&lt; &quot;Num traj points before &quot; &lt;&lt; res.trajectory.joint_trajectory.points.size() &lt;&lt; &#39;\n&#39;;</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <span class="comment">// std::cerr &lt;&lt; &quot;Num traj points before &quot; &lt;&lt; res.trajectory.joint_trajectory.points.size() &lt;&lt; std::endl;</span></div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  trajectory_msgs::JointTrajectory traj = res.trajectory.joint_trajectory;</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  env_chain-&gt;attemptShortcut(traj, res.trajectory.joint_trajectory);</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <span class="comment">// std::cerr &lt;&lt; &quot;Num traj points after &quot; &lt;&lt; res.trajectory.joint_trajectory.points.size() &lt;&lt; &#39;\n&#39;;</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <span class="comment">// std::cerr &lt;&lt; &quot;Time &quot; &lt;&lt; (ros::WallTime::now()-pre_short).toSec() &lt;&lt; &#39;\n&#39;;</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <span class="comment">// std::cerr &lt;&lt; &quot;Num traj points after &quot; &lt;&lt; res.trajectory.joint_trajectory.points.size() &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <span class="comment">// std::cerr &lt;&lt; &quot;Time &quot; &lt;&lt; (ros::WallTime::now()-pre_short).toSec() &lt;&lt; std::endl;</span></div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <span class="comment">// env_chain-&gt;getPlaneBFSMarker(mark, env_chain-&gt;getGoalPose().translation().z());</span></div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  res.error_code.val = moveit_msgs::msg::MoveItErrorCodes::SUCCESS;</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  PlanningStatistics stats = env_chain-&gt;getPlanningStatistics();</div>
@@ -193,7 +193,7 @@ $(function() {
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclasssbpl__interface_1_1SBPLInterface_html_abc435805dd7dad4f806c1407b1b2dc84"><div class="ttname"><a href="classsbpl__interface_1_1SBPLInterface.html#abc435805dd7dad4f806c1407b1b2dc84">sbpl_interface::SBPLInterface::solve</a></div><div class="ttdeci">bool solve(const planning_scene::PlanningSceneConstPtr &amp;planning_scene, const moveit_msgs::srv::GetMotionPlan::Request &amp;req, moveit_msgs::srv::GetMotionPlan::Response &amp;res, const PlanningParameters &amp;params) const</div><div class="ttdef"><b>Definition:</b> <a href="sbpl__interface_8cpp_source.html#l00073">sbpl_interface.cpp:73</a></div></div>
 <div class="ttc" id="anamespacesbpl__interface_html"><div class="ttname"><a href="namespacesbpl__interface.html">sbpl_interface</a></div><div class="ttdef"><b>Definition:</b> <a href="BFS__3D_8h_source.html#l00041">BFS_3D.h:41</a></div></div>
-<div class="ttc" id="anamespacemoveit_1_1core_html_af616e81ab82b75721fdbfcd77892c92a"><div class="ttname"><a href="namespacemoveit_1_1core.html#af616e81ab82b75721fdbfcd77892c92a">moveit::core::robotStateMsgToRobotState</a></div><div class="ttdeci">bool robotStateMsgToRobotState(const Transforms &amp;tf, const moveit_msgs::msg::RobotState &amp;robot_state, RobotState &amp;state, bool copy_attached_bodies=true)</div><div class="ttdoc">Convert a robot state msg (with accompanying extra transforms) to a MoveIt robot state.</div><div class="ttdef"><b>Definition:</b> <a href="conversions_8cpp_source.html#l00475">conversions.cpp:475</a></div></div>
+<div class="ttc" id="anamespacemoveit_1_1core_html_af616e81ab82b75721fdbfcd77892c92a"><div class="ttname"><a href="namespacemoveit_1_1core.html#af616e81ab82b75721fdbfcd77892c92a">moveit::core::robotStateMsgToRobotState</a></div><div class="ttdeci">bool robotStateMsgToRobotState(const Transforms &amp;tf, const moveit_msgs::msg::RobotState &amp;robot_state, RobotState &amp;state, bool copy_attached_bodies=true)</div><div class="ttdoc">Convert a robot state msg (with accompanying extra transforms) to a MoveIt robot state.</div><div class="ttdef"><b>Definition:</b> <a href="conversions_8cpp_source.html#l00487">conversions.cpp:487</a></div></div>
 <div class="ttc" id="aclasssbpl__interface_1_1SBPLInterface_html_a50a0d7f1b96213dedadca710ca06de6a"><div class="ttname"><a href="classsbpl__interface_1_1SBPLInterface.html#a50a0d7f1b96213dedadca710ca06de6a">sbpl_interface::SBPLInterface::SBPLInterface</a></div><div class="ttdeci">SBPLInterface(const planning_models::RobotModelConstPtr &amp;robot_model)</div><div class="ttdef"><b>Definition:</b> <a href="sbpl__interface_8h_source.html#l00111">sbpl_interface.h:111</a></div></div>
 <div class="ttc" id="asbpl__interface_8h_html"><div class="ttname"><a href="sbpl__interface_8h.html">sbpl_interface.h</a></div></div>
 <div class="ttc" id="anamespaceplanning__scene_html"><div class="ttname"><a href="namespaceplanning__scene.html">planning_scene</a></div><div class="ttdoc">This namespace includes the central class for representing planning contexts.</div><div class="ttdef"><b>Definition:</b> <a href="planning__interface_8h_source.html#l00046">planning_interface.h:46</a></div></div>

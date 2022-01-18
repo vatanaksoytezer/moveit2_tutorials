@@ -117,334 +117,219 @@ $(function() {
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &lt;boost/filesystem/path.hpp&gt;</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="include_2moveit_2collision__detection_2collision__common_8h.html">moveit/collision_detection/collision_common.h</a>&gt;</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="collision__plugin__cache_8h.html">moveit/collision_detection/collision_plugin_cache.h</a>&gt;</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="test__planning__scene_8cpp.html#a8657479fb681ab94486683c9e03019fa">   51</a></span>&#160;<a class="code" href="test__planning__scene_8cpp.html#a8657479fb681ab94486683c9e03019fa">TEST</a>(PlanningScene, LoadRestore)</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  urdf::ModelInterfaceSharedPtr urdf_model = <a class="code" href="namespacemoveit_1_1core.html#a9d39f2316f4754a5fe4bd8abe00e7660">moveit::core::loadModelInterface</a>(<span class="stringliteral">&quot;pr2&quot;</span>);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  srdf::ModelSharedPtr srdf_model(<span class="keyword">new</span> srdf::Model());</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <a class="code" href="classplanning__scene_1_1PlanningScene.html">planning_scene::PlanningScene</a> ps(urdf_model, srdf_model);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  moveit_msgs::msg::PlanningScene ps_msg;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  ps.<a class="code" href="classplanning__scene_1_1PlanningScene.html#a1c4051599aa9702d96097634db499621">getPlanningSceneMsg</a>(ps_msg);</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="test__planning__scene_8cpp.html#a8657479fb681ab94486683c9e03019fa">   48</a></span>&#160;<a class="code" href="test__planning__scene_8cpp.html#a8657479fb681ab94486683c9e03019fa">TEST</a>(PlanningScene, LoadRestore)</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;{</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  urdf::ModelInterfaceSharedPtr urdf_model = <a class="code" href="namespacemoveit_1_1core.html#a9d39f2316f4754a5fe4bd8abe00e7660">moveit::core::loadModelInterface</a>(<span class="stringliteral">&quot;pr2&quot;</span>);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  srdf::ModelSharedPtr srdf_model(<span class="keyword">new</span> srdf::Model());</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <a class="code" href="classplanning__scene_1_1PlanningScene.html">planning_scene::PlanningScene</a> ps(urdf_model, srdf_model);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  moveit_msgs::msg::PlanningScene ps_msg;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  ps.<a class="code" href="classplanning__scene_1_1PlanningScene.html#a1c4051599aa9702d96097634db499621">getPlanningSceneMsg</a>(ps_msg);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  EXPECT_EQ(ps.<a class="code" href="classplanning__scene_1_1PlanningScene.html#a343bc168dde9e2c211d2450f4eb0921a">getName</a>(), ps_msg.name);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  EXPECT_EQ(ps.<a class="code" href="classplanning__scene_1_1PlanningScene.html#ae1789ae10386a21ffe1fa41e1a590a6c">getRobotModel</a>()-&gt;getName(), ps_msg.robot_model_name);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  ps.<a class="code" href="classplanning__scene_1_1PlanningScene.html#acb5c51321f5d908072920ee2a2f1db58">setPlanningSceneMsg</a>(ps_msg);</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  EXPECT_EQ(ps.<a class="code" href="classplanning__scene_1_1PlanningScene.html#a343bc168dde9e2c211d2450f4eb0921a">getName</a>(), ps_msg.name);</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  EXPECT_EQ(ps.<a class="code" href="classplanning__scene_1_1PlanningScene.html#ae1789ae10386a21ffe1fa41e1a590a6c">getRobotModel</a>()-&gt;getName(), ps_msg.robot_model_name);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  ps.<a class="code" href="classplanning__scene_1_1PlanningScene.html#acb5c51321f5d908072920ee2a2f1db58">setPlanningSceneMsg</a>(ps_msg);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  EXPECT_EQ(ps.<a class="code" href="classplanning__scene_1_1PlanningScene.html#a343bc168dde9e2c211d2450f4eb0921a">getName</a>(), ps_msg.name);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  EXPECT_EQ(ps.<a class="code" href="classplanning__scene_1_1PlanningScene.html#ae1789ae10386a21ffe1fa41e1a590a6c">getRobotModel</a>()-&gt;getName(), ps_msg.robot_model_name);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="test__planning__scene_8cpp.html#a0d1c50611998de50ddd48b358987159d">   65</a></span>&#160;<a class="code" href="test__planning__scene_8cpp.html#a8657479fb681ab94486683c9e03019fa">TEST</a>(PlanningScene, LoadRestoreDiff)</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  urdf::ModelInterfaceSharedPtr urdf_model = <a class="code" href="namespacemoveit_1_1core.html#a9d39f2316f4754a5fe4bd8abe00e7660">moveit::core::loadModelInterface</a>(<span class="stringliteral">&quot;pr2&quot;</span>);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  srdf::ModelSharedPtr srdf_model(<span class="keyword">new</span> srdf::Model());</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keyword">auto</span> ps = std::make_shared&lt;planning_scene::PlanningScene&gt;(urdf_model, srdf_model);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <a class="code" href="classcollision__detection_1_1World.html">collision_detection::World</a>&amp; world = *ps-&gt;getWorldNonConst();</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="comment">/* add one object to ps&#39;s world */</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  Eigen::Isometry3d <span class="keywordtype">id</span> = Eigen::Isometry3d::Identity();</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  world.<a class="code" href="classcollision__detection_1_1World.html#a5e18424a37de7f24092f2e7c7898e620">addToObject</a>(<span class="stringliteral">&quot;sphere&quot;</span>, shapes::ShapeConstPtr(<span class="keyword">new</span> shapes::Sphere(0.4)), <span class="keywordtype">id</span>);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="comment">/* ps can be written to and set from message */</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  moveit_msgs::msg::PlanningScene ps_msg;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  ps_msg.robot_state.is_diff = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  EXPECT_TRUE(<a class="code" href="namespacemoveit_1_1core.html#a192b65b3ebc8eb7b6ccd155808c68aa1">moveit::core::isEmpty</a>(ps_msg));</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  ps-&gt;getPlanningSceneMsg(ps_msg);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  ps-&gt;setPlanningSceneMsg(ps_msg);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  EXPECT_EQ(ps_msg.world.collision_objects.size(), 1u);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  EXPECT_EQ(ps_msg.world.collision_objects[0].id, <span class="stringliteral">&quot;sphere&quot;</span>);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  EXPECT_TRUE(world.<a class="code" href="classcollision__detection_1_1World.html#a1f31fe9d2e4c623cabb9fa8f88749101">hasObject</a>(<span class="stringliteral">&quot;sphere&quot;</span>));</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="comment">/* test diff scene on top of ps */</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  planning_scene::PlanningScenePtr next = ps-&gt;diff();</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="comment">/* world is inherited from ps */</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  EXPECT_TRUE(next-&gt;getWorld()-&gt;hasObject(<span class="stringliteral">&quot;sphere&quot;</span>));</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="comment">/* object in overlay is only added in overlay */</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  next-&gt;getWorldNonConst()-&gt;addToObject(<span class="stringliteral">&quot;sphere_in_next_only&quot;</span>, shapes::ShapeConstPtr(<span class="keyword">new</span> shapes::Sphere(0.5)), <span class="keywordtype">id</span>);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  EXPECT_EQ(next-&gt;getWorld()-&gt;size(), 2u);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  EXPECT_EQ(ps-&gt;getWorld()-&gt;size(), 1u);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <span class="comment">/* the worlds used for collision detection contain one and two objects, respectively */</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  EXPECT_EQ(ps-&gt;getCollisionEnv()-&gt;getWorld()-&gt;size(), 1u);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  EXPECT_EQ(ps-&gt;getCollisionEnvUnpadded()-&gt;getWorld()-&gt;size(), 1u);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="test__planning__scene_8cpp.html#a0d1c50611998de50ddd48b358987159d">   62</a></span>&#160;<a class="code" href="test__planning__scene_8cpp.html#a8657479fb681ab94486683c9e03019fa">TEST</a>(PlanningScene, LoadRestoreDiff)</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;{</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  urdf::ModelInterfaceSharedPtr urdf_model = <a class="code" href="namespacemoveit_1_1core.html#a9d39f2316f4754a5fe4bd8abe00e7660">moveit::core::loadModelInterface</a>(<span class="stringliteral">&quot;pr2&quot;</span>);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  srdf::ModelSharedPtr srdf_model(<span class="keyword">new</span> srdf::Model());</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keyword">auto</span> ps = std::make_shared&lt;planning_scene::PlanningScene&gt;(urdf_model, srdf_model);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <a class="code" href="classcollision__detection_1_1World.html">collision_detection::World</a>&amp; world = *ps-&gt;getWorldNonConst();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="comment">/* add one object to ps&#39;s world */</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  Eigen::Isometry3d <span class="keywordtype">id</span> = Eigen::Isometry3d::Identity();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  world.<a class="code" href="classcollision__detection_1_1World.html#ac555cf977a37a0831673df03b6f41bf3">addToObject</a>(<span class="stringliteral">&quot;sphere&quot;</span>, shapes::ShapeConstPtr(<span class="keyword">new</span> shapes::Sphere(0.4)), <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="comment">/* ps can be written to and set from message */</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  moveit_msgs::msg::PlanningScene ps_msg;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  ps_msg.robot_state.is_diff = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  EXPECT_TRUE(<a class="code" href="namespacemoveit_1_1core.html#a192b65b3ebc8eb7b6ccd155808c68aa1">moveit::core::isEmpty</a>(ps_msg));</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  ps-&gt;getPlanningSceneMsg(ps_msg);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  ps-&gt;setPlanningSceneMsg(ps_msg);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  EXPECT_EQ(ps_msg.world.collision_objects.size(), 1u);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  EXPECT_EQ(ps_msg.world.collision_objects[0].id, <span class="stringliteral">&quot;sphere&quot;</span>);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  EXPECT_TRUE(world.<a class="code" href="classcollision__detection_1_1World.html#a1f31fe9d2e4c623cabb9fa8f88749101">hasObject</a>(<span class="stringliteral">&quot;sphere&quot;</span>));</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="comment">/* test diff scene on top of ps */</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  planning_scene::PlanningScenePtr next = ps-&gt;diff();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="comment">/* world is inherited from ps */</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  EXPECT_TRUE(next-&gt;getWorld()-&gt;hasObject(<span class="stringliteral">&quot;sphere&quot;</span>));</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="comment">/* object in overlay is only added in overlay */</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  next-&gt;getWorldNonConst()-&gt;addToObject(<span class="stringliteral">&quot;sphere_in_next_only&quot;</span>, shapes::ShapeConstPtr(<span class="keyword">new</span> shapes::Sphere(0.5)), <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  EXPECT_EQ(next-&gt;getWorld()-&gt;size(), 2u);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  EXPECT_EQ(ps-&gt;getWorld()-&gt;size(), 1u);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="comment">/* the worlds used for collision detection contain one and two objects, respectively */</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  EXPECT_EQ(ps-&gt;getCollisionEnv()-&gt;getWorld()-&gt;size(), 1u);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  EXPECT_EQ(ps-&gt;getCollisionEnvUnpadded()-&gt;getWorld()-&gt;size(), 1u);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  EXPECT_EQ(next-&gt;getCollisionEnv()-&gt;getWorld()-&gt;size(), 2u);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  EXPECT_EQ(next-&gt;getCollisionEnvUnpadded()-&gt;getWorld()-&gt;size(), 2u);</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  EXPECT_EQ(next-&gt;getCollisionEnv()-&gt;getWorld()-&gt;size(), 2u);</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  EXPECT_EQ(next-&gt;getCollisionEnvUnpadded()-&gt;getWorld()-&gt;size(), 2u);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <span class="comment">/* maintained diff contains only overlay object */</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  next-&gt;getPlanningSceneDiffMsg(ps_msg);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  EXPECT_EQ(ps_msg.world.collision_objects.size(), 1u);</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <span class="comment">/* copy ps to next and apply diff */</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  next-&gt;decoupleParent();</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  moveit_msgs::msg::PlanningScene ps_msg2;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <span class="comment">/* diff is empty now */</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  next-&gt;getPlanningSceneDiffMsg(ps_msg2);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  EXPECT_EQ(ps_msg2.world.collision_objects.size(), 0u);</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <span class="comment">/* next&#39;s world contains both objects */</span></div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  next-&gt;getPlanningSceneMsg(ps_msg);</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  EXPECT_EQ(ps_msg.world.collision_objects.size(), 2u);</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  ps-&gt;setPlanningSceneMsg(ps_msg);</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  EXPECT_EQ(ps-&gt;getWorld()-&gt;size(), 2u);</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  EXPECT_EQ(ps-&gt;getCollisionEnv()-&gt;getWorld()-&gt;size(), 2u);</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  EXPECT_EQ(ps-&gt;getCollisionEnvUnpadded()-&gt;getWorld()-&gt;size(), 2u);</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;}</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
-<div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="test__planning__scene_8cpp.html#ab20750fd1a59d2e49c4043aeaf90ba3d">  125</a></span>&#160;<a class="code" href="test__planning__scene_8cpp.html#a8657479fb681ab94486683c9e03019fa">TEST</a>(PlanningScene, MakeAttachedDiff)</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;{</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  urdf::ModelInterfaceSharedPtr urdf_model = <a class="code" href="namespacemoveit_1_1core.html#a9d39f2316f4754a5fe4bd8abe00e7660">moveit::core::loadModelInterface</a>(<span class="stringliteral">&quot;pr2&quot;</span>);</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  srdf::ModelSharedPtr srdf_model(<span class="keyword">new</span> srdf::Model());</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <span class="keyword">auto</span> ps = std::make_shared&lt;planning_scene::PlanningScene&gt;(urdf_model, srdf_model);</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  <span class="comment">/* add a single object to ps&#39;s world */</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  <a class="code" href="classcollision__detection_1_1World.html">collision_detection::World</a>&amp; world = *ps-&gt;getWorldNonConst();</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  Eigen::Isometry3d <span class="keywordtype">id</span> = Eigen::Isometry3d::Identity();</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  world.<a class="code" href="classcollision__detection_1_1World.html#a5e18424a37de7f24092f2e7c7898e620">addToObject</a>(<span class="stringliteral">&quot;sphere&quot;</span>, shapes::ShapeConstPtr(<span class="keyword">new</span> shapes::Sphere(0.4)), <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <span class="comment">/* maintained diff contains only overlay object */</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  next-&gt;getPlanningSceneDiffMsg(ps_msg);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  EXPECT_EQ(ps_msg.world.collision_objects.size(), 1u);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <span class="comment">/* copy ps to next and apply diff */</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  next-&gt;decoupleParent();</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  moveit_msgs::msg::PlanningScene ps_msg2;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <span class="comment">/* diff is empty now */</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  next-&gt;getPlanningSceneDiffMsg(ps_msg2);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  EXPECT_EQ(ps_msg2.world.collision_objects.size(), 0u);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <span class="comment">/* next&#39;s world contains both objects */</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  next-&gt;getPlanningSceneMsg(ps_msg);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  EXPECT_EQ(ps_msg.world.collision_objects.size(), 2u);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  ps-&gt;setPlanningSceneMsg(ps_msg);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  EXPECT_EQ(ps-&gt;getWorld()-&gt;size(), 2u);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  EXPECT_EQ(ps-&gt;getCollisionEnv()-&gt;getWorld()-&gt;size(), 2u);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  EXPECT_EQ(ps-&gt;getCollisionEnvUnpadded()-&gt;getWorld()-&gt;size(), 2u);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;}</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="test__planning__scene_8cpp.html#ab20750fd1a59d2e49c4043aeaf90ba3d">  122</a></span>&#160;<a class="code" href="test__planning__scene_8cpp.html#a8657479fb681ab94486683c9e03019fa">TEST</a>(PlanningScene, MakeAttachedDiff)</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;{</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  urdf::ModelInterfaceSharedPtr urdf_model = <a class="code" href="namespacemoveit_1_1core.html#a9d39f2316f4754a5fe4bd8abe00e7660">moveit::core::loadModelInterface</a>(<span class="stringliteral">&quot;pr2&quot;</span>);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  srdf::ModelSharedPtr srdf_model(<span class="keyword">new</span> srdf::Model());</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <span class="keyword">auto</span> ps = std::make_shared&lt;planning_scene::PlanningScene&gt;(urdf_model, srdf_model);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  <span class="comment">/* add a single object to ps&#39;s world */</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <a class="code" href="classcollision__detection_1_1World.html">collision_detection::World</a>&amp; world = *ps-&gt;getWorldNonConst();</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  Eigen::Isometry3d <span class="keywordtype">id</span> = Eigen::Isometry3d::Identity();</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  world.<a class="code" href="classcollision__detection_1_1World.html#ac555cf977a37a0831673df03b6f41bf3">addToObject</a>(<span class="stringliteral">&quot;sphere&quot;</span>, shapes::ShapeConstPtr(<span class="keyword">new</span> shapes::Sphere(0.4)), <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  <span class="comment">/* attach object in diff */</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  planning_scene::PlanningScenePtr attached_object_diff_scene = ps-&gt;diff();</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  <span class="comment">/* attach object in diff */</span></div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  planning_scene::PlanningScenePtr attached_object_diff_scene = ps-&gt;diff();</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  moveit_msgs::msg::AttachedCollisionObject att_obj;</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  att_obj.link_name = <span class="stringliteral">&quot;r_wrist_roll_link&quot;</span>;</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  att_obj.object.operation = moveit_msgs::msg::CollisionObject::ADD;</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  att_obj.object.id = <span class="stringliteral">&quot;sphere&quot;</span>;</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  attached_object_diff_scene-&gt;processAttachedCollisionObjectMsg(att_obj);</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  <span class="comment">/* object is not in world anymore */</span></div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;  EXPECT_EQ(attached_object_diff_scene-&gt;getWorld()-&gt;size(), 0u);</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  <span class="comment">/* it became part of the robot state though */</span></div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  EXPECT_TRUE(attached_object_diff_scene-&gt;getCurrentState().hasAttachedBody(<span class="stringliteral">&quot;sphere&quot;</span>));</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  <a class="code" href="structcollision__detection_1_1CollisionRequest.html">collision_detection::CollisionRequest</a> req;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  <a class="code" href="structcollision__detection_1_1CollisionResult.html">collision_detection::CollisionResult</a> res;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  attached_object_diff_scene-&gt;checkCollision(req, res);</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  ps-&gt;checkCollision(req, res);</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;}</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
-<div class="line"><a name="l00156"></a><span class="lineno"><a class="line" href="test__planning__scene_8cpp.html#aec1e8f496b7dd98417ef25f6c3819f8d">  156</a></span>&#160;<a class="code" href="test__planning__scene_8cpp.html#a8657479fb681ab94486683c9e03019fa">TEST</a>(PlanningScene, isStateValid)</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;{</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  moveit::core::RobotModelPtr robot_model = <a class="code" href="namespacemoveit_1_1core.html#a646367a1863f557a16cb8769a2980604">moveit::core::loadTestingRobotModel</a>(<span class="stringliteral">&quot;pr2&quot;</span>);</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  <span class="keyword">auto</span> ps = std::make_shared&lt;planning_scene::PlanningScene&gt;(robot_model-&gt;getURDF(), robot_model-&gt;getSRDF());</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  <a class="code" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a> current_state = ps-&gt;getCurrentState();</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  <span class="keywordflow">if</span> (ps-&gt;isStateColliding(current_state, <span class="stringliteral">&quot;left_arm&quot;</span>))</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  {</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    EXPECT_FALSE(ps-&gt;isStateValid(current_state, <span class="stringliteral">&quot;left_arm&quot;</span>));</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;  }</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;}</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
-<div class="line"><a name="l00167"></a><span class="lineno"><a class="line" href="test__planning__scene_8cpp.html#af10b82e9b84e6ab44c967ba84d391963">  167</a></span>&#160;<a class="code" href="test__planning__scene_8cpp.html#a8657479fb681ab94486683c9e03019fa">TEST</a>(PlanningScene, loadGoodSceneGeometry)</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;{</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  moveit::core::RobotModelPtr robot_model = <a class="code" href="namespacemoveit_1_1core.html#a646367a1863f557a16cb8769a2980604">moveit::core::loadTestingRobotModel</a>(<span class="stringliteral">&quot;pr2&quot;</span>);</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  <span class="keyword">auto</span> ps = std::make_shared&lt;planning_scene::PlanningScene&gt;(robot_model-&gt;getURDF(), robot_model-&gt;getSRDF());</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;  std::istringstream good_scene_geometry;</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;  good_scene_geometry.str(<span class="stringliteral">&quot;foobar_scene\n&quot;</span></div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                          <span class="stringliteral">&quot;* foo\n&quot;</span></div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                          <span class="stringliteral">&quot;0 0 0\n&quot;</span></div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                          <span class="stringliteral">&quot;0 0 0 1\n&quot;</span></div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                          <span class="stringliteral">&quot;1\n&quot;</span></div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                          <span class="stringliteral">&quot;box\n&quot;</span></div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                          <span class="stringliteral">&quot;2.58 1.36 0.31\n&quot;</span></div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                          <span class="stringliteral">&quot;1.49257 1.00222 0.170051\n&quot;</span></div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                          <span class="stringliteral">&quot;0 0 4.16377e-05 1\n&quot;</span></div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                          <span class="stringliteral">&quot;0 0 1 0.3\n&quot;</span></div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                          <span class="stringliteral">&quot;0\n&quot;</span></div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                          <span class="stringliteral">&quot;* bar\n&quot;</span></div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                          <span class="stringliteral">&quot;0 0 0\n&quot;</span></div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                          <span class="stringliteral">&quot;0 0 0 1\n&quot;</span></div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                          <span class="stringliteral">&quot;1\n&quot;</span></div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                          <span class="stringliteral">&quot;cylinder\n&quot;</span></div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                          <span class="stringliteral">&quot;0.02 0.0001\n&quot;</span></div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                          <span class="stringliteral">&quot;0.453709 0.499136 0.355051\n&quot;</span></div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                          <span class="stringliteral">&quot;0 0 4.16377e-05 1\n&quot;</span></div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                          <span class="stringliteral">&quot;1 0 0 1\n&quot;</span></div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                          <span class="stringliteral">&quot;0\n&quot;</span></div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                          <span class="stringliteral">&quot;.\n&quot;</span>);</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;  EXPECT_TRUE(ps-&gt;loadGeometryFromStream(good_scene_geometry));</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;  EXPECT_EQ(ps-&gt;getName(), <span class="stringliteral">&quot;foobar_scene&quot;</span>);</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;  EXPECT_TRUE(ps-&gt;getWorld()-&gt;hasObject(<span class="stringliteral">&quot;foo&quot;</span>));</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  EXPECT_TRUE(ps-&gt;getWorld()-&gt;hasObject(<span class="stringliteral">&quot;bar&quot;</span>));</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;  EXPECT_FALSE(ps-&gt;getWorld()-&gt;hasObject(<span class="stringliteral">&quot;baz&quot;</span>));  <span class="comment">// Sanity check.</span></div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;}</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  moveit_msgs::msg::AttachedCollisionObject att_obj;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  att_obj.link_name = <span class="stringliteral">&quot;r_wrist_roll_link&quot;</span>;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  att_obj.object.operation = moveit_msgs::msg::CollisionObject::ADD;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  att_obj.object.id = <span class="stringliteral">&quot;sphere&quot;</span>;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  attached_object_diff_scene-&gt;processAttachedCollisionObjectMsg(att_obj);</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  <span class="comment">/* object is not in world anymore */</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  EXPECT_EQ(attached_object_diff_scene-&gt;getWorld()-&gt;size(), 0u);</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  <span class="comment">/* it became part of the robot state though */</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  EXPECT_TRUE(attached_object_diff_scene-&gt;getCurrentState().hasAttachedBody(<span class="stringliteral">&quot;sphere&quot;</span>));</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  <a class="code" href="structcollision__detection_1_1CollisionRequest.html">collision_detection::CollisionRequest</a> req;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  <a class="code" href="structcollision__detection_1_1CollisionResult.html">collision_detection::CollisionResult</a> res;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  attached_object_diff_scene-&gt;checkCollision(req, res);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  ps-&gt;checkCollision(req, res);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;}</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
+<div class="line"><a name="l00153"></a><span class="lineno"><a class="line" href="test__planning__scene_8cpp.html#aec1e8f496b7dd98417ef25f6c3819f8d">  153</a></span>&#160;<a class="code" href="test__planning__scene_8cpp.html#a8657479fb681ab94486683c9e03019fa">TEST</a>(PlanningScene, isStateValid)</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;{</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  moveit::core::RobotModelPtr robot_model = <a class="code" href="namespacemoveit_1_1core.html#a646367a1863f557a16cb8769a2980604">moveit::core::loadTestingRobotModel</a>(<span class="stringliteral">&quot;pr2&quot;</span>);</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  <span class="keyword">auto</span> ps = std::make_shared&lt;planning_scene::PlanningScene&gt;(robot_model-&gt;getURDF(), robot_model-&gt;getSRDF());</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  <a class="code" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a> current_state = ps-&gt;getCurrentState();</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  <span class="keywordflow">if</span> (ps-&gt;isStateColliding(current_state, <span class="stringliteral">&quot;left_arm&quot;</span>))</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  {</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    EXPECT_FALSE(ps-&gt;isStateValid(current_state, <span class="stringliteral">&quot;left_arm&quot;</span>));</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  }</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;}</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
+<div class="line"><a name="l00164"></a><span class="lineno"><a class="line" href="test__planning__scene_8cpp.html#af10b82e9b84e6ab44c967ba84d391963">  164</a></span>&#160;<a class="code" href="test__planning__scene_8cpp.html#a8657479fb681ab94486683c9e03019fa">TEST</a>(PlanningScene, loadGoodSceneGeometry)</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;{</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  moveit::core::RobotModelPtr robot_model = <a class="code" href="namespacemoveit_1_1core.html#a646367a1863f557a16cb8769a2980604">moveit::core::loadTestingRobotModel</a>(<span class="stringliteral">&quot;pr2&quot;</span>);</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  <span class="keyword">auto</span> ps = std::make_shared&lt;planning_scene::PlanningScene&gt;(robot_model-&gt;getURDF(), robot_model-&gt;getSRDF());</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  std::istringstream good_scene_geometry;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  good_scene_geometry.str(<span class="stringliteral">&quot;foobar_scene\n&quot;</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                          <span class="stringliteral">&quot;* foo\n&quot;</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                          <span class="stringliteral">&quot;1\n&quot;</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                          <span class="stringliteral">&quot;box\n&quot;</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                          <span class="stringliteral">&quot;2.58 1.36 0.31\n&quot;</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                          <span class="stringliteral">&quot;1.49257 1.00222 0.170051\n&quot;</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                          <span class="stringliteral">&quot;0 0 4.16377e-05 1\n&quot;</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                          <span class="stringliteral">&quot;0 0 1 0.3\n&quot;</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                          <span class="stringliteral">&quot;* bar\n&quot;</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                          <span class="stringliteral">&quot;1\n&quot;</span></div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                          <span class="stringliteral">&quot;cylinder\n&quot;</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                          <span class="stringliteral">&quot;0.02 0.0001\n&quot;</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                          <span class="stringliteral">&quot;0.453709 0.499136 0.355051\n&quot;</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                          <span class="stringliteral">&quot;0 0 4.16377e-05 1\n&quot;</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                          <span class="stringliteral">&quot;1 0 0 1\n&quot;</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                          <span class="stringliteral">&quot;.\n&quot;</span>);</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;  EXPECT_TRUE(ps-&gt;loadGeometryFromStream(good_scene_geometry));</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;  EXPECT_EQ(ps-&gt;getName(), <span class="stringliteral">&quot;foobar_scene&quot;</span>);</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  EXPECT_TRUE(ps-&gt;getWorld()-&gt;hasObject(<span class="stringliteral">&quot;foo&quot;</span>));</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;  EXPECT_TRUE(ps-&gt;getWorld()-&gt;hasObject(<span class="stringliteral">&quot;bar&quot;</span>));</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  EXPECT_FALSE(ps-&gt;getWorld()-&gt;hasObject(<span class="stringliteral">&quot;baz&quot;</span>));  <span class="comment">// Sanity check.</span></div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;}</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
+<div class="line"><a name="l00193"></a><span class="lineno"><a class="line" href="test__planning__scene_8cpp.html#ae63c44b754fccf3b4917ff22d2cc39c6">  193</a></span>&#160;<a class="code" href="test__planning__scene_8cpp.html#a8657479fb681ab94486683c9e03019fa">TEST</a>(PlanningScene, loadBadSceneGeometry)</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;{</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;  moveit::core::RobotModelPtr robot_model = <a class="code" href="namespacemoveit_1_1core.html#a646367a1863f557a16cb8769a2980604">moveit::core::loadTestingRobotModel</a>(<span class="stringliteral">&quot;pr2&quot;</span>);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;  <span class="keyword">auto</span> ps = std::make_shared&lt;planning_scene::PlanningScene&gt;(robot_model-&gt;getURDF(), robot_model-&gt;getSRDF());</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;  std::istringstream empty_scene_geometry;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;  <span class="comment">// This should fail since there is no planning scene name and no end of geometry marker.</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;  EXPECT_FALSE(ps-&gt;loadGeometryFromStream(empty_scene_geometry));</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
-<div class="line"><a name="l00202"></a><span class="lineno"><a class="line" href="test__planning__scene_8cpp.html#ae63c44b754fccf3b4917ff22d2cc39c6">  202</a></span>&#160;<a class="code" href="test__planning__scene_8cpp.html#a8657479fb681ab94486683c9e03019fa">TEST</a>(PlanningScene, loadBadSceneGeometry)</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;{</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;  moveit::core::RobotModelPtr robot_model = <a class="code" href="namespacemoveit_1_1core.html#a646367a1863f557a16cb8769a2980604">moveit::core::loadTestingRobotModel</a>(<span class="stringliteral">&quot;pr2&quot;</span>);</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;  <span class="keyword">auto</span> ps = std::make_shared&lt;planning_scene::PlanningScene&gt;(robot_model-&gt;getURDF(), robot_model-&gt;getSRDF());</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;  std::istringstream empty_scene_geometry;</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;  <span class="comment">// This should fail since there is no planning scene name and no end of geometry marker.</span></div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;  EXPECT_FALSE(ps-&gt;loadGeometryFromStream(empty_scene_geometry));</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160; </div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;  std::istringstream malformed_scene_geometry;</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;  malformed_scene_geometry.str(<span class="stringliteral">&quot;malformed_scene_geometry\n&quot;</span></div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                               <span class="stringliteral">&quot;* foo\n&quot;</span></div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                               <span class="stringliteral">&quot;1\n&quot;</span></div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                               <span class="stringliteral">&quot;box\n&quot;</span></div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                               <span class="stringliteral">&quot;2.58 1.36\n&quot;</span> <span class="comment">/* Only two tokens; should be 3 */</span></div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                               <span class="stringliteral">&quot;1.49257 1.00222 0.170051\n&quot;</span></div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                               <span class="stringliteral">&quot;0 0 4.16377e-05 1\n&quot;</span></div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                               <span class="stringliteral">&quot;0 0 1 0.3\n&quot;</span></div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                               <span class="stringliteral">&quot;.\n&quot;</span>);</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;  EXPECT_FALSE(ps-&gt;loadGeometryFromStream(malformed_scene_geometry));</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;}</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160; </div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="comment">// Test the setting of a new collision detector type. For now, only FCL is available in MoveIt2.</span></div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="comment">// TODO(andyz): switch to a different type when one becomes available.</span></div>
-<div class="line"><a name="l00226"></a><span class="lineno"><a class="line" href="test__planning__scene_8cpp.html#ae64d52b546b6c40f203676f9e3d078bb">  226</a></span>&#160;<a class="code" href="test__planning__scene_8cpp.html#a8657479fb681ab94486683c9e03019fa">TEST</a>(PlanningScene, switchCollisionDetectorType)</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;{</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;  moveit::core::RobotModelPtr robot_model = <a class="code" href="namespacemoveit_1_1core.html#a646367a1863f557a16cb8769a2980604">moveit::core::loadTestingRobotModel</a>(<span class="stringliteral">&quot;pr2&quot;</span>);</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;  <span class="keyword">auto</span> ps = std::make_shared&lt;planning_scene::PlanningScene&gt;(robot_model-&gt;getURDF(), robot_model-&gt;getSRDF());</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;  <a class="code" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a> current_state = ps-&gt;getCurrentState();</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;  <span class="keywordflow">if</span> (ps-&gt;isStateColliding(current_state, <span class="stringliteral">&quot;left_arm&quot;</span>))</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;  {</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    EXPECT_FALSE(ps-&gt;isStateValid(current_state, <span class="stringliteral">&quot;left_arm&quot;</span>));</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;  }</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160; </div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;  ps-&gt;allocateCollisionDetector(<a class="code" href="classcollision__detection_1_1CollisionDetectorAllocatorTemplate.html#a1ea75b81fe9b59894ab81f2ea0faffb6">collision_detection::CollisionDetectorAllocatorFCL::create</a>());</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;  <span class="keywordflow">if</span> (ps-&gt;isStateColliding(current_state, <span class="stringliteral">&quot;left_arm&quot;</span>))</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;  {</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    EXPECT_FALSE(ps-&gt;isStateValid(current_state, <span class="stringliteral">&quot;left_arm&quot;</span>));</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;  }</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;}</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160; </div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;<span class="keyword">class </span><a class="code" href="classCollisionDetectorTests.html">CollisionDetectorTests</a> : <span class="keyword">public</span> testing::TestWithParam&lt;const char*&gt;</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;{</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;};</div>
-<div class="line"><a name="l00246"></a><span class="lineno"><a class="line" href="test__planning__scene_8cpp.html#ac902326be3b24afae4d75c0b45de02f6">  246</a></span>&#160;<a class="code" href="test__planning__scene_8cpp.html#ac902326be3b24afae4d75c0b45de02f6">TEST_P</a>(<a class="code" href="classCollisionDetectorTests.html">CollisionDetectorTests</a>, ClearDiff)</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;{</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;  <span class="keyword">const</span> std::string plugin_name = GetParam();</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;  SCOPED_TRACE(plugin_name);</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160; </div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;  urdf::ModelInterfaceSharedPtr urdf_model = <a class="code" href="namespacemoveit_1_1core.html#a9d39f2316f4754a5fe4bd8abe00e7660">moveit::core::loadModelInterface</a>(<span class="stringliteral">&quot;pr2&quot;</span>);</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;  srdf::ModelSharedPtr srdf_model(<span class="keyword">new</span> srdf::Model());</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;  <span class="comment">// create parent scene</span></div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;  planning_scene::PlanningScenePtr parent = std::make_shared&lt;planning_scene::PlanningScene&gt;(urdf_model, srdf_model);</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; </div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;  <a class="code" href="classcollision__detection_1_1CollisionPluginCache.html">collision_detection::CollisionPluginCache</a> loader;</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;  <span class="keywordflow">if</span> (!loader.<a class="code" href="classcollision__detection_1_1CollisionPluginCache.html#a22608240bd9c46b6ba9af89f8ecd003a">activate</a>(plugin_name, parent))</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;  {</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;<span class="preprocessor">#if defined(GTEST_SKIP_)</span></div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    GTEST_SKIP_(<span class="stringliteral">&quot;Failed to load collision plugin&quot;</span>);</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;  }</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;  <span class="comment">// create child scene</span></div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;  planning_scene::PlanningScenePtr child = parent-&gt;diff();</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160; </div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;  <span class="comment">// create collision request variables</span></div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;  <a class="code" href="structcollision__detection_1_1CollisionRequest.html">collision_detection::CollisionRequest</a> req;</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;  <a class="code" href="structcollision__detection_1_1CollisionResult.html">collision_detection::CollisionResult</a> res;</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;  <a class="code" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a>* state = <span class="keyword">new</span> <a class="code" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a>(child-&gt;getRobotModel());</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;  state-&gt;<a class="code" href="classmoveit_1_1core_1_1RobotState.html#aba31c6f758e3dabd32c1acbd069e189e">setToDefaultValues</a>();</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;  state-&gt;<a class="code" href="classmoveit_1_1core_1_1RobotState.html#aaec5557d55b862d9dd832b3d4c221836">update</a>();</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160; </div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;  <span class="comment">// there should be no collision with the environment</span></div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;  res.<a class="code" href="structcollision__detection_1_1CollisionResult.html#ac2f7f5603102be94cda1fe5d5fd1b531">clear</a>();</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;  parent-&gt;getCollisionEnv()-&gt;checkRobotCollision(req, res, *state, parent-&gt;getAllowedCollisionMatrix());</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;  EXPECT_FALSE(res.<a class="code" href="structcollision__detection_1_1CollisionResult.html#ad68db09bcc111730f7c4ab1bdff31e67">collision</a>);</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;  res.<a class="code" href="structcollision__detection_1_1CollisionResult.html#ac2f7f5603102be94cda1fe5d5fd1b531">clear</a>();</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;  child-&gt;getCollisionEnv()-&gt;checkRobotCollision(req, res, *state, child-&gt;getAllowedCollisionMatrix());</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;  EXPECT_FALSE(res.<a class="code" href="structcollision__detection_1_1CollisionResult.html#ad68db09bcc111730f7c4ab1bdff31e67">collision</a>);</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160; </div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;  <span class="comment">// create message to add a collision object at the world origin</span></div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;  moveit_msgs::msg::PlanningScene ps_msg;</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;  ps_msg.is_diff = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;  moveit_msgs::msg::CollisionObject co;</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;  co.header.frame_id = <span class="stringliteral">&quot;base_link&quot;</span>;</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;  co.operation = moveit_msgs::msg::CollisionObject::ADD;</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;  co.id = <span class="stringliteral">&quot;box&quot;</span>;</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;  co.pose.orientation.w = 1.0;</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;  {</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    shape_msgs::msg::SolidPrimitive sp;</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    sp.type = shape_msgs::msg::SolidPrimitive::BOX;</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    sp.dimensions = { 1., 1., 1. };</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    co.primitives.push_back(sp);</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    geometry_msgs::msg::Pose sp_pose;</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    sp_pose.orientation.w = 1.0;</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    co.primitive_poses.push_back(sp_pose);</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;  }</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;  ps_msg.world.collision_objects.push_back(co);</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160; </div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;  <span class="comment">// add object to the parent planning scene</span></div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;  parent-&gt;usePlanningSceneMsg(ps_msg);</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160; </div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;  <span class="comment">// the parent scene should be in collision</span></div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;  res.<a class="code" href="structcollision__detection_1_1CollisionResult.html#ac2f7f5603102be94cda1fe5d5fd1b531">clear</a>();</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;  parent-&gt;getCollisionEnv()-&gt;checkRobotCollision(req, res, *state, parent-&gt;getAllowedCollisionMatrix());</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;  EXPECT_TRUE(res.<a class="code" href="structcollision__detection_1_1CollisionResult.html#ad68db09bcc111730f7c4ab1bdff31e67">collision</a>);</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160; </div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;  <span class="comment">// the child scene was not updated yet, so no collision</span></div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;  res.<a class="code" href="structcollision__detection_1_1CollisionResult.html#ac2f7f5603102be94cda1fe5d5fd1b531">clear</a>();</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;  child-&gt;getCollisionEnv()-&gt;checkRobotCollision(req, res, *state, child-&gt;getAllowedCollisionMatrix());</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;  EXPECT_FALSE(res.<a class="code" href="structcollision__detection_1_1CollisionResult.html#ad68db09bcc111730f7c4ab1bdff31e67">collision</a>);</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160; </div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;  <span class="comment">// update the child scene</span></div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;  child-&gt;clearDiffs();</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160; </div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;  <span class="comment">// child and parent scene should be in collision</span></div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;  res.<a class="code" href="structcollision__detection_1_1CollisionResult.html#ac2f7f5603102be94cda1fe5d5fd1b531">clear</a>();</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;  parent-&gt;getCollisionEnv()-&gt;checkRobotCollision(req, res, *state, parent-&gt;getAllowedCollisionMatrix());</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;  EXPECT_TRUE(res.<a class="code" href="structcollision__detection_1_1CollisionResult.html#ad68db09bcc111730f7c4ab1bdff31e67">collision</a>);</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;  res.<a class="code" href="structcollision__detection_1_1CollisionResult.html#ac2f7f5603102be94cda1fe5d5fd1b531">clear</a>();</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;  child-&gt;getCollisionEnv()-&gt;checkRobotCollision(req, res, *state, child-&gt;getAllowedCollisionMatrix());</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;  EXPECT_TRUE(res.<a class="code" href="structcollision__detection_1_1CollisionResult.html#ad68db09bcc111730f7c4ab1bdff31e67">collision</a>);</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160; </div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;  child.reset();</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;  parent.reset();</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;}</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160; </div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;<span class="preprocessor">#ifndef INSTANTIATE_TEST_SUITE_P  // prior to gtest 1.10</span></div>
-<div class="line"><a name="l00332"></a><span class="lineno"><a class="line" href="test__planning__scene_8cpp.html#a4ec3541727e3217cf2cae0bb4aa69d83">  332</a></span>&#160;<span class="preprocessor">#define INSTANTIATE_TEST_SUITE_P(...) INSTANTIATE_TEST_CASE_P(__VA_ARGS__)</span></div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160; </div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;<span class="comment">// instantiate parameterized tests for common collision plugins</span></div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;<a class="code" href="test__planning__scene_8cpp.html#a4ec3541727e3217cf2cae0bb4aa69d83">INSTANTIATE_TEST_SUITE_P</a>(PluginTests, <a class="code" href="classCollisionDetectorTests.html">CollisionDetectorTests</a>, testing::Values(<span class="stringliteral">&quot;FCL&quot;</span>, <span class="stringliteral">&quot;Bullet&quot;</span>));</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160; </div>
-<div class="line"><a name="l00338"></a><span class="lineno"><a class="line" href="test__planning__scene_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">  338</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="test__planning__scene_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>** argv)</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;{</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;  testing::InitGoogleTest(&amp;argc, argv);</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;  <span class="keywordflow">return</span> RUN_ALL_TESTS();</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;}</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;  std::istringstream malformed_scene_geometry;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;  malformed_scene_geometry.str(<span class="stringliteral">&quot;malformed_scene_geometry\n&quot;</span></div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                               <span class="stringliteral">&quot;* foo\n&quot;</span></div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                               <span class="stringliteral">&quot;1\n&quot;</span></div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                               <span class="stringliteral">&quot;box\n&quot;</span></div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                               <span class="stringliteral">&quot;2.58 1.36\n&quot;</span> <span class="comment">/* Only two tokens; should be 3 */</span></div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                               <span class="stringliteral">&quot;1.49257 1.00222 0.170051\n&quot;</span></div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                               <span class="stringliteral">&quot;0 0 4.16377e-05 1\n&quot;</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                               <span class="stringliteral">&quot;0 0 1 0.3\n&quot;</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                               <span class="stringliteral">&quot;.\n&quot;</span>);</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;  EXPECT_FALSE(ps-&gt;loadGeometryFromStream(malformed_scene_geometry));</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;}</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="comment">// Test the setting of a new collision detector type. For now, only FCL is available in MoveIt2.</span></div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="comment">// TODO(andyz): switch to a different type when one becomes available.</span></div>
+<div class="line"><a name="l00217"></a><span class="lineno"><a class="line" href="test__planning__scene_8cpp.html#ae64d52b546b6c40f203676f9e3d078bb">  217</a></span>&#160;<a class="code" href="test__planning__scene_8cpp.html#a8657479fb681ab94486683c9e03019fa">TEST</a>(PlanningScene, switchCollisionDetectorType)</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;{</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;  moveit::core::RobotModelPtr robot_model = <a class="code" href="namespacemoveit_1_1core.html#a646367a1863f557a16cb8769a2980604">moveit::core::loadTestingRobotModel</a>(<span class="stringliteral">&quot;pr2&quot;</span>);</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;  <span class="keyword">auto</span> ps = std::make_shared&lt;planning_scene::PlanningScene&gt;(robot_model-&gt;getURDF(), robot_model-&gt;getSRDF());</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;  <a class="code" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a> current_state = ps-&gt;getCurrentState();</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;  <span class="keywordflow">if</span> (ps-&gt;isStateColliding(current_state, <span class="stringliteral">&quot;left_arm&quot;</span>))</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;  {</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    EXPECT_FALSE(ps-&gt;isStateValid(current_state, <span class="stringliteral">&quot;left_arm&quot;</span>));</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;  }</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160; </div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;  ps-&gt;allocateCollisionDetector(<a class="code" href="classcollision__detection_1_1CollisionDetectorAllocatorTemplate.html#a1ea75b81fe9b59894ab81f2ea0faffb6">collision_detection::CollisionDetectorAllocatorFCL::create</a>());</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;  <span class="keywordflow">if</span> (ps-&gt;isStateColliding(current_state, <span class="stringliteral">&quot;left_arm&quot;</span>))</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;  {</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    EXPECT_FALSE(ps-&gt;isStateValid(current_state, <span class="stringliteral">&quot;left_arm&quot;</span>));</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;  }</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;}</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160; </div>
+<div class="line"><a name="l00234"></a><span class="lineno"><a class="line" href="test__planning__scene_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">  234</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="test__planning__scene_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>** argv)</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;{</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;  testing::InitGoogleTest(&amp;argc, argv);</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;  <span class="keywordflow">return</span> RUN_ALL_TESTS();</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclasscollision__detection_1_1World_html_a1f31fe9d2e4c623cabb9fa8f88749101"><div class="ttname"><a href="classcollision__detection_1_1World.html#a1f31fe9d2e4c623cabb9fa8f88749101">collision_detection::World::hasObject</a></div><div class="ttdeci">bool hasObject(const std::string &amp;object_id) const</div><div class="ttdoc">Check if a particular object exists in the collision world.</div><div class="ttdef"><b>Definition:</b> <a href="world_8cpp_source.html#l00158">world.cpp:158</a></div></div>
-<div class="ttc" id="atest__planning__scene_8cpp_html_a3c04138a5bfe5d72780bb7e82a18e627"><div class="ttname"><a href="test__planning__scene_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></div><div class="ttdeci">int main(int argc, char **argv)</div><div class="ttdef"><b>Definition:</b> <a href="test__planning__scene_8cpp_source.html#l00338">test_planning_scene.cpp:338</a></div></div>
-<div class="ttc" id="aclassplanning__scene_1_1PlanningScene_html_ae1789ae10386a21ffe1fa41e1a590a6c"><div class="ttname"><a href="classplanning__scene_1_1PlanningScene.html#ae1789ae10386a21ffe1fa41e1a590a6c">planning_scene::PlanningScene::getRobotModel</a></div><div class="ttdeci">const moveit::core::RobotModelConstPtr &amp; getRobotModel() const</div><div class="ttdoc">Get the kinematic model for which the planning scene is maintained.</div><div class="ttdef"><b>Definition:</b> <a href="planning__scene_8h_source.html#l00175">planning_scene.h:175</a></div></div>
+<div class="ttc" id="aclasscollision__detection_1_1World_html_a1f31fe9d2e4c623cabb9fa8f88749101"><div class="ttname"><a href="classcollision__detection_1_1World.html#a1f31fe9d2e4c623cabb9fa8f88749101">collision_detection::World::hasObject</a></div><div class="ttdeci">bool hasObject(const std::string &amp;object_id) const</div><div class="ttdoc">Check if a particular object exists in the collision world.</div><div class="ttdef"><b>Definition:</b> <a href="world_8cpp_source.html#l00172">world.cpp:172</a></div></div>
+<div class="ttc" id="atest__planning__scene_8cpp_html_a3c04138a5bfe5d72780bb7e82a18e627"><div class="ttname"><a href="test__planning__scene_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></div><div class="ttdeci">int main(int argc, char **argv)</div><div class="ttdef"><b>Definition:</b> <a href="test__planning__scene_8cpp_source.html#l00234">test_planning_scene.cpp:234</a></div></div>
+<div class="ttc" id="aclassplanning__scene_1_1PlanningScene_html_ae1789ae10386a21ffe1fa41e1a590a6c"><div class="ttname"><a href="classplanning__scene_1_1PlanningScene.html#ae1789ae10386a21ffe1fa41e1a590a6c">planning_scene::PlanningScene::getRobotModel</a></div><div class="ttdeci">const moveit::core::RobotModelConstPtr &amp; getRobotModel() const</div><div class="ttdoc">Get the kinematic model for which the planning scene is maintained.</div><div class="ttdef"><b>Definition:</b> <a href="planning__scene_8h_source.html#l00177">planning_scene.h:177</a></div></div>
 <div class="ttc" id="anamespacemoveit_1_1core_html_a192b65b3ebc8eb7b6ccd155808c68aa1"><div class="ttname"><a href="namespacemoveit_1_1core.html#a192b65b3ebc8eb7b6ccd155808c68aa1">moveit::core::isEmpty</a></div><div class="ttdeci">bool isEmpty(const moveit_msgs::msg::PlanningScene &amp;msg)</div><div class="ttdoc">Check if a message includes any information about a planning scene, or whether it is empty.</div><div class="ttdef"><b>Definition:</b> <a href="message__checks_8cpp_source.html#l00107">message_checks.cpp:107</a></div></div>
+<div class="ttc" id="aclasscollision__detection_1_1World_html_ac555cf977a37a0831673df03b6f41bf3"><div class="ttname"><a href="classcollision__detection_1_1World.html#ac555cf977a37a0831673df03b6f41bf3">collision_detection::World::addToObject</a></div><div class="ttdeci">void addToObject(const std::string &amp;object_id, const std::vector&lt; shapes::ShapeConstPtr &gt; &amp;shapes, const EigenSTL::vector_Isometry3d &amp;poses)</div><div class="ttdoc">Add shapes to an object in the map. This function makes repeated calls to addToObjectInternal() to ad...</div><div class="ttdef"><b>Definition:</b> <a href="world_8cpp_source.html#l00102">world.cpp:102</a></div></div>
 <div class="ttc" id="aplanning__scene_8h_html"><div class="ttname"><a href="planning__scene_8h.html">planning_scene.h</a></div></div>
 <div class="ttc" id="aclasscollision__detection_1_1World_html"><div class="ttname"><a href="classcollision__detection_1_1World.html">collision_detection::World</a></div><div class="ttdoc">Maintain a representation of the environment.</div><div class="ttdef"><b>Definition:</b> <a href="world_8h_source.html#l00058">world.h:58</a></div></div>
 <div class="ttc" id="acollision__detector__allocator__fcl_8h_html"><div class="ttname"><a href="collision__detector__allocator__fcl_8h.html">collision_detector_allocator_fcl.h</a></div></div>
 <div class="ttc" id="aclassmoveit_1_1core_1_1RobotState_html"><div class="ttname"><a href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a></div><div class="ttdoc">Representation of a robot's state. This includes position, velocity, acceleration and effort.</div><div class="ttdef"><b>Definition:</b> <a href="robot__state_8h_source.html#l00155">robot_state.h:155</a></div></div>
 <div class="ttc" id="astructcollision__detection_1_1CollisionRequest_html"><div class="ttname"><a href="structcollision__detection_1_1CollisionRequest.html">collision_detection::CollisionRequest</a></div><div class="ttdoc">Representation of a collision checking request.</div><div class="ttdef"><b>Definition:</b> <a href="include_2moveit_2collision__detection_2collision__common_8h_source.html#l00216">collision_common.h:216</a></div></div>
 <div class="ttc" id="anamespacemoveit_1_1core_html_a9d39f2316f4754a5fe4bd8abe00e7660"><div class="ttname"><a href="namespacemoveit_1_1core.html#a9d39f2316f4754a5fe4bd8abe00e7660">moveit::core::loadModelInterface</a></div><div class="ttdeci">urdf::ModelInterfaceSharedPtr loadModelInterface(const std::string &amp;robot_name)</div><div class="ttdoc">Loads a URDF Model Interface from moveit_resources.</div><div class="ttdef"><b>Definition:</b> <a href="robot__model__test__utils_8cpp_source.html#l00125">robot_model_test_utils.cpp:125</a></div></div>
-<div class="ttc" id="aclassplanning__scene_1_1PlanningScene_html_acb5c51321f5d908072920ee2a2f1db58"><div class="ttname"><a href="classplanning__scene_1_1PlanningScene.html#acb5c51321f5d908072920ee2a2f1db58">planning_scene::PlanningScene::setPlanningSceneMsg</a></div><div class="ttdeci">bool setPlanningSceneMsg(const moveit_msgs::msg::PlanningScene &amp;scene)</div><div class="ttdoc">Set this instance of a planning scene to be the same as the one serialized in the scene message,...</div><div class="ttdef"><b>Definition:</b> <a href="planning__scene_8cpp_source.html#l01209">planning_scene.cpp:1209</a></div></div>
-<div class="ttc" id="aclasscollision__detection_1_1CollisionPluginCache_html"><div class="ttname"><a href="classcollision__detection_1_1CollisionPluginCache.html">collision_detection::CollisionPluginCache</a></div><div class="ttdef"><b>Definition:</b> <a href="collision__plugin__cache_8h_source.html#l00075">collision_plugin_cache.h:75</a></div></div>
-<div class="ttc" id="ainclude_2moveit_2collision__detection_2collision__common_8h_html"><div class="ttname"><a href="include_2moveit_2collision__detection_2collision__common_8h.html">collision_common.h</a></div></div>
-<div class="ttc" id="aclasscollision__detection_1_1CollisionPluginCache_html_a22608240bd9c46b6ba9af89f8ecd003a"><div class="ttname"><a href="classcollision__detection_1_1CollisionPluginCache.html#a22608240bd9c46b6ba9af89f8ecd003a">collision_detection::CollisionPluginCache::activate</a></div><div class="ttdeci">bool activate(const std::string &amp;name, const planning_scene::PlanningScenePtr &amp;scene)</div><div class="ttdoc">Activate a specific collision plugin for the given planning scene instance.</div><div class="ttdef"><b>Definition:</b> <a href="collision__plugin__cache_8cpp_source.html#l00105">collision_plugin_cache.cpp:105</a></div></div>
+<div class="ttc" id="aclassplanning__scene_1_1PlanningScene_html_acb5c51321f5d908072920ee2a2f1db58"><div class="ttname"><a href="classplanning__scene_1_1PlanningScene.html#acb5c51321f5d908072920ee2a2f1db58">planning_scene::PlanningScene::setPlanningSceneMsg</a></div><div class="ttdeci">bool setPlanningSceneMsg(const moveit_msgs::msg::PlanningScene &amp;scene)</div><div class="ttdoc">Set this instance of a planning scene to be the same as the one serialized in the scene message,...</div><div class="ttdef"><b>Definition:</b> <a href="planning__scene_8cpp_source.html#l01148">planning_scene.cpp:1148</a></div></div>
 <div class="ttc" id="aclassplanning__scene_1_1PlanningScene_html"><div class="ttname"><a href="classplanning__scene_1_1PlanningScene.html">planning_scene::PlanningScene</a></div><div class="ttdoc">This class maintains the representation of the environment as seen by a planning instance....</div><div class="ttdef"><b>Definition:</b> <a href="planning__scene_8h_source.html#l00122">planning_scene.h:122</a></div></div>
-<div class="ttc" id="aclasscollision__detection_1_1World_html_a5e18424a37de7f24092f2e7c7898e620"><div class="ttname"><a href="classcollision__detection_1_1World.html#a5e18424a37de7f24092f2e7c7898e620">collision_detection::World::addToObject</a></div><div class="ttdeci">void addToObject(const std::string &amp;object_id, const Eigen::Isometry3d &amp;pose, const std::vector&lt; shapes::ShapeConstPtr &gt; &amp;shapes, const EigenSTL::vector_Isometry3d &amp;shape_poses)</div><div class="ttdoc">Add a pose and shapes to an object in the map. This function makes repeated calls to addToObjectInter...</div><div class="ttdef"><b>Definition:</b> <a href="world_8cpp_source.html#l00103">world.cpp:103</a></div></div>
-<div class="ttc" id="aclassmoveit_1_1core_1_1RobotState_html_aaec5557d55b862d9dd832b3d4c221836"><div class="ttname"><a href="classmoveit_1_1core_1_1RobotState.html#aaec5557d55b862d9dd832b3d4c221836">moveit::core::RobotState::update</a></div><div class="ttdeci">void update(bool force=false)</div><div class="ttdoc">Update all transforms.</div><div class="ttdef"><b>Definition:</b> <a href="robot__state_8cpp_source.html#l00722">robot_state.cpp:722</a></div></div>
 <div class="ttc" id="astructcollision__detection_1_1CollisionResult_html"><div class="ttname"><a href="structcollision__detection_1_1CollisionResult.html">collision_detection::CollisionResult</a></div><div class="ttdoc">Representation of a collision checking result.</div><div class="ttdef"><b>Definition:</b> <a href="include_2moveit_2collision__detection_2collision__common_8h_source.html#l00177">collision_common.h:177</a></div></div>
-<div class="ttc" id="aclassmoveit_1_1core_1_1RobotState_html_aba31c6f758e3dabd32c1acbd069e189e"><div class="ttname"><a href="classmoveit_1_1core_1_1RobotState.html#aba31c6f758e3dabd32c1acbd069e189e">moveit::core::RobotState::setToDefaultValues</a></div><div class="ttdeci">void setToDefaultValues()</div><div class="ttdoc">Set all joints to their default positions. The default position is 0, or if that is not within bounds...</div><div class="ttdef"><b>Definition:</b> <a href="robot__state_8cpp_source.html#l00427">robot_state.cpp:427</a></div></div>
-<div class="ttc" id="acollision__plugin__cache_8h_html"><div class="ttname"><a href="collision__plugin__cache_8h.html">collision_plugin_cache.h</a></div></div>
-<div class="ttc" id="aclassplanning__scene_1_1PlanningScene_html_a1c4051599aa9702d96097634db499621"><div class="ttname"><a href="classplanning__scene_1_1PlanningScene.html#a1c4051599aa9702d96097634db499621">planning_scene::PlanningScene::getPlanningSceneMsg</a></div><div class="ttdeci">void getPlanningSceneMsg(moveit_msgs::msg::PlanningScene &amp;scene) const</div><div class="ttdoc">Construct a message (scene) with all the necessary data so that the scene can be later reconstructed ...</div><div class="ttdef"><b>Definition:</b> <a href="planning__scene_8cpp_source.html#l00801">planning_scene.cpp:801</a></div></div>
+<div class="ttc" id="aclassplanning__scene_1_1PlanningScene_html_a1c4051599aa9702d96097634db499621"><div class="ttname"><a href="classplanning__scene_1_1PlanningScene.html#a1c4051599aa9702d96097634db499621">planning_scene::PlanningScene::getPlanningSceneMsg</a></div><div class="ttdeci">void getPlanningSceneMsg(moveit_msgs::msg::PlanningScene &amp;scene) const</div><div class="ttdoc">Construct a message (scene) with all the necessary data so that the scene can be later reconstructed ...</div><div class="ttdef"><b>Definition:</b> <a href="planning__scene_8cpp_source.html#l00793">planning_scene.cpp:793</a></div></div>
 <div class="ttc" id="aclasscollision__detection_1_1CollisionDetectorAllocatorTemplate_html_a1ea75b81fe9b59894ab81f2ea0faffb6"><div class="ttname"><a href="classcollision__detection_1_1CollisionDetectorAllocatorTemplate.html#a1ea75b81fe9b59894ab81f2ea0faffb6">collision_detection::CollisionDetectorAllocatorTemplate&lt; CollisionEnvFCL, CollisionDetectorAllocatorFCL &gt;::create</a></div><div class="ttdeci">static CollisionDetectorAllocatorPtr create()</div><div class="ttdef"><b>Definition:</b> <a href="collision__detector__allocator_8h_source.html#l00128">collision_detector_allocator.h:128</a></div></div>
-<div class="ttc" id="aclassplanning__scene_1_1PlanningScene_html_a343bc168dde9e2c211d2450f4eb0921a"><div class="ttname"><a href="classplanning__scene_1_1PlanningScene.html#a343bc168dde9e2c211d2450f4eb0921a">planning_scene::PlanningScene::getName</a></div><div class="ttdeci">const std::string &amp; getName() const</div><div class="ttdoc">Get the name of the planning scene. This is empty by default.</div><div class="ttdef"><b>Definition:</b> <a href="planning__scene_8h_source.html#l00141">planning_scene.h:141</a></div></div>
+<div class="ttc" id="aclassplanning__scene_1_1PlanningScene_html_a343bc168dde9e2c211d2450f4eb0921a"><div class="ttname"><a href="classplanning__scene_1_1PlanningScene.html#a343bc168dde9e2c211d2450f4eb0921a">planning_scene::PlanningScene::getName</a></div><div class="ttdeci">const std::string &amp; getName() const</div><div class="ttdoc">Get the name of the planning scene. This is empty by default.</div><div class="ttdef"><b>Definition:</b> <a href="planning__scene_8h_source.html#l00143">planning_scene.h:143</a></div></div>
 <div class="ttc" id="arobot__model__test__utils_8h_html"><div class="ttname"><a href="robot__model__test__utils_8h.html">robot_model_test_utils.h</a></div></div>
-<div class="ttc" id="astructcollision__detection_1_1CollisionResult_html_ad68db09bcc111730f7c4ab1bdff31e67"><div class="ttname"><a href="structcollision__detection_1_1CollisionResult.html#ad68db09bcc111730f7c4ab1bdff31e67">collision_detection::CollisionResult::collision</a></div><div class="ttdeci">bool collision</div><div class="ttdoc">True if collision was found, false otherwise.</div><div class="ttdef"><b>Definition:</b> <a href="include_2moveit_2collision__detection_2collision__common_8h_source.html#l00200">collision_common.h:200</a></div></div>
-<div class="ttc" id="aclassCollisionDetectorTests_html"><div class="ttname"><a href="classCollisionDetectorTests.html">CollisionDetectorTests</a></div><div class="ttdef"><b>Definition:</b> <a href="test__multi__threaded_8cpp_source.html#l00069">test_multi_threaded.cpp:69</a></div></div>
-<div class="ttc" id="astructcollision__detection_1_1CollisionResult_html_ac2f7f5603102be94cda1fe5d5fd1b531"><div class="ttname"><a href="structcollision__detection_1_1CollisionResult.html#ac2f7f5603102be94cda1fe5d5fd1b531">collision_detection::CollisionResult::clear</a></div><div class="ttdeci">EIGEN_MAKE_ALIGNED_OPERATOR_NEW void clear()</div><div class="ttdoc">Clear a previously stored result.</div><div class="ttdef"><b>Definition:</b> <a href="include_2moveit_2collision__detection_2collision__common_8h_source.html#l00187">collision_common.h:187</a></div></div>
 <div class="ttc" id="amessage__checks_8h_html"><div class="ttname"><a href="message__checks_8h.html">message_checks.h</a></div></div>
-<div class="ttc" id="atest__planning__scene_8cpp_html_ac902326be3b24afae4d75c0b45de02f6"><div class="ttname"><a href="test__planning__scene_8cpp.html#ac902326be3b24afae4d75c0b45de02f6">TEST_P</a></div><div class="ttdeci">TEST_P(CollisionDetectorTests, ClearDiff)</div><div class="ttdef"><b>Definition:</b> <a href="test__planning__scene_8cpp_source.html#l00246">test_planning_scene.cpp:246</a></div></div>
 <div class="ttc" id="anamespacemoveit_1_1core_html_a646367a1863f557a16cb8769a2980604"><div class="ttname"><a href="namespacemoveit_1_1core.html#a646367a1863f557a16cb8769a2980604">moveit::core::loadTestingRobotModel</a></div><div class="ttdeci">moveit::core::RobotModelPtr loadTestingRobotModel(const std::string &amp;robot_name)</div><div class="ttdoc">Loads a robot from moveit_resources.</div><div class="ttdef"><b>Definition:</b> <a href="robot__model__test__utils_8cpp_source.html#l00117">robot_model_test_utils.cpp:117</a></div></div>
-<div class="ttc" id="atest__planning__scene_8cpp_html_a4ec3541727e3217cf2cae0bb4aa69d83"><div class="ttname"><a href="test__planning__scene_8cpp.html#a4ec3541727e3217cf2cae0bb4aa69d83">INSTANTIATE_TEST_SUITE_P</a></div><div class="ttdeci">#define INSTANTIATE_TEST_SUITE_P(...)</div><div class="ttdef"><b>Definition:</b> <a href="test__planning__scene_8cpp_source.html#l00332">test_planning_scene.cpp:332</a></div></div>
-<div class="ttc" id="atest__planning__scene_8cpp_html_a8657479fb681ab94486683c9e03019fa"><div class="ttname"><a href="test__planning__scene_8cpp.html#a8657479fb681ab94486683c9e03019fa">TEST</a></div><div class="ttdeci">TEST(PlanningScene, LoadRestore)</div><div class="ttdef"><b>Definition:</b> <a href="test__planning__scene_8cpp_source.html#l00051">test_planning_scene.cpp:51</a></div></div>
+<div class="ttc" id="atest__planning__scene_8cpp_html_a8657479fb681ab94486683c9e03019fa"><div class="ttname"><a href="test__planning__scene_8cpp.html#a8657479fb681ab94486683c9e03019fa">TEST</a></div><div class="ttdeci">TEST(PlanningScene, LoadRestore)</div><div class="ttdef"><b>Definition:</b> <a href="test__planning__scene_8cpp_source.html#l00048">test_planning_scene.cpp:48</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

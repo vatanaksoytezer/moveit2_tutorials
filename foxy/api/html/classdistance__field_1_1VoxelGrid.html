@@ -128,7 +128,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aaaf1e315bb8601fba6c664514e877cdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">deprecated. Use the version with no arguments.  <a href="classdistance__field_1_1VoxelGrid.html#aaaf1e315bb8601fba6c664514e877cdb">More...</a><br /></td></tr>
 <tr class="separator:aaaf1e315bb8601fba6c664514e877cdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab50529a896aec969746feb339a54a7a9"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdistance__field_1_1VoxelGrid.html#ab50529a896aec969746feb339a54a7a9">getOrigin</a> (<a class="el" href="namespacedistance__field.html#a954c8f1a8b902bca58e60b3c5c981801">Dimension</a> dim) const</td></tr>
-<tr class="memdesc:ab50529a896aec969746feb339a54a7a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the origin (minimum point) of the indicated dimension.  <a href="classdistance__field_1_1VoxelGrid.html#ab50529a896aec969746feb339a54a7a9">More...</a><br /></td></tr>
+<tr class="memdesc:ab50529a896aec969746feb339a54a7a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the origin (miniumum point) of the indicated dimension.  <a href="classdistance__field_1_1VoxelGrid.html#ab50529a896aec969746feb339a54a7a9">More...</a><br /></td></tr>
 <tr class="separator:ab50529a896aec969746feb339a54a7a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40e41df085476c8d3a9825ef16533743"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdistance__field_1_1VoxelGrid.html#a40e41df085476c8d3a9825ef16533743">getNumCells</a> (<a class="el" href="namespacedistance__field.html#a954c8f1a8b902bca58e60b3c5c981801">Dimension</a> dim) const</td></tr>
 <tr class="memdesc:a40e41df085476c8d3a9825ef16533743"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of cells in the indicated dimension.  <a href="classdistance__field_1_1VoxelGrid.html#a40e41df085476c8d3a9825ef16533743">More...</a><br /></td></tr>
@@ -185,7 +185,7 @@ Protected Attributes</h2></td></tr>
 <tr class="memdesc:a2961ed3c1fc3f074f413064571862454"><td class="mdescLeft">&#160;</td><td class="mdescRight">1.0/resolution_  <a href="classdistance__field_1_1VoxelGrid.html#a2961ed3c1fc3f074f413064571862454">More...</a><br /></td></tr>
 <tr class="separator:a2961ed3c1fc3f074f413064571862454"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6855d2daab2bc7e256938ae9fb973c5b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdistance__field_1_1VoxelGrid.html#a6855d2daab2bc7e256938ae9fb973c5b">origin_</a> [3]</td></tr>
-<tr class="memdesc:a6855d2daab2bc7e256938ae9fb973c5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The origin (minimum point) of each dimension in meters (in Dimension order)  <a href="classdistance__field_1_1VoxelGrid.html#a6855d2daab2bc7e256938ae9fb973c5b">More...</a><br /></td></tr>
+<tr class="memdesc:a6855d2daab2bc7e256938ae9fb973c5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The origin (minumum point) of each dimension in meters (in Dimension order)  <a href="classdistance__field_1_1VoxelGrid.html#a6855d2daab2bc7e256938ae9fb973c5b">More...</a><br /></td></tr>
 <tr class="separator:a6855d2daab2bc7e256938ae9fb973c5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a46e4e3a1574c1c3223b0bbcec34654d9"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdistance__field_1_1VoxelGrid.html#a46e4e3a1574c1c3223b0bbcec34654d9">origin_minus_</a> [3]</td></tr>
 <tr class="memdesc:a46e4e3a1574c1c3223b0bbcec34654d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">origin - 0.5/resolution  <a href="classdistance__field_1_1VoxelGrid.html#a46e4e3a1574c1c3223b0bbcec34654d9">More...</a><br /></td></tr>
@@ -276,7 +276,7 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 
 <p>Constructor for the <a class="el" href="classdistance__field_1_1VoxelGrid.html" title="VoxelGrid holds a dense 3D, axis-aligned set of data at a given resolution, where the data is supplie...">VoxelGrid</a>. </p>
-<p>Constructs a dense representation of a 3D, axis-aligned volume at a given resolution. The volume can be represented in any consistent set of units, but for the sake of documentation we assume that the units are meters. The size of the the volume is given along each of the X, Y, and Z axes. The volume begins at the minimum point in each dimension, as specified by the origin parameters. The data structure will remain uninitialized until the <a class="el" href="classdistance__field_1_1VoxelGrid.html#a90a51726cde385cce7d4be656371bee9">VoxelGrid::reset</a> function is called.</p>
+<p>Constructs a dense representation of a 3D, axis-aligned volume at a given resolution. The volume can be represented in any consistent set of units, but for the sake of documentation we assume that the units are meters. The size of the the volume is given along each of the X, Y, and Z axes. The volume begins at the minimum point in each dimension, as specified by the origin parameters. The data structure will remain unintialized until the <a class="el" href="classdistance__field_1_1VoxelGrid.html#a90a51726cde385cce7d4be656371bee9">VoxelGrid::reset</a> function is called.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">size_x</td><td>Size of the X axis in meters </td></tr>
@@ -691,7 +691,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Gets the origin (minimum point) of the indicated dimension. </p>
+<p>Gets the origin (miniumum point) of the indicated dimension. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">dim</td><td>The dimension for the query</td></tr>
@@ -1768,7 +1768,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>The origin (minimum point) of each dimension in meters (in Dimension order) </p>
+<p>The origin (minumum point) of each dimension in meters (in Dimension order) </p>
 
 <p class="definition">Definition at line <a class="el" href="voxel__grid_8h_source.html#l00327">327</a> of file <a class="el" href="voxel__grid_8h_source.html">voxel_grid.h</a>.</p>
 

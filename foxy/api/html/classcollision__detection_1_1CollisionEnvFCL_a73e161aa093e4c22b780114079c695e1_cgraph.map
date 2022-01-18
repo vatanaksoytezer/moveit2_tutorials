@@ -1,0 +1,6 @@
+<map id="collision_detection::CollisionEnvFCL::allocSelfCollisionBroadPhase" name="collision_detection::CollisionEnvFCL::allocSelfCollisionBroadPhase">
+<area shape="rect" id="node1" title="Prepares for the collision check through constructing an FCL collision object out of the current robo..." alt="" coords="5,63,204,119"/>
+<area shape="rect" id="node2" href="$classcollision__detection_1_1CollisionEnvFCL.html#a5b29374dd49530e84986558352ff71a3" title="The distance to self&#45;collision given the robot is at state state." alt="" coords="256,5,479,47"/>
+<area shape="rect" id="node3" href="$structcollision__detection_1_1DistanceRequest.html#a3b9a173e3ac3bc7c653f4cdac75f3101" title="Compute active_components_only_ based on req_." alt="" coords="252,71,483,112"/>
+<area shape="rect" id="node4" href="$classcollision__detection_1_1CollisionEnv.html#adc7afd7a2e3ff0fed04bc26717816e26" title="The kinematic model corresponding to this collision model." alt="" coords="259,136,475,177"/>
+</map>

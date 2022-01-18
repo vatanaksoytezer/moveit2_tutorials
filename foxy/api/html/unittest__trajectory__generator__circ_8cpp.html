@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>moveit2: moveit2/moveit_planners/pilz_industrial_motion_planner/test/unit_tests/src/unittest_trajectory_generator_circ.cpp File Reference</title>
+<title>moveit2: moveit2/moveit_planners/pilz_industrial_motion_planner/test/unittest_trajectory_generator_circ.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,13 +62,15 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_a604c952227cf87b5a3218a0034012e1.html">moveit2</a></li><li class="navelem"><a class="el" href="dir_397d57caa61a6ead544bb61b8030bf75.html">moveit_planners</a></li><li class="navelem"><a class="el" href="dir_b42145b99fa2fc2e1a9a76dd5d48e934.html">pilz_industrial_motion_planner</a></li><li class="navelem"><a class="el" href="dir_32106610d8bf69b1c283f4fa4bf1e70c.html">test</a></li><li class="navelem"><a class="el" href="dir_c0e323a8108843403cd65ddcf58c52bb.html">unit_tests</a></li><li class="navelem"><a class="el" href="dir_aeaf384bd36bd7964cb18f189c047c9e.html">src</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_a604c952227cf87b5a3218a0034012e1.html">moveit2</a></li><li class="navelem"><a class="el" href="dir_397d57caa61a6ead544bb61b8030bf75.html">moveit_planners</a></li><li class="navelem"><a class="el" href="dir_b42145b99fa2fc2e1a9a76dd5d48e934.html">pilz_industrial_motion_planner</a></li><li class="navelem"><a class="el" href="dir_32106610d8bf69b1c283f4fa4bf1e70c.html">test</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">unittest_trajectory_generator_circ.cpp File Reference</div>  </div>
 </div><!--header-->
@@ -86,62 +88,61 @@ $(function() {
 <code>#include &quot;<a class="el" href="command__types__typedef_8h_source.html">pilz_industrial_motion_planner_testutils/command_types_typedef.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="xml__testdata__loader_8h_source.html">pilz_industrial_motion_planner_testutils/xml_testdata_loader.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="test__utils_8h_source.html">test_utils.h</a>&quot;</code><br />
-<code>#include &quot;rclcpp/rclcpp.hpp&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for unittest_trajectory_generator_circ.cpp:</div>
 <div class="dyncontent">
-<div class="center"><img src="unittest__trajectory__generator__circ_8cpp__incl.png" border="0" usemap="#moveit2_2moveit__planners_2pilz__industrial__motion__planner_2test_2unit__tests_2src_2unittest__trajectory__generator__circ_8cpp" alt=""/></div>
-<map name="moveit2_2moveit__planners_2pilz__industrial__motion__planner_2test_2unit__tests_2src_2unittest__trajectory__generator__circ_8cpp" id="moveit2_2moveit__planners_2pilz__industrial__motion__planner_2test_2unit__tests_2src_2unittest__trajectory__generator__circ_8cpp">
-<area shape="rect" title=" " alt="" coords="2175,5,2364,91"/>
-<area shape="rect" title=" " alt="" coords="2768,451,2846,477"/>
-<area shape="rect" title=" " alt="" coords="1810,250,1914,277"/>
-<area shape="rect" href="utils_8h.html" title=" " alt="" coords="1632,339,1848,381"/>
-<area shape="rect" href="robot__model_8h.html" title=" " alt="" coords="252,547,407,589"/>
-<area shape="rect" href="robot__model__loader_8h.html" title=" " alt="" coords="401,332,557,388"/>
-<area shape="rect" title=" " alt="" coords="2294,555,2426,581"/>
-<area shape="rect" href="conversions_8h.html" title=" " alt="" coords="1207,339,1354,381"/>
-<area shape="rect" title=" " alt="" coords="3324,153,3484,180"/>
-<area shape="rect" title=" " alt="" coords="1938,243,2113,284"/>
-<area shape="rect" href="joint__limits__aggregator_8h.html" title=" " alt="" coords="2876,332,3042,388"/>
-<area shape="rect" href="trajectory__generator__circ_8h.html" title=" " alt="" coords="2734,139,2949,195"/>
-<area shape="rect" href="command__types__typedef_8h.html" title=" " alt="" coords="3509,139,3716,195"/>
-<area shape="rect" href="xml__testdata__loader_8h.html" title=" " alt="" coords="3194,332,3361,388"/>
-<area shape="rect" href="test__utils_8h.html" title=" " alt="" coords="2154,153,2249,180"/>
-<area shape="rect" title=" " alt="" coords="1874,451,2121,477"/>
-<area shape="rect" title=" " alt="" coords="1433,443,1629,485"/>
-<area shape="rect" title=" " alt="" coords="956,443,1151,485"/>
-<area shape="rect" title=" " alt="" coords="1176,443,1409,485"/>
-<area shape="rect" href="robot__state_8h.html" title=" " alt="" coords="1654,443,1800,485"/>
-<area shape="rect" title=" " alt="" coords="2610,651,2668,678"/>
-<area shape="rect" href="transforms_8h.html" title=" " alt="" coords="1653,555,1884,581"/>
-<area shape="rect" href="class__forward_8h.html" title=" " alt="" coords="1546,644,1703,685"/>
-<area shape="rect" href="exceptions_8h.html" title=" " alt="" coords="322,651,553,678"/>
-<area shape="rect" title=" " alt="" coords="36,741,170,767"/>
-<area shape="rect" href="joint__model__group_8h.html" title=" " alt="" coords="88,644,246,685"/>
-<area shape="rect" title=" " alt="" coords="798,823,878,849"/>
-<area shape="rect" title=" " alt="" coords="1354,823,1481,849"/>
-<area shape="rect" href="fixed__joint__model_8h.html" title=" " alt="" coords="578,644,732,685"/>
-<area shape="rect" href="floating__joint__model_8h.html" title=" " alt="" coords="756,644,927,685"/>
-<area shape="rect" href="planar__joint__model_8h.html" title=" " alt="" coords="951,644,1114,685"/>
-<area shape="rect" href="revolute__joint__model_8h.html" title=" " alt="" coords="1138,644,1314,685"/>
-<area shape="rect" href="prismatic__joint__model_8h.html" title=" " alt="" coords="1338,644,1521,685"/>
-<area shape="rect" href="joint__model_8h.html" title=" " alt="" coords="1051,733,1206,775"/>
-<area shape="rect" title=" " alt="" coords="3030,823,3080,849"/>
-<area shape="rect" href="rdf__loader_8h.html" title=" " alt="" coords="516,443,676,485"/>
-<area shape="rect" href="kinematics__plugin__loader_8h.html" title=" " alt="" coords="248,436,441,492"/>
-<area shape="rect" title=" " alt="" coords="701,443,881,485"/>
-<area shape="rect" href="joint__limits__container_8h.html" title=" " alt="" coords="3022,436,3189,492"/>
-<area shape="rect" href="joint__limits__extension_8h.html" title=" " alt="" coords="2972,540,3138,596"/>
-<area shape="rect" href="planning__interface_8h.html" title=" " alt="" coords="2449,443,2642,485"/>
-<area shape="rect" href="planning__response_8h.html" title=" " alt="" coords="2702,547,2896,589"/>
-<area shape="rect" title=" " alt="" coords="2734,250,2880,277"/>
-<area shape="rect" title=" " alt="" coords="2905,250,3008,277"/>
-<area shape="rect" title=" " alt="" coords="3032,250,3198,277"/>
-<area shape="rect" href="planning__scene_8h.html" title=" " alt="" coords="2150,339,2323,381"/>
-<area shape="rect" href="trajectory__generator_8h.html" title=" " alt="" coords="2432,243,2659,284"/>
-<area shape="rect" title=" " alt="" coords="3424,250,3560,277"/>
-<area shape="rect" href="ptp_8h.html" title=" " alt="" coords="3585,250,3640,277"/>
-<area shape="rect" href="lin_8h.html" title=" " alt="" coords="3664,250,3715,277"/>
+<div class="center"><img src="unittest__trajectory__generator__circ_8cpp__incl.png" border="0" usemap="#moveit2_2moveit__planners_2pilz__industrial__motion__planner_2test_2unittest__trajectory__generator__circ_8cpp" alt=""/></div>
+<map name="moveit2_2moveit__planners_2pilz__industrial__motion__planner_2test_2unittest__trajectory__generator__circ_8cpp" id="moveit2_2moveit__planners_2pilz__industrial__motion__planner_2test_2unittest__trajectory__generator__circ_8cpp">
+<area shape="rect" title=" " alt="" coords="2427,5,2657,76"/>
+<area shape="rect" title=" " alt="" coords="3343,347,3421,373"/>
+<area shape="rect" title=" " alt="" coords="2257,243,2361,269"/>
+<area shape="rect" href="utils_8h.html" title=" " alt="" coords="1538,235,1754,277"/>
+<area shape="rect" href="robot__model_8h.html" title=" " alt="" coords="529,443,683,485"/>
+<area shape="rect" href="robot__model__loader_8h.html" title=" " alt="" coords="663,228,819,284"/>
+<area shape="rect" href="conversions_8h.html" title=" " alt="" coords="2042,235,2189,277"/>
+<area shape="rect" title=" " alt="" coords="2462,139,2622,165"/>
+<area shape="rect" title=" " alt="" coords="2497,235,2672,277"/>
+<area shape="rect" href="joint__limits__aggregator_8h.html" title=" " alt="" coords="2611,332,2777,388"/>
+<area shape="rect" href="trajectory__generator__circ_8h.html" title=" " alt="" coords="2748,228,2963,284"/>
+<area shape="rect" href="command__types__typedef_8h.html" title=" " alt="" coords="3123,124,3329,180"/>
+<area shape="rect" href="xml__testdata__loader_8h.html" title=" " alt="" coords="3435,228,3601,284"/>
+<area shape="rect" href="test__utils_8h.html" title=" " alt="" coords="2343,139,2437,165"/>
+<area shape="rect" title=" " alt="" coords="1611,347,1857,373"/>
+<area shape="rect" title=" " alt="" coords="829,339,1025,381"/>
+<area shape="rect" title=" " alt="" coords="1050,339,1245,381"/>
+<area shape="rect" title=" " alt="" coords="1269,339,1503,381"/>
+<area shape="rect" href="robot__state_8h.html" title=" " alt="" coords="1882,339,2029,381"/>
+<area shape="rect" title=" " alt="" coords="1527,347,1586,373"/>
+<area shape="rect" href="transforms_8h.html" title=" " alt="" coords="1869,451,2100,477"/>
+<area shape="rect" href="class__forward_8h.html" title=" " alt="" coords="1547,547,1705,589"/>
+<area shape="rect" href="exceptions_8h.html" title=" " alt="" coords="1008,555,1239,581"/>
+<area shape="rect" title=" " alt="" coords="1339,651,1473,678"/>
+<area shape="rect" href="joint__model__group_8h.html" title=" " alt="" coords="1263,547,1421,589"/>
+<area shape="rect" title=" " alt="" coords="409,733,489,760"/>
+<area shape="rect" title=" " alt="" coords="1725,733,1852,760"/>
+<area shape="rect" href="fixed__joint__model_8h.html" title=" " alt="" coords="247,547,402,589"/>
+<area shape="rect" href="floating__joint__model_8h.html" title=" " alt="" coords="426,547,597,589"/>
+<area shape="rect" href="planar__joint__model_8h.html" title=" " alt="" coords="621,547,783,589"/>
+<area shape="rect" href="revolute__joint__model_8h.html" title=" " alt="" coords="807,547,983,589"/>
+<area shape="rect" href="prismatic__joint__model_8h.html" title=" " alt="" coords="40,547,223,589"/>
+<area shape="rect" href="joint__model_8h.html" title=" " alt="" coords="721,644,875,685"/>
+<area shape="rect" title=" " alt="" coords="2638,733,2689,760"/>
+<area shape="rect" href="rdf__loader_8h.html" title=" " alt="" coords="1546,443,1706,485"/>
+<area shape="rect" href="kinematics__plugin__loader_8h.html" title=" " alt="" coords="509,332,703,388"/>
+<area shape="rect" title=" " alt="" coords="2104,339,2284,381"/>
+<area shape="rect" href="joint__limits__container_8h.html" title=" " alt="" coords="2701,436,2868,492"/>
+<area shape="rect" href="joint__limits__extension_8h.html" title=" " alt="" coords="2580,540,2747,596"/>
+<area shape="rect" title=" " alt="" coords="2547,451,2625,477"/>
+<area shape="rect" href="planning__interface_8h.html" title=" " alt="" coords="2176,443,2369,485"/>
+<area shape="rect" href="planning__response_8h.html" title=" " alt="" coords="2337,547,2531,589"/>
+<area shape="rect" title=" " alt="" coords="2802,347,2949,373"/>
+<area shape="rect" title=" " alt="" coords="2973,347,3076,373"/>
+<area shape="rect" title=" " alt="" coords="3100,347,3267,373"/>
+<area shape="rect" href="trajectory__generator_8h.html" title=" " alt="" coords="2309,339,2535,381"/>
+<area shape="rect" title=" " alt="" coords="3038,243,3174,269"/>
+<area shape="rect" href="ptp_8h.html" title=" " alt="" coords="3199,243,3253,269"/>
+<area shape="rect" href="lin_8h.html" title=" " alt="" coords="3278,243,3329,269"/>
+<area shape="rect" href="circ_8h.html" title=" " alt="" coords="3353,243,3411,269"/>
 </map>
 </div>
 </div>
@@ -152,95 +153,262 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ae231d747760c27d9982e3da0d41117f2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#ae231d747760c27d9982e3da0d41117f2">SKIP_IF_GRIPPER</a></td></tr>
+<tr class="separator:ae231d747760c27d9982e3da0d41117f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a7bc9a83583c62287a92aaad52a43c6c5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#a7bc9a83583c62287a92aaad52a43c6c5">TEST_F</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, TestExceptionErrorCodeMapping)</td></tr>
-<tr class="memdesc:a7bc9a83583c62287a92aaad52a43c6c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks that each derived MoveItErrorCodeException contains the correct error code.  <a href="unittest__trajectory__generator__circ_8cpp.html#a7bc9a83583c62287a92aaad52a43c6c5">More...</a><br /></td></tr>
-<tr class="separator:a7bc9a83583c62287a92aaad52a43c6c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae67a13bbe31cba7a4e422f608faac332"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#ae67a13bbe31cba7a4e422f608faac332">TEST_F</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, noLimits)</td></tr>
-<tr class="memdesc:ae67a13bbe31cba7a4e422f608faac332"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a TrajectoryGeneratorCirc with no limits given.  <a href="unittest__trajectory__generator__circ_8cpp.html#ae67a13bbe31cba7a4e422f608faac332">More...</a><br /></td></tr>
-<tr class="separator:ae67a13bbe31cba7a4e422f608faac332"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a50d0e891fb56866ad95106279ee3ddf8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#a50d0e891fb56866ad95106279ee3ddf8">TEST_F</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, incompleteStartState)</td></tr>
-<tr class="memdesc:a50d0e891fb56866ad95106279ee3ddf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">test invalid motion plan request with incomplete start state and cartesian goal  <a href="unittest__trajectory__generator__circ_8cpp.html#a50d0e891fb56866ad95106279ee3ddf8">More...</a><br /></td></tr>
-<tr class="separator:a50d0e891fb56866ad95106279ee3ddf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a712ccd0b869abc649f4b6180f0f81471"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#a712ccd0b869abc649f4b6180f0f81471">TEST_F</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, nonZeroStartVelocity)</td></tr>
-<tr class="memdesc:a712ccd0b869abc649f4b6180f0f81471"><td class="mdescLeft">&#160;</td><td class="mdescRight">test invalid motion plan request with non zero start velocity  <a href="unittest__trajectory__generator__circ_8cpp.html#a712ccd0b869abc649f4b6180f0f81471">More...</a><br /></td></tr>
-<tr class="separator:a712ccd0b869abc649f4b6180f0f81471"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3054edfedaa6f3b308a003a23800c78b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#a3054edfedaa6f3b308a003a23800c78b">TEST_F</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, ValidCommand)</td></tr>
-<tr class="separator:a3054edfedaa6f3b308a003a23800c78b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4277dbf88a7485be41bc1b243cb791a9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#a4277dbf88a7485be41bc1b243cb791a9">TEST_F</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, velScaleToHigh)</td></tr>
-<tr class="memdesc:a4277dbf88a7485be41bc1b243cb791a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate invalid circ with to high vel scaling.  <a href="unittest__trajectory__generator__circ_8cpp.html#a4277dbf88a7485be41bc1b243cb791a9">More...</a><br /></td></tr>
-<tr class="separator:a4277dbf88a7485be41bc1b243cb791a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a62abb677be1b82415113a497feae87"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#a7a62abb677be1b82415113a497feae87">TEST_F</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, accScaleToHigh)</td></tr>
-<tr class="memdesc:a7a62abb677be1b82415113a497feae87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate invalid circ with to high acc scaling.  <a href="unittest__trajectory__generator__circ_8cpp.html#a7a62abb677be1b82415113a497feae87">More...</a><br /></td></tr>
-<tr class="separator:a7a62abb677be1b82415113a497feae87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35e17f43496ddb9bf06a6bb6dbe3347d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#a35e17f43496ddb9bf06a6bb6dbe3347d">TEST_F</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, samePointsWithCenter)</td></tr>
-<tr class="memdesc:a35e17f43496ddb9bf06a6bb6dbe3347d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use three points (with center) with a really small distance between to trigger a internal throw from <a class="el" href="namespaceKDL.html">KDL</a>.  <a href="unittest__trajectory__generator__circ_8cpp.html#a35e17f43496ddb9bf06a6bb6dbe3347d">More...</a><br /></td></tr>
-<tr class="separator:a35e17f43496ddb9bf06a6bb6dbe3347d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44c9b305efb76eae242f1631c93b868c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#a44c9b305efb76eae242f1631c93b868c">TEST_F</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, samePointsWithInterim)</td></tr>
-<tr class="memdesc:a44c9b305efb76eae242f1631c93b868c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use three points (with interim) with a really small distance between.  <a href="unittest__trajectory__generator__circ_8cpp.html#a44c9b305efb76eae242f1631c93b868c">More...</a><br /></td></tr>
-<tr class="separator:a44c9b305efb76eae242f1631c93b868c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ab8d79e7af5dc9b8dc7dcf46560c3ee"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#a0ab8d79e7af5dc9b8dc7dcf46560c3ee">TEST_F</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, emptyAux)</td></tr>
-<tr class="memdesc:a0ab8d79e7af5dc9b8dc7dcf46560c3ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">test invalid motion plan request with no aux point defined  <a href="unittest__trajectory__generator__circ_8cpp.html#a0ab8d79e7af5dc9b8dc7dcf46560c3ee">More...</a><br /></td></tr>
-<tr class="separator:a0ab8d79e7af5dc9b8dc7dcf46560c3ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa24c4e1ee2ec30be3b7fe38f21f7c84c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#aa24c4e1ee2ec30be3b7fe38f21f7c84c">TEST_F</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, invalidAuxName)</td></tr>
-<tr class="memdesc:aa24c4e1ee2ec30be3b7fe38f21f7c84c"><td class="mdescLeft">&#160;</td><td class="mdescRight">test invalid motion plan request with no aux name defined  <a href="unittest__trajectory__generator__circ_8cpp.html#aa24c4e1ee2ec30be3b7fe38f21f7c84c">More...</a><br /></td></tr>
-<tr class="separator:aa24c4e1ee2ec30be3b7fe38f21f7c84c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60586b452e8f3c0db750f4612fd1b248"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#a60586b452e8f3c0db750f4612fd1b248">TEST_F</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, invalidAuxLinkName)</td></tr>
-<tr class="memdesc:a60586b452e8f3c0db750f4612fd1b248"><td class="mdescLeft">&#160;</td><td class="mdescRight">test invalid motion plan request with invalid link name in the auxiliary point  <a href="unittest__trajectory__generator__circ_8cpp.html#a60586b452e8f3c0db750f4612fd1b248">More...</a><br /></td></tr>
-<tr class="separator:a60586b452e8f3c0db750f4612fd1b248"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a777abc5a9ba5f7c13f8304fdffc3d474"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#a777abc5a9ba5f7c13f8304fdffc3d474">TEST_F</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, invalidCenter)</td></tr>
-<tr class="memdesc:a777abc5a9ba5f7c13f8304fdffc3d474"><td class="mdescLeft">&#160;</td><td class="mdescRight">test the circ planner with invalid center point  <a href="unittest__trajectory__generator__circ_8cpp.html#a777abc5a9ba5f7c13f8304fdffc3d474">More...</a><br /></td></tr>
-<tr class="separator:a777abc5a9ba5f7c13f8304fdffc3d474"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:addfd71a41902fc21ec43a9d21ac1daba"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#addfd71a41902fc21ec43a9d21ac1daba">TEST_F</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, colinearCenter)</td></tr>
-<tr class="memdesc:addfd71a41902fc21ec43a9d21ac1daba"><td class="mdescLeft">&#160;</td><td class="mdescRight">test the circ planner with colinear start/goal/center position  <a href="unittest__trajectory__generator__circ_8cpp.html#addfd71a41902fc21ec43a9d21ac1daba">More...</a><br /></td></tr>
-<tr class="separator:addfd71a41902fc21ec43a9d21ac1daba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e65663b9bcfa7d899db46e5b9d8bedf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#a5e65663b9bcfa7d899db46e5b9d8bedf">TEST_F</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, colinearInterim)</td></tr>
-<tr class="memdesc:a5e65663b9bcfa7d899db46e5b9d8bedf"><td class="mdescLeft">&#160;</td><td class="mdescRight">test the circ planner with colinear start/goal/interim position  <a href="unittest__trajectory__generator__circ_8cpp.html#a5e65663b9bcfa7d899db46e5b9d8bedf">More...</a><br /></td></tr>
-<tr class="separator:a5e65663b9bcfa7d899db46e5b9d8bedf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6d01fee975a016668ab8f2837b687d0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#aa6d01fee975a016668ab8f2837b687d0">TEST_F</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, colinearCenterDueToInterim)</td></tr>
-<tr class="memdesc:aa6d01fee975a016668ab8f2837b687d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">test the circ planner with half circle with interim point  <a href="unittest__trajectory__generator__circ_8cpp.html#aa6d01fee975a016668ab8f2837b687d0">More...</a><br /></td></tr>
-<tr class="separator:aa6d01fee975a016668ab8f2837b687d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a227aaed19eb6710adbc95752ef7b753c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#a227aaed19eb6710adbc95752ef7b753c">TEST_F</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, colinearCenterAndInterim)</td></tr>
-<tr class="memdesc:a227aaed19eb6710adbc95752ef7b753c"><td class="mdescLeft">&#160;</td><td class="mdescRight">test the circ planner with colinear start/center/interim positions  <a href="unittest__trajectory__generator__circ_8cpp.html#a227aaed19eb6710adbc95752ef7b753c">More...</a><br /></td></tr>
-<tr class="separator:a227aaed19eb6710adbc95752ef7b753c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25e654ac380a034edda8e0f0554e0a2a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#a25e654ac380a034edda8e0f0554e0a2a">TEST_F</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, interimLarger180Degree)</td></tr>
-<tr class="memdesc:a25e654ac380a034edda8e0f0554e0a2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">test the circ planner with a circ path where the angle between goal and interim is larger than 180 degree  <a href="unittest__trajectory__generator__circ_8cpp.html#a25e654ac380a034edda8e0f0554e0a2a">More...</a><br /></td></tr>
-<tr class="separator:a25e654ac380a034edda8e0f0554e0a2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28c7bd532ae7de5217c68db32ace4ba5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#a28c7bd532ae7de5217c68db32ace4ba5">TEST_F</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, centerPointJointGoal)</td></tr>
-<tr class="memdesc:a28c7bd532ae7de5217c68db32ace4ba5"><td class="mdescLeft">&#160;</td><td class="mdescRight">test the circ planner with center point and joint goal  <a href="unittest__trajectory__generator__circ_8cpp.html#a28c7bd532ae7de5217c68db32ace4ba5">More...</a><br /></td></tr>
-<tr class="separator:a28c7bd532ae7de5217c68db32ace4ba5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b22e28ae0841baedd680562586d47fb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#a4b22e28ae0841baedd680562586d47fb">TEST_F</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, InvalidAdditionalPrimitivePose)</td></tr>
-<tr class="memdesc:a4b22e28ae0841baedd680562586d47fb"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classA.html">A</a> valid circ request contains a helping point (interim or center), in this test a additional point is defined as an invalid test case.  <a href="unittest__trajectory__generator__circ_8cpp.html#a4b22e28ae0841baedd680562586d47fb">More...</a><br /></td></tr>
-<tr class="separator:a4b22e28ae0841baedd680562586d47fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a38b519e76b65d4f597d69f8ffe6f4635"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#a38b519e76b65d4f597d69f8ffe6f4635">TEST_F</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, InvalidExtraJointConstraint)</td></tr>
-<tr class="memdesc:a38b519e76b65d4f597d69f8ffe6f4635"><td class="mdescLeft">&#160;</td><td class="mdescRight">Joint Goals are expected to match the start state in number and joint_names Here an additional joint constraints is "falsely" defined to check for the error.  <a href="unittest__trajectory__generator__circ_8cpp.html#a38b519e76b65d4f597d69f8ffe6f4635">More...</a><br /></td></tr>
-<tr class="separator:a38b519e76b65d4f597d69f8ffe6f4635"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a329301aa0963c15c9b353cda817b4e84"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#a329301aa0963c15c9b353cda817b4e84">TEST_F</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, CenterPointPoseGoal)</td></tr>
-<tr class="memdesc:a329301aa0963c15c9b353cda817b4e84"><td class="mdescLeft">&#160;</td><td class="mdescRight">test the circ planner with center point and pose goal  <a href="unittest__trajectory__generator__circ_8cpp.html#a329301aa0963c15c9b353cda817b4e84">More...</a><br /></td></tr>
-<tr class="separator:a329301aa0963c15c9b353cda817b4e84"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa46323e071d7148422033b310d9ce84a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#aa46323e071d7148422033b310d9ce84a">TEST_F</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, CenterPointPoseGoalFrameIdPositionConstraints)</td></tr>
-<tr class="memdesc:aa46323e071d7148422033b310d9ce84a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a frame id only on the position constrainst.  <a href="unittest__trajectory__generator__circ_8cpp.html#aa46323e071d7148422033b310d9ce84a">More...</a><br /></td></tr>
-<tr class="separator:aa46323e071d7148422033b310d9ce84a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec2a22453a2577b978d4fda38829d3cf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#aec2a22453a2577b978d4fda38829d3cf">TEST_F</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, CenterPointPoseGoalFrameIdOrientationConstraints)</td></tr>
-<tr class="memdesc:aec2a22453a2577b978d4fda38829d3cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a frame id only on the orientation constrainst.  <a href="unittest__trajectory__generator__circ_8cpp.html#aec2a22453a2577b978d4fda38829d3cf">More...</a><br /></td></tr>
-<tr class="separator:aec2a22453a2577b978d4fda38829d3cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace34c01dde984e8b2d94e46ff1618edb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#ace34c01dde984e8b2d94e46ff1618edb">TEST_F</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, CenterPointPoseGoalFrameIdBothConstraints)</td></tr>
-<tr class="memdesc:ace34c01dde984e8b2d94e46ff1618edb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a frame_id on both position and orientation constraints.  <a href="unittest__trajectory__generator__circ_8cpp.html#ace34c01dde984e8b2d94e46ff1618edb">More...</a><br /></td></tr>
-<tr class="separator:ace34c01dde984e8b2d94e46ff1618edb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab1721b6ec39ba29c611c290937d5877"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#aab1721b6ec39ba29c611c290937d5877">TEST_F</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, InterimPointJointGoal)</td></tr>
-<tr class="memdesc:aab1721b6ec39ba29c611c290937d5877"><td class="mdescLeft">&#160;</td><td class="mdescRight">test the circ planner with interim point with joint goal  <a href="unittest__trajectory__generator__circ_8cpp.html#aab1721b6ec39ba29c611c290937d5877">More...</a><br /></td></tr>
-<tr class="separator:aab1721b6ec39ba29c611c290937d5877"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04adb4350cabb8cf2fd1a51d68b77d2c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#a04adb4350cabb8cf2fd1a51d68b77d2c">TEST_F</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, InterimPointJointGoalStartVelNearZero)</td></tr>
-<tr class="memdesc:a04adb4350cabb8cf2fd1a51d68b77d2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">test the circ planner with interim point with joint goal and a close to zero velocity of the start state  <a href="unittest__trajectory__generator__circ_8cpp.html#a04adb4350cabb8cf2fd1a51d68b77d2c">More...</a><br /></td></tr>
-<tr class="separator:a04adb4350cabb8cf2fd1a51d68b77d2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab77a8cd27016ff759e7ce705625d086f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#ab77a8cd27016ff759e7ce705625d086f">TEST_F</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, InterimPointPoseGoal)</td></tr>
-<tr class="memdesc:ab77a8cd27016ff759e7ce705625d086f"><td class="mdescLeft">&#160;</td><td class="mdescRight">test the circ planner with interim point with pose goal  <a href="unittest__trajectory__generator__circ_8cpp.html#ab77a8cd27016ff759e7ce705625d086f">More...</a><br /></td></tr>
-<tr class="separator:ab77a8cd27016ff759e7ce705625d086f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab52141f7c51b11e67584b679ae66caf7"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#ab52141f7c51b11e67584b679ae66caf7">TEST_DATA_FILE_NAME</a> (&quot;testdata_file_name&quot;)</td></tr>
+<tr class="separator:ab52141f7c51b11e67584b679ae66caf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0258d4e48c5d63bd1bb8c56e97bd09af"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#a0258d4e48c5d63bd1bb8c56e97bd09af">PARAM_PLANNING_GROUP_NAME</a> (&quot;planning_group&quot;)</td></tr>
+<tr class="separator:a0258d4e48c5d63bd1bb8c56e97bd09af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ef26f92433dcdbf9ac9c73dfdf72ac8"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#a3ef26f92433dcdbf9ac9c73dfdf72ac8">PARAM_TARGET_LINK_NAME</a> (&quot;target_link&quot;)</td></tr>
+<tr class="separator:a3ef26f92433dcdbf9ac9c73dfdf72ac8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e07c84bf56da2c00952d86e171b1d3f"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#a4e07c84bf56da2c00952d86e171b1d3f">CARTESIAN_POSITION_TOLERANCE</a> (&quot;cartesian_position_tolerance&quot;)</td></tr>
+<tr class="separator:a4e07c84bf56da2c00952d86e171b1d3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3172527b2636f4be1e4cb4c8054c2146"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#a3172527b2636f4be1e4cb4c8054c2146">ANGULAR_ACC_TOLERANCE</a> (&quot;angular_acc_tolerance&quot;)</td></tr>
+<tr class="separator:a3172527b2636f4be1e4cb4c8054c2146"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22ea2026f42d7d03ff263bb5dadafda7"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#a22ea2026f42d7d03ff263bb5dadafda7">ROTATION_AXIS_NORM_TOLERANCE</a> (&quot;rot_axis_norm_tolerance&quot;)</td></tr>
+<tr class="separator:a22ea2026f42d7d03ff263bb5dadafda7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae22e3753374e2a1338a894cf50cf9e5a"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#ae22e3753374e2a1338a894cf50cf9e5a">ACCELERATION_TOLERANCE</a> (&quot;acceleration_tolerance&quot;)</td></tr>
+<tr class="separator:ae22e3753374e2a1338a894cf50cf9e5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2b5e395155711586a6cb2fc4c8ab77e"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#ae2b5e395155711586a6cb2fc4c8ab77e">OTHER_TOLERANCE</a> (&quot;other_tolerance&quot;)</td></tr>
+<tr class="separator:ae2b5e395155711586a6cb2fc4c8ab77e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23003e296ac7732633d20a3975f28ea8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#a23003e296ac7732633d20a3975f28ea8">TEST</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, TestExceptionErrorCodeMapping)</td></tr>
+<tr class="memdesc:a23003e296ac7732633d20a3975f28ea8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks that each derived MoveItErrorCodeException contains the correct error code.  <a href="unittest__trajectory__generator__circ_8cpp.html#a23003e296ac7732633d20a3975f28ea8">More...</a><br /></td></tr>
+<tr class="separator:a23003e296ac7732633d20a3975f28ea8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53810c52b49231d3826f9edf434719e2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#a53810c52b49231d3826f9edf434719e2">INSTANTIATE_TEST_SUITE_P</a> (InstantiationName, <a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, ::testing::Values(<a class="el" href="unittest__trajectory__generator__ptp_8cpp.html#aa7f9383e07e7c03560917dd18d1f761b">PARAM_MODEL_NO_GRIPPER_NAME</a>, <a class="el" href="unittest__trajectory__generator__ptp_8cpp.html#a1ca4023b540762bab834d86532ceb22f">PARAM_MODEL_WITH_GRIPPER_NAME</a>))</td></tr>
+<tr class="separator:a53810c52b49231d3826f9edf434719e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55d055ecd59416baeadb00724e518a49"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#a55d055ecd59416baeadb00724e518a49">TEST_P</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, noLimits)</td></tr>
+<tr class="memdesc:a55d055ecd59416baeadb00724e518a49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a TrajectoryGeneratorCirc with no limits given.  <a href="unittest__trajectory__generator__circ_8cpp.html#a55d055ecd59416baeadb00724e518a49">More...</a><br /></td></tr>
+<tr class="separator:a55d055ecd59416baeadb00724e518a49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1070634e35e95c854bb3dabf9af54d9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#ac1070634e35e95c854bb3dabf9af54d9">TEST_P</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, incompleteStartState)</td></tr>
+<tr class="memdesc:ac1070634e35e95c854bb3dabf9af54d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">test invalid motion plan request with incomplete start state and cartesian goal  <a href="unittest__trajectory__generator__circ_8cpp.html#ac1070634e35e95c854bb3dabf9af54d9">More...</a><br /></td></tr>
+<tr class="separator:ac1070634e35e95c854bb3dabf9af54d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf090c8c0b2fb0fa829e4857e02f6907"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#acf090c8c0b2fb0fa829e4857e02f6907">TEST_P</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, nonZeroStartVelocity)</td></tr>
+<tr class="memdesc:acf090c8c0b2fb0fa829e4857e02f6907"><td class="mdescLeft">&#160;</td><td class="mdescRight">test invalid motion plan request with non zero start velocity  <a href="unittest__trajectory__generator__circ_8cpp.html#acf090c8c0b2fb0fa829e4857e02f6907">More...</a><br /></td></tr>
+<tr class="separator:acf090c8c0b2fb0fa829e4857e02f6907"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a765dcf9b06dcc217fc5b2bfeb92d25a1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#a765dcf9b06dcc217fc5b2bfeb92d25a1">TEST_P</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, ValidCommand)</td></tr>
+<tr class="separator:a765dcf9b06dcc217fc5b2bfeb92d25a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf0fad1f32acf2d67dff83cd272de9be"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#aaf0fad1f32acf2d67dff83cd272de9be">TEST_P</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, velScaleToHigh)</td></tr>
+<tr class="memdesc:aaf0fad1f32acf2d67dff83cd272de9be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate invalid circ with to high vel scaling.  <a href="unittest__trajectory__generator__circ_8cpp.html#aaf0fad1f32acf2d67dff83cd272de9be">More...</a><br /></td></tr>
+<tr class="separator:aaf0fad1f32acf2d67dff83cd272de9be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7ae06e0bbe2defb07f1c1758d6da9eb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#ab7ae06e0bbe2defb07f1c1758d6da9eb">TEST_P</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, accScaleToHigh)</td></tr>
+<tr class="memdesc:ab7ae06e0bbe2defb07f1c1758d6da9eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate invalid circ with to high acc scaling.  <a href="unittest__trajectory__generator__circ_8cpp.html#ab7ae06e0bbe2defb07f1c1758d6da9eb">More...</a><br /></td></tr>
+<tr class="separator:ab7ae06e0bbe2defb07f1c1758d6da9eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3e80fc96823d9536a14f94473499127"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#ae3e80fc96823d9536a14f94473499127">TEST_P</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, samePointsWithCenter)</td></tr>
+<tr class="memdesc:ae3e80fc96823d9536a14f94473499127"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use three points (with center) with a really small distance between to trigger a internal throw from <a class="el" href="namespaceKDL.html">KDL</a>.  <a href="unittest__trajectory__generator__circ_8cpp.html#ae3e80fc96823d9536a14f94473499127">More...</a><br /></td></tr>
+<tr class="separator:ae3e80fc96823d9536a14f94473499127"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70a48280a06544c1ac4954e6a98f4235"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#a70a48280a06544c1ac4954e6a98f4235">TEST_P</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, samePointsWithInterim)</td></tr>
+<tr class="memdesc:a70a48280a06544c1ac4954e6a98f4235"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use three points (with interim) with a really small distance between.  <a href="unittest__trajectory__generator__circ_8cpp.html#a70a48280a06544c1ac4954e6a98f4235">More...</a><br /></td></tr>
+<tr class="separator:a70a48280a06544c1ac4954e6a98f4235"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2beca7d6a93250702bff9c218a82f4e5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#a2beca7d6a93250702bff9c218a82f4e5">TEST_P</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, emptyAux)</td></tr>
+<tr class="memdesc:a2beca7d6a93250702bff9c218a82f4e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">test invalid motion plan request with no aux point defined  <a href="unittest__trajectory__generator__circ_8cpp.html#a2beca7d6a93250702bff9c218a82f4e5">More...</a><br /></td></tr>
+<tr class="separator:a2beca7d6a93250702bff9c218a82f4e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a069f1219e121c5776d23c7e8a8b9f1a5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#a069f1219e121c5776d23c7e8a8b9f1a5">TEST_P</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, invalidAuxName)</td></tr>
+<tr class="memdesc:a069f1219e121c5776d23c7e8a8b9f1a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">test invalid motion plan request with no aux name defined  <a href="unittest__trajectory__generator__circ_8cpp.html#a069f1219e121c5776d23c7e8a8b9f1a5">More...</a><br /></td></tr>
+<tr class="separator:a069f1219e121c5776d23c7e8a8b9f1a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6049368c79c77e4afb75417a0bc1103e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#a6049368c79c77e4afb75417a0bc1103e">TEST_P</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, invalidAuxLinkName)</td></tr>
+<tr class="memdesc:a6049368c79c77e4afb75417a0bc1103e"><td class="mdescLeft">&#160;</td><td class="mdescRight">test invalid motion plan request with invalid link name in the auxiliary point  <a href="unittest__trajectory__generator__circ_8cpp.html#a6049368c79c77e4afb75417a0bc1103e">More...</a><br /></td></tr>
+<tr class="separator:a6049368c79c77e4afb75417a0bc1103e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40ee717ba8437ccbb523f9171a50a37f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#a40ee717ba8437ccbb523f9171a50a37f">TEST_P</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, invalidCenter)</td></tr>
+<tr class="memdesc:a40ee717ba8437ccbb523f9171a50a37f"><td class="mdescLeft">&#160;</td><td class="mdescRight">test the circ planner with invalid center point  <a href="unittest__trajectory__generator__circ_8cpp.html#a40ee717ba8437ccbb523f9171a50a37f">More...</a><br /></td></tr>
+<tr class="separator:a40ee717ba8437ccbb523f9171a50a37f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50d08c4304f39de42d4ee26c3ac27a36"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#a50d08c4304f39de42d4ee26c3ac27a36">TEST_P</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, colinearCenter)</td></tr>
+<tr class="memdesc:a50d08c4304f39de42d4ee26c3ac27a36"><td class="mdescLeft">&#160;</td><td class="mdescRight">test the circ planner with colinear start/goal/center position  <a href="unittest__trajectory__generator__circ_8cpp.html#a50d08c4304f39de42d4ee26c3ac27a36">More...</a><br /></td></tr>
+<tr class="separator:a50d08c4304f39de42d4ee26c3ac27a36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af76fc6177bc526c9d374f4968bb7c040"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#af76fc6177bc526c9d374f4968bb7c040">TEST_P</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, colinearInterim)</td></tr>
+<tr class="memdesc:af76fc6177bc526c9d374f4968bb7c040"><td class="mdescLeft">&#160;</td><td class="mdescRight">test the circ planner with colinear start/goal/interim position  <a href="unittest__trajectory__generator__circ_8cpp.html#af76fc6177bc526c9d374f4968bb7c040">More...</a><br /></td></tr>
+<tr class="separator:af76fc6177bc526c9d374f4968bb7c040"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83d0fb112b0c6fdf8f62a1a8257fa911"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#a83d0fb112b0c6fdf8f62a1a8257fa911">TEST_P</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, colinearCenterDueToInterim)</td></tr>
+<tr class="memdesc:a83d0fb112b0c6fdf8f62a1a8257fa911"><td class="mdescLeft">&#160;</td><td class="mdescRight">test the circ planner with half circle with interim point  <a href="unittest__trajectory__generator__circ_8cpp.html#a83d0fb112b0c6fdf8f62a1a8257fa911">More...</a><br /></td></tr>
+<tr class="separator:a83d0fb112b0c6fdf8f62a1a8257fa911"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd76988b9033eaac36556b52fce66e7f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#abd76988b9033eaac36556b52fce66e7f">TEST_P</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, colinearCenterAndInterim)</td></tr>
+<tr class="memdesc:abd76988b9033eaac36556b52fce66e7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">test the circ planner with colinear start/center/interim positions  <a href="unittest__trajectory__generator__circ_8cpp.html#abd76988b9033eaac36556b52fce66e7f">More...</a><br /></td></tr>
+<tr class="separator:abd76988b9033eaac36556b52fce66e7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad59c52ded66fe36caa0192ffe67c3ec8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#ad59c52ded66fe36caa0192ffe67c3ec8">TEST_P</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, interimLarger180Degree)</td></tr>
+<tr class="memdesc:ad59c52ded66fe36caa0192ffe67c3ec8"><td class="mdescLeft">&#160;</td><td class="mdescRight">test the circ planner with a circ path where the angle between goal and interim is larger than 180 degree  <a href="unittest__trajectory__generator__circ_8cpp.html#ad59c52ded66fe36caa0192ffe67c3ec8">More...</a><br /></td></tr>
+<tr class="separator:ad59c52ded66fe36caa0192ffe67c3ec8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d1ffe43a3235e753defd17c59fc4056"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#a7d1ffe43a3235e753defd17c59fc4056">TEST_P</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, centerPointJointGoal)</td></tr>
+<tr class="memdesc:a7d1ffe43a3235e753defd17c59fc4056"><td class="mdescLeft">&#160;</td><td class="mdescRight">test the circ planner with center point and joint goal  <a href="unittest__trajectory__generator__circ_8cpp.html#a7d1ffe43a3235e753defd17c59fc4056">More...</a><br /></td></tr>
+<tr class="separator:a7d1ffe43a3235e753defd17c59fc4056"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7042ed059642becb8ff6382793ab3b30"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#a7042ed059642becb8ff6382793ab3b30">TEST_P</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, InvalidAdditionalPrimitivePose)</td></tr>
+<tr class="memdesc:a7042ed059642becb8ff6382793ab3b30"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classA.html">A</a> valid circ request contains a helping point (interim or center), in this test a additional point is defined as an invalid test case.  <a href="unittest__trajectory__generator__circ_8cpp.html#a7042ed059642becb8ff6382793ab3b30">More...</a><br /></td></tr>
+<tr class="separator:a7042ed059642becb8ff6382793ab3b30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f1ce33764c376c0d92178a06690c450"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#a7f1ce33764c376c0d92178a06690c450">TEST_P</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, InvalidExtraJointConstraint)</td></tr>
+<tr class="memdesc:a7f1ce33764c376c0d92178a06690c450"><td class="mdescLeft">&#160;</td><td class="mdescRight">Joint Goals are expected to match the start state in number and joint_names Here an additional joint constraints is "falsely" defined to check for the error.  <a href="unittest__trajectory__generator__circ_8cpp.html#a7f1ce33764c376c0d92178a06690c450">More...</a><br /></td></tr>
+<tr class="separator:a7f1ce33764c376c0d92178a06690c450"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a527a6f6c8e8ce61fa40ce373e825ee7b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#a527a6f6c8e8ce61fa40ce373e825ee7b">TEST_P</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, CenterPointPoseGoal)</td></tr>
+<tr class="memdesc:a527a6f6c8e8ce61fa40ce373e825ee7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">test the circ planner with center point and pose goal  <a href="unittest__trajectory__generator__circ_8cpp.html#a527a6f6c8e8ce61fa40ce373e825ee7b">More...</a><br /></td></tr>
+<tr class="separator:a527a6f6c8e8ce61fa40ce373e825ee7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a3076e47d30cfc491e6c27239e47c2a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#a1a3076e47d30cfc491e6c27239e47c2a">TEST_P</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, CenterPointPoseGoalFrameIdPositionConstraints)</td></tr>
+<tr class="memdesc:a1a3076e47d30cfc491e6c27239e47c2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a frame id only on the position constrainst.  <a href="unittest__trajectory__generator__circ_8cpp.html#a1a3076e47d30cfc491e6c27239e47c2a">More...</a><br /></td></tr>
+<tr class="separator:a1a3076e47d30cfc491e6c27239e47c2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4dc4e9f5f7035f9cc24d08e5aacb7b91"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#a4dc4e9f5f7035f9cc24d08e5aacb7b91">TEST_P</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, CenterPointPoseGoalFrameIdOrientationConstraints)</td></tr>
+<tr class="memdesc:a4dc4e9f5f7035f9cc24d08e5aacb7b91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a frame id only on the orientation constrainst.  <a href="unittest__trajectory__generator__circ_8cpp.html#a4dc4e9f5f7035f9cc24d08e5aacb7b91">More...</a><br /></td></tr>
+<tr class="separator:a4dc4e9f5f7035f9cc24d08e5aacb7b91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66e1373c428928bf071dcf591480ced1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#a66e1373c428928bf071dcf591480ced1">TEST_P</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, CenterPointPoseGoalFrameIdBothConstraints)</td></tr>
+<tr class="memdesc:a66e1373c428928bf071dcf591480ced1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a frame_id on both position and orientation constraints.  <a href="unittest__trajectory__generator__circ_8cpp.html#a66e1373c428928bf071dcf591480ced1">More...</a><br /></td></tr>
+<tr class="separator:a66e1373c428928bf071dcf591480ced1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb6fcdbcb3cc932fce9b58761f6a667b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#adb6fcdbcb3cc932fce9b58761f6a667b">TEST_P</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, InterimPointJointGoal)</td></tr>
+<tr class="memdesc:adb6fcdbcb3cc932fce9b58761f6a667b"><td class="mdescLeft">&#160;</td><td class="mdescRight">test the circ planner with interim point with joint goal  <a href="unittest__trajectory__generator__circ_8cpp.html#adb6fcdbcb3cc932fce9b58761f6a667b">More...</a><br /></td></tr>
+<tr class="separator:adb6fcdbcb3cc932fce9b58761f6a667b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17023565172672239dc7b25209fd8b80"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#a17023565172672239dc7b25209fd8b80">TEST_P</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, InterimPointJointGoalStartVelNearZero)</td></tr>
+<tr class="memdesc:a17023565172672239dc7b25209fd8b80"><td class="mdescLeft">&#160;</td><td class="mdescRight">test the circ planner with interim point with joint goal and a close to zero velocity of the start state  <a href="unittest__trajectory__generator__circ_8cpp.html#a17023565172672239dc7b25209fd8b80">More...</a><br /></td></tr>
+<tr class="separator:a17023565172672239dc7b25209fd8b80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a505d225fb6636f1c7b2834d0a8645ef3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#a505d225fb6636f1c7b2834d0a8645ef3">TEST_P</a> (<a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>, InterimPointPoseGoal)</td></tr>
+<tr class="memdesc:a505d225fb6636f1c7b2834d0a8645ef3"><td class="mdescLeft">&#160;</td><td class="mdescRight">test the circ planner with interim point with pose goal  <a href="unittest__trajectory__generator__circ_8cpp.html#a505d225fb6636f1c7b2834d0a8645ef3">More...</a><br /></td></tr>
+<tr class="separator:a505d225fb6636f1c7b2834d0a8645ef3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> (int argc, char **argv)</td></tr>
 <tr class="separator:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:aa7f9383e07e7c03560917dd18d1f761b"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#aa7f9383e07e7c03560917dd18d1f761b">PARAM_MODEL_NO_GRIPPER_NAME</a> { &quot;robot_description&quot; }</td></tr>
+<tr class="separator:aa7f9383e07e7c03560917dd18d1f761b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ca4023b540762bab834d86532ceb22f"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__generator__circ_8cpp.html#a1ca4023b540762bab834d86532ceb22f">PARAM_MODEL_WITH_GRIPPER_NAME</a> { &quot;robot_description_pg70&quot; }</td></tr>
+<tr class="separator:a1ca4023b540762bab834d86532ceb22f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ae231d747760c27d9982e3da0d41117f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae231d747760c27d9982e3da0d41117f2">&#9670;&nbsp;</a></span>SKIP_IF_GRIPPER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SKIP_IF_GRIPPER</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">  <span class="keywordflow">if</span> (GetParam() == <a class="code" href="unittest__trajectory__generator__circ_8cpp.html#a1ca4023b540762bab834d86532ceb22f">PARAM_MODEL_WITH_GRIPPER_NAME</a>)                                                                     \</div>
+<div class="line">  {                                                                                                                    \</div>
+<div class="line">    SUCCEED();                                                                                                         \</div>
+<div class="line">    return;                                                                                                            \</div>
+<div class="line">  };</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00065">65</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="ae22e3753374e2a1338a894cf50cf9e5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae22e3753374e2a1338a894cf50cf9e5a">&#9670;&nbsp;</a></span>ACCELERATION_TOLERANCE()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string ACCELERATION_TOLERANCE </td>
+          <td>(</td>
+          <td class="paramtype">&quot;acceleration_tolerance&quot;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="unittest__trajectory__generator__circ_8cpp_ae22e3753374e2a1338a894cf50cf9e5a_icgraph.png" border="0" usemap="#unittest__trajectory__generator__circ_8cpp_ae22e3753374e2a1338a894cf50cf9e5a_icgraph" alt=""/></div>
+<map name="unittest__trajectory__generator__circ_8cpp_ae22e3753374e2a1338a894cf50cf9e5a_icgraph" id="unittest__trajectory__generator__circ_8cpp_ae22e3753374e2a1338a894cf50cf9e5a_icgraph">
+<area shape="rect" title=" " alt="" coords="261,13,468,39"/>
+<area shape="rect" href="classTrajectoryGeneratorCIRCTest.html#a23026b4e6ff9c4dc0d949a6965227cdb" title="Create test scenario for circ trajectory generator." alt="" coords="5,5,213,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3172527b2636f4be1e4cb4c8054c2146"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3172527b2636f4be1e4cb4c8054c2146">&#9670;&nbsp;</a></span>ANGULAR_ACC_TOLERANCE()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string ANGULAR_ACC_TOLERANCE </td>
+          <td>(</td>
+          <td class="paramtype">&quot;angular_acc_tolerance&quot;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="unittest__trajectory__generator__circ_8cpp_a3172527b2636f4be1e4cb4c8054c2146_icgraph.png" border="0" usemap="#unittest__trajectory__generator__circ_8cpp_a3172527b2636f4be1e4cb4c8054c2146_icgraph" alt=""/></div>
+<map name="unittest__trajectory__generator__circ_8cpp_a3172527b2636f4be1e4cb4c8054c2146_icgraph" id="unittest__trajectory__generator__circ_8cpp_a3172527b2636f4be1e4cb4c8054c2146_icgraph">
+<area shape="rect" title=" " alt="" coords="261,13,468,39"/>
+<area shape="rect" href="classTrajectoryGeneratorCIRCTest.html#a23026b4e6ff9c4dc0d949a6965227cdb" title="Create test scenario for circ trajectory generator." alt="" coords="5,5,213,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4e07c84bf56da2c00952d86e171b1d3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e07c84bf56da2c00952d86e171b1d3f">&#9670;&nbsp;</a></span>CARTESIAN_POSITION_TOLERANCE()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string CARTESIAN_POSITION_TOLERANCE </td>
+          <td>(</td>
+          <td class="paramtype">&quot;cartesian_position_tolerance&quot;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="unittest__trajectory__generator__circ_8cpp_a4e07c84bf56da2c00952d86e171b1d3f_icgraph.png" border="0" usemap="#unittest__trajectory__generator__circ_8cpp_a4e07c84bf56da2c00952d86e171b1d3f_icgraph" alt=""/></div>
+<map name="unittest__trajectory__generator__circ_8cpp_a4e07c84bf56da2c00952d86e171b1d3f_icgraph" id="unittest__trajectory__generator__circ_8cpp_a4e07c84bf56da2c00952d86e171b1d3f_icgraph">
+<area shape="rect" title=" " alt="" coords="261,5,425,47"/>
+<area shape="rect" href="classTrajectoryGeneratorCIRCTest.html#a23026b4e6ff9c4dc0d949a6965227cdb" title="Create test scenario for circ trajectory generator." alt="" coords="5,5,213,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a53810c52b49231d3826f9edf434719e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53810c52b49231d3826f9edf434719e2">&#9670;&nbsp;</a></span>INSTANTIATE_TEST_SUITE_P()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">INSTANTIATE_TEST_SUITE_P </td>
+          <td>(</td>
+          <td class="paramtype">InstantiationName&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">::testing::Values(<a class="el" href="unittest__trajectory__generator__ptp_8cpp.html#aa7f9383e07e7c03560917dd18d1f761b">PARAM_MODEL_NO_GRIPPER_NAME</a>, <a class="el" href="unittest__trajectory__generator__ptp_8cpp.html#a1ca4023b540762bab834d86532ceb22f">PARAM_MODEL_WITH_GRIPPER_NAME</a>)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a3c04138a5bfe5d72780bb7e82a18e627"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3c04138a5bfe5d72780bb7e82a18e627">&#9670;&nbsp;</a></span>main()</h2>
 
@@ -267,18 +435,185 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00770">770</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00777">777</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a7a62abb677be1b82415113a497feae87"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7a62abb677be1b82415113a497feae87">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[1/28]</span></h2>
+<a id="ae2b5e395155711586a6cb2fc4c8ab77e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2b5e395155711586a6cb2fc4c8ab77e">&#9670;&nbsp;</a></span>OTHER_TOLERANCE()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TEST_F </td>
+          <td class="memname">const std::string OTHER_TOLERANCE </td>
+          <td>(</td>
+          <td class="paramtype">&quot;other_tolerance&quot;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="unittest__trajectory__generator__circ_8cpp_ae2b5e395155711586a6cb2fc4c8ab77e_icgraph.png" border="0" usemap="#unittest__trajectory__generator__circ_8cpp_ae2b5e395155711586a6cb2fc4c8ab77e_icgraph" alt=""/></div>
+<map name="unittest__trajectory__generator__circ_8cpp_ae2b5e395155711586a6cb2fc4c8ab77e_icgraph" id="unittest__trajectory__generator__circ_8cpp_ae2b5e395155711586a6cb2fc4c8ab77e_icgraph">
+<area shape="rect" title=" " alt="" coords="261,13,413,39"/>
+<area shape="rect" href="classTrajectoryGeneratorCIRCTest.html#a23026b4e6ff9c4dc0d949a6965227cdb" title="Create test scenario for circ trajectory generator." alt="" coords="5,5,213,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0258d4e48c5d63bd1bb8c56e97bd09af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0258d4e48c5d63bd1bb8c56e97bd09af">&#9670;&nbsp;</a></span>PARAM_PLANNING_GROUP_NAME()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string PARAM_PLANNING_GROUP_NAME </td>
+          <td>(</td>
+          <td class="paramtype">&quot;planning_group&quot;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="unittest__trajectory__generator__circ_8cpp_a0258d4e48c5d63bd1bb8c56e97bd09af_icgraph.png" border="0" usemap="#unittest__trajectory__generator__circ_8cpp_a0258d4e48c5d63bd1bb8c56e97bd09af_icgraph" alt=""/></div>
+<map name="unittest__trajectory__generator__circ_8cpp_a0258d4e48c5d63bd1bb8c56e97bd09af_icgraph" id="unittest__trajectory__generator__circ_8cpp_a0258d4e48c5d63bd1bb8c56e97bd09af_icgraph">
+<area shape="rect" title=" " alt="" coords="261,13,505,39"/>
+<area shape="rect" href="classTrajectoryGeneratorCIRCTest.html#a23026b4e6ff9c4dc0d949a6965227cdb" title="Create test scenario for circ trajectory generator." alt="" coords="5,5,213,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3ef26f92433dcdbf9ac9c73dfdf72ac8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ef26f92433dcdbf9ac9c73dfdf72ac8">&#9670;&nbsp;</a></span>PARAM_TARGET_LINK_NAME()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string PARAM_TARGET_LINK_NAME </td>
+          <td>(</td>
+          <td class="paramtype">&quot;target_link&quot;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="unittest__trajectory__generator__circ_8cpp_a3ef26f92433dcdbf9ac9c73dfdf72ac8_icgraph.png" border="0" usemap="#unittest__trajectory__generator__circ_8cpp_a3ef26f92433dcdbf9ac9c73dfdf72ac8_icgraph" alt=""/></div>
+<map name="unittest__trajectory__generator__circ_8cpp_a3ef26f92433dcdbf9ac9c73dfdf72ac8_icgraph" id="unittest__trajectory__generator__circ_8cpp_a3ef26f92433dcdbf9ac9c73dfdf72ac8_icgraph">
+<area shape="rect" title=" " alt="" coords="261,13,471,39"/>
+<area shape="rect" href="classTrajectoryGeneratorCIRCTest.html#a23026b4e6ff9c4dc0d949a6965227cdb" title="Create test scenario for circ trajectory generator." alt="" coords="5,5,213,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a22ea2026f42d7d03ff263bb5dadafda7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22ea2026f42d7d03ff263bb5dadafda7">&#9670;&nbsp;</a></span>ROTATION_AXIS_NORM_TOLERANCE()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string ROTATION_AXIS_NORM_TOLERANCE </td>
+          <td>(</td>
+          <td class="paramtype">&quot;rot_axis_norm_tolerance&quot;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="unittest__trajectory__generator__circ_8cpp_a22ea2026f42d7d03ff263bb5dadafda7_icgraph.png" border="0" usemap="#unittest__trajectory__generator__circ_8cpp_a22ea2026f42d7d03ff263bb5dadafda7_icgraph" alt=""/></div>
+<map name="unittest__trajectory__generator__circ_8cpp_a22ea2026f42d7d03ff263bb5dadafda7_icgraph" id="unittest__trajectory__generator__circ_8cpp_a22ea2026f42d7d03ff263bb5dadafda7_icgraph">
+<area shape="rect" title=" " alt="" coords="261,5,435,47"/>
+<area shape="rect" href="classTrajectoryGeneratorCIRCTest.html#a23026b4e6ff9c4dc0d949a6965227cdb" title="Create test scenario for circ trajectory generator." alt="" coords="5,5,213,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a23003e296ac7732633d20a3975f28ea8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23003e296ac7732633d20a3975f28ea8">&#9670;&nbsp;</a></span>TEST()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TestExceptionErrorCodeMapping&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks that each derived MoveItErrorCodeException contains the correct error code. </p>
+
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00218">218</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ab52141f7c51b11e67584b679ae66caf7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab52141f7c51b11e67584b679ae66caf7">&#9670;&nbsp;</a></span>TEST_DATA_FILE_NAME()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string TEST_DATA_FILE_NAME </td>
+          <td>(</td>
+          <td class="paramtype">&quot;testdata_file_name&quot;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="unittest__trajectory__generator__circ_8cpp_ab52141f7c51b11e67584b679ae66caf7_icgraph.png" border="0" usemap="#unittest__trajectory__generator__circ_8cpp_ab52141f7c51b11e67584b679ae66caf7_icgraph" alt=""/></div>
+<map name="unittest__trajectory__generator__circ_8cpp_ab52141f7c51b11e67584b679ae66caf7_icgraph" id="unittest__trajectory__generator__circ_8cpp_ab52141f7c51b11e67584b679ae66caf7_icgraph">
+<area shape="rect" title=" " alt="" coords="261,13,436,39"/>
+<area shape="rect" href="classTrajectoryGeneratorCIRCTest.html#a23026b4e6ff9c4dc0d949a6965227cdb" title="Create test scenario for circ trajectory generator." alt="" coords="5,5,213,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab7ae06e0bbe2defb07f1c1758d6da9eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7ae06e0bbe2defb07f1c1758d6da9eb">&#9670;&nbsp;</a></span>TEST_P() <span class="overload">[1/27]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST_P </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>&#160;</td>
           <td class="paramname">, </td>
@@ -299,18 +634,18 @@ Functions</h2></td></tr>
 
 <p>Generate invalid circ with to high acc scaling. </p>
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00346">346</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00347">347</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a28c7bd532ae7de5217c68db32ace4ba5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a28c7bd532ae7de5217c68db32ace4ba5">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[2/28]</span></h2>
+<a id="a7d1ffe43a3235e753defd17c59fc4056"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d1ffe43a3235e753defd17c59fc4056">&#9670;&nbsp;</a></span>TEST_P() <span class="overload">[2/27]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TEST_F </td>
+          <td class="memname">TEST_P </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>&#160;</td>
           <td class="paramname">, </td>
@@ -331,18 +666,18 @@ Functions</h2></td></tr>
 
 <p>test the circ planner with center point and joint goal </p>
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00594">594</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00595">595</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a329301aa0963c15c9b353cda817b4e84"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a329301aa0963c15c9b353cda817b4e84">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[3/28]</span></h2>
+<a id="a527a6f6c8e8ce61fa40ce373e825ee7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a527a6f6c8e8ce61fa40ce373e825ee7b">&#9670;&nbsp;</a></span>TEST_P() <span class="overload">[3/27]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TEST_F </td>
+          <td class="memname">TEST_P </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>&#160;</td>
           <td class="paramname">, </td>
@@ -363,18 +698,18 @@ Functions</h2></td></tr>
 
 <p>test the circ planner with center point and pose goal </p>
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00656">656</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00659">659</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
 
 </div>
 </div>
-<a id="ace34c01dde984e8b2d94e46ff1618edb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ace34c01dde984e8b2d94e46ff1618edb">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[4/28]</span></h2>
+<a id="a66e1373c428928bf071dcf591480ced1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66e1373c428928bf071dcf591480ced1">&#9670;&nbsp;</a></span>TEST_P() <span class="overload">[4/27]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TEST_F </td>
+          <td class="memname">TEST_P </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>&#160;</td>
           <td class="paramname">, </td>
@@ -395,18 +730,18 @@ Functions</h2></td></tr>
 
 <p>Set a frame_id on both position and orientation constraints. </p>
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00704">704</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00707">707</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
 
 </div>
 </div>
-<a id="aec2a22453a2577b978d4fda38829d3cf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aec2a22453a2577b978d4fda38829d3cf">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[5/28]</span></h2>
+<a id="a4dc4e9f5f7035f9cc24d08e5aacb7b91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4dc4e9f5f7035f9cc24d08e5aacb7b91">&#9670;&nbsp;</a></span>TEST_P() <span class="overload">[5/27]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TEST_F </td>
+          <td class="memname">TEST_P </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>&#160;</td>
           <td class="paramname">, </td>
@@ -427,18 +762,18 @@ Functions</h2></td></tr>
 
 <p>Set a frame id only on the orientation constrainst. </p>
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00688">688</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00691">691</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
 
 </div>
 </div>
-<a id="aa46323e071d7148422033b310d9ce84a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa46323e071d7148422033b310d9ce84a">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[6/28]</span></h2>
+<a id="a1a3076e47d30cfc491e6c27239e47c2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a3076e47d30cfc491e6c27239e47c2a">&#9670;&nbsp;</a></span>TEST_P() <span class="overload">[6/27]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TEST_F </td>
+          <td class="memname">TEST_P </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>&#160;</td>
           <td class="paramname">, </td>
@@ -459,18 +794,18 @@ Functions</h2></td></tr>
 
 <p>Set a frame id only on the position constrainst. </p>
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00671">671</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00674">674</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
 
 </div>
 </div>
-<a id="addfd71a41902fc21ec43a9d21ac1daba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#addfd71a41902fc21ec43a9d21ac1daba">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[7/28]</span></h2>
+<a id="a50d08c4304f39de42d4ee26c3ac27a36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50d08c4304f39de42d4ee26c3ac27a36">&#9670;&nbsp;</a></span>TEST_P() <span class="overload">[7/27]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TEST_F </td>
+          <td class="memname">TEST_P </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>&#160;</td>
           <td class="paramname">, </td>
@@ -492,18 +827,18 @@ Functions</h2></td></tr>
 <p>test the circ planner with colinear start/goal/center position </p>
 <p>Expected: Planning should fail since the path is not uniquely defined. </p>
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00469">469</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00470">470</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a227aaed19eb6710adbc95752ef7b753c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a227aaed19eb6710adbc95752ef7b753c">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[8/28]</span></h2>
+<a id="abd76988b9033eaac36556b52fce66e7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd76988b9033eaac36556b52fce66e7f">&#9670;&nbsp;</a></span>TEST_P() <span class="overload">[8/27]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TEST_F </td>
+          <td class="memname">TEST_P </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>&#160;</td>
           <td class="paramname">, </td>
@@ -526,18 +861,18 @@ Functions</h2></td></tr>
 <p>The request contains start/interim/goal such that start, center (not explicitly given) and interim are colinear. In case the interim is used as auxiliary point for KDL::Path_Circle this should fail.</p>
 <p>Expected: Planning should successfully return. </p>
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00533">533</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00534">534</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
 
 </div>
 </div>
-<a id="aa6d01fee975a016668ab8f2837b687d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa6d01fee975a016668ab8f2837b687d0">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[9/28]</span></h2>
+<a id="a83d0fb112b0c6fdf8f62a1a8257fa911"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83d0fb112b0c6fdf8f62a1a8257fa911">&#9670;&nbsp;</a></span>TEST_P() <span class="overload">[9/27]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TEST_F </td>
+          <td class="memname">TEST_P </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>&#160;</td>
           <td class="paramname">, </td>
@@ -560,18 +895,18 @@ Functions</h2></td></tr>
 <p>The request contains start/interim/goal such that start, center (not explicitly given) and goal are colinear</p>
 <p>Expected: Planning should successfully return. </p>
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00513">513</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00514">514</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a5e65663b9bcfa7d899db46e5b9d8bedf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e65663b9bcfa7d899db46e5b9d8bedf">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[10/28]</span></h2>
+<a id="af76fc6177bc526c9d374f4968bb7c040"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af76fc6177bc526c9d374f4968bb7c040">&#9670;&nbsp;</a></span>TEST_P() <span class="overload">[10/27]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TEST_F </td>
+          <td class="memname">TEST_P </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>&#160;</td>
           <td class="paramname">, </td>
@@ -593,18 +928,18 @@ Functions</h2></td></tr>
 <p>test the circ planner with colinear start/goal/interim position </p>
 <p>Expected: Planning should fail. These positions do not even represent a circle. </p>
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00490">490</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00491">491</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a0ab8d79e7af5dc9b8dc7dcf46560c3ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0ab8d79e7af5dc9b8dc7dcf46560c3ee">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[11/28]</span></h2>
+<a id="a2beca7d6a93250702bff9c218a82f4e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2beca7d6a93250702bff9c218a82f4e5">&#9670;&nbsp;</a></span>TEST_P() <span class="overload">[11/27]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TEST_F </td>
+          <td class="memname">TEST_P </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>&#160;</td>
           <td class="paramname">, </td>
@@ -625,18 +960,18 @@ Functions</h2></td></tr>
 
 <p>test invalid motion plan request with no aux point defined </p>
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00404">404</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00405">405</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a50d0e891fb56866ad95106279ee3ddf8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a50d0e891fb56866ad95106279ee3ddf8">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[12/28]</span></h2>
+<a id="ac1070634e35e95c854bb3dabf9af54d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1070634e35e95c854bb3dabf9af54d9">&#9670;&nbsp;</a></span>TEST_P() <span class="overload">[12/27]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TEST_F </td>
+          <td class="memname">TEST_P </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>&#160;</td>
           <td class="paramname">, </td>
@@ -657,18 +992,18 @@ Functions</h2></td></tr>
 
 <p>test invalid motion plan request with incomplete start state and cartesian goal </p>
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00292">292</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00293">293</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a25e654ac380a034edda8e0f0554e0a2a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a25e654ac380a034edda8e0f0554e0a2a">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[13/28]</span></h2>
+<a id="ad59c52ded66fe36caa0192ffe67c3ec8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad59c52ded66fe36caa0192ffe67c3ec8">&#9670;&nbsp;</a></span>TEST_P() <span class="overload">[13/27]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TEST_F </td>
+          <td class="memname">TEST_P </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>&#160;</td>
           <td class="paramname">, </td>
@@ -691,18 +1026,18 @@ Functions</h2></td></tr>
 <p>The request contains start/interim/goal such that 180 degree &lt; interim angle &lt; goal angle.</p>
 <p>Expected: Planning should successfully return. </p>
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00566">566</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00567">567</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
 
 </div>
 </div>
-<a id="aab1721b6ec39ba29c611c290937d5877"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aab1721b6ec39ba29c611c290937d5877">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[14/28]</span></h2>
+<a id="adb6fcdbcb3cc932fce9b58761f6a667b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb6fcdbcb3cc932fce9b58761f6a667b">&#9670;&nbsp;</a></span>TEST_P() <span class="overload">[14/27]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TEST_F </td>
+          <td class="memname">TEST_P </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>&#160;</td>
           <td class="paramname">, </td>
@@ -723,18 +1058,18 @@ Functions</h2></td></tr>
 
 <p>test the circ planner with interim point with joint goal </p>
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00723">723</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00726">726</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a04adb4350cabb8cf2fd1a51d68b77d2c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a04adb4350cabb8cf2fd1a51d68b77d2c">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[15/28]</span></h2>
+<a id="a17023565172672239dc7b25209fd8b80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17023565172672239dc7b25209fd8b80">&#9670;&nbsp;</a></span>TEST_P() <span class="overload">[15/27]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TEST_F </td>
+          <td class="memname">TEST_P </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>&#160;</td>
           <td class="paramname">, </td>
@@ -754,20 +1089,20 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>test the circ planner with interim point with joint goal and a close to zero velocity of the start state </p>
-<p>The generator is expected to be robust against a velocity being almost zero. </p>
+<p>The generator is expected to be robust against a velocity beeing almost zero. </p>
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00741">741</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00746">746</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
 
 </div>
 </div>
-<a id="ab77a8cd27016ff759e7ce705625d086f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab77a8cd27016ff759e7ce705625d086f">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[16/28]</span></h2>
+<a id="a505d225fb6636f1c7b2834d0a8645ef3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a505d225fb6636f1c7b2834d0a8645ef3">&#9670;&nbsp;</a></span>TEST_P() <span class="overload">[16/27]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TEST_F </td>
+          <td class="memname">TEST_P </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>&#160;</td>
           <td class="paramname">, </td>
@@ -788,18 +1123,18 @@ Functions</h2></td></tr>
 
 <p>test the circ planner with interim point with pose goal </p>
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00759">759</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00766">766</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a4b22e28ae0841baedd680562586d47fb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b22e28ae0841baedd680562586d47fb">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[17/28]</span></h2>
+<a id="a7042ed059642becb8ff6382793ab3b30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7042ed059642becb8ff6382793ab3b30">&#9670;&nbsp;</a></span>TEST_P() <span class="overload">[17/27]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TEST_F </td>
+          <td class="memname">TEST_P </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>&#160;</td>
           <td class="paramname">, </td>
@@ -820,18 +1155,18 @@ Functions</h2></td></tr>
 
 <p><a class="el" href="classA.html">A</a> valid circ request contains a helping point (interim or center), in this test a additional point is defined as an invalid test case. </p>
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00610">610</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00613">613</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a60586b452e8f3c0db750f4612fd1b248"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a60586b452e8f3c0db750f4612fd1b248">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[18/28]</span></h2>
+<a id="a6049368c79c77e4afb75417a0bc1103e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6049368c79c77e4afb75417a0bc1103e">&#9670;&nbsp;</a></span>TEST_P() <span class="overload">[18/27]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TEST_F </td>
+          <td class="memname">TEST_P </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>&#160;</td>
           <td class="paramname">, </td>
@@ -852,18 +1187,18 @@ Functions</h2></td></tr>
 
 <p>test invalid motion plan request with invalid link name in the auxiliary point </p>
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00437">437</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00438">438</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
 
 </div>
 </div>
-<a id="aa24c4e1ee2ec30be3b7fe38f21f7c84c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa24c4e1ee2ec30be3b7fe38f21f7c84c">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[19/28]</span></h2>
+<a id="a069f1219e121c5776d23c7e8a8b9f1a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a069f1219e121c5776d23c7e8a8b9f1a5">&#9670;&nbsp;</a></span>TEST_P() <span class="overload">[19/27]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TEST_F </td>
+          <td class="memname">TEST_P </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>&#160;</td>
           <td class="paramname">, </td>
@@ -884,18 +1219,18 @@ Functions</h2></td></tr>
 
 <p>test invalid motion plan request with no aux name defined </p>
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00420">420</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00421">421</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a777abc5a9ba5f7c13f8304fdffc3d474"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a777abc5a9ba5f7c13f8304fdffc3d474">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[20/28]</span></h2>
+<a id="a40ee717ba8437ccbb523f9171a50a37f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40ee717ba8437ccbb523f9171a50a37f">&#9670;&nbsp;</a></span>TEST_P() <span class="overload">[20/27]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TEST_F </td>
+          <td class="memname">TEST_P </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>&#160;</td>
           <td class="paramname">, </td>
@@ -916,18 +1251,18 @@ Functions</h2></td></tr>
 
 <p>test the circ planner with invalid center point </p>
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00453">453</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00454">454</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a38b519e76b65d4f597d69f8ffe6f4635"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a38b519e76b65d4f597d69f8ffe6f4635">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[21/28]</span></h2>
+<a id="a7f1ce33764c376c0d92178a06690c450"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f1ce33764c376c0d92178a06690c450">&#9670;&nbsp;</a></span>TEST_P() <span class="overload">[21/27]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TEST_F </td>
+          <td class="memname">TEST_P </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>&#160;</td>
           <td class="paramname">, </td>
@@ -948,18 +1283,18 @@ Functions</h2></td></tr>
 
 <p>Joint Goals are expected to match the start state in number and joint_names Here an additional joint constraints is "falsely" defined to check for the error. </p>
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00637">637</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00640">640</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
 
 </div>
 </div>
-<a id="ae67a13bbe31cba7a4e422f608faac332"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae67a13bbe31cba7a4e422f608faac332">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[22/28]</span></h2>
+<a id="a55d055ecd59416baeadb00724e518a49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55d055ecd59416baeadb00724e518a49">&#9670;&nbsp;</a></span>TEST_P() <span class="overload">[22/27]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TEST_F </td>
+          <td class="memname">TEST_P </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>&#160;</td>
           <td class="paramname">, </td>
@@ -980,18 +1315,18 @@ Functions</h2></td></tr>
 
 <p>Construct a TrajectoryGeneratorCirc with no limits given. </p>
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00282">282</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00283">283</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a712ccd0b869abc649f4b6180f0f81471"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a712ccd0b869abc649f4b6180f0f81471">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[23/28]</span></h2>
+<a id="acf090c8c0b2fb0fa829e4857e02f6907"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf090c8c0b2fb0fa829e4857e02f6907">&#9670;&nbsp;</a></span>TEST_P() <span class="overload">[23/27]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TEST_F </td>
+          <td class="memname">TEST_P </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>&#160;</td>
           <td class="paramname">, </td>
@@ -1012,18 +1347,18 @@ Functions</h2></td></tr>
 
 <p>test invalid motion plan request with non zero start velocity </p>
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00309">309</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00310">310</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a35e17f43496ddb9bf06a6bb6dbe3347d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a35e17f43496ddb9bf06a6bb6dbe3347d">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[24/28]</span></h2>
+<a id="ae3e80fc96823d9536a14f94473499127"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3e80fc96823d9536a14f94473499127">&#9670;&nbsp;</a></span>TEST_P() <span class="overload">[24/27]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TEST_F </td>
+          <td class="memname">TEST_P </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>&#160;</td>
           <td class="paramname">, </td>
@@ -1044,18 +1379,18 @@ Functions</h2></td></tr>
 
 <p>Use three points (with center) with a really small distance between to trigger a internal throw from <a class="el" href="namespaceKDL.html">KDL</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00360">360</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00361">361</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a44c9b305efb76eae242f1631c93b868c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a44c9b305efb76eae242f1631c93b868c">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[25/28]</span></h2>
+<a id="a70a48280a06544c1ac4954e6a98f4235"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70a48280a06544c1ac4954e6a98f4235">&#9670;&nbsp;</a></span>TEST_P() <span class="overload">[25/27]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TEST_F </td>
+          <td class="memname">TEST_P </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>&#160;</td>
           <td class="paramname">, </td>
@@ -1077,50 +1412,18 @@ Functions</h2></td></tr>
 <p>Use three points (with interim) with a really small distance between. </p>
 <p>Expected: Planning should fail. </p>
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00383">383</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00384">384</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a7bc9a83583c62287a92aaad52a43c6c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7bc9a83583c62287a92aaad52a43c6c5">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[26/28]</span></h2>
+<a id="a765dcf9b06dcc217fc5b2bfeb92d25a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a765dcf9b06dcc217fc5b2bfeb92d25a1">&#9670;&nbsp;</a></span>TEST_P() <span class="overload">[26/27]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TEST_F </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">TestExceptionErrorCodeMapping&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Checks that each derived MoveItErrorCodeException contains the correct error code. </p>
-
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00221">221</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a3054edfedaa6f3b308a003a23800c78b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3054edfedaa6f3b308a003a23800c78b">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[27/28]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">TEST_F </td>
+          <td class="memname">TEST_P </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>&#160;</td>
           <td class="paramname">, </td>
@@ -1139,18 +1442,18 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00321">321</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00322">322</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a4277dbf88a7485be41bc1b243cb791a9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4277dbf88a7485be41bc1b243cb791a9">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[28/28]</span></h2>
+<a id="aaf0fad1f32acf2d67dff83cd272de9be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf0fad1f32acf2d67dff83cd272de9be">&#9670;&nbsp;</a></span>TEST_P() <span class="overload">[27/27]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TEST_F </td>
+          <td class="memname">TEST_P </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classTrajectoryGeneratorCIRCTest.html">TrajectoryGeneratorCIRCTest</a>&#160;</td>
           <td class="paramname">, </td>
@@ -1171,11 +1474,45 @@ Functions</h2></td></tr>
 
 <p>Generate invalid circ with to high vel scaling. </p>
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00333">333</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00334">334</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="aa7f9383e07e7c03560917dd18d1f761b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7f9383e07e7c03560917dd18d1f761b">&#9670;&nbsp;</a></span>PARAM_MODEL_NO_GRIPPER_NAME</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string PARAM_MODEL_NO_GRIPPER_NAME { &quot;robot_description&quot; }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00052">52</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a1ca4023b540762bab834d86532ceb22f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ca4023b540762bab834d86532ceb22f">&#9670;&nbsp;</a></span>PARAM_MODEL_WITH_GRIPPER_NAME</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string PARAM_MODEL_WITH_GRIPPER_NAME { &quot;robot_description_pg70&quot; }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html#l00053">53</a> of file <a class="el" href="unittest__trajectory__generator__circ_8cpp_source.html">unittest_trajectory_generator_circ.cpp</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
+<div class="ttc" id="aunittest__trajectory__generator__circ_8cpp_html_a1ca4023b540762bab834d86532ceb22f"><div class="ttname"><a href="unittest__trajectory__generator__circ_8cpp.html#a1ca4023b540762bab834d86532ceb22f">PARAM_MODEL_WITH_GRIPPER_NAME</a></div><div class="ttdeci">const std::string PARAM_MODEL_WITH_GRIPPER_NAME</div><div class="ttdef"><b>Definition:</b> <a href="unittest__trajectory__generator__circ_8cpp_source.html#l00053">unittest_trajectory_generator_circ.cpp:53</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

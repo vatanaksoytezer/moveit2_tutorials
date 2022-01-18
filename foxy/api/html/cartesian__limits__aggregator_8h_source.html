@@ -106,21 +106,20 @@ $(function() {
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;rclcpp/rclcpp.hpp&gt;</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="cartesian__limit_8h.html">pilz_industrial_motion_planner/cartesian_limit.h</a>&quot;</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacepilz__industrial__motion__planner.html">pilz_industrial_motion_planner</a></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">class </span><a class="code" href="classCartesianLimitsAggregator.html">CartesianLimitsAggregator</a></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keyword">static</span> CartesianLimit <a class="code" href="classpilz__industrial__motion__planner_1_1CartesianLimitsAggregator.html#ae522ae2e7639d289dd6d818b363cadc8">getAggregatedLimits</a>(<span class="keyword">const</span> rclcpp::Node::SharedPtr&amp; node, <span class="keyword">const</span> std::string&amp; param_namespace);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;};</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}  <span class="comment">// namespace pilz_industrial_motion_planner</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="cartesian__limit_8h.html">pilz_industrial_motion_planner/cartesian_limit.h</a>&quot;</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacepilz__industrial__motion__planner.html">pilz_industrial_motion_planner</a></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">class </span><a class="code" href="classCartesianLimitsAggregator.html">CartesianLimitsAggregator</a></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keyword">static</span> CartesianLimit <a class="code" href="classpilz__industrial__motion__planner_1_1CartesianLimitsAggregator.html#a432696a4e71dc307327c4ecc11b1afb6">getAggregatedLimits</a>(<span class="keyword">const</span> ros::NodeHandle&amp; nh);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;};</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}  <span class="comment">// namespace pilz_industrial_motion_planner</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="anamespacepilz__industrial__motion__planner_html"><div class="ttname"><a href="namespacepilz__industrial__motion__planner.html">pilz_industrial_motion_planner</a></div><div class="ttdef"><b>Definition:</b> <a href="moveit__planners_2pilz__industrial__motion__planner_2include_2pilz__industrial__motion__planner_2capability__names_8h_source.html#l00039">capability_names.h:39</a></div></div>
-<div class="ttc" id="aclasspilz__industrial__motion__planner_1_1CartesianLimitsAggregator_html_ae522ae2e7639d289dd6d818b363cadc8"><div class="ttname"><a href="classpilz__industrial__motion__planner_1_1CartesianLimitsAggregator.html#ae522ae2e7639d289dd6d818b363cadc8">pilz_industrial_motion_planner::CartesianLimitsAggregator::getAggregatedLimits</a></div><div class="ttdeci">static CartesianLimit getAggregatedLimits(const rclcpp::Node::SharedPtr &amp;node, const std::string &amp;param_namespace)</div><div class="ttdoc">Loads cartesian limits from the node parameters.</div><div class="ttdef"><b>Definition:</b> <a href="cartesian__limits__aggregator_8cpp_source.html#l00076">cartesian_limits_aggregator.cpp:76</a></div></div>
+<div class="ttc" id="aclasspilz__industrial__motion__planner_1_1CartesianLimitsAggregator_html_a432696a4e71dc307327c4ecc11b1afb6"><div class="ttname"><a href="classpilz__industrial__motion__planner_1_1CartesianLimitsAggregator.html#a432696a4e71dc307327c4ecc11b1afb6">pilz_industrial_motion_planner::CartesianLimitsAggregator::getAggregatedLimits</a></div><div class="ttdeci">static CartesianLimit getAggregatedLimits(const ros::NodeHandle &amp;nh)</div><div class="ttdoc">Loads cartesian limits from the parameter server.</div><div class="ttdef"><b>Definition:</b> <a href="cartesian__limits__aggregator_8cpp_source.html#l00049">cartesian_limits_aggregator.cpp:49</a></div></div>
 <div class="ttc" id="acartesian__limit_8h_html"><div class="ttname"><a href="cartesian__limit_8h.html">cartesian_limit.h</a></div></div>
 <div class="ttc" id="aclassCartesianLimitsAggregator_html"><div class="ttname"><a href="classCartesianLimitsAggregator.html">CartesianLimitsAggregator</a></div><div class="ttdoc">Unittest of the CartesianLimitsAggregator class.</div><div class="ttdef"><b>Definition:</b> <a href="unittest__cartesian__limits__aggregator_8cpp_source.html#l00045">unittest_cartesian_limits_aggregator.cpp:45</a></div></div>
 <!-- start footer part -->

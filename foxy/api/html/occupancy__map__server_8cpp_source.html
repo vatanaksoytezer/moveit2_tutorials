@@ -106,68 +106,64 @@ $(function() {
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">/* Author: Jon Binney, Ioan Sucan */</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="occupancy__map__monitor_8h.html">moveit/occupancy_map_monitor/occupancy_map_monitor.h</a>&gt;</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &lt;octomap_msgs/conversions.h&gt;</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &lt;rclcpp/rclcpp.hpp&gt;</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &lt;tf2_ros/transform_listener.h&gt;</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &lt;boost/bind.hpp&gt;</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &lt;sstream&gt;</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> rclcpp::Logger <a class="code" href="namespaceplanning__request__adapter.html#af64b3fa8ebc256d9c5133c6c80ade28f">LOGGER</a> = rclcpp::get_logger(<span class="stringliteral">&quot;moveit.ros.occupancy_map_server&quot;</span>);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> publishOctomap(<span class="keyword">const</span> rclcpp::Publisher&lt;octomap_msgs::msg::Octomap&gt;::SharedPtr&amp; octree_binary_pub,</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                           <a class="code" href="classoccupancy__map__monitor_1_1OccupancyMapMonitor.html">occupancy_map_monitor::OccupancyMapMonitor</a>* server)</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  octomap_msgs::msg::Octomap map;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  map.header.frame_id = server-&gt;<a class="code" href="classoccupancy__map__monitor_1_1OccupancyMapMonitor.html#a1d3fce5952f5421d3c2422c3b7079927">getMapFrame</a>();</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  map.header.stamp = rclcpp::Clock().now();</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  server-&gt;<a class="code" href="classoccupancy__map__monitor_1_1OccupancyMapMonitor.html#aa7e43f8169c5ba9cb4794241c8fe53d0">getOcTreePtr</a>()-&gt;lockRead();</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  rclcpp::Clock steady_clock(RCL_STEADY_TIME);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordflow">try</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">if</span> (!octomap_msgs::binaryMapToMsgData(*server-&gt;<a class="code" href="classoccupancy__map__monitor_1_1OccupancyMapMonitor.html#aa7e43f8169c5ba9cb4794241c8fe53d0">getOcTreePtr</a>(), map.data))</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      RCLCPP_ERROR_THROTTLE(LOGGER, steady_clock, 1000, <span class="stringliteral">&quot;Could not generate OctoMap message&quot;</span>);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;rclcpp/rclcpp.hpp&gt;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &lt;tf2_ros/transform_listener.h&gt;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="occupancy__map__monitor_8h.html">moveit/occupancy_map_monitor/occupancy_map_monitor.h</a>&gt;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &lt;octomap_msgs/conversions.h&gt;</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &lt;boost/bind.hpp&gt;</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> rclcpp::Logger <a class="code" href="namespaceplanning__request__adapter.html#af64b3fa8ebc256d9c5133c6c80ade28f">LOGGER</a> = rclcpp::get_logger(<span class="stringliteral">&quot;moveit.ros.occupancy_map_server&quot;</span>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> publishOctomap(<span class="keyword">const</span> rclcpp::Publisher&lt;octomap_msgs::msg::Octomap&gt;::SharedPtr&amp; octree_binary_pub,</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                           <a class="code" href="classoccupancy__map__monitor_1_1OccupancyMapMonitor.html">occupancy_map_monitor::OccupancyMapMonitor</a>* server)</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;{</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  octomap_msgs::msg::Octomap map;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  map.header.frame_id = server-&gt;<a class="code" href="classoccupancy__map__monitor_1_1OccupancyMapMonitor.html#a1d3fce5952f5421d3c2422c3b7079927">getMapFrame</a>();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  map.header.stamp = rclcpp::Clock().now();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  server-&gt;<a class="code" href="classoccupancy__map__monitor_1_1OccupancyMapMonitor.html#aa3e6998ab5f2e479ff3d6f59b0d87fdb">getOcTreePtr</a>()-&gt;lockRead();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  rclcpp::Clock steady_clock(RCL_STEADY_TIME);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordflow">try</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">if</span> (!octomap_msgs::binaryMapToMsgData(*server-&gt;<a class="code" href="classoccupancy__map__monitor_1_1OccupancyMapMonitor.html#aa3e6998ab5f2e479ff3d6f59b0d87fdb">getOcTreePtr</a>(), map.data))</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;      RCLCPP_ERROR_THROTTLE(LOGGER, steady_clock, 1000, <span class="stringliteral">&quot;Could not generate OctoMap message&quot;</span>);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordflow">catch</span> (...)</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    RCLCPP_ERROR_THROTTLE(LOGGER, steady_clock, 1000, <span class="stringliteral">&quot;Exception thrown while generating OctoMap message&quot;</span>);</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  }</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordflow">catch</span> (...)</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    RCLCPP_ERROR_THROTTLE(LOGGER, steady_clock, 1000, <span class="stringliteral">&quot;Exception thrown while generating OctoMap message&quot;</span>);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  server-&gt;<a class="code" href="classoccupancy__map__monitor_1_1OccupancyMapMonitor.html#aa7e43f8169c5ba9cb4794241c8fe53d0">getOcTreePtr</a>()-&gt;unlockRead();</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  octree_binary_pub-&gt;publish(map);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="occupancy__map__server_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">   74</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="occupancy__map__server_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>** argv)</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;{</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  rclcpp::init(argc, argv);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keyword">auto</span> node = rclcpp::Node::make_shared(<span class="stringliteral">&quot;occupancy_map_server&quot;</span>);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keyword">auto</span> octree_binary_pub =</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;      node-&gt;create_publisher&lt;octomap_msgs::msg::Octomap&gt;(<span class="stringliteral">&quot;octomap_binary&quot;</span>, RMW_QOS_POLICY_HISTORY_KEEP_LAST);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keyword">auto</span> clock_ptr = std::make_shared&lt;rclcpp::Clock&gt;(RCL_ROS_TIME);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  std::shared_ptr&lt;tf2_ros::Buffer&gt; buffer = std::make_shared&lt;tf2_ros::Buffer&gt;(clock_ptr, tf2::durationFromSec(5.0));</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  std::shared_ptr&lt;tf2_ros::TransformListener&gt; listener = std::make_shared&lt;tf2_ros::TransformListener&gt;(*buffer, node);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <a class="code" href="classoccupancy__map__monitor_1_1OccupancyMapMonitor.html">occupancy_map_monitor::OccupancyMapMonitor</a> server(node, buffer);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  server.<a class="code" href="classoccupancy__map__monitor_1_1OccupancyMapMonitor.html#a2ff7c82fce0e7f7057d602a49c51958d">setUpdateCallback</a>(boost::bind(&amp;publishOctomap, octree_binary_pub, &amp;server));</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  server.<a class="code" href="classoccupancy__map__monitor_1_1OccupancyMapMonitor.html#a4402900ae7e6b91fffe6de2d8c36eae6">startMonitor</a>();</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  rclcpp::spin(node);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  server-&gt;<a class="code" href="classoccupancy__map__monitor_1_1OccupancyMapMonitor.html#aa3e6998ab5f2e479ff3d6f59b0d87fdb">getOcTreePtr</a>()-&gt;unlockRead();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  octree_binary_pub-&gt;publish(map);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="occupancy__map__server_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">   70</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="occupancy__map__server_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>** argv)</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;{</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  rclcpp::init(argc, argv);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keyword">auto</span> node = rclcpp::Node::make_shared(<span class="stringliteral">&quot;occupancy_map_server&quot;</span>);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keyword">auto</span> octree_binary_pub =</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      node-&gt;create_publisher&lt;octomap_msgs::msg::Octomap&gt;(<span class="stringliteral">&quot;octomap_binary&quot;</span>, RMW_QOS_POLICY_HISTORY_KEEP_LAST);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keyword">auto</span> clock_ptr = std::make_shared&lt;rclcpp::Clock&gt;(RCL_ROS_TIME);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  std::shared_ptr&lt;tf2_ros::Buffer&gt; buffer = std::make_shared&lt;tf2_ros::Buffer&gt;(clock_ptr, tf2::durationFromSec(5.0));</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  std::shared_ptr&lt;tf2_ros::TransformListener&gt; listener = std::make_shared&lt;tf2_ros::TransformListener&gt;(*buffer, node);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <a class="code" href="classoccupancy__map__monitor_1_1OccupancyMapMonitor.html">occupancy_map_monitor::OccupancyMapMonitor</a> server(node, buffer);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  server.<a class="code" href="classoccupancy__map__monitor_1_1OccupancyMapMonitor.html#a2ff7c82fce0e7f7057d602a49c51958d">setUpdateCallback</a>(boost::bind(&amp;publishOctomap, octree_binary_pub, &amp;server));</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  server.<a class="code" href="classoccupancy__map__monitor_1_1OccupancyMapMonitor.html#a4402900ae7e6b91fffe6de2d8c36eae6">startMonitor</a>();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  rclcpp::spin(node);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassoccupancy__map__monitor_1_1OccupancyMapMonitor_html"><div class="ttname"><a href="classoccupancy__map__monitor_1_1OccupancyMapMonitor.html">occupancy_map_monitor::OccupancyMapMonitor</a></div><div class="ttdef"><b>Definition:</b> <a href="occupancy__map__monitor_8h_source.html#l00088">occupancy_map_monitor.h:88</a></div></div>
 <div class="ttc" id="aoccupancy__map__monitor_8h_html"><div class="ttname"><a href="occupancy__map__monitor_8h.html">occupancy_map_monitor.h</a></div></div>
-<div class="ttc" id="aclassoccupancy__map__monitor_1_1OccupancyMapMonitor_html_a1d3fce5952f5421d3c2422c3b7079927"><div class="ttname"><a href="classoccupancy__map__monitor_1_1OccupancyMapMonitor.html#a1d3fce5952f5421d3c2422c3b7079927">occupancy_map_monitor::OccupancyMapMonitor::getMapFrame</a></div><div class="ttdeci">const std::string &amp; getMapFrame() const</div><div class="ttdoc">Gets the map frame (this is set either by the constor or a parameter).</div><div class="ttdef"><b>Definition:</b> <a href="occupancy__map__monitor_8h_source.html#l00251">occupancy_map_monitor.h:251</a></div></div>
-<div class="ttc" id="aclassoccupancy__map__monitor_1_1OccupancyMapMonitor_html_a4402900ae7e6b91fffe6de2d8c36eae6"><div class="ttname"><a href="classoccupancy__map__monitor_1_1OccupancyMapMonitor.html#a4402900ae7e6b91fffe6de2d8c36eae6">occupancy_map_monitor::OccupancyMapMonitor::startMonitor</a></div><div class="ttdeci">void startMonitor()</div><div class="ttdoc">start the monitor (will begin updating the octomap</div><div class="ttdef"><b>Definition:</b> <a href="occupancy__map__monitor_8cpp_source.html#l00341">occupancy_map_monitor.cpp:341</a></div></div>
-<div class="ttc" id="aoccupancy__map__server_8cpp_html_a3c04138a5bfe5d72780bb7e82a18e627"><div class="ttname"><a href="occupancy__map__server_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></div><div class="ttdeci">int main(int argc, char **argv)</div><div class="ttdef"><b>Definition:</b> <a href="occupancy__map__server_8cpp_source.html#l00074">occupancy_map_server.cpp:74</a></div></div>
-<div class="ttc" id="aclassoccupancy__map__monitor_1_1OccupancyMapMonitor_html_a2ff7c82fce0e7f7057d602a49c51958d"><div class="ttname"><a href="classoccupancy__map__monitor_1_1OccupancyMapMonitor.html#a2ff7c82fce0e7f7057d602a49c51958d">occupancy_map_monitor::OccupancyMapMonitor::setUpdateCallback</a></div><div class="ttdeci">void setUpdateCallback(const boost::function&lt; void()&gt; &amp;update_callback)</div><div class="ttdoc">Set the callback to trigger when updates to the maintained octomap are received.</div><div class="ttdef"><b>Definition:</b> <a href="occupancy__map__monitor_8h_source.html#l00311">occupancy_map_monitor.h:311</a></div></div>
+<div class="ttc" id="aclassoccupancy__map__monitor_1_1OccupancyMapMonitor_html_a1d3fce5952f5421d3c2422c3b7079927"><div class="ttname"><a href="classoccupancy__map__monitor_1_1OccupancyMapMonitor.html#a1d3fce5952f5421d3c2422c3b7079927">occupancy_map_monitor::OccupancyMapMonitor::getMapFrame</a></div><div class="ttdeci">const std::string &amp; getMapFrame() const</div><div class="ttdef"><b>Definition:</b> <a href="occupancy__map__monitor_8h_source.html#l00148">occupancy_map_monitor.h:148</a></div></div>
+<div class="ttc" id="aclassoccupancy__map__monitor_1_1OccupancyMapMonitor_html_a4402900ae7e6b91fffe6de2d8c36eae6"><div class="ttname"><a href="classoccupancy__map__monitor_1_1OccupancyMapMonitor.html#a4402900ae7e6b91fffe6de2d8c36eae6">occupancy_map_monitor::OccupancyMapMonitor::startMonitor</a></div><div class="ttdeci">void startMonitor()</div><div class="ttdoc">start the monitor (will begin updating the octomap</div><div class="ttdef"><b>Definition:</b> <a href="occupancy__map__monitor_8cpp_source.html#l00370">occupancy_map_monitor.cpp:370</a></div></div>
+<div class="ttc" id="aoccupancy__map__server_8cpp_html_a3c04138a5bfe5d72780bb7e82a18e627"><div class="ttname"><a href="occupancy__map__server_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></div><div class="ttdeci">int main(int argc, char **argv)</div><div class="ttdef"><b>Definition:</b> <a href="occupancy__map__server_8cpp_source.html#l00070">occupancy_map_server.cpp:70</a></div></div>
+<div class="ttc" id="aclassoccupancy__map__monitor_1_1OccupancyMapMonitor_html_a2ff7c82fce0e7f7057d602a49c51958d"><div class="ttname"><a href="classoccupancy__map__monitor_1_1OccupancyMapMonitor.html#a2ff7c82fce0e7f7057d602a49c51958d">occupancy_map_monitor::OccupancyMapMonitor::setUpdateCallback</a></div><div class="ttdeci">void setUpdateCallback(const boost::function&lt; void()&gt; &amp;update_callback)</div><div class="ttdoc">Set the callback to trigger when updates to the maintained octomap are received.</div><div class="ttdef"><b>Definition:</b> <a href="occupancy__map__monitor_8h_source.html#l00174">occupancy_map_monitor.h:174</a></div></div>
 <div class="ttc" id="anamespaceplanning__request__adapter_html_af64b3fa8ebc256d9c5133c6c80ade28f"><div class="ttname"><a href="namespaceplanning__request__adapter.html#af64b3fa8ebc256d9c5133c6c80ade28f">planning_request_adapter::LOGGER</a></div><div class="ttdeci">rclcpp::Logger LOGGER</div><div class="ttdef"><b>Definition:</b> <a href="planning__request__adapter_8cpp_source.html#l00078">planning_request_adapter.cpp:78</a></div></div>
-<div class="ttc" id="aclassoccupancy__map__monitor_1_1OccupancyMapMonitor_html_aa7e43f8169c5ba9cb4794241c8fe53d0"><div class="ttname"><a href="classoccupancy__map__monitor_1_1OccupancyMapMonitor.html#aa7e43f8169c5ba9cb4794241c8fe53d0">occupancy_map_monitor::OccupancyMapMonitor::getOcTreePtr</a></div><div class="ttdeci">const collision_detection::OccMapTreePtr &amp; getOcTreePtr()</div><div class="ttdoc">Get a pointer to the underlying octree for this monitor. Lock the tree before reading or writing usin...</div><div class="ttdef"><b>Definition:</b> <a href="occupancy__map__monitor_8h_source.html#l00234">occupancy_map_monitor.h:234</a></div></div>
+<div class="ttc" id="aclassoccupancy__map__monitor_1_1OccupancyMapMonitor_html_aa3e6998ab5f2e479ff3d6f59b0d87fdb"><div class="ttname"><a href="classoccupancy__map__monitor_1_1OccupancyMapMonitor.html#aa3e6998ab5f2e479ff3d6f59b0d87fdb">occupancy_map_monitor::OccupancyMapMonitor::getOcTreePtr</a></div><div class="ttdeci">const OccMapTreePtr &amp; getOcTreePtr()</div><div class="ttdoc">Get a pointer to the underlying octree for this monitor. Lock the tree before reading or writing usin...</div><div class="ttdef"><b>Definition:</b> <a href="occupancy__map__monitor_8h_source.html#l00136">occupancy_map_monitor.h:136</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

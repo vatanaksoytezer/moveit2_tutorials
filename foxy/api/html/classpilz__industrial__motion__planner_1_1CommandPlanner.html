@@ -74,7 +74,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>MoveIt Plugin for Planning with Standard Robot Commands This planner is dedicated to return a instance of PlanningContext that corresponds to the requested motion command set as planner_id in the MotionPlanRequest). It can be easily extended with additional commands by creating a class inheriting from <a class="el" href="classpilz__industrial__motion__planner_1_1PlanningContextLoader.html" title="Base class for all PlanningContextLoaders. Since planning_interface::PlanningContext has a non empty ...">PlanningContextLoader</a>.  
+<p>MoveIt Plugin for Planning with Standard Robot Commands This planner is dedicated to return a instance of PlanningContext that corresponds to the requested motion command set as planner_id in the MotionPlanRequest). It can be easily extended with additional commands by creating a class inherting from <a class="el" href="classpilz__industrial__motion__planner_1_1PlanningContextLoader.html" title="Base class for all PlanningContextLoaders. Since planning_interface::PlanningContext has a non empty ...">PlanningContextLoader</a>.  
  <a href="classpilz__industrial__motion__planner_1_1CommandPlanner.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="pilz__industrial__motion__planner_8h_source.html">pilz_industrial_motion_planner.h</a>&gt;</code></p>
@@ -101,22 +101,22 @@ Collaboration diagram for pilz_industrial_motion_planner::CommandPlanner:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a479ad91262e3ea56cdb980e79ffd7d8f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpilz__industrial__motion__planner_1_1CommandPlanner.html#a479ad91262e3ea56cdb980e79ffd7d8f">~CommandPlanner</a> () override</td></tr>
 <tr class="separator:a479ad91262e3ea56cdb980e79ffd7d8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5f6c26cbb353c979e7f8d7eba1c2cdb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpilz__industrial__motion__planner_1_1CommandPlanner.html#ab5f6c26cbb353c979e7f8d7eba1c2cdb">initialize</a> (const moveit::core::RobotModelConstPtr &amp;model, const rclcpp::Node::SharedPtr &amp;node, const std::string &amp;ns) override</td></tr>
-<tr class="memdesc:ab5f6c26cbb353c979e7f8d7eba1c2cdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the planner Upon initialization this planner will look for plugins implementing <a class="el" href="classpilz__industrial__motion__planner_1_1PlanningContextLoader.html" title="Base class for all PlanningContextLoaders. Since planning_interface::PlanningContext has a non empty ...">pilz_industrial_motion_planner::PlanningContextLoader</a>.  <a href="classpilz__industrial__motion__planner_1_1CommandPlanner.html#ab5f6c26cbb353c979e7f8d7eba1c2cdb">More...</a><br /></td></tr>
-<tr class="separator:ab5f6c26cbb353c979e7f8d7eba1c2cdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c42b47de97a164ea7db7c32b729b8c8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpilz__industrial__motion__planner_1_1CommandPlanner.html#a1c42b47de97a164ea7db7c32b729b8c8">initialize</a> (const robot_model::RobotModelConstPtr &amp;model, const std::string &amp;ns) override</td></tr>
+<tr class="memdesc:a1c42b47de97a164ea7db7c32b729b8c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the planner Upon initialization this planner will look for plugins implementing <a class="el" href="classpilz__industrial__motion__planner_1_1PlanningContextLoader.html" title="Base class for all PlanningContextLoaders. Since planning_interface::PlanningContext has a non empty ...">pilz_industrial_motion_planner::PlanningContextLoader</a>.  <a href="classpilz__industrial__motion__planner_1_1CommandPlanner.html#a1c42b47de97a164ea7db7c32b729b8c8">More...</a><br /></td></tr>
+<tr class="separator:a1c42b47de97a164ea7db7c32b729b8c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af879a7f673c0e7653bf09e9135723a13"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpilz__industrial__motion__planner_1_1CommandPlanner.html#af879a7f673c0e7653bf09e9135723a13">getDescription</a> () const override</td></tr>
 <tr class="memdesc:af879a7f673c0e7653bf09e9135723a13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Description of the planner.  <a href="classpilz__industrial__motion__planner_1_1CommandPlanner.html#af879a7f673c0e7653bf09e9135723a13">More...</a><br /></td></tr>
 <tr class="separator:af879a7f673c0e7653bf09e9135723a13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99b14642d146f2fb3760fabf3c4ff366"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpilz__industrial__motion__planner_1_1CommandPlanner.html#a99b14642d146f2fb3760fabf3c4ff366">getPlanningAlgorithms</a> (std::vector&lt; std::string &gt; &amp;algs) const override</td></tr>
 <tr class="memdesc:a99b14642d146f2fb3760fabf3c4ff366"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the available planning commands.  <a href="classpilz__industrial__motion__planner_1_1CommandPlanner.html#a99b14642d146f2fb3760fabf3c4ff366">More...</a><br /></td></tr>
 <tr class="separator:a99b14642d146f2fb3760fabf3c4ff366"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a906cc608980d96b6e661aae974b3c738"><td class="memItemLeft" align="right" valign="top">planning_interface::PlanningContextPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpilz__industrial__motion__planner_1_1CommandPlanner.html#a906cc608980d96b6e661aae974b3c738">getPlanningContext</a> (const planning_scene::PlanningSceneConstPtr &amp;planning_scene, const <a class="el" href="namespaceplanning__interface.html#a1307e10a0a3b9ca03406d777b9a938a3">planning_interface::MotionPlanRequest</a> &amp;req, moveit_msgs::msg::MoveItErrorCodes &amp;error_code) const override</td></tr>
-<tr class="memdesc:a906cc608980d96b6e661aae974b3c738"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a PlanningContext that can be used to solve(calculate) the trajectory that corresponds to command given in motion request as planner_id.  <a href="classpilz__industrial__motion__planner_1_1CommandPlanner.html#a906cc608980d96b6e661aae974b3c738">More...</a><br /></td></tr>
-<tr class="separator:a906cc608980d96b6e661aae974b3c738"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad82334463a0411db37ca0a36eb4badf3"><td class="memItemLeft" align="right" valign="top">planning_interface::PlanningContextPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpilz__industrial__motion__planner_1_1CommandPlanner.html#ad82334463a0411db37ca0a36eb4badf3">getPlanningContext</a> (const planning_scene::PlanningSceneConstPtr &amp;planning_scene, const <a class="el" href="namespaceplanning__interface.html#a1307e10a0a3b9ca03406d777b9a938a3">planning_interface::MotionPlanRequest</a> &amp;req, moveit_msgs::MoveItErrorCodes &amp;error_code) const override</td></tr>
+<tr class="memdesc:ad82334463a0411db37ca0a36eb4badf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a PlanningContext that can be used to solve(calculate) the trajectory that corresponds to command given in motion request as planner_id.  <a href="classpilz__industrial__motion__planner_1_1CommandPlanner.html#ad82334463a0411db37ca0a36eb4badf3">More...</a><br /></td></tr>
+<tr class="separator:ad82334463a0411db37ca0a36eb4badf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b0b6afd4f359c4ee3ae6e98dc2435dc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpilz__industrial__motion__planner_1_1CommandPlanner.html#a0b0b6afd4f359c4ee3ae6e98dc2435dc">canServiceRequest</a> (const <a class="el" href="namespaceplanning__interface.html#a1307e10a0a3b9ca03406d777b9a938a3">planning_interface::MotionPlanRequest</a> &amp;req) const override</td></tr>
 <tr class="memdesc:a0b0b6afd4f359c4ee3ae6e98dc2435dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the request can be handled.  <a href="classpilz__industrial__motion__planner_1_1CommandPlanner.html#a0b0b6afd4f359c4ee3ae6e98dc2435dc">More...</a><br /></td></tr>
 <tr class="separator:a0b0b6afd4f359c4ee3ae6e98dc2435dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc7d7fd62e53a3156ee3ca2d6c5c527c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpilz__industrial__motion__planner_1_1CommandPlanner.html#abc7d7fd62e53a3156ee3ca2d6c5c527c">registerContextLoader</a> (const <a class="el" href="namespacepilz__industrial__motion__planner.html#a78b5690d96e1f88fe5f7f98555367fd1">pilz_industrial_motion_planner::PlanningContextLoaderPtr</a> &amp;planning_context_loader)</td></tr>
+<tr class="memitem:abc7d7fd62e53a3156ee3ca2d6c5c527c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpilz__industrial__motion__planner_1_1CommandPlanner.html#abc7d7fd62e53a3156ee3ca2d6c5c527c">registerContextLoader</a> (const <a class="el" href="namespacepilz__industrial__motion__planner.html#af351fa28118b138319387c7a8423b0f7">pilz_industrial_motion_planner::PlanningContextLoaderPtr</a> &amp;planning_context_loader)</td></tr>
 <tr class="memdesc:abc7d7fd62e53a3156ee3ca2d6c5c527c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register a <a class="el" href="classpilz__industrial__motion__planner_1_1PlanningContextLoader.html" title="Base class for all PlanningContextLoaders. Since planning_interface::PlanningContext has a non empty ...">PlanningContextLoader</a> to be used by the <a class="el" href="classpilz__industrial__motion__planner_1_1CommandPlanner.html" title="MoveIt Plugin for Planning with Standard Robot Commands This planner is dedicated to return a instanc...">CommandPlanner</a>.  <a href="classpilz__industrial__motion__planner_1_1CommandPlanner.html#abc7d7fd62e53a3156ee3ca2d6c5c527c">More...</a><br /></td></tr>
 <tr class="separator:abc7d7fd62e53a3156ee3ca2d6c5c527c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classplanning__interface_1_1PlannerManager"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classplanning__interface_1_1PlannerManager')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classplanning__interface_1_1PlannerManager.html">planning_interface::PlannerManager</a></td></tr>
@@ -124,6 +124,11 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:acee62db3ad174d3a7ff775f11b495558 inherit pub_methods_classplanning__interface_1_1PlannerManager"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad47c3857dbccc4a10bbc62d7d5c7955a inherit pub_methods_classplanning__interface_1_1PlannerManager"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning__interface_1_1PlannerManager.html#ad47c3857dbccc4a10bbc62d7d5c7955a">~PlannerManager</a> ()</td></tr>
 <tr class="separator:ad47c3857dbccc4a10bbc62d7d5c7955a inherit pub_methods_classplanning__interface_1_1PlannerManager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93e7817378796fa0f7946e6264d330bc inherit pub_methods_classplanning__interface_1_1PlannerManager"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning__interface_1_1PlannerManager.html#a93e7817378796fa0f7946e6264d330bc">initialize</a> (const moveit::core::RobotModelConstPtr &amp;model, const rclcpp::Node::SharedPtr &amp;node, const std::string &amp;parameter_namespace)</td></tr>
+<tr class="separator:a93e7817378796fa0f7946e6264d330bc inherit pub_methods_classplanning__interface_1_1PlannerManager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd3f0b86d9937b9e2b47b018fb63ee0b inherit pub_methods_classplanning__interface_1_1PlannerManager"><td class="memItemLeft" align="right" valign="top">virtual PlanningContextPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning__interface_1_1PlannerManager.html#abd3f0b86d9937b9e2b47b018fb63ee0b">getPlanningContext</a> (const planning_scene::PlanningSceneConstPtr &amp;planning_scene, const <a class="el" href="namespaceplanning__interface.html#a1307e10a0a3b9ca03406d777b9a938a3">MotionPlanRequest</a> &amp;req, moveit_msgs::msg::MoveItErrorCodes &amp;error_code) const =0</td></tr>
+<tr class="memdesc:abd3f0b86d9937b9e2b47b018fb63ee0b inherit pub_methods_classplanning__interface_1_1PlannerManager"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a planning context given the current scene and a planning request. If a problem is encountered, error code is set and empty ptr is returned. The returned motion planner context is clean &ndash; the motion planner will start from scratch every time a context is constructed.  <a href="classplanning__interface_1_1PlannerManager.html#abd3f0b86d9937b9e2b47b018fb63ee0b">More...</a><br /></td></tr>
+<tr class="separator:abd3f0b86d9937b9e2b47b018fb63ee0b inherit pub_methods_classplanning__interface_1_1PlannerManager"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a157ce2926e4b6a9d22d837f374fa83cc inherit pub_methods_classplanning__interface_1_1PlannerManager"><td class="memItemLeft" align="right" valign="top">PlanningContextPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning__interface_1_1PlannerManager.html#a157ce2926e4b6a9d22d837f374fa83cc">getPlanningContext</a> (const planning_scene::PlanningSceneConstPtr &amp;planning_scene, const <a class="el" href="namespaceplanning__interface.html#a1307e10a0a3b9ca03406d777b9a938a3">MotionPlanRequest</a> &amp;req) const</td></tr>
 <tr class="memdesc:a157ce2926e4b6a9d22d837f374fa83cc inherit pub_methods_classplanning__interface_1_1PlannerManager"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls the function above but ignores the error_code.  <a href="classplanning__interface_1_1PlannerManager.html#a157ce2926e4b6a9d22d837f374fa83cc">More...</a><br /></td></tr>
 <tr class="separator:a157ce2926e4b6a9d22d837f374fa83cc inherit pub_methods_classplanning__interface_1_1PlannerManager"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -145,7 +150,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:ad028a587c584d1c8378ab8672ff3006a inherit pro_attribs_classplanning__interface_1_1PlannerManager"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>MoveIt Plugin for Planning with Standard Robot Commands This planner is dedicated to return a instance of PlanningContext that corresponds to the requested motion command set as planner_id in the MotionPlanRequest). It can be easily extended with additional commands by creating a class inheriting from <a class="el" href="classpilz__industrial__motion__planner_1_1PlanningContextLoader.html" title="Base class for all PlanningContextLoaders. Since planning_interface::PlanningContext has a non empty ...">PlanningContextLoader</a>. </p>
+<div class="textblock"><p>MoveIt Plugin for Planning with Standard Robot Commands This planner is dedicated to return a instance of PlanningContext that corresponds to the requested motion command set as planner_id in the MotionPlanRequest). It can be easily extended with additional commands by creating a class inherting from <a class="el" href="classpilz__industrial__motion__planner_1_1PlanningContextLoader.html" title="Base class for all PlanningContextLoaders. Since planning_interface::PlanningContext has a non empty ...">PlanningContextLoader</a>. </p>
 
 <p class="definition">Definition at line <a class="el" href="pilz__industrial__motion__planner_8h_source.html#l00092">92</a> of file <a class="el" href="pilz__industrial__motion__planner_8h_source.html">pilz_industrial_motion_planner.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -212,7 +217,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classplanning__interface_1_1PlannerManager.html#a0820d5d3922f3cd0d5d3dd86185afb16">planning_interface::PlannerManager</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="pilz__industrial__motion__planner_8cpp_source.html#l00189">189</a> of file <a class="el" href="pilz__industrial__motion__planner_8cpp_source.html">pilz_industrial_motion_planner.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pilz__industrial__motion__planner_8cpp_source.html#l00182">182</a> of file <a class="el" href="pilz__industrial__motion__planner_8cpp_source.html">pilz_industrial_motion_planner.cpp</a>.</p>
 
 </div>
 </div>
@@ -243,7 +248,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classplanning__interface_1_1PlannerManager.html#a7152d73dbdefd8e3201ce37a69778ad1">planning_interface::PlannerManager</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="pilz__industrial__motion__planner_8cpp_source.html#l00141">141</a> of file <a class="el" href="pilz__industrial__motion__planner_8cpp_source.html">pilz_industrial_motion_planner.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pilz__industrial__motion__planner_8cpp_source.html#l00137">137</a> of file <a class="el" href="pilz__industrial__motion__planner_8cpp_source.html">pilz_industrial_motion_planner.cpp</a>.</p>
 
 </div>
 </div>
@@ -282,12 +287,12 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classplanning__interface_1_1PlannerManager.html#a42861c496e0aca183d781efab12be5fc">planning_interface::PlannerManager</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="pilz__industrial__motion__planner_8cpp_source.html#l00146">146</a> of file <a class="el" href="pilz__industrial__motion__planner_8cpp_source.html">pilz_industrial_motion_planner.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pilz__industrial__motion__planner_8cpp_source.html#l00142">142</a> of file <a class="el" href="pilz__industrial__motion__planner_8cpp_source.html">pilz_industrial_motion_planner.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a906cc608980d96b6e661aae974b3c738"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a906cc608980d96b6e661aae974b3c738">&#9670;&nbsp;</a></span>getPlanningContext()</h2>
+<a id="ad82334463a0411db37ca0a36eb4badf3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad82334463a0411db37ca0a36eb4badf3">&#9670;&nbsp;</a></span>getPlanningContext()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -310,7 +315,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">moveit_msgs::msg::MoveItErrorCodes &amp;&#160;</td>
+          <td class="paramtype">moveit_msgs::MoveItErrorCodes &amp;&#160;</td>
           <td class="paramname"><em>error_code</em>&#160;</td>
         </tr>
         <tr>
@@ -321,7 +326,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -337,14 +342,12 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p>Implements <a class="el" href="classplanning__interface_1_1PlannerManager.html#abd3f0b86d9937b9e2b47b018fb63ee0b">planning_interface::PlannerManager</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="pilz__industrial__motion__planner_8cpp_source.html#l00157">157</a> of file <a class="el" href="pilz__industrial__motion__planner_8cpp_source.html">pilz_industrial_motion_planner.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pilz__industrial__motion__planner_8cpp_source.html#l00153">153</a> of file <a class="el" href="pilz__industrial__motion__planner_8cpp_source.html">pilz_industrial_motion_planner.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classpilz__industrial__motion__planner_1_1CommandPlanner_a906cc608980d96b6e661aae974b3c738_icgraph.png" border="0" usemap="#classpilz__industrial__motion__planner_1_1CommandPlanner_a906cc608980d96b6e661aae974b3c738_icgraph" alt=""/></div>
-<map name="classpilz__industrial__motion__planner_1_1CommandPlanner_a906cc608980d96b6e661aae974b3c738_icgraph" id="classpilz__industrial__motion__planner_1_1CommandPlanner_a906cc608980d96b6e661aae974b3c738_icgraph">
+<div class="center"><img src="classpilz__industrial__motion__planner_1_1CommandPlanner_ad82334463a0411db37ca0a36eb4badf3_icgraph.png" border="0" usemap="#classpilz__industrial__motion__planner_1_1CommandPlanner_ad82334463a0411db37ca0a36eb4badf3_icgraph" alt=""/></div>
+<map name="classpilz__industrial__motion__planner_1_1CommandPlanner_ad82334463a0411db37ca0a36eb4badf3_icgraph" id="classpilz__industrial__motion__planner_1_1CommandPlanner_ad82334463a0411db37ca0a36eb4badf3_icgraph">
 <area shape="rect" title="Returns a PlanningContext that can be used to solve(calculate) the trajectory that corresponds to com..." alt="" coords="108,5,311,61"/>
 <area shape="rect" href="unittest__pilz__industrial__motion__planner__direct_8cpp.html#ad9d770f87a042b727a22f77f0d31023c" title="Check that getPlanningContext() fails if the underlying ContextLoader fails to load the context." alt="" coords="5,20,60,47"/>
 </map>
@@ -352,8 +355,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="ab5f6c26cbb353c979e7f8d7eba1c2cdb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab5f6c26cbb353c979e7f8d7eba1c2cdb">&#9670;&nbsp;</a></span>initialize()</h2>
+<a id="a1c42b47de97a164ea7db7c32b729b8c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c42b47de97a164ea7db7c32b729b8c8">&#9670;&nbsp;</a></span>initialize()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -364,14 +367,8 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">bool pilz_industrial_motion_planner::CommandPlanner::initialize </td>
           <td>(</td>
-          <td class="paramtype">const moveit::core::RobotModelConstPtr &amp;&#160;</td>
+          <td class="paramtype">const robot_model::RobotModelConstPtr &amp;&#160;</td>
           <td class="paramname"><em>model</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const rclcpp::Node::SharedPtr &amp;&#160;</td>
-          <td class="paramname"><em>node</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -387,7 +384,7 @@ Here is the caller graph for this function:</div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -396,21 +393,18 @@ Here is the caller graph for this function:</div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">model</td><td>The robot model </td></tr>
-    <tr><td class="paramname">node</td><td>The node </td></tr>
     <tr><td class="paramname">ns</td><td>The namespace </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true on success, false otherwise </dd></dl>
 
-<p>Reimplemented from <a class="el" href="classplanning__interface_1_1PlannerManager.html#a93e7817378796fa0f7946e6264d330bc">planning_interface::PlannerManager</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="pilz__industrial__motion__planner_8cpp_source.html#l00090">90</a> of file <a class="el" href="pilz__industrial__motion__planner_8cpp_source.html">pilz_industrial_motion_planner.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pilz__industrial__motion__planner_8cpp_source.html#l00087">87</a> of file <a class="el" href="pilz__industrial__motion__planner_8cpp_source.html">pilz_industrial_motion_planner.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classpilz__industrial__motion__planner_1_1CommandPlanner_ab5f6c26cbb353c979e7f8d7eba1c2cdb_cgraph.png" border="0" usemap="#classpilz__industrial__motion__planner_1_1CommandPlanner_ab5f6c26cbb353c979e7f8d7eba1c2cdb_cgraph" alt=""/></div>
-<map name="classpilz__industrial__motion__planner_1_1CommandPlanner_ab5f6c26cbb353c979e7f8d7eba1c2cdb_cgraph" id="classpilz__industrial__motion__planner_1_1CommandPlanner_ab5f6c26cbb353c979e7f8d7eba1c2cdb_cgraph">
+<div class="center"><img src="classpilz__industrial__motion__planner_1_1CommandPlanner_a1c42b47de97a164ea7db7c32b729b8c8_cgraph.png" border="0" usemap="#classpilz__industrial__motion__planner_1_1CommandPlanner_a1c42b47de97a164ea7db7c32b729b8c8_cgraph" alt=""/></div>
+<map name="classpilz__industrial__motion__planner_1_1CommandPlanner_a1c42b47de97a164ea7db7c32b729b8c8_cgraph" id="classpilz__industrial__motion__planner_1_1CommandPlanner_a1c42b47de97a164ea7db7c32b729b8c8_cgraph">
 <area shape="rect" title="Initializes the planner Upon initialization this planner will look for plugins implementing pilz_indu..." alt="" coords="5,85,208,141"/>
 <area shape="rect" href="classpilz__industrial__motion__planner_1_1CommandPlanner.html#abc7d7fd62e53a3156ee3ca2d6c5c527c" title="Register a PlanningContextLoader to be used by the CommandPlanner." alt="" coords="256,5,459,61"/>
 <area shape="rect" href="classpilz__industrial__motion__planner_1_1LimitsContainer.html#a4bad0e0b995a846b3d5e370594b457f6" title="Set cartesian limits." alt="" coords="263,85,452,141"/>
@@ -429,7 +423,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname">void pilz_industrial_motion_planner::CommandPlanner::registerContextLoader </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="namespacepilz__industrial__motion__planner.html#a78b5690d96e1f88fe5f7f98555367fd1">pilz_industrial_motion_planner::PlanningContextLoaderPtr</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespacepilz__industrial__motion__planner.html#af351fa28118b138319387c7a8423b0f7">pilz_industrial_motion_planner::PlanningContextLoaderPtr</a> &amp;&#160;</td>
           <td class="paramname"><em>planning_context_loader</em></td><td>)</td>
           <td></td>
         </tr>
@@ -450,14 +444,14 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="pilz__industrial__motion__planner_8cpp_source.html#l00194">194</a> of file <a class="el" href="pilz__industrial__motion__planner_8cpp_source.html">pilz_industrial_motion_planner.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pilz__industrial__motion__planner_8cpp_source.html#l00187">187</a> of file <a class="el" href="pilz__industrial__motion__planner_8cpp_source.html">pilz_industrial_motion_planner.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classpilz__industrial__motion__planner_1_1CommandPlanner_abc7d7fd62e53a3156ee3ca2d6c5c527c_icgraph.png" border="0" usemap="#classpilz__industrial__motion__planner_1_1CommandPlanner_abc7d7fd62e53a3156ee3ca2d6c5c527c_icgraph" alt=""/></div>
 <map name="classpilz__industrial__motion__planner_1_1CommandPlanner_abc7d7fd62e53a3156ee3ca2d6c5c527c_icgraph" id="classpilz__industrial__motion__planner_1_1CommandPlanner_abc7d7fd62e53a3156ee3ca2d6c5c527c_icgraph">
 <area shape="rect" title="Register a PlanningContextLoader to be used by the CommandPlanner." alt="" coords="256,39,459,95"/>
-<area shape="rect" href="classpilz__industrial__motion__planner_1_1CommandPlanner.html#ab5f6c26cbb353c979e7f8d7eba1c2cdb" title="Initializes the planner Upon initialization this planner will look for plugins implementing pilz_indu..." alt="" coords="5,5,208,61"/>
+<area shape="rect" href="classpilz__industrial__motion__planner_1_1CommandPlanner.html#a1c42b47de97a164ea7db7c32b729b8c8" title="Initializes the planner Upon initialization this planner will look for plugins implementing pilz_indu..." alt="" coords="5,5,208,61"/>
 <area shape="rect" href="unittest__pilz__industrial__motion__planner__direct_8cpp.html#aa809bb592086bdd2fca03787f1acd25d" title="Check that a exception is thrown if a already loaded PlanningContextLoader is loaded." alt="" coords="79,85,134,112"/>
 </map>
 </div>

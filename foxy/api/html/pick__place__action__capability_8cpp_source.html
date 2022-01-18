@@ -118,21 +118,21 @@ $(function() {
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
 <div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classmove__group_1_1MoveGroupPickPlaceAction.html#a3b5457a36ae5dfe1ae844f9d81661447">   47</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmove__group_1_1MoveGroupPickPlaceAction.html#a3b5457a36ae5dfe1ae844f9d81661447">move_group::MoveGroupPickPlaceAction::initialize</a>()</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;{</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  pick_place_ = std::make_shared&lt;pick_place::PickPlace&gt;(context_-&gt;planning_pipeline_);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  pick_place_.reset(<span class="keyword">new</span> <a class="code" href="classpick__place_1_1PickPlace.html">pick_place::PickPlace</a>(context_-&gt;planning_pipeline_));</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  pick_place_-&gt;displayComputedMotionPlans(<span class="keyword">true</span>);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordflow">if</span> (context_-&gt;debug_)</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    pick_place_-&gt;displayProcessedGrasps(<span class="keyword">true</span>);</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="comment">// start the pickup action server</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  pickup_action_server_ = std::make_unique&lt;actionlib::SimpleActionServer&lt;moveit_msgs::PickupAction&gt;&gt;(</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      root_node_handle_, PICKUP_ACTION, boost::bind(&amp;MoveGroupPickPlaceAction::executePickupCallback, <span class="keyword">this</span>, _1), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  pickup_action_server_.reset(<span class="keyword">new</span> actionlib::SimpleActionServer&lt;moveit_msgs::action::PickupAction&gt;(</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      root_node_handle_, PICKUP_ACTION, boost::bind(&amp;MoveGroupPickPlaceAction::executePickupCallback, <span class="keyword">this</span>, _1), <span class="keyword">false</span>));</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  pickup_action_server_-&gt;registerPreemptCallback(boost::bind(&amp;MoveGroupPickPlaceAction::preemptPickupCallback, <span class="keyword">this</span>));</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  pickup_action_server_-&gt;start();</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="comment">// start the place action server</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  place_action_server_ = std::make_unique&lt;actionlib::SimpleActionServer&lt;moveit_msgs::PlaceAction&gt;&gt;(</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      root_node_handle_, PLACE_ACTION, boost::bind(&amp;MoveGroupPickPlaceAction::executePlaceCallback, <span class="keyword">this</span>, _1), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  place_action_server_.reset(<span class="keyword">new</span> actionlib::SimpleActionServer&lt;moveit_msgs::action::PlaceAction&gt;(</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      root_node_handle_, PLACE_ACTION, boost::bind(&amp;MoveGroupPickPlaceAction::executePlaceCallback, <span class="keyword">this</span>, _1), <span class="keyword">false</span>));</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  place_action_server_-&gt;registerPreemptCallback(boost::bind(&amp;MoveGroupPickPlaceAction::preemptPlaceCallback, <span class="keyword">this</span>));</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  place_action_server_-&gt;start();</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
@@ -390,154 +390,152 @@ $(function() {
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;  setPickupState(<a class="code" href="namespacemove__group.html#a4a295c26dbc5ac7780dfa7ae10350bfba5e64a5b48bd5741e8f5d32a005298f62">PLANNING</a>);</div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160; </div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;  <span class="comment">// before we start planning, ensure that we have the latest robot state received...</span></div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;  <span class="keyword">auto</span> node = context_-&gt;moveit_cpp_-&gt;getNode();</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;  context_-&gt;planning_scene_monitor_-&gt;waitForCurrentRobotState(node-&gt;get_clock()-&gt;now());</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;  context_-&gt;planning_scene_monitor_-&gt;updateFrameTransforms();</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160; </div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;  moveit_msgs::action::PickupGoalConstPtr goal;</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;  <span class="keywordflow">if</span> (input_goal-&gt;possible_grasps.empty())</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;  {</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    moveit_msgs::action::PickupGoal* copy(<span class="keyword">new</span> moveit_msgs::action::PickupGoal(*input_goal));</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    goal.reset(copy);</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    fillGrasps(*copy);</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;  }</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;  <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    goal = input_goal;</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160; </div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;  moveit_msgs::action::PickupResult action_res;</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160; </div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;  <span class="keywordflow">if</span> (goal-&gt;planning_options.plan_only || !context_-&gt;allow_trajectory_execution_)</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;  {</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    <span class="keywordflow">if</span> (!goal-&gt;planning_options.plan_only)</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;      ROS_WARN_NAMED(<span class="stringliteral">&quot;manipulation&quot;</span>, <span class="stringliteral">&quot;This instance of MoveGroup is not allowed to execute trajectories but the pick &quot;</span></div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                                     <span class="stringliteral">&quot;goal request has plan_only set to false. Only a motion plan will be computed &quot;</span></div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                                     <span class="stringliteral">&quot;anyway.&quot;</span>);</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    executePickupCallbackPlanOnly(goal, action_res);</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;  }</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;  <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    executePickupCallbackPlanAndExecute(goal, action_res);</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160; </div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;  <span class="keywordtype">bool</span> planned_trajectory_empty = action_res.trajectory_stages.empty();</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;  std::string response =</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;      getActionResultString(action_res.error_code, planned_trajectory_empty, goal-&gt;planning_options.plan_only);</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;  <span class="keywordflow">if</span> (action_res.error_code.val == moveit_msgs::msg::MoveItErrorCodes::SUCCESS)</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    pickup_action_server_-&gt;setSucceeded(action_res, response);</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;  <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;  {</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    <span class="keywordflow">if</span> (action_res.error_code.val == moveit_msgs::msg::MoveItErrorCodes::PREEMPTED)</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;      pickup_action_server_-&gt;setPreempted(action_res, response);</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;      pickup_action_server_-&gt;setAborted(action_res, response);</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;  }</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160; </div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;  setPickupState(<a class="code" href="namespacemove__group.html#a4a295c26dbc5ac7780dfa7ae10350bfba0022b267a121d71658d23378bbded484">IDLE</a>);</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;}</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160; </div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;<span class="keywordtype">void</span> move_group::MoveGroupPickPlaceAction::executePlaceCallback(<span class="keyword">const</span> moveit_msgs::action::PlaceGoalConstPtr&amp; goal)</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;{</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;  setPlaceState(<a class="code" href="namespacemove__group.html#a4a295c26dbc5ac7780dfa7ae10350bfba5e64a5b48bd5741e8f5d32a005298f62">PLANNING</a>);</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160; </div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;  <span class="comment">// before we start planning, ensure that we have the latest robot state received...</span></div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;  <span class="keyword">auto</span> node = context_-&gt;moveit_cpp_-&gt;getNode();</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;  context_-&gt;planning_scene_monitor_-&gt;waitForCurrentRobotState(node-&gt;get_clock()-&gt;now());</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;  context_-&gt;planning_scene_monitor_-&gt;updateFrameTransforms();</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;  context_-&gt;planning_scene_monitor_-&gt;waitForCurrentRobotState(ros::Time::now());</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;  context_-&gt;planning_scene_monitor_-&gt;updateFrameTransforms();</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160; </div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;  moveit_msgs::action::PickupGoalConstPtr goal;</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;  <span class="keywordflow">if</span> (input_goal-&gt;possible_grasps.empty())</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;  {</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    moveit_msgs::action::PickupGoal* copy(<span class="keyword">new</span> moveit_msgs::action::PickupGoal(*input_goal));</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    goal.reset(copy);</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    fillGrasps(*copy);</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;  }</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    goal = input_goal;</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; </div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;  moveit_msgs::action::PickupResult action_res;</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160; </div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;  <span class="keywordflow">if</span> (goal-&gt;planning_options.plan_only || !context_-&gt;allow_trajectory_execution_)</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;  {</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <span class="keywordflow">if</span> (!goal-&gt;planning_options.plan_only)</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;      ROS_WARN_NAMED(<span class="stringliteral">&quot;manipulation&quot;</span>, <span class="stringliteral">&quot;This instance of MoveGroup is not allowed to execute trajectories but the pick &quot;</span></div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;                                     <span class="stringliteral">&quot;goal request has plan_only set to false. Only a motion plan will be computed &quot;</span></div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                                     <span class="stringliteral">&quot;anyway.&quot;</span>);</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    executePickupCallbackPlanOnly(goal, action_res);</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;  }</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    executePickupCallbackPlanAndExecute(goal, action_res);</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160; </div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;  <span class="keywordtype">bool</span> planned_trajectory_empty = action_res.trajectory_stages.empty();</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;  std::string response =</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;      getActionResultString(action_res.error_code, planned_trajectory_empty, goal-&gt;planning_options.plan_only);</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;  <span class="keywordflow">if</span> (action_res.error_code.val == moveit_msgs::msg::MoveItErrorCodes::SUCCESS)</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    pickup_action_server_-&gt;setSucceeded(action_res, response);</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;  {</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    <span class="keywordflow">if</span> (action_res.error_code.val == moveit_msgs::msg::MoveItErrorCodes::PREEMPTED)</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;      pickup_action_server_-&gt;setPreempted(action_res, response);</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;      pickup_action_server_-&gt;setAborted(action_res, response);</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;  }</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160; </div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;  setPickupState(<a class="code" href="namespacemove__group.html#a4a295c26dbc5ac7780dfa7ae10350bfba0022b267a121d71658d23378bbded484">IDLE</a>);</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;}</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160; </div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;<span class="keywordtype">void</span> move_group::MoveGroupPickPlaceAction::executePlaceCallback(<span class="keyword">const</span> moveit_msgs::action::PlaceGoalConstPtr&amp; goal)</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;{</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;  setPlaceState(<a class="code" href="namespacemove__group.html#a4a295c26dbc5ac7780dfa7ae10350bfba5e64a5b48bd5741e8f5d32a005298f62">PLANNING</a>);</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160; </div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;  <span class="comment">// before we start planning, ensure that we have the latest robot state received...</span></div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;  context_-&gt;planning_scene_monitor_-&gt;waitForCurrentRobotState(ros::Time::now());</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;  context_-&gt;planning_scene_monitor_-&gt;updateFrameTransforms();</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160; </div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;  moveit_msgs::action::PlaceResult action_res;</div>
 <div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160; </div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;  moveit_msgs::action::PlaceResult action_res;</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160; </div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;  <span class="keywordflow">if</span> (goal-&gt;planning_options.plan_only || !context_-&gt;allow_trajectory_execution_)</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;  {</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    <span class="keywordflow">if</span> (!goal-&gt;planning_options.plan_only)</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;      ROS_WARN_NAMED(<span class="stringliteral">&quot;manipulation&quot;</span>, <span class="stringliteral">&quot;This instance of MoveGroup is not allowed to execute trajectories but the place &quot;</span></div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;                                     <span class="stringliteral">&quot;goal request has plan_only set to false. Only a motion plan will be computed &quot;</span></div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;                                     <span class="stringliteral">&quot;anyway.&quot;</span>);</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    executePlaceCallbackPlanOnly(goal, action_res);</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;  }</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;  <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    executePlaceCallbackPlanAndExecute(goal, action_res);</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160; </div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;  <span class="keywordtype">bool</span> planned_trajectory_empty = action_res.trajectory_stages.empty();</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;  std::string response =</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;      getActionResultString(action_res.error_code, planned_trajectory_empty, goal-&gt;planning_options.plan_only);</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;  <span class="keywordflow">if</span> (action_res.error_code.val == moveit_msgs::msg::MoveItErrorCodes::SUCCESS)</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    place_action_server_-&gt;setSucceeded(action_res, response);</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;  <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;  {</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    <span class="keywordflow">if</span> (action_res.error_code.val == moveit_msgs::msg::MoveItErrorCodes::PREEMPTED)</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;      place_action_server_-&gt;setPreempted(action_res, response);</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;      place_action_server_-&gt;setAborted(action_res, response);</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;  }</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160; </div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;  setPlaceState(<a class="code" href="namespacemove__group.html#a4a295c26dbc5ac7780dfa7ae10350bfba0022b267a121d71658d23378bbded484">IDLE</a>);</div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;}</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160; </div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;<span class="keywordtype">void</span> move_group::MoveGroupPickPlaceAction::preemptPickupCallback()</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;{</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;}</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160; </div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;<span class="keywordtype">void</span> move_group::MoveGroupPickPlaceAction::preemptPlaceCallback()</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;{</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;}</div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160; </div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;<span class="keywordtype">void</span> move_group::MoveGroupPickPlaceAction::setPickupState(<a class="code" href="namespacemove__group.html#a4a295c26dbc5ac7780dfa7ae10350bfb">MoveGroupState</a> state)</div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;{</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;  pickup_state_ = state;</div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;  pickup_feedback_.state = stateToStr(state);</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;  pickup_action_server_-&gt;publishFeedback(pickup_feedback_);</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;}</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160; </div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;<span class="keywordtype">void</span> move_group::MoveGroupPickPlaceAction::setPlaceState(<a class="code" href="namespacemove__group.html#a4a295c26dbc5ac7780dfa7ae10350bfb">MoveGroupState</a> state)</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;{</div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;  place_state_ = state;</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;  place_feedback_.state = stateToStr(state);</div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;  place_action_server_-&gt;publishFeedback(place_feedback_);</div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;}</div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160; </div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;<span class="keywordtype">void</span> move_group::MoveGroupPickPlaceAction::fillGrasps(moveit_msgs::action::PickupGoal&amp; goal)</div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;{</div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;  <a class="code" href="classplanning__scene__monitor_1_1LockedPlanningSceneRO.html">planning_scene_monitor::LockedPlanningSceneRO</a> lscene(context_-&gt;planning_scene_monitor_);</div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160; </div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;  ROS_DEBUG_NAMED(<span class="stringliteral">&quot;manipulation&quot;</span>, <span class="stringliteral">&quot;Using default grasp poses&quot;</span>);</div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;  goal.minimize_object_distance = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160; </div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;  <span class="comment">// add a number of default grasp points</span></div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;  <span class="comment">// \todo add more!</span></div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;  moveit_msgs::msg::Grasp g;</div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;  g.grasp_pose.header.frame_id = goal.target_name;</div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;  g.grasp_pose.pose.position.x = -0.2;</div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;  g.grasp_pose.pose.position.y = 0.0;</div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;  g.grasp_pose.pose.position.z = 0.0;</div>
-<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;  g.grasp_pose.pose.orientation.x = 0.0;</div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;  g.grasp_pose.pose.orientation.y = 0.0;</div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;  g.grasp_pose.pose.orientation.z = 0.0;</div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;  g.grasp_pose.pose.orientation.w = 1.0;</div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160; </div>
-<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;  g.pre_grasp_approach.direction.header.frame_id = lscene-&gt;getPlanningFrame();</div>
-<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;  g.pre_grasp_approach.direction.vector.x = 1.0;</div>
-<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;  g.pre_grasp_approach.min_distance = 0.1;</div>
-<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;  g.pre_grasp_approach.desired_distance = 0.2;</div>
-<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160; </div>
-<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;  g.post_grasp_retreat.direction.header.frame_id = lscene-&gt;getPlanningFrame();</div>
-<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;  g.post_grasp_retreat.direction.vector.z = 1.0;</div>
-<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;  g.post_grasp_retreat.min_distance = 0.1;</div>
-<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;  g.post_grasp_retreat.desired_distance = 0.2;</div>
-<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160; </div>
-<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;  <span class="keywordflow">if</span> (lscene-&gt;getRobotModel()-&gt;hasEndEffector(goal.end_effector))</div>
-<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;  {</div>
-<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;    g.pre_grasp_posture.joint_names = lscene-&gt;getRobotModel()-&gt;getEndEffector(goal.end_effector)-&gt;getJointModelNames();</div>
-<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;    g.pre_grasp_posture.points.resize(1);</div>
-<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;    g.pre_grasp_posture.points[0].positions.resize(g.pre_grasp_posture.joint_names.size(),</div>
-<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;                                                   std::numeric_limits&lt;double&gt;::max());</div>
-<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160; </div>
-<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;    g.grasp_posture.joint_names = g.pre_grasp_posture.joint_names;</div>
-<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;    g.grasp_posture.points.resize(1);</div>
-<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;    g.grasp_posture.points[0].positions.resize(g.grasp_posture.joint_names.size(), -std::numeric_limits&lt;double&gt;::max());</div>
-<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;  }</div>
-<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;  goal.possible_grasps.push_back(g);</div>
-<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;}</div>
-<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160; </div>
-<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;<span class="preprocessor">#include &lt;class_loader/class_loader.hpp&gt;</span></div>
-<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;<a class="code" href="trajopt__planner__manager_8cpp.html#a114a92aa0e7f4364291efdee021fb457">CLASS_LOADER_REGISTER_CLASS</a>(<a class="code" href="classmove__group_1_1MoveGroupPickPlaceAction.html">move_group::MoveGroupPickPlaceAction</a>, <a class="code" href="classmove__group_1_1MoveGroupCapability.html">move_group::MoveGroupCapability</a>)</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;  <span class="keywordflow">if</span> (goal-&gt;planning_options.plan_only || !context_-&gt;allow_trajectory_execution_)</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;  {</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    <span class="keywordflow">if</span> (!goal-&gt;planning_options.plan_only)</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;      ROS_WARN_NAMED(<span class="stringliteral">&quot;manipulation&quot;</span>, <span class="stringliteral">&quot;This instance of MoveGroup is not allowed to execute trajectories but the place &quot;</span></div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;                                     <span class="stringliteral">&quot;goal request has plan_only set to false. Only a motion plan will be computed &quot;</span></div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;                                     <span class="stringliteral">&quot;anyway.&quot;</span>);</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    executePlaceCallbackPlanOnly(goal, action_res);</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;  }</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    executePlaceCallbackPlanAndExecute(goal, action_res);</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160; </div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;  <span class="keywordtype">bool</span> planned_trajectory_empty = action_res.trajectory_stages.empty();</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;  std::string response =</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;      getActionResultString(action_res.error_code, planned_trajectory_empty, goal-&gt;planning_options.plan_only);</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;  <span class="keywordflow">if</span> (action_res.error_code.val == moveit_msgs::msg::MoveItErrorCodes::SUCCESS)</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    place_action_server_-&gt;setSucceeded(action_res, response);</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;  {</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    <span class="keywordflow">if</span> (action_res.error_code.val == moveit_msgs::msg::MoveItErrorCodes::PREEMPTED)</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;      place_action_server_-&gt;setPreempted(action_res, response);</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;      place_action_server_-&gt;setAborted(action_res, response);</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;  }</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160; </div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;  setPlaceState(<a class="code" href="namespacemove__group.html#a4a295c26dbc5ac7780dfa7ae10350bfba0022b267a121d71658d23378bbded484">IDLE</a>);</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;}</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160; </div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;<span class="keywordtype">void</span> move_group::MoveGroupPickPlaceAction::preemptPickupCallback()</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;{</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;}</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160; </div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;<span class="keywordtype">void</span> move_group::MoveGroupPickPlaceAction::preemptPlaceCallback()</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;{</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;}</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160; </div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;<span class="keywordtype">void</span> move_group::MoveGroupPickPlaceAction::setPickupState(<a class="code" href="namespacemove__group.html#a4a295c26dbc5ac7780dfa7ae10350bfb">MoveGroupState</a> state)</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;{</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;  pickup_state_ = state;</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;  pickup_feedback_.state = stateToStr(state);</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;  pickup_action_server_-&gt;publishFeedback(pickup_feedback_);</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;}</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160; </div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;<span class="keywordtype">void</span> move_group::MoveGroupPickPlaceAction::setPlaceState(<a class="code" href="namespacemove__group.html#a4a295c26dbc5ac7780dfa7ae10350bfb">MoveGroupState</a> state)</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;{</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;  place_state_ = state;</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;  place_feedback_.state = stateToStr(state);</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;  place_action_server_-&gt;publishFeedback(place_feedback_);</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;}</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160; </div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;<span class="keywordtype">void</span> move_group::MoveGroupPickPlaceAction::fillGrasps(moveit_msgs::action::PickupGoal&amp; goal)</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;{</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;  <a class="code" href="classplanning__scene__monitor_1_1LockedPlanningSceneRO.html">planning_scene_monitor::LockedPlanningSceneRO</a> lscene(context_-&gt;planning_scene_monitor_);</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160; </div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;  ROS_DEBUG_NAMED(<span class="stringliteral">&quot;manipulation&quot;</span>, <span class="stringliteral">&quot;Using default grasp poses&quot;</span>);</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;  goal.minimize_object_distance = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160; </div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;  <span class="comment">// add a number of default grasp points</span></div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;  <span class="comment">// \todo add more!</span></div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;  moveit_msgs::msg::Grasp g;</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;  g.grasp_pose.header.frame_id = goal.target_name;</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;  g.grasp_pose.pose.position.x = -0.2;</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;  g.grasp_pose.pose.position.y = 0.0;</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;  g.grasp_pose.pose.position.z = 0.0;</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;  g.grasp_pose.pose.orientation.x = 0.0;</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;  g.grasp_pose.pose.orientation.y = 0.0;</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;  g.grasp_pose.pose.orientation.z = 0.0;</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;  g.grasp_pose.pose.orientation.w = 1.0;</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160; </div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;  g.pre_grasp_approach.direction.header.frame_id = lscene-&gt;getPlanningFrame();</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;  g.pre_grasp_approach.direction.vector.x = 1.0;</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;  g.pre_grasp_approach.min_distance = 0.1;</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;  g.pre_grasp_approach.desired_distance = 0.2;</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160; </div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;  g.post_grasp_retreat.direction.header.frame_id = lscene-&gt;getPlanningFrame();</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;  g.post_grasp_retreat.direction.vector.z = 1.0;</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;  g.post_grasp_retreat.min_distance = 0.1;</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;  g.post_grasp_retreat.desired_distance = 0.2;</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160; </div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;  <span class="keywordflow">if</span> (lscene-&gt;getRobotModel()-&gt;hasEndEffector(goal.end_effector))</div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;  {</div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;    g.pre_grasp_posture.joint_names = lscene-&gt;getRobotModel()-&gt;getEndEffector(goal.end_effector)-&gt;getJointModelNames();</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;    g.pre_grasp_posture.points.resize(1);</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;    g.pre_grasp_posture.points[0].positions.resize(g.pre_grasp_posture.joint_names.size(),</div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;                                                   std::numeric_limits&lt;double&gt;::max());</div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160; </div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;    g.grasp_posture.joint_names = g.pre_grasp_posture.joint_names;</div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;    g.grasp_posture.points.resize(1);</div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;    g.grasp_posture.points[0].positions.resize(g.grasp_posture.joint_names.size(), -std::numeric_limits&lt;double&gt;::max());</div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;  }</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;  goal.possible_grasps.push_back(g);</div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;}</div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160; </div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;<span class="preprocessor">#include &lt;class_loader/class_loader.hpp&gt;</span></div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;<a class="code" href="trajopt__planner__manager_8cpp.html#a114a92aa0e7f4364291efdee021fb457">CLASS_LOADER_REGISTER_CLASS</a>(<a class="code" href="classmove__group_1_1MoveGroupPickPlaceAction.html">move_group::MoveGroupPickPlaceAction</a>, <a class="code" href="classmove__group_1_1MoveGroupCapability.html">move_group::MoveGroupCapability</a>)</div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="anamespacemove__group_html_a4a295c26dbc5ac7780dfa7ae10350bfb"><div class="ttname"><a href="namespacemove__group.html#a4a295c26dbc5ac7780dfa7ae10350bfb">move_group::MoveGroupState</a></div><div class="ttdeci">MoveGroupState</div><div class="ttdef"><b>Definition:</b> <a href="move__group__capability_8h_source.html#l00079">move_group_capability.h:79</a></div></div>
 <div class="ttc" id="anamespacemove__group_html_a4a295c26dbc5ac7780dfa7ae10350bfbaf7d957d4e30127337121ef3090e223ae"><div class="ttname"><a href="namespacemove__group.html#a4a295c26dbc5ac7780dfa7ae10350bfbaf7d957d4e30127337121ef3090e223ae">move_group::LOOK</a></div><div class="ttdeci">@ LOOK</div><div class="ttdef"><b>Definition:</b> <a href="move__group__capability_8h_source.html#l00116">move_group_capability.h:116</a></div></div>
@@ -546,6 +544,7 @@ $(function() {
 <div class="ttc" id="astructplan__execution_1_1PlanExecution_1_1Options_html"><div class="ttname"><a href="structplan__execution_1_1PlanExecution_1_1Options.html">plan_execution::PlanExecution::Options</a></div><div class="ttdef"><b>Definition:</b> <a href="plan__execution_8h_source.html#l00089">plan_execution.h:89</a></div></div>
 <div class="ttc" id="aclassmove__group_1_1MoveGroupPickPlaceAction_html_afb49e233987190fce899d8341e34f88d"><div class="ttname"><a href="classmove__group_1_1MoveGroupPickPlaceAction.html#afb49e233987190fce899d8341e34f88d">move_group::MoveGroupPickPlaceAction::MoveGroupPickPlaceAction</a></div><div class="ttdeci">MoveGroupPickPlaceAction()</div><div class="ttdef"><b>Definition:</b> <a href="pick__place__action__capability_8cpp_source.html#l00042">pick_place_action_capability.cpp:42</a></div></div>
 <div class="ttc" id="aclassmove__group_1_1MoveGroupPickPlaceAction_html"><div class="ttname"><a href="classmove__group_1_1MoveGroupPickPlaceAction.html">move_group::MoveGroupPickPlaceAction</a></div><div class="ttdef"><b>Definition:</b> <a href="pick__place__action__capability_8h_source.html#l00081">pick_place_action_capability.h:81</a></div></div>
+<div class="ttc" id="aclasspick__place_1_1PickPlace_html"><div class="ttname"><a href="classpick__place_1_1PickPlace.html">pick_place::PickPlace</a></div><div class="ttdef"><b>Definition:</b> <a href="pick__place_8h_source.html#l00145">pick_place.h:145</a></div></div>
 <div class="ttc" id="aplan__with__sensing_8h_html"><div class="ttname"><a href="plan__with__sensing_8h.html">plan_with_sensing.h</a></div></div>
 <div class="ttc" id="aclassmove__group_1_1MoveGroupPickPlaceAction_html_a3b5457a36ae5dfe1ae844f9d81661447"><div class="ttname"><a href="classmove__group_1_1MoveGroupPickPlaceAction.html#a3b5457a36ae5dfe1ae844f9d81661447">move_group::MoveGroupPickPlaceAction::initialize</a></div><div class="ttdeci">void initialize() override</div><div class="ttdef"><b>Definition:</b> <a href="pick__place__action__capability_8cpp_source.html#l00047">pick_place_action_capability.cpp:47</a></div></div>
 <div class="ttc" id="anamespacemoveit__commander__cmdline_html_a76b84183c3f688c8a62245eac9b3d26c"><div class="ttname"><a href="namespacemoveit__commander__cmdline.html#a76b84183c3f688c8a62245eac9b3d26c">moveit_commander_cmdline.opt</a></div><div class="ttdeci">opt</div><div class="ttdef"><b>Definition:</b> <a href="moveit__commander__cmdline_8py_source.html#l00208">moveit_commander_cmdline.py:208</a></div></div>
@@ -556,7 +555,7 @@ $(function() {
 <div class="ttc" id="anamespacemove__group_html_a4a295c26dbc5ac7780dfa7ae10350bfba589157783275192164d729a5f54a44a7"><div class="ttname"><a href="namespacemove__group.html#a4a295c26dbc5ac7780dfa7ae10350bfba589157783275192164d729a5f54a44a7">move_group::MONITOR</a></div><div class="ttdeci">@ MONITOR</div><div class="ttdef"><b>Definition:</b> <a href="move__group__capability_8h_source.html#l00115">move_group_capability.h:115</a></div></div>
 <div class="ttc" id="akinematics_2cached__ik__kinematics__plugin_2CMakeLists_8txt_html_a092c219805988bc95d15b40ee47d2a9b"><div class="ttname"><a href="kinematics_2cached__ik__kinematics__plugin_2CMakeLists_8txt.html#a092c219805988bc95d15b40ee47d2a9b">if</a></div><div class="ttdeci">rclcpp moveit_core moveit_msgs Boost if(trac_ik_kinematics_plugin_FOUND) include_directories($</div><div class="ttdef"><b>Definition:</b> <a href="kinematics_2cached__ik__kinematics__plugin_2CMakeLists_8txt_source.html#l00016">CMakeLists.txt:16</a></div></div>
 <div class="ttc" id="astructplan__execution_1_1ExecutableMotionPlan_html"><div class="ttname"><a href="structplan__execution_1_1ExecutableMotionPlan.html">plan_execution::ExecutableMotionPlan</a></div><div class="ttdoc">A generic representation on what a computed motion plan looks like.</div><div class="ttdef"><b>Definition:</b> <a href="plan__representation_8h_source.html#l00105">plan_representation.h:105</a></div></div>
-<div class="ttc" id="aclassplanning__scene__monitor_1_1LockedPlanningSceneRO_html"><div class="ttname"><a href="classplanning__scene__monitor_1_1LockedPlanningSceneRO.html">planning_scene_monitor::LockedPlanningSceneRO</a></div><div class="ttdoc">This is a convenience class for obtaining access to an instance of a locked PlanningScene.</div><div class="ttdef"><b>Definition:</b> <a href="planning__scene__monitor_8h_source.html#l00664">planning_scene_monitor.h:664</a></div></div>
+<div class="ttc" id="aclassplanning__scene__monitor_1_1LockedPlanningSceneRO_html"><div class="ttname"><a href="classplanning__scene__monitor_1_1LockedPlanningSceneRO.html">planning_scene_monitor::LockedPlanningSceneRO</a></div><div class="ttdoc">This is a convenience class for obtaining access to an instance of a locked PlanningScene.</div><div class="ttdef"><b>Definition:</b> <a href="planning__scene__monitor_8h_source.html#l00641">planning_scene_monitor.h:641</a></div></div>
 <div class="ttc" id="atrajopt__planner__manager_8cpp_html_a114a92aa0e7f4364291efdee021fb457"><div class="ttname"><a href="trajopt__planner__manager_8cpp.html#a114a92aa0e7f4364291efdee021fb457">CLASS_LOADER_REGISTER_CLASS</a></div><div class="ttdeci">CLASS_LOADER_REGISTER_CLASS(trajopt_interface::TrajOptPlannerManager, planning_interface::PlannerManager)</div></div>
 <div class="ttc" id="anamespaceplan__with__constraints_html_ad98040293eeabd17f40a72a60f1146c4"><div class="ttname"><a href="namespaceplan__with__constraints.html#ad98040293eeabd17f40a72a60f1146c4">plan_with_constraints.plan</a></div><div class="ttdeci">plan</div><div class="ttdef"><b>Definition:</b> <a href="plan__with__constraints_8py_source.html#l00074">plan_with_constraints.py:74</a></div></div>
 <div class="ttc" id="apick__place__action__capability_8h_html"><div class="ttname"><a href="pick__place__action__capability_8h.html">pick_place_action_capability.h</a></div></div>

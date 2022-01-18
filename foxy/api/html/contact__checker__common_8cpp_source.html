@@ -134,7 +134,7 @@ $(function() {
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    std::vector&lt;collision_detection::Contact&gt; data;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">// if we don&#39;t want contacts we are done here</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">// if we dont want contacts we are done here</span></div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">if</span> (!cdata.<a class="code" href="structcollision__detection__bullet_1_1ContactTestData.html#a109101b598a836e32ac9c50ed1d550e6">req</a>.<a class="code" href="structcollision__detection_1_1CollisionRequest.html#a5360522b02a383072fb881fc08d15788">contacts</a>)</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    {</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      <span class="keywordflow">if</span> (!cdata.<a class="code" href="structcollision__detection__bullet_1_1ContactTestData.html#a109101b598a836e32ac9c50ed1d550e6">req</a>.<a class="code" href="structcollision__detection_1_1CollisionRequest.html#af004da8744b925118ebd7cf5ef3c42e8">distance</a>)</div>
@@ -214,7 +214,7 @@ $(function() {
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  <span class="keywordtype">int</span> num_verts = conv.vertices.size();</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  vertices.reserve(<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(num_verts));</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_verts; ++i)</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_verts; i++)</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;  {</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    btVector3&amp; v = conv.vertices[i];</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    vertices.push_back(<a class="code" href="namespacefcl.html#a0288e6b07bc0c851a9503dbaea7a0f19">Eigen::Vector3d</a>(v.getX(), v.getY(), v.getZ()));</div>
@@ -222,7 +222,7 @@ $(function() {
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  <span class="keywordtype">int</span> num_faces = conv.faces.size();</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  faces.reserve(<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(3 * num_faces));</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_faces; ++i)</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_faces; i++)</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  {</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    std::vector&lt;int&gt; face;</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    face.reserve(3);</div>

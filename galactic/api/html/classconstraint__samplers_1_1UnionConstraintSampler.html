@@ -110,12 +110,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae11ad89e24fc78177d2ec22b1236ea64"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; ConstraintSamplerPtr &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconstraint__samplers_1_1UnionConstraintSampler.html#ae11ad89e24fc78177d2ec22b1236ea64">getSamplers</a> () const</td></tr>
 <tr class="memdesc:ae11ad89e24fc78177d2ec22b1236ea64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the sorted internal list of constraint samplers.  <a href="classconstraint__samplers_1_1UnionConstraintSampler.html#ae11ad89e24fc78177d2ec22b1236ea64">More...</a><br /></td></tr>
 <tr class="separator:ae11ad89e24fc78177d2ec22b1236ea64"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c9685e6f8eaa7dfaff59032cfa8a4f1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconstraint__samplers_1_1UnionConstraintSampler.html#a1c9685e6f8eaa7dfaff59032cfa8a4f1">configure</a> (const moveit_msgs::msg::Constraints &amp;) override</td></tr>
-<tr class="memdesc:a1c9685e6f8eaa7dfaff59032cfa8a4f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">No-op, as the union constraint sampler is for already configured samplers.  <a href="classconstraint__samplers_1_1UnionConstraintSampler.html#a1c9685e6f8eaa7dfaff59032cfa8a4f1">More...</a><br /></td></tr>
-<tr class="separator:a1c9685e6f8eaa7dfaff59032cfa8a4f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7997b5c7420b0bd7a98a334167db7f1d"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconstraint__samplers_1_1UnionConstraintSampler.html#a7997b5c7420b0bd7a98a334167db7f1d">canService</a> (const moveit_msgs::msg::Constraints &amp;) const</td></tr>
-<tr class="memdesc:a7997b5c7420b0bd7a98a334167db7f1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">No-op, as the union constraint sampler can act on anything.  <a href="classconstraint__samplers_1_1UnionConstraintSampler.html#a7997b5c7420b0bd7a98a334167db7f1d">More...</a><br /></td></tr>
-<tr class="separator:a7997b5c7420b0bd7a98a334167db7f1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74c2bd1d2d5c0f74057479b9e204db13"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconstraint__samplers_1_1UnionConstraintSampler.html#a74c2bd1d2d5c0f74057479b9e204db13">configure</a> (const moveit_msgs::msg::Constraints &amp;constr) override</td></tr>
+<tr class="memdesc:a74c2bd1d2d5c0f74057479b9e204db13"><td class="mdescLeft">&#160;</td><td class="mdescRight">No-op, as the union constraint sampler is for already configured samplers.  <a href="classconstraint__samplers_1_1UnionConstraintSampler.html#a74c2bd1d2d5c0f74057479b9e204db13">More...</a><br /></td></tr>
+<tr class="separator:a74c2bd1d2d5c0f74057479b9e204db13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a513d8e1c3545622df27edd4d0c6e0f4f"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconstraint__samplers_1_1UnionConstraintSampler.html#a513d8e1c3545622df27edd4d0c6e0f4f">canService</a> (const moveit_msgs::msg::Constraints &amp;constr) const</td></tr>
+<tr class="memdesc:a513d8e1c3545622df27edd4d0c6e0f4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">No-op, as the union constraint sampler can act on anything.  <a href="classconstraint__samplers_1_1UnionConstraintSampler.html#a513d8e1c3545622df27edd4d0c6e0f4f">More...</a><br /></td></tr>
+<tr class="separator:a513d8e1c3545622df27edd4d0c6e0f4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaa99ce5e81c9a71c32bbf8688610f9e8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconstraint__samplers_1_1UnionConstraintSampler.html#aaa99ce5e81c9a71c32bbf8688610f9e8">sample</a> (<a class="el" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a> &amp;state, const <a class="el" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a> &amp;reference_state, unsigned int max_attempts) override</td></tr>
 <tr class="memdesc:aaa99ce5e81c9a71c32bbf8688610f9e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Produces a sample from all configured samplers.  <a href="classconstraint__samplers_1_1UnionConstraintSampler.html#aaa99ce5e81c9a71c32bbf8688610f9e8">More...</a><br /></td></tr>
 <tr class="separator:aaa99ce5e81c9a71c32bbf8688610f9e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -290,8 +290,8 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a7997b5c7420b0bd7a98a334167db7f1d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7997b5c7420b0bd7a98a334167db7f1d">&#9670;&nbsp;</a></span>canService()</h2>
+<a id="a513d8e1c3545622df27edd4d0c6e0f4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a513d8e1c3545622df27edd4d0c6e0f4f">&#9670;&nbsp;</a></span>canService()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -303,7 +303,7 @@ Here is the call graph for this function:</div>
           <td class="memname">virtual bool constraint_samplers::UnionConstraintSampler::canService </td>
           <td>(</td>
           <td class="paramtype">const moveit_msgs::msg::Constraints &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><em>constr</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -327,8 +327,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a1c9685e6f8eaa7dfaff59032cfa8a4f1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1c9685e6f8eaa7dfaff59032cfa8a4f1">&#9670;&nbsp;</a></span>configure()</h2>
+<a id="a74c2bd1d2d5c0f74057479b9e204db13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74c2bd1d2d5c0f74057479b9e204db13">&#9670;&nbsp;</a></span>configure()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -340,7 +340,7 @@ Here is the call graph for this function:</div>
           <td class="memname">bool constraint_samplers::UnionConstraintSampler::configure </td>
           <td>(</td>
           <td class="paramtype">const moveit_msgs::msg::Constraints &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><em>constr</em></td><td>)</td>
           <td></td>
         </tr>
       </table>

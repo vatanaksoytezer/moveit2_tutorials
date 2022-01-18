@@ -123,7 +123,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a423bc749a5a9fea4b661d5ef1febca5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print the constraint data.  <a href="classkinematic__constraints_1_1PositionConstraint.html#a423bc749a5a9fea4b661d5ef1febca5a">More...</a><br /></td></tr>
 <tr class="separator:a423bc749a5a9fea4b661d5ef1febca5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad35eb6e9c8241a88637e0ffa229d937f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classmoveit_1_1core_1_1LinkModel.html">moveit::core::LinkModel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkinematic__constraints_1_1PositionConstraint.html#ad35eb6e9c8241a88637e0ffa229d937f">getLinkModel</a> () const</td></tr>
-<tr class="memdesc:ad35eb6e9c8241a88637e0ffa229d937f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the associated link model, or nullptr if not enabled.  <a href="classkinematic__constraints_1_1PositionConstraint.html#ad35eb6e9c8241a88637e0ffa229d937f">More...</a><br /></td></tr>
+<tr class="memdesc:ad35eb6e9c8241a88637e0ffa229d937f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the associated link model, or NULL if not enabled.  <a href="classkinematic__constraints_1_1PositionConstraint.html#ad35eb6e9c8241a88637e0ffa229d937f">More...</a><br /></td></tr>
 <tr class="separator:ad35eb6e9c8241a88637e0ffa229d937f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b229c3df1234baa53a7cad580c8cbbd"><td class="memItemLeft" align="right" valign="top">const Eigen::Vector3d &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkinematic__constraints_1_1PositionConstraint.html#a1b229c3df1234baa53a7cad580c8cbbd">getLinkOffset</a> () const</td></tr>
 <tr class="memdesc:a1b229c3df1234baa53a7cad580c8cbbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the target offset.  <a href="classkinematic__constraints_1_1PositionConstraint.html#a1b229c3df1234baa53a7cad580c8cbbd">More...</a><br /></td></tr>
@@ -209,7 +209,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="textblock"><p>Class for constraints on the XYZ position of a link. </p>
 <p>This class expresses X,Y,Z position constraints of a link. The position area is specified as a bounding volume consisting of one or more shapes - either solid primitives or meshes. The pose information in the volumes will be interpreted by using the header information. The header may either specify a fixed frame or a mobile frame. Additionally, a target offset specified in the frame of the link being constrained can be specified. The type value will return POSITION_CONSTRAINT. </p>
 
-<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8h_source.html#l00546">546</a> of file <a class="el" href="kinematic__constraint_8h_source.html">kinematic_constraint.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8h_source.html#l00540">540</a> of file <a class="el" href="kinematic__constraint_8h_source.html">kinematic_constraint.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="afbaa3e5df697536c054c81478e95e047"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afbaa3e5df697536c054c81478e95e047">&#9670;&nbsp;</a></span>PositionConstraint()</h2>
@@ -243,7 +243,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8h_source.html#l00557">557</a> of file <a class="el" href="kinematic__constraint_8h_source.html">kinematic_constraint.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8h_source.html#l00551">551</a> of file <a class="el" href="kinematic__constraint_8h_source.html">kinematic_constraint.h</a>.</p>
 
 </div>
 </div>
@@ -275,7 +275,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classkinematic__constraints_1_1KinematicConstraint.html#a274f48adeec52887ecc31858c5f938d7">kinematic_constraints::KinematicConstraint</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8cpp_source.html#l00576">576</a> of file <a class="el" href="kinematic__constraint_8cpp_source.html">kinematic_constraint.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8cpp_source.html#l00572">572</a> of file <a class="el" href="kinematic__constraint_8cpp_source.html">kinematic_constraint.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -324,7 +324,7 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if constraint can be configured from pc </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8cpp_source.html#l00372">372</a> of file <a class="el" href="kinematic__constraint_8cpp_source.html">kinematic_constraint.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8cpp_source.html#l00368">368</a> of file <a class="el" href="kinematic__constraint_8cpp_source.html">kinematic_constraint.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -383,7 +383,7 @@ Here is the caller graph for this function:</div>
 
 <p>Implements <a class="el" href="classkinematic__constraints_1_1KinematicConstraint.html#af8d42b0e5ada212cec7490b78dcfa2a9">kinematic_constraints::KinematicConstraint</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8cpp_source.html#l00532">532</a> of file <a class="el" href="kinematic__constraint_8cpp_source.html">kinematic_constraint.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8cpp_source.html#l00528">528</a> of file <a class="el" href="kinematic__constraint_8cpp_source.html">kinematic_constraint.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -423,7 +423,7 @@ Here is the caller graph for this function:</div>
 
 <p>Implements <a class="el" href="classkinematic__constraints_1_1KinematicConstraint.html#a941e7334e9bd320492d00c4ff49f81d2">kinematic_constraints::KinematicConstraint</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8cpp_source.html#l00587">587</a> of file <a class="el" href="kinematic__constraint_8cpp_source.html">kinematic_constraint.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8cpp_source.html#l00583">583</a> of file <a class="el" href="kinematic__constraint_8cpp_source.html">kinematic_constraint.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -506,7 +506,7 @@ Here is the caller graph for this function:</div>
 
 <p>Implements <a class="el" href="classkinematic__constraints_1_1KinematicConstraint.html#a7275ec0d99e4dd0429c0f6c0ad9930a4">kinematic_constraints::KinematicConstraint</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8cpp_source.html#l00474">474</a> of file <a class="el" href="kinematic__constraint_8cpp_source.html">kinematic_constraint.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8cpp_source.html#l00470">470</a> of file <a class="el" href="kinematic__constraint_8cpp_source.html">kinematic_constraint.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -545,7 +545,7 @@ Here is the caller graph for this function:</div>
 <p>Returns all the constraint regions. </p>
 <dl class="section return"><dt>Returns</dt><dd>The constraint regions </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8h_source.html#l00652">652</a> of file <a class="el" href="kinematic__constraint_8h_source.html">kinematic_constraint.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8h_source.html#l00646">646</a> of file <a class="el" href="kinematic__constraint_8h_source.html">kinematic_constraint.h</a>.</p>
 
 </div>
 </div>
@@ -572,10 +572,10 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Returns the associated link model, or nullptr if not enabled. </p>
+<p>Returns the associated link model, or NULL if not enabled. </p>
 <dl class="section return"><dt>Returns</dt><dd>The link model </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8h_source.html#l00616">616</a> of file <a class="el" href="kinematic__constraint_8h_source.html">kinematic_constraint.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8h_source.html#l00610">610</a> of file <a class="el" href="kinematic__constraint_8h_source.html">kinematic_constraint.h</a>.</p>
 
 </div>
 </div>
@@ -605,7 +605,7 @@ Here is the caller graph for this function:</div>
 <p>Returns the target offset. </p>
 <dl class="section return"><dt>Returns</dt><dd>The target offset </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8h_source.html#l00627">627</a> of file <a class="el" href="kinematic__constraint_8h_source.html">kinematic_constraint.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8h_source.html#l00621">621</a> of file <a class="el" href="kinematic__constraint_8h_source.html">kinematic_constraint.h</a>.</p>
 
 </div>
 </div>
@@ -635,7 +635,7 @@ Here is the caller graph for this function:</div>
 <p>Returns the reference frame. </p>
 <dl class="section return"><dt>Returns</dt><dd>The reference frame </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8h_source.html#l00663">663</a> of file <a class="el" href="kinematic__constraint_8h_source.html">kinematic_constraint.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8h_source.html#l00657">657</a> of file <a class="el" href="kinematic__constraint_8h_source.html">kinematic_constraint.h</a>.</p>
 
 </div>
 </div>
@@ -665,7 +665,7 @@ Here is the caller graph for this function:</div>
 <p>If the constraint is enabled and the link offset is substantially different than zero. </p>
 <dl class="section return"><dt>Returns</dt><dd>Whether or not there is a link offset </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8h_source.html#l00639">639</a> of file <a class="el" href="kinematic__constraint_8h_source.html">kinematic_constraint.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8h_source.html#l00633">633</a> of file <a class="el" href="kinematic__constraint_8h_source.html">kinematic_constraint.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -704,7 +704,7 @@ Here is the caller graph for this function:</div>
 <p>If enabled and the specified frame is a mobile frame, return true. Otherwise, returns false. </p>
 <dl class="section return"><dt>Returns</dt><dd>Whether a mobile reference frame is being employed </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8h_source.html#l00675">675</a> of file <a class="el" href="kinematic__constraint_8h_source.html">kinematic_constraint.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8h_source.html#l00669">669</a> of file <a class="el" href="kinematic__constraint_8h_source.html">kinematic_constraint.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -751,7 +751,7 @@ Here is the caller graph for this function:</div>
 
 <p>Reimplemented from <a class="el" href="classkinematic__constraints_1_1KinematicConstraint.html#a9f8184e1a84312f97efd2bc9022124a9">kinematic_constraints::KinematicConstraint</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8cpp_source.html#l00568">568</a> of file <a class="el" href="kinematic__constraint_8cpp_source.html">kinematic_constraint.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8cpp_source.html#l00564">564</a> of file <a class="el" href="kinematic__constraint_8cpp_source.html">kinematic_constraint.cpp</a>.</p>
 
 </div>
 </div>
@@ -778,7 +778,7 @@ Here is the caller graph for this function:</div>
 
 <p>The constraint frame id. </p>
 
-<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8h_source.html#l00689">689</a> of file <a class="el" href="kinematic__constraint_8h_source.html">kinematic_constraint.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8h_source.html#l00683">683</a> of file <a class="el" href="kinematic__constraint_8h_source.html">kinematic_constraint.h</a>.</p>
 
 </div>
 </div>
@@ -804,7 +804,7 @@ Here is the caller graph for this function:</div>
 
 <p>The constraint region vector. </p>
 
-<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8h_source.html#l00685">685</a> of file <a class="el" href="kinematic__constraint_8h_source.html">kinematic_constraint.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8h_source.html#l00679">679</a> of file <a class="el" href="kinematic__constraint_8h_source.html">kinematic_constraint.h</a>.</p>
 
 </div>
 </div>
@@ -830,7 +830,7 @@ Here is the caller graph for this function:</div>
 
 <p>The constraint region pose vector. All isometries are guaranteed to be valid. </p>
 
-<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8h_source.html#l00687">687</a> of file <a class="el" href="kinematic__constraint_8h_source.html">kinematic_constraint.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8h_source.html#l00681">681</a> of file <a class="el" href="kinematic__constraint_8h_source.html">kinematic_constraint.h</a>.</p>
 
 </div>
 </div>
@@ -856,7 +856,7 @@ Here is the caller graph for this function:</div>
 
 <p>Whether the offset is substantially different than 0.0. </p>
 
-<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8h_source.html#l00684">684</a> of file <a class="el" href="kinematic__constraint_8h_source.html">kinematic_constraint.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8h_source.html#l00678">678</a> of file <a class="el" href="kinematic__constraint_8h_source.html">kinematic_constraint.h</a>.</p>
 
 </div>
 </div>
@@ -882,7 +882,7 @@ Here is the caller graph for this function:</div>
 
 <p>The link model constraint subject. </p>
 
-<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8h_source.html#l00690">690</a> of file <a class="el" href="kinematic__constraint_8h_source.html">kinematic_constraint.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8h_source.html#l00684">684</a> of file <a class="el" href="kinematic__constraint_8h_source.html">kinematic_constraint.h</a>.</p>
 
 </div>
 </div>
@@ -908,7 +908,7 @@ Here is the caller graph for this function:</div>
 
 <p>Whether or not a mobile frame is employed. </p>
 
-<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8h_source.html#l00688">688</a> of file <a class="el" href="kinematic__constraint_8h_source.html">kinematic_constraint.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8h_source.html#l00682">682</a> of file <a class="el" href="kinematic__constraint_8h_source.html">kinematic_constraint.h</a>.</p>
 
 </div>
 </div>
@@ -934,7 +934,7 @@ Here is the caller graph for this function:</div>
 
 <p>The target offset. </p>
 
-<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8h_source.html#l00683">683</a> of file <a class="el" href="kinematic__constraint_8h_source.html">kinematic_constraint.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8h_source.html#l00677">677</a> of file <a class="el" href="kinematic__constraint_8h_source.html">kinematic_constraint.h</a>.</p>
 
 </div>
 </div>

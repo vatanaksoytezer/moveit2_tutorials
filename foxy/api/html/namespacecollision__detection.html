@@ -146,9 +146,8 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcollision__detection_1_1CollisionPlugin.html">CollisionPlugin</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Plugin API for loading a custom collision detection robot/world.  <a href="classcollision__detection_1_1CollisionPlugin.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcollision__detection_1_1CollisionPluginCache.html">CollisionPluginCache</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcollision__detection_1_1CollisionPluginLoader.html">CollisionPluginLoader</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is used to load the collision plugin.  <a href="classcollision__detection_1_1CollisionPluginLoader.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcollision__detection_1_1CollisionRequest.html">CollisionRequest</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Representation of a collision checking request.  <a href="structcollision__detection_1_1CollisionRequest.html#details">More...</a><br /></td></tr>
@@ -198,7 +197,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcollision__detection_1_1GroupStateRepresentation.html">GroupStateRepresentation</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcollision__detection_1_1OccMapTree.html">OccMapTree</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcollision__detection_1_1IfSameType.html">IfSameType</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcollision__detection_1_1IfSameType_3_01T_00_01T_01_4.html">IfSameType&lt; T, T &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcollision__detection_1_1PosedBodyPointDecomposition.html">PosedBodyPointDecomposition</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -232,12 +233,6 @@ Typedefs</h2></td></tr>
 <tr class="memitem:abc95f111eb0775b4c8be279ea4891a98"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecollision__detection.html#abc95f111eb0775b4c8be279ea4891a98">DecideContactFn</a> = boost::function&lt; bool(<a class="el" href="structcollision__detection_1_1Contact.html">collision_detection::Contact</a> &amp;)&gt;</td></tr>
 <tr class="memdesc:abc95f111eb0775b4c8be279ea4891a98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signature of predicate that decides whether a contact is allowed or not (when <a class="el" href="namespacecollision__detection_1_1AllowedCollision.html#a8f4b01d9c2bf6843a65389a35296d93b">AllowedCollision::Type</a> is CONDITIONAL)  <a href="namespacecollision__detection.html#abc95f111eb0775b4c8be279ea4891a98">More...</a><br /></td></tr>
 <tr class="separator:abc95f111eb0775b4c8be279ea4891a98"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace73c1317d865f74ad8fcd92bcc6759b"><td class="memItemLeft" align="right" valign="top">typedef octomap::OcTreeNode&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecollision__detection.html#ace73c1317d865f74ad8fcd92bcc6759b">OccMapNode</a></td></tr>
-<tr class="separator:ace73c1317d865f74ad8fcd92bcc6759b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ac86a279df576cc0b9be55890af87f9"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecollision__detection.html#a3ac86a279df576cc0b9be55890af87f9">OccMapTreePtr</a> = std::shared_ptr&lt; <a class="el" href="classcollision__detection_1_1OccMapTree.html">OccMapTree</a> &gt;</td></tr>
-<tr class="separator:a3ac86a279df576cc0b9be55890af87f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c69ccc4c23d8367a5ca106862ad86f0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecollision__detection.html#a2c69ccc4c23d8367a5ca106862ad86f0">OccMapTreeConstPtr</a> = std::shared_ptr&lt; const <a class="el" href="classcollision__detection_1_1OccMapTree.html">OccMapTree</a> &gt;</td></tr>
-<tr class="separator:a2c69ccc4c23d8367a5ca106862ad86f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d7f5973e1d1a1bd73899f35f55df288"><td class="memItemLeft" align="right" valign="top">typedef std::shared_ptr&lt; <a class="el" href="namespacefcl.html#a18d076606568ed61aad49744615ed4d5">fcl::CollisionObjectd</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecollision__detection.html#a9d7f5973e1d1a1bd73899f35f55df288">FCLCollisionObjectPtr</a></td></tr>
 <tr class="separator:a9d7f5973e1d1a1bd73899f35f55df288"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac12819e46534929f247b4f4a88a21fc5"><td class="memItemLeft" align="right" valign="top">typedef std::shared_ptr&lt; const <a class="el" href="namespacefcl.html#a18d076606568ed61aad49744615ed4d5">fcl::CollisionObjectd</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecollision__detection.html#ac12819e46534929f247b4f4a88a21fc5">FCLCollisionObjectConstPtr</a></td></tr>
@@ -269,19 +264,19 @@ Functions</h2></td></tr>
 <tr class="separator:a424475f0dc3f5af66d1de9bd4d51f547"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9bf59c71e58a14adc05e4c142d7c9007"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecollision__detection.html#a9bf59c71e58a14adc05e4c142d7c9007">getCollisionMarkersFromContacts</a> (visualization_msgs::msg::MarkerArray &amp;arr, const std::string &amp;frame_id, const <a class="el" href="structcollision__detection_1_1CollisionResult.html#a610ac251effdfbf79ae0d58cf4799ee0">CollisionResult::ContactMap</a> &amp;con)</td></tr>
 <tr class="separator:a9bf59c71e58a14adc05e4c142d7c9007"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a78b3841761035a7e5bd9935fcf49b4d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecollision__detection.html#a78b3841761035a7e5bd9935fcf49b4d1">getCostMarkers</a> (visualization_msgs::msg::MarkerArray &amp;arr, const std::string &amp;frame_id, <a class="el" href="ros_2warehouse_2warehouse_2CMakeLists_8txt.html#af4423e580afb68aec7c40fb0bce7d5d4">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">CostSource</a> &gt; &amp;cost_sources)</td></tr>
+<tr class="memitem:a78b3841761035a7e5bd9935fcf49b4d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecollision__detection.html#a78b3841761035a7e5bd9935fcf49b4d1">getCostMarkers</a> (visualization_msgs::msg::MarkerArray &amp;arr, const std::string &amp;frame_id, <a class="el" href="setup__assistant_2CMakeLists_8txt.html#a58ab708fe5c1f47f0642bdaee3056d3b">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">CostSource</a> &gt; &amp;cost_sources)</td></tr>
 <tr class="separator:a78b3841761035a7e5bd9935fcf49b4d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b8c476548ee06b97af3b26a1562ccf3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecollision__detection.html#a3b8c476548ee06b97af3b26a1562ccf3">getCostMarkers</a> (visualization_msgs::msg::MarkerArray &amp;arr, const std::string &amp;frame_id, <a class="el" href="ros_2warehouse_2warehouse_2CMakeLists_8txt.html#af4423e580afb68aec7c40fb0bce7d5d4">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">CostSource</a> &gt; &amp;cost_sources, const std_msgs::msg::ColorRGBA &amp;color, const rclcpp::Duration &amp;lifetime)</td></tr>
+<tr class="memitem:a3b8c476548ee06b97af3b26a1562ccf3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecollision__detection.html#a3b8c476548ee06b97af3b26a1562ccf3">getCostMarkers</a> (visualization_msgs::msg::MarkerArray &amp;arr, const std::string &amp;frame_id, <a class="el" href="setup__assistant_2CMakeLists_8txt.html#a58ab708fe5c1f47f0642bdaee3056d3b">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">CostSource</a> &gt; &amp;cost_sources, const std_msgs::msg::ColorRGBA &amp;color, const rclcpp::Duration &amp;lifetime)</td></tr>
 <tr class="separator:a3b8c476548ee06b97af3b26a1562ccf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a7139d8a209ebf3775f06811e041d60"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecollision__detection.html#a1a7139d8a209ebf3775f06811e041d60">getTotalCost</a> (const <a class="el" href="ros_2warehouse_2warehouse_2CMakeLists_8txt.html#af4423e580afb68aec7c40fb0bce7d5d4">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">CostSource</a> &gt; &amp;cost_sources)</td></tr>
+<tr class="memitem:a1a7139d8a209ebf3775f06811e041d60"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecollision__detection.html#a1a7139d8a209ebf3775f06811e041d60">getTotalCost</a> (const <a class="el" href="setup__assistant_2CMakeLists_8txt.html#a58ab708fe5c1f47f0642bdaee3056d3b">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">CostSource</a> &gt; &amp;cost_sources)</td></tr>
 <tr class="separator:a1a7139d8a209ebf3775f06811e041d60"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85f650ee9afe98373374c62bcae36aab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecollision__detection.html#a85f650ee9afe98373374c62bcae36aab">removeCostSources</a> (<a class="el" href="ros_2warehouse_2warehouse_2CMakeLists_8txt.html#af4423e580afb68aec7c40fb0bce7d5d4">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">CostSource</a> &gt; &amp;cost_sources, const <a class="el" href="ros_2warehouse_2warehouse_2CMakeLists_8txt.html#af4423e580afb68aec7c40fb0bce7d5d4">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">CostSource</a> &gt; &amp;cost_sources_to_remove, double overlap_fraction)</td></tr>
+<tr class="memitem:a85f650ee9afe98373374c62bcae36aab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecollision__detection.html#a85f650ee9afe98373374c62bcae36aab">removeCostSources</a> (<a class="el" href="setup__assistant_2CMakeLists_8txt.html#a58ab708fe5c1f47f0642bdaee3056d3b">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">CostSource</a> &gt; &amp;cost_sources, const <a class="el" href="setup__assistant_2CMakeLists_8txt.html#a58ab708fe5c1f47f0642bdaee3056d3b">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">CostSource</a> &gt; &amp;cost_sources_to_remove, double overlap_fraction)</td></tr>
 <tr class="separator:a85f650ee9afe98373374c62bcae36aab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80fba37a3cdb50045b6cd58286495a68"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecollision__detection.html#a80fba37a3cdb50045b6cd58286495a68">intersectCostSources</a> (<a class="el" href="ros_2warehouse_2warehouse_2CMakeLists_8txt.html#af4423e580afb68aec7c40fb0bce7d5d4">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">CostSource</a> &gt; &amp;cost_sources, const <a class="el" href="ros_2warehouse_2warehouse_2CMakeLists_8txt.html#af4423e580afb68aec7c40fb0bce7d5d4">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">CostSource</a> &gt; &amp;a, const <a class="el" href="ros_2warehouse_2warehouse_2CMakeLists_8txt.html#af4423e580afb68aec7c40fb0bce7d5d4">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">CostSource</a> &gt; &amp;b)</td></tr>
+<tr class="memitem:a80fba37a3cdb50045b6cd58286495a68"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecollision__detection.html#a80fba37a3cdb50045b6cd58286495a68">intersectCostSources</a> (<a class="el" href="setup__assistant_2CMakeLists_8txt.html#a58ab708fe5c1f47f0642bdaee3056d3b">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">CostSource</a> &gt; &amp;cost_sources, const <a class="el" href="setup__assistant_2CMakeLists_8txt.html#a58ab708fe5c1f47f0642bdaee3056d3b">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">CostSource</a> &gt; &amp;a, const <a class="el" href="setup__assistant_2CMakeLists_8txt.html#a58ab708fe5c1f47f0642bdaee3056d3b">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">CostSource</a> &gt; &amp;b)</td></tr>
 <tr class="separator:a80fba37a3cdb50045b6cd58286495a68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7c92a8b63666610657571eedfd8aaab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecollision__detection.html#ae7c92a8b63666610657571eedfd8aaab">removeOverlapping</a> (<a class="el" href="ros_2warehouse_2warehouse_2CMakeLists_8txt.html#af4423e580afb68aec7c40fb0bce7d5d4">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">CostSource</a> &gt; &amp;cost_sources, double overlap_fraction)</td></tr>
+<tr class="memitem:ae7c92a8b63666610657571eedfd8aaab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecollision__detection.html#ae7c92a8b63666610657571eedfd8aaab">removeOverlapping</a> (<a class="el" href="setup__assistant_2CMakeLists_8txt.html#a58ab708fe5c1f47f0642bdaee3056d3b">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">CostSource</a> &gt; &amp;cost_sources, double overlap_fraction)</td></tr>
 <tr class="separator:ae7c92a8b63666610657571eedfd8aaab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0253b3827c4c15db05a516af75e5b275"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecollision__detection.html#a0253b3827c4c15db05a516af75e5b275">getSensorPositioning</a> (geometry_msgs::msg::Point &amp;point, const <a class="el" href="ros_2warehouse_2warehouse_2CMakeLists_8txt.html#af4423e580afb68aec7c40fb0bce7d5d4">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">CostSource</a> &gt; &amp;cost_sources)</td></tr>
+<tr class="memitem:a0253b3827c4c15db05a516af75e5b275"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecollision__detection.html#a0253b3827c4c15db05a516af75e5b275">getSensorPositioning</a> (geometry_msgs::msg::Point &amp;point, const <a class="el" href="setup__assistant_2CMakeLists_8txt.html#a58ab708fe5c1f47f0642bdaee3056d3b">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">CostSource</a> &gt; &amp;cost_sources)</td></tr>
 <tr class="separator:a0253b3827c4c15db05a516af75e5b275"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec7d8720169dd6a2664a12c558ed50f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecollision__detection.html#aec7d8720169dd6a2664a12c558ed50f0">costSourceToMsg</a> (const <a class="el" href="structcollision__detection_1_1CostSource.html">CostSource</a> &amp;cost_source, moveit_msgs::msg::CostSource &amp;msg)</td></tr>
 <tr class="separator:aec7d8720169dd6a2664a12c558ed50f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -506,54 +501,6 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ace73c1317d865f74ad8fcd92bcc6759b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ace73c1317d865f74ad8fcd92bcc6759b">&#9670;&nbsp;</a></span>OccMapNode</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef octomap::OcTreeNode <a class="el" href="namespacecollision__detection.html#ace73c1317d865f74ad8fcd92bcc6759b">collision_detection::OccMapNode</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="occupancy__map_8h_source.html#l00082">82</a> of file <a class="el" href="occupancy__map_8h_source.html">occupancy_map.h</a>.</p>
-
-</div>
-</div>
-<a id="a2c69ccc4c23d8367a5ca106862ad86f0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2c69ccc4c23d8367a5ca106862ad86f0">&#9670;&nbsp;</a></span>OccMapTreeConstPtr</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="namespacecollision__detection.html#a2c69ccc4c23d8367a5ca106862ad86f0">collision_detection::OccMapTreeConstPtr</a> = typedef std::shared_ptr&lt;const <a class="el" href="classcollision__detection_1_1OccMapTree.html">OccMapTree</a>&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="occupancy__map_8h_source.html#l00152">152</a> of file <a class="el" href="occupancy__map_8h_source.html">occupancy_map.h</a>.</p>
-
-</div>
-</div>
-<a id="a3ac86a279df576cc0b9be55890af87f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ac86a279df576cc0b9be55890af87f9">&#9670;&nbsp;</a></span>OccMapTreePtr</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="namespacecollision__detection.html#a3ac86a279df576cc0b9be55890af87f9">collision_detection::OccMapTreePtr</a> = typedef std::shared_ptr&lt;<a class="el" href="classcollision__detection_1_1OccMapTree.html">OccMapTree</a>&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="occupancy__map_8h_source.html#l00151">151</a> of file <a class="el" href="occupancy__map_8h_source.html">occupancy_map.h</a>.</p>
-
-</div>
-</div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="a3475cd70ddea60348f0737a6b6b859fa"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3475cd70ddea60348f0737a6b6b859fa">&#9670;&nbsp;</a></span>CollisionType</h2>
@@ -595,7 +542,7 @@ Variables</h2></td></tr>
 
 <p>Increases the counter of the caches which can trigger the cleaning of expired entries from them. </p>
 
-<p class="definition">Definition at line <a class="el" href="fcl_2src_2collision__common_8cpp_source.html#l00952">952</a> of file <a class="el" href="fcl_2src_2collision__common_8cpp_source.html">collision_common.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fcl_2src_2collision__common_8cpp_source.html#l00969">969</a> of file <a class="el" href="fcl_2src_2collision__common_8cpp_source.html">collision_common.cpp</a>.</p>
 
 </div>
 </div>
@@ -641,7 +588,7 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True terminates the collision check, false continues it to the next pair of objects </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fcl_2src_2collision__common_8cpp_source.html#l00091">91</a> of file <a class="el" href="fcl_2src_2collision__common_8cpp_source.html">collision_common.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fcl_2src_2collision__common_8cpp_source.html#l00090">90</a> of file <a class="el" href="fcl_2src_2collision__common_8cpp_source.html">collision_common.cpp</a>.</p>
 
 </div>
 </div>
@@ -671,7 +618,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="collision__tools_8cpp_source.html#l00311">311</a> of file <a class="el" href="collision__tools_8cpp_source.html">collision_tools.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="collision__tools_8cpp_source.html#l00306">306</a> of file <a class="el" href="collision__tools_8cpp_source.html">collision_tools.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -710,7 +657,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="collision__tools_8cpp_source.html#l00300">300</a> of file <a class="el" href="collision__tools_8cpp_source.html">collision_tools.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="collision__tools_8cpp_source.html#l00295">295</a> of file <a class="el" href="collision__tools_8cpp_source.html">collision_tools.cpp</a>.</p>
 
 </div>
 </div>
@@ -748,7 +695,7 @@ Here is the caller graph for this function:</div>
 
 <p>Create new <a class="el" href="structcollision__detection_1_1FCLGeometry.html" title="Bundles the CollisionGeometryData and FCL collision geometry representation into a single class.">FCLGeometry</a> object out of attached body. </p>
 
-<p class="definition">Definition at line <a class="el" href="fcl_2src_2collision__common_8cpp_source.html#l00906">906</a> of file <a class="el" href="fcl_2src_2collision__common_8cpp_source.html">collision_common.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fcl_2src_2collision__common_8cpp_source.html#l00923">923</a> of file <a class="el" href="fcl_2src_2collision__common_8cpp_source.html">collision_common.cpp</a>.</p>
 
 </div>
 </div>
@@ -786,7 +733,7 @@ Here is the caller graph for this function:</div>
 
 <p>Create new <a class="el" href="structcollision__detection_1_1FCLGeometry.html" title="Bundles the CollisionGeometryData and FCL collision geometry representation into a single class.">FCLGeometry</a> object out of robot link model. </p>
 
-<p class="definition">Definition at line <a class="el" href="fcl_2src_2collision__common_8cpp_source.html#l00900">900</a> of file <a class="el" href="fcl_2src_2collision__common_8cpp_source.html">collision_common.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fcl_2src_2collision__common_8cpp_source.html#l00917">917</a> of file <a class="el" href="fcl_2src_2collision__common_8cpp_source.html">collision_common.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -836,7 +783,7 @@ template&lt;typename BV , typename T &gt; </div>
 <p>Templated helper function creating new collision geometry out of general object using an arbitrary bounding volume (BV). </p>
 <p>It assigns a thread-local cache for each type of shape and minimizes memory usage and copying through utilizing the cache. </p>
 
-<p class="definition">Definition at line <a class="el" href="fcl_2src_2collision__common_8cpp_source.html#l00722">722</a> of file <a class="el" href="fcl_2src_2collision__common_8cpp_source.html">collision_common.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fcl_2src_2collision__common_8cpp_source.html#l00739">739</a> of file <a class="el" href="fcl_2src_2collision__common_8cpp_source.html">collision_common.cpp</a>.</p>
 
 </div>
 </div>
@@ -869,7 +816,7 @@ template&lt;typename BV , typename T &gt; </div>
 <p>Create new <a class="el" href="structcollision__detection_1_1FCLGeometry.html" title="Bundles the CollisionGeometryData and FCL collision geometry representation into a single class.">FCLGeometry</a> object out of a world object. </p>
 <p><a class="el" href="classA.html">A</a> world object always consists only of a single shape, therefore we don't need the <em>shape_index</em>. </p>
 
-<p class="definition">Definition at line <a class="el" href="fcl_2src_2collision__common_8cpp_source.html#l00912">912</a> of file <a class="el" href="fcl_2src_2collision__common_8cpp_source.html">collision_common.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fcl_2src_2collision__common_8cpp_source.html#l00929">929</a> of file <a class="el" href="fcl_2src_2collision__common_8cpp_source.html">collision_common.cpp</a>.</p>
 
 </div>
 </div>
@@ -919,7 +866,7 @@ template&lt;typename BV , typename T &gt; </div>
 
 <p>Create new scaled and / or padded <a class="el" href="structcollision__detection_1_1FCLGeometry.html" title="Bundles the CollisionGeometryData and FCL collision geometry representation into a single class.">FCLGeometry</a> object out of an attached body. </p>
 
-<p class="definition">Definition at line <a class="el" href="fcl_2src_2collision__common_8cpp_source.html#l00940">940</a> of file <a class="el" href="fcl_2src_2collision__common_8cpp_source.html">collision_common.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fcl_2src_2collision__common_8cpp_source.html#l00957">957</a> of file <a class="el" href="fcl_2src_2collision__common_8cpp_source.html">collision_common.cpp</a>.</p>
 
 </div>
 </div>
@@ -969,7 +916,7 @@ template&lt;typename BV , typename T &gt; </div>
 
 <p>Create new scaled and / or padded <a class="el" href="structcollision__detection_1_1FCLGeometry.html" title="Bundles the CollisionGeometryData and FCL collision geometry representation into a single class.">FCLGeometry</a> object out of robot link model. </p>
 
-<p class="definition">Definition at line <a class="el" href="fcl_2src_2collision__common_8cpp_source.html#l00934">934</a> of file <a class="el" href="fcl_2src_2collision__common_8cpp_source.html">collision_common.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fcl_2src_2collision__common_8cpp_source.html#l00951">951</a> of file <a class="el" href="fcl_2src_2collision__common_8cpp_source.html">collision_common.cpp</a>.</p>
 
 </div>
 </div>
@@ -1021,7 +968,7 @@ template&lt;typename BV , typename T &gt; </div>
 
 <p>Templated helper function creating new collision geometry out of general object using an arbitrary bounding volume (BV). This can include padding and scaling. </p>
 
-<p class="definition">Definition at line <a class="el" href="fcl_2src_2collision__common_8cpp_source.html#l00920">920</a> of file <a class="el" href="fcl_2src_2collision__common_8cpp_source.html">collision_common.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fcl_2src_2collision__common_8cpp_source.html#l00937">937</a> of file <a class="el" href="fcl_2src_2collision__common_8cpp_source.html">collision_common.cpp</a>.</p>
 
 </div>
 </div>
@@ -1065,7 +1012,7 @@ template&lt;typename BV , typename T &gt; </div>
 
 <p>Create new scaled and / or padded <a class="el" href="structcollision__detection_1_1FCLGeometry.html" title="Bundles the CollisionGeometryData and FCL collision geometry representation into a single class.">FCLGeometry</a> object out of an world object. </p>
 
-<p class="definition">Definition at line <a class="el" href="fcl_2src_2collision__common_8cpp_source.html#l00946">946</a> of file <a class="el" href="fcl_2src_2collision__common_8cpp_source.html">collision_common.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fcl_2src_2collision__common_8cpp_source.html#l00963">963</a> of file <a class="el" href="fcl_2src_2collision__common_8cpp_source.html">collision_common.cpp</a>.</p>
 
 </div>
 </div>
@@ -1157,7 +1104,7 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True terminates the distance check, false continues it to the next pair of objects </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fcl_2src_2collision__common_8cpp_source.html#l00442">442</a> of file <a class="el" href="fcl_2src_2collision__common_8cpp_source.html">collision_common.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fcl_2src_2collision__common_8cpp_source.html#l00441">441</a> of file <a class="el" href="fcl_2src_2collision__common_8cpp_source.html">collision_common.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1317,7 +1264,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="collision__common__distance__field_8cpp_source.html#l00155">155</a> of file <a class="el" href="collision__common__distance__field_8cpp_source.html">collision_common_distance_field.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="collision__common__distance__field_8cpp_source.html#l00151">151</a> of file <a class="el" href="collision__common__distance__field_8cpp_source.html">collision_common_distance_field.cpp</a>.</p>
 
 </div>
 </div>
@@ -1347,7 +1294,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="collision__common__distance__field_8cpp_source.html#l00141">141</a> of file <a class="el" href="collision__common__distance__field_8cpp_source.html">collision_common_distance_field.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="collision__common__distance__field_8cpp_source.html#l00137">137</a> of file <a class="el" href="collision__common__distance__field_8cpp_source.html">collision_common_distance_field.cpp</a>.</p>
 
 </div>
 </div>
@@ -1366,7 +1313,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="collision__common__distance__field_8cpp_source.html#l00097">97</a> of file <a class="el" href="collision__common__distance__field_8cpp_source.html">collision_common_distance_field.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="collision__common__distance__field_8cpp_source.html#l00093">93</a> of file <a class="el" href="collision__common__distance__field_8cpp_source.html">collision_common_distance_field.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1405,7 +1352,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="collision__common__distance__field_8cpp_source.html#l00103">103</a> of file <a class="el" href="collision__common__distance__field_8cpp_source.html">collision_common_distance_field.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="collision__common__distance__field_8cpp_source.html#l00099">99</a> of file <a class="el" href="collision__common__distance__field_8cpp_source.html">collision_common_distance_field.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1452,7 +1399,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="collision__common__distance__field_8cpp_source.html#l00169">169</a> of file <a class="el" href="collision__common__distance__field_8cpp_source.html">collision_common_distance_field.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="collision__common__distance__field_8cpp_source.html#l00165">165</a> of file <a class="el" href="collision__common__distance__field_8cpp_source.html">collision_common_distance_field.cpp</a>.</p>
 
 </div>
 </div>
@@ -1582,7 +1529,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="collision__tools_8cpp_source.html#l00090">90</a> of file <a class="el" href="collision__tools_8cpp_source.html">collision_tools.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="collision__tools_8cpp_source.html#l00085">85</a> of file <a class="el" href="collision__tools_8cpp_source.html">collision_tools.cpp</a>.</p>
 
 </div>
 </div>
@@ -1636,7 +1583,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="collision__tools_8cpp_source.html#l00133">133</a> of file <a class="el" href="collision__tools_8cpp_source.html">collision_tools.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="collision__tools_8cpp_source.html#l00128">128</a> of file <a class="el" href="collision__tools_8cpp_source.html">collision_tools.cpp</a>.</p>
 
 </div>
 </div>
@@ -1666,7 +1613,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="collision__common__distance__field_8cpp_source.html#l00127">127</a> of file <a class="el" href="collision__common__distance__field_8cpp_source.html">collision_common_distance_field.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="collision__common__distance__field_8cpp_source.html#l00123">123</a> of file <a class="el" href="collision__common__distance__field_8cpp_source.html">collision_common_distance_field.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1674,7 +1621,7 @@ Here is the call graph for this function:</div>
 <map name="namespacecollision__detection_a1138fda53957ff4d0719e919ff7aef52_cgraph" id="namespacecollision__detection_a1138fda53957ff4d0719e919ff7aef52_cgraph">
 <area shape="rect" title=" " alt="" coords="5,86,285,127"/>
 <area shape="rect" href="namespacecollision__detection.html#a89a04b404337b615d0b85a10267d6faf" title=" " alt="" coords="349,5,572,61"/>
-<area shape="rect" href="classmoveit_1_1core_1_1AttachedBody.html#a385c7ec39f012ce26eb81b32fa22cae9" title="Get the global transforms (in world frame) for the collision bodies. The returned transforms are guar..." alt="" coords="333,86,588,127"/>
+<area shape="rect" href="classmoveit_1_1core_1_1AttachedBody.html#a385c7ec39f012ce26eb81b32fa22cae9" title="Get the global transforms for the collision bodies. The returned transforms are guaranteed to be vali..." alt="" coords="333,86,588,127"/>
 <area shape="rect" href="classmoveit_1_1core_1_1AttachedBody.html#a8832405dda038c3e28a7969cb63993d1" title="Get the shapes that make up this attached body." alt="" coords="359,151,562,193"/>
 </map>
 </div>
@@ -1936,7 +1883,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="ros_2warehouse_2warehouse_2CMakeLists_8txt.html#af4423e580afb68aec7c40fb0bce7d5d4">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">CostSource</a> &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="setup__assistant_2CMakeLists_8txt.html#a58ab708fe5c1f47f0642bdaee3056d3b">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">CostSource</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>cost_sources</em>&#160;</td>
         </tr>
         <tr>
@@ -1948,7 +1895,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd>add a class for managing cost sources </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="collision__tools_8cpp_source.html#l00079">79</a> of file <a class="el" href="collision__tools_8cpp_source.html">collision_tools.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="collision__tools_8cpp_source.html#l00074">74</a> of file <a class="el" href="collision__tools_8cpp_source.html">collision_tools.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1982,7 +1929,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="ros_2warehouse_2warehouse_2CMakeLists_8txt.html#af4423e580afb68aec7c40fb0bce7d5d4">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">CostSource</a> &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="setup__assistant_2CMakeLists_8txt.html#a58ab708fe5c1f47f0642bdaee3056d3b">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">CostSource</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>cost_sources</em>, </td>
         </tr>
         <tr>
@@ -2005,7 +1952,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="collision__tools_8cpp_source.html#l00101">101</a> of file <a class="el" href="collision__tools_8cpp_source.html">collision_tools.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="collision__tools_8cpp_source.html#l00096">96</a> of file <a class="el" href="collision__tools_8cpp_source.html">collision_tools.cpp</a>.</p>
 
 </div>
 </div>
@@ -2084,7 +2031,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="ros_2warehouse_2warehouse_2CMakeLists_8txt.html#af4423e580afb68aec7c40fb0bce7d5d4">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">CostSource</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="setup__assistant_2CMakeLists_8txt.html#a58ab708fe5c1f47f0642bdaee3056d3b">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">CostSource</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>cost_sources</em>&#160;</td>
         </tr>
         <tr>
@@ -2095,7 +2042,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="collision__tools_8cpp_source.html#l00173">173</a> of file <a class="el" href="collision__tools_8cpp_source.html">collision_tools.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="collision__tools_8cpp_source.html#l00168">168</a> of file <a class="el" href="collision__tools_8cpp_source.html">collision_tools.cpp</a>.</p>
 
 </div>
 </div>
@@ -2116,7 +2063,7 @@ template&lt;typename BV , typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="fcl_2src_2collision__common_8cpp_source.html#l00701">701</a> of file <a class="el" href="fcl_2src_2collision__common_8cpp_source.html">collision_common.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fcl_2src_2collision__common_8cpp_source.html#l00700">700</a> of file <a class="el" href="fcl_2src_2collision__common_8cpp_source.html">collision_common.cpp</a>.</p>
 
 </div>
 </div>
@@ -2129,14 +2076,14 @@ template&lt;typename BV , typename T &gt; </div>
         <tr>
           <td class="memname">double collision_detection::getTotalCost </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="ros_2warehouse_2warehouse_2CMakeLists_8txt.html#af4423e580afb68aec7c40fb0bce7d5d4">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">CostSource</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="setup__assistant_2CMakeLists_8txt.html#a58ab708fe5c1f47f0642bdaee3056d3b">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">CostSource</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>cost_sources</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="collision__tools_8cpp_source.html#l00186">186</a> of file <a class="el" href="collision__tools_8cpp_source.html">collision_tools.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="collision__tools_8cpp_source.html#l00181">181</a> of file <a class="el" href="collision__tools_8cpp_source.html">collision_tools.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -2158,19 +2105,19 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">void collision_detection::intersectCostSources </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="ros_2warehouse_2warehouse_2CMakeLists_8txt.html#af4423e580afb68aec7c40fb0bce7d5d4">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">CostSource</a> &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="setup__assistant_2CMakeLists_8txt.html#a58ab708fe5c1f47f0642bdaee3056d3b">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">CostSource</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>cost_sources</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="ros_2warehouse_2warehouse_2CMakeLists_8txt.html#af4423e580afb68aec7c40fb0bce7d5d4">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">CostSource</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="setup__assistant_2CMakeLists_8txt.html#a58ab708fe5c1f47f0642bdaee3056d3b">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">CostSource</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="ros_2warehouse_2warehouse_2CMakeLists_8txt.html#af4423e580afb68aec7c40fb0bce7d5d4">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">CostSource</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="setup__assistant_2CMakeLists_8txt.html#a58ab708fe5c1f47f0642bdaee3056d3b">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">CostSource</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -2181,7 +2128,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="collision__tools_8cpp_source.html#l00194">194</a> of file <a class="el" href="collision__tools_8cpp_source.html">collision_tools.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="collision__tools_8cpp_source.html#l00189">189</a> of file <a class="el" href="collision__tools_8cpp_source.html">collision_tools.cpp</a>.</p>
 
 </div>
 </div>
@@ -2575,13 +2522,13 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">void collision_detection::removeCostSources </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="ros_2warehouse_2warehouse_2CMakeLists_8txt.html#af4423e580afb68aec7c40fb0bce7d5d4">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">CostSource</a> &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="setup__assistant_2CMakeLists_8txt.html#a58ab708fe5c1f47f0642bdaee3056d3b">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">CostSource</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>cost_sources</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="ros_2warehouse_2warehouse_2CMakeLists_8txt.html#af4423e580afb68aec7c40fb0bce7d5d4">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">CostSource</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="setup__assistant_2CMakeLists_8txt.html#a58ab708fe5c1f47f0642bdaee3056d3b">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">CostSource</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>cost_sources_to_remove</em>, </td>
         </tr>
         <tr>
@@ -2598,7 +2545,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="collision__tools_8cpp_source.html#l00247">247</a> of file <a class="el" href="collision__tools_8cpp_source.html">collision_tools.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="collision__tools_8cpp_source.html#l00242">242</a> of file <a class="el" href="collision__tools_8cpp_source.html">collision_tools.cpp</a>.</p>
 
 </div>
 </div>
@@ -2611,7 +2558,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">void collision_detection::removeOverlapping </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="ros_2warehouse_2warehouse_2CMakeLists_8txt.html#af4423e580afb68aec7c40fb0bce7d5d4">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">CostSource</a> &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="setup__assistant_2CMakeLists_8txt.html#a58ab708fe5c1f47f0642bdaee3056d3b">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">CostSource</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>cost_sources</em>, </td>
         </tr>
         <tr>
@@ -2628,7 +2575,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="collision__tools_8cpp_source.html#l00217">217</a> of file <a class="el" href="collision__tools_8cpp_source.html">collision_tools.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="collision__tools_8cpp_source.html#l00212">212</a> of file <a class="el" href="collision__tools_8cpp_source.html">collision_tools.cpp</a>.</p>
 
 </div>
 </div>
@@ -2707,7 +2654,7 @@ Here is the caller graph for this function:</div>
 <area shape="rect" title="Transforms an Eigen Isometry3d to FCL coordinate transformation." alt="" coords="525,78,669,119"/>
 <area shape="rect" href="classcollision__detection_1_1CollisionEnvFCL.html#a00e312e94531fec84735f05174fe20d1" title=" " alt="" coords="267,5,466,61"/>
 <area shape="rect" href="classcollision__detection_1_1CollisionEnvFCL.html#a8b8d636d26e7415ca7cf12380a7634d8" title="Construct an FCL collision object from MoveIt&#39;s World::Object." alt="" coords="5,104,208,160"/>
-<area shape="rect" href="classcollision__detection_1_1CollisionEnvFCL.html#acb2f3068450b7fdb7498b2818d5b3b18" title="Converts all shapes which make up an attached body into a vector of FCLGeometryConstPtr." alt="" coords="256,136,477,192"/>
+<area shape="rect" href="classcollision__detection_1_1CollisionEnvFCL.html#acb2f3068450b7fdb7498b2818d5b3b18" title="Converts all shapes which make up an atttached body into a vector of FCLGeometryConstPtr." alt="" coords="256,136,477,192"/>
 </map>
 </div>
 
@@ -2726,7 +2673,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="collision__env__distance__field_8cpp_source.html#l00087">87</a> of file <a class="el" href="collision__env__distance__field_8cpp_source.html">collision_env_distance_field.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="collision__env__distance__field_8cpp_source.html#l00083">83</a> of file <a class="el" href="collision__env__distance__field_8cpp_source.html">collision_env_distance_field.cpp</a>.</p>
 
 </div>
 </div>

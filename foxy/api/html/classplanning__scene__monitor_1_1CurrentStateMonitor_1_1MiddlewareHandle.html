@@ -67,7 +67,6 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classplanning__scene__monitor_1_1CurrentStateMonitor_1_1MiddlewareHandle-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -84,17 +83,12 @@ Inheritance diagram for planning_scene_monitor::CurrentStateMonitor::MiddlewareH
 <div class="dyncontent">
 <div class="center"><img src="classplanning__scene__monitor_1_1CurrentStateMonitor_1_1MiddlewareHandle__inherit__graph.png" border="0" usemap="#planning__scene__monitor_1_1CurrentStateMonitor_1_1MiddlewareHandle_inherit__map" alt="Inheritance graph"/></div>
 <map name="planning__scene__monitor_1_1CurrentStateMonitor_1_1MiddlewareHandle_inherit__map" id="planning__scene__monitor_1_1CurrentStateMonitor_1_1MiddlewareHandle_inherit__map">
-<area shape="rect" title="Dependency injection class for testing the CurrentStateMonitor." alt="" coords="5,35,187,91"/>
-<area shape="rect" href="structMockCurrentStateMonitorMiddlewareHandle.html" title=" " alt="" coords="235,5,500,47"/>
-<area shape="rect" href="classplanning__scene__monitor_1_1CurrentStateMonitorMiddlewareHandle.html" title="This class contains the ros interfaces for CurrentStateMontior." alt="" coords="248,71,487,127"/>
+<area shape="rect" title="Dependency injection class for testing the CurrentStateMonitor." alt="" coords="120,5,301,61"/>
+<area shape="rect" href="structMockMiddlewareHandle.html" title=" " alt="" coords="5,124,184,151"/>
+<area shape="rect" href="classplanning__scene__monitor_1_1CurrentStateMonitorMiddlewareHandle.html" title="This class contains the ros interfaces for CurrentStateMontior." alt="" coords="209,109,447,165"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:a83c527627e8fdbbf5fd28ae5d32b8e41"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning__scene__monitor_1_1CurrentStateMonitor_1_1MiddlewareHandle.html#a83c527627e8fdbbf5fd28ae5d32b8e41">TfCallback</a> = std::function&lt; void(const tf2_msgs::msg::TFMessage::ConstSharedPtr)&gt;</td></tr>
-<tr class="separator:a83c527627e8fdbbf5fd28ae5d32b8e41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a7e48fd8a333b7ad70a0f2a34da1fb0e8"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning__scene__monitor_1_1CurrentStateMonitor_1_1MiddlewareHandle.html#a7e48fd8a333b7ad70a0f2a34da1fb0e8">~MiddlewareHandle</a> ()=default</td></tr>
@@ -106,53 +100,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a756263c8097e4cbd1f20cd1cd97d5002"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning__scene__monitor_1_1CurrentStateMonitor_1_1MiddlewareHandle.html#a756263c8097e4cbd1f20cd1cd97d5002">createJointStateSubscription</a> (const std::string &amp;topic, <a class="el" href="namespaceplanning__scene__monitor.html#a96e94553c46dd81b9d72726172fcaa0b">JointStateUpdateCallback</a> callback)=0</td></tr>
 <tr class="memdesc:a756263c8097e4cbd1f20cd1cd97d5002"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a joint state subscription.  <a href="classplanning__scene__monitor_1_1CurrentStateMonitor_1_1MiddlewareHandle.html#a756263c8097e4cbd1f20cd1cd97d5002">More...</a><br /></td></tr>
 <tr class="separator:a756263c8097e4cbd1f20cd1cd97d5002"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d46c6fd239114c6a4090f8dcfe0812d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning__scene__monitor_1_1CurrentStateMonitor_1_1MiddlewareHandle.html#a3d46c6fd239114c6a4090f8dcfe0812d">createStaticTfSubscription</a> (<a class="el" href="classplanning__scene__monitor_1_1CurrentStateMonitor_1_1MiddlewareHandle.html#a83c527627e8fdbbf5fd28ae5d32b8e41">TfCallback</a> callback)=0</td></tr>
-<tr class="memdesc:a3d46c6fd239114c6a4090f8dcfe0812d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a static transform message subscription.  <a href="classplanning__scene__monitor_1_1CurrentStateMonitor_1_1MiddlewareHandle.html#a3d46c6fd239114c6a4090f8dcfe0812d">More...</a><br /></td></tr>
-<tr class="separator:a3d46c6fd239114c6a4090f8dcfe0812d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab50ac11cd4972c1c86db1f25b0049d08"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning__scene__monitor_1_1CurrentStateMonitor_1_1MiddlewareHandle.html#ab50ac11cd4972c1c86db1f25b0049d08">createDynamicTfSubscription</a> (<a class="el" href="classplanning__scene__monitor_1_1CurrentStateMonitor_1_1MiddlewareHandle.html#a83c527627e8fdbbf5fd28ae5d32b8e41">TfCallback</a> callback)=0</td></tr>
-<tr class="memdesc:ab50ac11cd4972c1c86db1f25b0049d08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a dynamic transform message subscription.  <a href="classplanning__scene__monitor_1_1CurrentStateMonitor_1_1MiddlewareHandle.html#ab50ac11cd4972c1c86db1f25b0049d08">More...</a><br /></td></tr>
-<tr class="separator:ab50ac11cd4972c1c86db1f25b0049d08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5da506ce7a5cd49d4d588caadde54f81"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning__scene__monitor_1_1CurrentStateMonitor_1_1MiddlewareHandle.html#a5da506ce7a5cd49d4d588caadde54f81">resetJointStateSubscription</a> ()=0</td></tr>
 <tr class="memdesc:a5da506ce7a5cd49d4d588caadde54f81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the joint state subscription.  <a href="classplanning__scene__monitor_1_1CurrentStateMonitor_1_1MiddlewareHandle.html#a5da506ce7a5cd49d4d588caadde54f81">More...</a><br /></td></tr>
 <tr class="separator:a5da506ce7a5cd49d4d588caadde54f81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0946153ba780c64b637432fdfb7a0ff3"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning__scene__monitor_1_1CurrentStateMonitor_1_1MiddlewareHandle.html#a0946153ba780c64b637432fdfb7a0ff3">getJointStateTopicName</a> () const =0</td></tr>
 <tr class="memdesc:a0946153ba780c64b637432fdfb7a0ff3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the joint state topic name.  <a href="classplanning__scene__monitor_1_1CurrentStateMonitor_1_1MiddlewareHandle.html#a0946153ba780c64b637432fdfb7a0ff3">More...</a><br /></td></tr>
 <tr class="separator:a0946153ba780c64b637432fdfb7a0ff3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ee97eec2fbc1bf2a8947c0a90c60561"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning__scene__monitor_1_1CurrentStateMonitor_1_1MiddlewareHandle.html#a5ee97eec2fbc1bf2a8947c0a90c60561">sleepFor</a> (const std::chrono::nanoseconds &amp;nanoseconds) const =0</td></tr>
-<tr class="memdesc:a5ee97eec2fbc1bf2a8947c0a90c60561"><td class="mdescLeft">&#160;</td><td class="mdescRight">Block for the specified amount of time.  <a href="classplanning__scene__monitor_1_1CurrentStateMonitor_1_1MiddlewareHandle.html#a5ee97eec2fbc1bf2a8947c0a90c60561">More...</a><br /></td></tr>
-<tr class="separator:a5ee97eec2fbc1bf2a8947c0a90c60561"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af547791bd7df20bdb37be8b5aea3f5de"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning__scene__monitor_1_1CurrentStateMonitor_1_1MiddlewareHandle.html#af547791bd7df20bdb37be8b5aea3f5de">getStaticTfTopicName</a> () const =0</td></tr>
-<tr class="memdesc:af547791bd7df20bdb37be8b5aea3f5de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the static transform topic name.  <a href="classplanning__scene__monitor_1_1CurrentStateMonitor_1_1MiddlewareHandle.html#af547791bd7df20bdb37be8b5aea3f5de">More...</a><br /></td></tr>
-<tr class="separator:af547791bd7df20bdb37be8b5aea3f5de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a97261b3d1e123b622d0e2367f576cbbe"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning__scene__monitor_1_1CurrentStateMonitor_1_1MiddlewareHandle.html#a97261b3d1e123b622d0e2367f576cbbe">getDynamicTfTopicName</a> () const =0</td></tr>
-<tr class="memdesc:a97261b3d1e123b622d0e2367f576cbbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the dynamic transform topic name.  <a href="classplanning__scene__monitor_1_1CurrentStateMonitor_1_1MiddlewareHandle.html#a97261b3d1e123b622d0e2367f576cbbe">More...</a><br /></td></tr>
-<tr class="separator:a97261b3d1e123b622d0e2367f576cbbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4304dff2ad40b745ac0b9a47bb60e7dc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning__scene__monitor_1_1CurrentStateMonitor_1_1MiddlewareHandle.html#a4304dff2ad40b745ac0b9a47bb60e7dc">resetTfSubscriptions</a> ()=0</td></tr>
-<tr class="memdesc:a4304dff2ad40b745ac0b9a47bb60e7dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the static &amp; dynamic transform subscriptions.  <a href="classplanning__scene__monitor_1_1CurrentStateMonitor_1_1MiddlewareHandle.html#a4304dff2ad40b745ac0b9a47bb60e7dc">More...</a><br /></td></tr>
-<tr class="separator:a4304dff2ad40b745ac0b9a47bb60e7dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Dependency injection class for testing the <a class="el" href="classplanning__scene__monitor_1_1CurrentStateMonitor.html" title="Monitors the joint_states topic and tf to maintain the current state of the robot.">CurrentStateMonitor</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="current__state__monitor_8h_source.html#l00099">99</a> of file <a class="el" href="current__state__monitor_8h_source.html">current_state_monitor.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a83c527627e8fdbbf5fd28ae5d32b8e41"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a83c527627e8fdbbf5fd28ae5d32b8e41">&#9670;&nbsp;</a></span>TfCallback</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classplanning__scene__monitor_1_1CurrentStateMonitor_1_1MiddlewareHandle.html#a83c527627e8fdbbf5fd28ae5d32b8e41">planning_scene_monitor::CurrentStateMonitor::MiddlewareHandle::TfCallback</a> =  std::function&lt;void(const tf2_msgs::msg::TFMessage::ConstSharedPtr)&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="current__state__monitor_8h_source.html#l00102">102</a> of file <a class="el" href="current__state__monitor_8h_source.html">current_state_monitor.h</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<p class="definition">Definition at line <a class="el" href="current__state__monitor_8h_source.html#l00095">95</a> of file <a class="el" href="current__state__monitor_8h_source.html">current_state_monitor.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a7e48fd8a333b7ad70a0f2a34da1fb0e8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7e48fd8a333b7ad70a0f2a34da1fb0e8">&#9670;&nbsp;</a></span>~MiddlewareHandle()</h2>
 
@@ -181,40 +140,6 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ab50ac11cd4972c1c86db1f25b0049d08"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab50ac11cd4972c1c86db1f25b0049d08">&#9670;&nbsp;</a></span>createDynamicTfSubscription()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void planning_scene_monitor::CurrentStateMonitor::MiddlewareHandle::createDynamicTfSubscription </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classplanning__scene__monitor_1_1CurrentStateMonitor_1_1MiddlewareHandle.html#a83c527627e8fdbbf5fd28ae5d32b8e41">TfCallback</a>&#160;</td>
-          <td class="paramname"><em>callback</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Creates a dynamic transform message subscription. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>The callback </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="a756263c8097e4cbd1f20cd1cd97d5002"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a756263c8097e4cbd1f20cd1cd97d5002">&#9670;&nbsp;</a></span>createJointStateSubscription()</h2>
 
@@ -262,70 +187,6 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a3d46c6fd239114c6a4090f8dcfe0812d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3d46c6fd239114c6a4090f8dcfe0812d">&#9670;&nbsp;</a></span>createStaticTfSubscription()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void planning_scene_monitor::CurrentStateMonitor::MiddlewareHandle::createStaticTfSubscription </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classplanning__scene__monitor_1_1CurrentStateMonitor_1_1MiddlewareHandle.html#a83c527627e8fdbbf5fd28ae5d32b8e41">TfCallback</a>&#160;</td>
-          <td class="paramname"><em>callback</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Creates a static transform message subscription. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>The callback </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a97261b3d1e123b622d0e2367f576cbbe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a97261b3d1e123b622d0e2367f576cbbe">&#9670;&nbsp;</a></span>getDynamicTfTopicName()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual std::string planning_scene_monitor::CurrentStateMonitor::MiddlewareHandle::getDynamicTfTopicName </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the dynamic transform topic name. </p>
-<dl class="section return"><dt>Returns</dt><dd>The dynamic transform topic name. </dd></dl>
-
-<p>Implemented in <a class="el" href="classplanning__scene__monitor_1_1CurrentStateMonitorMiddlewareHandle.html#aea140931df7faca92590d638c551a0f8">planning_scene_monitor::CurrentStateMonitorMiddlewareHandle</a>.</p>
-
-</div>
-</div>
 <a id="a0946153ba780c64b637432fdfb7a0ff3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0946153ba780c64b637432fdfb7a0ff3">&#9670;&nbsp;</a></span>getJointStateTopicName()</h2>
 
@@ -353,36 +214,6 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The joint state topic name. </dd></dl>
 
 <p>Implemented in <a class="el" href="classplanning__scene__monitor_1_1CurrentStateMonitorMiddlewareHandle.html#a2383caea7f0beba527da01613b571b8e">planning_scene_monitor::CurrentStateMonitorMiddlewareHandle</a>.</p>
-
-</div>
-</div>
-<a id="af547791bd7df20bdb37be8b5aea3f5de"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af547791bd7df20bdb37be8b5aea3f5de">&#9670;&nbsp;</a></span>getStaticTfTopicName()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual std::string planning_scene_monitor::CurrentStateMonitor::MiddlewareHandle::getStaticTfTopicName </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the static transform topic name. </p>
-<dl class="section return"><dt>Returns</dt><dd>The static transform topic name. </dd></dl>
-
-<p>Implemented in <a class="el" href="classplanning__scene__monitor_1_1CurrentStateMonitorMiddlewareHandle.html#a2d259f8123152e583167f051112f2071">planning_scene_monitor::CurrentStateMonitorMiddlewareHandle</a>.</p>
 
 </div>
 </div>
@@ -442,72 +273,6 @@ Public Member Functions</h2></td></tr>
 <p>Reset the joint state subscription. </p>
 
 <p>Implemented in <a class="el" href="classplanning__scene__monitor_1_1CurrentStateMonitorMiddlewareHandle.html#aa510b1de90fc96febd1903513f844396">planning_scene_monitor::CurrentStateMonitorMiddlewareHandle</a>.</p>
-
-</div>
-</div>
-<a id="a4304dff2ad40b745ac0b9a47bb60e7dc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4304dff2ad40b745ac0b9a47bb60e7dc">&#9670;&nbsp;</a></span>resetTfSubscriptions()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void planning_scene_monitor::CurrentStateMonitor::MiddlewareHandle::resetTfSubscriptions </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Reset the static &amp; dynamic transform subscriptions. </p>
-
-<p>Implemented in <a class="el" href="classplanning__scene__monitor_1_1CurrentStateMonitorMiddlewareHandle.html#a9939ea7576edcb352d2cb0ef8508f085">planning_scene_monitor::CurrentStateMonitorMiddlewareHandle</a>.</p>
-
-</div>
-</div>
-<a id="a5ee97eec2fbc1bf2a8947c0a90c60561"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5ee97eec2fbc1bf2a8947c0a90c60561">&#9670;&nbsp;</a></span>sleepFor()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual bool planning_scene_monitor::CurrentStateMonitor::MiddlewareHandle::sleepFor </td>
-          <td>(</td>
-          <td class="paramtype">const std::chrono::nanoseconds &amp;&#160;</td>
-          <td class="paramname"><em>nanoseconds</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Block for the specified amount of time. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">nanoseconds</td><td>The nanoseconds to sleep</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>True if sleep happened as expected. </dd></dl>
-
-<p>Implemented in <a class="el" href="classplanning__scene__monitor_1_1CurrentStateMonitorMiddlewareHandle.html#a4a5e53b05e571efe9b6f436a1e5095cd">planning_scene_monitor::CurrentStateMonitorMiddlewareHandle</a>.</p>
 
 </div>
 </div>

@@ -202,8 +202,8 @@ $(function() {
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  lock_.lock();</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  printOnDestroy_ = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  out &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  out &lt;&lt; <span class="stringliteral">&quot; *** Profiling statistics. Total counted time : &quot;</span> &lt;&lt; to_seconds(tinfo_.total) &lt;&lt; <span class="stringliteral">&quot; seconds\n&quot;</span>;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  out &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  out &lt;&lt; <span class="stringliteral">&quot; *** Profiling statistics. Total counted time : &quot;</span> &lt;&lt; to_seconds(tinfo_.total) &lt;&lt; <span class="stringliteral">&quot; seconds&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  <span class="keywordflow">if</span> (merge)</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  {</div>
@@ -234,7 +234,7 @@ $(function() {
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordflow">for</span> (std::map&lt;boost::thread::id, PerThread&gt;::const_iterator it = data_.begin(); it != data_.end(); ++it)</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    {</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;      out &lt;&lt; <span class="stringliteral">&quot;Thread &quot;</span> &lt;&lt; it-&gt;first &lt;&lt; <span class="stringliteral">&quot;:\n&quot;</span>;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;      out &lt;&lt; <span class="stringliteral">&quot;Thread &quot;</span> &lt;&lt; it-&gt;first &lt;&lt; <span class="stringliteral">&quot;:&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;      printThreadInfo(out, it-&gt;second);</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    }</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  lock_.unlock();</div>
@@ -243,9 +243,9 @@ $(function() {
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmoveit_1_1tools_1_1Profiler.html#a1fc23b9b7d4675c8ce80485229c2f96f">Profiler::console</a>()</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;{</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;  std::stringstream ss;</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;  ss &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;  ss &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;  <a class="code" href="classmoveit_1_1tools_1_1Profiler.html#acfa3cf078f3202074d9a533c38b99800">status</a>(ss, <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;  RCLCPP_INFO(LOGGER, <span class="stringliteral">&quot;%s&quot;</span>, ss.str().c_str());</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;  RCLCPP_INFO(LOGGER, ss.str().c_str());</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;}</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160; </div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="keyword">namespace</span></div>
@@ -291,9 +291,9 @@ $(function() {
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;  }</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;  std::sort(events.begin(), events.end(), SortIntByValue());</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;  <span class="keywordflow">if</span> (!events.empty())</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;Events:\n&quot;</span>;</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;Events:&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">const</span> DataIntVal&amp; <a class="code" href="classmoveit_1_1tools_1_1Profiler.html#a657a4c3d927cf4ee43c5b4e2c0bbad2b">event</a> : events)</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    out &lt;&lt; <span class="keyword">event</span>.name_ &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; <span class="keyword">event</span>.value_ &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    out &lt;&lt; <span class="keyword">event</span>.name_ &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; <span class="keyword">event</span>.value_ &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;  std::vector&lt;DataDoubleVal&gt; avg;</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">const</span> std::pair&lt;const std::string, AvgInfo&gt;&amp; ia : data.avg)</div>
@@ -303,60 +303,61 @@ $(function() {
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;  }</div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;  std::sort(avg.begin(), avg.end(), SortDoubleByValue());</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;  <span class="keywordflow">if</span> (!avg.empty())</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;Averages:\n&quot;</span>;</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;Averages:&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">const</span> DataDoubleVal&amp; <a class="code" href="classmoveit_1_1tools_1_1Profiler.html#aa94ec26521a7f7fc0b90cccda3fcc2e6">average</a> : avg)</div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;  {</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <span class="keyword">const</span> AvgInfo&amp; <a class="code" href="namespaceplan.html#a0d1d9218112fb104ea1d563b4a920e07">a</a> = data.avg.find(<a class="code" href="classmoveit_1_1tools_1_1Profiler.html#aa94ec26521a7f7fc0b90cccda3fcc2e6">average</a>.name_)-&gt;second;</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    out &lt;&lt; <a class="code" href="classmoveit_1_1tools_1_1Profiler.html#aa94ec26521a7f7fc0b90cccda3fcc2e6">average</a>.name_ &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; <a class="code" href="classmoveit_1_1tools_1_1Profiler.html#aa94ec26521a7f7fc0b90cccda3fcc2e6">average</a>.value_ &lt;&lt; <span class="stringliteral">&quot; (stddev = &quot;</span></div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        &lt;&lt; sqrt(fabs(<a class="code" href="namespaceplan.html#a0d1d9218112fb104ea1d563b4a920e07">a</a>.totalSqr - (<span class="keywordtype">double</span>)<a class="code" href="namespaceplan.html#a0d1d9218112fb104ea1d563b4a920e07">a</a>.parts * <a class="code" href="classmoveit_1_1tools_1_1Profiler.html#aa94ec26521a7f7fc0b90cccda3fcc2e6">average</a>.value_ * <a class="code" href="classmoveit_1_1tools_1_1Profiler.html#aa94ec26521a7f7fc0b90cccda3fcc2e6">average</a>.value_) / ((<span class="keywordtype">double</span>)<a class="code" href="namespaceplan.html#a0d1d9218112fb104ea1d563b4a920e07">a</a>.parts - 1.)) &lt;&lt; <span class="stringliteral">&quot;)\n&quot;</span>;</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;  }</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; </div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;  std::vector&lt;DataDoubleVal&gt; time;</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">const</span> std::pair&lt;const std::string, TimeInfo&gt;&amp; itm : data.time)</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;  {</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    DataDoubleVal next = { itm.first, to_seconds(itm.second.total) };</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    time.push_back(next);</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;  }</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160; </div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;  std::sort(time.begin(), time.end(), SortDoubleByValue());</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;  <span class="keywordflow">if</span> (!time.empty())</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;Blocks of time:\n&quot;</span>;</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; </div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;  <span class="keywordtype">double</span> unaccounted = total;</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;  <span class="keywordflow">for</span> (DataDoubleVal&amp; time_block : time)</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;  {</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="keyword">const</span> TimeInfo&amp; <a class="code" href="namespacesetup.html#aa2586b6c4dd84a0aaaf49cb1565cee6e">d</a> = data.time.find(time_block.name_)-&gt;second;</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160; </div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="keywordtype">double</span> t_s = to_seconds(<a class="code" href="namespacesetup.html#aa2586b6c4dd84a0aaaf49cb1565cee6e">d</a>.shortest);</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <span class="keywordtype">double</span> t_l = to_seconds(<a class="code" href="namespacesetup.html#aa2586b6c4dd84a0aaaf49cb1565cee6e">d</a>.longest);</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    out &lt;&lt; time_block.name_ &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; time_block.value_ &lt;&lt; <span class="stringliteral">&quot;s (&quot;</span> &lt;&lt; (100.0 * time_block.value_ / total) &lt;&lt; <span class="stringliteral">&quot;%), [&quot;</span></div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        &lt;&lt; t_s &lt;&lt; <span class="stringliteral">&quot;s --&gt; &quot;</span> &lt;&lt; t_l &lt;&lt; <span class="stringliteral">&quot; s], &quot;</span> &lt;&lt; <a class="code" href="namespacesetup.html#aa2586b6c4dd84a0aaaf49cb1565cee6e">d</a>.parts &lt;&lt; <span class="stringliteral">&quot; parts&quot;</span>;</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <a class="code" href="kinematics_2cached__ik__kinematics__plugin_2CMakeLists_8txt.html#a092c219805988bc95d15b40ee47d2a9b">if</a> (<a class="code" href="namespacesetup.html#aa2586b6c4dd84a0aaaf49cb1565cee6e">d</a>.parts &gt; 0)</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    {</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;      <span class="keywordtype">double</span> pavg = to_seconds(<a class="code" href="namespacesetup.html#aa2586b6c4dd84a0aaaf49cb1565cee6e">d</a>.total) / (double)<a class="code" href="namespacesetup.html#aa2586b6c4dd84a0aaaf49cb1565cee6e">d</a>.parts;</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;      out &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; pavg &lt;&lt; <span class="stringliteral">&quot; s on average&quot;</span>;</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;      <a class="code" href="kinematics_2cached__ik__kinematics__plugin_2CMakeLists_8txt.html#a092c219805988bc95d15b40ee47d2a9b">if</a> (pavg &lt; 1.0)</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        out &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; 1.0 / pavg &lt;&lt; <span class="stringliteral">&quot; /s)&quot;</span>;</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    }</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    out &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    unaccounted -= time_block.value_;</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;  }</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;  <span class="comment">// if we do not appear to have counted time multiple times, print the unaccounted time too</span></div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;  <span class="keywordflow">if</span> (unaccounted &gt;= 0.0)</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;  {</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;Unaccounted time : &quot;</span> &lt;&lt; unaccounted;</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <span class="keywordflow">if</span> (total &gt; 0.0)</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;      out &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; (100.0 * unaccounted / total) &lt;&lt; <span class="stringliteral">&quot; %)&quot;</span>;</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    out &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;  }</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160; </div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;  out &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;}</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160; </div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;}  <span class="comment">// end of namespace tools</span></div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;}  <span class="comment">// end of namespace moveit</span></div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        &lt;&lt; sqrt(fabs(<a class="code" href="namespaceplan.html#a0d1d9218112fb104ea1d563b4a920e07">a</a>.totalSqr - (<span class="keywordtype">double</span>)<a class="code" href="namespaceplan.html#a0d1d9218112fb104ea1d563b4a920e07">a</a>.parts * <a class="code" href="classmoveit_1_1tools_1_1Profiler.html#aa94ec26521a7f7fc0b90cccda3fcc2e6">average</a>.value_ * <a class="code" href="classmoveit_1_1tools_1_1Profiler.html#aa94ec26521a7f7fc0b90cccda3fcc2e6">average</a>.value_) / ((<span class="keywordtype">double</span>)<a class="code" href="namespaceplan.html#a0d1d9218112fb104ea1d563b4a920e07">a</a>.parts - 1.)) &lt;&lt; <span class="stringliteral">&quot;)&quot;</span></div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;  }</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160; </div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;  std::vector&lt;DataDoubleVal&gt; time;</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160; </div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">const</span> std::pair&lt;const std::string, TimeInfo&gt;&amp; itm : data.time)</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;  {</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    DataDoubleVal next = { itm.first, to_seconds(itm.second.total) };</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    time.push_back(next);</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;  }</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160; </div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;  std::sort(time.begin(), time.end(), SortDoubleByValue());</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;  <span class="keywordflow">if</span> (!time.empty())</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;Blocks of time:&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160; </div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;  <span class="keywordtype">double</span> unaccounted = total;</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;  <span class="keywordflow">for</span> (DataDoubleVal&amp; time_block : time)</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;  {</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <span class="keyword">const</span> TimeInfo&amp; <a class="code" href="namespacesetup.html#aa2586b6c4dd84a0aaaf49cb1565cee6e">d</a> = data.time.find(time_block.name_)-&gt;second;</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160; </div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <span class="keywordtype">double</span> t_s = to_seconds(<a class="code" href="namespacesetup.html#aa2586b6c4dd84a0aaaf49cb1565cee6e">d</a>.shortest);</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="keywordtype">double</span> t_l = to_seconds(<a class="code" href="namespacesetup.html#aa2586b6c4dd84a0aaaf49cb1565cee6e">d</a>.longest);</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    out &lt;&lt; time_block.name_ &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; time_block.value_ &lt;&lt; <span class="stringliteral">&quot;s (&quot;</span> &lt;&lt; (100.0 * time_block.value_ / total) &lt;&lt; <span class="stringliteral">&quot;%), [&quot;</span></div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        &lt;&lt; t_s &lt;&lt; <span class="stringliteral">&quot;s --&gt; &quot;</span> &lt;&lt; t_l &lt;&lt; <span class="stringliteral">&quot; s], &quot;</span> &lt;&lt; <a class="code" href="namespacesetup.html#aa2586b6c4dd84a0aaaf49cb1565cee6e">d</a>.parts &lt;&lt; <span class="stringliteral">&quot; parts&quot;</span>;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <a class="code" href="kinematics_2cached__ik__kinematics__plugin_2CMakeLists_8txt.html#a092c219805988bc95d15b40ee47d2a9b">if</a> (<a class="code" href="namespacesetup.html#aa2586b6c4dd84a0aaaf49cb1565cee6e">d</a>.parts &gt; 0)</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    {</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;      <span class="keywordtype">double</span> pavg = to_seconds(<a class="code" href="namespacesetup.html#aa2586b6c4dd84a0aaaf49cb1565cee6e">d</a>.total) / (double)<a class="code" href="namespacesetup.html#aa2586b6c4dd84a0aaaf49cb1565cee6e">d</a>.parts;</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;      out &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; pavg &lt;&lt; <span class="stringliteral">&quot; s on average&quot;</span>;</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;      <a class="code" href="kinematics_2cached__ik__kinematics__plugin_2CMakeLists_8txt.html#a092c219805988bc95d15b40ee47d2a9b">if</a> (pavg &lt; 1.0)</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        out &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; 1.0 / pavg &lt;&lt; <span class="stringliteral">&quot; /s)&quot;</span>;</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    }</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    out &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    unaccounted -= time_block.value_;</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;  }</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;  <span class="comment">// if we do not appear to have counted time multiple times, print the unaccounted time too</span></div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;  <span class="keywordflow">if</span> (unaccounted &gt;= 0.0)</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;  {</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;Unaccounted time : &quot;</span> &lt;&lt; unaccounted;</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <span class="keywordflow">if</span> (total &gt; 0.0)</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;      out &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; (100.0 * unaccounted / total) &lt;&lt; <span class="stringliteral">&quot; %)&quot;</span>;</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    out &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;  }</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160; </div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;  out &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;}</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160; </div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;}  <span class="comment">// end of namespace tools</span></div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;}  <span class="comment">// end of namespace moveit</span></div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassmoveit_1_1tools_1_1Profiler_html_ae0bc9b3c7b08347a25210e96eb38a6ea"><div class="ttname"><a href="classmoveit_1_1tools_1_1Profiler.html#ae0bc9b3c7b08347a25210e96eb38a6ea">moveit::tools::Profiler::end</a></div><div class="ttdeci">void end(const std::string &amp;name)</div><div class="ttdoc">Stop counting time for a specific chunk of code.</div></div>
 <div class="ttc" id="aclassmoveit_1_1tools_1_1Profiler_html_a98a802db47198bdefd702acd7fa10ba9"><div class="ttname"><a href="classmoveit_1_1tools_1_1Profiler.html#a98a802db47198bdefd702acd7fa10ba9">moveit::tools::Profiler::instance</a></div><div class="ttdeci">static Profiler &amp; instance()</div><div class="ttdoc">Return an instance of the class.</div></div>
@@ -371,7 +372,7 @@ $(function() {
 <div class="ttc" id="anamespacesetup_html_aa2586b6c4dd84a0aaaf49cb1565cee6e"><div class="ttname"><a href="namespacesetup.html#aa2586b6c4dd84a0aaaf49cb1565cee6e">setup.d</a></div><div class="ttdeci">d</div><div class="ttdef"><b>Definition:</b> <a href="moveit__commander_2setup_8py_source.html#l00004">setup.py:4</a></div></div>
 <div class="ttc" id="anamespaceplanning__request__adapter_html_af64b3fa8ebc256d9c5133c6c80ade28f"><div class="ttname"><a href="namespaceplanning__request__adapter.html#af64b3fa8ebc256d9c5133c6c80ade28f">planning_request_adapter::LOGGER</a></div><div class="ttdeci">rclcpp::Logger LOGGER</div><div class="ttdef"><b>Definition:</b> <a href="planning__request__adapter_8cpp_source.html#l00078">planning_request_adapter.cpp:78</a></div></div>
 <div class="ttc" id="akinematics_2cached__ik__kinematics__plugin_2CMakeLists_8txt_html_a092c219805988bc95d15b40ee47d2a9b"><div class="ttname"><a href="kinematics_2cached__ik__kinematics__plugin_2CMakeLists_8txt.html#a092c219805988bc95d15b40ee47d2a9b">if</a></div><div class="ttdeci">rclcpp moveit_core moveit_msgs Boost if(trac_ik_kinematics_plugin_FOUND) include_directories($</div><div class="ttdef"><b>Definition:</b> <a href="kinematics_2cached__ik__kinematics__plugin_2CMakeLists_8txt_source.html#l00016">CMakeLists.txt:16</a></div></div>
-<div class="ttc" id="anamespacemoveit_html"><div class="ttname"><a href="namespacemoveit.html">moveit</a></div><div class="ttdoc">Main namespace for MoveIt.</div><div class="ttdef"><b>Definition:</b> <a href="exceptions_8h_source.html#l00042">exceptions.h:42</a></div></div>
+<div class="ttc" id="anamespacemoveit_html"><div class="ttname"><a href="namespacemoveit.html">moveit</a></div><div class="ttdoc">Main namespace for MoveIt.</div><div class="ttdef"><b>Definition:</b> <a href="background__processing_8h_source.html#l00046">background_processing.h:46</a></div></div>
 <div class="ttc" id="aclassmoveit_1_1tools_1_1Profiler_html_aa94ec26521a7f7fc0b90cccda3fcc2e6"><div class="ttname"><a href="classmoveit_1_1tools_1_1Profiler.html#aa94ec26521a7f7fc0b90cccda3fcc2e6">moveit::tools::Profiler::average</a></div><div class="ttdeci">void average(const std::string &amp;name, const double value)</div><div class="ttdoc">Maintain the average of a specific value.</div></div>
 <div class="ttc" id="anamespacepick_html_a40e85b309b8813e4f17a4c3242b98c34"><div class="ttname"><a href="namespacepick.html#a40e85b309b8813e4f17a4c3242b98c34">pick.p</a></div><div class="ttdeci">p</div><div class="ttdef"><b>Definition:</b> <a href="pick_8py_source.html#l00062">pick.py:62</a></div></div>
 <div class="ttc" id="aclassmoveit_1_1tools_1_1Profiler_html_a3e6d72fc5631eb19950a4875a2a2847d"><div class="ttname"><a href="classmoveit_1_1tools_1_1Profiler.html#a3e6d72fc5631eb19950a4875a2a2847d">moveit::tools::Profiler::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdoc">Stop counting time.</div></div>

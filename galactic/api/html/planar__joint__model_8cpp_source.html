@@ -118,316 +118,312 @@ $(function() {
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">namespace </span>core</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;{</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<a class="code" href="classmoveit_1_1core_1_1PlanarJointModel.html#a5fb6f7ef2c065a1cf0959fd85f538141">PlanarJointModel::PlanarJointModel</a>(<span class="keyword">const</span> std::string&amp; name, <span class="keywordtype">size_t</span> joint_index, <span class="keywordtype">size_t</span> first_variable_index)</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  : JointModel(name, joint_index, first_variable_index)</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  , angular_distance_weight_(1.0)</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  , motion_model_(HOLONOMIC)</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  , min_translational_distance_(1e-5)</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;{</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  type_ = PLANAR;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  local_variable_names_.push_back(<span class="stringliteral">&quot;x&quot;</span>);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  local_variable_names_.push_back(<span class="stringliteral">&quot;y&quot;</span>);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  local_variable_names_.push_back(<span class="stringliteral">&quot;theta&quot;</span>);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 3; ++i)</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    variable_names_.push_back(<a class="code" href="classmoveit_1_1core_1_1LinkModel.html#a99ed1c1c371bdb1b007484fd399e435c">getName</a>() + <span class="stringliteral">&quot;/&quot;</span> + local_variable_names_[i]);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    variable_index_map_[variable_names_.back()] = i;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  }</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  variable_bounds_.resize(3);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  variable_bounds_[0].position_bounded_ = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  variable_bounds_[1].position_bounded_ = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  variable_bounds_[2].position_bounded_ = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  variable_bounds_[0].min_position_ = -std::numeric_limits&lt;double&gt;::infinity();</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  variable_bounds_[0].max_position_ = std::numeric_limits&lt;double&gt;::infinity();</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  variable_bounds_[1].min_position_ = -std::numeric_limits&lt;double&gt;::infinity();</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  variable_bounds_[1].max_position_ = std::numeric_limits&lt;double&gt;::infinity();</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  variable_bounds_[2].min_position_ = -boost::math::constants::pi&lt;double&gt;();</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  variable_bounds_[2].max_position_ = boost::math::constants::pi&lt;double&gt;();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<a class="code" href="classmoveit_1_1core_1_1PlanarJointModel.html#a3c5ea7b3ddec05cb0bed05fff3bbd348">PlanarJointModel::PlanarJointModel</a>(<span class="keyword">const</span> std::string&amp; name)</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  : JointModel(name), angular_distance_weight_(1.0), motion_model_(HOLONOMIC), min_translational_distance_(1e-5)</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  type_ = PLANAR;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  local_variable_names_.push_back(<span class="stringliteral">&quot;x&quot;</span>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  local_variable_names_.push_back(<span class="stringliteral">&quot;y&quot;</span>);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  local_variable_names_.push_back(<span class="stringliteral">&quot;theta&quot;</span>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 3; ++i)</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    variable_names_.push_back(name_ + <span class="stringliteral">&quot;/&quot;</span> + local_variable_names_[i]);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    variable_index_map_[variable_names_.back()] = i;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  variable_bounds_.resize(3);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  variable_bounds_[0].position_bounded_ = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  variable_bounds_[1].position_bounded_ = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  variable_bounds_[2].position_bounded_ = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  variable_bounds_[0].min_position_ = -std::numeric_limits&lt;double&gt;::infinity();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  variable_bounds_[0].max_position_ = std::numeric_limits&lt;double&gt;::infinity();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  variable_bounds_[1].min_position_ = -std::numeric_limits&lt;double&gt;::infinity();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  variable_bounds_[1].max_position_ = std::numeric_limits&lt;double&gt;::infinity();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  variable_bounds_[2].min_position_ = -boost::math::constants::pi&lt;double&gt;();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  variable_bounds_[2].max_position_ = boost::math::constants::pi&lt;double&gt;();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  computeVariableBoundsMsg();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  computeVariableBoundsMsg();</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classmoveit_1_1core_1_1PlanarJointModel.html#ab280fa89e7731652ec1b05c471fc666b">PlanarJointModel::getStateSpaceDimension</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keywordflow">return</span> 3;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keywordtype">double</span> <a class="code" href="classmoveit_1_1core_1_1JointModel.html#ad368d9f3608673b5d1b0dc2cea0f5cb8">PlanarJointModel::getMaximumExtent</a>(<span class="keyword">const</span> Bounds&amp; other_bounds)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keywordtype">double</span> dx = other_bounds[0].max_position_ - other_bounds[0].min_position_;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="keywordtype">double</span> dy = other_bounds[1].max_position_ - other_bounds[1].min_position_;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keywordflow">return</span> sqrt(dx * dx + dy * dy) + boost::math::constants::pi&lt;double&gt;() * angular_distance_weight_;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmoveit_1_1core_1_1PlanarJointModel.html#ae935bf3fe94071cde427b920631a18a2">PlanarJointModel::getVariableDefaultPositions</a>(<span class="keywordtype">double</span>* values, <span class="keyword">const</span> Bounds&amp; bounds)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; 2; ++i)</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  {</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="comment">// if zero is a valid value</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">if</span> (bounds[i].min_position_ &lt;= 0.0 &amp;&amp; bounds[i].max_position_ &gt;= 0.0)</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;      values[i] = 0.0;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;      values[i] = (bounds[i].min_position_ + bounds[i].max_position_) / 2.0;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  }</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  values[2] = 0.0;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;}</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmoveit_1_1core_1_1PlanarJointModel.html#a34033586b289af2105fdcf2c746179fb">PlanarJointModel::getVariableRandomPositions</a>(random_numbers::RandomNumberGenerator&amp; rng, <span class="keywordtype">double</span>* values,</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                                                  <span class="keyword">const</span> Bounds&amp; bounds)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <span class="keywordflow">if</span> (bounds[0].max_position_ &gt;= std::numeric_limits&lt;double&gt;::infinity() ||</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;      bounds[0].min_position_ &lt;= -std::numeric_limits&lt;double&gt;::infinity())</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    values[0] = 0.0;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    values[0] = rng.uniformReal(bounds[0].min_position_, bounds[0].max_position_);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <span class="keywordflow">if</span> (bounds[1].max_position_ &gt;= std::numeric_limits&lt;double&gt;::infinity() ||</div>
-<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="classmoveit_1_1core_1_1PlanarJointModel.html#a5fb6f7ef2c065a1cf0959fd85f538141">  115</a></span>&#160;      bounds[1].min_position_ &lt;= -std::numeric_limits&lt;double&gt;::infinity())</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    values[1] = 0.0;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    values[1] = rng.uniformReal(bounds[1].min_position_, bounds[1].max_position_);</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  values[2] = rng.uniformReal(bounds[2].min_position_, bounds[2].max_position_);</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;}</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmoveit_1_1core_1_1PlanarJointModel.html#a2ce5ecc9e27bbe71906206ad4c469d30">PlanarJointModel::getVariableRandomPositionsNearBy</a>(random_numbers::RandomNumberGenerator&amp; rng, <span class="keywordtype">double</span>* values,</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                                                        <span class="keyword">const</span> Bounds&amp; bounds, <span class="keyword">const</span> <span class="keywordtype">double</span>* near,</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                                                        <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="namespacepr2__arm__kinematics.html#a24f684af4bcce4a6d0c945aa27d04550">distance</a>)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <span class="keywordflow">if</span> (bounds[0].max_position_ &gt;= std::numeric_limits&lt;double&gt;::infinity() ||</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;      bounds[0].min_position_ &lt;= -std::numeric_limits&lt;double&gt;::infinity())</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    values[0] = 0.0;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    values[0] = rng.uniformReal(std::max(bounds[0].min_position_, near[0] - <a class="code" href="classmoveit_1_1core_1_1PlanarJointModel.html#aec05f143b9d447745eb243b9fb552ab3">distance</a>),</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                                std::min(bounds[0].max_position_, near[0] + <a class="code" href="classmoveit_1_1core_1_1PlanarJointModel.html#aec05f143b9d447745eb243b9fb552ab3">distance</a>));</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  <span class="keywordflow">if</span> (bounds[1].max_position_ &gt;= std::numeric_limits&lt;double&gt;::infinity() ||</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;      bounds[1].min_position_ &lt;= -std::numeric_limits&lt;double&gt;::infinity())</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    values[1] = 0.0;</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    values[1] = rng.uniformReal(std::max(bounds[1].min_position_, near[1] - <a class="code" href="classmoveit_1_1core_1_1PlanarJointModel.html#aec05f143b9d447745eb243b9fb552ab3">distance</a>),</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                                std::min(bounds[1].max_position_, near[1] + <a class="code" href="classmoveit_1_1core_1_1PlanarJointModel.html#aec05f143b9d447745eb243b9fb552ab3">distance</a>));</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  <span class="keywordtype">double</span> da = angular_distance_weight_ * <a class="code" href="classmoveit_1_1core_1_1PlanarJointModel.html#aec05f143b9d447745eb243b9fb552ab3">distance</a>;</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  <span class="comment">// limit the sampling range to 2pi to work correctly even if the distance is very large</span></div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  <span class="keywordflow">if</span> (da &gt; boost::math::constants::pi&lt;double&gt;())</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    da = boost::math::constants::pi&lt;double&gt;();</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  values[2] = rng.uniformReal(near[2] - da, near[2] + da);</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  <a class="code" href="classmoveit_1_1core_1_1PlanarJointModel.html#a18211390620ea1e155bd0e7c4470ecb4">normalizeRotation</a>(values);</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;}</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
-<div class="line"><a name="l00147"></a><span class="lineno"><a class="line" href="classmoveit_1_1core_1_1PlanarJointModel.html#ab280fa89e7731652ec1b05c471fc666b">  147</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacemoveit_1_1core.html#a647da3d1f82485ee4f28187d369354e4">computeTurnDriveTurnGeometry</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>* from, <span class="keyword">const</span> <span class="keywordtype">double</span>* to, <span class="keyword">const</span> <span class="keywordtype">double</span> min_translational_distance,</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                                  <span class="keywordtype">double</span>&amp; dx, <span class="keywordtype">double</span>&amp; dy, <span class="keywordtype">double</span>&amp; initial_turn, <span class="keywordtype">double</span>&amp; drive_angle, <span class="keywordtype">double</span>&amp; final_turn)</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;{</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  dx = to[0] - from[0];</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  dy = to[1] - from[1];</div>
-<div class="line"><a name="l00152"></a><span class="lineno"><a class="line" href="classmoveit_1_1core_1_1PlanarJointModel.html#af2c30e204f4c56830c956ced38f46ac3">  152</a></span>&#160;  <span class="comment">// If the translational distance between from &amp; to states is very small, it will cause an unnecessary rotation since</span></div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  <span class="comment">// the robot will try to do the following rather than rotating directly to the orientation of `to` state</span></div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  <span class="comment">// 1- Align itself with the line connecting the origin of both states</span></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  <span class="comment">// 2- Move to the origin of `to` state</span></div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  <span class="comment">// 3- Rotate so it have the same orientation as `to` state</span></div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  <span class="comment">// Example: from=[0.0, 0.0, 0.0] - to=[1e-31, 1e-31, -130°]</span></div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  <span class="comment">// here the robot will: rotate 45° -&gt; move to the origin of `to` state -&gt; rotate -175°, rather than rotating directly</span></div>
-<div class="line"><a name="l00159"></a><span class="lineno"><a class="line" href="classmoveit_1_1core_1_1PlanarJointModel.html#ae935bf3fe94071cde427b920631a18a2">  159</a></span>&#160;  <span class="comment">// to -130°</span></div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  <span class="comment">// to fix this we added a joint property (default value is 1e-5) and make the movement pure rotation if the</span></div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  <span class="comment">// translational distance is less than this number</span></div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">double</span> angle_straight_diff = std::hypot(dx, dy) &gt; min_translational_distance ?</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                                         angles::shortest_angular_distance(from[2], std::atan2(dy, dx)) :</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                                         0.0;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">double</span> angle_backward_diff =</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;      angles::normalize_angle(angle_straight_diff - boost::math::constants::pi&lt;double&gt;());</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">double</span> move_straight_cost =</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;      std::abs(angle_straight_diff) + std::abs(angles::shortest_angular_distance(from[2] + angle_straight_diff, to[2]));</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">double</span> move_backward_cost =</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;      std::abs(angle_backward_diff) + std::abs(angles::shortest_angular_distance(from[2] + angle_backward_diff, to[2]));</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  <span class="keywordflow">if</span> (move_straight_cost &lt;= move_backward_cost)</div>
-<div class="line"><a name="l00172"></a><span class="lineno"><a class="line" href="classmoveit_1_1core_1_1PlanarJointModel.html#a34033586b289af2105fdcf2c746179fb">  172</a></span>&#160;  {</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    initial_turn = angle_straight_diff;</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;  }</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;  <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;  {</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    initial_turn = angle_backward_diff;</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;  }</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;  drive_angle = from[2] + initial_turn;</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;  final_turn = angles::shortest_angular_distance(drive_angle, to[2]);</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;}</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmoveit_1_1core_1_1PlanarJointModel.html#a1ee52e6d0291b91a76b8119e74f0a8ae">PlanarJointModel::interpolate</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>* from, <span class="keyword">const</span> <span class="keywordtype">double</span>* to, <span class="keyword">const</span> <span class="keywordtype">double</span> t, <span class="keywordtype">double</span>* state)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;  <span class="keywordflow">if</span> (motion_model_ == <a class="code" href="classmoveit_1_1core_1_1PlanarJointModel.html#aff68a4576bd01859ee4b6689a78b6cada196f41d24f040c5cfedaa00c675d3f66">HOLONOMIC</a>)</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;  {</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="comment">// interpolate position</span></div>
-<div class="line"><a name="l00188"></a><span class="lineno"><a class="line" href="classmoveit_1_1core_1_1PlanarJointModel.html#a2ce5ecc9e27bbe71906206ad4c469d30">  188</a></span>&#160;    state[0] = from[0] + (to[0] - from[0]) * t;</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    state[1] = from[1] + (to[1] - from[1]) * t;</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="comment">// interpolate angle</span></div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordtype">double</span> diff = to[2] - from[2];</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordflow">if</span> (fabs(diff) &lt;= boost::math::constants::pi&lt;double&gt;())</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;      state[2] = from[2] + diff * t;</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    {</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;      <span class="keywordflow">if</span> (diff &gt; 0.0)</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        diff = 2.0 * boost::math::constants::pi&lt;double&gt;() - diff;</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;      <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        diff = -2.0 * boost::math::constants::pi&lt;double&gt;() - diff;</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;      state[2] = from[2] - diff * t;</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;      <span class="comment">// input states are within bounds, so the following check is sufficient</span></div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;      <span class="keywordflow">if</span> (state[2] &gt; boost::math::constants::pi&lt;double&gt;())</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        state[2] -= 2.0 * boost::math::constants::pi&lt;double&gt;();</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (state[2] &lt; -boost::math::constants::pi&lt;double&gt;())</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        state[2] += 2.0 * boost::math::constants::pi&lt;double&gt;();</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    }</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;  }</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (motion_model_ == <a class="code" href="classmoveit_1_1core_1_1PlanarJointModel.html#aff68a4576bd01859ee4b6689a78b6cadaf793fd2a0d77d50f351531732f54d687">DIFF_DRIVE</a>)</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;  {</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="keywordtype">double</span> dx, dy, initial_turn, drive_angle, final_turn;</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <a class="code" href="namespacemoveit_1_1core.html#a647da3d1f82485ee4f28187d369354e4">computeTurnDriveTurnGeometry</a>(from, to, min_translational_distance_, dx, dy, initial_turn, drive_angle, final_turn);</div>
-<div class="line"><a name="l00213"></a><span class="lineno"><a class="line" href="namespacemoveit_1_1core.html#a647da3d1f82485ee4f28187d369354e4">  213</a></span>&#160; </div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="keywordtype">double</span> initial_d = fabs(initial_turn) * angular_distance_weight_;</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="keywordtype">double</span> drive_d = hypot(dx, dy);</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <span class="keywordtype">double</span> final_d = fabs(final_turn) * angular_distance_weight_;</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <span class="keywordtype">double</span> total_d = initial_d + drive_d + final_d;</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="keywordtype">double</span> initial_frac = initial_d / total_d;</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="keywordtype">double</span> drive_frac = drive_d / total_d;</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <span class="keywordtype">double</span> final_frac = final_d / total_d;</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160; </div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="keywordtype">double</span> percent;</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <span class="keywordflow">if</span> (t &lt;= initial_frac)</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    {</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;      percent = t / initial_frac;</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;      state[0] = from[0];</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;      state[1] = from[1];</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;      state[2] = from[2] + initial_turn * percent;</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    }</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (t &lt;= initial_frac + drive_frac)</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    {</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;      percent = (t - initial_frac) / drive_frac;</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;      state[0] = from[0] + dx * percent;</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;      state[1] = from[1] + dy * percent;</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;      state[2] = drive_angle;</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    }</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    {</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;      percent = (t - initial_frac - drive_frac) / final_frac;</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;      state[0] = to[0];</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;      state[1] = to[1];</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;      state[2] = drive_angle + final_turn * percent;</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    }</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;  }</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;}</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; </div>
-<div class="line"><a name="l00249"></a><span class="lineno"><a class="line" href="classmoveit_1_1core_1_1PlanarJointModel.html#a1ee52e6d0291b91a76b8119e74f0a8ae">  249</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="classmoveit_1_1core_1_1PlanarJointModel.html#aec05f143b9d447745eb243b9fb552ab3">PlanarJointModel::distance</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>* values1, <span class="keyword">const</span> <span class="keywordtype">double</span>* values2)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;  <span class="keywordflow">if</span> (motion_model_ == <a class="code" href="classmoveit_1_1core_1_1PlanarJointModel.html#aff68a4576bd01859ee4b6689a78b6cada196f41d24f040c5cfedaa00c675d3f66">HOLONOMIC</a>)</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;  {</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <span class="keywordtype">double</span> dx = values1[0] - values2[0];</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <span class="keywordtype">double</span> dy = values1[1] - values2[1];</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; </div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="namespacesetup.html#aa2586b6c4dd84a0aaaf49cb1565cee6e">d</a> = fabs(values1[2] - values2[2]);</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <a class="code" href="namespacesetup.html#aa2586b6c4dd84a0aaaf49cb1565cee6e">d</a> = (<a class="code" href="namespacesetup.html#aa2586b6c4dd84a0aaaf49cb1565cee6e">d</a> &gt; boost::math::constants::pi&lt;double&gt;()) ? 2.0 * boost::math::constants::pi&lt;double&gt;() - <a class="code" href="namespacesetup.html#aa2586b6c4dd84a0aaaf49cb1565cee6e">d</a> : <a class="code" href="namespacesetup.html#aa2586b6c4dd84a0aaaf49cb1565cee6e">d</a>;</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <span class="keywordflow">return</span> sqrt(dx * dx + dy * dy) + angular_distance_weight_ * <a class="code" href="namespacesetup.html#aa2586b6c4dd84a0aaaf49cb1565cee6e">d</a>;</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;  }</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (motion_model_ == <a class="code" href="classmoveit_1_1core_1_1PlanarJointModel.html#aff68a4576bd01859ee4b6689a78b6cadaf793fd2a0d77d50f351531732f54d687">DIFF_DRIVE</a>)</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;  {</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <span class="keywordtype">double</span> dx, dy, initial_turn, drive_angle, final_turn;</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <a class="code" href="namespacemoveit_1_1core.html#a647da3d1f82485ee4f28187d369354e4">computeTurnDriveTurnGeometry</a>(values1, values2, min_translational_distance_, dx, dy, initial_turn, drive_angle,</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                                 final_turn);</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="keywordflow">return</span> hypot(dx, dy) + angular_distance_weight_ * (fabs(initial_turn) + fabs(final_turn));</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;  }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classmoveit_1_1core_1_1PlanarJointModel.html#ab280fa89e7731652ec1b05c471fc666b">PlanarJointModel::getStateSpaceDimension</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keywordflow">return</span> 3;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keywordtype">double</span> <a class="code" href="classmoveit_1_1core_1_1JointModel.html#ad368d9f3608673b5d1b0dc2cea0f5cb8">PlanarJointModel::getMaximumExtent</a>(<span class="keyword">const</span> Bounds&amp; other_bounds)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keywordtype">double</span> dx = other_bounds[0].max_position_ - other_bounds[0].min_position_;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keywordtype">double</span> dy = other_bounds[1].max_position_ - other_bounds[1].min_position_;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="keywordflow">return</span> sqrt(dx * dx + dy * dy) + boost::math::constants::pi&lt;double&gt;() * angular_distance_weight_;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmoveit_1_1core_1_1PlanarJointModel.html#ae935bf3fe94071cde427b920631a18a2">PlanarJointModel::getVariableDefaultPositions</a>(<span class="keywordtype">double</span>* values, <span class="keyword">const</span> Bounds&amp; bounds)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; 2; ++i)</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="comment">// if zero is a valid value</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">if</span> (bounds[i].min_position_ &lt;= 0.0 &amp;&amp; bounds[i].max_position_ &gt;= 0.0)</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;      values[i] = 0.0;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;      values[i] = (bounds[i].min_position_ + bounds[i].max_position_) / 2.0;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  values[2] = 0.0;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmoveit_1_1core_1_1PlanarJointModel.html#a34033586b289af2105fdcf2c746179fb">PlanarJointModel::getVariableRandomPositions</a>(random_numbers::RandomNumberGenerator&amp; rng, <span class="keywordtype">double</span>* values,</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                                                  <span class="keyword">const</span> Bounds&amp; bounds)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <span class="keywordflow">if</span> (bounds[0].max_position_ &gt;= std::numeric_limits&lt;double&gt;::infinity() ||</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;      bounds[0].min_position_ &lt;= -std::numeric_limits&lt;double&gt;::infinity())</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    values[0] = 0.0;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    values[0] = rng.uniformReal(bounds[0].min_position_, bounds[0].max_position_);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <span class="keywordflow">if</span> (bounds[1].max_position_ &gt;= std::numeric_limits&lt;double&gt;::infinity() ||</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;      bounds[1].min_position_ &lt;= -std::numeric_limits&lt;double&gt;::infinity())</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    values[1] = 0.0;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="classmoveit_1_1core_1_1PlanarJointModel.html#a3c5ea7b3ddec05cb0bed05fff3bbd348">  115</a></span>&#160;    values[1] = rng.uniformReal(bounds[1].min_position_, bounds[1].max_position_);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  values[2] = rng.uniformReal(bounds[2].min_position_, bounds[2].max_position_);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;}</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmoveit_1_1core_1_1PlanarJointModel.html#a2ce5ecc9e27bbe71906206ad4c469d30">PlanarJointModel::getVariableRandomPositionsNearBy</a>(random_numbers::RandomNumberGenerator&amp; rng, <span class="keywordtype">double</span>* values,</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                                                        <span class="keyword">const</span> Bounds&amp; bounds, <span class="keyword">const</span> <span class="keywordtype">double</span>* near,</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                                                        <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="namespacepr2__arm__kinematics.html#a24f684af4bcce4a6d0c945aa27d04550">distance</a>)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <span class="keywordflow">if</span> (bounds[0].max_position_ &gt;= std::numeric_limits&lt;double&gt;::infinity() ||</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;      bounds[0].min_position_ &lt;= -std::numeric_limits&lt;double&gt;::infinity())</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    values[0] = 0.0;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    values[0] = rng.uniformReal(std::max(bounds[0].min_position_, near[0] - <a class="code" href="classmoveit_1_1core_1_1PlanarJointModel.html#aec05f143b9d447745eb243b9fb552ab3">distance</a>),</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                                std::min(bounds[0].max_position_, near[0] + <a class="code" href="classmoveit_1_1core_1_1PlanarJointModel.html#aec05f143b9d447745eb243b9fb552ab3">distance</a>));</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <span class="keywordflow">if</span> (bounds[1].max_position_ &gt;= std::numeric_limits&lt;double&gt;::infinity() ||</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;      bounds[1].min_position_ &lt;= -std::numeric_limits&lt;double&gt;::infinity())</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    values[1] = 0.0;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    values[1] = rng.uniformReal(std::max(bounds[1].min_position_, near[1] - <a class="code" href="classmoveit_1_1core_1_1PlanarJointModel.html#aec05f143b9d447745eb243b9fb552ab3">distance</a>),</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                                std::min(bounds[1].max_position_, near[1] + <a class="code" href="classmoveit_1_1core_1_1PlanarJointModel.html#aec05f143b9d447745eb243b9fb552ab3">distance</a>));</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  <span class="keywordtype">double</span> da = angular_distance_weight_ * <a class="code" href="classmoveit_1_1core_1_1PlanarJointModel.html#aec05f143b9d447745eb243b9fb552ab3">distance</a>;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  <span class="comment">// limit the sampling range to 2pi to work correctly even if the distance is very large</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  <span class="keywordflow">if</span> (da &gt; boost::math::constants::pi&lt;double&gt;())</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    da = boost::math::constants::pi&lt;double&gt;();</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  values[2] = rng.uniformReal(near[2] - da, near[2] + da);</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  <a class="code" href="classmoveit_1_1core_1_1PlanarJointModel.html#a18211390620ea1e155bd0e7c4470ecb4">normalizeRotation</a>(values);</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;}</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
+<div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="classmoveit_1_1core_1_1PlanarJointModel.html#ab280fa89e7731652ec1b05c471fc666b">  144</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacemoveit_1_1core.html#a647da3d1f82485ee4f28187d369354e4">computeTurnDriveTurnGeometry</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>* from, <span class="keyword">const</span> <span class="keywordtype">double</span>* to, <span class="keyword">const</span> <span class="keywordtype">double</span> min_translational_distance,</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                                  <span class="keywordtype">double</span>&amp; dx, <span class="keywordtype">double</span>&amp; dy, <span class="keywordtype">double</span>&amp; initial_turn, <span class="keywordtype">double</span>&amp; drive_angle, <span class="keywordtype">double</span>&amp; final_turn)</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;{</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  dx = to[0] - from[0];</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  dy = to[1] - from[1];</div>
+<div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="classmoveit_1_1core_1_1PlanarJointModel.html#af2c30e204f4c56830c956ced38f46ac3">  149</a></span>&#160;  <span class="comment">// If the translational distance between from &amp; to states is very small, it will cause an unnecessary rotation since</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  <span class="comment">// the robot will try to do the following rather than rotating directly to the orientation of `to` state</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  <span class="comment">// 1- Align itself with the line connecting the origin of both states</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  <span class="comment">// 2- Move to the origin of `to` state</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  <span class="comment">// 3- Rotate so it have the same orientation as `to` state</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  <span class="comment">// Example: from=[0.0, 0.0, 0.0] - to=[1e-31, 1e-31, -130°]</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  <span class="comment">// here the robot will: rotate 45° -&gt; move to the origin of `to` state -&gt; rotate -175°, rather than rotating directly</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno"><a class="line" href="classmoveit_1_1core_1_1PlanarJointModel.html#ae935bf3fe94071cde427b920631a18a2">  156</a></span>&#160;  <span class="comment">// to -130°</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  <span class="comment">// to fix this we added a joint property (default value is 1e-5) and make the movement pure rotation if the</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  <span class="comment">// translational distance is less than this number</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">double</span> angle_straight_diff = std::hypot(dx, dy) &gt; min_translational_distance ?</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                                         angles::shortest_angular_distance(from[2], std::atan2(dy, dx)) :</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                                         0.0;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">double</span> angle_backward_diff =</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;      angles::normalize_angle(angle_straight_diff - boost::math::constants::pi&lt;double&gt;());</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">double</span> move_straight_cost =</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;      std::abs(angle_straight_diff) + std::abs(angles::shortest_angular_distance(from[2] + angle_straight_diff, to[2]));</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">double</span> move_backward_cost =</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;      std::abs(angle_backward_diff) + std::abs(angles::shortest_angular_distance(from[2] + angle_backward_diff, to[2]));</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  <span class="keywordflow">if</span> (move_straight_cost &lt;= move_backward_cost)</div>
+<div class="line"><a name="l00169"></a><span class="lineno"><a class="line" href="classmoveit_1_1core_1_1PlanarJointModel.html#a34033586b289af2105fdcf2c746179fb">  169</a></span>&#160;  {</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    initial_turn = angle_straight_diff;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  }</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;  {</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    initial_turn = angle_backward_diff;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;  }</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;  drive_angle = from[2] + initial_turn;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;  final_turn = angles::shortest_angular_distance(drive_angle, to[2]);</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;}</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmoveit_1_1core_1_1PlanarJointModel.html#a1ee52e6d0291b91a76b8119e74f0a8ae">PlanarJointModel::interpolate</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>* from, <span class="keyword">const</span> <span class="keywordtype">double</span>* to, <span class="keyword">const</span> <span class="keywordtype">double</span> t, <span class="keywordtype">double</span>* state)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;  <span class="keywordflow">if</span> (motion_model_ == <a class="code" href="classmoveit_1_1core_1_1PlanarJointModel.html#aff68a4576bd01859ee4b6689a78b6cada196f41d24f040c5cfedaa00c675d3f66">HOLONOMIC</a>)</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;  {</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="comment">// interpolate position</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno"><a class="line" href="classmoveit_1_1core_1_1PlanarJointModel.html#a2ce5ecc9e27bbe71906206ad4c469d30">  185</a></span>&#160;    state[0] = from[0] + (to[0] - from[0]) * t;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    state[1] = from[1] + (to[1] - from[1]) * t;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="comment">// interpolate angle</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordtype">double</span> diff = to[2] - from[2];</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keywordflow">if</span> (fabs(diff) &lt;= boost::math::constants::pi&lt;double&gt;())</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;      state[2] = from[2] + diff * t;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    {</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;      <span class="keywordflow">if</span> (diff &gt; 0.0)</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        diff = 2.0 * boost::math::constants::pi&lt;double&gt;() - diff;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;      <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        diff = -2.0 * boost::math::constants::pi&lt;double&gt;() - diff;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;      state[2] = from[2] - diff * t;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;      <span class="comment">// input states are within bounds, so the following check is sufficient</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;      <span class="keywordflow">if</span> (state[2] &gt; boost::math::constants::pi&lt;double&gt;())</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        state[2] -= 2.0 * boost::math::constants::pi&lt;double&gt;();</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (state[2] &lt; -boost::math::constants::pi&lt;double&gt;())</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        state[2] += 2.0 * boost::math::constants::pi&lt;double&gt;();</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    }</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;  }</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (motion_model_ == <a class="code" href="classmoveit_1_1core_1_1PlanarJointModel.html#aff68a4576bd01859ee4b6689a78b6cadaf793fd2a0d77d50f351531732f54d687">DIFF_DRIVE</a>)</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;  {</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <span class="keywordtype">double</span> dx, dy, initial_turn, drive_angle, final_turn;</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <a class="code" href="namespacemoveit_1_1core.html#a647da3d1f82485ee4f28187d369354e4">computeTurnDriveTurnGeometry</a>(from, to, min_translational_distance_, dx, dy, initial_turn, drive_angle, final_turn);</div>
+<div class="line"><a name="l00210"></a><span class="lineno"><a class="line" href="namespacemoveit_1_1core.html#a647da3d1f82485ee4f28187d369354e4">  210</a></span>&#160; </div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="keywordtype">double</span> initial_d = fabs(initial_turn) * angular_distance_weight_;</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="keywordtype">double</span> drive_d = hypot(dx, dy);</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keywordtype">double</span> final_d = fabs(final_turn) * angular_distance_weight_;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="keywordtype">double</span> total_d = initial_d + drive_d + final_d;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160; </div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="keywordtype">double</span> initial_frac = initial_d / total_d;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <span class="keywordtype">double</span> drive_frac = drive_d / total_d;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="keywordtype">double</span> final_frac = final_d / total_d;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="keywordtype">double</span> percent;</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <span class="keywordflow">if</span> (t &lt;= initial_frac)</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    {</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;      percent = t / initial_frac;</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;      state[0] = from[0];</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;      state[1] = from[1];</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;      state[2] = from[2] + initial_turn * percent;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    }</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (t &lt;= initial_frac + drive_frac)</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    {</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;      percent = (t - initial_frac) / drive_frac;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;      state[0] = from[0] + dx * percent;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;      state[1] = from[1] + dy * percent;</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;      state[2] = drive_angle;</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    }</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    {</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;      percent = (t - initial_frac - drive_frac) / final_frac;</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;      state[0] = to[0];</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;      state[1] = to[1];</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;      state[2] = drive_angle + final_turn * percent;</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    }</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;  }</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;}</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
+<div class="line"><a name="l00246"></a><span class="lineno"><a class="line" href="classmoveit_1_1core_1_1PlanarJointModel.html#a1ee52e6d0291b91a76b8119e74f0a8ae">  246</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="classmoveit_1_1core_1_1PlanarJointModel.html#aec05f143b9d447745eb243b9fb552ab3">PlanarJointModel::distance</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>* values1, <span class="keyword">const</span> <span class="keywordtype">double</span>* values2)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;  <span class="keywordflow">if</span> (motion_model_ == <a class="code" href="classmoveit_1_1core_1_1PlanarJointModel.html#aff68a4576bd01859ee4b6689a78b6cada196f41d24f040c5cfedaa00c675d3f66">HOLONOMIC</a>)</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;  {</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <span class="keywordtype">double</span> dx = values1[0] - values2[0];</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <span class="keywordtype">double</span> dy = values1[1] - values2[1];</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160; </div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="namespacesetup.html#aa2586b6c4dd84a0aaaf49cb1565cee6e">d</a> = fabs(values1[2] - values2[2]);</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <a class="code" href="namespacesetup.html#aa2586b6c4dd84a0aaaf49cb1565cee6e">d</a> = (<a class="code" href="namespacesetup.html#aa2586b6c4dd84a0aaaf49cb1565cee6e">d</a> &gt; boost::math::constants::pi&lt;double&gt;()) ? 2.0 * boost::math::constants::pi&lt;double&gt;() - <a class="code" href="namespacesetup.html#aa2586b6c4dd84a0aaaf49cb1565cee6e">d</a> : <a class="code" href="namespacesetup.html#aa2586b6c4dd84a0aaaf49cb1565cee6e">d</a>;</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <span class="keywordflow">return</span> sqrt(dx * dx + dy * dy) + angular_distance_weight_ * <a class="code" href="namespacesetup.html#aa2586b6c4dd84a0aaaf49cb1565cee6e">d</a>;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;  }</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (motion_model_ == <a class="code" href="classmoveit_1_1core_1_1PlanarJointModel.html#aff68a4576bd01859ee4b6689a78b6cadaf793fd2a0d77d50f351531732f54d687">DIFF_DRIVE</a>)</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;  {</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="keywordtype">double</span> dx, dy, initial_turn, drive_angle, final_turn;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <a class="code" href="namespacemoveit_1_1core.html#a647da3d1f82485ee4f28187d369354e4">computeTurnDriveTurnGeometry</a>(values1, values2, min_translational_distance_, dx, dy, initial_turn, drive_angle,</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                                 final_turn);</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <span class="keywordflow">return</span> hypot(dx, dy) + angular_distance_weight_ * (fabs(initial_turn) + fabs(final_turn));</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;  }</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160; </div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;  <span class="keywordflow">return</span> 0.0;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;}</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;  <span class="keywordflow">return</span> 0.0;</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;}</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classmoveit_1_1core_1_1PlanarJointModel.html#a9b1a6cf73431a15e8eb4ba79b4253932">PlanarJointModel::satisfiesPositionBounds</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>* values, <span class="keyword">const</span> Bounds&amp; bounds, <span class="keywordtype">double</span> margin)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; 3; ++i)</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <span class="keywordflow">if</span> (values[0] &lt; bounds[0].min_position_ - margin || values[0] &gt; bounds[0].max_position_ + margin)</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;}</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; </div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classmoveit_1_1core_1_1PlanarJointModel.html#a18211390620ea1e155bd0e7c4470ecb4">PlanarJointModel::normalizeRotation</a>(<span class="keywordtype">double</span>* values)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;  <span class="keywordtype">double</span>&amp; v = values[2];</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;  <span class="keywordflow">if</span> (v &gt;= -boost::math::constants::pi&lt;double&gt;() &amp;&amp; v &lt;= boost::math::constants::pi&lt;double&gt;())</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;  v = fmod(v, 2.0 * boost::math::constants::pi&lt;double&gt;());</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;  <span class="keywordflow">if</span> (v &lt; -boost::math::constants::pi&lt;double&gt;())</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    v += 2.0 * boost::math::constants::pi&lt;double&gt;();</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (v &gt; boost::math::constants::pi&lt;double&gt;())</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    v -= 2.0 * boost::math::constants::pi&lt;double&gt;();</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;}</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160; </div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classmoveit_1_1core_1_1PlanarJointModel.html#ab74b54abc29ca687ec1953cf5c6fbb42">PlanarJointModel::enforcePositionBounds</a>(<span class="keywordtype">double</span>* values, <span class="keyword">const</span> Bounds&amp; bounds)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;  <span class="keywordtype">bool</span> result = <a class="code" href="classmoveit_1_1core_1_1PlanarJointModel.html#a18211390620ea1e155bd0e7c4470ecb4">normalizeRotation</a>(values);</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; 2; ++i)</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;  {</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    <span class="keywordflow">if</span> (values[i] &lt; bounds[i].min_position_)</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    {</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;      values[i] = bounds[i].min_position_;</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;      result = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    }</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (values[i] &gt; bounds[i].max_position_)</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    {</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;      values[i] = bounds[i].max_position_;</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;      result = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    }</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;  }</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;  <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;}</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160; </div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmoveit_1_1core_1_1PlanarJointModel.html#a7df0400f9a4a37c6802ee32fab3dc7ab">PlanarJointModel::computeTransform</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>* joint_values, Eigen::Isometry3d&amp; transf)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;  transf = Eigen::Isometry3d(Eigen::Translation3d(joint_values[0], joint_values[1], 0.0) *</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                             Eigen::AngleAxisd(joint_values[2], Eigen::Vector3d::UnitZ()));</div>
-<div class="line"><a name="l00315"></a><span class="lineno"><a class="line" href="classmoveit_1_1core_1_1PlanarJointModel.html#aec05f143b9d447745eb243b9fb552ab3">  315</a></span>&#160;}</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160; </div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmoveit_1_1core_1_1PlanarJointModel.html#aadbe93014d32ec7084629af600ab5224">PlanarJointModel::computeVariablePositions</a>(<span class="keyword">const</span> Eigen::Isometry3d&amp; transf, <span class="keywordtype">double</span>* joint_values)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;  joint_values[0] = transf.translation().x();</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;  joint_values[1] = transf.translation().y();</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160; </div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;  ASSERT_ISOMETRY(transf)  <span class="comment">// unsanitized input, could contain a non-isometry</span></div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;  Eigen::Quaterniond q(transf.linear());</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;  <span class="comment">// taken from Bullet</span></div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;  <span class="keywordtype">double</span> s_squared = 1.0 - (q.w() * q.w());</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;  <span class="keywordflow">if</span> (s_squared &lt; 10.0 * std::numeric_limits&lt;double&gt;::epsilon())</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    joint_values[2] = 0.0;</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;  <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;  {</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <span class="keywordtype">double</span> s = 1.0 / sqrt(s_squared);</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    joint_values[2] = (acos(q.w()) * 2.0f) * (q.z() * s);</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;  }</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;}</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160; </div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;}  <span class="comment">// end of namespace core</span></div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;}  <span class="comment">// end of namespace moveit</span></div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classmoveit_1_1core_1_1PlanarJointModel.html#a9b1a6cf73431a15e8eb4ba79b4253932">PlanarJointModel::satisfiesPositionBounds</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>* values, <span class="keyword">const</span> Bounds&amp; bounds, <span class="keywordtype">double</span> margin)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; 3; ++i)</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <span class="keywordflow">if</span> (values[0] &lt; bounds[0].min_position_ - margin || values[0] &gt; bounds[0].max_position_ + margin)</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;}</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160; </div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classmoveit_1_1core_1_1PlanarJointModel.html#a18211390620ea1e155bd0e7c4470ecb4">PlanarJointModel::normalizeRotation</a>(<span class="keywordtype">double</span>* values)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;  <span class="keywordtype">double</span>&amp; v = values[2];</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;  <span class="keywordflow">if</span> (v &gt;= -boost::math::constants::pi&lt;double&gt;() &amp;&amp; v &lt;= boost::math::constants::pi&lt;double&gt;())</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;  v = fmod(v, 2.0 * boost::math::constants::pi&lt;double&gt;());</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;  <span class="keywordflow">if</span> (v &lt; -boost::math::constants::pi&lt;double&gt;())</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    v += 2.0 * boost::math::constants::pi&lt;double&gt;();</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (v &gt; boost::math::constants::pi&lt;double&gt;())</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    v -= 2.0 * boost::math::constants::pi&lt;double&gt;();</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;}</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160; </div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classmoveit_1_1core_1_1PlanarJointModel.html#ab74b54abc29ca687ec1953cf5c6fbb42">PlanarJointModel::enforcePositionBounds</a>(<span class="keywordtype">double</span>* values, <span class="keyword">const</span> Bounds&amp; bounds)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;  <span class="keywordtype">bool</span> result = <a class="code" href="classmoveit_1_1core_1_1PlanarJointModel.html#a18211390620ea1e155bd0e7c4470ecb4">normalizeRotation</a>(values);</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; 2; ++i)</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;  {</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    <span class="keywordflow">if</span> (values[i] &lt; bounds[i].min_position_)</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    {</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;      values[i] = bounds[i].min_position_;</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;      result = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    }</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (values[i] &gt; bounds[i].max_position_)</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    {</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;      values[i] = bounds[i].max_position_;</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;      result = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    }</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;  }</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;  <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;}</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160; </div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmoveit_1_1core_1_1PlanarJointModel.html#a7df0400f9a4a37c6802ee32fab3dc7ab">PlanarJointModel::computeTransform</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>* joint_values, Eigen::Isometry3d&amp; transf)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;  transf = Eigen::Isometry3d(Eigen::Translation3d(joint_values[0], joint_values[1], 0.0) *</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                             Eigen::AngleAxisd(joint_values[2], Eigen::Vector3d::UnitZ()));</div>
+<div class="line"><a name="l00312"></a><span class="lineno"><a class="line" href="classmoveit_1_1core_1_1PlanarJointModel.html#aec05f143b9d447745eb243b9fb552ab3">  312</a></span>&#160;}</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160; </div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmoveit_1_1core_1_1PlanarJointModel.html#aadbe93014d32ec7084629af600ab5224">PlanarJointModel::computeVariablePositions</a>(<span class="keyword">const</span> Eigen::Isometry3d&amp; transf, <span class="keywordtype">double</span>* joint_values)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;  joint_values[0] = transf.translation().x();</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;  joint_values[1] = transf.translation().y();</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160; </div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;  ASSERT_ISOMETRY(transf)  <span class="comment">// unsanitized input, could contain a non-isometry</span></div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;  Eigen::Quaterniond q(transf.linear());</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;  <span class="comment">// taken from Bullet</span></div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;  <span class="keywordtype">double</span> s_squared = 1.0 - (q.w() * q.w());</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;  <span class="keywordflow">if</span> (s_squared &lt; 10.0 * std::numeric_limits&lt;double&gt;::epsilon())</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    joint_values[2] = 0.0;</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;  {</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    <span class="keywordtype">double</span> s = 1.0 / sqrt(s_squared);</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    joint_values[2] = (acos(q.w()) * 2.0f) * (q.z() * s);</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;  }</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;}</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160; </div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;}  <span class="comment">// end of namespace core</span></div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;}  <span class="comment">// end of namespace moveit</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassmoveit_1_1core_1_1PlanarJointModel_html_a1ee52e6d0291b91a76b8119e74f0a8ae"><div class="ttname"><a href="classmoveit_1_1core_1_1PlanarJointModel.html#a1ee52e6d0291b91a76b8119e74f0a8ae">moveit::core::PlanarJointModel::interpolate</a></div><div class="ttdeci">void interpolate(const double *from, const double *to, const double t, double *state) const override</div><div class="ttdoc">Computes the state that lies at time t in [0, 1] on the segment that connects from state to to state....</div><div class="ttdef"><b>Definition:</b> <a href="planar__joint__model_8cpp_source.html#l00249">planar_joint_model.cpp:249</a></div></div>
-<div class="ttc" id="aclassmoveit_1_1core_1_1PlanarJointModel_html_a34033586b289af2105fdcf2c746179fb"><div class="ttname"><a href="classmoveit_1_1core_1_1PlanarJointModel.html#a34033586b289af2105fdcf2c746179fb">moveit::core::PlanarJointModel::getVariableRandomPositions</a></div><div class="ttdeci">void getVariableRandomPositions(random_numbers::RandomNumberGenerator &amp;rng, double *values, const Bounds &amp;other_bounds) const override</div><div class="ttdoc">Provide random values for the joint variables (within specified bounds). Enough memory is assumed to ...</div><div class="ttdef"><b>Definition:</b> <a href="planar__joint__model_8cpp_source.html#l00172">planar_joint_model.cpp:172</a></div></div>
+<div class="ttc" id="aclassmoveit_1_1core_1_1PlanarJointModel_html_a1ee52e6d0291b91a76b8119e74f0a8ae"><div class="ttname"><a href="classmoveit_1_1core_1_1PlanarJointModel.html#a1ee52e6d0291b91a76b8119e74f0a8ae">moveit::core::PlanarJointModel::interpolate</a></div><div class="ttdeci">void interpolate(const double *from, const double *to, const double t, double *state) const override</div><div class="ttdoc">Computes the state that lies at time t in [0, 1] on the segment that connects from state to to state....</div><div class="ttdef"><b>Definition:</b> <a href="planar__joint__model_8cpp_source.html#l00246">planar_joint_model.cpp:246</a></div></div>
+<div class="ttc" id="aclassmoveit_1_1core_1_1PlanarJointModel_html_a34033586b289af2105fdcf2c746179fb"><div class="ttname"><a href="classmoveit_1_1core_1_1PlanarJointModel.html#a34033586b289af2105fdcf2c746179fb">moveit::core::PlanarJointModel::getVariableRandomPositions</a></div><div class="ttdeci">void getVariableRandomPositions(random_numbers::RandomNumberGenerator &amp;rng, double *values, const Bounds &amp;other_bounds) const override</div><div class="ttdoc">Provide random values for the joint variables (within specified bounds). Enough memory is assumed to ...</div><div class="ttdef"><b>Definition:</b> <a href="planar__joint__model_8cpp_source.html#l00169">planar_joint_model.cpp:169</a></div></div>
 <div class="ttc" id="aclassmoveit_1_1core_1_1PlanarJointModel_html_aff68a4576bd01859ee4b6689a78b6cadaf793fd2a0d77d50f351531732f54d687"><div class="ttname"><a href="classmoveit_1_1core_1_1PlanarJointModel.html#aff68a4576bd01859ee4b6689a78b6cadaf793fd2a0d77d50f351531732f54d687">moveit::core::PlanarJointModel::DIFF_DRIVE</a></div><div class="ttdeci">@ DIFF_DRIVE</div><div class="ttdef"><b>Definition:</b> <a href="planar__joint__model_8h_source.html#l00181">planar_joint_model.h:181</a></div></div>
-<div class="ttc" id="aclassmoveit_1_1core_1_1PlanarJointModel_html_ab74b54abc29ca687ec1953cf5c6fbb42"><div class="ttname"><a href="classmoveit_1_1core_1_1PlanarJointModel.html#ab74b54abc29ca687ec1953cf5c6fbb42">moveit::core::PlanarJointModel::enforcePositionBounds</a></div><div class="ttdeci">bool enforcePositionBounds(double *values, const Bounds &amp;other_bounds) const override</div><div class="ttdoc">Force the specified values to be inside bounds and normalized. Quaternions are normalized,...</div><div class="ttdef"><b>Definition:</b> <a href="planar__joint__model_8cpp_source.html#l00358">planar_joint_model.cpp:358</a></div></div>
-<div class="ttc" id="aclassmoveit_1_1core_1_1PlanarJointModel_html_a18211390620ea1e155bd0e7c4470ecb4"><div class="ttname"><a href="classmoveit_1_1core_1_1PlanarJointModel.html#a18211390620ea1e155bd0e7c4470ecb4">moveit::core::PlanarJointModel::normalizeRotation</a></div><div class="ttdeci">bool normalizeRotation(double *values) const</div><div class="ttdef"><b>Definition:</b> <a href="planar__joint__model_8cpp_source.html#l00345">planar_joint_model.cpp:345</a></div></div>
-<div class="ttc" id="aclassmoveit_1_1core_1_1PlanarJointModel_html_ab280fa89e7731652ec1b05c471fc666b"><div class="ttname"><a href="classmoveit_1_1core_1_1PlanarJointModel.html#ab280fa89e7731652ec1b05c471fc666b">moveit::core::PlanarJointModel::getStateSpaceDimension</a></div><div class="ttdeci">unsigned int getStateSpaceDimension() const override</div><div class="ttdoc">Get the dimension of the state space that corresponds to this joint.</div><div class="ttdef"><b>Definition:</b> <a href="planar__joint__model_8cpp_source.html#l00147">planar_joint_model.cpp:147</a></div></div>
-<div class="ttc" id="aclassmoveit_1_1core_1_1PlanarJointModel_html_aadbe93014d32ec7084629af600ab5224"><div class="ttname"><a href="classmoveit_1_1core_1_1PlanarJointModel.html#aadbe93014d32ec7084629af600ab5224">moveit::core::PlanarJointModel::computeVariablePositions</a></div><div class="ttdeci">void computeVariablePositions(const Eigen::Isometry3d &amp;transf, double *joint_values) const override</div><div class="ttdoc">Given the transform generated by joint, compute the corresponding joint values. Make sure the passed ...</div><div class="ttdef"><b>Definition:</b> <a href="planar__joint__model_8cpp_source.html#l00383">planar_joint_model.cpp:383</a></div></div>
+<div class="ttc" id="aclassmoveit_1_1core_1_1PlanarJointModel_html_ab74b54abc29ca687ec1953cf5c6fbb42"><div class="ttname"><a href="classmoveit_1_1core_1_1PlanarJointModel.html#ab74b54abc29ca687ec1953cf5c6fbb42">moveit::core::PlanarJointModel::enforcePositionBounds</a></div><div class="ttdeci">bool enforcePositionBounds(double *values, const Bounds &amp;other_bounds) const override</div><div class="ttdoc">Force the specified values to be inside bounds and normalized. Quaternions are normalized,...</div><div class="ttdef"><b>Definition:</b> <a href="planar__joint__model_8cpp_source.html#l00355">planar_joint_model.cpp:355</a></div></div>
+<div class="ttc" id="aclassmoveit_1_1core_1_1PlanarJointModel_html_a18211390620ea1e155bd0e7c4470ecb4"><div class="ttname"><a href="classmoveit_1_1core_1_1PlanarJointModel.html#a18211390620ea1e155bd0e7c4470ecb4">moveit::core::PlanarJointModel::normalizeRotation</a></div><div class="ttdeci">bool normalizeRotation(double *values) const</div><div class="ttdef"><b>Definition:</b> <a href="planar__joint__model_8cpp_source.html#l00342">planar_joint_model.cpp:342</a></div></div>
+<div class="ttc" id="aclassmoveit_1_1core_1_1PlanarJointModel_html_ab280fa89e7731652ec1b05c471fc666b"><div class="ttname"><a href="classmoveit_1_1core_1_1PlanarJointModel.html#ab280fa89e7731652ec1b05c471fc666b">moveit::core::PlanarJointModel::getStateSpaceDimension</a></div><div class="ttdeci">unsigned int getStateSpaceDimension() const override</div><div class="ttdoc">Get the dimension of the state space that corresponds to this joint.</div><div class="ttdef"><b>Definition:</b> <a href="planar__joint__model_8cpp_source.html#l00144">planar_joint_model.cpp:144</a></div></div>
+<div class="ttc" id="aclassmoveit_1_1core_1_1PlanarJointModel_html_aadbe93014d32ec7084629af600ab5224"><div class="ttname"><a href="classmoveit_1_1core_1_1PlanarJointModel.html#aadbe93014d32ec7084629af600ab5224">moveit::core::PlanarJointModel::computeVariablePositions</a></div><div class="ttdeci">void computeVariablePositions(const Eigen::Isometry3d &amp;transf, double *joint_values) const override</div><div class="ttdoc">Given the transform generated by joint, compute the corresponding joint values. Make sure the passed ...</div><div class="ttdef"><b>Definition:</b> <a href="planar__joint__model_8cpp_source.html#l00380">planar_joint_model.cpp:380</a></div></div>
 <div class="ttc" id="aplanar__joint__model_8h_html"><div class="ttname"><a href="planar__joint__model_8h.html">planar_joint_model.h</a></div></div>
-<div class="ttc" id="aclassmoveit_1_1core_1_1PlanarJointModel_html_aec05f143b9d447745eb243b9fb552ab3"><div class="ttname"><a href="classmoveit_1_1core_1_1PlanarJointModel.html#aec05f143b9d447745eb243b9fb552ab3">moveit::core::PlanarJointModel::distance</a></div><div class="ttdeci">double distance(const double *values1, const double *values2) const override</div><div class="ttdoc">Compute the distance between two joint states of the same model (represented by the variable values)</div><div class="ttdef"><b>Definition:</b> <a href="planar__joint__model_8cpp_source.html#l00315">planar_joint_model.cpp:315</a></div></div>
-<div class="ttc" id="aclassmoveit_1_1core_1_1JointModel_html_ad368d9f3608673b5d1b0dc2cea0f5cb8"><div class="ttname"><a href="classmoveit_1_1core_1_1JointModel.html#ad368d9f3608673b5d1b0dc2cea0f5cb8">moveit::core::JointModel::getMaximumExtent</a></div><div class="ttdeci">double getMaximumExtent() const</div><div class="ttdef"><b>Definition:</b> <a href="joint__model_8h_source.html#l00507">joint_model.h:507</a></div></div>
+<div class="ttc" id="aclassmoveit_1_1core_1_1PlanarJointModel_html_aec05f143b9d447745eb243b9fb552ab3"><div class="ttname"><a href="classmoveit_1_1core_1_1PlanarJointModel.html#aec05f143b9d447745eb243b9fb552ab3">moveit::core::PlanarJointModel::distance</a></div><div class="ttdeci">double distance(const double *values1, const double *values2) const override</div><div class="ttdoc">Compute the distance between two joint states of the same model (represented by the variable values)</div><div class="ttdef"><b>Definition:</b> <a href="planar__joint__model_8cpp_source.html#l00312">planar_joint_model.cpp:312</a></div></div>
+<div class="ttc" id="aclassmoveit_1_1core_1_1JointModel_html_ad368d9f3608673b5d1b0dc2cea0f5cb8"><div class="ttname"><a href="classmoveit_1_1core_1_1JointModel.html#ad368d9f3608673b5d1b0dc2cea0f5cb8">moveit::core::JointModel::getMaximumExtent</a></div><div class="ttdeci">double getMaximumExtent() const</div><div class="ttdef"><b>Definition:</b> <a href="joint__model_8h_source.html#l00506">joint_model.h:506</a></div></div>
+<div class="ttc" id="aclassmoveit_1_1core_1_1PlanarJointModel_html_a3c5ea7b3ddec05cb0bed05fff3bbd348"><div class="ttname"><a href="classmoveit_1_1core_1_1PlanarJointModel.html#a3c5ea7b3ddec05cb0bed05fff3bbd348">moveit::core::PlanarJointModel::PlanarJointModel</a></div><div class="ttdeci">PlanarJointModel(const std::string &amp;name)</div><div class="ttdef"><b>Definition:</b> <a href="planar__joint__model_8cpp_source.html#l00115">planar_joint_model.cpp:115</a></div></div>
 <div class="ttc" id="anamespacesetup_html_aa2586b6c4dd84a0aaaf49cb1565cee6e"><div class="ttname"><a href="namespacesetup.html#aa2586b6c4dd84a0aaaf49cb1565cee6e">setup.d</a></div><div class="ttdeci">d</div><div class="ttdef"><b>Definition:</b> <a href="moveit__commander_2setup_8py_source.html#l00004">setup.py:4</a></div></div>
-<div class="ttc" id="aclassmoveit_1_1core_1_1PlanarJointModel_html_a2ce5ecc9e27bbe71906206ad4c469d30"><div class="ttname"><a href="classmoveit_1_1core_1_1PlanarJointModel.html#a2ce5ecc9e27bbe71906206ad4c469d30">moveit::core::PlanarJointModel::getVariableRandomPositionsNearBy</a></div><div class="ttdeci">void getVariableRandomPositionsNearBy(random_numbers::RandomNumberGenerator &amp;rng, double *values, const Bounds &amp;other_bounds, const double *near, const double distance) const override</div><div class="ttdoc">Provide random values for the joint variables (within specified bounds). Enough memory is assumed to ...</div><div class="ttdef"><b>Definition:</b> <a href="planar__joint__model_8cpp_source.html#l00188">planar_joint_model.cpp:188</a></div></div>
-<div class="ttc" id="aclassmoveit_1_1core_1_1PlanarJointModel_html_a5fb6f7ef2c065a1cf0959fd85f538141"><div class="ttname"><a href="classmoveit_1_1core_1_1PlanarJointModel.html#a5fb6f7ef2c065a1cf0959fd85f538141">moveit::core::PlanarJointModel::PlanarJointModel</a></div><div class="ttdeci">PlanarJointModel(const std::string &amp;name, size_t joint_index, size_t first_variable_index)</div><div class="ttdef"><b>Definition:</b> <a href="planar__joint__model_8cpp_source.html#l00115">planar_joint_model.cpp:115</a></div></div>
-<div class="ttc" id="anamespacemoveit_html"><div class="ttname"><a href="namespacemoveit.html">moveit</a></div><div class="ttdoc">Main namespace for MoveIt.</div><div class="ttdef"><b>Definition:</b> <a href="exceptions_8h_source.html#l00042">exceptions.h:42</a></div></div>
-<div class="ttc" id="aclassmoveit_1_1core_1_1PlanarJointModel_html_a9b1a6cf73431a15e8eb4ba79b4253932"><div class="ttname"><a href="classmoveit_1_1core_1_1PlanarJointModel.html#a9b1a6cf73431a15e8eb4ba79b4253932">moveit::core::PlanarJointModel::satisfiesPositionBounds</a></div><div class="ttdeci">bool satisfiesPositionBounds(const double *values, const Bounds &amp;other_bounds, double margin) const override</div><div class="ttdoc">Check if the set of position values for the variables of this joint are within bounds,...</div><div class="ttdef"><b>Definition:</b> <a href="planar__joint__model_8cpp_source.html#l00337">planar_joint_model.cpp:337</a></div></div>
-<div class="ttc" id="aclassmoveit_1_1core_1_1PlanarJointModel_html_a7df0400f9a4a37c6802ee32fab3dc7ab"><div class="ttname"><a href="classmoveit_1_1core_1_1PlanarJointModel.html#a7df0400f9a4a37c6802ee32fab3dc7ab">moveit::core::PlanarJointModel::computeTransform</a></div><div class="ttdeci">void computeTransform(const double *joint_values, Eigen::Isometry3d &amp;transf) const override</div><div class="ttdoc">Given the joint values for a joint, compute the corresponding transform. The computed transform is gu...</div><div class="ttdef"><b>Definition:</b> <a href="planar__joint__model_8cpp_source.html#l00377">planar_joint_model.cpp:377</a></div></div>
-<div class="ttc" id="aclassmoveit_1_1core_1_1LinkModel_html_a99ed1c1c371bdb1b007484fd399e435c"><div class="ttname"><a href="classmoveit_1_1core_1_1LinkModel.html#a99ed1c1c371bdb1b007484fd399e435c">moveit::core::LinkModel::getName</a></div><div class="ttdeci">const std::string &amp; getName() const</div><div class="ttdoc">The name of this link.</div><div class="ttdef"><b>Definition:</b> <a href="link__model_8h_source.html#l00086">link_model.h:86</a></div></div>
+<div class="ttc" id="aclassmoveit_1_1core_1_1PlanarJointModel_html_a2ce5ecc9e27bbe71906206ad4c469d30"><div class="ttname"><a href="classmoveit_1_1core_1_1PlanarJointModel.html#a2ce5ecc9e27bbe71906206ad4c469d30">moveit::core::PlanarJointModel::getVariableRandomPositionsNearBy</a></div><div class="ttdeci">void getVariableRandomPositionsNearBy(random_numbers::RandomNumberGenerator &amp;rng, double *values, const Bounds &amp;other_bounds, const double *near, const double distance) const override</div><div class="ttdoc">Provide random values for the joint variables (within specified bounds). Enough memory is assumed to ...</div><div class="ttdef"><b>Definition:</b> <a href="planar__joint__model_8cpp_source.html#l00185">planar_joint_model.cpp:185</a></div></div>
+<div class="ttc" id="anamespacemoveit_html"><div class="ttname"><a href="namespacemoveit.html">moveit</a></div><div class="ttdoc">Main namespace for MoveIt.</div><div class="ttdef"><b>Definition:</b> <a href="background__processing_8h_source.html#l00046">background_processing.h:46</a></div></div>
+<div class="ttc" id="aclassmoveit_1_1core_1_1PlanarJointModel_html_a9b1a6cf73431a15e8eb4ba79b4253932"><div class="ttname"><a href="classmoveit_1_1core_1_1PlanarJointModel.html#a9b1a6cf73431a15e8eb4ba79b4253932">moveit::core::PlanarJointModel::satisfiesPositionBounds</a></div><div class="ttdeci">bool satisfiesPositionBounds(const double *values, const Bounds &amp;other_bounds, double margin) const override</div><div class="ttdoc">Check if the set of position values for the variables of this joint are within bounds,...</div><div class="ttdef"><b>Definition:</b> <a href="planar__joint__model_8cpp_source.html#l00334">planar_joint_model.cpp:334</a></div></div>
+<div class="ttc" id="aclassmoveit_1_1core_1_1PlanarJointModel_html_a7df0400f9a4a37c6802ee32fab3dc7ab"><div class="ttname"><a href="classmoveit_1_1core_1_1PlanarJointModel.html#a7df0400f9a4a37c6802ee32fab3dc7ab">moveit::core::PlanarJointModel::computeTransform</a></div><div class="ttdeci">void computeTransform(const double *joint_values, Eigen::Isometry3d &amp;transf) const override</div><div class="ttdoc">Given the joint values for a joint, compute the corresponding transform. The computed transform is gu...</div><div class="ttdef"><b>Definition:</b> <a href="planar__joint__model_8cpp_source.html#l00374">planar_joint_model.cpp:374</a></div></div>
 <div class="ttc" id="anamespacepr2__arm__kinematics_html_a24f684af4bcce4a6d0c945aa27d04550"><div class="ttname"><a href="namespacepr2__arm__kinematics.html#a24f684af4bcce4a6d0c945aa27d04550">pr2_arm_kinematics::distance</a></div><div class="ttdeci">double distance(const urdf::Pose &amp;transform)</div><div class="ttdef"><b>Definition:</b> <a href="pr2__arm__ik_8h_source.html#l00087">pr2_arm_ik.h:87</a></div></div>
-<div class="ttc" id="aclassmoveit_1_1core_1_1PlanarJointModel_html_ae935bf3fe94071cde427b920631a18a2"><div class="ttname"><a href="classmoveit_1_1core_1_1PlanarJointModel.html#ae935bf3fe94071cde427b920631a18a2">moveit::core::PlanarJointModel::getVariableDefaultPositions</a></div><div class="ttdeci">void getVariableDefaultPositions(double *values, const Bounds &amp;other_bounds) const override</div><div class="ttdoc">Provide a default value for the joint given the joint variable bounds. Most joints will use the defau...</div><div class="ttdef"><b>Definition:</b> <a href="planar__joint__model_8cpp_source.html#l00159">planar_joint_model.cpp:159</a></div></div>
+<div class="ttc" id="aclassmoveit_1_1core_1_1PlanarJointModel_html_ae935bf3fe94071cde427b920631a18a2"><div class="ttname"><a href="classmoveit_1_1core_1_1PlanarJointModel.html#ae935bf3fe94071cde427b920631a18a2">moveit::core::PlanarJointModel::getVariableDefaultPositions</a></div><div class="ttdeci">void getVariableDefaultPositions(double *values, const Bounds &amp;other_bounds) const override</div><div class="ttdoc">Provide a default value for the joint given the joint variable bounds. Most joints will use the defau...</div><div class="ttdef"><b>Definition:</b> <a href="planar__joint__model_8cpp_source.html#l00156">planar_joint_model.cpp:156</a></div></div>
 <div class="ttc" id="aclassmoveit_1_1core_1_1PlanarJointModel_html_aff68a4576bd01859ee4b6689a78b6cada196f41d24f040c5cfedaa00c675d3f66"><div class="ttname"><a href="classmoveit_1_1core_1_1PlanarJointModel.html#aff68a4576bd01859ee4b6689a78b6cada196f41d24f040c5cfedaa00c675d3f66">moveit::core::PlanarJointModel::HOLONOMIC</a></div><div class="ttdeci">@ HOLONOMIC</div><div class="ttdef"><b>Definition:</b> <a href="planar__joint__model_8h_source.html#l00180">planar_joint_model.h:180</a></div></div>
-<div class="ttc" id="anamespacemoveit_1_1core_html_a647da3d1f82485ee4f28187d369354e4"><div class="ttname"><a href="namespacemoveit_1_1core.html#a647da3d1f82485ee4f28187d369354e4">moveit::core::computeTurnDriveTurnGeometry</a></div><div class="ttdeci">void computeTurnDriveTurnGeometry(const double *from, const double *to, const double min_translational_distance, double &amp;dx, double &amp;dy, double &amp;initial_turn, double &amp;drive_angle, double &amp;final_turn)</div><div class="ttdoc">Compute the geometry to turn toward the target point, drive straight and then turn to target orientat...</div><div class="ttdef"><b>Definition:</b> <a href="planar__joint__model_8cpp_source.html#l00213">planar_joint_model.cpp:213</a></div></div>
+<div class="ttc" id="anamespacemoveit_1_1core_html_a647da3d1f82485ee4f28187d369354e4"><div class="ttname"><a href="namespacemoveit_1_1core.html#a647da3d1f82485ee4f28187d369354e4">moveit::core::computeTurnDriveTurnGeometry</a></div><div class="ttdeci">void computeTurnDriveTurnGeometry(const double *from, const double *to, const double min_translational_distance, double &amp;dx, double &amp;dy, double &amp;initial_turn, double &amp;drive_angle, double &amp;final_turn)</div><div class="ttdoc">Compute the geometry to turn toward the target point, drive straight and then turn to target orientat...</div><div class="ttdef"><b>Definition:</b> <a href="planar__joint__model_8cpp_source.html#l00210">planar_joint_model.cpp:210</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

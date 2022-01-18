@@ -1,13 +1,11 @@
 <map id="moveit2/moveit_planners/pilz_industrial_motion_planner/src/joint_limits_container.cpp" name="moveit2/moveit_planners/pilz_industrial_motion_planner/src/joint_limits_container.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="411,5,600,76"/>
-<area shape="rect" id="node2" href="$joint__limits__container_8h.html" title=" " alt="" coords="249,124,415,180"/>
-<area shape="rect" id="node10" title=" " alt="" coords="439,139,571,165"/>
-<area shape="rect" id="node11" title=" " alt="" coords="595,139,682,165"/>
-<area shape="rect" id="node3" href="$joint__limits__extension_8h.html" title=" " alt="" coords="102,228,269,284"/>
-<area shape="rect" id="node7" title=" " alt="" coords="203,421,261,448"/>
-<area shape="rect" id="node8" title=" " alt="" coords="269,339,320,366"/>
-<area shape="rect" id="node9" title=" " alt="" coords="395,243,458,269"/>
-<area shape="rect" id="node4" title=" " alt="" coords="5,421,64,448"/>
-<area shape="rect" id="node5" href="$joint__limits_8hpp.html" title=" " alt="" coords="67,332,195,373"/>
-<area shape="rect" id="node6" title=" " alt="" coords="93,421,168,448"/>
+<area shape="rect" id="node1" title=" " alt="" coords="272,5,461,76"/>
+<area shape="rect" id="node2" href="$joint__limits__container_8h.html" title=" " alt="" coords="137,124,303,180"/>
+<area shape="rect" id="node8" title=" " alt="" coords="327,139,406,165"/>
+<area shape="rect" id="node9" title=" " alt="" coords="430,139,517,165"/>
+<area shape="rect" id="node3" href="$joint__limits__extension_8h.html" title=" " alt="" coords="77,228,243,284"/>
+<area shape="rect" id="node5" title=" " alt="" coords="5,339,56,366"/>
+<area shape="rect" id="node6" title=" " alt="" coords="264,339,323,366"/>
+<area shape="rect" id="node7" title=" " alt="" coords="319,243,382,269"/>
+<area shape="rect" id="node4" title=" " alt="" coords="80,332,240,373"/>
 </map>

@@ -1,0 +1,4 @@
+<map id="moveit::core::JointModelGroup::getContinuousJointModels" name="moveit::core::JointModelGroup::getContinuousJointModels">
+<area shape="rect" id="node1" title="Get the array of continuous joints used in this group (may include mimic joints)." alt="" coords="288,5,527,47"/>
+<area shape="rect" id="node2" href="$classrobot__trajectory_1_1RobotTrajectory.html#a6c192f96ee85ff1efa61de92f99c3959" title="Add a specified part of a trajectory to the end of the current trajectory. The default (when start_in..." alt="" coords="5,5,240,47"/>
+</map>

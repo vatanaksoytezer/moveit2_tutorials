@@ -176,362 +176,352 @@ $(function() {
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <span class="keyword">struct </span>Options</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  {</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    Options(std::string group_name, std::string desc = ROBOT_DESCRIPTION, std::string move_group_namespace = <span class="stringliteral">&quot;&quot;</span>)</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;      : group_name_(std::move(group_name))</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;      , robot_description_(std::move(desc))</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;      , move_group_namespace_(std::move(move_group_namespace))</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    {</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    }</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    std::string group_name_;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    std::string robot_description_;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    moveit::core::RobotModelConstPtr robot_model_;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    std::string move_group_namespace_;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  };</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  <a class="code" href="class__forward_8h.html#a3f9a2bc56130dc3b0de48919c6697038">MOVEIT_STRUCT_FORWARD</a>(Plan);</div>
-<div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="classmoveit_1_1planning__interface_1_1MoveItErrorCode.html">  136</a></span>&#160; </div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  <span class="keyword">struct </span>Plan</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  {</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    moveit_msgs::msg::RobotState start_state_;</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    moveit_msgs::msg::RobotTrajectory trajectory_;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordtype">double</span> planning_time_;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  };</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  <a class="code" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html">MoveGroupInterface</a>(<span class="keyword">const</span> rclcpp::Node::SharedPtr&amp; node, <span class="keyword">const</span> Options&amp; <a class="code" href="namespacemoveit__commander__cmdline.html#a76b84183c3f688c8a62245eac9b3d26c">opt</a>,</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                     <span class="keyword">const</span> std::shared_ptr&lt;tf2_ros::Buffer&gt;&amp; tf_buffer = std::shared_ptr&lt;tf2_ros::Buffer&gt;(),</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                     <span class="keyword">const</span> rclcpp::Duration&amp; wait_for_servers = rclcpp::Duration::from_seconds(-1));</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  <a class="code" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html">MoveGroupInterface</a>(<span class="keyword">const</span> rclcpp::Node::SharedPtr&amp; node, <span class="keyword">const</span> std::string&amp; <a class="code" href="namespacetest__cleanup.html#a121623a04b6c3260c0e3e9c8cb74d9f9">group</a>,</div>
-<div class="line"><a name="l00172"></a><span class="lineno"><a class="line" href="classmoveit_1_1planning__interface_1_1MoveItErrorCode.html#af155da6133976a737823585a12b6aaf6">  172</a></span>&#160;                     <span class="keyword">const</span> std::shared_ptr&lt;tf2_ros::Buffer&gt;&amp; tf_buffer = std::shared_ptr&lt;tf2_ros::Buffer&gt;(),</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                     <span class="keyword">const</span> rclcpp::Duration&amp; wait_for_servers = rclcpp::Duration::from_seconds(-1));</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;  ~<a class="code" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html">MoveGroupInterface</a>();</div>
-<div class="line"><a name="l00176"></a><span class="lineno"><a class="line" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a11613e2bc76eb2b956d7c6eb9357139d">  176</a></span>&#160; </div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;  <a class="code" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html">MoveGroupInterface</a>(<span class="keyword">const</span> <a class="code" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html">MoveGroupInterface</a>&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;  <a class="code" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html">MoveGroupInterface</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html">MoveGroupInterface</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    Options(std::string group_name, std::string desc = ROBOT_DESCRIPTION)</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;      : group_name_(std::move(group_name)), robot_description_(std::move(desc))</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    {</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    }</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    std::string group_name_;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    std::string robot_description_;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    moveit::core::RobotModelConstPtr robot_model_;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  };</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  <a class="code" href="class__forward_8h.html#a3f9a2bc56130dc3b0de48919c6697038">MOVEIT_STRUCT_FORWARD</a>(Plan);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  <span class="keyword">struct </span>Plan</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  {</div>
+<div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="classmoveit_1_1planning__interface_1_1MoveItErrorCode.html">  136</a></span>&#160;    moveit_msgs::msg::RobotState start_state_;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    moveit_msgs::msg::RobotTrajectory trajectory_;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keywordtype">double</span> planning_time_;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  };</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  <a class="code" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html">MoveGroupInterface</a>(<span class="keyword">const</span> rclcpp::Node::SharedPtr&amp; node, <span class="keyword">const</span> Options&amp; <a class="code" href="namespacemoveit__commander__cmdline.html#a76b84183c3f688c8a62245eac9b3d26c">opt</a>,</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                     <span class="keyword">const</span> std::shared_ptr&lt;tf2_ros::Buffer&gt;&amp; tf_buffer = std::shared_ptr&lt;tf2_ros::Buffer&gt;(),</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                     <span class="keyword">const</span> rclcpp::Duration&amp; wait_for_servers = rclcpp::Duration(-1));</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  <a class="code" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html">MoveGroupInterface</a>(<span class="keyword">const</span> rclcpp::Node::SharedPtr&amp; node, <span class="keyword">const</span> std::string&amp; <a class="code" href="namespacetest__cleanup.html#a121623a04b6c3260c0e3e9c8cb74d9f9">group</a>,</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                     <span class="keyword">const</span> std::shared_ptr&lt;tf2_ros::Buffer&gt;&amp; tf_buffer = std::shared_ptr&lt;tf2_ros::Buffer&gt;(),</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                     <span class="keyword">const</span> rclcpp::Duration&amp; wait_for_servers = rclcpp::Duration(-1));</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  ~<a class="code" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html">MoveGroupInterface</a>();</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;  <a class="code" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html">MoveGroupInterface</a>(<span class="keyword">const</span> <a class="code" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html">MoveGroupInterface</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;  <a class="code" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html">MoveGroupInterface</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html">MoveGroupInterface</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00179"></a><span class="lineno"><a class="line" href="structmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1Options.html">  179</a></span>&#160; </div>
+<div class="line"><a name="l00180"></a><span class="lineno"><a class="line" href="classmoveit_1_1planning__interface_1_1MoveItErrorCode.html#aa8ce4088b6752080f9e7a52400cde221">  180</a></span>&#160;  <a class="code" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html">MoveGroupInterface</a>(<a class="code" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html">MoveGroupInterface</a>&amp;&amp; other) noexcept;</div>
+<div class="line"><a name="l00181"></a><span class="lineno"><a class="line" href="structmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1Options.html#a0c882a2e8d5fd217a662e2fe1c5f8202">  181</a></span>&#160;  <a class="code" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html">MoveGroupInterface</a>&amp; operator=(<a class="code" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html">MoveGroupInterface</a>&amp;&amp; other) noexcept;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;  <span class="keyword">const</span> std::string&amp; getName() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00184"></a><span class="lineno"><a class="line" href="classmoveit_1_1planning__interface_1_1MoveItErrorCode.html#a16c0eccfad0ec1b1358b597f1add8d67">  184</a></span>&#160; </div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;  <a class="code" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html">MoveGroupInterface</a>(<a class="code" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html">MoveGroupInterface</a>&amp;&amp; other) noexcept;</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;  <a class="code" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html">MoveGroupInterface</a>&amp; operator=(<a class="code" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html">MoveGroupInterface</a>&amp;&amp; other) noexcept;</div>
-<div class="line"><a name="l00188"></a><span class="lineno"><a class="line" href="classmoveit_1_1planning__interface_1_1MoveItErrorCode.html#a59af4daafde4dc6cc4a277c9fd2f6d3b">  188</a></span>&#160;  <span class="keyword">const</span> std::string&amp; getName() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00189"></a><span class="lineno"><a class="line" href="structmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1Options.html#a2cf3354acfc47c1708dd511be0bca347">  189</a></span>&#160; </div>
-<div class="line"><a name="l00192"></a><span class="lineno"><a class="line" href="structmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1Options.html#a6d808c8691c7bb9f96ea7c586046b439">  192</a></span>&#160;  <span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; getNamedTargets() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
-<div class="line"><a name="l00195"></a><span class="lineno"><a class="line" href="structmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1Options.html#a3599f7a3c248498b7384b7e1905ce322">  195</a></span>&#160;  moveit::core::RobotModelConstPtr getRobotModel() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
-<div class="line"><a name="l00198"></a><span class="lineno"><a class="line" href="structmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1Options.html#a305dd0727916ea7d8eb00668947a54ce">  198</a></span>&#160;  rclcpp::Node::SharedPtr getNodeHandle();</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;  <span class="keyword">const</span> std::string&amp; getPlanningFrame() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
-<div class="line"><a name="l00204"></a><span class="lineno"><a class="line" href="structmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1Plan.html">  204</a></span>&#160;  <span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; getJointModelGroupNames() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
-<div class="line"><a name="l00207"></a><span class="lineno"><a class="line" href="structmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1Plan.html#a894935a5a8950daffd7ba0da39d65861">  207</a></span>&#160;  <span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; getJointNames() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
-<div class="line"><a name="l00210"></a><span class="lineno"><a class="line" href="structmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1Plan.html#a29cde522e75fbbb4e14f209c75fd2c26">  210</a></span>&#160;  <span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; getLinkNames() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
-<div class="line"><a name="l00213"></a><span class="lineno"><a class="line" href="structmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1Plan.html#ab479de7a2494a40891cc7baf51a202a8">  213</a></span>&#160;  std::map&lt;std::string, double&gt; getNamedTargetValues(<span class="keyword">const</span> std::string&amp; name) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;  <span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; getActiveJoints() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;  <span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; getJoints() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> getVariableCount() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160; </div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;  <span class="keywordtype">bool</span> getInterfaceDescriptions(std::vector&lt;moveit_msgs::msg::PlannerInterfaceDescription&gt;&amp; desc) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;  <span class="keywordtype">bool</span> getInterfaceDescription(moveit_msgs::msg::PlannerInterfaceDescription&amp; desc) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160; </div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;  std::map&lt;std::string, std::string&gt; getPlannerParams(<span class="keyword">const</span> std::string&amp; planner_id,</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                                                      <span class="keyword">const</span> std::string&amp; <a class="code" href="namespacetest__cleanup.html#a121623a04b6c3260c0e3e9c8cb74d9f9">group</a> = <span class="stringliteral">&quot;&quot;</span>) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160; </div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;  <span class="keywordtype">void</span> setPlannerParams(<span class="keyword">const</span> std::string&amp; planner_id, <span class="keyword">const</span> std::string&amp; <a class="code" href="namespacetest__cleanup.html#a121623a04b6c3260c0e3e9c8cb74d9f9">group</a>,</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                        <span class="keyword">const</span> std::map&lt;std::string, std::string&gt;&amp; params, <span class="keywordtype">bool</span> bReplace = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00187"></a><span class="lineno"><a class="line" href="structmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1Options.html#a2cf3354acfc47c1708dd511be0bca347">  187</a></span>&#160;  <span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; getNamedTargets() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00188"></a><span class="lineno"><a class="line" href="classmoveit_1_1planning__interface_1_1MoveItErrorCode.html#a59af4daafde4dc6cc4a277c9fd2f6d3b">  188</a></span>&#160; </div>
+<div class="line"><a name="l00190"></a><span class="lineno"><a class="line" href="structmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1Options.html#a6d808c8691c7bb9f96ea7c586046b439">  190</a></span>&#160;  moveit::core::RobotModelConstPtr getRobotModel() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
+<div class="line"><a name="l00193"></a><span class="lineno"><a class="line" href="structmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1Options.html#a3599f7a3c248498b7384b7e1905ce322">  193</a></span>&#160;  rclcpp::Node::SharedPtr getNodeHandle();</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;  <span class="keyword">const</span> std::string&amp; getPlanningFrame() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
+<div class="line"><a name="l00199"></a><span class="lineno"><a class="line" href="structmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1Plan.html">  199</a></span>&#160;  <span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; getJointModelGroupNames() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
+<div class="line"><a name="l00202"></a><span class="lineno"><a class="line" href="structmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1Plan.html#a894935a5a8950daffd7ba0da39d65861">  202</a></span>&#160;  <span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; getJointNames() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
+<div class="line"><a name="l00205"></a><span class="lineno"><a class="line" href="structmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1Plan.html#a29cde522e75fbbb4e14f209c75fd2c26">  205</a></span>&#160;  <span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; getLinkNames() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
+<div class="line"><a name="l00208"></a><span class="lineno"><a class="line" href="structmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1Plan.html#ab479de7a2494a40891cc7baf51a202a8">  208</a></span>&#160;  std::map&lt;std::string, double&gt; getNamedTargetValues(<span class="keyword">const</span> std::string&amp; name) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;  <span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; getActiveJoints() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160; </div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;  <span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; getJoints() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160; </div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> getVariableCount() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;  <span class="keywordtype">bool</span> getInterfaceDescriptions(std::vector&lt;moveit_msgs::msg::PlannerInterfaceDescription&gt;&amp; desc) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160; </div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;  <span class="keywordtype">bool</span> getInterfaceDescription(moveit_msgs::msg::PlannerInterfaceDescription&amp; desc) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160; </div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;  std::map&lt;std::string, std::string&gt; getPlannerParams(<span class="keyword">const</span> std::string&amp; planner_id,</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                                                      <span class="keyword">const</span> std::string&amp; <a class="code" href="namespacetest__cleanup.html#a121623a04b6c3260c0e3e9c8cb74d9f9">group</a> = <span class="stringliteral">&quot;&quot;</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160; </div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;  <span class="keywordtype">void</span> setPlannerParams(<span class="keyword">const</span> std::string&amp; planner_id, <span class="keyword">const</span> std::string&amp; <a class="code" href="namespacetest__cleanup.html#a121623a04b6c3260c0e3e9c8cb74d9f9">group</a>,</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                        <span class="keyword">const</span> std::map&lt;std::string, std::string&gt;&amp; params, <span class="keywordtype">bool</span> bReplace = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160; </div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;  std::string getDefaultPlanningPipelineId() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160; </div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;  <span class="keywordtype">void</span> setPlanningPipelineId(<span class="keyword">const</span> std::string&amp; pipeline_id);</div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;  std::string getDefaultPlanningPipelineId() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160; </div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;  <span class="keywordtype">void</span> setPlanningPipelineId(<span class="keyword">const</span> std::string&amp; pipeline_id);</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; </div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;  <span class="keyword">const</span> std::string&amp; getPlanningPipelineId() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160; </div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;  std::string getDefaultPlannerId(<span class="keyword">const</span> std::string&amp; <a class="code" href="namespacetest__cleanup.html#a121623a04b6c3260c0e3e9c8cb74d9f9">group</a> = <span class="stringliteral">&quot;&quot;</span>) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160; </div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;  <span class="keywordtype">void</span> setPlannerId(<span class="keyword">const</span> std::string&amp; planner_id);</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160; </div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;  <span class="keyword">const</span> std::string&amp; getPlannerId() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; </div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;  <span class="keywordtype">void</span> setPlanningTime(<span class="keywordtype">double</span> seconds);</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160; </div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;  <span class="keywordtype">void</span> setNumPlanningAttempts(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> num_planning_attempts);</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160; </div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;  <span class="keywordtype">void</span> setMaxVelocityScalingFactor(<span class="keywordtype">double</span> max_velocity_scaling_factor);</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160; </div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;  <span class="keywordtype">void</span> setMaxAccelerationScalingFactor(<span class="keywordtype">double</span> max_acceleration_scaling_factor);</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160; </div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;  <span class="keywordtype">double</span> getPlanningTime() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160; </div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;  <span class="keywordtype">double</span> getGoalJointTolerance() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160; </div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;  <span class="keywordtype">double</span> getGoalPositionTolerance() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160; </div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;  <span class="keywordtype">double</span> getGoalOrientationTolerance() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160; </div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;  <span class="keywordtype">void</span> setGoalTolerance(<span class="keywordtype">double</span> tolerance);</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160; </div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;  <span class="keywordtype">void</span> setGoalJointTolerance(<span class="keywordtype">double</span> tolerance);</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160; </div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;  <span class="keywordtype">void</span> setGoalPositionTolerance(<span class="keywordtype">double</span> tolerance);</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160; </div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;  <span class="keywordtype">void</span> setGoalOrientationTolerance(<span class="keywordtype">double</span> tolerance);</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160; </div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;  <span class="keywordtype">void</span> setWorkspace(<span class="keywordtype">double</span> minx, <span class="keywordtype">double</span> miny, <span class="keywordtype">double</span> minz, <span class="keywordtype">double</span> maxx, <span class="keywordtype">double</span> maxy, <span class="keywordtype">double</span> maxz);</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160; </div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;  <span class="keywordtype">void</span> setStartState(<span class="keyword">const</span> moveit_msgs::msg::RobotState&amp; start_state);</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160; </div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;  <span class="keywordtype">void</span> setStartState(<span class="keyword">const</span> <a class="code" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a>&amp; start_state);</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160; </div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;  <span class="keywordtype">void</span> setStartStateToCurrentState();</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160; </div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;  <span class="keywordtype">void</span> setSupportSurfaceName(<span class="keyword">const</span> std::string&amp; name);</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160; </div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;  <span class="keywordtype">bool</span> setJointValueTarget(<span class="keyword">const</span> std::vector&lt;double&gt;&amp; group_variable_values);</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160; </div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;  <span class="keywordtype">bool</span> setJointValueTarget(<span class="keyword">const</span> std::map&lt;std::string, double&gt;&amp; variable_values);</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160; </div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;  <span class="keywordtype">bool</span> setJointValueTarget(<span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; variable_names, <span class="keyword">const</span> std::vector&lt;double&gt;&amp; variable_values);</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160; </div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;  <span class="keywordtype">bool</span> setJointValueTarget(<span class="keyword">const</span> <a class="code" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a>&amp; robot_state);</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160; </div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;  <span class="keywordtype">bool</span> setJointValueTarget(<span class="keyword">const</span> std::string&amp; joint_name, <span class="keyword">const</span> std::vector&lt;double&gt;&amp; values);</div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160; </div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;  <span class="keywordtype">bool</span> setJointValueTarget(<span class="keyword">const</span> std::string&amp; joint_name, <span class="keywordtype">double</span> value);</div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160; </div>
-<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;  <span class="keywordtype">bool</span> setJointValueTarget(<span class="keyword">const</span> sensor_msgs::msg::JointState&amp; state);</div>
-<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160; </div>
-<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;  <span class="keywordtype">bool</span> setJointValueTarget(<span class="keyword">const</span> geometry_msgs::msg::Pose&amp; eef_pose, <span class="keyword">const</span> std::string&amp; end_effector_link = <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160; </div>
-<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;  <span class="keywordtype">bool</span> setJointValueTarget(<span class="keyword">const</span> geometry_msgs::msg::PoseStamped&amp; eef_pose, <span class="keyword">const</span> std::string&amp; end_effector_link = <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160; </div>
-<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;  <span class="keywordtype">bool</span> setJointValueTarget(<span class="keyword">const</span> Eigen::Isometry3d&amp; eef_pose, <span class="keyword">const</span> std::string&amp; end_effector_link = <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160; </div>
-<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;  <span class="keywordtype">bool</span> setApproximateJointValueTarget(<span class="keyword">const</span> geometry_msgs::msg::Pose&amp; eef_pose,</div>
-<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;                                      <span class="keyword">const</span> std::string&amp; end_effector_link = <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160; </div>
-<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;  <span class="keywordtype">bool</span> setApproximateJointValueTarget(<span class="keyword">const</span> geometry_msgs::msg::PoseStamped&amp; eef_pose,</div>
-<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;                                      <span class="keyword">const</span> std::string&amp; end_effector_link = <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160; </div>
-<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;  <span class="keywordtype">bool</span> setApproximateJointValueTarget(<span class="keyword">const</span> Eigen::Isometry3d&amp; eef_pose, <span class="keyword">const</span> std::string&amp; end_effector_link = <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160; </div>
-<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;  <span class="keywordtype">void</span> setRandomTarget();</div>
-<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160; </div>
-<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;  <span class="keywordtype">bool</span> setNamedTarget(<span class="keyword">const</span> std::string&amp; name);</div>
-<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160; </div>
-<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;  <span class="keywordtype">void</span> getJointValueTarget(std::vector&lt;double&gt;&amp; group_variable_values) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160; </div>
-<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;  [[deprecated]] <span class="keyword">const</span> <a class="code" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a>&amp; getJointValueTarget() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160; </div>
-<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;  <span class="keywordtype">bool</span> setPositionTarget(<span class="keywordtype">double</span> <a class="code" href="namespacepick.html#a9173b397dbd476ca3db55ee54f86d707">x</a>, <span class="keywordtype">double</span> <a class="code" href="namespacepick.html#a99d8b65794c6c99611647f100666d253">y</a>, <span class="keywordtype">double</span> <a class="code" href="namespacepick.html#adf6e0b74c284ada499cc78238d0da486">z</a>, <span class="keyword">const</span> std::string&amp; end_effector_link = <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160; </div>
-<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;  <span class="keywordtype">bool</span> setRPYTarget(<span class="keywordtype">double</span> roll, <span class="keywordtype">double</span> pitch, <span class="keywordtype">double</span> yaw, <span class="keyword">const</span> std::string&amp; end_effector_link = <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160; </div>
-<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;  <span class="keywordtype">bool</span> setOrientationTarget(<span class="keywordtype">double</span> <a class="code" href="namespacepick.html#a9173b397dbd476ca3db55ee54f86d707">x</a>, <span class="keywordtype">double</span> <a class="code" href="namespacepick.html#a99d8b65794c6c99611647f100666d253">y</a>, <span class="keywordtype">double</span> <a class="code" href="namespacepick.html#adf6e0b74c284ada499cc78238d0da486">z</a>, <span class="keywordtype">double</span> <a class="code" href="namespacepick.html#a1fb87d1de993e7365c6f8443cb97701c">w</a>, <span class="keyword">const</span> std::string&amp; end_effector_link = <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160; </div>
-<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;  <span class="keywordtype">bool</span> setPoseTarget(<span class="keyword">const</span> Eigen::Isometry3d&amp; end_effector_pose, <span class="keyword">const</span> std::string&amp; end_effector_link = <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160; </div>
-<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;  <span class="keywordtype">bool</span> setPoseTarget(<span class="keyword">const</span> geometry_msgs::msg::Pose&amp; target, <span class="keyword">const</span> std::string&amp; end_effector_link = <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160; </div>
-<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;  <span class="keywordtype">bool</span> setPoseTarget(<span class="keyword">const</span> geometry_msgs::msg::PoseStamped&amp; target, <span class="keyword">const</span> std::string&amp; end_effector_link = <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160; </div>
-<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;  <span class="keywordtype">bool</span> setPoseTargets(<span class="keyword">const</span> EigenSTL::vector_Isometry3d&amp; end_effector_pose, <span class="keyword">const</span> std::string&amp; end_effector_link = <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160; </div>
-<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;  <span class="keywordtype">bool</span> setPoseTargets(<span class="keyword">const</span> std::vector&lt;geometry_msgs::msg::Pose&gt;&amp; target, <span class="keyword">const</span> std::string&amp; end_effector_link = <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160; </div>
-<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;  <span class="keywordtype">bool</span> setPoseTargets(<span class="keyword">const</span> std::vector&lt;geometry_msgs::msg::PoseStamped&gt;&amp; target,</div>
-<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;                      <span class="keyword">const</span> std::string&amp; end_effector_link = <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160; </div>
-<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;  <span class="keywordtype">void</span> setPoseReferenceFrame(<span class="keyword">const</span> std::string&amp; pose_reference_frame);</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;  <span class="keyword">const</span> std::string&amp; getPlanningPipelineId() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; </div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;  std::string getDefaultPlannerId(<span class="keyword">const</span> std::string&amp; <a class="code" href="namespacetest__cleanup.html#a121623a04b6c3260c0e3e9c8cb74d9f9">group</a> = <span class="stringliteral">&quot;&quot;</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160; </div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;  <span class="keywordtype">void</span> setPlannerId(<span class="keyword">const</span> std::string&amp; planner_id);</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;  <span class="keyword">const</span> std::string&amp; getPlannerId() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160; </div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;  <span class="keywordtype">void</span> setPlanningTime(<span class="keywordtype">double</span> seconds);</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160; </div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;  <span class="keywordtype">void</span> setNumPlanningAttempts(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> num_planning_attempts);</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160; </div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;  <span class="keywordtype">void</span> setMaxVelocityScalingFactor(<span class="keywordtype">double</span> max_velocity_scaling_factor);</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160; </div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;  <span class="keywordtype">void</span> setMaxAccelerationScalingFactor(<span class="keywordtype">double</span> max_acceleration_scaling_factor);</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160; </div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;  <span class="keywordtype">double</span> getPlanningTime() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160; </div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;  <span class="keywordtype">double</span> getGoalJointTolerance() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; </div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;  <span class="keywordtype">double</span> getGoalPositionTolerance() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160; </div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;  <span class="keywordtype">double</span> getGoalOrientationTolerance() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160; </div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;  <span class="keywordtype">void</span> setGoalTolerance(<span class="keywordtype">double</span> tolerance);</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160; </div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;  <span class="keywordtype">void</span> setGoalJointTolerance(<span class="keywordtype">double</span> tolerance);</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160; </div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;  <span class="keywordtype">void</span> setGoalPositionTolerance(<span class="keywordtype">double</span> tolerance);</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160; </div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;  <span class="keywordtype">void</span> setGoalOrientationTolerance(<span class="keywordtype">double</span> tolerance);</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160; </div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;  <span class="keywordtype">void</span> setWorkspace(<span class="keywordtype">double</span> minx, <span class="keywordtype">double</span> miny, <span class="keywordtype">double</span> minz, <span class="keywordtype">double</span> maxx, <span class="keywordtype">double</span> maxy, <span class="keywordtype">double</span> maxz);</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160; </div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;  <span class="keywordtype">void</span> setStartState(<span class="keyword">const</span> moveit_msgs::msg::RobotState&amp; start_state);</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160; </div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;  <span class="keywordtype">void</span> setStartState(<span class="keyword">const</span> <a class="code" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a>&amp; start_state);</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160; </div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;  <span class="keywordtype">void</span> setStartStateToCurrentState();</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160; </div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;  <span class="keywordtype">void</span> setSupportSurfaceName(<span class="keyword">const</span> std::string&amp; name);</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160; </div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;  <span class="keywordtype">bool</span> setJointValueTarget(<span class="keyword">const</span> std::vector&lt;double&gt;&amp; group_variable_values);</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160; </div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;  <span class="keywordtype">bool</span> setJointValueTarget(<span class="keyword">const</span> std::map&lt;std::string, double&gt;&amp; variable_values);</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160; </div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;  <span class="keywordtype">bool</span> setJointValueTarget(<span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; variable_names, <span class="keyword">const</span> std::vector&lt;double&gt;&amp; variable_values);</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160; </div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;  <span class="keywordtype">bool</span> setJointValueTarget(<span class="keyword">const</span> <a class="code" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a>&amp; robot_state);</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160; </div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;  <span class="keywordtype">bool</span> setJointValueTarget(<span class="keyword">const</span> std::string&amp; joint_name, <span class="keyword">const</span> std::vector&lt;double&gt;&amp; values);</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160; </div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;  <span class="keywordtype">bool</span> setJointValueTarget(<span class="keyword">const</span> std::string&amp; joint_name, <span class="keywordtype">double</span> value);</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160; </div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;  <span class="keywordtype">bool</span> setJointValueTarget(<span class="keyword">const</span> sensor_msgs::msg::JointState&amp; state);</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160; </div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;  <span class="keywordtype">bool</span> setJointValueTarget(<span class="keyword">const</span> geometry_msgs::msg::Pose&amp; eef_pose, <span class="keyword">const</span> std::string&amp; end_effector_link = <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160; </div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;  <span class="keywordtype">bool</span> setJointValueTarget(<span class="keyword">const</span> geometry_msgs::msg::PoseStamped&amp; eef_pose, <span class="keyword">const</span> std::string&amp; end_effector_link = <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160; </div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;  <span class="keywordtype">bool</span> setJointValueTarget(<span class="keyword">const</span> Eigen::Isometry3d&amp; eef_pose, <span class="keyword">const</span> std::string&amp; end_effector_link = <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160; </div>
+<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;  <span class="keywordtype">bool</span> setApproximateJointValueTarget(<span class="keyword">const</span> geometry_msgs::msg::Pose&amp; eef_pose,</div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;                                      <span class="keyword">const</span> std::string&amp; end_effector_link = <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160; </div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;  <span class="keywordtype">bool</span> setApproximateJointValueTarget(<span class="keyword">const</span> geometry_msgs::msg::PoseStamped&amp; eef_pose,</div>
+<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;                                      <span class="keyword">const</span> std::string&amp; end_effector_link = <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160; </div>
+<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;  <span class="keywordtype">bool</span> setApproximateJointValueTarget(<span class="keyword">const</span> Eigen::Isometry3d&amp; eef_pose, <span class="keyword">const</span> std::string&amp; end_effector_link = <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160; </div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;  <span class="keywordtype">void</span> setRandomTarget();</div>
+<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160; </div>
+<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;  <span class="keywordtype">bool</span> setNamedTarget(<span class="keyword">const</span> std::string&amp; name);</div>
+<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160; </div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;  <span class="keywordtype">void</span> getJointValueTarget(std::vector&lt;double&gt;&amp; group_variable_values) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160; </div>
+<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;  [[deprecated]] <span class="keyword">const</span> <a class="code" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a>&amp; getJointValueTarget() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160; </div>
+<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;  <span class="keywordtype">bool</span> setPositionTarget(<span class="keywordtype">double</span> <a class="code" href="namespacepick.html#a9173b397dbd476ca3db55ee54f86d707">x</a>, <span class="keywordtype">double</span> <a class="code" href="namespacepick.html#a99d8b65794c6c99611647f100666d253">y</a>, <span class="keywordtype">double</span> <a class="code" href="namespacepick.html#adf6e0b74c284ada499cc78238d0da486">z</a>, <span class="keyword">const</span> std::string&amp; end_effector_link = <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160; </div>
+<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;  <span class="keywordtype">bool</span> setRPYTarget(<span class="keywordtype">double</span> roll, <span class="keywordtype">double</span> pitch, <span class="keywordtype">double</span> yaw, <span class="keyword">const</span> std::string&amp; end_effector_link = <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160; </div>
+<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;  <span class="keywordtype">bool</span> setOrientationTarget(<span class="keywordtype">double</span> <a class="code" href="namespacepick.html#a9173b397dbd476ca3db55ee54f86d707">x</a>, <span class="keywordtype">double</span> <a class="code" href="namespacepick.html#a99d8b65794c6c99611647f100666d253">y</a>, <span class="keywordtype">double</span> <a class="code" href="namespacepick.html#adf6e0b74c284ada499cc78238d0da486">z</a>, <span class="keywordtype">double</span> <a class="code" href="namespacepick.html#a1fb87d1de993e7365c6f8443cb97701c">w</a>, <span class="keyword">const</span> std::string&amp; end_effector_link = <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160; </div>
+<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;  <span class="keywordtype">bool</span> setPoseTarget(<span class="keyword">const</span> Eigen::Isometry3d&amp; end_effector_pose, <span class="keyword">const</span> std::string&amp; end_effector_link = <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160; </div>
+<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;  <span class="keywordtype">bool</span> setPoseTarget(<span class="keyword">const</span> geometry_msgs::msg::Pose&amp; target, <span class="keyword">const</span> std::string&amp; end_effector_link = <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160; </div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;  <span class="keywordtype">bool</span> setPoseTarget(<span class="keyword">const</span> geometry_msgs::msg::PoseStamped&amp; target, <span class="keyword">const</span> std::string&amp; end_effector_link = <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160; </div>
+<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;  <span class="keywordtype">bool</span> setPoseTargets(<span class="keyword">const</span> EigenSTL::vector_Isometry3d&amp; end_effector_pose, <span class="keyword">const</span> std::string&amp; end_effector_link = <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160; </div>
+<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;  <span class="keywordtype">bool</span> setPoseTargets(<span class="keyword">const</span> std::vector&lt;geometry_msgs::msg::Pose&gt;&amp; target, <span class="keyword">const</span> std::string&amp; end_effector_link = <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160; </div>
+<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;  <span class="keywordtype">bool</span> setPoseTargets(<span class="keyword">const</span> std::vector&lt;geometry_msgs::msg::PoseStamped&gt;&amp; target,</div>
+<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;                      <span class="keyword">const</span> std::string&amp; end_effector_link = <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160; </div>
+<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;  <span class="keywordtype">void</span> setPoseReferenceFrame(<span class="keyword">const</span> std::string&amp; pose_reference_frame);</div>
+<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160; </div>
+<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;  <span class="keywordtype">bool</span> setEndEffectorLink(<span class="keyword">const</span> std::string&amp; end_effector_link);</div>
 <div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160; </div>
-<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;  <span class="keywordtype">bool</span> setEndEffectorLink(<span class="keyword">const</span> std::string&amp; end_effector_link);</div>
-<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160; </div>
-<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;  <span class="keywordtype">bool</span> setEndEffector(<span class="keyword">const</span> std::string&amp; eef_name);</div>
-<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160; </div>
-<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;  <span class="keywordtype">void</span> clearPoseTarget(<span class="keyword">const</span> std::string&amp; end_effector_link = <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160; </div>
-<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;  <span class="keywordtype">void</span> clearPoseTargets();</div>
-<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160; </div>
-<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;  <span class="keyword">const</span> geometry_msgs::msg::PoseStamped&amp; getPoseTarget(<span class="keyword">const</span> std::string&amp; end_effector_link = <span class="stringliteral">&quot;&quot;</span>) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160; </div>
-<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;  <span class="keyword">const</span> std::vector&lt;geometry_msgs::msg::PoseStamped&gt;&amp; getPoseTargets(<span class="keyword">const</span> std::string&amp; end_effector_link = <span class="stringliteral">&quot;&quot;</span>) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160; </div>
-<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;  <span class="keyword">const</span> std::string&amp; getEndEffectorLink() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160; </div>
-<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;  <span class="keyword">const</span> std::string&amp; getEndEffector() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160; </div>
-<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;  <span class="keyword">const</span> std::string&amp; getPoseReferenceFrame() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160; </div>
-<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;  <a class="code" href="classmoveit_1_1planning__interface_1_1MoveItErrorCode.html">MoveItErrorCode</a> asyncMove();</div>
-<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160; </div>
-<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;  rclcpp_action::Client&lt;moveit_msgs::action::MoveGroup&gt;&amp; getMoveGroupClient() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160; </div>
-<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;  <a class="code" href="classmoveit_1_1planning__interface_1_1MoveItErrorCode.html">MoveItErrorCode</a> move();</div>
+<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;  <span class="keywordtype">bool</span> setEndEffector(<span class="keyword">const</span> std::string&amp; eef_name);</div>
+<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160; </div>
+<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;  <span class="keywordtype">void</span> clearPoseTarget(<span class="keyword">const</span> std::string&amp; end_effector_link = <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160; </div>
+<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;  <span class="keywordtype">void</span> clearPoseTargets();</div>
+<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160; </div>
+<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;  <span class="keyword">const</span> geometry_msgs::msg::PoseStamped&amp; getPoseTarget(<span class="keyword">const</span> std::string&amp; end_effector_link = <span class="stringliteral">&quot;&quot;</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160; </div>
+<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;  <span class="keyword">const</span> std::vector&lt;geometry_msgs::msg::PoseStamped&gt;&amp; getPoseTargets(<span class="keyword">const</span> std::string&amp; end_effector_link = <span class="stringliteral">&quot;&quot;</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160; </div>
+<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;  <span class="keyword">const</span> std::string&amp; getEndEffectorLink() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160; </div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;  <span class="keyword">const</span> std::string&amp; getEndEffector() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160; </div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;  <span class="keyword">const</span> std::string&amp; getPoseReferenceFrame() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160; </div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;  <a class="code" href="classmoveit_1_1planning__interface_1_1MoveItErrorCode.html">MoveItErrorCode</a> asyncMove();</div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160; </div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;  rclcpp_action::Client&lt;moveit_msgs::action::MoveGroup&gt;&amp; getMoveGroupClient() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160; </div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;  <a class="code" href="classmoveit_1_1planning__interface_1_1MoveItErrorCode.html">MoveItErrorCode</a> move();</div>
+<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160; </div>
+<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;  <a class="code" href="classmoveit_1_1planning__interface_1_1MoveItErrorCode.html">MoveItErrorCode</a> <a class="code" href="namespaceplan__with__constraints.html#ad98040293eeabd17f40a72a60f1146c4">plan</a>(<a class="code" href="structmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1Plan.html">Plan</a>&amp; <a class="code" href="namespaceplan.html">plan</a>);</div>
 <div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160; </div>
-<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;  <a class="code" href="classmoveit_1_1planning__interface_1_1MoveItErrorCode.html">MoveItErrorCode</a> <a class="code" href="namespaceplan__with__constraints.html#ad98040293eeabd17f40a72a60f1146c4">plan</a>(<a class="code" href="structmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1Plan.html">Plan</a>&amp; <a class="code" href="namespaceplan.html">plan</a>);</div>
-<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160; </div>
-<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;  <a class="code" href="classmoveit_1_1planning__interface_1_1MoveItErrorCode.html">MoveItErrorCode</a> asyncExecute(<span class="keyword">const</span> <a class="code" href="structmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1Plan.html">Plan</a>&amp; <a class="code" href="namespaceplan.html">plan</a>);</div>
-<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160; </div>
-<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;  <a class="code" href="classmoveit_1_1planning__interface_1_1MoveItErrorCode.html">MoveItErrorCode</a> asyncExecute(<span class="keyword">const</span> moveit_msgs::msg::RobotTrajectory&amp; trajectory);</div>
-<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160; </div>
-<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;  <a class="code" href="classmoveit_1_1planning__interface_1_1MoveItErrorCode.html">MoveItErrorCode</a> execute(<span class="keyword">const</span> <a class="code" href="structmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1Plan.html">Plan</a>&amp; <a class="code" href="namespaceplan.html">plan</a>);</div>
-<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160; </div>
-<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;  <a class="code" href="classmoveit_1_1planning__interface_1_1MoveItErrorCode.html">MoveItErrorCode</a> execute(<span class="keyword">const</span> moveit_msgs::msg::RobotTrajectory&amp; trajectory);</div>
-<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160; </div>
-<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;  <span class="keywordtype">double</span> computeCartesianPath(<span class="keyword">const</span> std::vector&lt;geometry_msgs::msg::Pose&gt;&amp; <a class="code" href="namespaceplan__with__constraints.html#ae2821c574c31d6fcba2690cae34021db">waypoints</a>, <span class="keywordtype">double</span> eef_step,</div>
-<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;                              <span class="keywordtype">double</span> jump_threshold, moveit_msgs::msg::RobotTrajectory&amp; trajectory,</div>
-<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;                              <span class="keywordtype">bool</span> avoid_collisions = <span class="keyword">true</span>, moveit_msgs::msg::MoveItErrorCodes* error_code = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160; </div>
-<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;  <span class="keywordtype">double</span> computeCartesianPath(<span class="keyword">const</span> std::vector&lt;geometry_msgs::msg::Pose&gt;&amp; <a class="code" href="namespaceplan__with__constraints.html#ae2821c574c31d6fcba2690cae34021db">waypoints</a>, <span class="keywordtype">double</span> eef_step,</div>
-<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;                              <span class="keywordtype">double</span> jump_threshold, moveit_msgs::msg::RobotTrajectory&amp; trajectory,</div>
-<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;                              <span class="keyword">const</span> moveit_msgs::msg::Constraints&amp; <a class="code" href="namespaceplan__with__constraints.html#a468577c43411d9decf8c5286be665d94">path_constraints</a>, <span class="keywordtype">bool</span> avoid_collisions = <span class="keyword">true</span>,</div>
-<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;                              moveit_msgs::msg::MoveItErrorCodes* error_code = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160; </div>
-<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;  <span class="keywordtype">void</span> stop();</div>
-<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160; </div>
-<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;  <span class="keywordtype">void</span> allowReplanning(<span class="keywordtype">bool</span> flag);</div>
-<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160; </div>
-<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;  <span class="keywordtype">void</span> setReplanAttempts(int32_t attempts);</div>
+<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;  <a class="code" href="classmoveit_1_1planning__interface_1_1MoveItErrorCode.html">MoveItErrorCode</a> asyncExecute(<span class="keyword">const</span> <a class="code" href="structmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1Plan.html">Plan</a>&amp; <a class="code" href="namespaceplan.html">plan</a>);</div>
+<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160; </div>
+<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;  <a class="code" href="classmoveit_1_1planning__interface_1_1MoveItErrorCode.html">MoveItErrorCode</a> asyncExecute(<span class="keyword">const</span> moveit_msgs::msg::RobotTrajectory&amp; trajectory);</div>
+<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160; </div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;  <a class="code" href="classmoveit_1_1planning__interface_1_1MoveItErrorCode.html">MoveItErrorCode</a> execute(<span class="keyword">const</span> <a class="code" href="structmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1Plan.html">Plan</a>&amp; <a class="code" href="namespaceplan.html">plan</a>);</div>
+<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160; </div>
+<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;  <a class="code" href="classmoveit_1_1planning__interface_1_1MoveItErrorCode.html">MoveItErrorCode</a> execute(<span class="keyword">const</span> moveit_msgs::msg::RobotTrajectory&amp; trajectory);</div>
+<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160; </div>
+<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;  <span class="keywordtype">double</span> computeCartesianPath(<span class="keyword">const</span> std::vector&lt;geometry_msgs::msg::Pose&gt;&amp; <a class="code" href="namespaceplan__with__constraints.html#ae2821c574c31d6fcba2690cae34021db">waypoints</a>, <span class="keywordtype">double</span> eef_step,</div>
+<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;                              <span class="keywordtype">double</span> jump_threshold, moveit_msgs::msg::RobotTrajectory&amp; trajectory,</div>
+<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;                              <span class="keywordtype">bool</span> avoid_collisions = <span class="keyword">true</span>, moveit_msgs::msg::MoveItErrorCodes* error_code = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160; </div>
+<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;  <span class="keywordtype">double</span> computeCartesianPath(<span class="keyword">const</span> std::vector&lt;geometry_msgs::msg::Pose&gt;&amp; <a class="code" href="namespaceplan__with__constraints.html#ae2821c574c31d6fcba2690cae34021db">waypoints</a>, <span class="keywordtype">double</span> eef_step,</div>
+<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;                              <span class="keywordtype">double</span> jump_threshold, moveit_msgs::msg::RobotTrajectory&amp; trajectory,</div>
+<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;                              <span class="keyword">const</span> moveit_msgs::msg::Constraints&amp; <a class="code" href="namespaceplan__with__constraints.html#a468577c43411d9decf8c5286be665d94">path_constraints</a>, <span class="keywordtype">bool</span> avoid_collisions = <span class="keyword">true</span>,</div>
+<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;                              moveit_msgs::msg::MoveItErrorCodes* error_code = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160; </div>
+<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;  <span class="keywordtype">void</span> stop();</div>
+<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160; </div>
+<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;  <span class="keywordtype">void</span> allowLooking(<span class="keywordtype">bool</span> flag);</div>
+<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160; </div>
+<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;  <span class="keywordtype">void</span> allowReplanning(<span class="keywordtype">bool</span> flag);</div>
+<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160; </div>
+<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;  <span class="keywordtype">void</span> constructMotionPlanRequest(<a class="code" href="namespaceplanning__interface.html#a1307e10a0a3b9ca03406d777b9a938a3">moveit_msgs::msg::MotionPlanRequest</a>&amp; request);</div>
 <div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160; </div>
-<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;  <span class="keywordtype">void</span> setReplanDelay(<span class="keywordtype">double</span> delay);</div>
-<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160; </div>
-<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;  <span class="keywordtype">void</span> allowLooking(<span class="keywordtype">bool</span> flag);</div>
-<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160; </div>
-<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;  <span class="keywordtype">void</span> setLookAroundAttempts(int32_t attempts);</div>
-<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160; </div>
-<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;  <span class="keywordtype">void</span> constructMotionPlanRequest(<a class="code" href="namespaceplanning__interface.html#a1307e10a0a3b9ca03406d777b9a938a3">moveit_msgs::msg::MotionPlanRequest</a>&amp; request);</div>
-<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160; </div>
-<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;  <span class="comment">//  moveit_msgs::action::Pickup::Goal constructPickupGoal(const std::string&amp; object,</span></div>
-<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;  <span class="comment">//                                                      std::vector&lt;moveit_msgs::msg::Grasp&gt; grasps,</span></div>
-<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;  <span class="comment">//                                                      bool plan_only) const;</span></div>
-<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;  <span class="comment">//</span></div>
-<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;  <span class="comment">//  /** \brief Build a PlaceGoal for an object named \e object and store it in \e goal_out */</span></div>
-<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;  <span class="comment">//  moveit_msgs::action::Place::Goal constructPlaceGoal(const std::string&amp; object,</span></div>
-<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;  <span class="comment">//                                                    std::vector&lt;moveit_msgs::msg::PlaceLocation&gt; locations,</span></div>
-<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;  <span class="comment">//                                                    bool plan_only) const;</span></div>
-<div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;  <span class="comment">//</span></div>
-<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;  <span class="comment">//  /** \brief Convert a vector of PoseStamped to a vector of PlaceLocation */</span></div>
-<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;  <span class="comment">//  std::vector&lt;moveit_msgs::msg::PlaceLocation&gt;</span></div>
-<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;  <span class="comment">//  posesToPlaceLocations(const std::vector&lt;geometry_msgs::msg::PoseStamped&gt;&amp; poses) const;</span></div>
-<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160; </div>
-<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;  <span class="comment">//  MoveItErrorCode pick(const std::string&amp; object, bool plan_only = false)</span></div>
-<div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160;  <span class="comment">//  {</span></div>
-<div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;  <span class="comment">//    return pick(constructPickupGoal(object, std::vector&lt;moveit_msgs::msg::Grasp&gt;(), plan_only));</span></div>
-<div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;  <span class="comment">//  }</span></div>
-<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;  <span class="comment">//</span></div>
-<div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;<span class="comment"></span>  <span class="comment">//  MoveItErrorCode pick(const std::string&amp; object, const moveit_msgs::msg::Grasp&amp; grasp, bool plan_only = false)</span></div>
-<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;  <span class="comment">//  {</span></div>
-<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;  <span class="comment">//    return pick(constructPickupGoal(object, { grasp }, plan_only));</span></div>
-<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;  <span class="comment">//  }</span></div>
-<div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160;  <span class="comment">//</span></div>
-<div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160;<span class="comment"></span>  <span class="comment">//  MoveItErrorCode pick(const std::string&amp; object, std::vector&lt;moveit_msgs::msg::Grasp&gt; grasps, bool plan_only =</span></div>
-<div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160;  <span class="comment">//  false)</span></div>
-<div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;  <span class="comment">//  {</span></div>
-<div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160;  <span class="comment">//    return pick(constructPickupGoal(object, std::move(grasps), plan_only));</span></div>
-<div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160;  <span class="comment">//  }</span></div>
-<div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160; </div>
-<div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;  <span class="comment">// MoveItErrorCode pick(const moveit_msgs::action::Pickup::Goal&amp; goal);</span></div>
-<div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160; </div>
-<div class="line"><a name="l00866"></a><span class="lineno">  866</span>&#160;  <span class="comment">// MoveItErrorCode planGraspsAndPick(const std::string&amp; object = &quot;&quot;, bool plan_only = false);</span></div>
-<div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160; </div>
-<div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;  <span class="comment">// MoveItErrorCode planGraspsAndPick(const moveit_msgs::msg::CollisionObject&amp; object, bool plan_only = false);</span></div>
-<div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160; </div>
-<div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160;  <span class="comment">//  MoveItErrorCode place(const std::string&amp; object, bool plan_only = false)</span></div>
+<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;  <span class="comment">//  moveit_msgs::action::Pickup::Goal constructPickupGoal(const std::string&amp; object,</span></div>
+<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;  <span class="comment">//                                                      std::vector&lt;moveit_msgs::msg::Grasp&gt; grasps,</span></div>
+<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;  <span class="comment">//                                                      bool plan_only) const;</span></div>
+<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;  <span class="comment">//</span></div>
+<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;  <span class="comment">//  /** \brief Build a PlaceGoal for an object named \e object and store it in \e goal_out */</span></div>
+<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;  <span class="comment">//  moveit_msgs::action::Place::Goal constructPlaceGoal(const std::string&amp; object,</span></div>
+<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;  <span class="comment">//                                                    std::vector&lt;moveit_msgs::msg::PlaceLocation&gt; locations,</span></div>
+<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;  <span class="comment">//                                                    bool plan_only) const;</span></div>
+<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;  <span class="comment">//</span></div>
+<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;  <span class="comment">//  /** \brief Convert a vector of PoseStamped to a vector of PlaceLocation */</span></div>
+<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;  <span class="comment">//  std::vector&lt;moveit_msgs::msg::PlaceLocation&gt;</span></div>
+<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;  <span class="comment">//  posesToPlaceLocations(const std::vector&lt;geometry_msgs::msg::PoseStamped&gt;&amp; poses) const;</span></div>
+<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160; </div>
+<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;  <span class="comment">//  MoveItErrorCode pick(const std::string&amp; object, bool plan_only = false)</span></div>
+<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;  <span class="comment">//  {</span></div>
+<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;  <span class="comment">//    return pick(constructPickupGoal(object, std::vector&lt;moveit_msgs::msg::Grasp&gt;(), plan_only));</span></div>
+<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;  <span class="comment">//  }</span></div>
+<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;  <span class="comment">//</span></div>
+<div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;<span class="comment"></span>  <span class="comment">//  MoveItErrorCode pick(const std::string&amp; object, const moveit_msgs::msg::Grasp&amp; grasp, bool plan_only = false)</span></div>
+<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;  <span class="comment">//  {</span></div>
+<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;  <span class="comment">//    return pick(constructPickupGoal(object, { grasp }, plan_only));</span></div>
+<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;  <span class="comment">//  }</span></div>
+<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;  <span class="comment">//</span></div>
+<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;<span class="comment"></span>  <span class="comment">//  MoveItErrorCode pick(const std::string&amp; object, std::vector&lt;moveit_msgs::msg::Grasp&gt; grasps, bool plan_only =</span></div>
+<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;  <span class="comment">//  false)</span></div>
+<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;  <span class="comment">//  {</span></div>
+<div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160;  <span class="comment">//    return pick(constructPickupGoal(object, std::move(grasps), plan_only));</span></div>
+<div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;  <span class="comment">//  }</span></div>
+<div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160; </div>
+<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;  <span class="comment">// MoveItErrorCode pick(const moveit_msgs::action::Pickup::Goal&amp; goal);</span></div>
+<div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160; </div>
+<div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;  <span class="comment">// MoveItErrorCode planGraspsAndPick(const std::string&amp; object = &quot;&quot;, bool plan_only = false);</span></div>
+<div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160; </div>
+<div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;  <span class="comment">// MoveItErrorCode planGraspsAndPick(const moveit_msgs::msg::CollisionObject&amp; object, bool plan_only = false);</span></div>
+<div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160; </div>
+<div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;  <span class="comment">//  MoveItErrorCode place(const std::string&amp; object, bool plan_only = false)</span></div>
+<div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160;  <span class="comment">//  {</span></div>
+<div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;  <span class="comment">//    return place(constructPlaceGoal(object, std::vector&lt;moveit_msgs::msg::PlaceLocation&gt;(), plan_only));</span></div>
+<div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;  <span class="comment">//  }</span></div>
+<div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160; </div>
+<div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160;  <span class="comment">//  MoveItErrorCode place(const std::string&amp; object, std::vector&lt;moveit_msgs::msg::PlaceLocation&gt; locations,</span></div>
+<div class="line"><a name="l00866"></a><span class="lineno">  866</span>&#160;  <span class="comment">//                        bool plan_only = false)</span></div>
+<div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160;  <span class="comment">//  {</span></div>
+<div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160;  <span class="comment">//    return place(constructPlaceGoal(object, std::move(locations), plan_only));</span></div>
+<div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160;  <span class="comment">//  }</span></div>
+<div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160; </div>
+<div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160;  <span class="comment">//  MoveItErrorCode place(const std::string&amp; object, const std::vector&lt;geometry_msgs::msg::PoseStamped&gt;&amp; poses,</span></div>
+<div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160;  <span class="comment">//                        bool plan_only = false)</span></div>
 <div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160;  <span class="comment">//  {</span></div>
-<div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;  <span class="comment">//    return place(constructPlaceGoal(object, std::vector&lt;moveit_msgs::msg::PlaceLocation&gt;(), plan_only));</span></div>
+<div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;  <span class="comment">//    return place(constructPlaceGoal(object, posesToPlaceLocations(poses), plan_only));</span></div>
 <div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;  <span class="comment">//  }</span></div>
 <div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160; </div>
-<div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;  <span class="comment">//  MoveItErrorCode place(const std::string&amp; object, std::vector&lt;moveit_msgs::msg::PlaceLocation&gt; locations,</span></div>
-<div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;  <span class="comment">//                        bool plan_only = false)</span></div>
+<div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;  <span class="comment">//  MoveItErrorCode place(const std::string&amp; object, const geometry_msgs::msg::PoseStamped&amp; pose, bool plan_only =</span></div>
+<div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;  <span class="comment">//  false)</span></div>
 <div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;  <span class="comment">//  {</span></div>
-<div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;  <span class="comment">//    return place(constructPlaceGoal(object, std::move(locations), plan_only));</span></div>
+<div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;  <span class="comment">//    return place(constructPlaceGoal(object, posesToPlaceLocations({ pose }), plan_only));</span></div>
 <div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160;  <span class="comment">//  }</span></div>
 <div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160; </div>
-<div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160;  <span class="comment">//  MoveItErrorCode place(const std::string&amp; object, const std::vector&lt;geometry_msgs::msg::PoseStamped&gt;&amp; poses,</span></div>
-<div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160;  <span class="comment">//                        bool plan_only = false)</span></div>
-<div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160;  <span class="comment">//  {</span></div>
-<div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160;  <span class="comment">//    return place(constructPlaceGoal(object, posesToPlaceLocations(poses), plan_only));</span></div>
-<div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160;  <span class="comment">//  }</span></div>
+<div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160;  <span class="comment">// MoveItErrorCode place(const moveit_msgs::action::Place::Goal&amp; goal);</span></div>
 <div class="line"><a name="l00891"></a><span class="lineno">  891</span>&#160; </div>
-<div class="line"><a name="l00893"></a><span class="lineno">  893</span>&#160;  <span class="comment">//  MoveItErrorCode place(const std::string&amp; object, const geometry_msgs::msg::PoseStamped&amp; pose, bool plan_only =</span></div>
-<div class="line"><a name="l00894"></a><span class="lineno">  894</span>&#160;  <span class="comment">//  false)</span></div>
-<div class="line"><a name="l00895"></a><span class="lineno">  895</span>&#160;  <span class="comment">//  {</span></div>
-<div class="line"><a name="l00896"></a><span class="lineno">  896</span>&#160;  <span class="comment">//    return place(constructPlaceGoal(object, posesToPlaceLocations({ pose }), plan_only));</span></div>
-<div class="line"><a name="l00897"></a><span class="lineno">  897</span>&#160;  <span class="comment">//  }</span></div>
-<div class="line"><a name="l00898"></a><span class="lineno">  898</span>&#160; </div>
-<div class="line"><a name="l00904"></a><span class="lineno">  904</span>&#160;  <span class="comment">// MoveItErrorCode place(const moveit_msgs::action::Place::Goal&amp; goal);</span></div>
-<div class="line"><a name="l00905"></a><span class="lineno">  905</span>&#160; </div>
-<div class="line"><a name="l00912"></a><span class="lineno">  912</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="demo_8cpp.html#a8b9f9160f8aeec05201f4196da34157c">attachObject</a>(<span class="keyword">const</span> std::string&amp; <span class="keywordtype">object</span>, <span class="keyword">const</span> std::string&amp; link = <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l00913"></a><span class="lineno">  913</span>&#160; </div>
-<div class="line"><a name="l00922"></a><span class="lineno">  922</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="demo_8cpp.html#a8b9f9160f8aeec05201f4196da34157c">attachObject</a>(<span class="keyword">const</span> std::string&amp; <span class="keywordtype">object</span>, <span class="keyword">const</span> std::string&amp; link, <span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; touch_links);</div>
-<div class="line"><a name="l00923"></a><span class="lineno">  923</span>&#160; </div>
-<div class="line"><a name="l00929"></a><span class="lineno">  929</span>&#160;  <span class="keywordtype">bool</span> detachObject(<span class="keyword">const</span> std::string&amp; name = <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00898"></a><span class="lineno">  898</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="demo_8cpp.html#a8b9f9160f8aeec05201f4196da34157c">attachObject</a>(<span class="keyword">const</span> std::string&amp; <span class="keywordtype">object</span>, <span class="keyword">const</span> std::string&amp; link = <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00899"></a><span class="lineno">  899</span>&#160; </div>
+<div class="line"><a name="l00908"></a><span class="lineno">  908</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="demo_8cpp.html#a8b9f9160f8aeec05201f4196da34157c">attachObject</a>(<span class="keyword">const</span> std::string&amp; <span class="keywordtype">object</span>, <span class="keyword">const</span> std::string&amp; link, <span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; touch_links);</div>
+<div class="line"><a name="l00909"></a><span class="lineno">  909</span>&#160; </div>
+<div class="line"><a name="l00915"></a><span class="lineno">  915</span>&#160;  <span class="keywordtype">bool</span> detachObject(<span class="keyword">const</span> std::string&amp; name = <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00916"></a><span class="lineno">  916</span>&#160; </div>
+<div class="line"><a name="l00929"></a><span class="lineno">  929</span>&#160;  <span class="keywordtype">bool</span> startStateMonitor(<span class="keywordtype">double</span> wait = 1.0);</div>
 <div class="line"><a name="l00930"></a><span class="lineno">  930</span>&#160; </div>
-<div class="line"><a name="l00943"></a><span class="lineno">  943</span>&#160;  <span class="keywordtype">bool</span> startStateMonitor(<span class="keywordtype">double</span> wait = 1.0);</div>
-<div class="line"><a name="l00944"></a><span class="lineno">  944</span>&#160; </div>
-<div class="line"><a name="l00946"></a><span class="lineno">  946</span>&#160;  std::vector&lt;double&gt; getCurrentJointValues() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00947"></a><span class="lineno">  947</span>&#160; </div>
-<div class="line"><a name="l00949"></a><span class="lineno">  949</span>&#160;  moveit::core::RobotStatePtr getCurrentState(<span class="keywordtype">double</span> wait = 1) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00950"></a><span class="lineno">  950</span>&#160; </div>
-<div class="line"><a name="l00954"></a><span class="lineno">  954</span>&#160;  geometry_msgs::msg::PoseStamped getCurrentPose(<span class="keyword">const</span> std::string&amp; end_effector_link = <span class="stringliteral">&quot;&quot;</span>) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00955"></a><span class="lineno">  955</span>&#160; </div>
-<div class="line"><a name="l00959"></a><span class="lineno">  959</span>&#160;  std::vector&lt;double&gt; getCurrentRPY(<span class="keyword">const</span> std::string&amp; end_effector_link = <span class="stringliteral">&quot;&quot;</span>) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00960"></a><span class="lineno">  960</span>&#160; </div>
-<div class="line"><a name="l00962"></a><span class="lineno">  962</span>&#160;  std::vector&lt;double&gt; getRandomJointValues() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00963"></a><span class="lineno">  963</span>&#160; </div>
-<div class="line"><a name="l00967"></a><span class="lineno">  967</span>&#160;  geometry_msgs::msg::PoseStamped getRandomPose(<span class="keyword">const</span> std::string&amp; end_effector_link = <span class="stringliteral">&quot;&quot;</span>) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00968"></a><span class="lineno">  968</span>&#160; </div>
-<div class="line"><a name="l00980"></a><span class="lineno">  980</span>&#160;  <span class="keywordtype">void</span> rememberJointValues(<span class="keyword">const</span> std::string&amp; name);</div>
-<div class="line"><a name="l00981"></a><span class="lineno">  981</span>&#160; </div>
-<div class="line"><a name="l00986"></a><span class="lineno">  986</span>&#160;  <span class="keywordtype">void</span> rememberJointValues(<span class="keyword">const</span> std::string&amp; name, <span class="keyword">const</span> std::vector&lt;double&gt;&amp; values);</div>
-<div class="line"><a name="l00987"></a><span class="lineno">  987</span>&#160; </div>
-<div class="line"><a name="l00989"></a><span class="lineno">  989</span>&#160;  <span class="keyword">const</span> std::map&lt;std::string, std::vector&lt;double&gt; &gt;&amp; getRememberedJointValues()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00990"></a><span class="lineno">  990</span>&#160;<span class="keyword">  </span>{</div>
-<div class="line"><a name="l00991"></a><span class="lineno">  991</span>&#160;    <span class="keywordflow">return</span> remembered_joint_values_;</div>
-<div class="line"><a name="l00992"></a><span class="lineno">  992</span>&#160;  }</div>
-<div class="line"><a name="l00993"></a><span class="lineno">  993</span>&#160; </div>
-<div class="line"><a name="l00995"></a><span class="lineno">  995</span>&#160;  <span class="keywordtype">void</span> forgetJointValues(<span class="keyword">const</span> std::string&amp; name);</div>
-<div class="line"><a name="l00996"></a><span class="lineno">  996</span>&#160; </div>
-<div class="line"><a name="l01005"></a><span class="lineno"> 1005</span>&#160;  <span class="keywordtype">void</span> setConstraintsDatabase(<span class="keyword">const</span> std::string&amp; host, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> port);</div>
-<div class="line"><a name="l01006"></a><span class="lineno"> 1006</span>&#160; </div>
-<div class="line"><a name="l01008"></a><span class="lineno"> 1008</span>&#160;  std::vector&lt;std::string&gt; getKnownConstraints() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l01009"></a><span class="lineno"> 1009</span>&#160; </div>
-<div class="line"><a name="l01013"></a><span class="lineno"> 1013</span>&#160;  moveit_msgs::msg::Constraints getPathConstraints() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00932"></a><span class="lineno">  932</span>&#160;  std::vector&lt;double&gt; getCurrentJointValues() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00933"></a><span class="lineno">  933</span>&#160; </div>
+<div class="line"><a name="l00935"></a><span class="lineno">  935</span>&#160;  moveit::core::RobotStatePtr getCurrentState(<span class="keywordtype">double</span> wait = 1) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00936"></a><span class="lineno">  936</span>&#160; </div>
+<div class="line"><a name="l00940"></a><span class="lineno">  940</span>&#160;  geometry_msgs::msg::PoseStamped getCurrentPose(<span class="keyword">const</span> std::string&amp; end_effector_link = <span class="stringliteral">&quot;&quot;</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00941"></a><span class="lineno">  941</span>&#160; </div>
+<div class="line"><a name="l00945"></a><span class="lineno">  945</span>&#160;  std::vector&lt;double&gt; getCurrentRPY(<span class="keyword">const</span> std::string&amp; end_effector_link = <span class="stringliteral">&quot;&quot;</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00946"></a><span class="lineno">  946</span>&#160; </div>
+<div class="line"><a name="l00948"></a><span class="lineno">  948</span>&#160;  std::vector&lt;double&gt; getRandomJointValues() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00949"></a><span class="lineno">  949</span>&#160; </div>
+<div class="line"><a name="l00953"></a><span class="lineno">  953</span>&#160;  geometry_msgs::msg::PoseStamped getRandomPose(<span class="keyword">const</span> std::string&amp; end_effector_link = <span class="stringliteral">&quot;&quot;</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00954"></a><span class="lineno">  954</span>&#160; </div>
+<div class="line"><a name="l00966"></a><span class="lineno">  966</span>&#160;  <span class="keywordtype">void</span> rememberJointValues(<span class="keyword">const</span> std::string&amp; name);</div>
+<div class="line"><a name="l00967"></a><span class="lineno">  967</span>&#160; </div>
+<div class="line"><a name="l00972"></a><span class="lineno">  972</span>&#160;  <span class="keywordtype">void</span> rememberJointValues(<span class="keyword">const</span> std::string&amp; name, <span class="keyword">const</span> std::vector&lt;double&gt;&amp; values);</div>
+<div class="line"><a name="l00973"></a><span class="lineno">  973</span>&#160; </div>
+<div class="line"><a name="l00975"></a><span class="lineno">  975</span>&#160;  <span class="keyword">const</span> std::map&lt;std::string, std::vector&lt;double&gt; &gt;&amp; getRememberedJointValues()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00976"></a><span class="lineno">  976</span>&#160;<span class="keyword">  </span>{</div>
+<div class="line"><a name="l00977"></a><span class="lineno">  977</span>&#160;    <span class="keywordflow">return</span> remembered_joint_values_;</div>
+<div class="line"><a name="l00978"></a><span class="lineno">  978</span>&#160;  }</div>
+<div class="line"><a name="l00979"></a><span class="lineno">  979</span>&#160; </div>
+<div class="line"><a name="l00981"></a><span class="lineno">  981</span>&#160;  <span class="keywordtype">void</span> forgetJointValues(<span class="keyword">const</span> std::string&amp; name);</div>
+<div class="line"><a name="l00982"></a><span class="lineno">  982</span>&#160; </div>
+<div class="line"><a name="l00991"></a><span class="lineno">  991</span>&#160;  <span class="keywordtype">void</span> setConstraintsDatabase(<span class="keyword">const</span> std::string&amp; host, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> port);</div>
+<div class="line"><a name="l00992"></a><span class="lineno">  992</span>&#160; </div>
+<div class="line"><a name="l00994"></a><span class="lineno">  994</span>&#160;  std::vector&lt;std::string&gt; getKnownConstraints() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00995"></a><span class="lineno">  995</span>&#160; </div>
+<div class="line"><a name="l00999"></a><span class="lineno">  999</span>&#160;  moveit_msgs::msg::Constraints getPathConstraints() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l01000"></a><span class="lineno"> 1000</span>&#160; </div>
+<div class="line"><a name="l01004"></a><span class="lineno"> 1004</span>&#160;  <span class="keywordtype">bool</span> setPathConstraints(<span class="keyword">const</span> std::string&amp; constraint);</div>
+<div class="line"><a name="l01005"></a><span class="lineno"> 1005</span>&#160; </div>
+<div class="line"><a name="l01009"></a><span class="lineno"> 1009</span>&#160;  <span class="keywordtype">void</span> setPathConstraints(<span class="keyword">const</span> moveit_msgs::msg::Constraints&amp; constraint);</div>
+<div class="line"><a name="l01010"></a><span class="lineno"> 1010</span>&#160; </div>
+<div class="line"><a name="l01013"></a><span class="lineno"> 1013</span>&#160;  <span class="keywordtype">void</span> clearPathConstraints();</div>
 <div class="line"><a name="l01014"></a><span class="lineno"> 1014</span>&#160; </div>
-<div class="line"><a name="l01018"></a><span class="lineno"> 1018</span>&#160;  <span class="keywordtype">bool</span> setPathConstraints(<span class="keyword">const</span> std::string&amp; constraint);</div>
-<div class="line"><a name="l01019"></a><span class="lineno"> 1019</span>&#160; </div>
-<div class="line"><a name="l01023"></a><span class="lineno"> 1023</span>&#160;  <span class="keywordtype">void</span> setPathConstraints(<span class="keyword">const</span> moveit_msgs::msg::Constraints&amp; constraint);</div>
+<div class="line"><a name="l01015"></a><span class="lineno"> 1015</span>&#160;  moveit_msgs::msg::TrajectoryConstraints getTrajectoryConstraints() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l01016"></a><span class="lineno"> 1016</span>&#160;  <span class="keywordtype">void</span> setTrajectoryConstraints(<span class="keyword">const</span> moveit_msgs::msg::TrajectoryConstraints&amp; constraint);</div>
+<div class="line"><a name="l01017"></a><span class="lineno"> 1017</span>&#160;  <span class="keywordtype">void</span> clearTrajectoryConstraints();</div>
+<div class="line"><a name="l01018"></a><span class="lineno"> 1018</span>&#160; </div>
+<div class="line"><a name="l01021"></a><span class="lineno"> 1021</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l01023"></a><span class="lineno"> 1023</span>&#160;  <span class="keyword">const</span> <a class="code" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a>&amp; getTargetRobotState() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l01024"></a><span class="lineno"> 1024</span>&#160; </div>
-<div class="line"><a name="l01027"></a><span class="lineno"> 1027</span>&#160;  <span class="keywordtype">void</span> clearPathConstraints();</div>
-<div class="line"><a name="l01028"></a><span class="lineno"> 1028</span>&#160; </div>
-<div class="line"><a name="l01029"></a><span class="lineno"> 1029</span>&#160;  moveit_msgs::msg::TrajectoryConstraints getTrajectoryConstraints() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l01030"></a><span class="lineno"> 1030</span>&#160;  <span class="keywordtype">void</span> setTrajectoryConstraints(<span class="keyword">const</span> moveit_msgs::msg::TrajectoryConstraints&amp; constraint);</div>
-<div class="line"><a name="l01031"></a><span class="lineno"> 1031</span>&#160;  <span class="keywordtype">void</span> clearTrajectoryConstraints();</div>
-<div class="line"><a name="l01032"></a><span class="lineno"> 1032</span>&#160; </div>
-<div class="line"><a name="l01035"></a><span class="lineno"> 1035</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l01037"></a><span class="lineno"> 1037</span>&#160;  <span class="keyword">const</span> <a class="code" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a>&amp; getTargetRobotState() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l01038"></a><span class="lineno"> 1038</span>&#160; </div>
-<div class="line"><a name="l01039"></a><span class="lineno"> 1039</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l01040"></a><span class="lineno"> 1040</span>&#160;  std::map&lt;std::string, std::vector&lt;double&gt; &gt; remembered_joint_values_;</div>
-<div class="line"><a name="l01041"></a><span class="lineno"> 1041</span>&#160;  <span class="keyword">class </span><a class="code" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl.html">MoveGroupInterfaceImpl</a>;</div>
-<div class="line"><a name="l01042"></a><span class="lineno"> 1042</span>&#160;  <a class="code" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl.html">MoveGroupInterfaceImpl</a>* impl_;</div>
-<div class="line"><a name="l01043"></a><span class="lineno"> 1043</span>&#160;};</div>
-<div class="line"><a name="l01044"></a><span class="lineno"> 1044</span>&#160;}  <span class="comment">// namespace planning_interface</span></div>
-<div class="line"><a name="l01045"></a><span class="lineno"> 1045</span>&#160;}  <span class="comment">// namespace moveit</span></div>
+<div class="line"><a name="l01025"></a><span class="lineno"> 1025</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l01026"></a><span class="lineno"> 1026</span>&#160;  std::map&lt;std::string, std::vector&lt;double&gt; &gt; remembered_joint_values_;</div>
+<div class="line"><a name="l01027"></a><span class="lineno"> 1027</span>&#160;  <span class="keyword">class </span><a class="code" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl.html">MoveGroupInterfaceImpl</a>;</div>
+<div class="line"><a name="l01028"></a><span class="lineno"> 1028</span>&#160;  <a class="code" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl.html">MoveGroupInterfaceImpl</a>* impl_;</div>
+<div class="line"><a name="l01029"></a><span class="lineno"> 1029</span>&#160;};</div>
+<div class="line"><a name="l01030"></a><span class="lineno"> 1030</span>&#160;}  <span class="comment">// namespace planning_interface</span></div>
+<div class="line"><a name="l01031"></a><span class="lineno"> 1031</span>&#160;}  <span class="comment">// namespace moveit</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_html"><div class="ttname"><a href="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl.html">moveit::planning_interface::MoveGroupInterface::MoveGroupInterfaceImpl</a></div><div class="ttdef"><b>Definition:</b> <a href="move__group__interface_8cpp_source.html#l00169">move_group_interface.cpp:169</a></div></div>
-<div class="ttc" id="astructmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1Plan_html"><div class="ttname"><a href="structmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1Plan.html">moveit::planning_interface::MoveGroupInterface::Plan</a></div><div class="ttdoc">The representation of a motion plan (as ROS messasges)</div><div class="ttdef"><b>Definition:</b> <a href="move__group__interface_8h_source.html#l00204">move_group_interface.h:204</a></div></div>
+<div class="ttc" id="aclassmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_html"><div class="ttname"><a href="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl.html">moveit::planning_interface::MoveGroupInterface::MoveGroupInterfaceImpl</a></div><div class="ttdef"><b>Definition:</b> <a href="move__group__interface_8cpp_source.html#l00160">move_group_interface.cpp:160</a></div></div>
+<div class="ttc" id="astructmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1Plan_html"><div class="ttname"><a href="structmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1Plan.html">moveit::planning_interface::MoveGroupInterface::Plan</a></div><div class="ttdoc">The representation of a motion plan (as ROS messasges)</div><div class="ttdef"><b>Definition:</b> <a href="move__group__interface_8h_source.html#l00199">move_group_interface.h:199</a></div></div>
 <div class="ttc" id="aclassmoveit_1_1planning__interface_1_1MoveGroupInterface_html"><div class="ttname"><a href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html">moveit::planning_interface::MoveGroupInterface</a></div><div class="ttdoc">Client class to conveniently use the ROS interfaces provided by the move_group node.</div><div class="ttdef"><b>Definition:</b> <a href="move__group__interface_8h_source.html#l00172">move_group_interface.h:172</a></div></div>
 <div class="ttc" id="ademo_8cpp_html_a8b9f9160f8aeec05201f4196da34157c"><div class="ttname"><a href="demo_8cpp.html#a8b9f9160f8aeec05201f4196da34157c">attachObject</a></div><div class="ttdeci">void attachObject()</div><div class="ttdef"><b>Definition:</b> <a href="demo_8cpp_source.html#l00104">demo.cpp:104</a></div></div>
 <div class="ttc" id="anamespacepick_html_a99d8b65794c6c99611647f100666d253"><div class="ttname"><a href="namespacepick.html#a99d8b65794c6c99611647f100666d253">pick.y</a></div><div class="ttdeci">y</div><div class="ttdef"><b>Definition:</b> <a href="pick_8py_source.html#l00065">pick.py:65</a></div></div>
@@ -548,7 +538,7 @@ $(function() {
 <div class="ttc" id="aclassmoveit_1_1planning__interface_1_1MoveItErrorCode_html"><div class="ttname"><a href="classmoveit_1_1planning__interface_1_1MoveItErrorCode.html">moveit::planning_interface::MoveItErrorCode</a></div><div class="ttdef"><b>Definition:</b> <a href="move__group__interface_8h_source.html#l00136">move_group_interface.h:136</a></div></div>
 <div class="ttc" id="anamespacepick_html_a9173b397dbd476ca3db55ee54f86d707"><div class="ttname"><a href="namespacepick.html#a9173b397dbd476ca3db55ee54f86d707">pick.x</a></div><div class="ttdeci">x</div><div class="ttdef"><b>Definition:</b> <a href="pick_8py_source.html#l00064">pick.py:64</a></div></div>
 <div class="ttc" id="anamespaceplanning__interface_html_a1307e10a0a3b9ca03406d777b9a938a3"><div class="ttname"><a href="namespaceplanning__interface.html#a1307e10a0a3b9ca03406d777b9a938a3">planning_interface::MotionPlanRequest</a></div><div class="ttdeci">moveit_msgs::msg::MotionPlanRequest MotionPlanRequest</div><div class="ttdef"><b>Definition:</b> <a href="planning__request_8h_source.html#l00077">planning_request.h:77</a></div></div>
-<div class="ttc" id="anamespacemoveit_html"><div class="ttname"><a href="namespacemoveit.html">moveit</a></div><div class="ttdoc">Main namespace for MoveIt.</div><div class="ttdef"><b>Definition:</b> <a href="exceptions_8h_source.html#l00042">exceptions.h:42</a></div></div>
+<div class="ttc" id="anamespacemoveit_html"><div class="ttname"><a href="namespacemoveit.html">moveit</a></div><div class="ttdoc">Main namespace for MoveIt.</div><div class="ttdef"><b>Definition:</b> <a href="background__processing_8h_source.html#l00046">background_processing.h:46</a></div></div>
 <div class="ttc" id="anamespaceplanning__interface_html"><div class="ttname"><a href="namespaceplanning__interface.html">planning_interface</a></div><div class="ttdoc">This namespace includes the base class for MoveIt planners.</div><div class="ttdef"><b>Definition:</b> <a href="planning__interface_8h_source.html#l00052">planning_interface.h:52</a></div></div>
 <div class="ttc" id="aclass__forward_8h_html_a3f9a2bc56130dc3b0de48919c6697038"><div class="ttname"><a href="class__forward_8h.html#a3f9a2bc56130dc3b0de48919c6697038">MOVEIT_STRUCT_FORWARD</a></div><div class="ttdeci">#define MOVEIT_STRUCT_FORWARD(C)</div><div class="ttdef"><b>Definition:</b> <a href="class__forward_8h_source.html#l00055">class_forward.h:55</a></div></div>
 <div class="ttc" id="aclassmoveit_1_1planning__interface_1_1MoveItErrorCode_html_a59af4daafde4dc6cc4a277c9fd2f6d3b"><div class="ttname"><a href="classmoveit_1_1planning__interface_1_1MoveItErrorCode.html#a59af4daafde4dc6cc4a277c9fd2f6d3b">moveit::planning_interface::MoveItErrorCode::operator==</a></div><div class="ttdeci">bool operator==(const int c) const</div><div class="ttdef"><b>Definition:</b> <a href="move__group__interface_8h_source.html#l00188">move_group_interface.h:188</a></div></div>

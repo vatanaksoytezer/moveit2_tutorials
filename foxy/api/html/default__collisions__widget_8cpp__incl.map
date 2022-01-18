@@ -21,22 +21,32 @@
 <area shape="rect" id="node20" title=" " alt="" coords="2083,117,2182,143"/>
 <area shape="rect" id="node21" title=" " alt="" coords="2207,117,2317,143"/>
 <area shape="rect" id="node22" href="$default__collisions__widget_8h.html" title=" " alt="" coords="2342,109,2478,151"/>
-<area shape="rect" id="node29" href="$header__widget_8h.html" title=" " alt="" coords="2502,117,2633,143"/>
-<area shape="rect" id="node31" href="$collision__matrix__model_8h.html" title=" " alt="" coords="2668,199,2800,240"/>
-<area shape="rect" id="node34" href="$collision__linear__model_8h.html" title=" " alt="" coords="2775,109,2901,151"/>
-<area shape="rect" id="node38" href="$rotated__header__view_8h.html" title=" " alt="" coords="2925,109,3095,151"/>
-<area shape="rect" id="node40" title=" " alt="" coords="3119,117,3227,143"/>
-<area shape="rect" id="node23" title=" " alt="" coords="1597,206,1674,233"/>
-<area shape="rect" id="node24" title=" " alt="" coords="1698,206,1877,233"/>
-<area shape="rect" id="node25" title=" " alt="" coords="1901,199,2073,240"/>
-<area shape="rect" id="node26" title=" " alt="" coords="2098,199,2301,240"/>
-<area shape="rect" id="node27" href="$setup__screen__widget_8h.html" title=" " alt="" coords="2325,206,2495,233"/>
-<area shape="rect" id="node28" title=" " alt="" coords="2417,303,2496,329"/>
-<area shape="rect" id="node30" title=" " alt="" coords="2571,206,2644,233"/>
-<area shape="rect" id="node32" title=" " alt="" coords="2566,303,2726,329"/>
-<area shape="rect" id="node33" title=" " alt="" coords="2751,288,2925,344"/>
-<area shape="rect" id="node35" title=" " alt="" coords="2875,206,3038,233"/>
-<area shape="rect" id="node36" title=" " alt="" coords="3062,206,3230,233"/>
-<area shape="rect" id="node37" title=" " alt="" coords="3255,206,3328,233"/>
-<area shape="rect" id="node39" title=" " alt="" coords="3352,206,3463,233"/>
+<area shape="rect" id="node40" href="$header__widget_8h.html" title=" " alt="" coords="2502,117,2633,143"/>
+<area shape="rect" id="node42" href="$collision__matrix__model_8h.html" title=" " alt="" coords="3197,199,3329,240"/>
+<area shape="rect" id="node44" href="$collision__linear__model_8h.html" title=" " alt="" coords="2835,109,2961,151"/>
+<area shape="rect" id="node48" href="$rotated__header__view_8h.html" title=" " alt="" coords="3037,109,3207,151"/>
+<area shape="rect" id="node50" title=" " alt="" coords="3231,117,3339,143"/>
+<area shape="rect" id="node23" title=" " alt="" coords="2223,206,2301,233"/>
+<area shape="rect" id="node24" title=" " alt="" coords="1597,206,1775,233"/>
+<area shape="rect" id="node25" title=" " alt="" coords="2027,199,2199,240"/>
+<area shape="rect" id="node26" href="$moveit__config__data_8h.html" title=" " alt="" coords="1799,199,2002,240"/>
+<area shape="rect" id="node38" href="$setup__screen__widget_8h.html" title=" " alt="" coords="2325,206,2495,233"/>
+<area shape="rect" id="node27" href="$class__forward_8h.html" title=" " alt="" coords="2021,571,2178,612"/>
+<area shape="rect" id="node29" href="$planning__scene_8h.html" title=" " alt="" coords="2006,295,2179,337"/>
+<area shape="rect" id="node32" href="$compute__default__collisions_8h.html" title=" " alt="" coords="2741,288,2916,344"/>
+<area shape="rect" id="node34" title=" " alt="" coords="2204,303,2336,329"/>
+<area shape="rect" id="node35" title=" " alt="" coords="1556,303,1661,329"/>
+<area shape="rect" id="node36" title=" " alt="" coords="1685,303,1847,329"/>
+<area shape="rect" id="node37" title=" " alt="" coords="1871,303,1931,329"/>
+<area shape="rect" id="node28" href="$declare__ptr_8h.html" title=" " alt="" coords="2013,660,2185,701"/>
+<area shape="rect" id="node30" href="$robot__model_8h.html" title=" " alt="" coords="2079,481,2234,523"/>
+<area shape="rect" id="node31" href="$robot__state_8h.html" title=" " alt="" coords="2130,392,2277,433"/>
+<area shape="rect" id="node33" title=" " alt="" coords="2803,399,2854,426"/>
+<area shape="rect" id="node39" title=" " alt="" coords="2432,303,2511,329"/>
+<area shape="rect" id="node41" title=" " alt="" coords="2571,206,2644,233"/>
+<area shape="rect" id="node43" title=" " alt="" coords="3183,303,3343,329"/>
+<area shape="rect" id="node45" title=" " alt="" coords="3010,206,3173,233"/>
+<area shape="rect" id="node46" title=" " alt="" coords="2669,206,2837,233"/>
+<area shape="rect" id="node47" title=" " alt="" coords="2861,206,2935,233"/>
+<area shape="rect" id="node49" title=" " alt="" coords="3353,206,3464,233"/>
 </map>

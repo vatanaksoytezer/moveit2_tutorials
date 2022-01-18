@@ -78,7 +78,7 @@ $(function() {
 <p>Default implementation of <a class="el" href="classikfast_1_1IkSolutionBase.html">IkSolutionBase</a>.  
  <a href="classikfast_1_1IkSolution.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html">ikfast.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="ikfast_8h_source.html">ikfast.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for ikfast::IkSolution&lt; T &gt;:</div>
 <div class="dyncontent">
@@ -118,37 +118,17 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a138ee9ab2e290a1ae2ee4c7aa23dab41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62c0808de0ffde44a96539dd58a616e4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classikfast_1_1IkSolution.html#a62c0808de0ffde44a96539dd58a616e4">GetSolutionIndices</a> (std::vector&lt; unsigned int &gt; &amp;v) const</td></tr>
 <tr class="separator:a62c0808de0ffde44a96539dd58a616e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b76af506a24ba4b78b1c9d3dc110a72"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classikfast_1_1IkSolution.html#a6b76af506a24ba4b78b1c9d3dc110a72">IkSolution</a> (const std::vector&lt; <a class="el" href="classikfast_1_1IkSingleDOFSolutionBase.html">IkSingleDOFSolutionBase</a>&lt; T &gt; &gt; &amp;vinfos, const std::vector&lt; int &gt; &amp;vfree)</td></tr>
-<tr class="separator:a6b76af506a24ba4b78b1c9d3dc110a72"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8891fda83002a94c74a80ab9784679e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classikfast_1_1IkSolution.html#ae8891fda83002a94c74a80ab9784679e">GetSolution</a> (T *solution, const T *freevalues) const</td></tr>
-<tr class="memdesc:ae8891fda83002a94c74a80ab9784679e"><td class="mdescLeft">&#160;</td><td class="mdescRight">gets a concrete solution  <a href="classikfast_1_1IkSolution.html#ae8891fda83002a94c74a80ab9784679e">More...</a><br /></td></tr>
-<tr class="separator:ae8891fda83002a94c74a80ab9784679e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0258a9b42c720194e13953e631c9b8b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classikfast_1_1IkSolution.html#ab0258a9b42c720194e13953e631c9b8b">GetSolution</a> (std::vector&lt; T &gt; &amp;solution, const std::vector&lt; T &gt; &amp;freevalues) const</td></tr>
-<tr class="memdesc:ab0258a9b42c720194e13953e631c9b8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">std::vector version of <a class="el" href="classikfast_1_1IkSolution.html#ae8891fda83002a94c74a80ab9784679e">GetSolution</a>  <a href="classikfast_1_1IkSolution.html#ab0258a9b42c720194e13953e631c9b8b">More...</a><br /></td></tr>
-<tr class="separator:ab0258a9b42c720194e13953e631c9b8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6565d27370b7fe391efaa64a18e87afc"><td class="memItemLeft" align="right" valign="top">virtual const std::vector&lt; int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classikfast_1_1IkSolution.html#a6565d27370b7fe391efaa64a18e87afc">GetFree</a> () const</td></tr>
-<tr class="memdesc:a6565d27370b7fe391efaa64a18e87afc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the indices of the configuration space that have to be preset before a full solution can be returned.  <a href="classikfast_1_1IkSolution.html#a6565d27370b7fe391efaa64a18e87afc">More...</a><br /></td></tr>
-<tr class="separator:a6565d27370b7fe391efaa64a18e87afc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a38374e5c362498812fdbb86bdd77ee42"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classikfast_1_1IkSolution.html#a38374e5c362498812fdbb86bdd77ee42">GetDOF</a> () const</td></tr>
-<tr class="memdesc:a38374e5c362498812fdbb86bdd77ee42"><td class="mdescLeft">&#160;</td><td class="mdescRight">the dof of the solution  <a href="classikfast_1_1IkSolution.html#a38374e5c362498812fdbb86bdd77ee42">More...</a><br /></td></tr>
-<tr class="separator:a38374e5c362498812fdbb86bdd77ee42"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a138ee9ab2e290a1ae2ee4c7aa23dab41"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classikfast_1_1IkSolution.html#a138ee9ab2e290a1ae2ee4c7aa23dab41">Validate</a> () const</td></tr>
-<tr class="separator:a138ee9ab2e290a1ae2ee4c7aa23dab41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62c0808de0ffde44a96539dd58a616e4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classikfast_1_1IkSolution.html#a62c0808de0ffde44a96539dd58a616e4">GetSolutionIndices</a> (std::vector&lt; unsigned int &gt; &amp;v) const</td></tr>
-<tr class="separator:a62c0808de0ffde44a96539dd58a616e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classikfast_1_1IkSolutionBase"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classikfast_1_1IkSolutionBase')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classikfast_1_1IkSolutionBase.html">ikfast::IkSolutionBase&lt; T &gt;</a></td></tr>
-<tr class="memitem:ae40e464cdbc474388cc7d55560ec44f9 inherit pub_methods_classikfast_1_1IkSolutionBase"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classikfast_1_1IkSolutionBase.html#ae40e464cdbc474388cc7d55560ec44f9">~IkSolutionBase</a> ()</td></tr>
-<tr class="separator:ae40e464cdbc474388cc7d55560ec44f9 inherit pub_methods_classikfast_1_1IkSolutionBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae40e464cdbc474388cc7d55560ec44f9 inherit pub_methods_classikfast_1_1IkSolutionBase"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classikfast_1_1IkSolutionBase.html#ae40e464cdbc474388cc7d55560ec44f9">~IkSolutionBase</a> ()</td></tr>
 <tr class="separator:ae40e464cdbc474388cc7d55560ec44f9 inherit pub_methods_classikfast_1_1IkSolutionBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:acfcd236687606c2a4c45bd116e81e6d4"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classikfast_1_1IkSingleDOFSolutionBase.html">IkSingleDOFSolutionBase</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classikfast_1_1IkSolution.html#acfcd236687606c2a4c45bd116e81e6d4">_vbasesol</a></td></tr>
-<tr class="memdesc:acfcd236687606c2a4c45bd116e81e6d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">solution and their offsets if joints are mimiced  <a href="classikfast_1_1IkSolution.html#acfcd236687606c2a4c45bd116e81e6d4">More...</a><br /></td></tr>
-<tr class="separator:acfcd236687606c2a4c45bd116e81e6d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aabf02af4b0f042138b08d09929fc1b79"><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classikfast_1_1IkSolution.html#aabf02af4b0f042138b08d09929fc1b79">_vfree</a></td></tr>
-<tr class="separator:aabf02af4b0f042138b08d09929fc1b79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a823a44ea0a199929967ce1646792a50c"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classikfast_1_1IkSingleDOFSolutionBase.html">IkSingleDOFSolutionBase</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classikfast_1_1IkSolution.html#a823a44ea0a199929967ce1646792a50c">_vbasesol</a></td></tr>
+<tr class="memdesc:a823a44ea0a199929967ce1646792a50c"><td class="mdescLeft">&#160;</td><td class="mdescRight">solution and their offsets if joints are mimiced  <a href="classikfast_1_1IkSolution.html#a823a44ea0a199929967ce1646792a50c">More...</a><br /></td></tr>
+<tr class="separator:a823a44ea0a199929967ce1646792a50c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c552543a66e39e127bed5a5c085b1bb"><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classikfast_1_1IkSolution.html#a3c552543a66e39e127bed5a5c085b1bb">_vfree</a></td></tr>
+<tr class="separator:a3c552543a66e39e127bed5a5c085b1bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename T&gt;<br />
@@ -156,10 +136,10 @@ class ikfast::IkSolution&lt; T &gt;</h3>
 
 <p>Default implementation of <a class="el" href="classikfast_1_1IkSolutionBase.html">IkSolutionBase</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html#l00172">172</a> of file <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html">ikfast.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ikfast_8h_source.html#l00169">169</a> of file <a class="el" href="ikfast_8h_source.html">ikfast.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a6b76af506a24ba4b78b1c9d3dc110a72"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6b76af506a24ba4b78b1c9d3dc110a72">&#9670;&nbsp;</a></span>IkSolution() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b76af506a24ba4b78b1c9d3dc110a72">&#9670;&nbsp;</a></span>IkSolution()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -194,53 +174,13 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html#l00175">175</a> of file <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html">ikfast.h</a>.</p>
-
-</div>
-</div>
-<a id="a6b76af506a24ba4b78b1c9d3dc110a72"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6b76af506a24ba4b78b1c9d3dc110a72">&#9670;&nbsp;</a></span>IkSolution() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classikfast_1_1IkSolution.html">ikfast::IkSolution</a>&lt; T &gt;::<a class="el" href="classikfast_1_1IkSolution.html">IkSolution</a> </td>
-          <td>(</td>
-          <td class="paramtype">const std::vector&lt; <a class="el" href="classikfast_1_1IkSingleDOFSolutionBase.html">IkSingleDOFSolutionBase</a>&lt; T &gt; &gt; &amp;&#160;</td>
-          <td class="paramname"><em>vinfos</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::vector&lt; int &gt; &amp;&#160;</td>
-          <td class="paramname"><em>vfree</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="moveit__planners_2test__configs_2prbt__ikfast__manipulator__plugin_2include_2ikfast_8h_source.html#l00172">172</a> of file <a class="el" href="moveit__planners_2test__configs_2prbt__ikfast__manipulator__plugin_2include_2ikfast_8h_source.html">ikfast.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ikfast_8h_source.html#l00172">172</a> of file <a class="el" href="ikfast_8h_source.html">ikfast.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a38374e5c362498812fdbb86bdd77ee42"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a38374e5c362498812fdbb86bdd77ee42">&#9670;&nbsp;</a></span>GetDOF() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a38374e5c362498812fdbb86bdd77ee42">&#9670;&nbsp;</a></span>GetDOF()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -268,40 +208,7 @@ template&lt;typename T &gt; </div>
 
 <p>Implements <a class="el" href="classikfast_1_1IkSolutionBase.html#a94ac1496405343f4c7ad2a3c07b375cc">ikfast::IkSolutionBase&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="moveit__planners_2test__configs_2prbt__ikfast__manipulator__plugin_2include_2ikfast_8h_source.html#l00209">209</a> of file <a class="el" href="moveit__planners_2test__configs_2prbt__ikfast__manipulator__plugin_2include_2ikfast_8h_source.html">ikfast.h</a>.</p>
-
-</div>
-</div>
-<a id="a38374e5c362498812fdbb86bdd77ee42"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a38374e5c362498812fdbb86bdd77ee42">&#9670;&nbsp;</a></span>GetDOF() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual int <a class="el" href="classikfast_1_1IkSolution.html">ikfast::IkSolution</a>&lt; T &gt;::GetDOF </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>the dof of the solution </p>
-
-<p>Implements <a class="el" href="classikfast_1_1IkSolutionBase.html#a94ac1496405343f4c7ad2a3c07b375cc">ikfast::IkSolutionBase&lt; T &gt;</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html#l00212">212</a> of file <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html">ikfast.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ikfast_8h_source.html#l00209">209</a> of file <a class="el" href="ikfast_8h_source.html">ikfast.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -315,7 +222,7 @@ Here is the caller graph for this function:</div>
 </div>
 </div>
 <a id="a6565d27370b7fe391efaa64a18e87afc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6565d27370b7fe391efaa64a18e87afc">&#9670;&nbsp;</a></span>GetFree() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6565d27370b7fe391efaa64a18e87afc">&#9670;&nbsp;</a></span>GetFree()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -344,46 +251,12 @@ template&lt;typename T &gt; </div>
 
 <p>Implements <a class="el" href="classikfast_1_1IkSolutionBase.html#a2693ede66be937b7c4c1c949284282ca">ikfast::IkSolutionBase&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="moveit__planners_2test__configs_2prbt__ikfast__manipulator__plugin_2include_2ikfast_8h_source.html#l00205">205</a> of file <a class="el" href="moveit__planners_2test__configs_2prbt__ikfast__manipulator__plugin_2include_2ikfast_8h_source.html">ikfast.h</a>.</p>
-
-</div>
-</div>
-<a id="a6565d27370b7fe391efaa64a18e87afc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6565d27370b7fe391efaa64a18e87afc">&#9670;&nbsp;</a></span>GetFree() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual const std::vector&lt;int&gt;&amp; <a class="el" href="classikfast_1_1IkSolution.html">ikfast::IkSolution</a>&lt; T &gt;::GetFree </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Gets the indices of the configuration space that have to be preset before a full solution can be returned. </p>
-<dl class="section return"><dt>Returns</dt><dd>vector of indices indicating the free parameters </dd></dl>
-
-<p>Implements <a class="el" href="classikfast_1_1IkSolutionBase.html#a2693ede66be937b7c4c1c949284282ca">ikfast::IkSolutionBase&lt; T &gt;</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html#l00208">208</a> of file <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html">ikfast.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ikfast_8h_source.html#l00205">205</a> of file <a class="el" href="ikfast_8h_source.html">ikfast.h</a>.</p>
 
 </div>
 </div>
 <a id="ab0258a9b42c720194e13953e631c9b8b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab0258a9b42c720194e13953e631c9b8b">&#9670;&nbsp;</a></span>GetSolution() <span class="overload">[1/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0258a9b42c720194e13953e631c9b8b">&#9670;&nbsp;</a></span>GetSolution() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -422,61 +295,7 @@ template&lt;typename T &gt; </div>
 
 <p>Reimplemented from <a class="el" href="classikfast_1_1IkSolutionBase.html#a4e8afdc564a90aeed598d276d4f1bd3f">ikfast::IkSolutionBase&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="moveit__planners_2test__configs_2prbt__ikfast__manipulator__plugin_2include_2ikfast_8h_source.html#l00199">199</a> of file <a class="el" href="moveit__planners_2test__configs_2prbt__ikfast__manipulator__plugin_2include_2ikfast_8h_source.html">ikfast.h</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classikfast_1_1IkSolution_ab0258a9b42c720194e13953e631c9b8b_cgraph.png" border="0" usemap="#classikfast_1_1IkSolution_ab0258a9b42c720194e13953e631c9b8b_cgraph" alt=""/></div>
-<map name="classikfast_1_1IkSolution_ab0258a9b42c720194e13953e631c9b8b_cgraph" id="classikfast_1_1IkSolution_ab0258a9b42c720194e13953e631c9b8b_cgraph">
-<area shape="rect" title="std::vector version of GetSolution" alt="" coords="5,39,137,80"/>
-<area shape="rect" href="classikfast_1_1IkSolution.html#a38374e5c362498812fdbb86bdd77ee42" title="the dof of the solution" alt="" coords="185,5,317,47"/>
-<area shape="rect" href="classikfast_1_1IkSolution.html#ae8891fda83002a94c74a80ab9784679e" title="gets a concrete solution" alt="" coords="185,71,317,112"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="ab0258a9b42c720194e13953e631c9b8b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab0258a9b42c720194e13953e631c9b8b">&#9670;&nbsp;</a></span>GetSolution() <span class="overload">[2/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void <a class="el" href="classikfast_1_1IkSolution.html">ikfast::IkSolution</a>&lt; T &gt;::GetSolution </td>
-          <td>(</td>
-          <td class="paramtype">std::vector&lt; T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>solution</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::vector&lt; T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>freevalues</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>std::vector version of <a class="el" href="classikfast_1_1IkSolution.html#ae8891fda83002a94c74a80ab9784679e">GetSolution</a> </p>
-
-<p>Reimplemented from <a class="el" href="classikfast_1_1IkSolutionBase.html#a4e8afdc564a90aeed598d276d4f1bd3f">ikfast::IkSolutionBase&lt; T &gt;</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html#l00202">202</a> of file <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html">ikfast.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ikfast_8h_source.html#l00199">199</a> of file <a class="el" href="ikfast_8h_source.html">ikfast.h</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -491,7 +310,7 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <a id="ae8891fda83002a94c74a80ab9784679e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae8891fda83002a94c74a80ab9784679e">&#9670;&nbsp;</a></span>GetSolution() <span class="overload">[3/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8891fda83002a94c74a80ab9784679e">&#9670;&nbsp;</a></span>GetSolution() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -537,58 +356,7 @@ template&lt;typename T &gt; </div>
 
 <p>Implements <a class="el" href="classikfast_1_1IkSolutionBase.html#a9405530feb49f12f56c3175e7150c66f">ikfast::IkSolutionBase&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="moveit__planners_2test__configs_2prbt__ikfast__manipulator__plugin_2include_2ikfast_8h_source.html#l00178">178</a> of file <a class="el" href="moveit__planners_2test__configs_2prbt__ikfast__manipulator__plugin_2include_2ikfast_8h_source.html">ikfast.h</a>.</p>
-
-</div>
-</div>
-<a id="ae8891fda83002a94c74a80ab9784679e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae8891fda83002a94c74a80ab9784679e">&#9670;&nbsp;</a></span>GetSolution() <span class="overload">[4/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void <a class="el" href="classikfast_1_1IkSolution.html">ikfast::IkSolution</a>&lt; T &gt;::GetSolution </td>
-          <td>(</td>
-          <td class="paramtype">T *&#160;</td>
-          <td class="paramname"><em>solution</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const T *&#160;</td>
-          <td class="paramname"><em>freevalues</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>gets a concrete solution </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[out]</td><td class="paramname">solution</td><td>the result </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">freevalues</td><td>values for the free parameters \se GetFree </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Implements <a class="el" href="classikfast_1_1IkSolutionBase.html#a9405530feb49f12f56c3175e7150c66f">ikfast::IkSolutionBase&lt; T &gt;</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html#l00181">181</a> of file <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html">ikfast.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ikfast_8h_source.html#l00178">178</a> of file <a class="el" href="ikfast_8h_source.html">ikfast.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -602,7 +370,7 @@ Here is the caller graph for this function:</div>
 </div>
 </div>
 <a id="a62c0808de0ffde44a96539dd58a616e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a62c0808de0ffde44a96539dd58a616e4">&#9670;&nbsp;</a></span>GetSolutionIndices() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a62c0808de0ffde44a96539dd58a616e4">&#9670;&nbsp;</a></span>GetSolutionIndices()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -627,42 +395,12 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="moveit__planners_2test__configs_2prbt__ikfast__manipulator__plugin_2include_2ikfast_8h_source.html#l00236">236</a> of file <a class="el" href="moveit__planners_2test__configs_2prbt__ikfast__manipulator__plugin_2include_2ikfast_8h_source.html">ikfast.h</a>.</p>
-
-</div>
-</div>
-<a id="a62c0808de0ffde44a96539dd58a616e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a62c0808de0ffde44a96539dd58a616e4">&#9670;&nbsp;</a></span>GetSolutionIndices() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void <a class="el" href="classikfast_1_1IkSolution.html">ikfast::IkSolution</a>&lt; T &gt;::GetSolutionIndices </td>
-          <td>(</td>
-          <td class="paramtype">std::vector&lt; unsigned int &gt; &amp;&#160;</td>
-          <td class="paramname"><em>v</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html#l00239">239</a> of file <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html">ikfast.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ikfast_8h_source.html#l00236">236</a> of file <a class="el" href="ikfast_8h_source.html">ikfast.h</a>.</p>
 
 </div>
 </div>
 <a id="a138ee9ab2e290a1ae2ee4c7aa23dab41"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a138ee9ab2e290a1ae2ee4c7aa23dab41">&#9670;&nbsp;</a></span>Validate() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a138ee9ab2e290a1ae2ee4c7aa23dab41">&#9670;&nbsp;</a></span>Validate()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -686,42 +424,13 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="moveit__planners_2test__configs_2prbt__ikfast__manipulator__plugin_2include_2ikfast_8h_source.html#l00214">214</a> of file <a class="el" href="moveit__planners_2test__configs_2prbt__ikfast__manipulator__plugin_2include_2ikfast_8h_source.html">ikfast.h</a>.</p>
-
-</div>
-</div>
-<a id="a138ee9ab2e290a1ae2ee4c7aa23dab41"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a138ee9ab2e290a1ae2ee4c7aa23dab41">&#9670;&nbsp;</a></span>Validate() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void <a class="el" href="classikfast_1_1IkSolution.html">ikfast::IkSolution</a>&lt; T &gt;::Validate </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html#l00217">217</a> of file <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html">ikfast.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ikfast_8h_source.html#l00214">214</a> of file <a class="el" href="ikfast_8h_source.html">ikfast.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="acfcd236687606c2a4c45bd116e81e6d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acfcd236687606c2a4c45bd116e81e6d4">&#9670;&nbsp;</a></span>_vbasesol</h2>
+<a id="a823a44ea0a199929967ce1646792a50c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a823a44ea0a199929967ce1646792a50c">&#9670;&nbsp;</a></span>_vbasesol</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -729,19 +438,19 @@ template&lt;typename T &gt; </div>
 template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; <a class="el" href="classikfast_1_1IkSingleDOFSolutionBase.html">IkSingleDOFSolutionBase</a>&lt; T &gt; &gt; <a class="el" href="classikfast_1_1IkSolution.html">ikfast::IkSolution</a>&lt; T &gt;::_vbasesol</td>
+          <td class="memname">std::vector&lt;<a class="el" href="classikfast_1_1IkSingleDOFSolutionBase.html">IkSingleDOFSolutionBase</a>&lt;T&gt; &gt; <a class="el" href="classikfast_1_1IkSolution.html">ikfast::IkSolution</a>&lt; T &gt;::_vbasesol</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>solution and their offsets if joints are mimiced </p>
 
-<p class="definition">Definition at line <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html#l00270">270</a> of file <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html">ikfast.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ikfast_8h_source.html#l00267">267</a> of file <a class="el" href="ikfast_8h_source.html">ikfast.h</a>.</p>
 
 </div>
 </div>
-<a id="aabf02af4b0f042138b08d09929fc1b79"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aabf02af4b0f042138b08d09929fc1b79">&#9670;&nbsp;</a></span>_vfree</h2>
+<a id="a3c552543a66e39e127bed5a5c085b1bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c552543a66e39e127bed5a5c085b1bb">&#9670;&nbsp;</a></span>_vfree</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -749,17 +458,17 @@ template&lt;typename T &gt; </div>
 template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; int &gt; <a class="el" href="classikfast_1_1IkSolution.html">ikfast::IkSolution</a>&lt; T &gt;::_vfree</td>
+          <td class="memname">std::vector&lt;int&gt; <a class="el" href="classikfast_1_1IkSolution.html">ikfast::IkSolution</a>&lt; T &gt;::_vfree</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html#l00271">271</a> of file <a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html">ikfast.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ikfast_8h_source.html#l00268">268</a> of file <a class="el" href="ikfast_8h_source.html">ikfast.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>moveit2/moveit_kinematics/ikfast_kinematics_plugin/templates/<a class="el" href="moveit__kinematics_2ikfast__kinematics__plugin_2templates_2ikfast_8h_source.html">ikfast.h</a></li>
+<li>moveit2/moveit_kinematics/ikfast_kinematics_plugin/templates/<a class="el" href="ikfast_8h_source.html">ikfast.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

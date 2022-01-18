@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>moveit2: moveit2/moveit_planners/pilz_industrial_motion_planner/test/unit_tests/src/unittest_trajectory_blender_transition_window.cpp File Reference</title>
+<title>moveit2: moveit2/moveit_planners/pilz_industrial_motion_planner/test/unittest_trajectory_blender_transition_window.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,13 +62,14 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_a604c952227cf87b5a3218a0034012e1.html">moveit2</a></li><li class="navelem"><a class="el" href="dir_397d57caa61a6ead544bb61b8030bf75.html">moveit_planners</a></li><li class="navelem"><a class="el" href="dir_b42145b99fa2fc2e1a9a76dd5d48e934.html">pilz_industrial_motion_planner</a></li><li class="navelem"><a class="el" href="dir_32106610d8bf69b1c283f4fa4bf1e70c.html">test</a></li><li class="navelem"><a class="el" href="dir_c0e323a8108843403cd65ddcf58c52bb.html">unit_tests</a></li><li class="navelem"><a class="el" href="dir_aeaf384bd36bd7964cb18f189c047c9e.html">src</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_a604c952227cf87b5a3218a0034012e1.html">moveit2</a></li><li class="navelem"><a class="el" href="dir_397d57caa61a6ead544bb61b8030bf75.html">moveit_planners</a></li><li class="navelem"><a class="el" href="dir_b42145b99fa2fc2e1a9a76dd5d48e934.html">pilz_industrial_motion_planner</a></li><li class="navelem"><a class="el" href="dir_32106610d8bf69b1c283f4fa4bf1e70c.html">test</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">unittest_trajectory_blender_transition_window.cpp File Reference</div>  </div>
 </div><!--header-->
@@ -79,6 +80,7 @@ $(function() {
 <code>#include &lt;<a class="el" href="robot__model_8h_source.html">moveit/robot_model/robot_model.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="robot__model__loader_8h_source.html">moveit/robot_model_loader/robot_model_loader.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="conversions_8h_source.html">moveit/robot_state/conversions.h</a>&gt;</code><br />
+<code>#include &lt;moveit_msgs/DisplayTrajectory.h&gt;</code><br />
 <code>#include &lt;tf2_eigen/tf2_eigen.h&gt;</code><br />
 <code>#include &lt;tf2_geometry_msgs/tf2_geometry_msgs.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="command__types__typedef_8h_source.html">pilz_industrial_motion_planner_testutils/command_types_typedef.h</a>&gt;</code><br />
@@ -90,62 +92,61 @@ $(function() {
 <code>#include &quot;<a class="el" href="trajectory__blender__transition__window_8h_source.html">pilz_industrial_motion_planner/trajectory_blender_transition_window.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="trajectory__generator__lin_8h_source.html">pilz_industrial_motion_planner/trajectory_generator_lin.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="test__utils_8h_source.html">test_utils.h</a>&quot;</code><br />
-<code>#include &quot;rclcpp/rclcpp.hpp&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for unittest_trajectory_blender_transition_window.cpp:</div>
 <div class="dyncontent">
-<div class="center"><img src="unittest__trajectory__blender__transition__window_8cpp__incl.png" border="0" usemap="#moveit2_2moveit__planners_2pilz__industrial__motion__planner_2test_2unit__tests_2src_2unittest__trajectory__blender__transition__window_8cpp" alt=""/></div>
-<map name="moveit2_2moveit__planners_2pilz__industrial__motion__planner_2test_2unit__tests_2src_2unittest__trajectory__blender__transition__window_8cpp" id="moveit2_2moveit__planners_2pilz__industrial__motion__planner_2test_2unit__tests_2src_2unittest__trajectory__blender__transition__window_8cpp">
-<area shape="rect" title=" " alt="" coords="1459,5,1690,91"/>
-<area shape="rect" title=" " alt="" coords="84,451,161,477"/>
-<area shape="rect" title=" " alt="" coords="1469,257,1573,284"/>
-<area shape="rect" href="utils_8h.html" title=" " alt="" coords="1539,533,1755,574"/>
-<area shape="rect" href="robot__model_8h.html" title=" " alt="" coords="1279,837,1433,879"/>
-<area shape="rect" href="robot__model__loader_8h.html" title=" " alt="" coords="1369,629,1525,685"/>
-<area shape="rect" title=" " alt="" coords="2391,845,2523,871"/>
-<area shape="rect" href="conversions_8h.html" title=" " alt="" coords="776,637,923,678"/>
-<area shape="rect" title=" " alt="" coords="2489,153,2649,180"/>
-<area shape="rect" title=" " alt="" coords="1598,250,1773,291"/>
-<area shape="rect" href="command__types__typedef_8h.html" title=" " alt="" coords="494,243,701,299"/>
-<area shape="rect" href="sequence_8h.html" title=" " alt="" coords="391,146,607,187"/>
-<area shape="rect" href="xml__testdata__loader_8h.html" title=" " alt="" coords="175,347,342,403"/>
-<area shape="rect" href="joint__limits__aggregator_8h.html" title=" " alt="" coords="2247,525,2414,581"/>
-<area shape="rect" href="trajectory__blend__request_8h.html" title=" " alt="" coords="2111,243,2299,299"/>
-<area shape="rect" href="trajectory__blend__response_8h.html" title=" " alt="" coords="1899,243,2087,299"/>
-<area shape="rect" href="trajectory__blender__transition__window_8h.html" title=" " alt="" coords="2082,139,2283,195"/>
-<area shape="rect" href="trajectory__generator__lin_8h.html" title=" " alt="" coords="2673,146,2924,187"/>
-<area shape="rect" href="test__utils_8h.html" title=" " alt="" coords="1763,153,1858,180"/>
-<area shape="rect" title=" " alt="" coords="2110,644,2357,671"/>
-<area shape="rect" title=" " alt="" coords="1549,637,1745,678"/>
-<area shape="rect" title=" " alt="" coords="1048,637,1243,678"/>
-<area shape="rect" title=" " alt="" coords="1769,637,2002,678"/>
-<area shape="rect" href="robot__state_8h.html" title=" " alt="" coords="857,741,1004,782"/>
-<area shape="rect" title=" " alt="" coords="2027,644,2085,671"/>
-<area shape="rect" href="transforms_8h.html" title=" " alt="" coords="761,845,991,871"/>
-<area shape="rect" href="class__forward_8h.html" title=" " alt="" coords="2164,927,2321,968"/>
-<area shape="rect" href="exceptions_8h.html" title=" " alt="" coords="602,934,833,961"/>
-<area shape="rect" title=" " alt="" coords="1993,1016,2127,1043"/>
-<area shape="rect" href="joint__model__group_8h.html" title=" " alt="" coords="1981,927,2139,968"/>
-<area shape="rect" href="fixed__joint__model_8h.html" title=" " alt="" coords="1607,927,1761,968"/>
-<area shape="rect" href="floating__joint__model_8h.html" title=" " alt="" coords="1785,927,1956,968"/>
-<area shape="rect" href="planar__joint__model_8h.html" title=" " alt="" coords="857,927,1020,968"/>
-<area shape="rect" href="revolute__joint__model_8h.html" title=" " alt="" coords="1095,927,1271,968"/>
-<area shape="rect" href="prismatic__joint__model_8h.html" title=" " alt="" coords="1295,927,1478,968"/>
-<area shape="rect" title=" " alt="" coords="451,934,578,961"/>
-<area shape="rect" title=" " alt="" coords="1503,934,1583,961"/>
-<area shape="rect" title=" " alt="" coords="319,1016,406,1043"/>
-<area shape="rect" href="rdf__loader_8h.html" title=" " alt="" coords="2193,741,2353,782"/>
-<area shape="rect" href="kinematics__plugin__loader_8h.html" title=" " alt="" coords="1419,733,1613,789"/>
-<area shape="rect" title=" " alt="" coords="602,741,782,782"/>
-<area shape="rect" title=" " alt="" coords="673,361,809,388"/>
-<area shape="rect" href="ptp_8h.html" title=" " alt="" coords="470,451,525,477"/>
-<area shape="rect" href="lin_8h.html" title=" " alt="" coords="395,451,445,477"/>
-<area shape="rect" href="circ_8h.html" title=" " alt="" coords="94,361,151,388"/>
-<area shape="rect" href="gripper_8h.html" title=" " alt="" coords="519,361,598,388"/>
-<area shape="rect" href="jointconfiguration_8h.html" title=" " alt="" coords="562,540,710,567"/>
-<area shape="rect" href="cartesianconfiguration_8h.html" title=" " alt="" coords="871,451,1049,477"/>
-<area shape="rect" href="circ__auxiliary__types_8h.html" title=" " alt="" coords="885,361,1049,388"/>
-<area shape="rect" title=" " alt="" coords="294,644,357,671"/>
+<div class="center"><img src="unittest__trajectory__blender__transition__window_8cpp__incl.png" border="0" usemap="#moveit2_2moveit__planners_2pilz__industrial__motion__planner_2test_2unittest__trajectory__blender__transition__window_8cpp" alt=""/></div>
+<map name="moveit2_2moveit__planners_2pilz__industrial__motion__planner_2test_2unittest__trajectory__blender__transition__window_8cpp" id="moveit2_2moveit__planners_2pilz__industrial__motion__planner_2test_2unittest__trajectory__blender__transition__window_8cpp">
+<area shape="rect" title=" " alt="" coords="1369,5,1599,76"/>
+<area shape="rect" title=" " alt="" coords="84,436,161,463"/>
+<area shape="rect" title=" " alt="" coords="1225,243,1329,269"/>
+<area shape="rect" href="utils_8h.html" title=" " alt="" coords="1273,511,1489,552"/>
+<area shape="rect" href="robot__model_8h.html" title=" " alt="" coords="1439,808,1593,849"/>
+<area shape="rect" href="robot__model__loader_8h.html" title=" " alt="" coords="2226,600,2382,656"/>
+<area shape="rect" href="conversions_8h.html" title=" " alt="" coords="801,607,948,649"/>
+<area shape="rect" title=" " alt="" coords="1977,139,2215,165"/>
+<area shape="rect" title=" " alt="" coords="2239,139,2399,165"/>
+<area shape="rect" title=" " alt="" coords="1354,235,1529,277"/>
+<area shape="rect" href="command__types__typedef_8h.html" title=" " alt="" coords="522,228,729,284"/>
+<area shape="rect" href="sequence_8h.html" title=" " alt="" coords="375,131,591,173"/>
+<area shape="rect" href="xml__testdata__loader_8h.html" title=" " alt="" coords="175,332,342,388"/>
+<area shape="rect" href="joint__limits__aggregator_8h.html" title=" " alt="" coords="2423,124,2590,180"/>
+<area shape="rect" href="trajectory__blend__request_8h.html" title=" " alt="" coords="1869,228,2057,284"/>
+<area shape="rect" href="trajectory__blend__response_8h.html" title=" " alt="" coords="1605,228,1793,284"/>
+<area shape="rect" href="trajectory__blender__transition__window_8h.html" title=" " alt="" coords="1751,124,1953,180"/>
+<area shape="rect" href="trajectory__generator__lin_8h.html" title=" " alt="" coords="2615,131,2865,173"/>
+<area shape="rect" href="test__utils_8h.html" title=" " alt="" coords="1479,139,1574,165"/>
+<area shape="rect" title=" " alt="" coords="1258,615,1505,641"/>
+<area shape="rect" title=" " alt="" coords="1529,607,1725,649"/>
+<area shape="rect" title=" " alt="" coords="1749,607,1944,649"/>
+<area shape="rect" title=" " alt="" coords="1969,607,2202,649"/>
+<area shape="rect" href="robot__state_8h.html" title=" " alt="" coords="903,711,1049,753"/>
+<area shape="rect" title=" " alt="" coords="1175,615,1233,641"/>
+<area shape="rect" href="transforms_8h.html" title=" " alt="" coords="707,815,938,842"/>
+<area shape="rect" href="class__forward_8h.html" title=" " alt="" coords="2267,897,2424,939"/>
+<area shape="rect" href="exceptions_8h.html" title=" " alt="" coords="705,905,935,931"/>
+<area shape="rect" title=" " alt="" coords="2163,987,2296,1013"/>
+<area shape="rect" href="joint__model__group_8h.html" title=" " alt="" coords="1155,897,1314,939"/>
+<area shape="rect" href="fixed__joint__model_8h.html" title=" " alt="" coords="2037,897,2192,939"/>
+<area shape="rect" href="floating__joint__model_8h.html" title=" " alt="" coords="960,897,1131,939"/>
+<area shape="rect" href="planar__joint__model_8h.html" title=" " alt="" coords="1339,897,1501,939"/>
+<area shape="rect" href="revolute__joint__model_8h.html" title=" " alt="" coords="1525,897,1701,939"/>
+<area shape="rect" href="prismatic__joint__model_8h.html" title=" " alt="" coords="1726,897,1909,939"/>
+<area shape="rect" title=" " alt="" coords="554,905,681,931"/>
+<area shape="rect" title=" " alt="" coords="1933,905,2013,931"/>
+<area shape="rect" title=" " alt="" coords="422,987,509,1013"/>
+<area shape="rect" href="rdf__loader_8h.html" title=" " alt="" coords="2361,808,2521,849"/>
+<area shape="rect" href="kinematics__plugin__loader_8h.html" title=" " alt="" coords="2093,704,2286,760"/>
+<area shape="rect" title=" " alt="" coords="698,711,878,753"/>
+<area shape="rect" title=" " alt="" coords="623,347,759,373"/>
+<area shape="rect" href="ptp_8h.html" title=" " alt="" coords="469,436,523,463"/>
+<area shape="rect" href="lin_8h.html" title=" " alt="" coords="241,518,292,545"/>
+<area shape="rect" href="circ_8h.html" title=" " alt="" coords="94,347,151,373"/>
+<area shape="rect" href="gripper_8h.html" title=" " alt="" coords="519,347,598,373"/>
+<area shape="rect" href="jointconfiguration_8h.html" title=" " alt="" coords="690,518,838,545"/>
+<area shape="rect" href="cartesianconfiguration_8h.html" title=" " alt="" coords="852,436,1031,463"/>
+<area shape="rect" href="circ__auxiliary__types_8h.html" title=" " alt="" coords="834,347,998,373"/>
+<area shape="rect" title=" " alt="" coords="357,615,419,641"/>
 </map>
 </div>
 </div>
@@ -158,49 +159,218 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a53e5416649aed1d171cc3e5803f3f0c9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__blender__transition__window_8cpp.html#a53e5416649aed1d171cc3e5803f3f0c9">TEST_F</a> (<a class="el" href="classTrajectoryBlenderTransitionWindowTest.html">TrajectoryBlenderTransitionWindowTest</a>, testInvalidGroupName)</td></tr>
-<tr class="memdesc:a53e5416649aed1d171cc3e5803f3f0c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests the blending of two trajectories with an invalid group name.  <a href="unittest__trajectory__blender__transition__window_8cpp.html#a53e5416649aed1d171cc3e5803f3f0c9">More...</a><br /></td></tr>
-<tr class="separator:a53e5416649aed1d171cc3e5803f3f0c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04f4d6faca0d3c73ea72bd41e099ede8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__blender__transition__window_8cpp.html#a04f4d6faca0d3c73ea72bd41e099ede8">TEST_F</a> (<a class="el" href="classTrajectoryBlenderTransitionWindowTest.html">TrajectoryBlenderTransitionWindowTest</a>, testInvalidTargetLink)</td></tr>
-<tr class="memdesc:a04f4d6faca0d3c73ea72bd41e099ede8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests the blending of two trajectories with an invalid target link.  <a href="unittest__trajectory__blender__transition__window_8cpp.html#a04f4d6faca0d3c73ea72bd41e099ede8">More...</a><br /></td></tr>
-<tr class="separator:a04f4d6faca0d3c73ea72bd41e099ede8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c009147e13f3a8e99582866084cda04"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__blender__transition__window_8cpp.html#a7c009147e13f3a8e99582866084cda04">TEST_F</a> (<a class="el" href="classTrajectoryBlenderTransitionWindowTest.html">TrajectoryBlenderTransitionWindowTest</a>, testNegativeRadius)</td></tr>
-<tr class="memdesc:a7c009147e13f3a8e99582866084cda04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests the blending of two trajectories with a negative blending radius.  <a href="unittest__trajectory__blender__transition__window_8cpp.html#a7c009147e13f3a8e99582866084cda04">More...</a><br /></td></tr>
-<tr class="separator:a7c009147e13f3a8e99582866084cda04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac73bab18ca48662640201fbe9e8db4ef"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__blender__transition__window_8cpp.html#ac73bab18ca48662640201fbe9e8db4ef">TEST_F</a> (<a class="el" href="classTrajectoryBlenderTransitionWindowTest.html">TrajectoryBlenderTransitionWindowTest</a>, testZeroRadius)</td></tr>
-<tr class="memdesc:ac73bab18ca48662640201fbe9e8db4ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests the blending of two trajectories with zero blending radius.  <a href="unittest__trajectory__blender__transition__window_8cpp.html#ac73bab18ca48662640201fbe9e8db4ef">More...</a><br /></td></tr>
-<tr class="separator:ac73bab18ca48662640201fbe9e8db4ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e4069a2369fae6a80496da11125619a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__blender__transition__window_8cpp.html#a0e4069a2369fae6a80496da11125619a">TEST_F</a> (<a class="el" href="classTrajectoryBlenderTransitionWindowTest.html">TrajectoryBlenderTransitionWindowTest</a>, testDifferentSamplingTimes)</td></tr>
-<tr class="memdesc:a0e4069a2369fae6a80496da11125619a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests the blending of two trajectories with differenent sampling times.  <a href="unittest__trajectory__blender__transition__window_8cpp.html#a0e4069a2369fae6a80496da11125619a">More...</a><br /></td></tr>
-<tr class="separator:a0e4069a2369fae6a80496da11125619a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba7de9d2467ccbb17f91d0bba78f9f49"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__blender__transition__window_8cpp.html#aba7de9d2467ccbb17f91d0bba78f9f49">TEST_F</a> (<a class="el" href="classTrajectoryBlenderTransitionWindowTest.html">TrajectoryBlenderTransitionWindowTest</a>, testNonUniformSamplingTime)</td></tr>
-<tr class="memdesc:aba7de9d2467ccbb17f91d0bba78f9f49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests the blending of two trajectories with one trajectory having non-uniform sampling time (apart from the last sample, which is ignored).  <a href="unittest__trajectory__blender__transition__window_8cpp.html#aba7de9d2467ccbb17f91d0bba78f9f49">More...</a><br /></td></tr>
-<tr class="separator:aba7de9d2467ccbb17f91d0bba78f9f49"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a95888514f6eea9035908debed0cfc012"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__blender__transition__window_8cpp.html#a95888514f6eea9035908debed0cfc012">TEST_F</a> (<a class="el" href="classTrajectoryBlenderTransitionWindowTest.html">TrajectoryBlenderTransitionWindowTest</a>, testNotIntersectingTrajectories)</td></tr>
-<tr class="memdesc:a95888514f6eea9035908debed0cfc012"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests the blending of two trajectories which do not intersect.  <a href="unittest__trajectory__blender__transition__window_8cpp.html#a95888514f6eea9035908debed0cfc012">More...</a><br /></td></tr>
-<tr class="separator:a95888514f6eea9035908debed0cfc012"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaffb3bcd83b6cbc84c735407b9405e7a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__blender__transition__window_8cpp.html#aaffb3bcd83b6cbc84c735407b9405e7a">TEST_F</a> (<a class="el" href="classTrajectoryBlenderTransitionWindowTest.html">TrajectoryBlenderTransitionWindowTest</a>, testNonStationaryPoint)</td></tr>
-<tr class="memdesc:aaffb3bcd83b6cbc84c735407b9405e7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests the blending of two cartesian trajectories with the shared point (last point of first, first point of second trajectory) having a non-zero velocity.  <a href="unittest__trajectory__blender__transition__window_8cpp.html#aaffb3bcd83b6cbc84c735407b9405e7a">More...</a><br /></td></tr>
-<tr class="separator:aaffb3bcd83b6cbc84c735407b9405e7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a571f09d0a51269f6ce736e31bfc9a432"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__blender__transition__window_8cpp.html#a571f09d0a51269f6ce736e31bfc9a432">TEST_F</a> (<a class="el" href="classTrajectoryBlenderTransitionWindowTest.html">TrajectoryBlenderTransitionWindowTest</a>, testTraj1InsideBlendRadius)</td></tr>
-<tr class="memdesc:a571f09d0a51269f6ce736e31bfc9a432"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests the blending of two cartesian trajectories where the first trajectory is completely within the sphere defined by the blend radius.  <a href="unittest__trajectory__blender__transition__window_8cpp.html#a571f09d0a51269f6ce736e31bfc9a432">More...</a><br /></td></tr>
-<tr class="separator:a571f09d0a51269f6ce736e31bfc9a432"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa44416a1eb823947f9d6403924e97fca"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__blender__transition__window_8cpp.html#aa44416a1eb823947f9d6403924e97fca">TEST_F</a> (<a class="el" href="classTrajectoryBlenderTransitionWindowTest.html">TrajectoryBlenderTransitionWindowTest</a>, testTraj2InsideBlendRadius)</td></tr>
-<tr class="memdesc:aa44416a1eb823947f9d6403924e97fca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests the blending of two cartesian trajectories where the second trajectory is completely within the sphere defined by the blend radius.  <a href="unittest__trajectory__blender__transition__window_8cpp.html#aa44416a1eb823947f9d6403924e97fca">More...</a><br /></td></tr>
-<tr class="separator:aa44416a1eb823947f9d6403924e97fca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93b1f6deb0746a8449030f6e623bf66d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__blender__transition__window_8cpp.html#a93b1f6deb0746a8449030f6e623bf66d">TEST_F</a> (<a class="el" href="classTrajectoryBlenderTransitionWindowTest.html">TrajectoryBlenderTransitionWindowTest</a>, testLinLinBlending)</td></tr>
-<tr class="memdesc:a93b1f6deb0746a8449030f6e623bf66d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests the blending of two cartesian linear trajectories using robot model.  <a href="unittest__trajectory__blender__transition__window_8cpp.html#a93b1f6deb0746a8449030f6e623bf66d">More...</a><br /></td></tr>
-<tr class="separator:a93b1f6deb0746a8449030f6e623bf66d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a98d875779c0ce5dc6ffb287be5d8858d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__blender__transition__window_8cpp.html#a98d875779c0ce5dc6ffb287be5d8858d">TEST_F</a> (<a class="el" href="classTrajectoryBlenderTransitionWindowTest.html">TrajectoryBlenderTransitionWindowTest</a>, testOverlappingBlendTrajectories)</td></tr>
-<tr class="memdesc:a98d875779c0ce5dc6ffb287be5d8858d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests the blending of two cartesian linear trajectories which have an overlap in the blending sphere using robot model. To be precise, the trajectories exactly lie on top of each other.  <a href="unittest__trajectory__blender__transition__window_8cpp.html#a98d875779c0ce5dc6ffb287be5d8858d">More...</a><br /></td></tr>
-<tr class="separator:a98d875779c0ce5dc6ffb287be5d8858d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d39ac8fe9fc6f0c8607fe4f76d3bcc9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__blender__transition__window_8cpp.html#a7d39ac8fe9fc6f0c8607fe4f76d3bcc9">TEST_F</a> (<a class="el" href="classTrajectoryBlenderTransitionWindowTest.html">TrajectoryBlenderTransitionWindowTest</a>, testNonLinearBlending)</td></tr>
-<tr class="memdesc:a7d39ac8fe9fc6f0c8607fe4f76d3bcc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests the blending of two cartesian trajectories which differ from a straight line.  <a href="unittest__trajectory__blender__transition__window_8cpp.html#a7d39ac8fe9fc6f0c8607fe4f76d3bcc9">More...</a><br /></td></tr>
-<tr class="separator:a7d39ac8fe9fc6f0c8607fe4f76d3bcc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0258d4e48c5d63bd1bb8c56e97bd09af"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__blender__transition__window_8cpp.html#a0258d4e48c5d63bd1bb8c56e97bd09af">PARAM_PLANNING_GROUP_NAME</a> (&quot;planning_group&quot;)</td></tr>
+<tr class="separator:a0258d4e48c5d63bd1bb8c56e97bd09af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ef26f92433dcdbf9ac9c73dfdf72ac8"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__blender__transition__window_8cpp.html#a3ef26f92433dcdbf9ac9c73dfdf72ac8">PARAM_TARGET_LINK_NAME</a> (&quot;target_link&quot;)</td></tr>
+<tr class="separator:a3ef26f92433dcdbf9ac9c73dfdf72ac8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59a83a0c77365bd6567371e044b0baf1"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__blender__transition__window_8cpp.html#a59a83a0c77365bd6567371e044b0baf1">CARTESIAN_VELOCITY_TOLERANCE</a> (&quot;cartesian_velocity_tolerance&quot;)</td></tr>
+<tr class="separator:a59a83a0c77365bd6567371e044b0baf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f6b2b6634692ae008f65285cfa9fac0"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__blender__transition__window_8cpp.html#a6f6b2b6634692ae008f65285cfa9fac0">CARTESIAN_ANGULAR_VELOCITY_TOLERANCE</a> (&quot;cartesian_angular_velocity_tolerance&quot;)</td></tr>
+<tr class="separator:a6f6b2b6634692ae008f65285cfa9fac0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afae7457c0e74df612a6a1af7289b8cfa"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__blender__transition__window_8cpp.html#afae7457c0e74df612a6a1af7289b8cfa">JOINT_VELOCITY_TOLERANCE</a> (&quot;joint_velocity_tolerance&quot;)</td></tr>
+<tr class="separator:afae7457c0e74df612a6a1af7289b8cfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50c36a4a78465728ec01b75416c540b3"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__blender__transition__window_8cpp.html#a50c36a4a78465728ec01b75416c540b3">JOINT_ACCELERATION_TOLERANCE</a> (&quot;joint_acceleration_tolerance&quot;)</td></tr>
+<tr class="separator:a50c36a4a78465728ec01b75416c540b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2b5e395155711586a6cb2fc4c8ab77e"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__blender__transition__window_8cpp.html#ae2b5e395155711586a6cb2fc4c8ab77e">OTHER_TOLERANCE</a> (&quot;other_tolerance&quot;)</td></tr>
+<tr class="separator:ae2b5e395155711586a6cb2fc4c8ab77e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace6aa291176e1b5a6d6372b3b6b5110a"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__blender__transition__window_8cpp.html#ace6aa291176e1b5a6d6372b3b6b5110a">SAMPLING_TIME</a> (&quot;sampling_time&quot;)</td></tr>
+<tr class="separator:ace6aa291176e1b5a6d6372b3b6b5110a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab52141f7c51b11e67584b679ae66caf7"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__blender__transition__window_8cpp.html#ab52141f7c51b11e67584b679ae66caf7">TEST_DATA_FILE_NAME</a> (&quot;testdata_file_name&quot;)</td></tr>
+<tr class="separator:ab52141f7c51b11e67584b679ae66caf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f38e2a855c805a04722207e2311c77e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__blender__transition__window_8cpp.html#a7f38e2a855c805a04722207e2311c77e">INSTANTIATE_TEST_SUITE_P</a> (InstantiationName, <a class="el" href="classTrajectoryBlenderTransitionWindowTest.html">TrajectoryBlenderTransitionWindowTest</a>, ::testing::Values(<a class="el" href="unittest__trajectory__generator__ptp_8cpp.html#aa7f9383e07e7c03560917dd18d1f761b">PARAM_MODEL_NO_GRIPPER_NAME</a>, <a class="el" href="unittest__trajectory__generator__ptp_8cpp.html#a1ca4023b540762bab834d86532ceb22f">PARAM_MODEL_WITH_GRIPPER_NAME</a>))</td></tr>
+<tr class="separator:a7f38e2a855c805a04722207e2311c77e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac083bf308a18be65ad63c4010757d61"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__blender__transition__window_8cpp.html#aac083bf308a18be65ad63c4010757d61">TEST_P</a> (<a class="el" href="classTrajectoryBlenderTransitionWindowTest.html">TrajectoryBlenderTransitionWindowTest</a>, testInvalidGroupName)</td></tr>
+<tr class="memdesc:aac083bf308a18be65ad63c4010757d61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests the blending of two trajectories with an invalid group name.  <a href="unittest__trajectory__blender__transition__window_8cpp.html#aac083bf308a18be65ad63c4010757d61">More...</a><br /></td></tr>
+<tr class="separator:aac083bf308a18be65ad63c4010757d61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58773480f610adf28f82abce8661332e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__blender__transition__window_8cpp.html#a58773480f610adf28f82abce8661332e">TEST_P</a> (<a class="el" href="classTrajectoryBlenderTransitionWindowTest.html">TrajectoryBlenderTransitionWindowTest</a>, testInvalidTargetLink)</td></tr>
+<tr class="memdesc:a58773480f610adf28f82abce8661332e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests the blending of two trajectories with an invalid target link.  <a href="unittest__trajectory__blender__transition__window_8cpp.html#a58773480f610adf28f82abce8661332e">More...</a><br /></td></tr>
+<tr class="separator:a58773480f610adf28f82abce8661332e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5d9089dfd8df881acf82f74e0952285"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__blender__transition__window_8cpp.html#ab5d9089dfd8df881acf82f74e0952285">TEST_P</a> (<a class="el" href="classTrajectoryBlenderTransitionWindowTest.html">TrajectoryBlenderTransitionWindowTest</a>, testNegativeRadius)</td></tr>
+<tr class="memdesc:ab5d9089dfd8df881acf82f74e0952285"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests the blending of two trajectories with a negative blending radius.  <a href="unittest__trajectory__blender__transition__window_8cpp.html#ab5d9089dfd8df881acf82f74e0952285">More...</a><br /></td></tr>
+<tr class="separator:ab5d9089dfd8df881acf82f74e0952285"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa119a26b4fbe769fb1e7cb8a38e0b94a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__blender__transition__window_8cpp.html#aa119a26b4fbe769fb1e7cb8a38e0b94a">TEST_P</a> (<a class="el" href="classTrajectoryBlenderTransitionWindowTest.html">TrajectoryBlenderTransitionWindowTest</a>, testZeroRadius)</td></tr>
+<tr class="memdesc:aa119a26b4fbe769fb1e7cb8a38e0b94a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests the blending of two trajectories with zero blending radius.  <a href="unittest__trajectory__blender__transition__window_8cpp.html#aa119a26b4fbe769fb1e7cb8a38e0b94a">More...</a><br /></td></tr>
+<tr class="separator:aa119a26b4fbe769fb1e7cb8a38e0b94a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf8413229f45d25984515762e20ebfe8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__blender__transition__window_8cpp.html#abf8413229f45d25984515762e20ebfe8">TEST_P</a> (<a class="el" href="classTrajectoryBlenderTransitionWindowTest.html">TrajectoryBlenderTransitionWindowTest</a>, testDifferentSamplingTimes)</td></tr>
+<tr class="memdesc:abf8413229f45d25984515762e20ebfe8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests the blending of two trajectories with differenent sampling times.  <a href="unittest__trajectory__blender__transition__window_8cpp.html#abf8413229f45d25984515762e20ebfe8">More...</a><br /></td></tr>
+<tr class="separator:abf8413229f45d25984515762e20ebfe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0ebba2872a61d029e592781cfe72bb5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__blender__transition__window_8cpp.html#aa0ebba2872a61d029e592781cfe72bb5">TEST_P</a> (<a class="el" href="classTrajectoryBlenderTransitionWindowTest.html">TrajectoryBlenderTransitionWindowTest</a>, testNonUniformSamplingTime)</td></tr>
+<tr class="memdesc:aa0ebba2872a61d029e592781cfe72bb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests the blending of two trajectories with one trajectory having non-uniform sampling time (apart from the last sample, which is ignored).  <a href="unittest__trajectory__blender__transition__window_8cpp.html#aa0ebba2872a61d029e592781cfe72bb5">More...</a><br /></td></tr>
+<tr class="separator:aa0ebba2872a61d029e592781cfe72bb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a851c8c3ea1d9e127eb4b56b9b1b43a60"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__blender__transition__window_8cpp.html#a851c8c3ea1d9e127eb4b56b9b1b43a60">TEST_P</a> (<a class="el" href="classTrajectoryBlenderTransitionWindowTest.html">TrajectoryBlenderTransitionWindowTest</a>, testNotIntersectingTrajectories)</td></tr>
+<tr class="memdesc:a851c8c3ea1d9e127eb4b56b9b1b43a60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests the blending of two trajectories which do not intersect.  <a href="unittest__trajectory__blender__transition__window_8cpp.html#a851c8c3ea1d9e127eb4b56b9b1b43a60">More...</a><br /></td></tr>
+<tr class="separator:a851c8c3ea1d9e127eb4b56b9b1b43a60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afeeddc65d6200e11b87ea8b7b39b6a50"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__blender__transition__window_8cpp.html#afeeddc65d6200e11b87ea8b7b39b6a50">TEST_P</a> (<a class="el" href="classTrajectoryBlenderTransitionWindowTest.html">TrajectoryBlenderTransitionWindowTest</a>, testNonStationaryPoint)</td></tr>
+<tr class="memdesc:afeeddc65d6200e11b87ea8b7b39b6a50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests the blending of two cartesian trajectories with the shared point (last point of first, first point of second trajectory) having a non-zero velocity.  <a href="unittest__trajectory__blender__transition__window_8cpp.html#afeeddc65d6200e11b87ea8b7b39b6a50">More...</a><br /></td></tr>
+<tr class="separator:afeeddc65d6200e11b87ea8b7b39b6a50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75ad7680cfdf36bfa14d072f9b45f578"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__blender__transition__window_8cpp.html#a75ad7680cfdf36bfa14d072f9b45f578">TEST_P</a> (<a class="el" href="classTrajectoryBlenderTransitionWindowTest.html">TrajectoryBlenderTransitionWindowTest</a>, testTraj1InsideBlendRadius)</td></tr>
+<tr class="memdesc:a75ad7680cfdf36bfa14d072f9b45f578"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests the blending of two cartesian trajectories where the first trajectory is completely within the sphere defined by the blend radius.  <a href="unittest__trajectory__blender__transition__window_8cpp.html#a75ad7680cfdf36bfa14d072f9b45f578">More...</a><br /></td></tr>
+<tr class="separator:a75ad7680cfdf36bfa14d072f9b45f578"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61407aaf33f34d7212e28df05af49f29"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__blender__transition__window_8cpp.html#a61407aaf33f34d7212e28df05af49f29">TEST_P</a> (<a class="el" href="classTrajectoryBlenderTransitionWindowTest.html">TrajectoryBlenderTransitionWindowTest</a>, testTraj2InsideBlendRadius)</td></tr>
+<tr class="memdesc:a61407aaf33f34d7212e28df05af49f29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests the blending of two cartesian trajectories where the second trajectory is completely within the sphere defined by the blend radius.  <a href="unittest__trajectory__blender__transition__window_8cpp.html#a61407aaf33f34d7212e28df05af49f29">More...</a><br /></td></tr>
+<tr class="separator:a61407aaf33f34d7212e28df05af49f29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66a27bf0fb767bfaffe9e59a36b2969f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__blender__transition__window_8cpp.html#a66a27bf0fb767bfaffe9e59a36b2969f">TEST_P</a> (<a class="el" href="classTrajectoryBlenderTransitionWindowTest.html">TrajectoryBlenderTransitionWindowTest</a>, testLinLinBlending)</td></tr>
+<tr class="memdesc:a66a27bf0fb767bfaffe9e59a36b2969f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests the blending of two cartesian linear trajectories using robot model.  <a href="unittest__trajectory__blender__transition__window_8cpp.html#a66a27bf0fb767bfaffe9e59a36b2969f">More...</a><br /></td></tr>
+<tr class="separator:a66a27bf0fb767bfaffe9e59a36b2969f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af78248048195d8c5d215324df6c5fa20"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__blender__transition__window_8cpp.html#af78248048195d8c5d215324df6c5fa20">TEST_P</a> (<a class="el" href="classTrajectoryBlenderTransitionWindowTest.html">TrajectoryBlenderTransitionWindowTest</a>, testOverlappingBlendTrajectories)</td></tr>
+<tr class="memdesc:af78248048195d8c5d215324df6c5fa20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests the blending of two cartesian linear trajectories which have an overlap in the blending sphere using robot model. To be precise, the trajectories exactly lie on top of each other.  <a href="unittest__trajectory__blender__transition__window_8cpp.html#af78248048195d8c5d215324df6c5fa20">More...</a><br /></td></tr>
+<tr class="separator:af78248048195d8c5d215324df6c5fa20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a436482e83696016c97dfd59b8d990c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__blender__transition__window_8cpp.html#a6a436482e83696016c97dfd59b8d990c">TEST_P</a> (<a class="el" href="classTrajectoryBlenderTransitionWindowTest.html">TrajectoryBlenderTransitionWindowTest</a>, testNonLinearBlending)</td></tr>
+<tr class="memdesc:a6a436482e83696016c97dfd59b8d990c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests the blending of two cartesian trajectories which differ from a straight line.  <a href="unittest__trajectory__blender__transition__window_8cpp.html#a6a436482e83696016c97dfd59b8d990c">More...</a><br /></td></tr>
+<tr class="separator:a6a436482e83696016c97dfd59b8d990c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__blender__transition__window_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> (int argc, char **argv)</td></tr>
 <tr class="separator:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:aa7f9383e07e7c03560917dd18d1f761b"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__blender__transition__window_8cpp.html#aa7f9383e07e7c03560917dd18d1f761b">PARAM_MODEL_NO_GRIPPER_NAME</a> { &quot;robot_description&quot; }</td></tr>
+<tr class="separator:aa7f9383e07e7c03560917dd18d1f761b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ca4023b540762bab834d86532ceb22f"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__trajectory__blender__transition__window_8cpp.html#a1ca4023b540762bab834d86532ceb22f">PARAM_MODEL_WITH_GRIPPER_NAME</a> { &quot;robot_description_pg70&quot; }</td></tr>
+<tr class="separator:a1ca4023b540762bab834d86532ceb22f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a6f6b2b6634692ae008f65285cfa9fac0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f6b2b6634692ae008f65285cfa9fac0">&#9670;&nbsp;</a></span>CARTESIAN_ANGULAR_VELOCITY_TOLERANCE()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string CARTESIAN_ANGULAR_VELOCITY_TOLERANCE </td>
+          <td>(</td>
+          <td class="paramtype">&quot;cartesian_angular_velocity_tolerance&quot;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="unittest__trajectory__blender__transition__window_8cpp_a6f6b2b6634692ae008f65285cfa9fac0_icgraph.png" border="0" usemap="#unittest__trajectory__blender__transition__window_8cpp_a6f6b2b6634692ae008f65285cfa9fac0_icgraph" alt=""/></div>
+<map name="unittest__trajectory__blender__transition__window_8cpp_a6f6b2b6634692ae008f65285cfa9fac0_icgraph" id="unittest__trajectory__blender__transition__window_8cpp_a6f6b2b6634692ae008f65285cfa9fac0_icgraph">
+<area shape="rect" title=" " alt="" coords="252,5,489,47"/>
+<area shape="rect" href="classTrajectoryBlenderTransitionWindowTest.html#a053df89241e6ed29c6d277de86a01f6e" title="Create test scenario for trajectory blender." alt="" coords="5,5,204,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a59a83a0c77365bd6567371e044b0baf1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59a83a0c77365bd6567371e044b0baf1">&#9670;&nbsp;</a></span>CARTESIAN_VELOCITY_TOLERANCE()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string CARTESIAN_VELOCITY_TOLERANCE </td>
+          <td>(</td>
+          <td class="paramtype">&quot;cartesian_velocity_tolerance&quot;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="unittest__trajectory__blender__transition__window_8cpp_a59a83a0c77365bd6567371e044b0baf1_icgraph.png" border="0" usemap="#unittest__trajectory__blender__transition__window_8cpp_a59a83a0c77365bd6567371e044b0baf1_icgraph" alt=""/></div>
+<map name="unittest__trajectory__blender__transition__window_8cpp_a59a83a0c77365bd6567371e044b0baf1_icgraph" id="unittest__trajectory__blender__transition__window_8cpp_a59a83a0c77365bd6567371e044b0baf1_icgraph">
+<area shape="rect" title=" " alt="" coords="252,5,417,47"/>
+<area shape="rect" href="classTrajectoryBlenderTransitionWindowTest.html#a053df89241e6ed29c6d277de86a01f6e" title="Create test scenario for trajectory blender." alt="" coords="5,5,204,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7f38e2a855c805a04722207e2311c77e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f38e2a855c805a04722207e2311c77e">&#9670;&nbsp;</a></span>INSTANTIATE_TEST_SUITE_P()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">INSTANTIATE_TEST_SUITE_P </td>
+          <td>(</td>
+          <td class="paramtype">InstantiationName&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classTrajectoryBlenderTransitionWindowTest.html">TrajectoryBlenderTransitionWindowTest</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">::testing::Values(<a class="el" href="unittest__trajectory__generator__ptp_8cpp.html#aa7f9383e07e7c03560917dd18d1f761b">PARAM_MODEL_NO_GRIPPER_NAME</a>, <a class="el" href="unittest__trajectory__generator__ptp_8cpp.html#a1ca4023b540762bab834d86532ceb22f">PARAM_MODEL_WITH_GRIPPER_NAME</a>)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a50c36a4a78465728ec01b75416c540b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50c36a4a78465728ec01b75416c540b3">&#9670;&nbsp;</a></span>JOINT_ACCELERATION_TOLERANCE()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string JOINT_ACCELERATION_TOLERANCE </td>
+          <td>(</td>
+          <td class="paramtype">&quot;joint_acceleration_tolerance&quot;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="unittest__trajectory__blender__transition__window_8cpp_a50c36a4a78465728ec01b75416c540b3_icgraph.png" border="0" usemap="#unittest__trajectory__blender__transition__window_8cpp_a50c36a4a78465728ec01b75416c540b3_icgraph" alt=""/></div>
+<map name="unittest__trajectory__blender__transition__window_8cpp_a50c36a4a78465728ec01b75416c540b3_icgraph" id="unittest__trajectory__blender__transition__window_8cpp_a50c36a4a78465728ec01b75416c540b3_icgraph">
+<area shape="rect" title=" " alt="" coords="252,5,416,47"/>
+<area shape="rect" href="classTrajectoryBlenderTransitionWindowTest.html#a053df89241e6ed29c6d277de86a01f6e" title="Create test scenario for trajectory blender." alt="" coords="5,5,204,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afae7457c0e74df612a6a1af7289b8cfa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afae7457c0e74df612a6a1af7289b8cfa">&#9670;&nbsp;</a></span>JOINT_VELOCITY_TOLERANCE()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string JOINT_VELOCITY_TOLERANCE </td>
+          <td>(</td>
+          <td class="paramtype">&quot;joint_velocity_tolerance&quot;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="unittest__trajectory__blender__transition__window_8cpp_afae7457c0e74df612a6a1af7289b8cfa_icgraph.png" border="0" usemap="#unittest__trajectory__blender__transition__window_8cpp_afae7457c0e74df612a6a1af7289b8cfa_icgraph" alt=""/></div>
+<map name="unittest__trajectory__blender__transition__window_8cpp_afae7457c0e74df612a6a1af7289b8cfa_icgraph" id="unittest__trajectory__blender__transition__window_8cpp_afae7457c0e74df612a6a1af7289b8cfa_icgraph">
+<area shape="rect" title=" " alt="" coords="252,13,465,39"/>
+<area shape="rect" href="classTrajectoryBlenderTransitionWindowTest.html#a053df89241e6ed29c6d277de86a01f6e" title="Create test scenario for trajectory blender." alt="" coords="5,5,204,47"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a3c04138a5bfe5d72780bb7e82a18e627"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3c04138a5bfe5d72780bb7e82a18e627">&#9670;&nbsp;</a></span>main()</h2>
 
@@ -227,18 +397,144 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html#l00722">722</a> of file <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html">unittest_trajectory_blender_transition_window.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html#l00718">718</a> of file <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html">unittest_trajectory_blender_transition_window.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a0e4069a2369fae6a80496da11125619a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0e4069a2369fae6a80496da11125619a">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[1/13]</span></h2>
+<a id="ae2b5e395155711586a6cb2fc4c8ab77e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2b5e395155711586a6cb2fc4c8ab77e">&#9670;&nbsp;</a></span>OTHER_TOLERANCE()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TEST_F </td>
+          <td class="memname">const std::string OTHER_TOLERANCE </td>
+          <td>(</td>
+          <td class="paramtype">&quot;other_tolerance&quot;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0258d4e48c5d63bd1bb8c56e97bd09af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0258d4e48c5d63bd1bb8c56e97bd09af">&#9670;&nbsp;</a></span>PARAM_PLANNING_GROUP_NAME()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string PARAM_PLANNING_GROUP_NAME </td>
+          <td>(</td>
+          <td class="paramtype">&quot;planning_group&quot;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="unittest__trajectory__blender__transition__window_8cpp_a0258d4e48c5d63bd1bb8c56e97bd09af_icgraph.png" border="0" usemap="#unittest__trajectory__blender__transition__window_8cpp_a0258d4e48c5d63bd1bb8c56e97bd09af_icgraph" alt=""/></div>
+<map name="unittest__trajectory__blender__transition__window_8cpp_a0258d4e48c5d63bd1bb8c56e97bd09af_icgraph" id="unittest__trajectory__blender__transition__window_8cpp_a0258d4e48c5d63bd1bb8c56e97bd09af_icgraph">
+<area shape="rect" title=" " alt="" coords="252,13,496,39"/>
+<area shape="rect" href="classTrajectoryBlenderTransitionWindowTest.html#a053df89241e6ed29c6d277de86a01f6e" title="Create test scenario for trajectory blender." alt="" coords="5,5,204,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3ef26f92433dcdbf9ac9c73dfdf72ac8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ef26f92433dcdbf9ac9c73dfdf72ac8">&#9670;&nbsp;</a></span>PARAM_TARGET_LINK_NAME()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string PARAM_TARGET_LINK_NAME </td>
+          <td>(</td>
+          <td class="paramtype">&quot;target_link&quot;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="unittest__trajectory__blender__transition__window_8cpp_a3ef26f92433dcdbf9ac9c73dfdf72ac8_icgraph.png" border="0" usemap="#unittest__trajectory__blender__transition__window_8cpp_a3ef26f92433dcdbf9ac9c73dfdf72ac8_icgraph" alt=""/></div>
+<map name="unittest__trajectory__blender__transition__window_8cpp_a3ef26f92433dcdbf9ac9c73dfdf72ac8_icgraph" id="unittest__trajectory__blender__transition__window_8cpp_a3ef26f92433dcdbf9ac9c73dfdf72ac8_icgraph">
+<area shape="rect" title=" " alt="" coords="252,13,461,39"/>
+<area shape="rect" href="classTrajectoryBlenderTransitionWindowTest.html#a053df89241e6ed29c6d277de86a01f6e" title="Create test scenario for trajectory blender." alt="" coords="5,5,204,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ace6aa291176e1b5a6d6372b3b6b5110a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace6aa291176e1b5a6d6372b3b6b5110a">&#9670;&nbsp;</a></span>SAMPLING_TIME()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string SAMPLING_TIME </td>
+          <td>(</td>
+          <td class="paramtype">&quot;sampling_time&quot;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="unittest__trajectory__blender__transition__window_8cpp_ace6aa291176e1b5a6d6372b3b6b5110a_icgraph.png" border="0" usemap="#unittest__trajectory__blender__transition__window_8cpp_ace6aa291176e1b5a6d6372b3b6b5110a_icgraph" alt=""/></div>
+<map name="unittest__trajectory__blender__transition__window_8cpp_ace6aa291176e1b5a6d6372b3b6b5110a_icgraph" id="unittest__trajectory__blender__transition__window_8cpp_ace6aa291176e1b5a6d6372b3b6b5110a_icgraph">
+<area shape="rect" title=" " alt="" coords="252,13,383,39"/>
+<area shape="rect" href="classTrajectoryBlenderTransitionWindowTest.html#a053df89241e6ed29c6d277de86a01f6e" title="Create test scenario for trajectory blender." alt="" coords="5,5,204,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab52141f7c51b11e67584b679ae66caf7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab52141f7c51b11e67584b679ae66caf7">&#9670;&nbsp;</a></span>TEST_DATA_FILE_NAME()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string TEST_DATA_FILE_NAME </td>
+          <td>(</td>
+          <td class="paramtype">&quot;testdata_file_name&quot;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="unittest__trajectory__blender__transition__window_8cpp_ab52141f7c51b11e67584b679ae66caf7_icgraph.png" border="0" usemap="#unittest__trajectory__blender__transition__window_8cpp_ab52141f7c51b11e67584b679ae66caf7_icgraph" alt=""/></div>
+<map name="unittest__trajectory__blender__transition__window_8cpp_ab52141f7c51b11e67584b679ae66caf7_icgraph" id="unittest__trajectory__blender__transition__window_8cpp_ab52141f7c51b11e67584b679ae66caf7_icgraph">
+<area shape="rect" title=" " alt="" coords="252,13,427,39"/>
+<area shape="rect" href="classTrajectoryBlenderTransitionWindowTest.html#a053df89241e6ed29c6d277de86a01f6e" title="Create test scenario for trajectory blender." alt="" coords="5,5,204,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="abf8413229f45d25984515762e20ebfe8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf8413229f45d25984515762e20ebfe8">&#9670;&nbsp;</a></span>TEST_P() <span class="overload">[1/13]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST_P </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classTrajectoryBlenderTransitionWindowTest.html">TrajectoryBlenderTransitionWindowTest</a>&#160;</td>
           <td class="paramname">, </td>
@@ -267,12 +563,12 @@ Functions</h2></td></tr>
 <li>Blending trajectory cannot be generated. </li>
 </ol>
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html#l00308">308</a> of file <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html">unittest_trajectory_blender_transition_window.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html#l00303">303</a> of file <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html">unittest_trajectory_blender_transition_window.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="unittest__trajectory__blender__transition__window_8cpp_a0e4069a2369fae6a80496da11125619a_cgraph.png" border="0" usemap="#unittest__trajectory__blender__transition__window_8cpp_a0e4069a2369fae6a80496da11125619a_cgraph" alt=""/></div>
-<map name="unittest__trajectory__blender__transition__window_8cpp_a0e4069a2369fae6a80496da11125619a_cgraph" id="unittest__trajectory__blender__transition__window_8cpp_a0e4069a2369fae6a80496da11125619a_cgraph">
+<div class="center"><img src="unittest__trajectory__blender__transition__window_8cpp_abf8413229f45d25984515762e20ebfe8_cgraph.png" border="0" usemap="#unittest__trajectory__blender__transition__window_8cpp_abf8413229f45d25984515762e20ebfe8_cgraph" alt=""/></div>
+<map name="unittest__trajectory__blender__transition__window_8cpp_abf8413229f45d25984515762e20ebfe8_cgraph" id="unittest__trajectory__blender__transition__window_8cpp_abf8413229f45d25984515762e20ebfe8_cgraph">
 <area shape="rect" title="Tests the blending of two trajectories with differenent sampling times." alt="" coords="5,13,75,39"/>
 <area shape="rect" href="namespacemoveit_1_1core.html#a0aafbf7242f36d6efd7bd73ecee400e8" title="Convert a MoveIt robot state to a robot state message." alt="" coords="123,5,303,47"/>
 </map>
@@ -280,14 +576,14 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a53e5416649aed1d171cc3e5803f3f0c9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a53e5416649aed1d171cc3e5803f3f0c9">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[2/13]</span></h2>
+<a id="aac083bf308a18be65ad63c4010757d61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac083bf308a18be65ad63c4010757d61">&#9670;&nbsp;</a></span>TEST_P() <span class="overload">[2/13]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TEST_F </td>
+          <td class="memname">TEST_P </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classTrajectoryBlenderTransitionWindowTest.html">TrajectoryBlenderTransitionWindowTest</a>&#160;</td>
           <td class="paramname">, </td>
@@ -316,18 +612,18 @@ Here is the call graph for this function:</div>
 <li>Blending trajectory cannot be generated. </li>
 </ol>
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html#l00190">190</a> of file <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html">unittest_trajectory_blender_transition_window.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html#l00185">185</a> of file <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html">unittest_trajectory_blender_transition_window.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a04f4d6faca0d3c73ea72bd41e099ede8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a04f4d6faca0d3c73ea72bd41e099ede8">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[3/13]</span></h2>
+<a id="a58773480f610adf28f82abce8661332e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58773480f610adf28f82abce8661332e">&#9670;&nbsp;</a></span>TEST_P() <span class="overload">[3/13]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TEST_F </td>
+          <td class="memname">TEST_P </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classTrajectoryBlenderTransitionWindowTest.html">TrajectoryBlenderTransitionWindowTest</a>&#160;</td>
           <td class="paramname">, </td>
@@ -356,18 +652,18 @@ Here is the call graph for this function:</div>
 <li>Blending trajectory cannot be generated. </li>
 </ol>
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html#l00219">219</a> of file <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html">unittest_trajectory_blender_transition_window.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html#l00214">214</a> of file <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html">unittest_trajectory_blender_transition_window.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a93b1f6deb0746a8449030f6e623bf66d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a93b1f6deb0746a8449030f6e623bf66d">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[4/13]</span></h2>
+<a id="a66a27bf0fb767bfaffe9e59a36b2969f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66a27bf0fb767bfaffe9e59a36b2969f">&#9670;&nbsp;</a></span>TEST_P() <span class="overload">[4/13]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TEST_F </td>
+          <td class="memname">TEST_P </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classTrajectoryBlenderTransitionWindowTest.html">TrajectoryBlenderTransitionWindowTest</a>&#160;</td>
           <td class="paramname">, </td>
@@ -403,17 +699,17 @@ Here is the call graph for this function:</div>
 <li>No bound is violated, the trajectories are continuous in joint and cartesian space. </li>
 </ol>
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html#l00536">536</a> of file <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html">unittest_trajectory_blender_transition_window.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html#l00531">531</a> of file <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html">unittest_trajectory_blender_transition_window.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="unittest__trajectory__blender__transition__window_8cpp_a93b1f6deb0746a8449030f6e623bf66d_cgraph.png" border="0" usemap="#unittest__trajectory__blender__transition__window_8cpp_a93b1f6deb0746a8449030f6e623bf66d_cgraph" alt=""/></div>
-<map name="unittest__trajectory__blender__transition__window_8cpp_a93b1f6deb0746a8449030f6e623bf66d_cgraph" id="unittest__trajectory__blender__transition__window_8cpp_a93b1f6deb0746a8449030f6e623bf66d_cgraph">
+<div class="center"><img src="unittest__trajectory__blender__transition__window_8cpp_a66a27bf0fb767bfaffe9e59a36b2969f_cgraph.png" border="0" usemap="#unittest__trajectory__blender__transition__window_8cpp_a66a27bf0fb767bfaffe9e59a36b2969f_cgraph" alt=""/></div>
+<map name="unittest__trajectory__blender__transition__window_8cpp_a66a27bf0fb767bfaffe9e59a36b2969f_cgraph" id="unittest__trajectory__blender__transition__window_8cpp_a66a27bf0fb767bfaffe9e59a36b2969f_cgraph">
 <area shape="rect" title="Tests the blending of two cartesian linear trajectories using robot model." alt="" coords="5,472,75,499"/>
 <area shape="rect" href="namespacetestutils.html#a54e7536d058c6a6a0ddbc8fb2b21b58f" title="check the blending result of lin&#45;lin" alt="" coords="123,472,321,499"/>
 <area shape="rect" href="namespacetestutils.html#a0419dc6ce1ec6a05cbc92c75f965cbb4" title=" " alt="" coords="387,183,566,225"/>
 <area shape="rect" href="namespacetestutils.html#ae42679ba2fbc4ec4ebba750bee0c072f" title="check the blending result, if the joint space continuity is fulfilled" alt="" coords="387,377,566,418"/>
-<area shape="rect" href="namespacetestutils.html#a6941dcc98ca4e3988e382fd3de978667" title="check joint trajectory of consistency, position, velocity and acceleration limits" alt="" coords="369,443,584,469"/>
+<area shape="rect" href="namespacetestutils.html#a8014182233f9e76e880c3024727735f1" title="check joint trajectory of consistency, position, velocity and acceleration limits" alt="" coords="369,443,584,469"/>
 <area shape="rect" href="namespacetestutils.html#ada964043a384dfad06b0592e45fad947" title="checkOriginalTrajectoryAfterBlending" alt="" coords="389,494,564,535"/>
 <area shape="rect" href="namespacetestutils.html#a41c248355164c56800214fd8e807827c" title="Checks if all points of the blending trajectory lie within the blending radius." alt="" coords="381,559,572,601"/>
 <area shape="rect" href="classpilz__industrial__motion__planner_1_1LimitsContainer.html#aa05824e7f6038376806adf1f3de49c90" title="Obtain the Joint Limits from the container." alt="" coords="382,625,571,681"/>
@@ -422,23 +718,24 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="classpilz__industrial__motion__planner_1_1CartesianLimit.html#a238c218afd7f810c629010bdd976443f" title="Return the maximal rotational velocity [rad/s], 0 if nothing was set." alt="" coords="654,136,853,192"/>
 <area shape="rect" href="classpilz__industrial__motion__planner_1_1CartesianLimit.html#adf1477f7582ef5d4ace6d2462a2a3825" title="Return the maximal translational acceleration [m/s^2], 0 if nothing was set." alt="" coords="632,216,875,272"/>
 <area shape="rect" href="classpilz__industrial__motion__planner_1_1CartesianLimit.html#ae271329c2a90afec8db744e9b3f53548" title="Return the maximal translational velocity [m/s], 0 if nothing was set." alt="" coords="646,296,861,352"/>
-<area shape="rect" href="namespacetestutils.html#a3c3c86cff874d688226f74f9e8ea4b91" title="is Acceleration Bounded" alt="" coords="666,377,841,418"/>
-<area shape="rect" href="namespacetestutils.html#ac5d5277d059651d070458ced4dd21d3d" title="is Position Bounded" alt="" coords="652,443,855,469"/>
-<area shape="rect" href="namespacetestutils.html#a4dc6934eb856b588dbbef7744c766bb3" title="check if the sizes of the joint position/veloicty/acceleration are correct" alt="" coords="640,493,867,520"/>
-<area shape="rect" href="namespacetestutils.html#a318192937ca55e8c39e41410d9de0f22" title="is Velocity Bounded" alt="" coords="652,544,855,571"/>
+<area shape="rect" href="namespacetestutils.html#acf76645b0c371ee65aa05732ed6ad6e8" title="is Acceleration Bounded" alt="" coords="666,377,841,418"/>
+<area shape="rect" href="namespacetestutils.html#a92afbd45dfbe849ac79e2f71d3cb16db" title="is Position Bounded" alt="" coords="652,443,855,469"/>
+<area shape="rect" href="namespacetestutils.html#aae843ff794dfbc3b5ead9ddc6f98529d" title="check if the sizes of the joint position/veloicty/acceleration are correct" alt="" coords="640,493,867,520"/>
+<area shape="rect" href="namespacetestutils.html#ab5e2d5d8565b6d76e95a7dcddc8af2b5" title="is Velocity Bounded" alt="" coords="652,544,855,571"/>
+<area shape="rect" href="classpilz__industrial__motion__planner_1_1JointLimitsContainer.html#a040d5fa11dbedd32a857862bd4ce0b67" title="getLimit get the limit for the given joint name" alt="" coords="923,428,1141,484"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a7c009147e13f3a8e99582866084cda04"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7c009147e13f3a8e99582866084cda04">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[5/13]</span></h2>
+<a id="ab5d9089dfd8df881acf82f74e0952285"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5d9089dfd8df881acf82f74e0952285">&#9670;&nbsp;</a></span>TEST_P() <span class="overload">[5/13]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TEST_F </td>
+          <td class="memname">TEST_P </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classTrajectoryBlenderTransitionWindowTest.html">TrajectoryBlenderTransitionWindowTest</a>&#160;</td>
           <td class="paramname">, </td>
@@ -467,18 +764,18 @@ Here is the call graph for this function:</div>
 <li>Blending trajectory cannot be generated. </li>
 </ol>
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html#l00249">249</a> of file <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html">unittest_trajectory_blender_transition_window.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html#l00244">244</a> of file <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html">unittest_trajectory_blender_transition_window.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a7d39ac8fe9fc6f0c8607fe4f76d3bcc9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7d39ac8fe9fc6f0c8607fe4f76d3bcc9">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[6/13]</span></h2>
+<a id="a6a436482e83696016c97dfd59b8d990c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a436482e83696016c97dfd59b8d990c">&#9670;&nbsp;</a></span>TEST_P() <span class="overload">[6/13]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TEST_F </td>
+          <td class="memname">TEST_P </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classTrajectoryBlenderTransitionWindowTest.html">TrajectoryBlenderTransitionWindowTest</a>&#160;</td>
           <td class="paramname">, </td>
@@ -516,18 +813,18 @@ Here is the call graph for this function:</div>
 <li>No bound is violated, the trajectories are continuous in joint and cartesian space. </li>
 </ol>
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html#l00625">625</a> of file <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html">unittest_trajectory_blender_transition_window.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html#l00620">620</a> of file <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html">unittest_trajectory_blender_transition_window.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="unittest__trajectory__blender__transition__window_8cpp_a7d39ac8fe9fc6f0c8607fe4f76d3bcc9_cgraph.png" border="0" usemap="#unittest__trajectory__blender__transition__window_8cpp_a7d39ac8fe9fc6f0c8607fe4f76d3bcc9_cgraph" alt=""/></div>
-<map name="unittest__trajectory__blender__transition__window_8cpp_a7d39ac8fe9fc6f0c8607fe4f76d3bcc9_cgraph" id="unittest__trajectory__blender__transition__window_8cpp_a7d39ac8fe9fc6f0c8607fe4f76d3bcc9_cgraph">
+<div class="center"><img src="unittest__trajectory__blender__transition__window_8cpp_a6a436482e83696016c97dfd59b8d990c_cgraph.png" border="0" usemap="#unittest__trajectory__blender__transition__window_8cpp_a6a436482e83696016c97dfd59b8d990c_cgraph" alt=""/></div>
+<map name="unittest__trajectory__blender__transition__window_8cpp_a6a436482e83696016c97dfd59b8d990c_cgraph" id="unittest__trajectory__blender__transition__window_8cpp_a6a436482e83696016c97dfd59b8d990c_cgraph">
 <area shape="rect" title="Tests the blending of two cartesian trajectories which differ from a straight line." alt="" coords="5,501,75,528"/>
 <area shape="rect" href="namespacetestutils.html#a54e7536d058c6a6a0ddbc8fb2b21b58f" title="check the blending result of lin&#45;lin" alt="" coords="142,472,341,499"/>
-<area shape="rect" href="namespacepilz__industrial__motion__planner.html#a64b959a9147984677d281a476dfd981e" title="Generate joint trajectory from a KDL Cartesian trajectory." alt="" coords="123,523,360,565"/>
+<area shape="rect" href="namespacepilz__industrial__motion__planner.html#a85ea227cb54bc473b76cd7efd652ead0" title="Generate joint trajectory from a KDL Cartesian trajectory." alt="" coords="123,523,360,565"/>
 <area shape="rect" href="namespacetestutils.html#a0419dc6ce1ec6a05cbc92c75f965cbb4" title=" " alt="" coords="426,183,605,225"/>
 <area shape="rect" href="namespacetestutils.html#ae42679ba2fbc4ec4ebba750bee0c072f" title="check the blending result, if the joint space continuity is fulfilled" alt="" coords="426,377,605,418"/>
-<area shape="rect" href="namespacetestutils.html#a6941dcc98ca4e3988e382fd3de978667" title="check joint trajectory of consistency, position, velocity and acceleration limits" alt="" coords="408,443,623,469"/>
+<area shape="rect" href="namespacetestutils.html#a8014182233f9e76e880c3024727735f1" title="check joint trajectory of consistency, position, velocity and acceleration limits" alt="" coords="408,443,623,469"/>
 <area shape="rect" href="namespacetestutils.html#ada964043a384dfad06b0592e45fad947" title="checkOriginalTrajectoryAfterBlending" alt="" coords="428,494,603,535"/>
 <area shape="rect" href="namespacetestutils.html#a41c248355164c56800214fd8e807827c" title="Checks if all points of the blending trajectory lie within the blending radius." alt="" coords="420,559,611,601"/>
 <area shape="rect" href="classpilz__industrial__motion__planner_1_1LimitsContainer.html#aa05824e7f6038376806adf1f3de49c90" title="Obtain the Joint Limits from the container." alt="" coords="421,625,610,681"/>
@@ -536,23 +833,24 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="classpilz__industrial__motion__planner_1_1CartesianLimit.html#a238c218afd7f810c629010bdd976443f" title="Return the maximal rotational velocity [rad/s], 0 if nothing was set." alt="" coords="693,136,891,192"/>
 <area shape="rect" href="classpilz__industrial__motion__planner_1_1CartesianLimit.html#adf1477f7582ef5d4ace6d2462a2a3825" title="Return the maximal translational acceleration [m/s^2], 0 if nothing was set." alt="" coords="671,216,913,272"/>
 <area shape="rect" href="classpilz__industrial__motion__planner_1_1CartesianLimit.html#ae271329c2a90afec8db744e9b3f53548" title="Return the maximal translational velocity [m/s], 0 if nothing was set." alt="" coords="685,296,899,352"/>
-<area shape="rect" href="namespacetestutils.html#a3c3c86cff874d688226f74f9e8ea4b91" title="is Acceleration Bounded" alt="" coords="705,377,879,418"/>
-<area shape="rect" href="namespacetestutils.html#ac5d5277d059651d070458ced4dd21d3d" title="is Position Bounded" alt="" coords="691,443,893,469"/>
-<area shape="rect" href="namespacetestutils.html#a4dc6934eb856b588dbbef7744c766bb3" title="check if the sizes of the joint position/veloicty/acceleration are correct" alt="" coords="679,493,905,520"/>
-<area shape="rect" href="namespacetestutils.html#a318192937ca55e8c39e41410d9de0f22" title="is Velocity Bounded" alt="" coords="691,544,893,571"/>
+<area shape="rect" href="namespacetestutils.html#acf76645b0c371ee65aa05732ed6ad6e8" title="is Acceleration Bounded" alt="" coords="705,377,879,418"/>
+<area shape="rect" href="namespacetestutils.html#a92afbd45dfbe849ac79e2f71d3cb16db" title="is Position Bounded" alt="" coords="691,443,893,469"/>
+<area shape="rect" href="namespacetestutils.html#aae843ff794dfbc3b5ead9ddc6f98529d" title="check if the sizes of the joint position/veloicty/acceleration are correct" alt="" coords="679,493,905,520"/>
+<area shape="rect" href="namespacetestutils.html#ab5e2d5d8565b6d76e95a7dcddc8af2b5" title="is Velocity Bounded" alt="" coords="691,544,893,571"/>
+<area shape="rect" href="classpilz__industrial__motion__planner_1_1JointLimitsContainer.html#a040d5fa11dbedd32a857862bd4ce0b67" title="getLimit get the limit for the given joint name" alt="" coords="961,428,1180,484"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="aaffb3bcd83b6cbc84c735407b9405e7a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaffb3bcd83b6cbc84c735407b9405e7a">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[7/13]</span></h2>
+<a id="afeeddc65d6200e11b87ea8b7b39b6a50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afeeddc65d6200e11b87ea8b7b39b6a50">&#9670;&nbsp;</a></span>TEST_P() <span class="overload">[7/13]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TEST_F </td>
+          <td class="memname">TEST_P </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classTrajectoryBlenderTransitionWindowTest.html">TrajectoryBlenderTransitionWindowTest</a>&#160;</td>
           <td class="paramname">, </td>
@@ -581,18 +879,18 @@ Here is the call graph for this function:</div>
 <li>Blending trajectory cannot be generated. </li>
 </ol>
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html#l00425">425</a> of file <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html">unittest_trajectory_blender_transition_window.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html#l00420">420</a> of file <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html">unittest_trajectory_blender_transition_window.cpp</a>.</p>
 
 </div>
 </div>
-<a id="aba7de9d2467ccbb17f91d0bba78f9f49"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba7de9d2467ccbb17f91d0bba78f9f49">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[8/13]</span></h2>
+<a id="aa0ebba2872a61d029e592781cfe72bb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0ebba2872a61d029e592781cfe72bb5">&#9670;&nbsp;</a></span>TEST_P() <span class="overload">[8/13]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TEST_F </td>
+          <td class="memname">TEST_P </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classTrajectoryBlenderTransitionWindowTest.html">TrajectoryBlenderTransitionWindowTest</a>&#160;</td>
           <td class="paramname">, </td>
@@ -621,18 +919,18 @@ Here is the call graph for this function:</div>
 <li>Blending trajectory cannot be generated. </li>
 </ol>
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html#l00360">360</a> of file <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html">unittest_trajectory_blender_transition_window.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html#l00355">355</a> of file <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html">unittest_trajectory_blender_transition_window.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a95888514f6eea9035908debed0cfc012"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a95888514f6eea9035908debed0cfc012">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[9/13]</span></h2>
+<a id="a851c8c3ea1d9e127eb4b56b9b1b43a60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a851c8c3ea1d9e127eb4b56b9b1b43a60">&#9670;&nbsp;</a></span>TEST_P() <span class="overload">[9/13]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TEST_F </td>
+          <td class="memname">TEST_P </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classTrajectoryBlenderTransitionWindowTest.html">TrajectoryBlenderTransitionWindowTest</a>&#160;</td>
           <td class="paramname">, </td>
@@ -667,18 +965,18 @@ Here is the call graph for this function:</div>
 <li>Blending trajectory cannot be generated. </li>
 </ol>
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html#l00394">394</a> of file <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html">unittest_trajectory_blender_transition_window.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html#l00389">389</a> of file <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html">unittest_trajectory_blender_transition_window.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a98d875779c0ce5dc6ffb287be5d8858d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a98d875779c0ce5dc6ffb287be5d8858d">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[10/13]</span></h2>
+<a id="af78248048195d8c5d215324df6c5fa20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af78248048195d8c5d215324df6c5fa20">&#9670;&nbsp;</a></span>TEST_P() <span class="overload">[10/13]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TEST_F </td>
+          <td class="memname">TEST_P </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classTrajectoryBlenderTransitionWindowTest.html">TrajectoryBlenderTransitionWindowTest</a>&#160;</td>
           <td class="paramname">, </td>
@@ -714,19 +1012,19 @@ Here is the call graph for this function:</div>
 <li>No bound is violated, the trajectories are continuous in joint and cartesian space. </li>
 </ol>
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html#l00579">579</a> of file <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html">unittest_trajectory_blender_transition_window.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html#l00574">574</a> of file <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html">unittest_trajectory_blender_transition_window.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="unittest__trajectory__blender__transition__window_8cpp_a98d875779c0ce5dc6ffb287be5d8858d_cgraph.png" border="0" usemap="#unittest__trajectory__blender__transition__window_8cpp_a98d875779c0ce5dc6ffb287be5d8858d_cgraph" alt=""/></div>
-<map name="unittest__trajectory__blender__transition__window_8cpp_a98d875779c0ce5dc6ffb287be5d8858d_cgraph" id="unittest__trajectory__blender__transition__window_8cpp_a98d875779c0ce5dc6ffb287be5d8858d_cgraph">
+<div class="center"><img src="unittest__trajectory__blender__transition__window_8cpp_af78248048195d8c5d215324df6c5fa20_cgraph.png" border="0" usemap="#unittest__trajectory__blender__transition__window_8cpp_af78248048195d8c5d215324df6c5fa20_cgraph" alt=""/></div>
+<map name="unittest__trajectory__blender__transition__window_8cpp_af78248048195d8c5d215324df6c5fa20_cgraph" id="unittest__trajectory__blender__transition__window_8cpp_af78248048195d8c5d215324df6c5fa20_cgraph">
 <area shape="rect" title="Tests the blending of two cartesian linear trajectories which have an overlap in the blending sphere ..." alt="" coords="5,537,75,564"/>
 <area shape="rect" href="namespacetestutils.html#a54e7536d058c6a6a0ddbc8fb2b21b58f" title="check the blending result of lin&#45;lin" alt="" coords="128,472,327,499"/>
 <area shape="rect" href="classpilz__industrial__motion__planner__testutils_1_1Sequence.html#a8701f00c7e586e091df3fc70ff248040" title=" " alt="" coords="123,523,332,579"/>
 <area shape="rect" href="classpilz__industrial__motion__planner__testutils_1_1BaseCmd.html#aae290507f293e36b98d9ddc468223ca1" title=" " alt="" coords="123,603,331,659"/>
 <area shape="rect" href="namespacetestutils.html#a0419dc6ce1ec6a05cbc92c75f965cbb4" title=" " alt="" coords="398,183,577,225"/>
 <area shape="rect" href="namespacetestutils.html#ae42679ba2fbc4ec4ebba750bee0c072f" title="check the blending result, if the joint space continuity is fulfilled" alt="" coords="398,377,577,418"/>
-<area shape="rect" href="namespacetestutils.html#a6941dcc98ca4e3988e382fd3de978667" title="check joint trajectory of consistency, position, velocity and acceleration limits" alt="" coords="380,443,595,469"/>
+<area shape="rect" href="namespacetestutils.html#a8014182233f9e76e880c3024727735f1" title="check joint trajectory of consistency, position, velocity and acceleration limits" alt="" coords="380,443,595,469"/>
 <area shape="rect" href="namespacetestutils.html#ada964043a384dfad06b0592e45fad947" title="checkOriginalTrajectoryAfterBlending" alt="" coords="400,494,575,535"/>
 <area shape="rect" href="namespacetestutils.html#a41c248355164c56800214fd8e807827c" title="Checks if all points of the blending trajectory lie within the blending radius." alt="" coords="392,559,583,601"/>
 <area shape="rect" href="classpilz__industrial__motion__planner_1_1LimitsContainer.html#aa05824e7f6038376806adf1f3de49c90" title="Obtain the Joint Limits from the container." alt="" coords="393,625,582,681"/>
@@ -735,23 +1033,24 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="classpilz__industrial__motion__planner_1_1CartesianLimit.html#a238c218afd7f810c629010bdd976443f" title="Return the maximal rotational velocity [rad/s], 0 if nothing was set." alt="" coords="665,136,863,192"/>
 <area shape="rect" href="classpilz__industrial__motion__planner_1_1CartesianLimit.html#adf1477f7582ef5d4ace6d2462a2a3825" title="Return the maximal translational acceleration [m/s^2], 0 if nothing was set." alt="" coords="643,216,885,272"/>
 <area shape="rect" href="classpilz__industrial__motion__planner_1_1CartesianLimit.html#ae271329c2a90afec8db744e9b3f53548" title="Return the maximal translational velocity [m/s], 0 if nothing was set." alt="" coords="657,296,871,352"/>
-<area shape="rect" href="namespacetestutils.html#a3c3c86cff874d688226f74f9e8ea4b91" title="is Acceleration Bounded" alt="" coords="677,377,851,418"/>
-<area shape="rect" href="namespacetestutils.html#ac5d5277d059651d070458ced4dd21d3d" title="is Position Bounded" alt="" coords="663,443,865,469"/>
-<area shape="rect" href="namespacetestutils.html#a4dc6934eb856b588dbbef7744c766bb3" title="check if the sizes of the joint position/veloicty/acceleration are correct" alt="" coords="651,493,877,520"/>
-<area shape="rect" href="namespacetestutils.html#a318192937ca55e8c39e41410d9de0f22" title="is Velocity Bounded" alt="" coords="663,544,865,571"/>
+<area shape="rect" href="namespacetestutils.html#acf76645b0c371ee65aa05732ed6ad6e8" title="is Acceleration Bounded" alt="" coords="677,377,851,418"/>
+<area shape="rect" href="namespacetestutils.html#a92afbd45dfbe849ac79e2f71d3cb16db" title="is Position Bounded" alt="" coords="663,443,865,469"/>
+<area shape="rect" href="namespacetestutils.html#aae843ff794dfbc3b5ead9ddc6f98529d" title="check if the sizes of the joint position/veloicty/acceleration are correct" alt="" coords="651,493,877,520"/>
+<area shape="rect" href="namespacetestutils.html#ab5e2d5d8565b6d76e95a7dcddc8af2b5" title="is Velocity Bounded" alt="" coords="663,544,865,571"/>
+<area shape="rect" href="classpilz__industrial__motion__planner_1_1JointLimitsContainer.html#a040d5fa11dbedd32a857862bd4ce0b67" title="getLimit get the limit for the given joint name" alt="" coords="933,428,1152,484"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a571f09d0a51269f6ce736e31bfc9a432"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a571f09d0a51269f6ce736e31bfc9a432">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[11/13]</span></h2>
+<a id="a75ad7680cfdf36bfa14d072f9b45f578"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75ad7680cfdf36bfa14d072f9b45f578">&#9670;&nbsp;</a></span>TEST_P() <span class="overload">[11/13]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TEST_F </td>
+          <td class="memname">TEST_P </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classTrajectoryBlenderTransitionWindowTest.html">TrajectoryBlenderTransitionWindowTest</a>&#160;</td>
           <td class="paramname">, </td>
@@ -780,18 +1079,18 @@ Here is the call graph for this function:</div>
 <li>Blending trajectory cannot be generated. </li>
 </ol>
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html#l00462">462</a> of file <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html">unittest_trajectory_blender_transition_window.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html#l00457">457</a> of file <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html">unittest_trajectory_blender_transition_window.cpp</a>.</p>
 
 </div>
 </div>
-<a id="aa44416a1eb823947f9d6403924e97fca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa44416a1eb823947f9d6403924e97fca">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[12/13]</span></h2>
+<a id="a61407aaf33f34d7212e28df05af49f29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61407aaf33f34d7212e28df05af49f29">&#9670;&nbsp;</a></span>TEST_P() <span class="overload">[12/13]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TEST_F </td>
+          <td class="memname">TEST_P </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classTrajectoryBlenderTransitionWindowTest.html">TrajectoryBlenderTransitionWindowTest</a>&#160;</td>
           <td class="paramname">, </td>
@@ -820,18 +1119,18 @@ Here is the call graph for this function:</div>
 <li>Blending trajectory cannot be generated. </li>
 </ol>
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html#l00499">499</a> of file <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html">unittest_trajectory_blender_transition_window.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html#l00494">494</a> of file <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html">unittest_trajectory_blender_transition_window.cpp</a>.</p>
 
 </div>
 </div>
-<a id="ac73bab18ca48662640201fbe9e8db4ef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac73bab18ca48662640201fbe9e8db4ef">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[13/13]</span></h2>
+<a id="aa119a26b4fbe769fb1e7cb8a38e0b94a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa119a26b4fbe769fb1e7cb8a38e0b94a">&#9670;&nbsp;</a></span>TEST_P() <span class="overload">[13/13]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TEST_F </td>
+          <td class="memname">TEST_P </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classTrajectoryBlenderTransitionWindowTest.html">TrajectoryBlenderTransitionWindowTest</a>&#160;</td>
           <td class="paramname">, </td>
@@ -860,7 +1159,40 @@ Here is the call graph for this function:</div>
 <li>Blending trajectory cannot be generated. </li>
 </ol>
 
-<p class="definition">Definition at line <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html#l00278">278</a> of file <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html">unittest_trajectory_blender_transition_window.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html#l00273">273</a> of file <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html">unittest_trajectory_blender_transition_window.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="aa7f9383e07e7c03560917dd18d1f761b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7f9383e07e7c03560917dd18d1f761b">&#9670;&nbsp;</a></span>PARAM_MODEL_NO_GRIPPER_NAME</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string PARAM_MODEL_NO_GRIPPER_NAME { &quot;robot_description&quot; }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html#l00058">58</a> of file <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html">unittest_trajectory_blender_transition_window.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a1ca4023b540762bab834d86532ceb22f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ca4023b540762bab834d86532ceb22f">&#9670;&nbsp;</a></span>PARAM_MODEL_WITH_GRIPPER_NAME</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string PARAM_MODEL_WITH_GRIPPER_NAME { &quot;robot_description_pg70&quot; }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html#l00059">59</a> of file <a class="el" href="unittest__trajectory__blender__transition__window_8cpp_source.html">unittest_trajectory_blender_transition_window.cpp</a>.</p>
 
 </div>
 </div>

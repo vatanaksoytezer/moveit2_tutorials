@@ -257,7 +257,7 @@ $(function() {
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keyword">const</span> <a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html">moveit::core::JointModelGroup</a>* subgroup, <span class="keyword">const</span> <a class="code" href="structmoveit_1_1core_1_1JointModelGroup_1_1KinematicsSolver.html">moveit::core::JointModelGroup::KinematicsSolver</a>&amp; k)</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;  : subgroup_(subgroup), kinematics_solver_(k.allocator_(subgroup)), bijection_(k.bijection_)</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;{</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  state_space_ = std::make_shared&lt;ompl::base::SE3StateSpace&gt;();</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  state_space_.reset(<span class="keyword">new</span> ompl::base::SE3StateSpace());</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;  state_space_-&gt;setName(subgroup_-&gt;getName() + <span class="stringliteral">&quot;_Workspace&quot;</span>);</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  fk_link_.resize(1, kinematics_solver_-&gt;getTipFrame());</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  <span class="keywordflow">if</span> (!fk_link_[0].empty() &amp;&amp; fk_link_[0][0] == <span class="charliteral">&#39;/&#39;</span>)</div>
@@ -299,7 +299,7 @@ $(function() {
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="comment">  std::cout &lt;&lt; &quot;seed: &quot;;</span></div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;<span class="comment">  for (std::size_t i = 0 ; i &lt; seed_values.size() ; ++i)</span></div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="comment">    std::cout &lt;&lt; seed_values[i] &lt;&lt; &quot; &quot;;</span></div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="comment">  std::cout &lt;&lt; &#39;\n&#39;;</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="comment">  std::cout &lt;&lt; std::endl;</span></div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="comment">  */</span></div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160; </div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;  <span class="comment">// construct the pose</span></div>

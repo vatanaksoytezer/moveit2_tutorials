@@ -211,7 +211,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class for handling single DOF joint constraints. </p>
-<p>This class handles single DOF constraints expressed as a tolerance above and below a target position. Multi-DOF joints can be accommodated by using local name formulations - i.e. for a planar joint specifying a constraint in terms of "planar_joint_name"/x.</p>
+<p>This class handles single DOF constraints expressed as a tolerance above and below a target position. Multi-DOF joints can be accomodated by using local name formulations - i.e. for a planar joint specifying a constraint in terms of "planar_joint_name"/x.</p>
 <p>Continuous revolute single DOF joints will be evaluated based on wrapping around 3.14 and -3.14. Tolerances above and below will be evaluating over the wrap. For instance, if the constraint value is 3.14 and the tolerance above is .04, a value of -3.14 is in bounds, as is a value of -3.12. -3.1 is out of bounds. Similarly, if the value of the constraint is -3.14, the tolerance above is .04, and the tolerance below is .02 then -3.1 is a valid value, as is 3.14; 3.1 is out of bounds.</p>
 <p>Type will be JOINT_CONSTRAINT. </p>
 
@@ -281,7 +281,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classkinematic__constraints_1_1KinematicConstraint.html#a274f48adeec52887ecc31858c5f938d7">kinematic_constraints::KinematicConstraint</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8cpp_source.html#l00345">345</a> of file <a class="el" href="kinematic__constraint_8cpp_source.html">kinematic_constraint.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8cpp_source.html#l00341">341</a> of file <a class="el" href="kinematic__constraint_8cpp_source.html">kinematic_constraint.cpp</a>.</p>
 
 </div>
 </div>
@@ -311,7 +311,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if constraint can be configured from jc </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8cpp_source.html#l00164">164</a> of file <a class="el" href="kinematic__constraint_8cpp_source.html">kinematic_constraint.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8cpp_source.html#l00160">160</a> of file <a class="el" href="kinematic__constraint_8cpp_source.html">kinematic_constraint.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -371,7 +371,7 @@ Here is the caller graph for this function:</div>
 
 <p>Implements <a class="el" href="classkinematic__constraints_1_1KinematicConstraint.html#af8d42b0e5ada212cec7490b78dcfa2a9">kinematic_constraints::KinematicConstraint</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8cpp_source.html#l00307">307</a> of file <a class="el" href="kinematic__constraint_8cpp_source.html">kinematic_constraint.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8cpp_source.html#l00303">303</a> of file <a class="el" href="kinematic__constraint_8cpp_source.html">kinematic_constraint.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -411,7 +411,7 @@ Here is the caller graph for this function:</div>
 
 <p>Implements <a class="el" href="classkinematic__constraints_1_1KinematicConstraint.html#a941e7334e9bd320492d00c4ff49f81d2">kinematic_constraints::KinematicConstraint</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8cpp_source.html#l00340">340</a> of file <a class="el" href="kinematic__constraint_8cpp_source.html">kinematic_constraint.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8cpp_source.html#l00336">336</a> of file <a class="el" href="kinematic__constraint_8cpp_source.html">kinematic_constraint.cpp</a>.</p>
 
 </div>
 </div>
@@ -462,7 +462,7 @@ Here is the caller graph for this function:</div>
 
 <p>Implements <a class="el" href="classkinematic__constraints_1_1KinematicConstraint.html#a7275ec0d99e4dd0429c0f6c0ad9930a4">kinematic_constraints::KinematicConstraint</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8cpp_source.html#l00295">295</a> of file <a class="el" href="kinematic__constraint_8cpp_source.html">kinematic_constraint.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8cpp_source.html#l00291">291</a> of file <a class="el" href="kinematic__constraint_8cpp_source.html">kinematic_constraint.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -529,7 +529,7 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Get the joint model for which this constraint operates. </p>
-<dl class="section return"><dt>Returns</dt><dd>The relevant joint model if enabled, and otherwise nullptr </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The relevant joint model if enabled, and otherwise NULL </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="kinematic__constraint_8h_source.html#l00290">290</a> of file <a class="el" href="kinematic__constraint_8h_source.html">kinematic_constraint.h</a>.</p>
 
@@ -727,7 +727,7 @@ Here is the caller graph for this function:</div>
 
 <p>Reimplemented from <a class="el" href="classkinematic__constraints_1_1KinematicConstraint.html#a9f8184e1a84312f97efd2bc9022124a9">kinematic_constraints::KinematicConstraint</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8cpp_source.html#l00355">355</a> of file <a class="el" href="kinematic__constraint_8cpp_source.html">kinematic_constraint.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="kinematic__constraint_8cpp_source.html#l00351">351</a> of file <a class="el" href="kinematic__constraint_8cpp_source.html">kinematic_constraint.cpp</a>.</p>
 
 </div>
 </div>

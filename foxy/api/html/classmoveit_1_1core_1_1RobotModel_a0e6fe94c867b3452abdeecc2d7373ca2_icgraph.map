@@ -1,6 +1,7 @@
 <map id="moveit::core::RobotModel::getVariableBounds" name="moveit::core::RobotModel::getVariableBounds">
-<area shape="rect" id="node1" title="Get the bounds for a specific variable. Throw an exception of variable is not found." alt="" coords="407,53,597,94"/>
-<area shape="rect" id="node2" href="$classtrajectory__processing_1_1IterativeSplineParameterization.html#ab01c18e50f1663358c658651e1fde2c5" title=" " alt="" coords="115,5,351,61"/>
-<area shape="rect" id="node4" href="$classtrajectory__processing_1_1TimeOptimalTrajectoryGeneration.html#a5ad18a23d5b6f0beedaa4b6e20f8b01b" title=" " alt="" coords="108,85,359,141"/>
-<area shape="rect" id="node3" href="$test__time__parameterization_8cpp.html#a1fb67aa34417d03016c74d44bd7f54e0" title=" " alt="" coords="5,20,60,47"/>
+<area shape="rect" id="node1" title="Get the bounds for a specific variable. Throw an exception of variable is not found." alt="" coords="407,79,597,120"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1RobotModel.html#ab79cc844a13ea80b854f7d391ec023c1" title="For every pair of joints, pre&#45;compute the common roots of the joints." alt="" coords="138,5,329,47"/>
+<area shape="rect" id="node3" href="$classtrajectory__processing_1_1IterativeSplineParameterization.html#ab01c18e50f1663358c658651e1fde2c5" title=" " alt="" coords="115,71,351,127"/>
+<area shape="rect" id="node5" href="$classtrajectory__processing_1_1TimeOptimalTrajectoryGeneration.html#a5ad18a23d5b6f0beedaa4b6e20f8b01b" title=" " alt="" coords="108,151,359,207"/>
+<area shape="rect" id="node4" href="$test__time__parameterization_8cpp.html#a1fb67aa34417d03016c74d44bd7f54e0" title=" " alt="" coords="5,86,60,113"/>
 </map>

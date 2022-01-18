@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>moveit2: moveit2/moveit_core/collision_detection/include/moveit/collision_detection/occupancy_map.h Source File</title>
+<title>moveit2: moveit2/moveit_ros/occupancy_map_monitor/include/moveit/occupancy_map_monitor/occupancy_map.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,7 +62,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_a604c952227cf87b5a3218a0034012e1.html">moveit2</a></li><li class="navelem"><a class="el" href="dir_d8f578438e55ae753c3d122b11fd28ee.html">moveit_core</a></li><li class="navelem"><a class="el" href="dir_c667cc50e6b823172b3f3853c4418069.html">collision_detection</a></li><li class="navelem"><a class="el" href="dir_432de512e3edad584c16dd3e1b444e7c.html">include</a></li><li class="navelem"><a class="el" href="dir_f64eabe8a11fd67199f69e10c19868f6.html">moveit</a></li><li class="navelem"><a class="el" href="dir_e43d0b5e327125b5c920bfaded6fb8d1.html">collision_detection</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_a604c952227cf87b5a3218a0034012e1.html">moveit2</a></li><li class="navelem"><a class="el" href="dir_eacb9244e5a559edd9d4944ad4fc3bb4.html">moveit_ros</a></li><li class="navelem"><a class="el" href="dir_29474aab9bec514e815ee1f641402f1b.html">occupancy_map_monitor</a></li><li class="navelem"><a class="el" href="dir_762a5d227116ad0da3dbfcd1b2de36c4.html">include</a></li><li class="navelem"><a class="el" href="dir_0d2be1d55a28ee70fa89741a4646ffbe.html">moveit</a></li><li class="navelem"><a class="el" href="dir_07f76736ebbf5fbf10092630599869de.html">occupancy_map_monitor</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -109,98 +109,95 @@ $(function() {
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &lt;octomap/octomap.h&gt;</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &lt;boost/thread/locks.hpp&gt;</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &lt;boost/thread/shared_mutex.hpp&gt;</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &lt;boost/function.hpp&gt;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &lt;boost/thread/locks.hpp&gt;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &lt;boost/thread/shared_mutex.hpp&gt;</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &lt;boost/function.hpp&gt;</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecollision__detection.html">collision_detection</a></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;{</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">typedef</span> octomap::OcTreeNode <a class="code" href="namespacecollision__detection.html#ace73c1317d865f74ad8fcd92bcc6759b">OccMapNode</a>;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">class </span>OccMapTree : <span class="keyword">public</span> octomap::OcTree</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <a class="code" href="classcollision__detection_1_1OccMapTree.html#a21e5971ea4f19e6513e2f6897e55802e">OccMapTree</a>(<span class="keywordtype">double</span> resolution) : <a class="code" href="namespaceoctomap.html">octomap</a>::OcTree(resolution)</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <a class="code" href="classcollision__detection_1_1OccMapTree.html#a21e5971ea4f19e6513e2f6897e55802e">OccMapTree</a>(<span class="keyword">const</span> std::string&amp; filename) : <a class="code" href="namespaceoctomap.html">octomap</a>::OcTree(filename)</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classcollision__detection_1_1OccMapTree.html#a971ea91f5942078f743273d1e6dd80ad">lockRead</a>()</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    tree_mutex_.lock_shared();</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classcollision__detection_1_1OccMapTree.html#a646bc1e94c9f03ddd03874997a0ca4cf">unlockRead</a>()</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    tree_mutex_.unlock_shared();</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classcollision__detection_1_1OccMapTree.html#ab6ae4e4a7431fef1030f9da777b555c1">lockWrite</a>()</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    tree_mutex_.lock();</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  }</div>
-<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="namespacecollision__detection.html#ace73c1317d865f74ad8fcd92bcc6759b">   82</a></span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classcollision__detection_1_1OccMapTree.html">   84</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classcollision__detection_1_1OccMapTree.html#a206638668b2fec6c6d860cf07c60951c">unlockWrite</a>()</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    tree_mutex_.unlock();</div>
-<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="classcollision__detection_1_1OccMapTree.html#a21e5971ea4f19e6513e2f6897e55802e">   87</a></span>&#160;  }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="keyword">using</span> <a class="code" href="classcollision__detection_1_1OccMapTree.html#a8b8a342440e8e98af6e155a687a824a5">ReadLock</a> = boost::shared_lock&lt;boost::shared_mutex&gt;;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keyword">using</span> <a class="code" href="classcollision__detection_1_1OccMapTree.html#a702cdaf807e22d0e297bf2ee8c3fcf7b">WriteLock</a> = boost::unique_lock&lt;boost::shared_mutex&gt;;</div>
-<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="classcollision__detection_1_1OccMapTree.html#a921418055b8bc36e47dec2fe2e81c886">   91</a></span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <a class="code" href="classcollision__detection_1_1OccMapTree.html#a8b8a342440e8e98af6e155a687a824a5">ReadLock</a> <a class="code" href="classcollision__detection_1_1OccMapTree.html#a91d5e25b255b347c54b0e70880768812">reading</a>()</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  {</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classcollision__detection_1_1OccMapTree.html#a8b8a342440e8e98af6e155a687a824a5">ReadLock</a>(tree_mutex_);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  }</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="classcollision__detection_1_1OccMapTree.html#a971ea91f5942078f743273d1e6dd80ad">   97</a></span>&#160;  <a class="code" href="classcollision__detection_1_1OccMapTree.html#a702cdaf807e22d0e297bf2ee8c3fcf7b">WriteLock</a> <a class="code" href="classcollision__detection_1_1OccMapTree.html#ab1e6698d24ba3cd292394ddf96c8cd58">writing</a>()</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classcollision__detection_1_1OccMapTree.html#a702cdaf807e22d0e297bf2ee8c3fcf7b">WriteLock</a>(tree_mutex_);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  }</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classcollision__detection_1_1OccMapTree.html#a2ea0f92ddb0e74763095948cccd117f1">triggerUpdateCallback</a>()</div>
-<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="classcollision__detection_1_1OccMapTree.html#a646bc1e94c9f03ddd03874997a0ca4cf">  103</a></span>&#160;  {</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">if</span> (update_callback_)</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;      update_callback_();</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  }</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classcollision__detection_1_1OccMapTree.html#a0e0c3766c40069c1184dbe1490ca0417">setUpdateCallback</a>(<span class="keyword">const</span> boost::function&lt;<span class="keywordtype">void</span>()&gt;&amp; update_callback)</div>
-<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="classcollision__detection_1_1OccMapTree.html#ab6ae4e4a7431fef1030f9da777b555c1">  110</a></span>&#160;  {</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    update_callback_ = update_callback;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  }</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  boost::shared_mutex tree_mutex_;</div>
-<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="classcollision__detection_1_1OccMapTree.html#a206638668b2fec6c6d860cf07c60951c">  116</a></span>&#160;  boost::function&lt;void()&gt; update_callback_;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;};</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="keyword">using</span> <a class="code" href="namespacecollision__detection.html#a3ac86a279df576cc0b9be55890af87f9">OccMapTreePtr</a> = std::shared_ptr&lt;OccMapTree&gt;;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="keyword">using</span> <a class="code" href="namespacecollision__detection.html#a2c69ccc4c23d8367a5ca106862ad86f0">OccMapTreeConstPtr</a> = std::shared_ptr&lt;const OccMapTree&gt;;</div>
-<div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="classcollision__detection_1_1OccMapTree.html#a8b8a342440e8e98af6e155a687a824a5">  121</a></span>&#160;}  <span class="comment">// namespace collision_detection</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="namespaceoccupancy__map__monitor.html">   45</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceoccupancy__map__monitor.html">occupancy_map_monitor</a></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">typedef</span> octomap::OcTreeNode <a class="code" href="namespaceoccupancy__map__monitor.html#a564889ef8b82dff5d3e96b097534303b">OccMapNode</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">class </span><a class="code" href="classoccupancy__map__monitor_1_1OccMapTree.html">OccMapTree</a> : <span class="keyword">public</span> octomap::OcTree</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <a class="code" href="classoccupancy__map__monitor_1_1OccMapTree.html#accaf8ece14af08a73ef2f7ae73094637">OccMapTree</a>(<span class="keywordtype">double</span> resolution) : octomap::OcTree(resolution)</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <a class="code" href="classoccupancy__map__monitor_1_1OccMapTree.html#accaf8ece14af08a73ef2f7ae73094637">OccMapTree</a>(<span class="keyword">const</span> std::string&amp; filename) : octomap::OcTree(filename)</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classoccupancy__map__monitor_1_1OccMapTree.html#a60be9a429e0b7d784fef80b7143639ac">lockRead</a>()</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    tree_mutex_.lock_shared();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classoccupancy__map__monitor_1_1OccMapTree.html#a4ea927b384768fae715cd20d2f023d73">unlockRead</a>()</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    tree_mutex_.unlock_shared();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classoccupancy__map__monitor_1_1OccMapTree.html#ae8854bf3fb857c60a2d9b6ec5d814b7d">lockWrite</a>()</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    tree_mutex_.lock();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  }</div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="namespaceoccupancy__map__monitor.html#a564889ef8b82dff5d3e96b097534303b">   79</a></span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="classoccupancy__map__monitor_1_1OccMapTree.html">   81</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classoccupancy__map__monitor_1_1OccMapTree.html#abd30b3c51ff312b79f75b21283f86568">unlockWrite</a>()</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    tree_mutex_.unlock();</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classoccupancy__map__monitor_1_1OccMapTree.html#accaf8ece14af08a73ef2f7ae73094637">   84</a></span>&#160;  }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keyword">using</span> <a class="code" href="classoccupancy__map__monitor_1_1OccMapTree.html#a14dea20b3d92fbf35d3eb03ab932f984">ReadLock</a> = boost::shared_lock&lt;boost::shared_mutex&gt;;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="keyword">using</span> <a class="code" href="classoccupancy__map__monitor_1_1OccMapTree.html#a456c3f115522647370d16835b8b05b5a">WriteLock</a> = boost::unique_lock&lt;boost::shared_mutex&gt;;</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="classoccupancy__map__monitor_1_1OccMapTree.html#ae26fda99853bdb084bdce868642f766f">   88</a></span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <a class="code" href="classoccupancy__map__monitor_1_1OccMapTree.html#a14dea20b3d92fbf35d3eb03ab932f984">ReadLock</a> <a class="code" href="classoccupancy__map__monitor_1_1OccMapTree.html#aa4d06f1d9458e059225eea78ea4cccca">reading</a>()</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classoccupancy__map__monitor_1_1OccMapTree.html#a14dea20b3d92fbf35d3eb03ab932f984">ReadLock</a>(tree_mutex_);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="classoccupancy__map__monitor_1_1OccMapTree.html#a60be9a429e0b7d784fef80b7143639ac">   94</a></span>&#160;  <a class="code" href="classoccupancy__map__monitor_1_1OccMapTree.html#a456c3f115522647370d16835b8b05b5a">WriteLock</a> <a class="code" href="classoccupancy__map__monitor_1_1OccMapTree.html#a749d4d392023065d6b467489433fcb2e">writing</a>()</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classoccupancy__map__monitor_1_1OccMapTree.html#a456c3f115522647370d16835b8b05b5a">WriteLock</a>(tree_mutex_);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classoccupancy__map__monitor_1_1OccMapTree.html#af3e2adc1d6ec20b635993c4342ce57da">triggerUpdateCallback</a>()</div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="classoccupancy__map__monitor_1_1OccMapTree.html#a4ea927b384768fae715cd20d2f023d73">  100</a></span>&#160;  {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">if</span> (update_callback_)</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;      update_callback_();</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classoccupancy__map__monitor_1_1OccMapTree.html#a787f90a5b532b67aa8888ddd09c0ec69">setUpdateCallback</a>(<span class="keyword">const</span> boost::function&lt;<span class="keywordtype">void</span>()&gt;&amp; update_callback)</div>
+<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="classoccupancy__map__monitor_1_1OccMapTree.html#ae8854bf3fb857c60a2d9b6ec5d814b7d">  107</a></span>&#160;  {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    update_callback_ = update_callback;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  }</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  boost::shared_mutex tree_mutex_;</div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="classoccupancy__map__monitor_1_1OccMapTree.html#abd30b3c51ff312b79f75b21283f86568">  113</a></span>&#160;  boost::function&lt;void()&gt; update_callback_;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;};</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceoccupancy__map__monitor.html#a29dd5178f3633d034dea33a66db6578a">OccMapTreePtr</a> = std::shared_ptr&lt;OccMapTree&gt;;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceoccupancy__map__monitor.html#a4f824077ba4236be5c65da6e831a6f3c">OccMapTreeConstPtr</a> = std::shared_ptr&lt;const OccMapTree&gt;;</div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="classoccupancy__map__monitor_1_1OccMapTree.html#a14dea20b3d92fbf35d3eb03ab932f984">  118</a></span>&#160;}  <span class="comment">// namespace occupancy_map_monitor</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="anamespacecollision__detection_html_a2c69ccc4c23d8367a5ca106862ad86f0"><div class="ttname"><a href="namespacecollision__detection.html#a2c69ccc4c23d8367a5ca106862ad86f0">collision_detection::OccMapTreeConstPtr</a></div><div class="ttdeci">std::shared_ptr&lt; const OccMapTree &gt; OccMapTreeConstPtr</div><div class="ttdef"><b>Definition:</b> <a href="occupancy__map_8h_source.html#l00152">occupancy_map.h:152</a></div></div>
-<div class="ttc" id="aclasscollision__detection_1_1OccMapTree_html_a702cdaf807e22d0e297bf2ee8c3fcf7b"><div class="ttname"><a href="classcollision__detection_1_1OccMapTree.html#a702cdaf807e22d0e297bf2ee8c3fcf7b">collision_detection::OccMapTree::WriteLock</a></div><div class="ttdeci">boost::unique_lock&lt; boost::shared_mutex &gt; WriteLock</div><div class="ttdef"><b>Definition:</b> <a href="occupancy__map_8h_source.html#l00122">occupancy_map.h:122</a></div></div>
-<div class="ttc" id="anamespacecollision__detection_html_ace73c1317d865f74ad8fcd92bcc6759b"><div class="ttname"><a href="namespacecollision__detection.html#ace73c1317d865f74ad8fcd92bcc6759b">collision_detection::OccMapNode</a></div><div class="ttdeci">octomap::OcTreeNode OccMapNode</div><div class="ttdef"><b>Definition:</b> <a href="occupancy__map_8h_source.html#l00082">occupancy_map.h:82</a></div></div>
-<div class="ttc" id="aclasscollision__detection_1_1OccMapTree_html_a21e5971ea4f19e6513e2f6897e55802e"><div class="ttname"><a href="classcollision__detection_1_1OccMapTree.html#a21e5971ea4f19e6513e2f6897e55802e">collision_detection::OccMapTree::OccMapTree</a></div><div class="ttdeci">OccMapTree(double resolution)</div><div class="ttdef"><b>Definition:</b> <a href="occupancy__map_8h_source.html#l00087">occupancy_map.h:87</a></div></div>
-<div class="ttc" id="aclasscollision__detection_1_1OccMapTree_html_a206638668b2fec6c6d860cf07c60951c"><div class="ttname"><a href="classcollision__detection_1_1OccMapTree.html#a206638668b2fec6c6d860cf07c60951c">collision_detection::OccMapTree::unlockWrite</a></div><div class="ttdeci">void unlockWrite()</div><div class="ttdoc">unlock the underlying octree.</div><div class="ttdef"><b>Definition:</b> <a href="occupancy__map_8h_source.html#l00116">occupancy_map.h:116</a></div></div>
-<div class="ttc" id="aclasscollision__detection_1_1OccMapTree_html_ab6ae4e4a7431fef1030f9da777b555c1"><div class="ttname"><a href="classcollision__detection_1_1OccMapTree.html#ab6ae4e4a7431fef1030f9da777b555c1">collision_detection::OccMapTree::lockWrite</a></div><div class="ttdeci">void lockWrite()</div><div class="ttdoc">lock the underlying octree. it will not be read or written by the monitor until unlockTree() is calle...</div><div class="ttdef"><b>Definition:</b> <a href="occupancy__map_8h_source.html#l00110">occupancy_map.h:110</a></div></div>
-<div class="ttc" id="aclasscollision__detection_1_1OccMapTree_html_a646bc1e94c9f03ddd03874997a0ca4cf"><div class="ttname"><a href="classcollision__detection_1_1OccMapTree.html#a646bc1e94c9f03ddd03874997a0ca4cf">collision_detection::OccMapTree::unlockRead</a></div><div class="ttdeci">void unlockRead()</div><div class="ttdoc">unlock the underlying octree.</div><div class="ttdef"><b>Definition:</b> <a href="occupancy__map_8h_source.html#l00103">occupancy_map.h:103</a></div></div>
-<div class="ttc" id="aclasscollision__detection_1_1OccMapTree_html_a91d5e25b255b347c54b0e70880768812"><div class="ttname"><a href="classcollision__detection_1_1OccMapTree.html#a91d5e25b255b347c54b0e70880768812">collision_detection::OccMapTree::reading</a></div><div class="ttdeci">ReadLock reading()</div><div class="ttdef"><b>Definition:</b> <a href="occupancy__map_8h_source.html#l00124">occupancy_map.h:124</a></div></div>
-<div class="ttc" id="aclasscollision__detection_1_1OccMapTree_html_a8b8a342440e8e98af6e155a687a824a5"><div class="ttname"><a href="classcollision__detection_1_1OccMapTree.html#a8b8a342440e8e98af6e155a687a824a5">collision_detection::OccMapTree::ReadLock</a></div><div class="ttdeci">boost::shared_lock&lt; boost::shared_mutex &gt; ReadLock</div><div class="ttdef"><b>Definition:</b> <a href="occupancy__map_8h_source.html#l00121">occupancy_map.h:121</a></div></div>
-<div class="ttc" id="aclasscollision__detection_1_1OccMapTree_html_a971ea91f5942078f743273d1e6dd80ad"><div class="ttname"><a href="classcollision__detection_1_1OccMapTree.html#a971ea91f5942078f743273d1e6dd80ad">collision_detection::OccMapTree::lockRead</a></div><div class="ttdeci">void lockRead()</div><div class="ttdoc">lock the underlying octree. it will not be read or written by the monitor until unlockTree() is calle...</div><div class="ttdef"><b>Definition:</b> <a href="occupancy__map_8h_source.html#l00097">occupancy_map.h:97</a></div></div>
-<div class="ttc" id="aclasscollision__detection_1_1OccMapTree_html_a0e0c3766c40069c1184dbe1490ca0417"><div class="ttname"><a href="classcollision__detection_1_1OccMapTree.html#a0e0c3766c40069c1184dbe1490ca0417">collision_detection::OccMapTree::setUpdateCallback</a></div><div class="ttdeci">void setUpdateCallback(const boost::function&lt; void()&gt; &amp;update_callback)</div><div class="ttdoc">Set the callback to trigger when updates are received.</div><div class="ttdef"><b>Definition:</b> <a href="occupancy__map_8h_source.html#l00141">occupancy_map.h:141</a></div></div>
-<div class="ttc" id="anamespaceoctomap_html"><div class="ttname"><a href="namespaceoctomap.html">octomap</a></div><div class="ttdef"><b>Definition:</b> <a href="distance__field_8h_source.html#l00053">distance_field.h:53</a></div></div>
-<div class="ttc" id="aclasscollision__detection_1_1OccMapTree_html_a2ea0f92ddb0e74763095948cccd117f1"><div class="ttname"><a href="classcollision__detection_1_1OccMapTree.html#a2ea0f92ddb0e74763095948cccd117f1">collision_detection::OccMapTree::triggerUpdateCallback</a></div><div class="ttdeci">void triggerUpdateCallback()</div><div class="ttdef"><b>Definition:</b> <a href="occupancy__map_8h_source.html#l00134">occupancy_map.h:134</a></div></div>
-<div class="ttc" id="anamespacecollision__detection_html_a3ac86a279df576cc0b9be55890af87f9"><div class="ttname"><a href="namespacecollision__detection.html#a3ac86a279df576cc0b9be55890af87f9">collision_detection::OccMapTreePtr</a></div><div class="ttdeci">std::shared_ptr&lt; OccMapTree &gt; OccMapTreePtr</div><div class="ttdef"><b>Definition:</b> <a href="occupancy__map_8h_source.html#l00151">occupancy_map.h:151</a></div></div>
-<div class="ttc" id="aclasscollision__detection_1_1OccMapTree_html_ab1e6698d24ba3cd292394ddf96c8cd58"><div class="ttname"><a href="classcollision__detection_1_1OccMapTree.html#ab1e6698d24ba3cd292394ddf96c8cd58">collision_detection::OccMapTree::writing</a></div><div class="ttdeci">WriteLock writing()</div><div class="ttdef"><b>Definition:</b> <a href="occupancy__map_8h_source.html#l00129">occupancy_map.h:129</a></div></div>
-<div class="ttc" id="anamespacecollision__detection_html"><div class="ttname"><a href="namespacecollision__detection.html">collision_detection</a></div><div class="ttdef"><b>Definition:</b> <a href="collision__detector__allocator__allvalid_8h_source.html#l00044">collision_detector_allocator_allvalid.h:44</a></div></div>
+<div class="ttc" id="aclassoccupancy__map__monitor_1_1OccMapTree_html"><div class="ttname"><a href="classoccupancy__map__monitor_1_1OccMapTree.html">occupancy_map_monitor::OccMapTree</a></div><div class="ttdef"><b>Definition:</b> <a href="occupancy__map_8h_source.html#l00081">occupancy_map.h:81</a></div></div>
+<div class="ttc" id="aclassoccupancy__map__monitor_1_1OccMapTree_html_abd30b3c51ff312b79f75b21283f86568"><div class="ttname"><a href="classoccupancy__map__monitor_1_1OccMapTree.html#abd30b3c51ff312b79f75b21283f86568">occupancy_map_monitor::OccMapTree::unlockWrite</a></div><div class="ttdeci">void unlockWrite()</div><div class="ttdoc">unlock the underlying octree.</div><div class="ttdef"><b>Definition:</b> <a href="occupancy__map_8h_source.html#l00113">occupancy_map.h:113</a></div></div>
+<div class="ttc" id="anamespaceoccupancy__map__monitor_html_a29dd5178f3633d034dea33a66db6578a"><div class="ttname"><a href="namespaceoccupancy__map__monitor.html#a29dd5178f3633d034dea33a66db6578a">occupancy_map_monitor::OccMapTreePtr</a></div><div class="ttdeci">std::shared_ptr&lt; OccMapTree &gt; OccMapTreePtr</div><div class="ttdef"><b>Definition:</b> <a href="occupancy__map_8h_source.html#l00148">occupancy_map.h:148</a></div></div>
+<div class="ttc" id="aclassoccupancy__map__monitor_1_1OccMapTree_html_ae8854bf3fb857c60a2d9b6ec5d814b7d"><div class="ttname"><a href="classoccupancy__map__monitor_1_1OccMapTree.html#ae8854bf3fb857c60a2d9b6ec5d814b7d">occupancy_map_monitor::OccMapTree::lockWrite</a></div><div class="ttdeci">void lockWrite()</div><div class="ttdoc">lock the underlying octree. it will not be read or written by the monitor until unlockTree() is calle...</div><div class="ttdef"><b>Definition:</b> <a href="occupancy__map_8h_source.html#l00107">occupancy_map.h:107</a></div></div>
+<div class="ttc" id="aclassoccupancy__map__monitor_1_1OccMapTree_html_a4ea927b384768fae715cd20d2f023d73"><div class="ttname"><a href="classoccupancy__map__monitor_1_1OccMapTree.html#a4ea927b384768fae715cd20d2f023d73">occupancy_map_monitor::OccMapTree::unlockRead</a></div><div class="ttdeci">void unlockRead()</div><div class="ttdoc">unlock the underlying octree.</div><div class="ttdef"><b>Definition:</b> <a href="occupancy__map_8h_source.html#l00100">occupancy_map.h:100</a></div></div>
+<div class="ttc" id="aclassoccupancy__map__monitor_1_1OccMapTree_html_a749d4d392023065d6b467489433fcb2e"><div class="ttname"><a href="classoccupancy__map__monitor_1_1OccMapTree.html#a749d4d392023065d6b467489433fcb2e">occupancy_map_monitor::OccMapTree::writing</a></div><div class="ttdeci">WriteLock writing()</div><div class="ttdef"><b>Definition:</b> <a href="occupancy__map_8h_source.html#l00126">occupancy_map.h:126</a></div></div>
+<div class="ttc" id="aclassoccupancy__map__monitor_1_1OccMapTree_html_a14dea20b3d92fbf35d3eb03ab932f984"><div class="ttname"><a href="classoccupancy__map__monitor_1_1OccMapTree.html#a14dea20b3d92fbf35d3eb03ab932f984">occupancy_map_monitor::OccMapTree::ReadLock</a></div><div class="ttdeci">boost::shared_lock&lt; boost::shared_mutex &gt; ReadLock</div><div class="ttdef"><b>Definition:</b> <a href="occupancy__map_8h_source.html#l00118">occupancy_map.h:118</a></div></div>
+<div class="ttc" id="aclassoccupancy__map__monitor_1_1OccMapTree_html_a456c3f115522647370d16835b8b05b5a"><div class="ttname"><a href="classoccupancy__map__monitor_1_1OccMapTree.html#a456c3f115522647370d16835b8b05b5a">occupancy_map_monitor::OccMapTree::WriteLock</a></div><div class="ttdeci">boost::unique_lock&lt; boost::shared_mutex &gt; WriteLock</div><div class="ttdef"><b>Definition:</b> <a href="occupancy__map_8h_source.html#l00119">occupancy_map.h:119</a></div></div>
+<div class="ttc" id="aclassoccupancy__map__monitor_1_1OccMapTree_html_a60be9a429e0b7d784fef80b7143639ac"><div class="ttname"><a href="classoccupancy__map__monitor_1_1OccMapTree.html#a60be9a429e0b7d784fef80b7143639ac">occupancy_map_monitor::OccMapTree::lockRead</a></div><div class="ttdeci">void lockRead()</div><div class="ttdoc">lock the underlying octree. it will not be read or written by the monitor until unlockTree() is calle...</div><div class="ttdef"><b>Definition:</b> <a href="occupancy__map_8h_source.html#l00094">occupancy_map.h:94</a></div></div>
+<div class="ttc" id="anamespaceoccupancy__map__monitor_html_a4f824077ba4236be5c65da6e831a6f3c"><div class="ttname"><a href="namespaceoccupancy__map__monitor.html#a4f824077ba4236be5c65da6e831a6f3c">occupancy_map_monitor::OccMapTreeConstPtr</a></div><div class="ttdeci">std::shared_ptr&lt; const OccMapTree &gt; OccMapTreeConstPtr</div><div class="ttdef"><b>Definition:</b> <a href="occupancy__map_8h_source.html#l00149">occupancy_map.h:149</a></div></div>
+<div class="ttc" id="aclassoccupancy__map__monitor_1_1OccMapTree_html_a787f90a5b532b67aa8888ddd09c0ec69"><div class="ttname"><a href="classoccupancy__map__monitor_1_1OccMapTree.html#a787f90a5b532b67aa8888ddd09c0ec69">occupancy_map_monitor::OccMapTree::setUpdateCallback</a></div><div class="ttdeci">void setUpdateCallback(const boost::function&lt; void()&gt; &amp;update_callback)</div><div class="ttdoc">Set the callback to trigger when updates are received.</div><div class="ttdef"><b>Definition:</b> <a href="occupancy__map_8h_source.html#l00138">occupancy_map.h:138</a></div></div>
+<div class="ttc" id="aclassoccupancy__map__monitor_1_1OccMapTree_html_af3e2adc1d6ec20b635993c4342ce57da"><div class="ttname"><a href="classoccupancy__map__monitor_1_1OccMapTree.html#af3e2adc1d6ec20b635993c4342ce57da">occupancy_map_monitor::OccMapTree::triggerUpdateCallback</a></div><div class="ttdeci">void triggerUpdateCallback()</div><div class="ttdef"><b>Definition:</b> <a href="occupancy__map_8h_source.html#l00131">occupancy_map.h:131</a></div></div>
+<div class="ttc" id="aclassoccupancy__map__monitor_1_1OccMapTree_html_accaf8ece14af08a73ef2f7ae73094637"><div class="ttname"><a href="classoccupancy__map__monitor_1_1OccMapTree.html#accaf8ece14af08a73ef2f7ae73094637">occupancy_map_monitor::OccMapTree::OccMapTree</a></div><div class="ttdeci">OccMapTree(double resolution)</div><div class="ttdef"><b>Definition:</b> <a href="occupancy__map_8h_source.html#l00084">occupancy_map.h:84</a></div></div>
+<div class="ttc" id="anamespaceoccupancy__map__monitor_html_a564889ef8b82dff5d3e96b097534303b"><div class="ttname"><a href="namespaceoccupancy__map__monitor.html#a564889ef8b82dff5d3e96b097534303b">occupancy_map_monitor::OccMapNode</a></div><div class="ttdeci">octomap::OcTreeNode OccMapNode</div><div class="ttdef"><b>Definition:</b> <a href="occupancy__map_8h_source.html#l00079">occupancy_map.h:79</a></div></div>
+<div class="ttc" id="anamespaceoccupancy__map__monitor_html"><div class="ttname"><a href="namespaceoccupancy__map__monitor.html">occupancy_map_monitor</a></div><div class="ttdef"><b>Definition:</b> <a href="occupancy__map_8h_source.html#l00045">occupancy_map.h:45</a></div></div>
+<div class="ttc" id="aclassoccupancy__map__monitor_1_1OccMapTree_html_aa4d06f1d9458e059225eea78ea4cccca"><div class="ttname"><a href="classoccupancy__map__monitor_1_1OccMapTree.html#aa4d06f1d9458e059225eea78ea4cccca">occupancy_map_monitor::OccMapTree::reading</a></div><div class="ttdeci">ReadLock reading()</div><div class="ttdef"><b>Definition:</b> <a href="occupancy__map_8h_source.html#l00121">occupancy_map.h:121</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

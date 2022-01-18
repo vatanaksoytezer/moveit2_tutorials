@@ -193,6 +193,14 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab8b8f9e55d80dcbd200d80f29050a750"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2dc0447eedd465865a90b7216200dff3"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl.html#a2dc0447eedd465865a90b7216200dff3">getPlanningTime</a> () const</td></tr>
 <tr class="separator:a2dc0447eedd465865a90b7216200dff3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35dcfce3b7baeae32e226e58cd712e56"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl.html#a35dcfce3b7baeae32e226e58cd712e56">allowLooking</a> (bool flag)</td></tr>
+<tr class="separator:a35dcfce3b7baeae32e226e58cd712e56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d34b0c63ba308575082fd52a87ce392"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl.html#a4d34b0c63ba308575082fd52a87ce392">allowReplanning</a> (bool flag)</td></tr>
+<tr class="separator:a4d34b0c63ba308575082fd52a87ce392"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59e535166045ae81d25316bb51f77242"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl.html#a59e535166045ae81d25316bb51f77242">setReplanningDelay</a> (double delay)</td></tr>
+<tr class="separator:a59e535166045ae81d25316bb51f77242"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a029d5d3a64fc7ba0c675dc782ba6ddd7"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl.html#a029d5d3a64fc7ba0c675dc782ba6ddd7">getReplanningDelay</a> () const</td></tr>
+<tr class="separator:a029d5d3a64fc7ba0c675dc782ba6ddd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab59f8929101f223fa4acc814d354cb27"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl.html#ab59f8929101f223fa4acc814d354cb27">constructMotionPlanRequest</a> (moveit_msgs::msg::MotionPlanRequest &amp;request) const</td></tr>
 <tr class="separator:ab59f8929101f223fa4acc814d354cb27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b63591645e3ef521e31597f5c049bc5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl.html#a2b63591645e3ef521e31597f5c049bc5">constructGoal</a> (moveit_msgs::action::MoveGroup::Goal &amp;goal) const</td></tr>
@@ -270,7 +278,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00174">174</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00172">172</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -297,11 +305,67 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00261">261</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00257">257</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a35dcfce3b7baeae32e226e58cd712e56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35dcfce3b7baeae32e226e58cd712e56">&#9670;&nbsp;</a></span>allowLooking()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void moveit::planning_interface::MoveGroupInterface::MoveGroupInterfaceImpl::allowLooking </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>flag</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01179">1179</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a4d34b0c63ba308575082fd52a87ce392"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d34b0c63ba308575082fd52a87ce392">&#9670;&nbsp;</a></span>allowReplanning()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void moveit::planning_interface::MoveGroupInterface::MoveGroupInterfaceImpl::allowReplanning </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>flag</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01185">1185</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+
+</div>
+</div>
 <a id="a62722804bdc9b33186e4204207953436"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a62722804bdc9b33186e4204207953436">&#9670;&nbsp;</a></span>attachObject()</h2>
 
@@ -342,7 +406,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01087">1087</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01083">1083</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -378,7 +442,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01324">1324</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01343">1343</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -406,7 +470,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00540">540</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00536">536</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -442,7 +506,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00545">545</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00541">541</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -478,14 +542,14 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01334">1334</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01353">1353</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_ad0f8bc458a2c1b729f1a2123fee3c09d_icgraph.png" border="0" usemap="#classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_ad0f8bc458a2c1b729f1a2123fee3c09d_icgraph" alt=""/></div>
 <map name="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_ad0f8bc458a2c1b729f1a2123fee3c09d_icgraph" id="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_ad0f8bc458a2c1b729f1a2123fee3c09d_icgraph">
-<area shape="rect" title=" " alt="" coords="332,5,619,61"/>
-<area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a683a78bcefe1207e71a1354f0189bcc8" title="Specify whether the robot is allowed to replan if it detects changes in the environment." alt="" coords="5,13,284,54"/>
+<area shape="rect" title=" " alt="" coords="336,5,623,61"/>
+<area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#aea1baee2416a79d3b663c4132a0ca838" title="Get the number of variables used to describe the state of this group. This is larger or equal to the ..." alt="" coords="5,13,288,54"/>
 </map>
 </div>
 
@@ -555,7 +619,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01033">1033</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01029">1029</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -592,7 +656,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01241">1241</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01260">1260</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -631,7 +695,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01183">1183</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01202">1202</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -639,7 +703,7 @@ Here is the caller graph for this function:</div>
 <map name="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_ab59f8929101f223fa4acc814d354cb27_icgraph" id="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_ab59f8929101f223fa4acc814d354cb27_icgraph">
 <area shape="rect" title=" " alt="" coords="309,45,612,101"/>
 <area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#ab4857bd6694ed9e55687396150fbb803" title=" " alt="" coords="5,5,261,61"/>
-<area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl.html#ab8b8f9e55d80dcbd200d80f29050a750" title=" " alt="" coords="10,85,257,141"/>
+<area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl.html#a59e535166045ae81d25316bb51f77242" title=" " alt="" coords="9,85,257,141"/>
 </map>
 </div>
 
@@ -669,24 +733,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01114">1114</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_ae26f3a6b60ca8da84829097eafba50d5_cgraph.png" border="0" usemap="#classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_ae26f3a6b60ca8da84829097eafba50d5_cgraph" alt=""/></div>
-<map name="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_ae26f3a6b60ca8da84829097eafba50d5_cgraph" id="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_ae26f3a6b60ca8da84829097eafba50d5_cgraph">
-<area shape="rect" title=" " alt="" coords="5,103,252,159"/>
-<area shape="rect" href="namespacekinematic__constraints.html#a449c87b5d209ba3b9a62d73b4278da77" title="Generates a constraint message intended to be used as a goal constraint for a joint group...." alt="" coords="328,37,523,79"/>
-<area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl.html#acc232befd1cfbf355910bafd90b9efd2" title=" " alt="" coords="300,103,551,159"/>
-<area shape="rect" href="namespacemoveit_1_1core.html#a0aafbf7242f36d6efd7bd73ecee400e8" title="Convert a MoveIt robot state to a robot state message." alt="" coords="335,184,515,225"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#a5902793ed7f64dfc073e37c91154c497" title="For a given group, copy the position values of the variables that make up the group into another loca..." alt="" coords="599,5,787,47"/>
-<area shape="rect" href="classmoveit_1_1core_1_1JointModelGroup.html#aaaeee5ac20a07f6d5c1fe43a892f005a" title="Get the names of the variables that make up the joints included in this group. The number of returned..." alt="" coords="599,71,788,112"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#a4c3dc21cb7e8b21d0552677a3aeb819e" title="Given velocities for the variables that make up a group, in the order found in the group (including v..." alt="" coords="836,5,1020,47"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#a3c2938fb8c9467dff253db4b5c1992ca" title="For a given group, copy the velocity values of the variables that make up the group into another loca..." alt="" coords="1068,5,1260,47"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#a47eb1edf2046387de44c3a9dee3433e6" title="Given accelerations for the variables that make up a group, in the order found in the group (includin..." alt="" coords="1308,5,1515,47"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#ac39ff2e3e4801ba1092a4c8eb44dd071" title="For a given group, copy the acceleration values of the variables that make up the group into another ..." alt="" coords="1563,5,1780,47"/>
-</map>
-</div>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01110">1110</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -733,7 +780,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00963">963</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00959">959</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -760,7 +807,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01391">1391</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01410">1410</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -808,7 +855,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00666">666</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00662">662</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -855,7 +902,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00382">382</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00378">378</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -891,7 +938,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00359">359</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00355">355</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -918,7 +965,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00555">555</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00551">551</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -945,7 +992,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00550">550</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00546">546</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -983,22 +1030,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01152">1152</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_a43758a93035c24ec52ada30a73dea723_cgraph.png" border="0" usemap="#classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_a43758a93035c24ec52ada30a73dea723_cgraph" alt=""/></div>
-<map name="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_a43758a93035c24ec52ada30a73dea723_cgraph" id="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_a43758a93035c24ec52ada30a73dea723_cgraph">
-<area shape="rect" title=" " alt="" coords="5,31,264,87"/>
-<area shape="rect" href="namespacekinematic__constraints.html#a449c87b5d209ba3b9a62d73b4278da77" title="Generates a constraint message intended to be used as a goal constraint for a joint group...." alt="" coords="312,39,507,80"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#a5902793ed7f64dfc073e37c91154c497" title="For a given group, copy the position values of the variables that make up the group into another loca..." alt="" coords="555,5,743,47"/>
-<area shape="rect" href="classmoveit_1_1core_1_1JointModelGroup.html#aaaeee5ac20a07f6d5c1fe43a892f005a" title="Get the names of the variables that make up the joints included in this group. The number of returned..." alt="" coords="555,71,744,112"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#a4c3dc21cb7e8b21d0552677a3aeb819e" title="Given velocities for the variables that make up a group, in the order found in the group (including v..." alt="" coords="792,5,976,47"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#a3c2938fb8c9467dff253db4b5c1992ca" title="For a given group, copy the velocity values of the variables that make up the group into another loca..." alt="" coords="1024,5,1216,47"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#a47eb1edf2046387de44c3a9dee3433e6" title="Given accelerations for the variables that make up a group, in the order found in the group (includin..." alt="" coords="1264,5,1471,47"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#ac39ff2e3e4801ba1092a4c8eb44dd071" title="For a given group, copy the acceleration values of the variables that make up the group into another ..." alt="" coords="1519,5,1736,47"/>
-</map>
-</div>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01148">1148</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1034,7 +1066,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01147">1147</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01143">1143</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1070,7 +1102,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01142">1142</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01138">1138</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -1098,7 +1130,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00292">292</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00288">288</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -1126,7 +1158,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00310">310</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00306">306</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -1153,7 +1185,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00282">282</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00278">278</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1194,14 +1226,14 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01339">1339</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01358">1358</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_a079301970a5557ee31eafe5d75c4d856_icgraph.png" border="0" usemap="#classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_a079301970a5557ee31eafe5d75c4d856_icgraph" alt=""/></div>
 <map name="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_a079301970a5557ee31eafe5d75c4d856_icgraph" id="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_a079301970a5557ee31eafe5d75c4d856_icgraph">
-<area shape="rect" title=" " alt="" coords="328,5,584,61"/>
-<area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a92ff1a7ceec9f299988ded4e72d5cce5" title="Get the current state of the robot within the duration specified by wait." alt="" coords="5,13,280,54"/>
+<area shape="rect" title=" " alt="" coords="319,5,575,61"/>
+<area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#acf44c8d1234a65aac973fe2eb227e3bc" title="Get the roll&#45;pitch&#45;yaw (XYZ) for the end&#45;effector end_effector_link. If end_effector_link is empty (t..." alt="" coords="5,13,271,54"/>
 </map>
 </div>
 
@@ -1230,7 +1262,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00287">287</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00283">283</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1266,7 +1298,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00272">272</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00268">268</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -1293,7 +1325,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01354">1354</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01373">1373</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -1320,7 +1352,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00407">407</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00403">403</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1368,7 +1400,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00326">326</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00322">322</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1404,7 +1436,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00377">377</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00373">373</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1440,14 +1472,14 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01178">1178</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01174">1174</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_a2dc0447eedd465865a90b7216200dff3_icgraph.png" border="0" usemap="#classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_a2dc0447eedd465865a90b7216200dff3_icgraph" alt=""/></div>
 <map name="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_a2dc0447eedd465865a90b7216200dff3_icgraph" id="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_a2dc0447eedd465865a90b7216200dff3_icgraph">
-<area shape="rect" title=" " alt="" coords="328,5,575,61"/>
-<area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a1e301fb50f3f20cd06c75559a46fa52e" title="Sleep this duration between replanning attempts (in walltime seconds)" alt="" coords="5,13,280,54"/>
+<area shape="rect" title=" " alt="" coords="311,5,557,61"/>
+<area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#ae33718102a4542366b43a6a763031d52" title="Specify whether the robot is allowed to look around before moving if it determines it should (default..." alt="" coords="5,13,263,54"/>
 </map>
 </div>
 
@@ -1476,7 +1508,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00635">635</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00631">631</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1514,7 +1546,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00594">594</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00590">590</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1551,7 +1583,34 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00610">610</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00606">606</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a029d5d3a64fc7ba0c675dc782ba6ddd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a029d5d3a64fc7ba0c675dc782ba6ddd7">&#9670;&nbsp;</a></span>getReplanningDelay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double moveit::planning_interface::MoveGroupInterface::MoveGroupInterfaceImpl::getReplanningDelay </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01197">1197</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -1578,7 +1637,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00277">277</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00273">273</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1616,7 +1675,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00471">471</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00467">467</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -1643,16 +1702,14 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00451">451</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00447">447</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_acc232befd1cfbf355910bafd90b9efd2_icgraph.png" border="0" usemap="#classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_acc232befd1cfbf355910bafd90b9efd2_icgraph" alt=""/></div>
 <map name="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_acc232befd1cfbf355910bafd90b9efd2_icgraph" id="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_acc232befd1cfbf355910bafd90b9efd2_icgraph">
-<area shape="rect" title=" " alt="" coords="588,45,839,101"/>
-<area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl.html#ae26f3a6b60ca8da84829097eafba50d5" title=" " alt="" coords="289,5,535,61"/>
-<area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a71e3819bd31711dcb81c18305ca9a521" title="Set the JointValueTarget and use it for future planning requests." alt="" coords="284,85,540,141"/>
-<area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a4530a0e30683a0d1ae47de1424a5a992" title="Specify that no path constraints are to be used. This removes any path constraints set in previous ca..." alt="" coords="5,5,236,61"/>
+<area shape="rect" title=" " alt="" coords="309,5,560,61"/>
+<area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a71e3819bd31711dcb81c18305ca9a521" title="Set the JointValueTarget and use it for future planning requests." alt="" coords="5,5,261,61"/>
 </map>
 </div>
 
@@ -1681,7 +1738,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00456">456</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00452">452</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1717,7 +1774,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00645">645</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00641">641</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -1744,7 +1801,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00267">267</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00263">263</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1781,7 +1838,16 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01362">1362</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01381">1381</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_abb263ae7bfb76917af9a1232f1ad92d6_icgraph.png" border="0" usemap="#classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_abb263ae7bfb76917af9a1232f1ad92d6_icgraph" alt=""/></div>
+<map name="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_abb263ae7bfb76917af9a1232f1ad92d6_icgraph" id="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_abb263ae7bfb76917af9a1232f1ad92d6_icgraph">
+<area shape="rect" title=" " alt="" coords="287,5,563,61"/>
+<area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a9603eb67712ae165a9aa494c283af164" title="Get only the active (actuated) joints this instance operates on." alt="" coords="5,5,239,61"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1809,7 +1875,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00588">588</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00584">584</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1856,7 +1922,16 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01370">1370</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01389">1389</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_a6e42ec93f9a82313e1f41ac2431e2e37_icgraph.png" border="0" usemap="#classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_a6e42ec93f9a82313e1f41ac2431e2e37_icgraph" alt=""/></div>
+<map name="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_a6e42ec93f9a82313e1f41ac2431e2e37_icgraph" id="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_a6e42ec93f9a82313e1f41ac2431e2e37_icgraph">
+<area shape="rect" title=" " alt="" coords="328,5,575,76"/>
+<area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a92ff1a7ceec9f299988ded4e72d5cce5" title="Get the current state of the robot within the duration specified by wait." alt="" coords="5,20,280,61"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1884,7 +1959,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00889">889</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00885">885</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1924,7 +1999,7 @@ Here is the caller graph for this function:</div>
 
 <p>Convert a vector of PoseStamped to a vector of PlaceLocation. </p>
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00810">810</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00806">806</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1963,7 +2038,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00535">535</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00531">531</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -1991,7 +2066,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01157">1157</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01153">1153</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -2019,7 +2094,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01167">1167</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01163">1163</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -2056,7 +2131,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01162">1162</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01158">1158</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -2106,7 +2181,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00483">483</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00479">479</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -2134,7 +2209,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00422">422</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00418">418</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -2193,7 +2268,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00427">427</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00423">423</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -2221,7 +2296,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00417">417</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00413">413</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -2267,7 +2342,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00412">412</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00408">408</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -2304,7 +2379,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01301">1301</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01320">1320</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -2332,7 +2407,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01306">1306</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01325">1325</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -2360,7 +2435,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00402">402</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00398">398</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -2410,7 +2485,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00344">344</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00340">340</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -2438,7 +2513,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00366">366</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00362">362</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -2475,14 +2550,20 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01172">1172</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01168">1168</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_ab8b8f9e55d80dcbd200d80f29050a750_cgraph.png" border="0" usemap="#classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_ab8b8f9e55d80dcbd200d80f29050a750_cgraph" alt=""/></div>
 <map name="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_ab8b8f9e55d80dcbd200d80f29050a750_cgraph" id="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_ab8b8f9e55d80dcbd200d80f29050a750_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,252,61"/>
-<area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl.html#ab59f8929101f223fa4acc814d354cb27" title=" " alt="" coords="300,5,603,61"/>
+<area shape="rect" title=" " alt="" coords="5,31,252,87"/>
+<area shape="rect" href="namespacekinematic__constraints.html#a449c87b5d209ba3b9a62d73b4278da77" title="Generates a constraint message intended to be used as a goal constraint for a joint group...." alt="" coords="300,39,495,80"/>
+<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#a5902793ed7f64dfc073e37c91154c497" title="For a given group, copy the position values of the variables that make up the group into another loca..." alt="" coords="543,5,731,47"/>
+<area shape="rect" href="classmoveit_1_1core_1_1JointModelGroup.html#aaaeee5ac20a07f6d5c1fe43a892f005a" title="Get the names of the variables that make up the joints included in this group. The number of returned..." alt="" coords="543,71,732,112"/>
+<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#a4c3dc21cb7e8b21d0552677a3aeb819e" title="Given velocities for the variables that make up a group, in the order found in the group (including v..." alt="" coords="780,5,964,47"/>
+<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#a3c2938fb8c9467dff253db4b5c1992ca" title="For a given group, copy the velocity values of the variables that make up the group into another loca..." alt="" coords="1012,5,1204,47"/>
+<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#a47eb1edf2046387de44c3a9dee3433e6" title="Given accelerations for the variables that make up a group, in the order found in the group (includin..." alt="" coords="1252,5,1459,47"/>
+<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#ac39ff2e3e4801ba1092a4c8eb44dd071" title="For a given group, copy the acceleration values of the variables that make up the group into another ..." alt="" coords="1507,5,1724,47"/>
 </map>
 </div>
 
@@ -2512,7 +2593,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00625">625</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00621">621</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -2550,7 +2631,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00569">569</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00565">565</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -2558,6 +2639,43 @@ Here is the caller graph for this function:</div>
 <map name="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_ac3b2142f7da2b58977e93f61b3977f3e_icgraph" id="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_ac3b2142f7da2b58977e93f61b3977f3e_icgraph">
 <area shape="rect" title=" " alt="" coords="288,5,535,61"/>
 <area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#aca31d1456dd7b6ef92b309a1b1922af0" title="Forget any poses specified for all end&#45;effectors." alt="" coords="5,5,240,61"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a59e535166045ae81d25316bb51f77242"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59e535166045ae81d25316bb51f77242">&#9670;&nbsp;</a></span>setReplanningDelay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void moveit::planning_interface::MoveGroupInterface::MoveGroupInterfaceImpl::setReplanningDelay </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>delay</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01191">1191</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_a59e535166045ae81d25316bb51f77242_cgraph.png" border="0" usemap="#classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_a59e535166045ae81d25316bb51f77242_cgraph" alt=""/></div>
+<map name="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_a59e535166045ae81d25316bb51f77242_cgraph" id="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_a59e535166045ae81d25316bb51f77242_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,253,61"/>
+<area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl.html#ab59f8929101f223fa4acc814d354cb27" title=" " alt="" coords="301,5,604,61"/>
 </map>
 </div>
 
@@ -2587,7 +2705,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00461">461</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00457">457</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -2614,7 +2732,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00466">466</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00462">462</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -2642,7 +2760,16 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00630">630</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00626">626</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_a53249f7f96f2e15c5ff7917ed2ffc315_icgraph.png" border="0" usemap="#classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_a53249f7f96f2e15c5ff7917ed2ffc315_icgraph" alt=""/></div>
+<map name="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_a53249f7f96f2e15c5ff7917ed2ffc315_icgraph" id="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_a53249f7f96f2e15c5ff7917ed2ffc315_icgraph">
+<area shape="rect" title=" " alt="" coords="332,5,607,61"/>
+<area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a683a78bcefe1207e71a1354f0189bcc8" title="Specify whether the robot is allowed to replan if it detects changes in the environment." alt="" coords="5,13,284,54"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -2670,7 +2797,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00640">640</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00636">636</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -2707,7 +2834,16 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01329">1329</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01348">1348</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_aa7ca36df227b982fdc276de1b5073e9a_icgraph.png" border="0" usemap="#classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_aa7ca36df227b982fdc276de1b5073e9a_icgraph" alt=""/></div>
+<map name="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_aa7ca36df227b982fdc276de1b5073e9a_icgraph" id="classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl_aa7ca36df227b982fdc276de1b5073e9a_icgraph">
+<area shape="rect" title=" " alt="" coords="281,5,556,61"/>
+<area shape="rect" href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#aa60b695f0e891c7248068d75406f8cd3" title="Get all the joints this instance operates on (including fixed joints)" alt="" coords="5,13,233,54"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -2769,7 +2905,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01379">1379</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01398">1398</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -2797,7 +2933,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00650">650</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l00646">646</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>
@@ -2824,7 +2960,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01076">1076</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="move__group__interface_8cpp_source.html#l01072">1072</a> of file <a class="el" href="move__group__interface_8cpp_source.html">move_group_interface.cpp</a>.</p>
 
 </div>
 </div>

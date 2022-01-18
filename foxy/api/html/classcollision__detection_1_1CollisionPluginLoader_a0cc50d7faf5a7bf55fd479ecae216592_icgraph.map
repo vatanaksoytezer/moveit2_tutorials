@@ -1,0 +1,4 @@
+<map id="collision_detection::CollisionPluginLoader::activate" name="collision_detection::CollisionPluginLoader::activate">
+<area shape="rect" id="node1" title="Load a collision detection robot/world into a planning scene instance." alt="" coords="224,5,395,61"/>
+<area shape="rect" id="node2" href="$classcollision__detection_1_1CollisionPluginLoader.html#a305efaa136b925cc5f3459eaf1ce816c" title="This can be called on a new planning scene to setup the collision detector." alt="" coords="5,5,176,61"/>
+</map>

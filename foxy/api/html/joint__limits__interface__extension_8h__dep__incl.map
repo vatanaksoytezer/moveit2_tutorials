@@ -1,7 +1,7 @@
 <map id="moveit2/moveit_planners/pilz_industrial_motion_planner/include/pilz_industrial_motion_planner/joint_limits_interface_extension.h" name="moveit2/moveit_planners/pilz_industrial_motion_planner/include/pilz_industrial_motion_planner/joint_limits_interface_extension.h">
-<area shape="rect" id="node1" title=" " alt="" coords="311,5,535,91"/>
-<area shape="rect" id="node2" href="$joint__limits__aggregator_8cpp.html" title=" " alt="" coords="5,146,195,217"/>
-<area shape="rect" id="node3" href="$joint__limits__validator_8cpp.html" title=" " alt="" coords="219,146,408,217"/>
-<area shape="rect" id="node4" href="$unittest__joint__limit_8cpp.html" title=" " alt="" coords="433,146,631,217"/>
-<area shape="rect" id="node5" href="$unittest__joint__limits__aggregator_8cpp.html" title=" " alt="" coords="656,139,845,224"/>
+<area shape="rect" id="node1" title=" " alt="" coords="309,5,533,91"/>
+<area shape="rect" id="node2" href="$joint__limits__aggregator_8cpp.html" title=" " alt="" coords="5,139,195,209"/>
+<area shape="rect" id="node3" href="$joint__limits__validator_8cpp.html" title=" " alt="" coords="219,139,408,209"/>
+<area shape="rect" id="node4" href="$unittest__joint__limit_8cpp.html" title=" " alt="" coords="432,139,629,209"/>
+<area shape="rect" id="node5" href="$unittest__joint__limits__aggregator_8cpp.html" title=" " alt="" coords="653,139,851,209"/>
 </map>

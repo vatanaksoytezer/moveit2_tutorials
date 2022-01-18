@@ -190,7 +190,7 @@ $(function() {
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  <span class="keyword">const</span> <a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html">moveit::core::JointModelGroup</a>* model_group =</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;      <a class="code" href="namespaceplanning__scene.html">planning_scene</a>-&gt;getRobotModel()-&gt;getJointModelGroup(req.group_name);</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <span class="comment">// fix the goal to move the shortest angular distance for wrap-around joints:</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; model_group-&gt;<a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html#a14fb89fcb1b1d7297b5ddd3d063c715f">getActiveJointModels</a>().size(); ++i)</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; model_group-&gt;<a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html#a14fb89fcb1b1d7297b5ddd3d063c715f">getActiveJointModels</a>().size(); i++)</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  {</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keyword">const</span> <a class="code" href="classmoveit_1_1core_1_1JointModel.html">moveit::core::JointModel</a>* model = model_group-&gt;<a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html#a14fb89fcb1b1d7297b5ddd3d063c715f">getActiveJointModels</a>()[i];</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keyword">const</span> <a class="code" href="classmoveit_1_1core_1_1RevoluteJointModel.html">moveit::core::RevoluteJointModel</a>* revolute_joint =</div>
@@ -265,109 +265,108 @@ $(function() {
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="comment">// initialize a ChompOptimizer object to load up the optimizer with default parameters or with updated parameters in</span></div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="comment">// case of a recovery behaviour</span></div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    optimizer =</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        std::make_unique&lt;ChompOptimizer&gt;(&amp;trajectory, <a class="code" href="namespaceplanning__scene.html">planning_scene</a>, req.group_name, &amp;params_nonconst, start_state);</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="keywordflow">if</span> (!optimizer-&gt;isInitialized())</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    {</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;      RCLCPP_ERROR(LOGGER, <span class="stringliteral">&quot;Could not initialize optimizer&quot;</span>);</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;      res.<a class="code" href="structplanning__interface_1_1MotionPlanDetailedResponse.html#a66790e7b65abab7806d360dccb7e479c">error_code_</a>.val = moveit_msgs::msg::MoveItErrorCodes::PLANNING_FAILED;</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    }</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    RCLCPP_DEBUG(LOGGER, <span class="stringliteral">&quot;Optimization took %ld sec to create&quot;</span>,</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                 (std::chrono::system_clock::now() - create_time).count());</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <span class="keywordtype">bool</span> optimization_result = optimizer-&gt;optimize();</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="comment">// replan with updated parameters if no solution is found</span></div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="keywordflow">if</span> (params_nonconst.enable_failure_recovery_)</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    {</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;      RCLCPP_INFO(LOGGER,</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                  <span class="stringliteral">&quot;Planned with Chomp Parameters (learning_rate, ridge_factor, &quot;</span></div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                  <span class="stringliteral">&quot;planning_time_limit, max_iterations), attempt: # %d &quot;</span>,</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                  (replan_count + 1));</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;      RCLCPP_INFO(LOGGER, <span class="stringliteral">&quot;Learning rate: %f ridge factor: %f planning time limit: %f max_iterations %d &quot;</span>,</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                  params_nonconst.learning_rate_, params_nonconst.ridge_factor_, params_nonconst.planning_time_limit_,</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                  params_nonconst.max_iterations_);</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;      <span class="keywordflow">if</span> (!optimization_result &amp;&amp; replan_count &lt; params_nonconst.max_recovery_attempts_)</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;      {</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        replan_count++;</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        replan_flag = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;      }</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;      <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;      {</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;      }</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    }</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;      <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;  }  <span class="comment">// end of while loop</span></div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160; </div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;  <span class="comment">// resetting the CHOMP Parameters to the original values after a successful plan</span></div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;  params_nonconst.setRecoveryParams(org_learning_rate, org_ridge_factor, org_planning_time_limit, org_max_iterations);</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;  RCLCPP_DEBUG(LOGGER, <span class="stringliteral">&quot;Optimization actually took %ld sec to run&quot;</span>,</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;               (std::chrono::system_clock::now() - create_time).count());</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;  create_time = std::chrono::system_clock::now();</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;  <span class="comment">// assume that the trajectory is now optimized, fill in the output structure:</span></div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160; </div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;  RCLCPP_DEBUG(LOGGER, <span class="stringliteral">&quot;Output trajectory has %zd joints&quot;</span>, trajectory.getNumJoints());</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160; </div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;  <span class="keyword">auto</span> result = std::make_shared&lt;robot_trajectory::RobotTrajectory&gt;(<a class="code" href="namespaceplanning__scene.html">planning_scene</a>-&gt;getRobotModel(), req.group_name);</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;  <span class="comment">// fill in the entire trajectory</span></div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; trajectory.getNumPoints(); ++i)</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;  {</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keyword">const</span> Eigen::MatrixXd::RowXpr source = trajectory.getTrajectoryPoint(i);</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <span class="keyword">auto</span> state = std::make_shared&lt;moveit::core::RobotState&gt;(start_state);</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <span class="keywordtype">size_t</span> joint_index = 0;</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code" href="classmoveit_1_1core_1_1JointModel.html">moveit::core::JointModel</a>* jm : result-&gt;getGroup()-&gt;getActiveJointModels())</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    {</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;      assert(jm-&gt;getVariableCount() == 1);</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;      state-&gt;setVariablePosition(jm-&gt;getFirstVariableIndex(), source[joint_index++]);</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    }</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    result-&gt;addSuffixWayPoint(state, 0.0);</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;  }</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160; </div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;  res.<a class="code" href="structplanning__interface_1_1MotionPlanDetailedResponse.html#a7d750f1249f713717fe9a101f9f6fdd6">trajectory_</a>.resize(1);</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;  res.<a class="code" href="structplanning__interface_1_1MotionPlanDetailedResponse.html#a7d750f1249f713717fe9a101f9f6fdd6">trajectory_</a>[0] = result;</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160; </div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;  RCLCPP_DEBUG(LOGGER, <span class="stringliteral">&quot;Bottom took %ld sec to create&quot;</span>, (std::chrono::system_clock::now() - create_time).count());</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;  RCLCPP_DEBUG(LOGGER, <span class="stringliteral">&quot;Serviced planning request in %ld wall-seconds&quot;</span>,</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;               (std::chrono::system_clock::now() - start_time).count());</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160; </div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;  res.<a class="code" href="structplanning__interface_1_1MotionPlanDetailedResponse.html#a66790e7b65abab7806d360dccb7e479c">error_code_</a>.val = moveit_msgs::msg::MoveItErrorCodes::SUCCESS;</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;  res.<a class="code" href="structplanning__interface_1_1MotionPlanDetailedResponse.html#a81dc1b63e35cb87a87e5ba2f9d3bffcd">processing_time_</a>.resize(1);</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;  res.<a class="code" href="structplanning__interface_1_1MotionPlanDetailedResponse.html#a81dc1b63e35cb87a87e5ba2f9d3bffcd">processing_time_</a>[0] = std::chrono::duration&lt;double&gt;(std::chrono::system_clock::now() - start_time).count();</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;  <span class="comment">// report planning failure if path has collisions</span></div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;  <span class="keywordflow">if</span> (not optimizer-&gt;isCollisionFree())</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;  {</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    RCLCPP_ERROR(LOGGER, <span class="stringliteral">&quot;Motion plan is invalid.&quot;</span>);</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    res.<a class="code" href="structplanning__interface_1_1MotionPlanDetailedResponse.html#a66790e7b65abab7806d360dccb7e479c">error_code_</a>.val = moveit_msgs::msg::MoveItErrorCodes::INVALID_MOTION_PLAN;</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;  }</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; </div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;  <span class="comment">// check that final state is within goal tolerances</span></div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;  <a class="code" href="classkinematic__constraints_1_1JointConstraint.html">kinematic_constraints::JointConstraint</a> jc(<a class="code" href="namespaceplanning__scene.html">planning_scene</a>-&gt;getRobotModel());</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;  <span class="keyword">const</span> <a class="code" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a>&amp; last_state = result-&gt;getLastWayPoint();</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">const</span> moveit_msgs::msg::JointConstraint&amp; constraint : req.goal_constraints[0].joint_constraints)</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;  {</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <span class="keywordflow">if</span> (!jc.configure(constraint) || !jc.decide(last_state).satisfied)</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    {</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;      RCLCPP_ERROR(LOGGER, <span class="stringliteral">&quot;Goal constraints are violated: %s&quot;</span>, constraint.joint_name.c_str());</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;      res.<a class="code" href="structplanning__interface_1_1MotionPlanDetailedResponse.html#a66790e7b65abab7806d360dccb7e479c">error_code_</a>.val = moveit_msgs::msg::MoveItErrorCodes::GOAL_CONSTRAINTS_VIOLATED;</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    }</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;  }</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160; </div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;  res.<a class="code" href="structplanning__interface_1_1MotionPlanDetailedResponse.html#a81dc1b63e35cb87a87e5ba2f9d3bffcd">processing_time_</a>.resize(1);</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;  res.<a class="code" href="structplanning__interface_1_1MotionPlanDetailedResponse.html#a81dc1b63e35cb87a87e5ba2f9d3bffcd">processing_time_</a>[0] = std::chrono::duration&lt;double&gt;(std::chrono::system_clock::now() - start_time).count();</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160; </div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;}</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160; </div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;}  <span class="comment">// namespace chomp</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    optimizer.reset(<span class="keyword">new</span> ChompOptimizer(&amp;trajectory, <a class="code" href="namespaceplanning__scene.html">planning_scene</a>, req.group_name, &amp;params_nonconst, start_state));</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="keywordflow">if</span> (!optimizer-&gt;isInitialized())</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    {</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;      RCLCPP_ERROR(LOGGER, <span class="stringliteral">&quot;Could not initialize optimizer&quot;</span>);</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;      res.<a class="code" href="structplanning__interface_1_1MotionPlanDetailedResponse.html#a66790e7b65abab7806d360dccb7e479c">error_code_</a>.val = moveit_msgs::msg::MoveItErrorCodes::PLANNING_FAILED;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    }</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    RCLCPP_DEBUG(LOGGER, <span class="stringliteral">&quot;Optimization took %ld sec to create&quot;</span>,</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                 (std::chrono::system_clock::now() - create_time).count());</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="keywordtype">bool</span> optimization_result = optimizer-&gt;optimize();</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="comment">// replan with updated parameters if no solution is found</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="keywordflow">if</span> (params_nonconst.enable_failure_recovery_)</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    {</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;      RCLCPP_INFO(LOGGER,</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                  <span class="stringliteral">&quot;Planned with Chomp Parameters (learning_rate, ridge_factor, &quot;</span></div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                  <span class="stringliteral">&quot;planning_time_limit, max_iterations), attempt: # %d &quot;</span>,</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                  (replan_count + 1));</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;      RCLCPP_INFO(LOGGER, <span class="stringliteral">&quot;Learning rate: %f ridge factor: %f planning time limit: %f max_iterations %d &quot;</span>,</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                  params_nonconst.learning_rate_, params_nonconst.ridge_factor_, params_nonconst.planning_time_limit_,</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                  params_nonconst.max_iterations_);</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;      <span class="keywordflow">if</span> (!optimization_result &amp;&amp; replan_count &lt; params_nonconst.max_recovery_attempts_)</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;      {</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        replan_count++;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        replan_flag = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;      }</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;      <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;      {</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;      }</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    }</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;      <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;  }  <span class="comment">// end of while loop</span></div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160; </div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;  <span class="comment">// resetting the CHOMP Parameters to the original values after a successful plan</span></div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;  params_nonconst.setRecoveryParams(org_learning_rate, org_ridge_factor, org_planning_time_limit, org_max_iterations);</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160; </div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;  RCLCPP_DEBUG(LOGGER, <span class="stringliteral">&quot;Optimization actually took %ld sec to run&quot;</span>,</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;               (std::chrono::system_clock::now() - create_time).count());</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;  create_time = std::chrono::system_clock::now();</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;  <span class="comment">// assume that the trajectory is now optimized, fill in the output structure:</span></div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; </div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;  RCLCPP_DEBUG(LOGGER, <span class="stringliteral">&quot;Output trajectory has %zd joints&quot;</span>, trajectory.getNumJoints());</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; </div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;  <span class="keyword">auto</span> result = std::make_shared&lt;robot_trajectory::RobotTrajectory&gt;(<a class="code" href="namespaceplanning__scene.html">planning_scene</a>-&gt;getRobotModel(), req.group_name);</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;  <span class="comment">// fill in the entire trajectory</span></div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; trajectory.getNumPoints(); i++)</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;  {</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keyword">const</span> Eigen::MatrixXd::RowXpr source = trajectory.getTrajectoryPoint(i);</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keyword">auto</span> state = std::make_shared&lt;moveit::core::RobotState&gt;(start_state);</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <span class="keywordtype">size_t</span> joint_index = 0;</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code" href="classmoveit_1_1core_1_1JointModel.html">moveit::core::JointModel</a>* jm : result-&gt;getGroup()-&gt;getActiveJointModels())</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    {</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;      assert(jm-&gt;getVariableCount() == 1);</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;      state-&gt;setVariablePosition(jm-&gt;getFirstVariableIndex(), source[joint_index++]);</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    }</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    result-&gt;addSuffixWayPoint(state, 0.0);</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;  }</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160; </div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;  res.<a class="code" href="structplanning__interface_1_1MotionPlanDetailedResponse.html#a7d750f1249f713717fe9a101f9f6fdd6">trajectory_</a>.resize(1);</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;  res.<a class="code" href="structplanning__interface_1_1MotionPlanDetailedResponse.html#a7d750f1249f713717fe9a101f9f6fdd6">trajectory_</a>[0] = result;</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160; </div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;  RCLCPP_DEBUG(LOGGER, <span class="stringliteral">&quot;Bottom took %ld sec to create&quot;</span>, (std::chrono::system_clock::now() - create_time).count());</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;  RCLCPP_DEBUG(LOGGER, <span class="stringliteral">&quot;Serviced planning request in %ld wall-seconds&quot;</span>,</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;               (std::chrono::system_clock::now() - start_time).count());</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;  res.<a class="code" href="structplanning__interface_1_1MotionPlanDetailedResponse.html#a66790e7b65abab7806d360dccb7e479c">error_code_</a>.val = moveit_msgs::msg::MoveItErrorCodes::SUCCESS;</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;  res.<a class="code" href="structplanning__interface_1_1MotionPlanDetailedResponse.html#a81dc1b63e35cb87a87e5ba2f9d3bffcd">processing_time_</a>.resize(1);</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;  res.<a class="code" href="structplanning__interface_1_1MotionPlanDetailedResponse.html#a81dc1b63e35cb87a87e5ba2f9d3bffcd">processing_time_</a>[0] = std::chrono::duration&lt;double&gt;(std::chrono::system_clock::now() - start_time).count();</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160; </div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;  <span class="comment">// report planning failure if path has collisions</span></div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;  <span class="keywordflow">if</span> (not optimizer-&gt;isCollisionFree())</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;  {</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    RCLCPP_ERROR(LOGGER, <span class="stringliteral">&quot;Motion plan is invalid.&quot;</span>);</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    res.<a class="code" href="structplanning__interface_1_1MotionPlanDetailedResponse.html#a66790e7b65abab7806d360dccb7e479c">error_code_</a>.val = moveit_msgs::msg::MoveItErrorCodes::INVALID_MOTION_PLAN;</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;  }</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160; </div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;  <span class="comment">// check that final state is within goal tolerances</span></div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;  <a class="code" href="classkinematic__constraints_1_1JointConstraint.html">kinematic_constraints::JointConstraint</a> jc(<a class="code" href="namespaceplanning__scene.html">planning_scene</a>-&gt;getRobotModel());</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;  <span class="keyword">const</span> <a class="code" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a>&amp; last_state = result-&gt;getLastWayPoint();</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">const</span> moveit_msgs::msg::JointConstraint&amp; constraint : req.goal_constraints[0].joint_constraints)</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;  {</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <span class="keywordflow">if</span> (!jc.configure(constraint) || !jc.decide(last_state).satisfied)</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    {</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;      RCLCPP_ERROR(LOGGER, <span class="stringliteral">&quot;Goal constraints are violated: %s&quot;</span>, constraint.joint_name.c_str());</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;      res.<a class="code" href="structplanning__interface_1_1MotionPlanDetailedResponse.html#a66790e7b65abab7806d360dccb7e479c">error_code_</a>.val = moveit_msgs::msg::MoveItErrorCodes::GOAL_CONSTRAINTS_VIOLATED;</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    }</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;  }</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160; </div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;  res.<a class="code" href="structplanning__interface_1_1MotionPlanDetailedResponse.html#a81dc1b63e35cb87a87e5ba2f9d3bffcd">processing_time_</a>.resize(1);</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;  res.<a class="code" href="structplanning__interface_1_1MotionPlanDetailedResponse.html#a81dc1b63e35cb87a87e5ba2f9d3bffcd">processing_time_</a>[0] = std::chrono::duration&lt;double&gt;(std::chrono::system_clock::now() - start_time).count();</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;}</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160; </div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;}  <span class="comment">// namespace chomp</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassmoveit_1_1core_1_1JointModelGroup_html_a14fb89fcb1b1d7297b5ddd3d063c715f"><div class="ttname"><a href="classmoveit_1_1core_1_1JointModelGroup.html#a14fb89fcb1b1d7297b5ddd3d063c715f">moveit::core::JointModelGroup::getActiveJointModels</a></div><div class="ttdeci">const std::vector&lt; const JointModel * &gt; &amp; getActiveJointModels() const</div><div class="ttdoc">Get the active joints in this group (that have controllable DOF). This does not include mimic joints.</div><div class="ttdef"><b>Definition:</b> <a href="joint__model__group_8h_source.html#l00222">joint_model_group.h:222</a></div></div>
 <div class="ttc" id="aclassmoveit_1_1core_1_1JointModelGroup_html"><div class="ttname"><a href="classmoveit_1_1core_1_1JointModelGroup.html">moveit::core::JointModelGroup</a></div><div class="ttdef"><b>Definition:</b> <a href="joint__model__group_8h_source.html#l00134">joint_model_group.h:134</a></div></div>
@@ -379,16 +378,16 @@ $(function() {
 <div class="ttc" id="achomp__trajectory_8h_html"><div class="ttname"><a href="chomp__trajectory_8h.html">chomp_trajectory.h</a></div></div>
 <div class="ttc" id="achomp__planner_8h_html"><div class="ttname"><a href="chomp__planner_8h.html">chomp_planner.h</a></div></div>
 <div class="ttc" id="astructplanning__interface_1_1MotionPlanDetailedResponse_html_a7d750f1249f713717fe9a101f9f6fdd6"><div class="ttname"><a href="structplanning__interface_1_1MotionPlanDetailedResponse.html#a7d750f1249f713717fe9a101f9f6fdd6">planning_interface::MotionPlanDetailedResponse::trajectory_</a></div><div class="ttdeci">std::vector&lt; robot_trajectory::RobotTrajectoryPtr &gt; trajectory_</div><div class="ttdef"><b>Definition:</b> <a href="planning__response_8h_source.html#l00095">planning_response.h:95</a></div></div>
-<div class="ttc" id="anamespacemoveit_1_1core_html_af616e81ab82b75721fdbfcd77892c92a"><div class="ttname"><a href="namespacemoveit_1_1core.html#af616e81ab82b75721fdbfcd77892c92a">moveit::core::robotStateMsgToRobotState</a></div><div class="ttdeci">bool robotStateMsgToRobotState(const Transforms &amp;tf, const moveit_msgs::msg::RobotState &amp;robot_state, RobotState &amp;state, bool copy_attached_bodies=true)</div><div class="ttdoc">Convert a robot state msg (with accompanying extra transforms) to a MoveIt robot state.</div><div class="ttdef"><b>Definition:</b> <a href="conversions_8cpp_source.html#l00475">conversions.cpp:475</a></div></div>
+<div class="ttc" id="anamespacemoveit_1_1core_html_af616e81ab82b75721fdbfcd77892c92a"><div class="ttname"><a href="namespacemoveit_1_1core.html#af616e81ab82b75721fdbfcd77892c92a">moveit::core::robotStateMsgToRobotState</a></div><div class="ttdeci">bool robotStateMsgToRobotState(const Transforms &amp;tf, const moveit_msgs::msg::RobotState &amp;robot_state, RobotState &amp;state, bool copy_attached_bodies=true)</div><div class="ttdoc">Convert a robot state msg (with accompanying extra transforms) to a MoveIt robot state.</div><div class="ttdef"><b>Definition:</b> <a href="conversions_8cpp_source.html#l00487">conversions.cpp:487</a></div></div>
 <div class="ttc" id="anamespaceplanning__request__adapter_html_af64b3fa8ebc256d9c5133c6c80ade28f"><div class="ttname"><a href="namespaceplanning__request__adapter.html#af64b3fa8ebc256d9c5133c6c80ade28f">planning_request_adapter::LOGGER</a></div><div class="ttdeci">rclcpp::Logger LOGGER</div><div class="ttdef"><b>Definition:</b> <a href="planning__request__adapter_8cpp_source.html#l00078">planning_request_adapter.cpp:78</a></div></div>
 <div class="ttc" id="anamespaceplanning__interface_html_a1307e10a0a3b9ca03406d777b9a938a3"><div class="ttname"><a href="namespaceplanning__interface.html#a1307e10a0a3b9ca03406d777b9a938a3">planning_interface::MotionPlanRequest</a></div><div class="ttdeci">moveit_msgs::msg::MotionPlanRequest MotionPlanRequest</div><div class="ttdef"><b>Definition:</b> <a href="planning__request_8h_source.html#l00077">planning_request.h:77</a></div></div>
 <div class="ttc" id="astructplanning__interface_1_1MotionPlanDetailedResponse_html_a66790e7b65abab7806d360dccb7e479c"><div class="ttname"><a href="structplanning__interface_1_1MotionPlanDetailedResponse.html#a66790e7b65abab7806d360dccb7e479c">planning_interface::MotionPlanDetailedResponse::error_code_</a></div><div class="ttdeci">moveit_msgs::msg::MoveItErrorCodes error_code_</div><div class="ttdef"><b>Definition:</b> <a href="planning__response_8h_source.html#l00098">planning_response.h:98</a></div></div>
-<div class="ttc" id="aclassmoveit_1_1core_1_1RobotState_html_aa40ffd60c2e50769f9a61d71ab7faa23"><div class="ttname"><a href="classmoveit_1_1core_1_1RobotState.html#aa40ffd60c2e50769f9a61d71ab7faa23">moveit::core::RobotState::satisfiesBounds</a></div><div class="ttdeci">bool satisfiesBounds(double margin=0.0) const</div><div class="ttdef"><b>Definition:</b> <a href="robot__state_8cpp_source.html#l00868">robot_state.cpp:868</a></div></div>
+<div class="ttc" id="aclassmoveit_1_1core_1_1RobotState_html_aa40ffd60c2e50769f9a61d71ab7faa23"><div class="ttname"><a href="classmoveit_1_1core_1_1RobotState.html#aa40ffd60c2e50769f9a61d71ab7faa23">moveit::core::RobotState::satisfiesBounds</a></div><div class="ttdeci">bool satisfiesBounds(double margin=0.0) const</div><div class="ttdef"><b>Definition:</b> <a href="robot__state_8cpp_source.html#l00854">robot_state.cpp:854</a></div></div>
 <div class="ttc" id="aclassmoveit_1_1core_1_1RevoluteJointModel_html"><div class="ttname"><a href="classmoveit_1_1core_1_1RevoluteJointModel.html">moveit::core::RevoluteJointModel</a></div><div class="ttdoc">A revolute joint.</div><div class="ttdef"><b>Definition:</b> <a href="revolute__joint__model_8h_source.html#l00110">revolute_joint_model.h:110</a></div></div>
 <div class="ttc" id="achomp__optimizer_8h_html"><div class="ttname"><a href="chomp__optimizer_8h.html">chomp_optimizer.h</a></div></div>
 <div class="ttc" id="aclasskinematic__constraints_1_1JointConstraint_html"><div class="ttname"><a href="classkinematic__constraints_1_1JointConstraint.html">kinematic_constraints::JointConstraint</a></div><div class="ttdoc">Class for handling single DOF joint constraints.</div><div class="ttdef"><b>Definition:</b> <a href="kinematic__constraint_8h_source.html#l00234">kinematic_constraint.h:234</a></div></div>
 <div class="ttc" id="anamespaceplanning__scene_html"><div class="ttname"><a href="namespaceplanning__scene.html">planning_scene</a></div><div class="ttdoc">This namespace includes the central class for representing planning contexts.</div><div class="ttdef"><b>Definition:</b> <a href="planning__interface_8h_source.html#l00046">planning_interface.h:46</a></div></div>
-<div class="ttc" id="aclassmoveit_1_1core_1_1JointModel_html"><div class="ttname"><a href="classmoveit_1_1core_1_1JointModel.html">moveit::core::JointModel</a></div><div class="ttdoc">A joint from the robot. Models the transform that this joint applies in the kinematic chain....</div><div class="ttdef"><b>Definition:</b> <a href="joint__model_8h_source.html#l00182">joint_model.h:182</a></div></div>
+<div class="ttc" id="aclassmoveit_1_1core_1_1JointModel_html"><div class="ttname"><a href="classmoveit_1_1core_1_1JointModel.html">moveit::core::JointModel</a></div><div class="ttdoc">A joint from the robot. Models the transform that this joint applies in the kinematic chain....</div><div class="ttdef"><b>Definition:</b> <a href="joint__model_8h_source.html#l00175">joint_model.h:175</a></div></div>
 <div class="ttc" id="astructplanning__interface_1_1MotionPlanDetailedResponse_html"><div class="ttname"><a href="structplanning__interface_1_1MotionPlanDetailedResponse.html">planning_interface::MotionPlanDetailedResponse</a></div><div class="ttdef"><b>Definition:</b> <a href="planning__response_8h_source.html#l00091">planning_response.h:91</a></div></div>
 <div class="ttc" id="astructplanning__interface_1_1MotionPlanDetailedResponse_html_a81dc1b63e35cb87a87e5ba2f9d3bffcd"><div class="ttname"><a href="structplanning__interface_1_1MotionPlanDetailedResponse.html#a81dc1b63e35cb87a87e5ba2f9d3bffcd">planning_interface::MotionPlanDetailedResponse::processing_time_</a></div><div class="ttdeci">std::vector&lt; double &gt; processing_time_</div><div class="ttdef"><b>Definition:</b> <a href="planning__response_8h_source.html#l00097">planning_response.h:97</a></div></div>
 <!-- start footer part -->

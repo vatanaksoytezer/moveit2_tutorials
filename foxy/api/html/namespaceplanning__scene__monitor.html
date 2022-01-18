@@ -91,16 +91,13 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning__scene__monitor_1_1TrajectoryMonitor.html">TrajectoryMonitor</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Monitors the joint_states topic and tf to record the trajectory of the robot.  <a href="classplanning__scene__monitor_1_1TrajectoryMonitor.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning__scene__monitor_1_1TrajectoryMonitorMiddlewareHandle.html">TrajectoryMonitorMiddlewareHandle</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class contains the ROS2 interfaces for <a class="el" href="classplanning__scene__monitor_1_1TrajectoryMonitor.html" title="Monitors the joint_states topic and tf to record the trajectory of the robot.">TrajectoryMonitor</a>. This class is useful for testing by mocking the functions in the class below.  <a href="classplanning__scene__monitor_1_1TrajectoryMonitorMiddlewareHandle.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:a96e94553c46dd81b9d72726172fcaa0b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceplanning__scene__monitor.html#a96e94553c46dd81b9d72726172fcaa0b">JointStateUpdateCallback</a> = std::function&lt; void(sensor_msgs::msg::JointState::ConstSharedPtr)&gt;</td></tr>
 <tr class="separator:a96e94553c46dd81b9d72726172fcaa0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a69e28d90aee7340536f7ee58e900c2f2"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceplanning__scene__monitor.html#a69e28d90aee7340536f7ee58e900c2f2">TrajectoryStateAddedCallback</a> = std::function&lt; void(const moveit::core::RobotStateConstPtr &amp;, const rclcpp::Time &amp;)&gt;</td></tr>
-<tr class="separator:a69e28d90aee7340536f7ee58e900c2f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90be88cebb5aa86da5a133cad881a1a0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceplanning__scene__monitor.html#a90be88cebb5aa86da5a133cad881a1a0">TrajectoryStateAddedCallback</a> = boost::function&lt; void(const moveit::core::RobotStateConstPtr &amp;, const rclcpp::Time &amp;)&gt;</td></tr>
+<tr class="separator:a90be88cebb5aa86da5a133cad881a1a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -124,23 +121,23 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="current__state__monitor_8h_source.html#l00089">89</a> of file <a class="el" href="current__state__monitor_8h_source.html">current_state_monitor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="current__state__monitor_8h_source.html#l00083">83</a> of file <a class="el" href="current__state__monitor_8h_source.html">current_state_monitor.h</a>.</p>
 
 </div>
 </div>
-<a id="a69e28d90aee7340536f7ee58e900c2f2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a69e28d90aee7340536f7ee58e900c2f2">&#9670;&nbsp;</a></span>TrajectoryStateAddedCallback</h2>
+<a id="a90be88cebb5aa86da5a133cad881a1a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90be88cebb5aa86da5a133cad881a1a0">&#9670;&nbsp;</a></span>TrajectoryStateAddedCallback</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="namespaceplanning__scene__monitor.html#a69e28d90aee7340536f7ee58e900c2f2">planning_scene_monitor::TrajectoryStateAddedCallback</a> = typedef std::function&lt;void(const moveit::core::RobotStateConstPtr&amp;, const rclcpp::Time&amp;)&gt;</td>
+          <td class="memname">using <a class="el" href="namespaceplanning__scene__monitor.html#a90be88cebb5aa86da5a133cad881a1a0">planning_scene_monitor::TrajectoryStateAddedCallback</a> = typedef boost::function&lt;void(const moveit::core::RobotStateConstPtr&amp;, const rclcpp::Time&amp;)&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="trajectory__monitor_8h_source.html#l00082">82</a> of file <a class="el" href="trajectory__monitor_8h_source.html">trajectory_monitor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trajectory__monitor_8h_source.html#l00080">80</a> of file <a class="el" href="trajectory__monitor_8h_source.html">trajectory_monitor.h</a>.</p>
 
 </div>
 </div>

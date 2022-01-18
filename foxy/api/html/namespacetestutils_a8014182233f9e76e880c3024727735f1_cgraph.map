@@ -1,0 +1,8 @@
+<map id="testutils::checkJointTrajectory" name="testutils::checkJointTrajectory">
+<area shape="rect" id="node1" title="check joint trajectory of consistency, position, velocity and acceleration limits" alt="" coords="5,97,220,123"/>
+<area shape="rect" id="node2" href="$namespacetestutils.html#acf76645b0c371ee65aa05732ed6ad6e8" title="is Acceleration Bounded" alt="" coords="294,5,469,47"/>
+<area shape="rect" id="node4" href="$namespacetestutils.html#a92afbd45dfbe849ac79e2f71d3cb16db" title="is Position Bounded" alt="" coords="280,71,483,98"/>
+<area shape="rect" id="node5" href="$namespacetestutils.html#aae843ff794dfbc3b5ead9ddc6f98529d" title="check if the sizes of the joint position/veloicty/acceleration are correct" alt="" coords="268,122,495,149"/>
+<area shape="rect" id="node6" href="$namespacetestutils.html#ab5e2d5d8565b6d76e95a7dcddc8af2b5" title="is Velocity Bounded" alt="" coords="280,173,483,199"/>
+<area shape="rect" id="node3" href="$classpilz__industrial__motion__planner_1_1JointLimitsContainer.html#a040d5fa11dbedd32a857862bd4ce0b67" title="getLimit get the limit for the given joint name" alt="" coords="543,57,761,113"/>
+</map>

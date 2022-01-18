@@ -1,0 +1,4 @@
+<map id="moveit::core::JointModel::setVariableBounds" name="moveit::core::JointModel::setVariableBounds">
+<area shape="rect" id="node1" title="Set the lower and upper bounds for a variable. Throw an exception if the variable was not found." alt="" coords="5,5,187,47"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1JointModel.html#add20b6d4e10df54752f2c9ba61d8ee0a" title="Get the type of joint." alt="" coords="235,5,416,47"/>
+</map>

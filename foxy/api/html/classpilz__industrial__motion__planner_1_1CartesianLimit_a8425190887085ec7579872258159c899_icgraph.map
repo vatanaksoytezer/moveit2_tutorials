@@ -1,0 +1,4 @@
+<map id="pilz_industrial_motion_planner::CartesianLimit::getMaxTranslationalDeceleration" name="pilz_industrial_motion_planner::CartesianLimit::getMaxTranslationalDeceleration">
+<area shape="rect" id="node1" title="Return the maximal translational deceleration [m/s^2], 0 if nothing was set." alt="" coords="123,5,368,61"/>
+<area shape="rect" id="node2" href="$unittest__cartesian__limits__aggregator_8cpp.html#a73e0a8cc8cf3e31033a1ff9dcf0dd75d" title="Check if all values are set correctly." alt="" coords="5,20,75,47"/>
+</map>

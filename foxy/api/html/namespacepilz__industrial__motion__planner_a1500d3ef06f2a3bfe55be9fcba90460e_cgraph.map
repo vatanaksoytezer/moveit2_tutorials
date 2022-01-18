@@ -1,0 +1,5 @@
+<map id="pilz_industrial_motion_planner::isStateColliding" name="pilz_industrial_motion_planner::isStateColliding">
+<area shape="rect" id="node1" title="Checks if current robot state is in self collision." alt="" coords="5,5,193,47"/>
+<area shape="rect" id="node2" href="$classplanning__scene_1_1PlanningScene.html#aea9edbc5c65137a736db5a86bd1fed08" title="Check whether the current state is in self collision." alt="" coords="241,5,429,47"/>
+<area shape="rect" id="node3" href="$classplanning__scene_1_1PlanningScene.html#a6841b7eae6f77d00e36d30ea255bb053" title="Get the active collision detector for the robot." alt="" coords="477,5,713,47"/>
+</map>

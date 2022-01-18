@@ -104,101 +104,74 @@ $(function() {
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> *  POSSIBILITY OF SUCH DAMAGE.</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"> *********************************************************************/</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;limits&gt;</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;rclcpp/rclcpp.hpp&gt;</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="cartesian__limits__aggregator_8h.html">pilz_industrial_motion_planner/cartesian_limits_aggregator.h</a>&quot;</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> std::string PARAM_CARTESIAN_LIMITS_NS = <span class="stringliteral">&quot;cartesian_limits&quot;</span>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> std::string PARAM_MAX_TRANS_VEL = <span class="stringliteral">&quot;max_trans_vel&quot;</span>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> std::string PARAM_MAX_TRANS_ACC = <span class="stringliteral">&quot;max_trans_acc&quot;</span>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> std::string PARAM_MAX_TRANS_DEC = <span class="stringliteral">&quot;max_trans_dec&quot;</span>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> std::string PARAM_MAX_ROT_VEL = <span class="stringliteral">&quot;max_rot_vel&quot;</span>;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> std::string PARAM_MAX_ROT_ACC = <span class="stringliteral">&quot;max_rot_acc&quot;</span>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> std::string PARAM_MAX_ROT_DEC = <span class="stringliteral">&quot;max_rot_dec&quot;</span>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">// TODO(sjahr) Refactor and use repository wide solution</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="cartesian__limits__aggregator_8cpp.html#abaac3780a239e720ac896c4348861b04">   50</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="cartesian__limits__aggregator_8cpp.html#abaac3780a239e720ac896c4348861b04">declareAndGetParam</a>(<span class="keywordtype">double</span>&amp; output_value, <span class="keyword">const</span> std::string&amp; param_name, <span class="keyword">const</span> rclcpp::Node::SharedPtr&amp; node)</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordflow">try</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">if</span> (!node-&gt;has_parameter(param_name))</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      node-&gt;declare_parameter&lt;<span class="keywordtype">double</span>&gt;(param_name, std::numeric_limits&lt;double&gt;::quiet_NaN());</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    node-&gt;get_parameter&lt;<span class="keywordtype">double</span>&gt;(param_name, output_value);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">if</span> (std::isnan(output_value))</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      RCLCPP_ERROR(node-&gt;get_logger(), <span class="stringliteral">&quot;Parameter \&#39;%s\&#39;, is not set in the config file.&quot;</span>, param_name.c_str());</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordflow">catch</span> (<span class="keyword">const</span> rclcpp::exceptions::InvalidParameterTypeException&amp; e)</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    RCLCPP_WARN(node-&gt;get_logger(), <span class="stringliteral">&quot;InvalidParameterTypeException(\&#39;%s\&#39;): %s&quot;</span>, param_name.c_str(), e.what());</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    RCLCPP_ERROR(node-&gt;get_logger(), <span class="stringliteral">&quot;Error getting parameter \&#39;%s\&#39;, check parameter type in YAML file&quot;</span>,</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                 param_name.c_str());</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">throw</span> e;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  }</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<a class="code" href="classpilz__industrial__motion__planner_1_1CartesianLimit.html">pilz_industrial_motion_planner::CartesianLimit</a></div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="classpilz__industrial__motion__planner_1_1CartesianLimitsAggregator.html#ae522ae2e7639d289dd6d818b363cadc8">   76</a></span>&#160;<a class="code" href="classpilz__industrial__motion__planner_1_1CartesianLimitsAggregator.html#ae522ae2e7639d289dd6d818b363cadc8">pilz_industrial_motion_planner::CartesianLimitsAggregator::getAggregatedLimits</a>(<span class="keyword">const</span> rclcpp::Node::SharedPtr&amp; node,</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                                                                               <span class="keyword">const</span> std::string&amp; param_namespace)</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;{</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  std::string param_prefix = param_namespace + <span class="stringliteral">&quot;.&quot;</span> + PARAM_CARTESIAN_LIMITS_NS + <span class="stringliteral">&quot;.&quot;</span>;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <a class="code" href="classpilz__industrial__motion__planner_1_1CartesianLimit.html">pilz_industrial_motion_planner::CartesianLimit</a> cartesian_limit;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;ros/ros.h&quot;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="cartesian__limits__aggregator_8h.html">pilz_industrial_motion_planner/cartesian_limits_aggregator.h</a>&quot;</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> std::string PARAM_CARTESIAN_LIMITS_NS = <span class="stringliteral">&quot;cartesian_limits&quot;</span>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> std::string PARAM_MAX_TRANS_VEL = <span class="stringliteral">&quot;max_trans_vel&quot;</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> std::string PARAM_MAX_TRANS_ACC = <span class="stringliteral">&quot;max_trans_acc&quot;</span>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> std::string PARAM_MAX_TRANS_DEC = <span class="stringliteral">&quot;max_trans_dec&quot;</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> std::string PARAM_MAX_ROT_VEL = <span class="stringliteral">&quot;max_rot_vel&quot;</span>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> std::string PARAM_MAX_ROT_ACC = <span class="stringliteral">&quot;max_rot_acc&quot;</span>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> std::string PARAM_MAX_ROT_DEC = <span class="stringliteral">&quot;max_rot_dec&quot;</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<a class="code" href="classpilz__industrial__motion__planner_1_1CartesianLimit.html">pilz_industrial_motion_planner::CartesianLimit</a></div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classpilz__industrial__motion__planner_1_1CartesianLimitsAggregator.html#a432696a4e71dc307327c4ecc11b1afb6">   49</a></span>&#160;<a class="code" href="classpilz__industrial__motion__planner_1_1CartesianLimitsAggregator.html#a432696a4e71dc307327c4ecc11b1afb6">pilz_industrial_motion_planner::CartesianLimitsAggregator::getAggregatedLimits</a>(<span class="keyword">const</span> ros::NodeHandle&amp; nh)</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  std::string param_prefix = PARAM_CARTESIAN_LIMITS_NS + <span class="stringliteral">&quot;/&quot;</span>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <a class="code" href="classpilz__industrial__motion__planner_1_1CartesianLimit.html">pilz_industrial_motion_planner::CartesianLimit</a> cartesian_limit;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="comment">// translational velocity</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordtype">double</span> max_trans_vel;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordflow">if</span> (nh.getParam(param_prefix + PARAM_MAX_TRANS_VEL, max_trans_vel))</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    cartesian_limit.<a class="code" href="classpilz__industrial__motion__planner_1_1CartesianLimit.html#a6cc92d1b40f64bdcbb6fe02b523d9e92">setMaxTranslationalVelocity</a>(max_trans_vel);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="comment">// translational acceleration</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keywordtype">double</span> max_trans_acc;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordflow">if</span> (nh.getParam(param_prefix + PARAM_MAX_TRANS_ACC, max_trans_acc))</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    cartesian_limit.<a class="code" href="classpilz__industrial__motion__planner_1_1CartesianLimit.html#a98bee11f3336595d2b6a06e7a724e311">setMaxTranslationalAcceleration</a>(max_trans_acc);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="comment">// translational deceleration</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordtype">double</span> max_trans_dec;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordflow">if</span> (nh.getParam(param_prefix + PARAM_MAX_TRANS_DEC, max_trans_dec))</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    cartesian_limit.<a class="code" href="classpilz__industrial__motion__planner_1_1CartesianLimit.html#afc6ae3a75bde60fd382bd702cf5104dc">setMaxTranslationalDeceleration</a>(max_trans_dec);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="comment">// rotational velocity</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keywordtype">double</span> max_rot_vel;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keywordflow">if</span> (nh.getParam(param_prefix + PARAM_MAX_ROT_VEL, max_rot_vel))</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    cartesian_limit.<a class="code" href="classpilz__industrial__motion__planner_1_1CartesianLimit.html#a550ec57d1779f6e0b34f27554769d8a2">setMaxRotationalVelocity</a>(max_rot_vel);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  }</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="comment">// translational velocity</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keywordtype">double</span> max_trans_vel;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="cartesian__limits__aggregator_8cpp.html#abaac3780a239e720ac896c4348861b04">declareAndGetParam</a>(max_trans_vel, param_prefix + PARAM_MAX_TRANS_VEL, node))</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="comment">// rotational acceleration + deceleration deprecated</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="comment">// LCOV_EXCL_START</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keywordflow">if</span> (nh.hasParam(param_prefix + PARAM_MAX_ROT_ACC) || nh.hasParam(param_prefix + PARAM_MAX_ROT_DEC))</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    cartesian_limit.<a class="code" href="classpilz__industrial__motion__planner_1_1CartesianLimit.html#a6cc92d1b40f64bdcbb6fe02b523d9e92">setMaxTranslationalVelocity</a>(max_trans_vel);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  }</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="comment">// translational acceleration</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="keywordtype">double</span> max_trans_acc;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="cartesian__limits__aggregator_8cpp.html#abaac3780a239e720ac896c4348861b04">declareAndGetParam</a>(max_trans_acc, param_prefix + PARAM_MAX_TRANS_ACC, node))</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  {</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    cartesian_limit.<a class="code" href="classpilz__industrial__motion__planner_1_1CartesianLimit.html#a98bee11f3336595d2b6a06e7a724e311">setMaxTranslationalAcceleration</a>(max_trans_acc);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  }</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <span class="comment">// translational deceleration</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keywordtype">double</span> max_trans_dec;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="cartesian__limits__aggregator_8cpp.html#abaac3780a239e720ac896c4348861b04">declareAndGetParam</a>(max_trans_dec, param_prefix + PARAM_MAX_TRANS_DEC, node))</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  {</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    cartesian_limit.<a class="code" href="classpilz__industrial__motion__planner_1_1CartesianLimit.html#afc6ae3a75bde60fd382bd702cf5104dc">setMaxTranslationalDeceleration</a>(max_trans_dec);</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  }</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <span class="comment">// rotational velocity</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <span class="keywordtype">double</span> max_rot_vel;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="cartesian__limits__aggregator_8cpp.html#abaac3780a239e720ac896c4348861b04">declareAndGetParam</a>(max_rot_vel, param_prefix + PARAM_MAX_ROT_VEL, node))</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  {</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    cartesian_limit.<a class="code" href="classpilz__industrial__motion__planner_1_1CartesianLimit.html#a550ec57d1779f6e0b34f27554769d8a2">setMaxRotationalVelocity</a>(max_rot_vel);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  }</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <span class="comment">// rotational acceleration + deceleration deprecated</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <span class="comment">// LCOV_EXCL_START</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <span class="keywordflow">if</span> (node-&gt;has_parameter(param_prefix + PARAM_MAX_ROT_ACC) || node-&gt;has_parameter(param_prefix + PARAM_MAX_ROT_DEC))</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  {</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    RCLCPP_WARN(node-&gt;get_logger(),</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                <span class="stringliteral">&quot;Ignoring cartesian limits parameters for rotational acceleration / deceleration; these parameters are &quot;</span></div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                <span class="stringliteral">&quot;deprecated and are automatically calculated from translational to rotational ratio.&quot;</span>);</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  }</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <span class="comment">// LCOV_EXCL_STOP</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <span class="keywordflow">return</span> cartesian_limit;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;}</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    ROS_WARN_STREAM(<span class="stringliteral">&quot;Ignoring cartesian limits parameters for rotational &quot;</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                    <span class="stringliteral">&quot;acceleration / deceleration;&quot;</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                    &lt;&lt; <span class="stringliteral">&quot;these parameters are deprecated and are automatically &quot;</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                       <span class="stringliteral">&quot;calculated from&quot;</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                    &lt;&lt; <span class="stringliteral">&quot;translational to rotational ratio.&quot;</span>);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="comment">// LCOV_EXCL_STOP</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="keywordflow">return</span> cartesian_limit;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclasspilz__industrial__motion__planner_1_1CartesianLimitsAggregator_html_a432696a4e71dc307327c4ecc11b1afb6"><div class="ttname"><a href="classpilz__industrial__motion__planner_1_1CartesianLimitsAggregator.html#a432696a4e71dc307327c4ecc11b1afb6">pilz_industrial_motion_planner::CartesianLimitsAggregator::getAggregatedLimits</a></div><div class="ttdeci">static CartesianLimit getAggregatedLimits(const ros::NodeHandle &amp;nh)</div><div class="ttdoc">Loads cartesian limits from the parameter server.</div><div class="ttdef"><b>Definition:</b> <a href="cartesian__limits__aggregator_8cpp_source.html#l00049">cartesian_limits_aggregator.cpp:49</a></div></div>
 <div class="ttc" id="aclasspilz__industrial__motion__planner_1_1CartesianLimit_html_a6cc92d1b40f64bdcbb6fe02b523d9e92"><div class="ttname"><a href="classpilz__industrial__motion__planner_1_1CartesianLimit.html#a6cc92d1b40f64bdcbb6fe02b523d9e92">pilz_industrial_motion_planner::CartesianLimit::setMaxTranslationalVelocity</a></div><div class="ttdeci">void setMaxTranslationalVelocity(double max_trans_vel)</div><div class="ttdoc">Set the maximal translational velocity.</div><div class="ttdef"><b>Definition:</b> <a href="cartesian__limit_8cpp_source.html#l00056">cartesian_limit.cpp:56</a></div></div>
-<div class="ttc" id="aclasspilz__industrial__motion__planner_1_1CartesianLimitsAggregator_html_ae522ae2e7639d289dd6d818b363cadc8"><div class="ttname"><a href="classpilz__industrial__motion__planner_1_1CartesianLimitsAggregator.html#ae522ae2e7639d289dd6d818b363cadc8">pilz_industrial_motion_planner::CartesianLimitsAggregator::getAggregatedLimits</a></div><div class="ttdeci">static CartesianLimit getAggregatedLimits(const rclcpp::Node::SharedPtr &amp;node, const std::string &amp;param_namespace)</div><div class="ttdoc">Loads cartesian limits from the node parameters.</div><div class="ttdef"><b>Definition:</b> <a href="cartesian__limits__aggregator_8cpp_source.html#l00076">cartesian_limits_aggregator.cpp:76</a></div></div>
 <div class="ttc" id="aclasspilz__industrial__motion__planner_1_1CartesianLimit_html"><div class="ttname"><a href="classpilz__industrial__motion__planner_1_1CartesianLimit.html">pilz_industrial_motion_planner::CartesianLimit</a></div><div class="ttdoc">Set of cartesian limits, has values for velocity, acceleration and deceleration of both the translati...</div><div class="ttdef"><b>Definition:</b> <a href="cartesian__limit_8h_source.html#l00076">cartesian_limit.h:76</a></div></div>
 <div class="ttc" id="aclasspilz__industrial__motion__planner_1_1CartesianLimit_html_a550ec57d1779f6e0b34f27554769d8a2"><div class="ttname"><a href="classpilz__industrial__motion__planner_1_1CartesianLimit.html#a550ec57d1779f6e0b34f27554769d8a2">pilz_industrial_motion_planner::CartesianLimit::setMaxRotationalVelocity</a></div><div class="ttdeci">void setMaxRotationalVelocity(double max_rot_vel)</div><div class="ttdoc">Set the maximum rotational velocity.</div><div class="ttdef"><b>Definition:</b> <a href="cartesian__limit_8cpp_source.html#l00110">cartesian_limit.cpp:110</a></div></div>
 <div class="ttc" id="aclasspilz__industrial__motion__planner_1_1CartesianLimit_html_a98bee11f3336595d2b6a06e7a724e311"><div class="ttname"><a href="classpilz__industrial__motion__planner_1_1CartesianLimit.html#a98bee11f3336595d2b6a06e7a724e311">pilz_industrial_motion_planner::CartesianLimit::setMaxTranslationalAcceleration</a></div><div class="ttdeci">void setMaxTranslationalAcceleration(double max_trans_acc)</div><div class="ttdoc">Set the maximum translational acceleration.</div><div class="ttdef"><b>Definition:</b> <a href="cartesian__limit_8cpp_source.html#l00074">cartesian_limit.cpp:74</a></div></div>
-<div class="ttc" id="acartesian__limits__aggregator_8cpp_html_abaac3780a239e720ac896c4348861b04"><div class="ttname"><a href="cartesian__limits__aggregator_8cpp.html#abaac3780a239e720ac896c4348861b04">declareAndGetParam</a></div><div class="ttdeci">bool declareAndGetParam(double &amp;output_value, const std::string &amp;param_name, const rclcpp::Node::SharedPtr &amp;node)</div><div class="ttdef"><b>Definition:</b> <a href="cartesian__limits__aggregator_8cpp_source.html#l00050">cartesian_limits_aggregator.cpp:50</a></div></div>
 <div class="ttc" id="aclasspilz__industrial__motion__planner_1_1CartesianLimit_html_afc6ae3a75bde60fd382bd702cf5104dc"><div class="ttname"><a href="classpilz__industrial__motion__planner_1_1CartesianLimit.html#afc6ae3a75bde60fd382bd702cf5104dc">pilz_industrial_motion_planner::CartesianLimit::setMaxTranslationalDeceleration</a></div><div class="ttdeci">void setMaxTranslationalDeceleration(double max_trans_dec)</div><div class="ttdoc">Set the maximum translational deceleration.</div><div class="ttdef"><b>Definition:</b> <a href="cartesian__limit_8cpp_source.html#l00092">cartesian_limit.cpp:92</a></div></div>
 <div class="ttc" id="acartesian__limits__aggregator_8h_html"><div class="ttname"><a href="cartesian__limits__aggregator_8h.html">cartesian_limits_aggregator.h</a></div></div>
 <!-- start footer part -->

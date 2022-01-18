@@ -1,5 +1,11 @@
 <map id="TrajectoryGeneratorPTPTest::SetUp" name="TrajectoryGeneratorPTPTest::SetUp">
-<area shape="rect" id="node1" title="Create test fixture for ptp trajectory generator." alt="" coords="5,31,207,73"/>
-<area shape="rect" id="node2" href="$namespacetestutils.html#aee400d4013caab0af4681d89dc96d66c" title=" " alt="" coords="255,5,453,32"/>
-<area shape="rect" id="node3" href="$classrobot__model__loader_1_1RobotModelLoader.html#a40e202c404ae62a984861b273a401fcd" title="Get the constructed planning_models::RobotModel." alt="" coords="274,56,434,112"/>
+<area shape="rect" id="node1" title="Create test fixture for ptp trajectory generator." alt="" coords="5,221,207,262"/>
+<area shape="rect" id="node2" href="$classpilz__industrial__motion__planner_1_1JointLimitsContainer.html#a40383e43f2853d45c9456333cda2a537" title="Add a limit." alt="" coords="267,5,486,61"/>
+<area shape="rect" id="node3" href="$namespacetestutils.html#aee400d4013caab0af4681d89dc96d66c" title=" " alt="" coords="277,85,476,112"/>
+<area shape="rect" id="node4" href="$unittest__trajectory__generator__ptp_8cpp.html#a50c36a4a78465728ec01b75416c540b3" title=" " alt="" coords="295,137,459,178"/>
+<area shape="rect" id="node5" href="$unittest__trajectory__generator__ptp_8cpp.html#a34130ca374ad83542f688d26fe11071f" title=" " alt="" coords="271,203,483,229"/>
+<area shape="rect" id="node6" href="$unittest__trajectory__generator__ptp_8cpp.html#afae7457c0e74df612a6a1af7289b8cfa" title=" " alt="" coords="270,253,483,280"/>
+<area shape="rect" id="node7" href="$unittest__trajectory__generator__ptp_8cpp.html#a0258d4e48c5d63bd1bb8c56e97bd09af" title=" " alt="" coords="255,304,499,331"/>
+<area shape="rect" id="node8" href="$unittest__trajectory__generator__ptp_8cpp.html#a3ef26f92433dcdbf9ac9c73dfdf72ac8" title=" " alt="" coords="272,355,481,381"/>
+<area shape="rect" id="node9" href="$unittest__trajectory__generator__ptp_8cpp.html#a71fba2ed2fe2866bdf3b45cce5e02e66" title=" " alt="" coords="275,406,478,447"/>
 </map>

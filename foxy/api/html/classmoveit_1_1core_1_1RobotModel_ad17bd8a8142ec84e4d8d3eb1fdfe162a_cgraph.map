@@ -1,0 +1,5 @@
+<map id="moveit::core::RobotModel::buildGroups" name="moveit::core::RobotModel::buildGroups">
+<area shape="rect" id="node1" title="Given a SRDF model describing the groups, build up the groups in this kinematic model." alt="" coords="5,39,196,80"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1JointModelGroup.html#a5c96362127bca0b1263983def71cf86a" title="Get all the joints in this group (including fixed and mimic joints)." alt="" coords="244,5,425,47"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1core_1_1JointModelGroup.html#a2f165c9374e28ac4052490819c790f45" title="Get the name of the joint group." alt="" coords="244,71,425,112"/>
+</map>

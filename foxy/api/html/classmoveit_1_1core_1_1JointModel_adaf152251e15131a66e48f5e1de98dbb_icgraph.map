@@ -1,4 +1,9 @@
 <map id="moveit::core::JointModel::getVariableRandomPositionsNearBy" name="moveit::core::JointModel::getVariableRandomPositionsNearBy">
-<area shape="rect" id="node1" title="Provide random values for the joint variables (within default bounds). Enough memory is assumed to be..." alt="" coords="237,5,503,47"/>
-<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1JointModel.html#a2210b2f0a42da63674e79cbe77ff9eec" title="Get the local names of the variable that make up the joint (suffixes that are attached to joint names..." alt="" coords="5,5,189,47"/>
+<area shape="rect" id="node1" title="Provide random values for the joint variables (within default bounds). Enough memory is assumed to be..." alt="" coords="829,71,1095,112"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1JointModel.html#a8e6b8bcc807187617b1b2e5242a4af69" title="Get the number of variables that describe this joint." alt="" coords="600,71,781,112"/>
+<area shape="rect" id="node3" href="$classompl__interface_1_1ModelBasedStateSpace.html#a2b4fc78932af58ba0b269441e7819440" title="Copy a single joint&#39;s values (which might have multiple variables) from a MoveIt robot_state to an OM..." alt="" coords="304,5,552,47"/>
+<area shape="rect" id="node4" href="$classmoveit_1_1core_1_1JointModelGroup.html#a0f60ea765fd917f911480a7615f8ff32" title="Get the unique set of end effector tips included in a particular joint model group as defined by the ..." alt="" coords="333,71,523,112"/>
+<area shape="rect" id="node7" href="$test__kinematic__complex_8cpp.html#a0e801af07878675ef75fa777a90a6eb9" title=" " alt="" coords="393,137,463,163"/>
+<area shape="rect" id="node5" href="$classmoveit_1_1core_1_1JointModelGroup.html#a06509f71422b63c90552127ce2ca4cee" title="Compute the default values for the joint group." alt="" coords="5,37,256,79"/>
+<area shape="rect" id="node6" href="$classmoveit_1_1core_1_1JointModelGroup.html#a7dd1f78e9dfdbc0875d2f7edead6daca" title=" " alt="" coords="40,103,221,144"/>
 </map>

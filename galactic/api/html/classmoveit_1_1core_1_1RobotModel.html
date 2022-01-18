@@ -166,9 +166,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa544aa93e5144f4fc754a893d39e5c1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1e4302415baaafdc7d401e21025cb7d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1RobotModel.html#ab1e4302415baaafdc7d401e21025cb7d">getMissingVariableNames</a> (const std::vector&lt; std::string &gt; &amp;variables, std::vector&lt; std::string &gt; &amp;missing_variables) const</td></tr>
 <tr class="separator:ab1e4302415baaafdc7d401e21025cb7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5fe64e89897e7dede8ef073b8f0bcf2d"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1RobotModel.html#a5fe64e89897e7dede8ef073b8f0bcf2d">getVariableIndex</a> (const std::string &amp;variable) const</td></tr>
-<tr class="memdesc:a5fe64e89897e7dede8ef073b8f0bcf2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the index of a variable in the robot state.  <a href="classmoveit_1_1core_1_1RobotModel.html#a5fe64e89897e7dede8ef073b8f0bcf2d">More...</a><br /></td></tr>
-<tr class="separator:a5fe64e89897e7dede8ef073b8f0bcf2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac09d17688cfe14b3b1b3dc8852b7642b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1RobotModel.html#ac09d17688cfe14b3b1b3dc8852b7642b">getVariableIndex</a> (const std::string &amp;variable) const</td></tr>
+<tr class="memdesc:ac09d17688cfe14b3b1b3dc8852b7642b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the index of a variable in the robot state.  <a href="classmoveit_1_1core_1_1RobotModel.html#ac09d17688cfe14b3b1b3dc8852b7642b">More...</a><br /></td></tr>
+<tr class="separator:ac09d17688cfe14b3b1b3dc8852b7642b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af898b1925fc30af72ddd1e9dc63ce832"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classmoveit_1_1core_1_1JointModel.html">JointModel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1RobotModel.html#af898b1925fc30af72ddd1e9dc63ce832">getCommonRoot</a> (const <a class="el" href="classmoveit_1_1core_1_1JointModel.html">JointModel</a> *a, const <a class="el" href="classmoveit_1_1core_1_1JointModel.html">JointModel</a> *b) const</td></tr>
 <tr class="memdesc:af898b1925fc30af72ddd1e9dc63ce832"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the deepest joint in the kinematic tree that is a common parent of both joints passed as argument.  <a href="classmoveit_1_1core_1_1RobotModel.html#af898b1925fc30af72ddd1e9dc63ce832">More...</a><br /></td></tr>
 <tr class="separator:af898b1925fc30af72ddd1e9dc63ce832"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -186,13 +186,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a5766509268f715edf6d523a193aa6557"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a joint exists. Return true if it does.  <a href="classmoveit_1_1core_1_1RobotModel.html#a5766509268f715edf6d523a193aa6557">More...</a><br /></td></tr>
 <tr class="separator:a5766509268f715edf6d523a193aa6557"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb12941677dbbae66a30531c5dfd2dd6"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classmoveit_1_1core_1_1JointModel.html">JointModel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1RobotModel.html#afb12941677dbbae66a30531c5dfd2dd6">getJointModel</a> (const std::string &amp;joint) const</td></tr>
-<tr class="memdesc:afb12941677dbbae66a30531c5dfd2dd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a joint by its name. Output error and return nullptr when the joint is missing.  <a href="classmoveit_1_1core_1_1RobotModel.html#afb12941677dbbae66a30531c5dfd2dd6">More...</a><br /></td></tr>
+<tr class="memdesc:afb12941677dbbae66a30531c5dfd2dd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a joint by its name. Output error and return NULL when the joint is missing.  <a href="classmoveit_1_1core_1_1RobotModel.html#afb12941677dbbae66a30531c5dfd2dd6">More...</a><br /></td></tr>
 <tr class="separator:afb12941677dbbae66a30531c5dfd2dd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abcf0754a50261bea47693187f5fec2f9"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classmoveit_1_1core_1_1JointModel.html">JointModel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1RobotModel.html#abcf0754a50261bea47693187f5fec2f9">getJointModel</a> (size_t index) const</td></tr>
-<tr class="memdesc:abcf0754a50261bea47693187f5fec2f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a joint by its index. Output error and return nullptr when the link is missing.  <a href="classmoveit_1_1core_1_1RobotModel.html#abcf0754a50261bea47693187f5fec2f9">More...</a><br /></td></tr>
-<tr class="separator:abcf0754a50261bea47693187f5fec2f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7dc5c3777353e3759d6af82f097ceb17"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classmoveit_1_1core_1_1JointModel.html">JointModel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1RobotModel.html#a7dc5c3777353e3759d6af82f097ceb17">getJointModel</a> (int index) const</td></tr>
+<tr class="memdesc:a7dc5c3777353e3759d6af82f097ceb17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a joint by its index. Output error and return NULL when the link is missing.  <a href="classmoveit_1_1core_1_1RobotModel.html#a7dc5c3777353e3759d6af82f097ceb17">More...</a><br /></td></tr>
+<tr class="separator:a7dc5c3777353e3759d6af82f097ceb17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adcb6a06041f7e08d238afc9e5785bb87"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmoveit_1_1core_1_1JointModel.html">JointModel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1RobotModel.html#adcb6a06041f7e08d238afc9e5785bb87">getJointModel</a> (const std::string &amp;joint)</td></tr>
-<tr class="memdesc:adcb6a06041f7e08d238afc9e5785bb87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a joint by its name. Output error and return nullptr when the joint is missing.  <a href="classmoveit_1_1core_1_1RobotModel.html#adcb6a06041f7e08d238afc9e5785bb87">More...</a><br /></td></tr>
+<tr class="memdesc:adcb6a06041f7e08d238afc9e5785bb87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a joint by its name. Output error and return NULL when the joint is missing.  <a href="classmoveit_1_1core_1_1RobotModel.html#adcb6a06041f7e08d238afc9e5785bb87">More...</a><br /></td></tr>
 <tr class="separator:adcb6a06041f7e08d238afc9e5785bb87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2de4bbefe50f27a0ad891c75aef4918c"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; const <a class="el" href="classmoveit_1_1core_1_1JointModel.html">JointModel</a> * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1RobotModel.html#a2de4bbefe50f27a0ad891c75aef4918c">getJointModels</a> () const</td></tr>
 <tr class="memdesc:a2de4bbefe50f27a0ad891c75aef4918c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the array of joints, in the order they appear in the robot state.  <a href="classmoveit_1_1core_1_1RobotModel.html#a2de4bbefe50f27a0ad891c75aef4918c">More...</a><br /></td></tr>
@@ -273,6 +273,48 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a1b5b2b3c8cb1b79f4d17a569e463e5df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1RobotModel.html#a1b5b2b3c8cb1b79f4d17a569e463e5df">updateMimicJoints</a> (double *values) const</td></tr>
 <tr class="memdesc:a1b5b2b3c8cb1b79f4d17a569e463e5df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the variable values for the state of a group with respect to the mimic joints.  <a href="classmoveit_1_1core_1_1RobotModel.html#a1b5b2b3c8cb1b79f4d17a569e463e5df">More...</a><br /></td></tr>
 <tr class="separator:a1b5b2b3c8cb1b79f4d17a569e463e5df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa81298bc190af38d3393eeb5c2762be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1RobotModel.html#afa81298bc190af38d3393eeb5c2762be">buildModel</a> (const urdf::ModelInterface &amp;urdf_model, const srdf::Model &amp;srdf_model)</td></tr>
+<tr class="memdesc:afa81298bc190af38d3393eeb5c2762be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given an URDF model and a SRDF model, build a full kinematic model.  <a href="classmoveit_1_1core_1_1RobotModel.html#afa81298bc190af38d3393eeb5c2762be">More...</a><br /></td></tr>
+<tr class="separator:afa81298bc190af38d3393eeb5c2762be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad17bd8a8142ec84e4d8d3eb1fdfe162a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1RobotModel.html#ad17bd8a8142ec84e4d8d3eb1fdfe162a">buildGroups</a> (const srdf::Model &amp;srdf_model)</td></tr>
+<tr class="memdesc:ad17bd8a8142ec84e4d8d3eb1fdfe162a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a SRDF model describing the groups, build up the groups in this kinematic model.  <a href="classmoveit_1_1core_1_1RobotModel.html#ad17bd8a8142ec84e4d8d3eb1fdfe162a">More...</a><br /></td></tr>
+<tr class="separator:ad17bd8a8142ec84e4d8d3eb1fdfe162a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af84fe435cb031b355f5bca6e72332537"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1RobotModel.html#af84fe435cb031b355f5bca6e72332537">buildGroupsInfoSubgroups</a> (const srdf::Model &amp;srdf_model)</td></tr>
+<tr class="memdesc:af84fe435cb031b355f5bca6e72332537"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute helpful information about groups (that can be queried later)  <a href="classmoveit_1_1core_1_1RobotModel.html#af84fe435cb031b355f5bca6e72332537">More...</a><br /></td></tr>
+<tr class="separator:af84fe435cb031b355f5bca6e72332537"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b9df06b892b1b3332009c83c4716840"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1RobotModel.html#a9b9df06b892b1b3332009c83c4716840">buildGroupsInfoEndEffectors</a> (const srdf::Model &amp;srdf_model)</td></tr>
+<tr class="memdesc:a9b9df06b892b1b3332009c83c4716840"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute helpful information about groups (that can be queried later)  <a href="classmoveit_1_1core_1_1RobotModel.html#a9b9df06b892b1b3332009c83c4716840">More...</a><br /></td></tr>
+<tr class="separator:a9b9df06b892b1b3332009c83c4716840"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06f7a5069743570b6bc9ea3a48b7edcb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1RobotModel.html#a06f7a5069743570b6bc9ea3a48b7edcb">buildMimic</a> (const urdf::ModelInterface &amp;urdf_model)</td></tr>
+<tr class="memdesc:a06f7a5069743570b6bc9ea3a48b7edcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given the URDF model, build up the mimic joints (mutually constrained joints)  <a href="classmoveit_1_1core_1_1RobotModel.html#a06f7a5069743570b6bc9ea3a48b7edcb">More...</a><br /></td></tr>
+<tr class="separator:a06f7a5069743570b6bc9ea3a48b7edcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8388447dc6f8330b37ce186f93c1e413"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1RobotModel.html#a8388447dc6f8330b37ce186f93c1e413">buildGroupStates</a> (const srdf::Model &amp;srdf_model)</td></tr>
+<tr class="memdesc:a8388447dc6f8330b37ce186f93c1e413"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a SRDF model describing the groups, build the default states defined in the SRDF.  <a href="classmoveit_1_1core_1_1RobotModel.html#a8388447dc6f8330b37ce186f93c1e413">More...</a><br /></td></tr>
+<tr class="separator:a8388447dc6f8330b37ce186f93c1e413"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc454aa8fc3cac50d0b3172a37140365"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1RobotModel.html#afc454aa8fc3cac50d0b3172a37140365">buildJointInfo</a> ()</td></tr>
+<tr class="memdesc:afc454aa8fc3cac50d0b3172a37140365"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute helpful information about joints.  <a href="classmoveit_1_1core_1_1RobotModel.html#afc454aa8fc3cac50d0b3172a37140365">More...</a><br /></td></tr>
+<tr class="separator:afc454aa8fc3cac50d0b3172a37140365"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32a3a06b04a9ca84486f0baba80dd073"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1RobotModel.html#a32a3a06b04a9ca84486f0baba80dd073">computeDescendants</a> ()</td></tr>
+<tr class="memdesc:a32a3a06b04a9ca84486f0baba80dd073"><td class="mdescLeft">&#160;</td><td class="mdescRight">For every joint, pre-compute the list of descendant joints &amp; links.  <a href="classmoveit_1_1core_1_1RobotModel.html#a32a3a06b04a9ca84486f0baba80dd073">More...</a><br /></td></tr>
+<tr class="separator:a32a3a06b04a9ca84486f0baba80dd073"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab79cc844a13ea80b854f7d391ec023c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1RobotModel.html#ab79cc844a13ea80b854f7d391ec023c1">computeCommonRoots</a> ()</td></tr>
+<tr class="memdesc:ab79cc844a13ea80b854f7d391ec023c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">For every pair of joints, pre-compute the common roots of the joints.  <a href="classmoveit_1_1core_1_1RobotModel.html#ab79cc844a13ea80b854f7d391ec023c1">More...</a><br /></td></tr>
+<tr class="separator:ab79cc844a13ea80b854f7d391ec023c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3885dc69c0dae39cdfac05b9f498114"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmoveit_1_1core_1_1JointModel.html">JointModel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1RobotModel.html#af3885dc69c0dae39cdfac05b9f498114">buildRecursive</a> (<a class="el" href="classmoveit_1_1core_1_1LinkModel.html">LinkModel</a> *parent, const urdf::Link *link, const srdf::Model &amp;srdf_model)</td></tr>
+<tr class="memdesc:af3885dc69c0dae39cdfac05b9f498114"><td class="mdescLeft">&#160;</td><td class="mdescRight">(This function is mostly intended for internal use). Given a parent link, build up (recursively), the kinematic model by walking down the tree  <a href="classmoveit_1_1core_1_1RobotModel.html#af3885dc69c0dae39cdfac05b9f498114">More...</a><br /></td></tr>
+<tr class="separator:af3885dc69c0dae39cdfac05b9f498114"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcb9130929d85fdec8a04e79849351d8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1RobotModel.html#adcb9130929d85fdec8a04e79849351d8">addJointModelGroup</a> (const srdf::Model::Group &amp;group)</td></tr>
+<tr class="memdesc:adcb9130929d85fdec8a04e79849351d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="classmoveit_1_1core_1_1JointModelGroup.html">JointModelGroup</a> given a SRDF description <em>group</em>.  <a href="classmoveit_1_1core_1_1RobotModel.html#adcb9130929d85fdec8a04e79849351d8">More...</a><br /></td></tr>
+<tr class="separator:adcb9130929d85fdec8a04e79849351d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbf5a7c0c1430d0bc4bd040f39ad96cc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmoveit_1_1core_1_1JointModel.html">JointModel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1RobotModel.html#adbf5a7c0c1430d0bc4bd040f39ad96cc">constructJointModel</a> (const urdf::Joint *urdf_joint_model, const urdf::Link *child_link, const srdf::Model &amp;srdf_model)</td></tr>
+<tr class="memdesc:adbf5a7c0c1430d0bc4bd040f39ad96cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a urdf joint model, a child link and a set of virtual joints, build up the corresponding <a class="el" href="classmoveit_1_1core_1_1JointModel.html" title="A joint from the robot. Models the transform that this joint applies in the kinematic chain....">JointModel</a> object.  <a href="classmoveit_1_1core_1_1RobotModel.html#adbf5a7c0c1430d0bc4bd040f39ad96cc">More...</a><br /></td></tr>
+<tr class="separator:adbf5a7c0c1430d0bc4bd040f39ad96cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4984ed960df65c297658d488dc7148e1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmoveit_1_1core_1_1LinkModel.html">LinkModel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1RobotModel.html#a4984ed960df65c297658d488dc7148e1">constructLinkModel</a> (const urdf::Link *urdf_link)</td></tr>
+<tr class="memdesc:a4984ed960df65c297658d488dc7148e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a urdf link, build the corresponding <a class="el" href="classmoveit_1_1core_1_1LinkModel.html" title="A link from the robot. Contains the constant transform applied to the link and its geometry.">LinkModel</a> object.  <a href="classmoveit_1_1core_1_1RobotModel.html#a4984ed960df65c297658d488dc7148e1">More...</a><br /></td></tr>
+<tr class="separator:a4984ed960df65c297658d488dc7148e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcd785395005fe888e1a79e110908b39"><td class="memItemLeft" align="right" valign="top">shapes::ShapePtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1RobotModel.html#abcd785395005fe888e1a79e110908b39">constructShape</a> (const urdf::Geometry *geom)</td></tr>
+<tr class="memdesc:abcd785395005fe888e1a79e110908b39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a geometry spec from the URDF and a filename (for a mesh), construct the corresponding shape object.  <a href="classmoveit_1_1core_1_1RobotModel.html#abcd785395005fe888e1a79e110908b39">More...</a><br /></td></tr>
+<tr class="separator:abcd785395005fe888e1a79e110908b39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -353,7 +395,7 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:adbf6dd0cd16c5f50716e50ee238918ff"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1RobotModel.html#adbf6dd0cd16c5f50716e50ee238918ff">variable_count_</a></td></tr>
 <tr class="memdesc:adbf6dd0cd16c5f50716e50ee238918ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of variables necessary to describe this model.  <a href="classmoveit_1_1core_1_1RobotModel.html#adbf6dd0cd16c5f50716e50ee238918ff">More...</a><br /></td></tr>
 <tr class="separator:adbf6dd0cd16c5f50716e50ee238918ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa56b9b489126f34a9c8239ce04a3900"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemoveit_1_1core.html#a4bc26a7f9b3ac37afb7022d766fb307a">VariableIndexMap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1RobotModel.html#aaa56b9b489126f34a9c8239ce04a3900">joint_variables_index_map_</a></td></tr>
+<tr class="memitem:aaa56b9b489126f34a9c8239ce04a3900"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemoveit_1_1core.html#ae101bd641ed50af6f5936c5a337ad3fd">VariableIndexMap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1RobotModel.html#aaa56b9b489126f34a9c8239ce04a3900">joint_variables_index_map_</a></td></tr>
 <tr class="memdesc:aaa56b9b489126f34a9c8239ce04a3900"><td class="mdescLeft">&#160;</td><td class="mdescRight">The state includes all the joint variables that make up the joints the state consists of. This map gives the position in the state vector of the group for each of these variables. Additionally, it includes the names of the joints and the index for the first variable of that joint.  <a href="classmoveit_1_1core_1_1RobotModel.html#aaa56b9b489126f34a9c8239ce04a3900">More...</a><br /></td></tr>
 <tr class="separator:aaa56b9b489126f34a9c8239ce04a3900"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97c5ac36baebdc058ae6f5f9a913de71"><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1RobotModel.html#a97c5ac36baebdc058ae6f5f9a913de71">active_joint_model_start_index_</a></td></tr>
@@ -395,13 +437,13 @@ Access to link models</h2></td></tr>
 <tr class="memdesc:ad195a514ad301e7e66ea4411b5fd39e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a link exists. Return true if it does.  <a href="classmoveit_1_1core_1_1RobotModel.html#ad195a514ad301e7e66ea4411b5fd39e3">More...</a><br /></td></tr>
 <tr class="separator:ad195a514ad301e7e66ea4411b5fd39e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef85568fb4db9d1615c20bdf249fb147"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classmoveit_1_1core_1_1LinkModel.html">LinkModel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1RobotModel.html#aef85568fb4db9d1615c20bdf249fb147">getLinkModel</a> (const std::string &amp;link, bool *has_link=nullptr) const</td></tr>
-<tr class="memdesc:aef85568fb4db9d1615c20bdf249fb147"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a link by its name. Output error and return nullptr when the link is missing.  <a href="classmoveit_1_1core_1_1RobotModel.html#aef85568fb4db9d1615c20bdf249fb147">More...</a><br /></td></tr>
+<tr class="memdesc:aef85568fb4db9d1615c20bdf249fb147"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a link by its name. Output error and return NULL when the link is missing.  <a href="classmoveit_1_1core_1_1RobotModel.html#aef85568fb4db9d1615c20bdf249fb147">More...</a><br /></td></tr>
 <tr class="separator:aef85568fb4db9d1615c20bdf249fb147"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acff3a3f300f067c3c62f49dd9775bfa9"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classmoveit_1_1core_1_1LinkModel.html">LinkModel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1RobotModel.html#acff3a3f300f067c3c62f49dd9775bfa9">getLinkModel</a> (size_t index) const</td></tr>
-<tr class="memdesc:acff3a3f300f067c3c62f49dd9775bfa9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a link by its index. Output error and return nullptr when the link is missing.  <a href="classmoveit_1_1core_1_1RobotModel.html#acff3a3f300f067c3c62f49dd9775bfa9">More...</a><br /></td></tr>
-<tr class="separator:acff3a3f300f067c3c62f49dd9775bfa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd98cefb2421b2fb7c93096ab4d2ec06"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classmoveit_1_1core_1_1LinkModel.html">LinkModel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1RobotModel.html#afd98cefb2421b2fb7c93096ab4d2ec06">getLinkModel</a> (int index) const</td></tr>
+<tr class="memdesc:afd98cefb2421b2fb7c93096ab4d2ec06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a link by its index. Output error and return NULL when the link is missing.  <a href="classmoveit_1_1core_1_1RobotModel.html#afd98cefb2421b2fb7c93096ab4d2ec06">More...</a><br /></td></tr>
+<tr class="separator:afd98cefb2421b2fb7c93096ab4d2ec06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e16149870bcd48b98f97b5bdd268141"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmoveit_1_1core_1_1LinkModel.html">LinkModel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1RobotModel.html#a2e16149870bcd48b98f97b5bdd268141">getLinkModel</a> (const std::string &amp;link, bool *has_link=nullptr)</td></tr>
-<tr class="memdesc:a2e16149870bcd48b98f97b5bdd268141"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a link by its name. Output error and return nullptr when the link is missing.  <a href="classmoveit_1_1core_1_1RobotModel.html#a2e16149870bcd48b98f97b5bdd268141">More...</a><br /></td></tr>
+<tr class="memdesc:a2e16149870bcd48b98f97b5bdd268141"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a link by its name. Output error and return NULL when the link is missing.  <a href="classmoveit_1_1core_1_1RobotModel.html#a2e16149870bcd48b98f97b5bdd268141">More...</a><br /></td></tr>
 <tr class="separator:a2e16149870bcd48b98f97b5bdd268141"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86fd40affbc1aa71d737a0d3a937bccb"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; const <a class="el" href="classmoveit_1_1core_1_1LinkModel.html">LinkModel</a> * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1RobotModel.html#a86fd40affbc1aa71d737a0d3a937bccb">getLinkModels</a> () const</td></tr>
 <tr class="memdesc:a86fd40affbc1aa71d737a0d3a937bccb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the array of links <br  />
@@ -487,6 +529,320 @@ Access to link models</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="adcb9130929d85fdec8a04e79849351d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcb9130929d85fdec8a04e79849351d8">&#9670;&nbsp;</a></span>addJointModelGroup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool moveit::core::RobotModel::addJointModelGroup </td>
+          <td>(</td>
+          <td class="paramtype">const srdf::Model::Group &amp;&#160;</td>
+          <td class="paramname"><em>group</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct a <a class="el" href="classmoveit_1_1core_1_1JointModelGroup.html">JointModelGroup</a> given a SRDF description <em>group</em>. </p>
+
+<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l00739">739</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmoveit_1_1core_1_1RobotModel_adcb9130929d85fdec8a04e79849351d8_icgraph.png" border="0" usemap="#classmoveit_1_1core_1_1RobotModel_adcb9130929d85fdec8a04e79849351d8_icgraph" alt=""/></div>
+<map name="classmoveit_1_1core_1_1RobotModel_adcb9130929d85fdec8a04e79849351d8_icgraph" id="classmoveit_1_1core_1_1RobotModel_adcb9130929d85fdec8a04e79849351d8_icgraph">
+<area shape="rect" title="Construct a JointModelGroup given a SRDF description group." alt="" coords="244,5,435,47"/>
+<area shape="rect" href="classmoveit_1_1core_1_1RobotModel.html#a98652ff31857462db512c0fb06966dad" title="Get the joint group that corresponds to a given end&#45;effector name." alt="" coords="5,5,196,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad17bd8a8142ec84e4d8d3eb1fdfe162a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad17bd8a8142ec84e4d8d3eb1fdfe162a">&#9670;&nbsp;</a></span>buildGroups()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void moveit::core::RobotModel::buildGroups </td>
+          <td>(</td>
+          <td class="paramtype">const srdf::Model &amp;&#160;</td>
+          <td class="paramname"><em>srdf_model</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Given a SRDF model describing the groups, build up the groups in this kinematic model. </p>
+
+<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l00571">571</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmoveit_1_1core_1_1RobotModel_ad17bd8a8142ec84e4d8d3eb1fdfe162a_cgraph.png" border="0" usemap="#classmoveit_1_1core_1_1RobotModel_ad17bd8a8142ec84e4d8d3eb1fdfe162a_cgraph" alt=""/></div>
+<map name="classmoveit_1_1core_1_1RobotModel_ad17bd8a8142ec84e4d8d3eb1fdfe162a_cgraph" id="classmoveit_1_1core_1_1RobotModel_ad17bd8a8142ec84e4d8d3eb1fdfe162a_cgraph">
+<area shape="rect" title="Given a SRDF model describing the groups, build up the groups in this kinematic model." alt="" coords="5,39,196,80"/>
+<area shape="rect" href="classmoveit_1_1core_1_1JointModelGroup.html#a5c96362127bca0b1263983def71cf86a" title="Get all the joints in this group (including fixed and mimic joints)." alt="" coords="244,5,425,47"/>
+<area shape="rect" href="classmoveit_1_1core_1_1JointModelGroup.html#a2f165c9374e28ac4052490819c790f45" title="Get the name of the joint group." alt="" coords="244,71,425,112"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9b9df06b892b1b3332009c83c4716840"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b9df06b892b1b3332009c83c4716840">&#9670;&nbsp;</a></span>buildGroupsInfoEndEffectors()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void moveit::core::RobotModel::buildGroupsInfoEndEffectors </td>
+          <td>(</td>
+          <td class="paramtype">const srdf::Model &amp;&#160;</td>
+          <td class="paramname"><em>srdf_model</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Compute helpful information about groups (that can be queried later) </p>
+
+<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l00656">656</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
+
+</div>
+</div>
+<a id="af84fe435cb031b355f5bca6e72332537"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af84fe435cb031b355f5bca6e72332537">&#9670;&nbsp;</a></span>buildGroupsInfoSubgroups()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void moveit::core::RobotModel::buildGroupsInfoSubgroups </td>
+          <td>(</td>
+          <td class="paramtype">const srdf::Model &amp;&#160;</td>
+          <td class="paramname"><em>srdf_model</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Compute helpful information about groups (that can be queried later) </p>
+
+<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l00627">627</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a8388447dc6f8330b37ce186f93c1e413"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8388447dc6f8330b37ce186f93c1e413">&#9670;&nbsp;</a></span>buildGroupStates()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void moveit::core::RobotModel::buildGroupStates </td>
+          <td>(</td>
+          <td class="paramtype">const srdf::Model &amp;&#160;</td>
+          <td class="paramname"><em>srdf_model</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Given a SRDF model describing the groups, build the default states defined in the SRDF. </p>
+
+<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l00392">392</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
+
+</div>
+</div>
+<a id="afc454aa8fc3cac50d0b3172a37140365"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc454aa8fc3cac50d0b3172a37140365">&#9670;&nbsp;</a></span>buildJointInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void moveit::core::RobotModel::buildJointInfo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Compute helpful information about joints. </p>
+
+<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l00317">317</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a06f7a5069743570b6bc9ea3a48b7edcb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06f7a5069743570b6bc9ea3a48b7edcb">&#9670;&nbsp;</a></span>buildMimic()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void moveit::core::RobotModel::buildMimic </td>
+          <td>(</td>
+          <td class="paramtype">const urdf::ModelInterface &amp;&#160;</td>
+          <td class="paramname"><em>urdf_model</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Given the URDF model, build up the mimic joints (mutually constrained joints) </p>
+
+<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l00452">452</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
+
+</div>
+</div>
+<a id="afa81298bc190af38d3393eeb5c2762be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa81298bc190af38d3393eeb5c2762be">&#9670;&nbsp;</a></span>buildModel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void moveit::core::RobotModel::buildModel </td>
+          <td>(</td>
+          <td class="paramtype">const urdf::ModelInterface &amp;&#160;</td>
+          <td class="paramname"><em>urdf_model</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const srdf::Model &amp;&#160;</td>
+          <td class="paramname"><em>srdf_model</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Given an URDF model and a SRDF model, build a full kinematic model. </p>
+
+<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l00149">149</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
+
+</div>
+</div>
+<a id="af3885dc69c0dae39cdfac05b9f498114"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3885dc69c0dae39cdfac05b9f498114">&#9670;&nbsp;</a></span>buildRecursive()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmoveit_1_1core_1_1JointModel.html">JointModel</a> * moveit::core::RobotModel::buildRecursive </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmoveit_1_1core_1_1LinkModel.html">LinkModel</a> *&#160;</td>
+          <td class="paramname"><em>parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const urdf::Link *&#160;</td>
+          <td class="paramname"><em>link</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const srdf::Model &amp;&#160;</td>
+          <td class="paramname"><em>srdf_model</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>(This function is mostly intended for internal use). Given a parent link, build up (recursively), the kinematic model by walking down the tree </p>
+
+<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l00855">855</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
+
+</div>
+</div>
 <a id="a339f50f2a5dd6de03da7e2db2de60eeb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a339f50f2a5dd6de03da7e2db2de60eeb">&#9670;&nbsp;</a></span>computeCommonRoot()</h2>
 
@@ -522,6 +878,74 @@ Access to link models</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Given two joints, find their common root. </p>
+
+</div>
+</div>
+<a id="ab79cc844a13ea80b854f7d391ec023c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab79cc844a13ea80b854f7d391ec023c1">&#9670;&nbsp;</a></span>computeCommonRoots()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void moveit::core::RobotModel::computeCommonRoots </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>For every pair of joints, pre-compute the common roots of the joints. </p>
+
+<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l00266">266</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmoveit_1_1core_1_1RobotModel_ab79cc844a13ea80b854f7d391ec023c1_cgraph.png" border="0" usemap="#classmoveit_1_1core_1_1RobotModel_ab79cc844a13ea80b854f7d391ec023c1_cgraph" alt=""/></div>
+<map name="classmoveit_1_1core_1_1RobotModel_ab79cc844a13ea80b854f7d391ec023c1_cgraph" id="classmoveit_1_1core_1_1RobotModel_ab79cc844a13ea80b854f7d391ec023c1_cgraph">
+<area shape="rect" title="For every pair of joints, pre&#45;compute the common roots of the joints." alt="" coords="5,39,196,80"/>
+<area shape="rect" href="classmoveit_1_1core_1_1RobotModel.html#afd860df7ef193cce7aa74717e8579577" title="Get the model name." alt="" coords="244,5,435,47"/>
+<area shape="rect" href="classmoveit_1_1core_1_1RobotModel.html#a0e6fe94c867b3452abdeecc2d7373ca2" title="Get the bounds for a specific variable. Throw an exception of variable is not found." alt="" coords="244,71,435,112"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a32a3a06b04a9ca84486f0baba80dd073"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32a3a06b04a9ca84486f0baba80dd073">&#9670;&nbsp;</a></span>computeDescendants()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void moveit::core::RobotModel::computeDescendants </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>For every joint, pre-compute the list of descendant joints &amp; links. </p>
+
+<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l00297">297</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
 
 </div>
 </div>
@@ -567,7 +991,113 @@ Access to link models</h2></td></tr>
 
 <p>Get the transforms between link and all its rigidly attached descendants. </p>
 
-<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l01599">1599</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l01600">1600</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
+
+</div>
+</div>
+<a id="adbf5a7c0c1430d0bc4bd040f39ad96cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbf5a7c0c1430d0bc4bd040f39ad96cc">&#9670;&nbsp;</a></span>constructJointModel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmoveit_1_1core_1_1JointModel.html">JointModel</a> * moveit::core::RobotModel::constructJointModel </td>
+          <td>(</td>
+          <td class="paramtype">const urdf::Joint *&#160;</td>
+          <td class="paramname"><em>urdf_joint_model</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const urdf::Link *&#160;</td>
+          <td class="paramname"><em>child_link</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const srdf::Model &amp;&#160;</td>
+          <td class="paramname"><em>srdf_model</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Given a urdf joint model, a child link and a set of virtual joints, build up the corresponding <a class="el" href="classmoveit_1_1core_1_1JointModel.html" title="A joint from the robot. Models the transform that this joint applies in the kinematic chain....">JointModel</a> object. </p>
+
+<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l00940">940</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a4984ed960df65c297658d488dc7148e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4984ed960df65c297658d488dc7148e1">&#9670;&nbsp;</a></span>constructLinkModel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmoveit_1_1core_1_1LinkModel.html">LinkModel</a> * moveit::core::RobotModel::constructLinkModel </td>
+          <td>(</td>
+          <td class="paramtype">const urdf::Link *&#160;</td>
+          <td class="paramname"><em>urdf_link</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Given a urdf link, build the corresponding <a class="el" href="classmoveit_1_1core_1_1LinkModel.html" title="A link from the robot. Contains the constant transform applied to the link and its geometry.">LinkModel</a> object. </p>
+
+<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l01163">1163</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
+
+</div>
+</div>
+<a id="abcd785395005fe888e1a79e110908b39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcd785395005fe888e1a79e110908b39">&#9670;&nbsp;</a></span>constructShape()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">shapes::ShapePtr moveit::core::RobotModel::constructShape </td>
+          <td>(</td>
+          <td class="paramtype">const urdf::Geometry *&#160;</td>
+          <td class="paramname"><em>geom</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Given a geometry spec from the URDF and a filename (for a mesh), construct the corresponding shape object. </p>
+
+<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l01239">1239</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
 
 </div>
 </div>
@@ -599,7 +1129,7 @@ Access to link models</h2></td></tr>
 
 <p>Return the sum of joint distances between two states. An L1 norm. Only considers active joints. </p>
 
-<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l01458">1458</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l01459">1459</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
 
 </div>
 </div>
@@ -666,7 +1196,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l01445">1445</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l01446">1446</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
 
 </div>
 </div>
@@ -883,7 +1413,16 @@ Here is the call graph for this function:</div>
 
 <p>Get the joint group that corresponds to a given end-effector name. </p>
 
-<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l00527">527</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l00530">530</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmoveit_1_1core_1_1RobotModel_a98652ff31857462db512c0fb06966dad_cgraph.png" border="0" usemap="#classmoveit_1_1core_1_1RobotModel_a98652ff31857462db512c0fb06966dad_cgraph" alt=""/></div>
+<map name="classmoveit_1_1core_1_1RobotModel_a98652ff31857462db512c0fb06966dad_cgraph" id="classmoveit_1_1core_1_1RobotModel_a98652ff31857462db512c0fb06966dad_cgraph">
+<area shape="rect" title="Get the joint group that corresponds to a given end&#45;effector name." alt="" coords="5,5,196,47"/>
+<area shape="rect" href="classmoveit_1_1core_1_1RobotModel.html#adcb9130929d85fdec8a04e79849351d8" title="Construct a JointModelGroup given a SRDF description group." alt="" coords="244,5,435,47"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -905,7 +1444,7 @@ Here is the call graph for this function:</div>
 
 <p>Get the joint group that corresponds to a given end-effector name. </p>
 
-<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l00513">513</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l00516">516</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -965,15 +1504,15 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Get a joint by its name. Output error and return nullptr when the joint is missing. </p>
+<p>Get a joint by its name. Output error and return NULL when the joint is missing. </p>
 
-<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l01307">1307</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l01308">1308</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classmoveit_1_1core_1_1RobotModel_adcb6a06041f7e08d238afc9e5785bb87_cgraph.png" border="0" usemap="#classmoveit_1_1core_1_1RobotModel_adcb6a06041f7e08d238afc9e5785bb87_cgraph" alt=""/></div>
 <map name="classmoveit_1_1core_1_1RobotModel_adcb6a06041f7e08d238afc9e5785bb87_cgraph" id="classmoveit_1_1core_1_1RobotModel_adcb6a06041f7e08d238afc9e5785bb87_cgraph">
-<area shape="rect" title="Get a joint by its name. Output error and return nullptr when the joint is missing." alt="" coords="5,39,196,80"/>
+<area shape="rect" title="Get a joint by its name. Output error and return NULL when the joint is missing." alt="" coords="5,39,196,80"/>
 <area shape="rect" href="classmoveit_1_1core_1_1RobotModel.html#a6a2a93445bb1eef599253b5b88f644ed" title="Compute the random values for a RobotState." alt="" coords="244,5,461,47"/>
 <area shape="rect" href="classmoveit_1_1core_1_1RobotModel.html#a1b5b2b3c8cb1b79f4d17a569e463e5df" title="Update the variable values for the state of a group with respect to the mimic joints." alt="" coords="257,71,448,112"/>
 </map>
@@ -997,15 +1536,15 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Get a joint by its name. Output error and return nullptr when the joint is missing. </p>
+<p>Get a joint by its name. Output error and return NULL when the joint is missing. </p>
 
-<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l01287">1287</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l01288">1288</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classmoveit_1_1core_1_1RobotModel_afb12941677dbbae66a30531c5dfd2dd6_cgraph.png" border="0" usemap="#classmoveit_1_1core_1_1RobotModel_afb12941677dbbae66a30531c5dfd2dd6_cgraph" alt=""/></div>
 <map name="classmoveit_1_1core_1_1RobotModel_afb12941677dbbae66a30531c5dfd2dd6_cgraph" id="classmoveit_1_1core_1_1RobotModel_afb12941677dbbae66a30531c5dfd2dd6_cgraph">
-<area shape="rect" title="Get a joint by its name. Output error and return nullptr when the joint is missing." alt="" coords="5,39,196,80"/>
+<area shape="rect" title="Get a joint by its name. Output error and return NULL when the joint is missing." alt="" coords="5,39,196,80"/>
 <area shape="rect" href="classmoveit_1_1core_1_1LinkModel.html#a75e688fa2530138639292bed0ae3f541" title="Get the joint model whose child this link is. There will always be a parent joint." alt="" coords="245,5,424,47"/>
 <area shape="rect" href="classmoveit_1_1core_1_1JointModel.html#a048a1922efedcb55f66421d6e261c41f" title="Get the link that this joint connects to. The robot is assumed to start with a joint,..." alt="" coords="244,71,425,112"/>
 </map>
@@ -1013,8 +1552,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="abcf0754a50261bea47693187f5fec2f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abcf0754a50261bea47693187f5fec2f9">&#9670;&nbsp;</a></span>getJointModel() <span class="overload">[3/3]</span></h2>
+<a id="a7dc5c3777353e3759d6af82f097ceb17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7dc5c3777353e3759d6af82f097ceb17">&#9670;&nbsp;</a></span>getJointModel() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1022,16 +1561,16 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname">const <a class="el" href="classmoveit_1_1core_1_1JointModel.html">JointModel</a> * moveit::core::RobotModel::getJointModel </td>
           <td>(</td>
-          <td class="paramtype">size_t&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get a joint by its index. Output error and return nullptr when the link is missing. </p>
+<p>Get a joint by its index. Output error and return NULL when the link is missing. </p>
 
-<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l01296">1296</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l01297">1297</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
 
 </div>
 </div>
@@ -1080,16 +1619,14 @@ Here is the call graph for this function:</div>
 
 <p>Get a joint group from this model (by name) </p>
 
-<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l00557">557</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l00560">560</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classmoveit_1_1core_1_1RobotModel_aa3b68bf0980355638f923091988992f5_cgraph.png" border="0" usemap="#classmoveit_1_1core_1_1RobotModel_aa3b68bf0980355638f923091988992f5_cgraph" alt=""/></div>
 <map name="classmoveit_1_1core_1_1RobotModel_aa3b68bf0980355638f923091988992f5_cgraph" id="classmoveit_1_1core_1_1RobotModel_aa3b68bf0980355638f923091988992f5_cgraph">
-<area shape="rect" title="Get a joint group from this model (by name)" alt="" coords="5,71,196,112"/>
-<area shape="rect" href="classmoveit_1_1core_1_1JointModelGroup.html#a5c96362127bca0b1263983def71cf86a" title="Get all the joints in this group (including fixed and mimic joints)." alt="" coords="251,5,433,47"/>
-<area shape="rect" href="classmoveit_1_1core_1_1JointModelGroup.html#a2f165c9374e28ac4052490819c790f45" title="Get the name of the joint group." alt="" coords="251,71,433,112"/>
-<area shape="rect" href="classmoveit_1_1core_1_1JointModelGroup.html#ae4fe1ec476ac40a3d5c0c08482d71678" title="Set the names of the subgroups for this group." alt="" coords="244,136,440,177"/>
+<area shape="rect" title="Get a joint group from this model (by name)" alt="" coords="5,5,196,47"/>
+<area shape="rect" href="classmoveit_1_1core_1_1JointModelGroup.html#a5c96362127bca0b1263983def71cf86a" title="Get all the joints in this group (including fixed and mimic joints)." alt="" coords="244,5,425,47"/>
 </map>
 </div>
 
@@ -1113,7 +1650,7 @@ Here is the call graph for this function:</div>
 
 <p>Get a joint group from this model (by name) </p>
 
-<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l00546">546</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l00549">549</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1409,15 +1946,15 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Get a link by its name. Output error and return nullptr when the link is missing. </p>
+<p>Get a link by its name. Output error and return NULL when the link is missing. </p>
 
-<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l01332">1332</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l01333">1333</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classmoveit_1_1core_1_1RobotModel_a2e16149870bcd48b98f97b5bdd268141_cgraph.png" border="0" usemap="#classmoveit_1_1core_1_1RobotModel_a2e16149870bcd48b98f97b5bdd268141_cgraph" alt=""/></div>
 <map name="classmoveit_1_1core_1_1RobotModel_a2e16149870bcd48b98f97b5bdd268141_cgraph" id="classmoveit_1_1core_1_1RobotModel_a2e16149870bcd48b98f97b5bdd268141_cgraph">
-<area shape="rect" title="Get a link by its name. Output error and return nullptr when the link is missing." alt="" coords="5,5,196,47"/>
+<area shape="rect" title="Get a link by its name. Output error and return NULL when the link is missing." alt="" coords="5,5,196,47"/>
 <area shape="rect" href="classmoveit_1_1core_1_1RobotModel.html#a86fbf5aa10ec7160f309add03d912c55" title="Compute the default values for a RobotState." alt="" coords="244,5,455,47"/>
 </map>
 </div>
@@ -1450,23 +1987,23 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Get a link by its name. Output error and return nullptr when the link is missing. </p>
+<p>Get a link by its name. Output error and return NULL when the link is missing. </p>
 
-<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l01316">1316</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l01317">1317</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classmoveit_1_1core_1_1RobotModel_aef85568fb4db9d1615c20bdf249fb147_cgraph.png" border="0" usemap="#classmoveit_1_1core_1_1RobotModel_aef85568fb4db9d1615c20bdf249fb147_cgraph" alt=""/></div>
 <map name="classmoveit_1_1core_1_1RobotModel_aef85568fb4db9d1615c20bdf249fb147_cgraph" id="classmoveit_1_1core_1_1RobotModel_aef85568fb4db9d1615c20bdf249fb147_cgraph">
-<area shape="rect" title="Get a link by its name. Output error and return nullptr when the link is missing." alt="" coords="5,5,196,47"/>
+<area shape="rect" title="Get a link by its name. Output error and return NULL when the link is missing." alt="" coords="5,5,196,47"/>
 <area shape="rect" href="classmoveit_1_1core_1_1RobotModel.html#a6a2a93445bb1eef599253b5b88f644ed" title="Compute the random values for a RobotState." alt="" coords="244,5,461,47"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="acff3a3f300f067c3c62f49dd9775bfa9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acff3a3f300f067c3c62f49dd9775bfa9">&#9670;&nbsp;</a></span>getLinkModel() <span class="overload">[3/3]</span></h2>
+<a id="afd98cefb2421b2fb7c93096ab4d2ec06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd98cefb2421b2fb7c93096ab4d2ec06">&#9670;&nbsp;</a></span>getLinkModel() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1474,16 +2011,16 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname">const <a class="el" href="classmoveit_1_1core_1_1LinkModel.html">LinkModel</a> * moveit::core::RobotModel::getLinkModel </td>
           <td>(</td>
-          <td class="paramtype">size_t&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get a link by its index. Output error and return nullptr when the link is missing. </p>
+<p>Get a link by its index. Output error and return NULL when the link is missing. </p>
 
-<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l01321">1321</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l01322">1322</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
 
 </div>
 </div>
@@ -1704,7 +2241,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l01425">1425</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l01426">1426</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
 
 </div>
 </div>
@@ -1763,7 +2300,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l01406">1406</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l01407">1407</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
 
 </div>
 </div>
@@ -1860,6 +2397,15 @@ Here is the caller graph for this function:</div>
 <p>Get the model name. </p>
 
 <p class="definition">Definition at line <a class="el" href="robot__model_8h_source.html#l00150">150</a> of file <a class="el" href="robot__model_8h_source.html">robot_model.h</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmoveit_1_1core_1_1RobotModel_afd860df7ef193cce7aa74717e8579577_icgraph.png" border="0" usemap="#classmoveit_1_1core_1_1RobotModel_afd860df7ef193cce7aa74717e8579577_icgraph" alt=""/></div>
+<map name="classmoveit_1_1core_1_1RobotModel_afd860df7ef193cce7aa74717e8579577_icgraph" id="classmoveit_1_1core_1_1RobotModel_afd860df7ef193cce7aa74717e8579577_icgraph">
+<area shape="rect" title="Get the model name." alt="" coords="244,5,435,47"/>
+<area shape="rect" href="classmoveit_1_1core_1_1RobotModel.html#ab79cc844a13ea80b854f7d391ec023c1" title="For every pair of joints, pre&#45;compute the common roots of the joints." alt="" coords="5,5,196,47"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1890,7 +2436,7 @@ Here is the caller graph for this function:</div>
 <p>Get the latest link upwards the kinematic tree, which is only connected via fixed joints. </p>
 <p>This is useful, if the link should be warped to a specific pose using updateStateWithLinkAt(). As updateStateWithLinkAt() warps only the specified link and its descendants, you might not achieve what you expect, if link is an abstract frame name. Considering the following example: root -&gt; arm0 -&gt; ... -&gt; armN -&gt; wrist &ndash; grasp_frame &ndash; palm -&gt; end effector ... Calling updateStateWithLinkAt(grasp_frame), will not warp the end effector, which is probably what you went for. Instead, updateStateWithLinkAt(getRigidlyConnectedParentLinkModel(grasp_frame), ...) will actually warp wrist (and all its descendants). </p>
 
-<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l01347">1347</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l01348">1348</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
 
 </div>
 </div>
@@ -2140,10 +2686,11 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classmoveit_1_1core_1_1RobotModel_a0e6fe94c867b3452abdeecc2d7373ca2_icgraph.png" border="0" usemap="#classmoveit_1_1core_1_1RobotModel_a0e6fe94c867b3452abdeecc2d7373ca2_icgraph" alt=""/></div>
 <map name="classmoveit_1_1core_1_1RobotModel_a0e6fe94c867b3452abdeecc2d7373ca2_icgraph" id="classmoveit_1_1core_1_1RobotModel_a0e6fe94c867b3452abdeecc2d7373ca2_icgraph">
-<area shape="rect" title="Get the bounds for a specific variable. Throw an exception of variable is not found." alt="" coords="407,53,597,94"/>
-<area shape="rect" href="classtrajectory__processing_1_1IterativeSplineParameterization.html#ab01c18e50f1663358c658651e1fde2c5" title=" " alt="" coords="115,5,351,61"/>
-<area shape="rect" href="classtrajectory__processing_1_1TimeOptimalTrajectoryGeneration.html#a5ad18a23d5b6f0beedaa4b6e20f8b01b" title=" " alt="" coords="108,85,359,141"/>
-<area shape="rect" href="test__time__parameterization_8cpp.html#a1fb67aa34417d03016c74d44bd7f54e0" title=" " alt="" coords="5,20,60,47"/>
+<area shape="rect" title="Get the bounds for a specific variable. Throw an exception of variable is not found." alt="" coords="407,79,597,120"/>
+<area shape="rect" href="classmoveit_1_1core_1_1RobotModel.html#ab79cc844a13ea80b854f7d391ec023c1" title="For every pair of joints, pre&#45;compute the common roots of the joints." alt="" coords="138,5,329,47"/>
+<area shape="rect" href="classtrajectory__processing_1_1IterativeSplineParameterization.html#ab01c18e50f1663358c658651e1fde2c5" title=" " alt="" coords="115,71,351,127"/>
+<area shape="rect" href="classtrajectory__processing_1_1TimeOptimalTrajectoryGeneration.html#a5ad18a23d5b6f0beedaa4b6e20f8b01b" title=" " alt="" coords="108,151,359,207"/>
+<area shape="rect" href="test__time__parameterization_8cpp.html#a1fb67aa34417d03016c74d44bd7f54e0" title=" " alt="" coords="5,86,60,113"/>
 </map>
 </div>
 
@@ -2196,14 +2743,14 @@ Here is the caller graph for this function:</div>
 
 <p>Compute the default values for a <a class="el" href="classmoveit_1_1core_1_1RobotState.html" title="Representation of a robot&#39;s state. This includes position, velocity, acceleration and effort.">RobotState</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l01390">1390</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l01391">1391</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classmoveit_1_1core_1_1RobotModel_a86fbf5aa10ec7160f309add03d912c55_icgraph.png" border="0" usemap="#classmoveit_1_1core_1_1RobotModel_a86fbf5aa10ec7160f309add03d912c55_icgraph" alt=""/></div>
 <map name="classmoveit_1_1core_1_1RobotModel_a86fbf5aa10ec7160f309add03d912c55_icgraph" id="classmoveit_1_1core_1_1RobotModel_a86fbf5aa10ec7160f309add03d912c55_icgraph">
 <area shape="rect" title="Compute the default values for a RobotState." alt="" coords="244,5,455,47"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotModel.html#a2e16149870bcd48b98f97b5bdd268141" title="Get a link by its name. Output error and return nullptr when the link is missing." alt="" coords="5,5,196,47"/>
+<area shape="rect" href="classmoveit_1_1core_1_1RobotModel.html#a2e16149870bcd48b98f97b5bdd268141" title="Get a link by its name. Output error and return NULL when the link is missing." alt="" coords="5,5,196,47"/>
 </map>
 </div>
 
@@ -2227,7 +2774,7 @@ Here is the caller graph for this function:</div>
 
 <p>Compute the default values for a <a class="el" href="classmoveit_1_1core_1_1RobotState.html" title="Representation of a robot&#39;s state. This includes position, velocity, acceleration and effort.">RobotState</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l01397">1397</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l01398">1398</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
 
 </div>
 </div>
@@ -2261,14 +2808,14 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a5fe64e89897e7dede8ef073b8f0bcf2d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5fe64e89897e7dede8ef073b8f0bcf2d">&#9670;&nbsp;</a></span>getVariableIndex()</h2>
+<a id="ac09d17688cfe14b3b1b3dc8852b7642b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac09d17688cfe14b3b1b3dc8852b7642b">&#9670;&nbsp;</a></span>getVariableIndex()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">size_t moveit::core::RobotModel::getVariableIndex </td>
+          <td class="memname">int moveit::core::RobotModel::getVariableIndex </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>variable</em></td><td>)</td>
@@ -2279,7 +2826,17 @@ Here is the caller graph for this function:</div>
 
 <p>Get the index of a variable in the robot state. </p>
 
-<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l01417">1417</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l01418">1418</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmoveit_1_1core_1_1RobotModel_ac09d17688cfe14b3b1b3dc8852b7642b_cgraph.png" border="0" usemap="#classmoveit_1_1core_1_1RobotModel_ac09d17688cfe14b3b1b3dc8852b7642b_cgraph" alt=""/></div>
+<map name="classmoveit_1_1core_1_1RobotModel_ac09d17688cfe14b3b1b3dc8852b7642b_cgraph" id="classmoveit_1_1core_1_1RobotModel_ac09d17688cfe14b3b1b3dc8852b7642b_cgraph">
+<area shape="rect" title="Get the index of a variable in the robot state." alt="" coords="5,39,196,80"/>
+<area shape="rect" href="classmoveit_1_1core_1_1JointModelGroup.html#a2f165c9374e28ac4052490819c790f45" title="Get the name of the joint group." alt="" coords="251,5,432,47"/>
+<area shape="rect" href="classmoveit_1_1core_1_1JointModelGroup.html#a4957d709813c2e4044fbfb28daf9d3a4" title=" " alt="" coords="244,71,439,112"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -2340,15 +2897,15 @@ Here is the caller graph for this function:</div>
 
 <p>Compute the random values for a <a class="el" href="classmoveit_1_1core_1_1RobotState.html" title="Representation of a robot&#39;s state. This includes position, velocity, acceleration and effort.">RobotState</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l01373">1373</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l01374">1374</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classmoveit_1_1core_1_1RobotModel_a6a2a93445bb1eef599253b5b88f644ed_icgraph.png" border="0" usemap="#classmoveit_1_1core_1_1RobotModel_a6a2a93445bb1eef599253b5b88f644ed_icgraph" alt=""/></div>
 <map name="classmoveit_1_1core_1_1RobotModel_a6a2a93445bb1eef599253b5b88f644ed_icgraph" id="classmoveit_1_1core_1_1RobotModel_a6a2a93445bb1eef599253b5b88f644ed_icgraph">
 <area shape="rect" title="Compute the random values for a RobotState." alt="" coords="244,39,461,80"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotModel.html#adcb6a06041f7e08d238afc9e5785bb87" title="Get a joint by its name. Output error and return nullptr when the joint is missing." alt="" coords="5,5,196,47"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotModel.html#aef85568fb4db9d1615c20bdf249fb147" title="Get a link by its name. Output error and return nullptr when the link is missing." alt="" coords="5,71,196,112"/>
+<area shape="rect" href="classmoveit_1_1core_1_1RobotModel.html#adcb6a06041f7e08d238afc9e5785bb87" title="Get a joint by its name. Output error and return NULL when the joint is missing." alt="" coords="5,5,196,47"/>
+<area shape="rect" href="classmoveit_1_1core_1_1RobotModel.html#aef85568fb4db9d1615c20bdf249fb147" title="Get a link by its name. Output error and return NULL when the link is missing." alt="" coords="5,71,196,112"/>
 </map>
 </div>
 
@@ -2382,7 +2939,7 @@ Here is the caller graph for this function:</div>
 
 <p>Compute the random values for a <a class="el" href="classmoveit_1_1core_1_1RobotState.html" title="Representation of a robot&#39;s state. This includes position, velocity, acceleration and effort.">RobotState</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l01380">1380</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l01381">1381</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -2454,7 +3011,7 @@ Here is the call graph for this function:</div>
 
 <p>Check if an end effector exists. </p>
 
-<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l00508">508</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l00511">511</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
 
 </div>
 </div>
@@ -2476,7 +3033,7 @@ Here is the call graph for this function:</div>
 
 <p>Check if a joint exists. Return true if it does. </p>
 
-<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l01277">1277</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l01278">1278</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
 
 </div>
 </div>
@@ -2498,7 +3055,7 @@ Here is the call graph for this function:</div>
 
 <p>Check if the <a class="el" href="classmoveit_1_1core_1_1JointModelGroup.html">JointModelGroup</a> <em>group</em> exists. </p>
 
-<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l00541">541</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l00544">544</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
 
 </div>
 </div>
@@ -2519,9 +3076,9 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Check if a link exists. Return true if it does. </p>
-<p>If this is followed by a call to <a class="el" href="classmoveit_1_1core_1_1RobotModel.html#aef85568fb4db9d1615c20bdf249fb147" title="Get a link by its name. Output error and return nullptr when the link is missing.">getLinkModel()</a>, better use the latter with the has_link argument </p>
+<p>If this is followed by a call to <a class="el" href="classmoveit_1_1core_1_1RobotModel.html#aef85568fb4db9d1615c20bdf249fb147" title="Get a link by its name. Output error and return NULL when the link is missing.">getLinkModel()</a>, better use the latter with the has_link argument </p>
 
-<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l01282">1282</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l01283">1283</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -2583,7 +3140,7 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l01468">1468</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l01469">1469</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -2643,7 +3200,7 @@ Here is the call graph for this function:</div>
 
 <p>Print information about the constructed model. </p>
 
-<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l01552">1552</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l01553">1553</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
 
 </div>
 </div>
@@ -2679,7 +3236,16 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l01434">1434</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l01435">1435</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmoveit_1_1core_1_1RobotModel_a4f9fd297ff68f24aab2e389beb5f04c8_cgraph.png" border="0" usemap="#classmoveit_1_1core_1_1RobotModel_a4f9fd297ff68f24aab2e389beb5f04c8_cgraph" alt=""/></div>
+<map name="classmoveit_1_1core_1_1RobotModel_a4f9fd297ff68f24aab2e389beb5f04c8_cgraph" id="classmoveit_1_1core_1_1RobotModel_a4f9fd297ff68f24aab2e389beb5f04c8_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,196,47"/>
+<area shape="rect" href="classmoveit_1_1core_1_1JointModelGroup.html#a5c96362127bca0b1263983def71cf86a" title="Get all the joints in this group (including fixed and mimic joints)." alt="" coords="244,5,425,47"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -2739,7 +3305,7 @@ Here is the call graph for this function:</div>
 
 <p><a class="el" href="classA.html">A</a> map of known kinematics solvers (associated to their group name) </p>
 
-<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l01480">1480</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l01481">1481</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
 
 </div>
 </div>
@@ -2769,14 +3335,14 @@ Here is the call graph for this function:</div>
 
 <p>Update the variable values for the state of a group with respect to the mimic joints. </p>
 
-<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l01363">1363</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="robot__model_8cpp_source.html#l01364">1364</a> of file <a class="el" href="robot__model_8cpp_source.html">robot_model.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classmoveit_1_1core_1_1RobotModel_a1b5b2b3c8cb1b79f4d17a569e463e5df_icgraph.png" border="0" usemap="#classmoveit_1_1core_1_1RobotModel_a1b5b2b3c8cb1b79f4d17a569e463e5df_icgraph" alt=""/></div>
 <map name="classmoveit_1_1core_1_1RobotModel_a1b5b2b3c8cb1b79f4d17a569e463e5df_icgraph" id="classmoveit_1_1core_1_1RobotModel_a1b5b2b3c8cb1b79f4d17a569e463e5df_icgraph">
 <area shape="rect" title="Update the variable values for the state of a group with respect to the mimic joints." alt="" coords="271,39,461,80"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotModel.html#adcb6a06041f7e08d238afc9e5785bb87" title="Get a joint by its name. Output error and return nullptr when the joint is missing." alt="" coords="19,5,209,47"/>
+<area shape="rect" href="classmoveit_1_1core_1_1RobotModel.html#adcb6a06041f7e08d238afc9e5785bb87" title="Get a joint by its name. Output error and return NULL when the joint is missing." alt="" coords="19,5,209,47"/>
 <area shape="rect" href="classmoveit_1_1core_1_1RobotModel.html#a572a62a548e4155a11cf4f359cf2fe06" title="Compute the random values for a RobotState." alt="" coords="5,71,223,112"/>
 </map>
 </div>
@@ -3235,7 +3801,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespacemoveit_1_1core.html#a4bc26a7f9b3ac37afb7022d766fb307a">VariableIndexMap</a> moveit::core::RobotModel::joint_variables_index_map_</td>
+          <td class="memname"><a class="el" href="namespacemoveit_1_1core.html#ae101bd641ed50af6f5936c5a337ad3fd">VariableIndexMap</a> moveit::core::RobotModel::joint_variables_index_map_</td>
         </tr>
       </table>
   </td>

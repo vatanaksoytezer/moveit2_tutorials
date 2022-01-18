@@ -2,7 +2,9 @@
 <area shape="rect" id="node1" title="Compute the default values for the joint group." alt="" coords="5,93,256,135"/>
 <area shape="rect" id="node2" href="$classmoveit_1_1core_1_1JointModelGroup.html#a0f60ea765fd917f911480a7615f8ff32" title="Get the unique set of end effector tips included in a particular joint model group as defined by the ..." alt="" coords="304,93,495,135"/>
 <area shape="rect" id="node3" href="$classmoveit_1_1core_1_1JointModelGroup.html#a71f71bbb186917dd5fcf41bf88b2e5fb" title="Get a joint by its name. Throw an exception if the joint is not part of this group." alt="" coords="543,5,724,47"/>
-<area shape="rect" id="node4" href="$classmoveit_1_1core_1_1JointModelGroup.html#a2f165c9374e28ac4052490819c790f45" title="Get the name of the joint group." alt="" coords="772,127,953,168"/>
-<area shape="rect" id="node5" href="$classmoveit_1_1core_1_1JointModel.html#a8e6b8bcc807187617b1b2e5242a4af69" title="Get the number of variables that describe this joint." alt="" coords="543,123,724,164"/>
-<area shape="rect" id="node6" href="$classmoveit_1_1core_1_1JointModelGroup.html#a7af014f4116c40ea1884cd7ae82f8da6" title="Check if a joint is part of this group." alt="" coords="543,188,724,229"/>
+<area shape="rect" id="node4" href="$classmoveit_1_1core_1_1JointModelGroup.html#a2f165c9374e28ac4052490819c790f45" title="Get the name of the joint group." alt="" coords="814,79,995,120"/>
+<area shape="rect" id="node5" href="$classmoveit_1_1core_1_1JointModel.html#a8e6b8bcc807187617b1b2e5242a4af69" title="Get the number of variables that describe this joint." alt="" coords="543,188,724,229"/>
+<area shape="rect" id="node8" href="$classmoveit_1_1core_1_1JointModelGroup.html#a7af014f4116c40ea1884cd7ae82f8da6" title="Check if a joint is part of this group." alt="" coords="543,123,724,164"/>
+<area shape="rect" id="node6" href="$classmoveit_1_1core_1_1JointModel.html#ab4ba9eac1f786fdeb152012f396daab8" title="Compute the distance between two joint states of the same model (represented by the variable values)" alt="" coords="814,173,995,215"/>
+<area shape="rect" id="node7" href="$classmoveit_1_1core_1_1JointModel.html#adaf152251e15131a66e48f5e1de98dbb" title="Provide random values for the joint variables (within default bounds). Enough memory is assumed to be..." alt="" coords="772,239,1037,280"/>
 </map>

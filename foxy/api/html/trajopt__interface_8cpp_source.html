@@ -170,7 +170,7 @@ $(function() {
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  current_state-&gt;copyJointGroupPositions(joint_model_group, current_joint_values);</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="comment">// Current state is different from star state in general</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  ROS_INFO(<span class="stringliteral">&quot; ======================================= Extract start state information&quot;</span>);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  ROS_INFO(<span class="stringliteral">&quot; ======================================= Extract start state infromation&quot;</span>);</div>
 <div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="classtrajopt__interface_1_1TrajOptInterface.html#a6b9e2fb0c9c463675e653160b015ee3c">  102</a></span>&#160;  trajopt::DblVec start_joint_values = extractStartJointValues(req, group_joint_names);</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <span class="comment">// check the start state for being empty or joint limit violiation</span></div>
@@ -271,7 +271,7 @@ $(function() {
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;  problem_info.cnt_infos.push_back(joint_start_pos);</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;  ROS_INFO(<span class="stringliteral">&quot; ======================================= Velocity Constraints, hard-coded&quot;</span>);</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;  <span class="comment">// TODO: should be defined by user, its parameters should be added to setup.yaml</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;  <span class="comment">// TODO: should be defined by user, its parametes should be added to setup.yaml</span></div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;  JointVelTermInfoPtr joint_vel(<span class="keyword">new</span> JointVelTermInfo);</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;  joint_vel-&gt;coeffs = std::vector&lt;double&gt;(dof, 5.0);</div>
@@ -359,10 +359,10 @@ $(function() {
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160; </div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;  <span class="comment">// fill in the entire trajectory</span></div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;  res.trajectory[0].joint_trajectory.points.resize(opt_solution.rows());</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; opt_solution.rows(); ++i)</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; opt_solution.rows(); i++)</div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;  {</div>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    res.trajectory[0].joint_trajectory.points[i].positions.resize(opt_solution.cols());</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = 0; j &lt; opt_solution.cols(); ++j)</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = 0; j &lt; opt_solution.cols(); j++)</div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    {</div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;      res.trajectory[0].joint_trajectory.points[i].positions[j] = opt_solution(i, j);</div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    }</div>
@@ -529,7 +529,7 @@ $(function() {
 <div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160; </div>
 <div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacetrajopt__interface.html#ac2ace469d9406bf39e094fd36227868c">callBackFunc</a>(sco::OptProb* opt_prob, sco::OptResults&amp; opt_res)</div>
 <div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;{</div>
-<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;  <span class="comment">// TODO: Create the actual implementation</span></div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;  <span class="comment">// TODO: Create the actuall implementation</span></div>
 <div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;}</div>
 <div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160; </div>
 <div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;}  <span class="comment">// namespace trajopt_interface</span></div>

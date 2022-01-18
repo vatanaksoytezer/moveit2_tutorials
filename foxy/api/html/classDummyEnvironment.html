@@ -111,20 +111,20 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a3fa7911c1b892aa26c0f837f8b720488"><td class="mdescLeft">&#160;</td><td class="mdescRight">depending on the search used, it may call GetSuccs function (for forward search) or GetPreds function (for backward search) or both (for incremental search). At least one of this functions should be implemented (otherwise, there will be no search to run) Some searches may also use SetAllActionsandAllOutcomes or SetAllPreds functions if they keep the pointers to successors (predecessors) but most searches do not require this, so it is not necessary to support this  <a href="classDummyEnvironment.html#a3fa7911c1b892aa26c0f837f8b720488">More...</a><br /></td></tr>
 <tr class="separator:a3fa7911c1b892aa26c0f837f8b720488"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a865898575b332c886eee68ecfff50563"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDummyEnvironment.html#a865898575b332c886eee68ecfff50563">GetPreds</a> (int TargetStateID, std::vector&lt; int &gt; *PredIDV, std::vector&lt; int &gt; *CostV)</td></tr>
-<tr class="memdesc:a865898575b332c886eee68ecfff50563"><td class="mdescLeft">&#160;</td><td class="mdescRight">see comments for GetSuccs function  <a href="classDummyEnvironment.html#a865898575b332c886eee68ecfff50563">More...</a><br /></td></tr>
+<tr class="memdesc:a865898575b332c886eee68ecfff50563"><td class="mdescLeft">&#160;</td><td class="mdescRight">see comments for GetSuccs functon  <a href="classDummyEnvironment.html#a865898575b332c886eee68ecfff50563">More...</a><br /></td></tr>
 <tr class="separator:a865898575b332c886eee68ecfff50563"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7008d3621ce069309dc446d822715bb1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDummyEnvironment.html#a7008d3621ce069309dc446d822715bb1">SetAllActionsandAllOutcomes</a> (CMDPSTATE *state)</td></tr>
-<tr class="memdesc:a7008d3621ce069309dc446d822715bb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">see comments for GetSuccs function  <a href="classDummyEnvironment.html#a7008d3621ce069309dc446d822715bb1">More...</a><br /></td></tr>
+<tr class="memdesc:a7008d3621ce069309dc446d822715bb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">see comments for GetSuccs functon  <a href="classDummyEnvironment.html#a7008d3621ce069309dc446d822715bb1">More...</a><br /></td></tr>
 <tr class="separator:a7008d3621ce069309dc446d822715bb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3113dbeee8027f56ea43e00b0d650bbb"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDummyEnvironment.html#a3113dbeee8027f56ea43e00b0d650bbb">SetAllPreds</a> (CMDPSTATE *state)</td></tr>
-<tr class="memdesc:a3113dbeee8027f56ea43e00b0d650bbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">see comments for GetSuccs function  <a href="classDummyEnvironment.html#a3113dbeee8027f56ea43e00b0d650bbb">More...</a><br /></td></tr>
+<tr class="memdesc:a3113dbeee8027f56ea43e00b0d650bbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">see comments for GetSuccs functon  <a href="classDummyEnvironment.html#a3113dbeee8027f56ea43e00b0d650bbb">More...</a><br /></td></tr>
 <tr class="separator:a3113dbeee8027f56ea43e00b0d650bbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70030c033b4996de90ba568f2c381436"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDummyEnvironment.html#a70030c033b4996de90ba568f2c381436">SizeofCreatedEnv</a> ()</td></tr>
 <tr class="memdesc:a70030c033b4996de90ba568f2c381436"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the number of states (hashentries) created  <a href="classDummyEnvironment.html#a70030c033b4996de90ba568f2c381436">More...</a><br /></td></tr>
 <tr class="separator:a70030c033b4996de90ba568f2c381436"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f930323e5cf3b0053c934e3281304d8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDummyEnvironment.html#a9f930323e5cf3b0053c934e3281304d8">PrintState</a> (int stateID, bool bVerbose, FILE *fOut=nullptr)</td></tr>
-<tr class="memdesc:a9f930323e5cf3b0053c934e3281304d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">prints the state variables for a state with stateID  <a href="classDummyEnvironment.html#a9f930323e5cf3b0053c934e3281304d8">More...</a><br /></td></tr>
-<tr class="separator:a9f930323e5cf3b0053c934e3281304d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef85ce2b0ea9367218746a27edb41383"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDummyEnvironment.html#aef85ce2b0ea9367218746a27edb41383">PrintState</a> (int stateID, bool bVerbose, FILE *fOut=NULL)</td></tr>
+<tr class="memdesc:aef85ce2b0ea9367218746a27edb41383"><td class="mdescLeft">&#160;</td><td class="mdescRight">prints the state variables for a state with stateID  <a href="classDummyEnvironment.html#aef85ce2b0ea9367218746a27edb41383">More...</a><br /></td></tr>
+<tr class="separator:aef85ce2b0ea9367218746a27edb41383"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89b973b0cad2bd278f33f502b5a65aa8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDummyEnvironment.html#a89b973b0cad2bd278f33f502b5a65aa8">PrintEnv_Config</a> (FILE *fOut)</td></tr>
 <tr class="memdesc:a89b973b0cad2bd278f33f502b5a65aa8"><td class="mdescLeft">&#160;</td><td class="mdescRight">prints environment config file  <a href="classDummyEnvironment.html#a89b973b0cad2bd278f33f502b5a65aa8">More...</a><br /></td></tr>
 <tr class="separator:a89b973b0cad2bd278f33f502b5a65aa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -309,7 +309,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>see comments for GetSuccs function </p>
+<p>see comments for GetSuccs functon </p>
 
 <p class="definition">Definition at line <a class="el" href="dummy__environment_8h_source.html#l00101">101</a> of file <a class="el" href="dummy__environment_8h_source.html">dummy_environment.h</a>.</p>
 
@@ -481,8 +481,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a9f930323e5cf3b0053c934e3281304d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9f930323e5cf3b0053c934e3281304d8">&#9670;&nbsp;</a></span>PrintState()</h2>
+<a id="aef85ce2b0ea9367218746a27edb41383"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef85ce2b0ea9367218746a27edb41383">&#9670;&nbsp;</a></span>PrintState()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -506,7 +506,7 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">FILE *&#160;</td>
-          <td class="paramname"><em>fOut</em> = <code>nullptr</code>&#160;</td>
+          <td class="paramname"><em>fOut</em> = <code>NULL</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -551,7 +551,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>see comments for GetSuccs function </p>
+<p>see comments for GetSuccs functon </p>
 
 <p class="definition">Definition at line <a class="el" href="dummy__environment_8h_source.html#l00104">104</a> of file <a class="el" href="dummy__environment_8h_source.html">dummy_environment.h</a>.</p>
 
@@ -581,7 +581,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>see comments for GetSuccs function </p>
+<p>see comments for GetSuccs functon </p>
 
 <p class="definition">Definition at line <a class="el" href="dummy__environment_8h_source.html#l00107">107</a> of file <a class="el" href="dummy__environment_8h_source.html">dummy_environment.h</a>.</p>
 

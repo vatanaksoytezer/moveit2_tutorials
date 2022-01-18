@@ -125,9 +125,9 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a71c8360df20479a16adffdcd55007f42"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1JointModel.html#a71c8360df20479a16adffdcd55007f42">JointModel</a> (const std::string &amp;name, size_t joint_index, size_t first_variable_index)</td></tr>
-<tr class="memdesc:a71c8360df20479a16adffdcd55007f42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a joint named <em>name</em>.  <a href="classmoveit_1_1core_1_1JointModel.html#a71c8360df20479a16adffdcd55007f42">More...</a><br /></td></tr>
-<tr class="separator:a71c8360df20479a16adffdcd55007f42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f7d5542ac0ccd8cde728e101db378b8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1JointModel.html#a1f7d5542ac0ccd8cde728e101db378b8">JointModel</a> (const std::string &amp;name)</td></tr>
+<tr class="memdesc:a1f7d5542ac0ccd8cde728e101db378b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a joint named <em>name</em>.  <a href="classmoveit_1_1core_1_1JointModel.html#a1f7d5542ac0ccd8cde728e101db378b8">More...</a><br /></td></tr>
+<tr class="separator:a1f7d5542ac0ccd8cde728e101db378b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6783e4aa52f405b187fa40e2acc509aa"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1JointModel.html#a6783e4aa52f405b187fa40e2acc509aa">~JointModel</a> ()</td></tr>
 <tr class="separator:a6783e4aa52f405b187fa40e2acc509aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1d2f99c9025d01a92e47bc356938f77"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1JointModel.html#aa1d2f99c9025d01a92e47bc356938f77">getName</a> () const</td></tr>
@@ -140,7 +140,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:af1db07d2843b0c6435415dd53b3aa433"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the type of joint as a string.  <a href="classmoveit_1_1core_1_1JointModel.html#af1db07d2843b0c6435415dd53b3aa433">More...</a><br /></td></tr>
 <tr class="separator:af1db07d2843b0c6435415dd53b3aa433"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a048a1922efedcb55f66421d6e261c41f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classmoveit_1_1core_1_1LinkModel.html">LinkModel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1JointModel.html#a048a1922efedcb55f66421d6e261c41f">getParentLinkModel</a> () const</td></tr>
-<tr class="memdesc:a048a1922efedcb55f66421d6e261c41f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the link that this joint connects to. The robot is assumed to start with a joint, so the root joint will return nullptr here.  <a href="classmoveit_1_1core_1_1JointModel.html#a048a1922efedcb55f66421d6e261c41f">More...</a><br /></td></tr>
+<tr class="memdesc:a048a1922efedcb55f66421d6e261c41f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the link that this joint connects to. The robot is assumed to start with a joint, so the root joint will return a NULL pointer here.  <a href="classmoveit_1_1core_1_1JointModel.html#a048a1922efedcb55f66421d6e261c41f">More...</a><br /></td></tr>
 <tr class="separator:a048a1922efedcb55f66421d6e261c41f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43a3a6bd53bd7a4eda4768d7444a384d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classmoveit_1_1core_1_1LinkModel.html">LinkModel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1JointModel.html#a43a3a6bd53bd7a4eda4768d7444a384d">getChildLinkModel</a> () const</td></tr>
 <tr class="memdesc:a43a3a6bd53bd7a4eda4768d7444a384d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the link that this joint connects to. There will always be such a link.  <a href="classmoveit_1_1core_1_1JointModel.html#a43a3a6bd53bd7a4eda4768d7444a384d">More...</a><br /></td></tr>
@@ -218,15 +218,21 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8e6b8bcc807187617b1b2e5242a4af69"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1JointModel.html#a8e6b8bcc807187617b1b2e5242a4af69">getVariableCount</a> () const</td></tr>
 <tr class="memdesc:a8e6b8bcc807187617b1b2e5242a4af69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of variables that describe this joint.  <a href="classmoveit_1_1core_1_1JointModel.html#a8e6b8bcc807187617b1b2e5242a4af69">More...</a><br /></td></tr>
 <tr class="separator:a8e6b8bcc807187617b1b2e5242a4af69"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a749ce652067b82e5ec5b3ffe3baca733"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1JointModel.html#a749ce652067b82e5ec5b3ffe3baca733">getFirstVariableIndex</a> () const</td></tr>
-<tr class="memdesc:a749ce652067b82e5ec5b3ffe3baca733"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the index of this joint's first variable within the full robot state.  <a href="classmoveit_1_1core_1_1JointModel.html#a749ce652067b82e5ec5b3ffe3baca733">More...</a><br /></td></tr>
-<tr class="separator:a749ce652067b82e5ec5b3ffe3baca733"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a32646942dc054f77e3eff984affb7ced"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1JointModel.html#a32646942dc054f77e3eff984affb7ced">getJointIndex</a> () const</td></tr>
-<tr class="memdesc:a32646942dc054f77e3eff984affb7ced"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the index of this joint within the robot model.  <a href="classmoveit_1_1core_1_1JointModel.html#a32646942dc054f77e3eff984affb7ced">More...</a><br /></td></tr>
-<tr class="separator:a32646942dc054f77e3eff984affb7ced"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21ccd564228bd1460b8b59a6232b2e36"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1JointModel.html#a21ccd564228bd1460b8b59a6232b2e36">getLocalVariableIndex</a> (const std::string &amp;variable) const</td></tr>
-<tr class="memdesc:a21ccd564228bd1460b8b59a6232b2e36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the index of the variable within this joint.  <a href="classmoveit_1_1core_1_1JointModel.html#a21ccd564228bd1460b8b59a6232b2e36">More...</a><br /></td></tr>
-<tr class="separator:a21ccd564228bd1460b8b59a6232b2e36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add390f0a7b124a90c551bb7c875b8c7d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1JointModel.html#add390f0a7b124a90c551bb7c875b8c7d">getFirstVariableIndex</a> () const</td></tr>
+<tr class="memdesc:add390f0a7b124a90c551bb7c875b8c7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the index of this joint's first variable within the full robot state.  <a href="classmoveit_1_1core_1_1JointModel.html#add390f0a7b124a90c551bb7c875b8c7d">More...</a><br /></td></tr>
+<tr class="separator:add390f0a7b124a90c551bb7c875b8c7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade8d1c3c3c02b635c5fbb9fedab6a096"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1JointModel.html#ade8d1c3c3c02b635c5fbb9fedab6a096">setFirstVariableIndex</a> (int index)</td></tr>
+<tr class="memdesc:ade8d1c3c3c02b635c5fbb9fedab6a096"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the index of this joint's first variable within the full robot state.  <a href="classmoveit_1_1core_1_1JointModel.html#ade8d1c3c3c02b635c5fbb9fedab6a096">More...</a><br /></td></tr>
+<tr class="separator:ade8d1c3c3c02b635c5fbb9fedab6a096"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a205f57c2a7c1ad25b90711c74c3f6eed"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1JointModel.html#a205f57c2a7c1ad25b90711c74c3f6eed">getJointIndex</a> () const</td></tr>
+<tr class="memdesc:a205f57c2a7c1ad25b90711c74c3f6eed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the index of this joint within the robot model.  <a href="classmoveit_1_1core_1_1JointModel.html#a205f57c2a7c1ad25b90711c74c3f6eed">More...</a><br /></td></tr>
+<tr class="separator:a205f57c2a7c1ad25b90711c74c3f6eed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51f806bb2ef0336e3a49a1dfc3b0a848"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1JointModel.html#a51f806bb2ef0336e3a49a1dfc3b0a848">setJointIndex</a> (int index)</td></tr>
+<tr class="memdesc:a51f806bb2ef0336e3a49a1dfc3b0a848"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the index of this joint within the robot model.  <a href="classmoveit_1_1core_1_1JointModel.html#a51f806bb2ef0336e3a49a1dfc3b0a848">More...</a><br /></td></tr>
+<tr class="separator:a51f806bb2ef0336e3a49a1dfc3b0a848"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a984c8d6c1e4bb5fff24bb1917a8985e6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1JointModel.html#a984c8d6c1e4bb5fff24bb1917a8985e6">getLocalVariableIndex</a> (const std::string &amp;variable) const</td></tr>
+<tr class="memdesc:a984c8d6c1e4bb5fff24bb1917a8985e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the index of the variable within this joint.  <a href="classmoveit_1_1core_1_1JointModel.html#a984c8d6c1e4bb5fff24bb1917a8985e6">More...</a><br /></td></tr>
+<tr class="separator:a984c8d6c1e4bb5fff24bb1917a8985e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Functionality specific to computing state values</div></td></tr>
 <tr class="memitem:a7b2a5dacbc621b019ca3771212e39e89"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1JointModel.html#a7b2a5dacbc621b019ca3771212e39e89">getVariableDefaultPositions</a> (double *values) const</td></tr>
 <tr class="memdesc:a7b2a5dacbc621b019ca3771212e39e89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provide a default value for the joint given the default joint variable bounds (maintained internally). Most joints will use the default implementation provided in this base class, but the quaternion for example needs a different implementation. Enough memory is assumed to be allocated.  <a href="classmoveit_1_1core_1_1JointModel.html#a7b2a5dacbc621b019ca3771212e39e89">More...</a><br /></td></tr>
@@ -305,6 +311,9 @@ Protected Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
+<tr class="memitem:a4ffe425a9df21403ee475c28c7949c22"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1JointModel.html#a4ffe425a9df21403ee475c28c7949c22">name_</a></td></tr>
+<tr class="memdesc:a4ffe425a9df21403ee475c28c7949c22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of the joint.  <a href="classmoveit_1_1core_1_1JointModel.html#a4ffe425a9df21403ee475c28c7949c22">More...</a><br /></td></tr>
+<tr class="separator:a4ffe425a9df21403ee475c28c7949c22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3033dbd517101655c93f3a4a7259b03e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmoveit_1_1core_1_1JointModel.html#a6c1c75a4d125fd607f48bff4ca019b2c">JointType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1JointModel.html#a3033dbd517101655c93f3a4a7259b03e">type_</a></td></tr>
 <tr class="memdesc:a3033dbd517101655c93f3a4a7259b03e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of joint.  <a href="classmoveit_1_1core_1_1JointModel.html#a3033dbd517101655c93f3a4a7259b03e">More...</a><br /></td></tr>
 <tr class="separator:a3033dbd517101655c93f3a4a7259b03e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -319,7 +328,7 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a484dd6d22e03da1cc45306f753c8b01a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7fd99c605b88bf6a064ec86d89ea2ccf"><td class="memItemLeft" align="right" valign="top">std::vector&lt; moveit_msgs::msg::JointLimits &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1JointModel.html#a7fd99c605b88bf6a064ec86d89ea2ccf">variable_bounds_msg_</a></td></tr>
 <tr class="separator:a7fd99c605b88bf6a064ec86d89ea2ccf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a178aefc19b9cc3a1398bfcd844e87341"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemoveit_1_1core.html#a4bc26a7f9b3ac37afb7022d766fb307a">VariableIndexMap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1JointModel.html#a178aefc19b9cc3a1398bfcd844e87341">variable_index_map_</a></td></tr>
+<tr class="memitem:a178aefc19b9cc3a1398bfcd844e87341"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemoveit_1_1core.html#ae101bd641ed50af6f5936c5a337ad3fd">VariableIndexMap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1JointModel.html#a178aefc19b9cc3a1398bfcd844e87341">variable_index_map_</a></td></tr>
 <tr class="memdesc:a178aefc19b9cc3a1398bfcd844e87341"><td class="mdescLeft">&#160;</td><td class="mdescRight">Map from variable names to the corresponding index in variable_names_ (indexing makes sense within the <a class="el" href="classmoveit_1_1core_1_1JointModel.html" title="A joint from the robot. Models the transform that this joint applies in the kinematic chain....">JointModel</a> only)  <a href="classmoveit_1_1core_1_1JointModel.html#a178aefc19b9cc3a1398bfcd844e87341">More...</a><br /></td></tr>
 <tr class="separator:a178aefc19b9cc3a1398bfcd844e87341"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8676282a63df3030e31a2c18a7519479"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classmoveit_1_1core_1_1LinkModel.html">LinkModel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1JointModel.html#a8676282a63df3030e31a2c18a7519479">parent_link_model_</a></td></tr>
@@ -329,7 +338,7 @@ Protected Attributes</h2></td></tr>
 <tr class="memdesc:afd0fb441db87acc6e6ebddac5ca86eef"><td class="mdescLeft">&#160;</td><td class="mdescRight">The link after this joint.  <a href="classmoveit_1_1core_1_1JointModel.html#afd0fb441db87acc6e6ebddac5ca86eef">More...</a><br /></td></tr>
 <tr class="separator:afd0fb441db87acc6e6ebddac5ca86eef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2904f066d9d7fc67580a667ffa7c7610"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classmoveit_1_1core_1_1JointModel.html">JointModel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1JointModel.html#a2904f066d9d7fc67580a667ffa7c7610">mimic_</a></td></tr>
-<tr class="memdesc:a2904f066d9d7fc67580a667ffa7c7610"><td class="mdescLeft">&#160;</td><td class="mdescRight">The joint this one mimics (nullptr for joints that do not mimic)  <a href="classmoveit_1_1core_1_1JointModel.html#a2904f066d9d7fc67580a667ffa7c7610">More...</a><br /></td></tr>
+<tr class="memdesc:a2904f066d9d7fc67580a667ffa7c7610"><td class="mdescLeft">&#160;</td><td class="mdescRight">The joint this one mimics (NULL for joints that do not mimic)  <a href="classmoveit_1_1core_1_1JointModel.html#a2904f066d9d7fc67580a667ffa7c7610">More...</a><br /></td></tr>
 <tr class="separator:a2904f066d9d7fc67580a667ffa7c7610"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67cc3f404fad6a0834dae7b6066998b3"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1JointModel.html#a67cc3f404fad6a0834dae7b6066998b3">mimic_factor_</a></td></tr>
 <tr class="memdesc:a67cc3f404fad6a0834dae7b6066998b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The offset to the mimic joint.  <a href="classmoveit_1_1core_1_1JointModel.html#a67cc3f404fad6a0834dae7b6066998b3">More...</a><br /></td></tr>
@@ -355,12 +364,18 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:ab9f66f4455b08f59e6c677c1e1873c29"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1JointModel.html#ab9f66f4455b08f59e6c677c1e1873c29">distance_factor_</a></td></tr>
 <tr class="memdesc:ab9f66f4455b08f59e6c677c1e1873c29"><td class="mdescLeft">&#160;</td><td class="mdescRight">The factor applied to the distance between two joint states.  <a href="classmoveit_1_1core_1_1JointModel.html#ab9f66f4455b08f59e6c677c1e1873c29">More...</a><br /></td></tr>
 <tr class="separator:ab9f66f4455b08f59e6c677c1e1873c29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabd47a61b9e8247fcc739eb15c1520a0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1JointModel.html#aabd47a61b9e8247fcc739eb15c1520a0">first_variable_index_</a></td></tr>
+<tr class="memdesc:aabd47a61b9e8247fcc739eb15c1520a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The index of this joint's first variable, in the complete robot state.  <a href="classmoveit_1_1core_1_1JointModel.html#aabd47a61b9e8247fcc739eb15c1520a0">More...</a><br /></td></tr>
+<tr class="separator:aabd47a61b9e8247fcc739eb15c1520a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0dc8fd0b04d7dc7884e4d492aa6dd33"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit_1_1core_1_1JointModel.html#aa0dc8fd0b04d7dc7884e4d492aa6dd33">joint_index_</a></td></tr>
+<tr class="memdesc:aa0dc8fd0b04d7dc7884e4d492aa6dd33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Index for this joint in the array of joints of the complete model.  <a href="classmoveit_1_1core_1_1JointModel.html#aa0dc8fd0b04d7dc7884e4d492aa6dd33">More...</a><br /></td></tr>
+<tr class="separator:aa0dc8fd0b04d7dc7884e4d492aa6dd33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classA.html">A</a> joint from the robot. Models the transform that this joint applies in the kinematic chain. <a class="el" href="classA.html">A</a> joint consists of multiple variables. In the simplest case, when the joint is a single DOF, there is only one variable and its name is the same as the joint's name. For multi-DOF joints, each variable has a local name (e.g., <em>x</em>, <em>y</em>) but the full variable name as seen from the outside of this class is a concatenation of the "joint name"/"local
 name" (e.g., a joint named 'base' with local variables 'x' and 'y' will store its full variable names as 'base/x' and 'base/y'). Local names are never used to reference variables directly. </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00182">182</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00175">175</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a4e6b8be711499e0c0339b40bc48a4a8d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4e6b8be711499e0c0339b40bc48a4a8d">&#9670;&nbsp;</a></span>Bounds</h2>
@@ -376,7 +391,7 @@ name" (e.g., a joint named 'base' with local variables 'x' and 'y' will store it
 
 <p>The datatype for the joint bounds. </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00197">197</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00190">190</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 
 </div>
 </div>
@@ -403,13 +418,13 @@ name" (e.g., a joint named 'base' with local variables 'x' and 'y' will store it
 <tr><td class="fieldname"><a id="a6c1c75a4d125fd607f48bff4ca019b2ca3bb8e782777500ec4a3fd63ab9841d74"></a>FIXED&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00186">186</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00179">179</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a71c8360df20479a16adffdcd55007f42"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a71c8360df20479a16adffdcd55007f42">&#9670;&nbsp;</a></span>JointModel()</h2>
+<a id="a1f7d5542ac0ccd8cde728e101db378b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f7d5542ac0ccd8cde728e101db378b8">&#9670;&nbsp;</a></span>JointModel()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -418,37 +433,13 @@ name" (e.g., a joint named 'base' with local variables 'x' and 'y' will store it
           <td class="memname">moveit::core::JointModel::JointModel </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>name</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>name</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>joint_index</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>first_variable_index</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Constructs a joint named <em>name</em>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The joint name </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>The index of the joint in the <a class="el" href="classmoveit_1_1core_1_1RobotModel.html" title="Definition of a kinematic model. This class is not thread safe, however multiple instances can be cre...">RobotModel</a> </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">first_variable_index</td><td>The index of the first variable in the <a class="el" href="classmoveit_1_1core_1_1RobotModel.html" title="Definition of a kinematic model. This class is not thread safe, however multiple instances can be cre...">RobotModel</a> </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Construct a joint named <em>name</em>. </p>
 
 <p class="definition">Definition at line <a class="el" href="joint__model_8cpp_source.html#l00113">113</a> of file <a class="el" href="joint__model_8cpp_source.html">joint_model.cpp</a>.</p>
 
@@ -496,7 +487,7 @@ name" (e.g., a joint named 'base' with local variables 'x' and 'y' will store it
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8cpp_source.html#l00270">270</a> of file <a class="el" href="joint__model_8cpp_source.html">joint_model.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8cpp_source.html#l00262">262</a> of file <a class="el" href="joint__model_8cpp_source.html">joint_model.cpp</a>.</p>
 
 </div>
 </div>
@@ -516,7 +507,7 @@ name" (e.g., a joint named 'base' with local variables 'x' and 'y' will store it
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8cpp_source.html#l00277">277</a> of file <a class="el" href="joint__model_8cpp_source.html">joint_model.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8cpp_source.html#l00269">269</a> of file <a class="el" href="joint__model_8cpp_source.html">joint_model.cpp</a>.</p>
 
 </div>
 </div>
@@ -538,7 +529,7 @@ name" (e.g., a joint named 'base' with local variables 'x' and 'y' will store it
 
 <p>Notify this joint that there is another joint that mimics it. </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8cpp_source.html#l00265">265</a> of file <a class="el" href="joint__model_8cpp_source.html">joint_model.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8cpp_source.html#l00257">257</a> of file <a class="el" href="joint__model_8cpp_source.html">joint_model.cpp</a>.</p>
 
 </div>
 </div>
@@ -614,7 +605,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8cpp_source.html#l00237">237</a> of file <a class="el" href="joint__model_8cpp_source.html">joint_model.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8cpp_source.html#l00231">231</a> of file <a class="el" href="joint__model_8cpp_source.html">joint_model.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -709,9 +700,14 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classmoveit_1_1core_1_1JointModel_ab4ba9eac1f786fdeb152012f396daab8_icgraph.png" border="0" usemap="#classmoveit_1_1core_1_1JointModel_ab4ba9eac1f786fdeb152012f396daab8_icgraph" alt=""/></div>
 <map name="classmoveit_1_1core_1_1JointModel_ab4ba9eac1f786fdeb152012f396daab8_icgraph" id="classmoveit_1_1core_1_1JointModel_ab4ba9eac1f786fdeb152012f396daab8_icgraph">
-<area shape="rect" title="Compute the distance between two joint states of the same model (represented by the variable values)" alt="" coords="237,39,419,80"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#a47d15624f2b73d1a06905a0db11162cf" title=" " alt="" coords="5,5,189,47"/>
-<area shape="rect" href="classmoveit_1_1core_1_1JointModel.html#a2210b2f0a42da63674e79cbe77ff9eec" title="Get the local names of the variable that make up the joint (suffixes that are attached to joint names..." alt="" coords="5,71,189,112"/>
+<area shape="rect" title="Compute the distance between two joint states of the same model (represented by the variable values)" alt="" coords="832,39,1013,80"/>
+<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#a47d15624f2b73d1a06905a0db11162cf" title=" " alt="" coords="600,5,784,47"/>
+<area shape="rect" href="classmoveit_1_1core_1_1JointModel.html#a8e6b8bcc807187617b1b2e5242a4af69" title="Get the number of variables that describe this joint." alt="" coords="601,71,783,112"/>
+<area shape="rect" href="classompl__interface_1_1ModelBasedStateSpace.html#a2b4fc78932af58ba0b269441e7819440" title="Copy a single joint&#39;s values (which might have multiple variables) from a MoveIt robot_state to an OM..." alt="" coords="304,5,552,47"/>
+<area shape="rect" href="classmoveit_1_1core_1_1JointModelGroup.html#a0f60ea765fd917f911480a7615f8ff32" title="Get the unique set of end effector tips included in a particular joint model group as defined by the ..." alt="" coords="333,71,523,112"/>
+<area shape="rect" href="test__kinematic__complex_8cpp.html#a0e801af07878675ef75fa777a90a6eb9" title=" " alt="" coords="393,137,463,163"/>
+<area shape="rect" href="classmoveit_1_1core_1_1JointModelGroup.html#a06509f71422b63c90552127ce2ca4cee" title="Compute the default values for the joint group." alt="" coords="5,37,256,79"/>
+<area shape="rect" href="classmoveit_1_1core_1_1JointModelGroup.html#a7dd1f78e9dfdbc0875d2f7edead6daca" title=" " alt="" coords="40,103,221,144"/>
 </map>
 </div>
 
@@ -743,23 +739,14 @@ Here is the caller graph for this function:</div>
 
 <p>Force the specified values to be inside bounds and normalized. Quaternions are normalized, continuous joints are made between -Pi and Pi. Returns true if changes were made. </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00358">358</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00357">357</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classmoveit_1_1core_1_1JointModel_ac997d44f51ca03d13f0d54cf699e0662_icgraph.png" border="0" usemap="#classmoveit_1_1core_1_1JointModel_ac997d44f51ca03d13f0d54cf699e0662_icgraph" alt=""/></div>
 <map name="classmoveit_1_1core_1_1JointModel_ac997d44f51ca03d13f0d54cf699e0662_icgraph" id="classmoveit_1_1core_1_1JointModel_ac997d44f51ca03d13f0d54cf699e0662_icgraph">
-<area shape="rect" title="Force the specified values to be inside bounds and normalized. Quaternions are normalized,..." alt="" coords="1011,187,1192,229"/>
-<area shape="rect" href="classmoveit_1_1core_1_1JointModel.html#a32646942dc054f77e3eff984affb7ced" title="Get the index of this joint within the robot model." alt="" coords="781,187,963,229"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#a309800a933676917ea4848b972a4318b" title="Get the link transform w.r.t. the root link (model frame) of the RobotModel. This is typically the ro..." alt="" coords="548,187,733,229"/>
-<area shape="rect" href="classcollision__detection_1_1CollisionEnvDistanceField.html#adc1b9493f60da8b57ed80ea47eed2c16" title=" " alt="" coords="281,5,493,61"/>
-<area shape="rect" href="classkinematic__constraints_1_1OrientationConstraint.html#a25993b5d141ca35b14fefccc45f3f6fa" title="Check if two orientation constraints are the same." alt="" coords="301,85,472,141"/>
-<area shape="rect" href="test__constraints_8cpp.html#a0b1f5a3d6803a1b4f1057a54d3356231" title=" " alt="" coords="81,117,150,144"/>
-<area shape="rect" href="classompl__interface_1_1BaseConstraint.html#a7598bbbe35c6d8e9d11e91a1fdd5e2b7" title="Wrapper for forward kinematics calculated by MoveIt&#39;s Robot State." alt="" coords="273,217,500,258"/>
-<area shape="rect" href="classompl__interface_1_1ProjectionEvaluatorLinkPose.html#a7a47f07861fe2f04740cb60a72af60d8" title=" " alt="" coords="289,282,484,323"/>
-<area shape="rect" href="robot__state__test_8cpp.html#a0a60a2f41ceb978a0c3e889302e33df8" title=" " alt="" coords="359,348,414,375"/>
-<area shape="rect" href="classompl__interface_1_1BoxConstraint.html#ac73cde24845bd9de57e599a939811911" title="For inequality constraints: calculate the value of the parameter that is being constrained by the bou..." alt="" coords="5,201,225,242"/>
-<area shape="rect" href="classompl__interface_1_1EqualityPositionConstraint.html#a63273f212f4ab2740b7248d4a5e2a6be" title=" " alt="" coords="14,266,217,307"/>
+<area shape="rect" title="Force the specified values to be inside bounds and normalized. Quaternions are normalized,..." alt="" coords="235,5,416,47"/>
+<area shape="rect" href="classmoveit_1_1core_1_1JointModel.html#a51f806bb2ef0336e3a49a1dfc3b0a848" title="Set the index of this joint within the robot model." alt="" coords="5,5,187,47"/>
 </map>
 </div>
 
@@ -831,7 +818,7 @@ Here is the caller graph for this function:</div>
 
 <p>Force the specified velocities to be within bounds. Return true if changes were made. </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00386">386</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00385">385</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 
 </div>
 </div>
@@ -900,7 +887,7 @@ Here is the caller graph for this function:</div>
 
 <p>Get the link that this joint connects to. There will always be such a link. </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00234">234</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00221">221</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -938,7 +925,7 @@ Here is the caller graph for this function:</div>
 
 <p>Get all the joint models that descend from this joint, in the kinematic tree. </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00476">476</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00475">475</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 
 </div>
 </div>
@@ -967,7 +954,7 @@ Here is the caller graph for this function:</div>
 
 <p>Get all the link models that descend from this joint, in the kinematic tree. </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00470">470</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00469">469</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 
 </div>
 </div>
@@ -996,12 +983,12 @@ Here is the caller graph for this function:</div>
 
 <p>Get the factor that should be applied to the value returned by <a class="el" href="classmoveit_1_1core_1_1JointModel.html#ab4ba9eac1f786fdeb152012f396daab8" title="Compute the distance between two joint states of the same model (represented by the variable values)">distance()</a> when that value is used in compound distances. </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00422">422</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00421">421</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 
 </div>
 </div>
-<a id="a749ce652067b82e5ec5b3ffe3baca733"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a749ce652067b82e5ec5b3ffe3baca733">&#9670;&nbsp;</a></span>getFirstVariableIndex()</h2>
+<a id="add390f0a7b124a90c551bb7c875b8c7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add390f0a7b124a90c551bb7c875b8c7d">&#9670;&nbsp;</a></span>getFirstVariableIndex()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1010,7 +997,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">size_t moveit::core::JointModel::getFirstVariableIndex </td>
+          <td class="memname">int moveit::core::JointModel::getFirstVariableIndex </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1025,12 +1012,12 @@ Here is the caller graph for this function:</div>
 
 <p>Get the index of this joint's first variable within the full robot state. </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00282">282</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00269">269</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classmoveit_1_1core_1_1JointModel_a749ce652067b82e5ec5b3ffe3baca733_icgraph.png" border="0" usemap="#classmoveit_1_1core_1_1JointModel_a749ce652067b82e5ec5b3ffe3baca733_icgraph" alt=""/></div>
-<map name="classmoveit_1_1core_1_1JointModel_a749ce652067b82e5ec5b3ffe3baca733_icgraph" id="classmoveit_1_1core_1_1JointModel_a749ce652067b82e5ec5b3ffe3baca733_icgraph">
+<div class="center"><img src="classmoveit_1_1core_1_1JointModel_add390f0a7b124a90c551bb7c875b8c7d_icgraph.png" border="0" usemap="#classmoveit_1_1core_1_1JointModel_add390f0a7b124a90c551bb7c875b8c7d_icgraph" alt=""/></div>
+<map name="classmoveit_1_1core_1_1JointModel_add390f0a7b124a90c551bb7c875b8c7d_icgraph" id="classmoveit_1_1core_1_1JointModel_add390f0a7b124a90c551bb7c875b8c7d_icgraph">
 <area shape="rect" title="Get the index of this joint&#39;s first variable within the full robot state." alt="" coords="852,169,1033,211"/>
 <area shape="rect" href="classompl__interface_1_1ModelBasedStateSpace.html#a2b4fc78932af58ba0b269441e7819440" title="Copy a single joint&#39;s values (which might have multiple variables) from a MoveIt robot_state to an OM..." alt="" coords="556,5,804,47"/>
 <area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#ab45c4d8ffa470ae3cc17d82d0def6415" title=" " alt="" coords="587,71,773,112"/>
@@ -1049,8 +1036,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a32646942dc054f77e3eff984affb7ced"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a32646942dc054f77e3eff984affb7ced">&#9670;&nbsp;</a></span>getJointIndex()</h2>
+<a id="a205f57c2a7c1ad25b90711c74c3f6eed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a205f57c2a7c1ad25b90711c74c3f6eed">&#9670;&nbsp;</a></span>getJointIndex()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1059,7 +1046,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">size_t moveit::core::JointModel::getJointIndex </td>
+          <td class="memname">int moveit::core::JointModel::getJointIndex </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1074,21 +1061,12 @@ Here is the caller graph for this function:</div>
 
 <p>Get the index of this joint within the robot model. </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00288">288</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classmoveit_1_1core_1_1JointModel_a32646942dc054f77e3eff984affb7ced_cgraph.png" border="0" usemap="#classmoveit_1_1core_1_1JointModel_a32646942dc054f77e3eff984affb7ced_cgraph" alt=""/></div>
-<map name="classmoveit_1_1core_1_1JointModel_a32646942dc054f77e3eff984affb7ced_cgraph" id="classmoveit_1_1core_1_1JointModel_a32646942dc054f77e3eff984affb7ced_cgraph">
-<area shape="rect" title="Get the index of this joint within the robot model." alt="" coords="5,5,187,47"/>
-<area shape="rect" href="classmoveit_1_1core_1_1JointModel.html#ac997d44f51ca03d13f0d54cf699e0662" title="Force the specified values to be inside bounds and normalized. Quaternions are normalized,..." alt="" coords="235,5,416,47"/>
-</map>
-</div>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00281">281</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classmoveit_1_1core_1_1JointModel_a32646942dc054f77e3eff984affb7ced_icgraph.png" border="0" usemap="#classmoveit_1_1core_1_1JointModel_a32646942dc054f77e3eff984affb7ced_icgraph" alt=""/></div>
-<map name="classmoveit_1_1core_1_1JointModel_a32646942dc054f77e3eff984affb7ced_icgraph" id="classmoveit_1_1core_1_1JointModel_a32646942dc054f77e3eff984affb7ced_icgraph">
+<div class="center"><img src="classmoveit_1_1core_1_1JointModel_a205f57c2a7c1ad25b90711c74c3f6eed_icgraph.png" border="0" usemap="#classmoveit_1_1core_1_1JointModel_a205f57c2a7c1ad25b90711c74c3f6eed_icgraph" alt=""/></div>
+<map name="classmoveit_1_1core_1_1JointModel_a205f57c2a7c1ad25b90711c74c3f6eed_icgraph" id="classmoveit_1_1core_1_1JointModel_a205f57c2a7c1ad25b90711c74c3f6eed_icgraph">
 <area shape="rect" title="Get the index of this joint within the robot model." alt="" coords="781,187,963,229"/>
 <area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#a309800a933676917ea4848b972a4318b" title="Get the link transform w.r.t. the root link (model frame) of the RobotModel. This is typically the ro..." alt="" coords="548,187,733,229"/>
 <area shape="rect" href="classcollision__detection_1_1CollisionEnvDistanceField.html#adc1b9493f60da8b57ed80ea47eed2c16" title=" " alt="" coords="281,5,493,61"/>
@@ -1104,14 +1082,14 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a21ccd564228bd1460b8b59a6232b2e36"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a21ccd564228bd1460b8b59a6232b2e36">&#9670;&nbsp;</a></span>getLocalVariableIndex()</h2>
+<a id="a984c8d6c1e4bb5fff24bb1917a8985e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a984c8d6c1e4bb5fff24bb1917a8985e6">&#9670;&nbsp;</a></span>getLocalVariableIndex()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">size_t moveit::core::JointModel::getLocalVariableIndex </td>
+          <td class="memname">int moveit::core::JointModel::getLocalVariableIndex </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>variable</em></td><td>)</td>
@@ -1126,8 +1104,8 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classmoveit_1_1core_1_1JointModel_a21ccd564228bd1460b8b59a6232b2e36_icgraph.png" border="0" usemap="#classmoveit_1_1core_1_1JointModel_a21ccd564228bd1460b8b59a6232b2e36_icgraph" alt=""/></div>
-<map name="classmoveit_1_1core_1_1JointModel_a21ccd564228bd1460b8b59a6232b2e36_icgraph" id="classmoveit_1_1core_1_1JointModel_a21ccd564228bd1460b8b59a6232b2e36_icgraph">
+<div class="center"><img src="classmoveit_1_1core_1_1JointModel_a984c8d6c1e4bb5fff24bb1917a8985e6_icgraph.png" border="0" usemap="#classmoveit_1_1core_1_1JointModel_a984c8d6c1e4bb5fff24bb1917a8985e6_icgraph" alt=""/></div>
+<map name="classmoveit_1_1core_1_1JointModel_a984c8d6c1e4bb5fff24bb1917a8985e6_icgraph" id="classmoveit_1_1core_1_1JointModel_a984c8d6c1e4bb5fff24bb1917a8985e6_icgraph">
 <area shape="rect" title="Get the index of the variable within this joint." alt="" coords="235,5,416,47"/>
 <area shape="rect" href="classmoveit_1_1core_1_1JointModel.html#af1db07d2843b0c6435415dd53b3aa433" title="Get the type of joint as a string." alt="" coords="5,5,187,47"/>
 </map>
@@ -1160,17 +1138,7 @@ Here is the caller graph for this function:</div>
 
 <p>Get the local names of the variable that make up the joint (suffixes that are attached to joint names to construct the variable names). For single DOF joints, this will be empty. </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00264">264</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classmoveit_1_1core_1_1JointModel_a2210b2f0a42da63674e79cbe77ff9eec_cgraph.png" border="0" usemap="#classmoveit_1_1core_1_1JointModel_a2210b2f0a42da63674e79cbe77ff9eec_cgraph" alt=""/></div>
-<map name="classmoveit_1_1core_1_1JointModel_a2210b2f0a42da63674e79cbe77ff9eec_cgraph" id="classmoveit_1_1core_1_1JointModel_a2210b2f0a42da63674e79cbe77ff9eec_cgraph">
-<area shape="rect" title="Get the local names of the variable that make up the joint (suffixes that are attached to joint names..." alt="" coords="5,39,189,80"/>
-<area shape="rect" href="classmoveit_1_1core_1_1JointModel.html#ab4ba9eac1f786fdeb152012f396daab8" title="Compute the distance between two joint states of the same model (represented by the variable values)" alt="" coords="279,5,461,47"/>
-<area shape="rect" href="classmoveit_1_1core_1_1JointModel.html#adaf152251e15131a66e48f5e1de98dbb" title="Provide random values for the joint variables (within default bounds). Enough memory is assumed to be..." alt="" coords="237,71,503,112"/>
-</map>
-</div>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00251">251</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 
 </div>
 </div>
@@ -1197,7 +1165,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00507">507</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00506">506</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 
 </div>
 </div>
@@ -1256,7 +1224,7 @@ Here is the call graph for this function:</div>
 
 <p>Get the joint this one is mimicking. </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00438">438</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00437">437</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 
 </div>
 </div>
@@ -1285,7 +1253,7 @@ Here is the call graph for this function:</div>
 
 <p>If mimicking a joint, this is the multiplicative factor for that joint's value. </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00450">450</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00449">449</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1323,7 +1291,7 @@ Here is the caller graph for this function:</div>
 
 <p>If mimicking a joint, this is the offset added to that joint's value. </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00444">444</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00443">443</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1361,7 +1329,7 @@ Here is the caller graph for this function:</div>
 
 <p>The joint models whose values would be modified if the value of this joint changed. </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00459">459</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00458">458</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 
 </div>
 </div>
@@ -1390,7 +1358,7 @@ Here is the caller graph for this function:</div>
 
 <p>Get the name of the joint. </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00211">211</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00198">198</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1438,7 +1406,7 @@ Here is the caller graph for this function:</div>
 
 <p>Get all the non-fixed joint models that descend from this joint, in the kinematic tree. </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00482">482</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00481">481</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 
 </div>
 </div>
@@ -1465,16 +1433,16 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Get the link that this joint connects to. The robot is assumed to start with a joint, so the root joint will return nullptr here. </p>
+<p>Get the link that this joint connects to. The robot is assumed to start with a joint, so the root joint will return a NULL pointer here. </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00228">228</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00215">215</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classmoveit_1_1core_1_1JointModel_a048a1922efedcb55f66421d6e261c41f_icgraph.png" border="0" usemap="#classmoveit_1_1core_1_1JointModel_a048a1922efedcb55f66421d6e261c41f_icgraph" alt=""/></div>
 <map name="classmoveit_1_1core_1_1JointModel_a048a1922efedcb55f66421d6e261c41f_icgraph" id="classmoveit_1_1core_1_1JointModel_a048a1922efedcb55f66421d6e261c41f_icgraph">
 <area shape="rect" title="Get the link that this joint connects to. The robot is assumed to start with a joint,..." alt="" coords="244,5,425,47"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotModel.html#afb12941677dbbae66a30531c5dfd2dd6" title="Get a joint by its name. Output error and return nullptr when the joint is missing." alt="" coords="5,5,196,47"/>
+<area shape="rect" href="classmoveit_1_1core_1_1RobotModel.html#afb12941677dbbae66a30531c5dfd2dd6" title="Get a joint by its name. Output error and return NULL when the joint is missing." alt="" coords="5,5,196,47"/>
 </map>
 </div>
 
@@ -1534,14 +1502,15 @@ Here is the caller graph for this function:</div>
 
 <p>Get the type of joint. </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00217">217</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00204">204</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classmoveit_1_1core_1_1JointModel_add20b6d4e10df54752f2c9ba61d8ee0a_icgraph.png" border="0" usemap="#classmoveit_1_1core_1_1JointModel_add20b6d4e10df54752f2c9ba61d8ee0a_icgraph" alt=""/></div>
 <map name="classmoveit_1_1core_1_1JointModel_add20b6d4e10df54752f2c9ba61d8ee0a_icgraph" id="classmoveit_1_1core_1_1JointModel_add20b6d4e10df54752f2c9ba61d8ee0a_icgraph">
-<area shape="rect" title="Get the type of joint." alt="" coords="219,5,400,47"/>
-<area shape="rect" href="classmoveit__rviz__plugin_1_1JMGItemModel.html#a54d60d8872dd6df748a225e43a2ba0c5" title=" " alt="" coords="5,5,171,47"/>
+<area shape="rect" title="Get the type of joint." alt="" coords="235,39,416,80"/>
+<area shape="rect" href="classmoveit__rviz__plugin_1_1JMGItemModel.html#a54d60d8872dd6df748a225e43a2ba0c5" title=" " alt="" coords="13,5,179,47"/>
+<area shape="rect" href="classmoveit_1_1core_1_1JointModel.html#a4aa3e6fa081382e311a4d81beefbb16c" title="Set the lower and upper bounds for a variable. Throw an exception if the variable was not found." alt="" coords="5,71,187,112"/>
 </map>
 </div>
 
@@ -1572,7 +1541,7 @@ Here is the call graph for this function:</div>
 <map name="classmoveit_1_1core_1_1JointModel_af1db07d2843b0c6435415dd53b3aa433_cgraph" id="classmoveit_1_1core_1_1JointModel_af1db07d2843b0c6435415dd53b3aa433_cgraph">
 <area shape="rect" title="Get the type of joint as a string." alt="" coords="5,39,187,80"/>
 <area shape="rect" href="classmoveit_1_1core_1_1JointModel.html#ab28d5b68df30fb92b77c42e353f6051c" title=" " alt="" coords="235,5,449,47"/>
-<area shape="rect" href="classmoveit_1_1core_1_1JointModel.html#a21ccd564228bd1460b8b59a6232b2e36" title="Get the index of the variable within this joint." alt="" coords="251,71,433,112"/>
+<area shape="rect" href="classmoveit_1_1core_1_1JointModel.html#a984c8d6c1e4bb5fff24bb1917a8985e6" title="Get the index of the variable within this joint." alt="" coords="251,71,433,112"/>
 </map>
 </div>
 
@@ -1603,7 +1572,7 @@ Here is the call graph for this function:</div>
 
 <p>Get the variable bounds for this joint, in the same order as the names returned by <a class="el" href="classmoveit_1_1core_1_1JointModel.html#a09b0ad5f0d57c67a1fd7cde8d494519d" title="Get the names of the variables that make up this joint, in the order they appear in corresponding sta...">getVariableNames()</a> </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00398">398</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00397">397</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 
 </div>
 </div>
@@ -1671,7 +1640,7 @@ Here is the caller graph for this function:</div>
 
 <p>Get the joint limits known to this model, as a message. </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00410">410</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00409">409</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 
 </div>
 </div>
@@ -1700,7 +1669,17 @@ Here is the caller graph for this function:</div>
 
 <p>Get the number of variables that describe this joint. </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00276">276</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00263">263</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmoveit_1_1core_1_1JointModel_a8e6b8bcc807187617b1b2e5242a4af69_cgraph.png" border="0" usemap="#classmoveit_1_1core_1_1JointModel_a8e6b8bcc807187617b1b2e5242a4af69_cgraph" alt=""/></div>
+<map name="classmoveit_1_1core_1_1JointModel_a8e6b8bcc807187617b1b2e5242a4af69_cgraph" id="classmoveit_1_1core_1_1JointModel_a8e6b8bcc807187617b1b2e5242a4af69_cgraph">
+<area shape="rect" title="Get the number of variables that describe this joint." alt="" coords="5,39,187,80"/>
+<area shape="rect" href="classmoveit_1_1core_1_1JointModel.html#ab4ba9eac1f786fdeb152012f396daab8" title="Compute the distance between two joint states of the same model (represented by the variable values)" alt="" coords="277,5,458,47"/>
+<area shape="rect" href="classmoveit_1_1core_1_1JointModel.html#adaf152251e15131a66e48f5e1de98dbb" title="Provide random values for the joint variables (within default bounds). Enough memory is assumed to be..." alt="" coords="235,71,500,112"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1743,16 +1722,7 @@ Here is the caller graph for this function:</div>
 
 <p>Provide a default value for the joint given the default joint variable bounds (maintained internally). Most joints will use the default implementation provided in this base class, but the quaternion for example needs a different implementation. Enough memory is assumed to be allocated. </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00304">304</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classmoveit_1_1core_1_1JointModel_a7b2a5dacbc621b019ca3771212e39e89_icgraph.png" border="0" usemap="#classmoveit_1_1core_1_1JointModel_a7b2a5dacbc621b019ca3771212e39e89_icgraph" alt=""/></div>
-<map name="classmoveit_1_1core_1_1JointModel_a7b2a5dacbc621b019ca3771212e39e89_icgraph" id="classmoveit_1_1core_1_1JointModel_a7b2a5dacbc621b019ca3771212e39e89_icgraph">
-<area shape="rect" title="Provide a default value for the joint given the default joint variable bounds (maintained internally)..." alt="" coords="235,5,445,47"/>
-<area shape="rect" href="classmoveit_1_1core_1_1JointModel.html#aa5a16069ef76dcf1e3b15c8325fd1f29" title=" " alt="" coords="5,5,187,47"/>
-</map>
-</div>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00303">303</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 
 </div>
 </div>
@@ -1821,7 +1791,7 @@ Here is the caller graph for this function:</div>
 
 <p>Get the names of the variables that make up this joint, in the order they appear in corresponding states. For single DOF joints, this will be just the joint name. For multi-DOF joints these will be the joint name followed by "/", followed by the local names of the variables. </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00256">256</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00243">243</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 
 </div>
 </div>
@@ -1861,7 +1831,7 @@ Here is the caller graph for this function:</div>
 
 <p>Provide random values for the joint variables (within default bounds). Enough memory is assumed to be allocated. </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00316">316</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00315">315</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 
 </div>
 </div>
@@ -2017,14 +1987,19 @@ Here is the caller graph for this function:</div>
 
 <p>Provide random values for the joint variables (within default bounds). Enough memory is assumed to be allocated. </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00328">328</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00327">327</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classmoveit_1_1core_1_1JointModel_adaf152251e15131a66e48f5e1de98dbb_icgraph.png" border="0" usemap="#classmoveit_1_1core_1_1JointModel_adaf152251e15131a66e48f5e1de98dbb_icgraph" alt=""/></div>
 <map name="classmoveit_1_1core_1_1JointModel_adaf152251e15131a66e48f5e1de98dbb_icgraph" id="classmoveit_1_1core_1_1JointModel_adaf152251e15131a66e48f5e1de98dbb_icgraph">
-<area shape="rect" title="Provide random values for the joint variables (within default bounds). Enough memory is assumed to be..." alt="" coords="237,5,503,47"/>
-<area shape="rect" href="classmoveit_1_1core_1_1JointModel.html#a2210b2f0a42da63674e79cbe77ff9eec" title="Get the local names of the variable that make up the joint (suffixes that are attached to joint names..." alt="" coords="5,5,189,47"/>
+<area shape="rect" title="Provide random values for the joint variables (within default bounds). Enough memory is assumed to be..." alt="" coords="829,71,1095,112"/>
+<area shape="rect" href="classmoveit_1_1core_1_1JointModel.html#a8e6b8bcc807187617b1b2e5242a4af69" title="Get the number of variables that describe this joint." alt="" coords="600,71,781,112"/>
+<area shape="rect" href="classompl__interface_1_1ModelBasedStateSpace.html#a2b4fc78932af58ba0b269441e7819440" title="Copy a single joint&#39;s values (which might have multiple variables) from a MoveIt robot_state to an OM..." alt="" coords="304,5,552,47"/>
+<area shape="rect" href="classmoveit_1_1core_1_1JointModelGroup.html#a0f60ea765fd917f911480a7615f8ff32" title="Get the unique set of end effector tips included in a particular joint model group as defined by the ..." alt="" coords="333,71,523,112"/>
+<area shape="rect" href="test__kinematic__complex_8cpp.html#a0e801af07878675ef75fa777a90a6eb9" title=" " alt="" coords="393,137,463,163"/>
+<area shape="rect" href="classmoveit_1_1core_1_1JointModelGroup.html#a06509f71422b63c90552127ce2ca4cee" title="Compute the default values for the joint group." alt="" coords="5,37,256,79"/>
+<area shape="rect" href="classmoveit_1_1core_1_1JointModelGroup.html#a7dd1f78e9dfdbc0875d2f7edead6daca" title=" " alt="" coords="40,103,221,144"/>
 </map>
 </div>
 
@@ -2054,7 +2029,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00371">371</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00370">370</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 
 </div>
 </div>
@@ -2125,7 +2100,7 @@ Here is the caller graph for this function:</div>
 
 <p>Check if a particular variable is known to this joint. </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00270">270</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00257">257</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 
 </div>
 </div>
@@ -2206,7 +2181,7 @@ Here is the caller graph for this function:</div>
 
 <p>Check if this joint is passive. </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00488">488</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00487">487</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 
 </div>
 </div>
@@ -2292,7 +2267,7 @@ Here is the caller graph for this function:</div>
 
 <p>Check if the set of values for the variables of this joint are within bounds. </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00346">346</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00345">345</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -2393,7 +2368,7 @@ Here is the caller graph for this function:</div>
 
 <p>Check if the set of velocities for the variables of this joint are within bounds. </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00377">377</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00376">376</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -2436,7 +2411,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00244">244</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00231">231</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 
 </div>
 </div>
@@ -2466,7 +2441,76 @@ Here is the caller graph for this function:</div>
 
 <p>Set the factor that should be applied to the value returned by <a class="el" href="classmoveit_1_1core_1_1JointModel.html#ab4ba9eac1f786fdeb152012f396daab8" title="Compute the distance between two joint states of the same model (represented by the variable values)">distance()</a> when that value is used in compound distances. </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00429">429</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00428">428</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+
+</div>
+</div>
+<a id="ade8d1c3c3c02b635c5fbb9fedab6a096"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade8d1c3c3c02b635c5fbb9fedab6a096">&#9670;&nbsp;</a></span>setFirstVariableIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void moveit::core::JointModel::setFirstVariableIndex </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the index of this joint's first variable within the full robot state. </p>
+
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00275">275</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+
+</div>
+</div>
+<a id="a51f806bb2ef0336e3a49a1dfc3b0a848"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51f806bb2ef0336e3a49a1dfc3b0a848">&#9670;&nbsp;</a></span>setJointIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void moveit::core::JointModel::setJointIndex </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the index of this joint within the robot model. </p>
+
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00287">287</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmoveit_1_1core_1_1JointModel_a51f806bb2ef0336e3a49a1dfc3b0a848_cgraph.png" border="0" usemap="#classmoveit_1_1core_1_1JointModel_a51f806bb2ef0336e3a49a1dfc3b0a848_cgraph" alt=""/></div>
+<map name="classmoveit_1_1core_1_1JointModel_a51f806bb2ef0336e3a49a1dfc3b0a848_cgraph" id="classmoveit_1_1core_1_1JointModel_a51f806bb2ef0336e3a49a1dfc3b0a848_cgraph">
+<area shape="rect" title="Set the index of this joint within the robot model." alt="" coords="5,5,187,47"/>
+<area shape="rect" href="classmoveit_1_1core_1_1JointModel.html#ac997d44f51ca03d13f0d54cf699e0662" title="Force the specified values to be inside bounds and normalized. Quaternions are normalized,..." alt="" coords="235,5,416,47"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -2504,7 +2548,7 @@ Here is the caller graph for this function:</div>
 
 <p>Mark this joint as mimicking <em>mimic</em> using <em>factor</em> and <em>offset</em>. </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8cpp_source.html#l00258">258</a> of file <a class="el" href="joint__model_8cpp_source.html">joint_model.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8cpp_source.html#l00250">250</a> of file <a class="el" href="joint__model_8cpp_source.html">joint_model.cpp</a>.</p>
 
 </div>
 </div>
@@ -2532,16 +2576,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00239">239</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classmoveit_1_1core_1_1JointModel_aa5a16069ef76dcf1e3b15c8325fd1f29_cgraph.png" border="0" usemap="#classmoveit_1_1core_1_1JointModel_aa5a16069ef76dcf1e3b15c8325fd1f29_cgraph" alt=""/></div>
-<map name="classmoveit_1_1core_1_1JointModel_aa5a16069ef76dcf1e3b15c8325fd1f29_cgraph" id="classmoveit_1_1core_1_1JointModel_aa5a16069ef76dcf1e3b15c8325fd1f29_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,187,47"/>
-<area shape="rect" href="classmoveit_1_1core_1_1JointModel.html#a7b2a5dacbc621b019ca3771212e39e89" title="Provide a default value for the joint given the default joint variable bounds (maintained internally)..." alt="" coords="235,5,445,47"/>
-</map>
-</div>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00226">226</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 
 </div>
 </div>
@@ -2569,7 +2604,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00493">493</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00492">492</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 
 </div>
 </div>
@@ -2602,6 +2637,15 @@ Here is the call graph for this function:</div>
 <p>Set the lower and upper bounds for a variable. Throw an exception if the variable was not found. </p>
 
 <p class="definition">Definition at line <a class="el" href="joint__model_8cpp_source.html#l00196">196</a> of file <a class="el" href="joint__model_8cpp_source.html">joint_model.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmoveit_1_1core_1_1JointModel_a4aa3e6fa081382e311a4d81beefbb16c_cgraph.png" border="0" usemap="#classmoveit_1_1core_1_1JointModel_a4aa3e6fa081382e311a4d81beefbb16c_cgraph" alt=""/></div>
+<map name="classmoveit_1_1core_1_1JointModel_a4aa3e6fa081382e311a4d81beefbb16c_cgraph" id="classmoveit_1_1core_1_1JointModel_a4aa3e6fa081382e311a4d81beefbb16c_cgraph">
+<area shape="rect" title="Set the lower and upper bounds for a variable. Throw an exception if the variable was not found." alt="" coords="5,5,187,47"/>
+<area shape="rect" href="classmoveit_1_1core_1_1JointModel.html#add20b6d4e10df54752f2c9ba61d8ee0a" title="Get the type of joint." alt="" coords="235,5,416,47"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -2650,7 +2694,7 @@ Here is the call graph for this function:</div>
 
 <p>The link after this joint. </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00560">560</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00552">552</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 
 </div>
 </div>
@@ -2676,7 +2720,7 @@ Here is the call graph for this function:</div>
 
 <p>Pointers to all the joints that follow this one in the kinematic tree (including mimic joints) </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00578">578</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00570">570</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 
 </div>
 </div>
@@ -2702,7 +2746,7 @@ Here is the call graph for this function:</div>
 
 <p>Pointers to all the links that will be moved if this joint changes value. </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00575">575</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00567">567</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 
 </div>
 </div>
@@ -2728,7 +2772,59 @@ Here is the call graph for this function:</div>
 
 <p>The factor applied to the distance between two joint states. </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00588">588</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00580">580</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+
+</div>
+</div>
+<a id="aabd47a61b9e8247fcc739eb15c1520a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabd47a61b9e8247fcc739eb15c1520a0">&#9670;&nbsp;</a></span>first_variable_index_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int moveit::core::JointModel::first_variable_index_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The index of this joint's first variable, in the complete robot state. </p>
+
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00583">583</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+
+</div>
+</div>
+<a id="aa0dc8fd0b04d7dc7884e4d492aa6dd33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0dc8fd0b04d7dc7884e4d492aa6dd33">&#9670;&nbsp;</a></span>joint_index_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int moveit::core::JointModel::joint_index_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Index for this joint in the array of joints of the complete model. </p>
+
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00586">586</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 
 </div>
 </div>
@@ -2754,7 +2850,7 @@ Here is the call graph for this function:</div>
 
 <p>The local names to use for the variables that make up this joint. </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00542">542</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00534">534</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 
 </div>
 </div>
@@ -2778,9 +2874,9 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>The joint this one mimics (nullptr for joints that do not mimic) </p>
+<p>The joint this one mimics (NULL for joints that do not mimic) </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00563">563</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00555">555</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 
 </div>
 </div>
@@ -2806,7 +2902,7 @@ Here is the call graph for this function:</div>
 
 <p>The offset to the mimic joint. </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00566">566</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00558">558</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 
 </div>
 </div>
@@ -2832,7 +2928,7 @@ Here is the call graph for this function:</div>
 
 <p>The multiplier to the mimic joint. </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00569">569</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00561">561</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 
 </div>
 </div>
@@ -2858,7 +2954,33 @@ Here is the call graph for this function:</div>
 
 <p>The set of joints that should get a value copied to them when this joint changes. </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00572">572</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00564">564</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+
+</div>
+</div>
+<a id="a4ffe425a9df21403ee475c28c7949c22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ffe425a9df21403ee475c28c7949c22">&#9670;&nbsp;</a></span>name_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string moveit::core::JointModel::name_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Name of the joint. </p>
+
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00528">528</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 
 </div>
 </div>
@@ -2884,7 +3006,7 @@ Here is the call graph for this function:</div>
 
 <p>Pointers to all the joints that follow this one in the kinematic tree, including mimic joints, but excluding fixed joints. </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00582">582</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00574">574</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 
 </div>
 </div>
@@ -2910,7 +3032,7 @@ Here is the call graph for this function:</div>
 
 <p>The link before this joint. </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00557">557</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00549">549</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 
 </div>
 </div>
@@ -2936,7 +3058,7 @@ Here is the call graph for this function:</div>
 
 <p>Specify whether this joint is marked as passive in the SRDF. </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00585">585</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00577">577</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 
 </div>
 </div>
@@ -2962,7 +3084,7 @@ Here is the call graph for this function:</div>
 
 <p>The type of joint. </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00539">539</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00531">531</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 
 </div>
 </div>
@@ -2988,7 +3110,7 @@ Here is the call graph for this function:</div>
 
 <p>The bounds for each variable (low, high) in the same order as variable_names_. </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00548">548</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00540">540</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 
 </div>
 </div>
@@ -3012,7 +3134,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00550">550</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00542">542</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 
 </div>
 </div>
@@ -3026,7 +3148,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespacemoveit_1_1core.html#a4bc26a7f9b3ac37afb7022d766fb307a">VariableIndexMap</a> moveit::core::JointModel::variable_index_map_</td>
+          <td class="memname"><a class="el" href="namespacemoveit_1_1core.html#ae101bd641ed50af6f5936c5a337ad3fd">VariableIndexMap</a> moveit::core::JointModel::variable_index_map_</td>
         </tr>
       </table>
   </td>
@@ -3038,7 +3160,7 @@ Here is the call graph for this function:</div>
 
 <p>Map from variable names to the corresponding index in variable_names_ (indexing makes sense within the <a class="el" href="classmoveit_1_1core_1_1JointModel.html" title="A joint from the robot. Models the transform that this joint applies in the kinematic chain....">JointModel</a> only) </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00554">554</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00546">546</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 
 </div>
 </div>
@@ -3064,7 +3186,7 @@ Here is the call graph for this function:</div>
 
 <p>The full names to use for the variables that make up this joint. </p>
 
-<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00545">545</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="joint__model_8h_source.html#l00537">537</a> of file <a class="el" href="joint__model_8h_source.html">joint_model.h</a>.</p>
 
 </div>
 </div>

@@ -1,7 +1,12 @@
 <map id="TEST_F" name="TEST_F">
-<area shape="rect" id="node1" title="Check if all values are set correctly." alt="" coords="5,140,75,167"/>
-<area shape="rect" id="node2" href="$classpilz__industrial__motion__planner_1_1CartesianLimitsAggregator.html#ae522ae2e7639d289dd6d818b363cadc8" title="Loads cartesian limits from the node parameters." alt="" coords="123,5,383,61"/>
-<area shape="rect" id="node3" href="$classpilz__industrial__motion__planner_1_1CartesianLimit.html#ae271329c2a90afec8db744e9b3f53548" title="Return the maximal translational velocity [m/s], 0 if nothing was set." alt="" coords="145,85,360,141"/>
-<area shape="rect" id="node4" href="$classpilz__industrial__motion__planner_1_1CartesianLimit.html#af512550524da8ee79e1b0250e0a386ea" title="Check if translational acceleration limit is set." alt="" coords="130,165,375,221"/>
-<area shape="rect" id="node5" href="$classpilz__industrial__motion__planner_1_1CartesianLimit.html#abdbf137d1b5cbf486bd19afad7f10c69" title="Check if translational velocity limit is set." alt="" coords="145,245,361,301"/>
+<area shape="rect" id="node1" title="Check if all values are set correctly." alt="" coords="5,340,75,367"/>
+<area shape="rect" id="node2" href="$classpilz__industrial__motion__planner_1_1CartesianLimitsAggregator.html#a432696a4e71dc307327c4ecc11b1afb6" title="Loads cartesian limits from the parameter server." alt="" coords="123,5,383,61"/>
+<area shape="rect" id="node3" href="$classpilz__industrial__motion__planner_1_1CartesianLimit.html#a238c218afd7f810c629010bdd976443f" title="Return the maximal rotational velocity [rad/s], 0 if nothing was set." alt="" coords="153,85,352,141"/>
+<area shape="rect" id="node4" href="$classpilz__industrial__motion__planner_1_1CartesianLimit.html#adf1477f7582ef5d4ace6d2462a2a3825" title="Return the maximal translational acceleration [m/s^2], 0 if nothing was set." alt="" coords="131,165,374,221"/>
+<area shape="rect" id="node5" href="$classpilz__industrial__motion__planner_1_1CartesianLimit.html#a8425190887085ec7579872258159c899" title="Return the maximal translational deceleration [m/s^2], 0 if nothing was set." alt="" coords="130,245,375,301"/>
+<area shape="rect" id="node6" href="$classpilz__industrial__motion__planner_1_1CartesianLimit.html#ae271329c2a90afec8db744e9b3f53548" title="Return the maximal translational velocity [m/s], 0 if nothing was set." alt="" coords="145,325,360,381"/>
+<area shape="rect" id="node7" href="$classpilz__industrial__motion__planner_1_1CartesianLimit.html#a5f828faf6e5e536fbcf884faebeab8e7" title="Check if rotational velocity limit is set." alt="" coords="153,405,353,461"/>
+<area shape="rect" id="node8" href="$classpilz__industrial__motion__planner_1_1CartesianLimit.html#af512550524da8ee79e1b0250e0a386ea" title="Check if translational acceleration limit is set." alt="" coords="130,485,375,541"/>
+<area shape="rect" id="node9" href="$classpilz__industrial__motion__planner_1_1CartesianLimit.html#a625ce03e48ca99fa8ff7c38cf06af76b" title="Check if translational deceleration limit is set." alt="" coords="129,565,376,621"/>
+<area shape="rect" id="node10" href="$classpilz__industrial__motion__planner_1_1CartesianLimit.html#abdbf137d1b5cbf486bd19afad7f10c69" title="Check if translational velocity limit is set." alt="" coords="145,645,361,701"/>
 </map>

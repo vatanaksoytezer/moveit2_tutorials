@@ -81,19 +81,19 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2ed8d6bac5083871307380751b10bf6d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpilz__industrial__motion__planner_1_1CommandListManager.html#a2ed8d6bac5083871307380751b10bf6d">CommandListManager</a> (const rclcpp::Node::SharedPtr &amp;node, const moveit::core::RobotModelConstPtr &amp;model)</td></tr>
-<tr class="separator:a2ed8d6bac5083871307380751b10bf6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac0f2cad43f58d5128c65578133f07ea7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacepilz__industrial__motion__planner.html#abde64630c67314e1e9b0c9704f37d6bf">RobotTrajCont</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpilz__industrial__motion__planner_1_1CommandListManager.html#ac0f2cad43f58d5128c65578133f07ea7">solve</a> (const planning_scene::PlanningSceneConstPtr &amp;planning_scene, const planning_pipeline::PlanningPipelinePtr &amp;planning_pipeline, const moveit_msgs::msg::MotionSequenceRequest &amp;req_list)</td></tr>
-<tr class="memdesc:ac0f2cad43f58d5128c65578133f07ea7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates trajectories for the specified list of motion commands.  <a href="classpilz__industrial__motion__planner_1_1CommandListManager.html#ac0f2cad43f58d5128c65578133f07ea7">More...</a><br /></td></tr>
-<tr class="separator:ac0f2cad43f58d5128c65578133f07ea7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3372f4e68bac2974ce2b2cde4ad872ca"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpilz__industrial__motion__planner_1_1CommandListManager.html#a3372f4e68bac2974ce2b2cde4ad872ca">CommandListManager</a> (const ros::NodeHandle &amp;nh, const robot_model::RobotModelConstPtr &amp;model)</td></tr>
+<tr class="separator:a3372f4e68bac2974ce2b2cde4ad872ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08d133923cf9a22e55f582ccb48e9e3f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacepilz__industrial__motion__planner.html#abde64630c67314e1e9b0c9704f37d6bf">RobotTrajCont</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpilz__industrial__motion__planner_1_1CommandListManager.html#a08d133923cf9a22e55f582ccb48e9e3f">solve</a> (const planning_scene::PlanningSceneConstPtr &amp;planning_scene, const planning_pipeline::PlanningPipelinePtr &amp;planning_pipeline, const moveit_msgs::MotionSequenceRequest &amp;req_list)</td></tr>
+<tr class="memdesc:a08d133923cf9a22e55f582ccb48e9e3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates trajectories for the specified list of motion commands.  <a href="classpilz__industrial__motion__planner_1_1CommandListManager.html#a08d133923cf9a22e55f582ccb48e9e3f">More...</a><br /></td></tr>
+<tr class="separator:a08d133923cf9a22e55f582ccb48e9e3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class orchestrates the planning of single commands and command lists. </p>
 
-<p class="definition">Definition at line <a class="el" href="command__list__manager_8h_source.html#l00100">100</a> of file <a class="el" href="command__list__manager_8h_source.html">command_list_manager.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="command__list__manager_8h_source.html#l00097">97</a> of file <a class="el" href="command__list__manager_8h_source.html">command_list_manager.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a2ed8d6bac5083871307380751b10bf6d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2ed8d6bac5083871307380751b10bf6d">&#9670;&nbsp;</a></span>CommandListManager()</h2>
+<a id="a3372f4e68bac2974ce2b2cde4ad872ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3372f4e68bac2974ce2b2cde4ad872ca">&#9670;&nbsp;</a></span>CommandListManager()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -101,13 +101,13 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">pilz_industrial_motion_planner::CommandListManager::CommandListManager </td>
           <td>(</td>
-          <td class="paramtype">const rclcpp::Node::SharedPtr &amp;&#160;</td>
-          <td class="paramname"><em>node</em>, </td>
+          <td class="paramtype">const ros::NodeHandle &amp;&#160;</td>
+          <td class="paramname"><em>nh</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const moveit::core::RobotModelConstPtr &amp;&#160;</td>
+          <td class="paramtype">const robot_model::RobotModelConstPtr &amp;&#160;</td>
           <td class="paramname"><em>model</em>&#160;</td>
         </tr>
         <tr>
@@ -118,13 +118,13 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="command__list__manager_8cpp_source.html#l00088">88</a> of file <a class="el" href="command__list__manager_8cpp_source.html">command_list_manager.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="command__list__manager_8cpp_source.html#l00087">87</a> of file <a class="el" href="command__list__manager_8cpp_source.html">command_list_manager.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ac0f2cad43f58d5128c65578133f07ea7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac0f2cad43f58d5128c65578133f07ea7">&#9670;&nbsp;</a></span>solve()</h2>
+<a id="a08d133923cf9a22e55f582ccb48e9e3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08d133923cf9a22e55f582ccb48e9e3f">&#9670;&nbsp;</a></span>solve()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -144,7 +144,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const moveit_msgs::msg::MotionSequenceRequest &amp;&#160;</td>
+          <td class="paramtype">const moveit_msgs::MotionSequenceRequest &amp;&#160;</td>
           <td class="paramname"><em>req_list</em>&#160;</td>
         </tr>
         <tr>
@@ -177,12 +177,12 @@ Public Member Functions</h2></td></tr>
 <p>Please note: Starts states do not need to state the joints of all groups. It is sufficient if a start state states only the joints of the group which it belongs to. Starts states can even be incomplete. In this case default values are set for the unset joints.</p>
 <dl class="section return"><dt>Returns</dt><dd>Contains the calculated/generated trajectories. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="command__list__manager_8cpp_source.html#l00111">111</a> of file <a class="el" href="command__list__manager_8cpp_source.html">command_list_manager.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="command__list__manager_8cpp_source.html#l00110">110</a> of file <a class="el" href="command__list__manager_8cpp_source.html">command_list_manager.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classpilz__industrial__motion__planner_1_1CommandListManager_ac0f2cad43f58d5128c65578133f07ea7_cgraph.png" border="0" usemap="#classpilz__industrial__motion__planner_1_1CommandListManager_ac0f2cad43f58d5128c65578133f07ea7_cgraph" alt=""/></div>
-<map name="classpilz__industrial__motion__planner_1_1CommandListManager_ac0f2cad43f58d5128c65578133f07ea7_cgraph" id="classpilz__industrial__motion__planner_1_1CommandListManager_ac0f2cad43f58d5128c65578133f07ea7_cgraph">
+<div class="center"><img src="classpilz__industrial__motion__planner_1_1CommandListManager_a08d133923cf9a22e55f582ccb48e9e3f_cgraph.png" border="0" usemap="#classpilz__industrial__motion__planner_1_1CommandListManager_a08d133923cf9a22e55f582ccb48e9e3f_cgraph" alt=""/></div>
+<map name="classpilz__industrial__motion__planner_1_1CommandListManager_a08d133923cf9a22e55f582ccb48e9e3f_cgraph" id="classpilz__industrial__motion__planner_1_1CommandListManager_a08d133923cf9a22e55f582ccb48e9e3f_cgraph">
 <area shape="rect" title="Generates trajectories for the specified list of motion commands." alt="" coords="5,63,239,119"/>
 <area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#aa0d9f132691a3f24186dcdff72be5d28" title="Get the transformation matrix from the model frame (root of model) to the frame identified by frame_i..." alt="" coords="312,5,496,47"/>
 <area shape="rect" href="classrobot__trajectory_1_1RobotTrajectory.html#a197a5c3e1d46aa07e05a6014f7b526dc" title=" " alt="" coords="287,71,521,112"/>

@@ -1,13 +1,12 @@
 <map id="moveit2/moveit_ros/perception/lazy_free_space_updater/include/moveit/lazy_free_space_updater/lazy_free_space_updater.h" name="moveit2/moveit_ros/perception/lazy_free_space_updater/include/moveit/lazy_free_space_updater/lazy_free_space_updater.h">
-<area shape="rect" id="node1" title=" " alt="" coords="691,5,879,105"/>
-<area shape="rect" id="node2" href="$occupancy__map_8h.html" title=" " alt="" coords="440,153,635,195"/>
-<area shape="rect" id="node9" title=" " alt="" coords="659,161,791,187"/>
-<area shape="rect" id="node10" title=" " alt="" coords="815,161,878,187"/>
-<area shape="rect" id="node11" title=" " alt="" coords="902,161,1026,187"/>
+<area shape="rect" id="node1" title=" " alt="" coords="609,5,797,105"/>
+<area shape="rect" id="node2" href="$occupancy__map_8h.html" title=" " alt="" coords="351,153,553,195"/>
+<area shape="rect" id="node8" title=" " alt="" coords="577,161,709,187"/>
+<area shape="rect" id="node9" title=" " alt="" coords="733,161,795,187"/>
+<area shape="rect" id="node10" title=" " alt="" coords="819,161,943,187"/>
 <area shape="rect" id="node3" title=" " alt="" coords="5,250,157,277"/>
 <area shape="rect" id="node4" title=" " alt="" coords="181,250,352,277"/>
 <area shape="rect" id="node5" title=" " alt="" coords="376,243,528,284"/>
 <area shape="rect" id="node6" title=" " alt="" coords="553,250,695,277"/>
 <area shape="rect" id="node7" title=" " alt="" coords="720,250,797,277"/>
-<area shape="rect" id="node8" title=" " alt="" coords="821,250,880,277"/>
 </map>

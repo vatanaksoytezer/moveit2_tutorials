@@ -109,152 +109,149 @@ $(function() {
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="transform__provider_8h.html">moveit/mesh_filter/transform_provider.h</a>&gt;</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;tf2_ros/transform_listener.h&gt;</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &lt;tf2_ros/buffer.h&gt;</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#if __has_include(&lt;tf2_eigen/tf2_eigen.hpp&gt;)</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &lt;tf2_eigen/tf2_eigen.hpp&gt;</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &lt;tf2_eigen/tf2_eigen.h&gt;</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classTransformProvider.html#ad6822e086b190750562e1599ae80ab99">   46</a></span>&#160;<a class="code" href="classTransformProvider.html#ad6822e086b190750562e1599ae80ab99">TransformProvider::TransformProvider</a>(<span class="keywordtype">double</span> update_rate) : stop_(true), update_rate_(update_rate)</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  tf_buffer_ = std::make_shared&lt;tf2_ros::Buffer&gt;();</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  tf_listener_ = std::make_shared&lt;tf2_ros::TransformListener&gt;(*tf_buffer_);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  psm_ = std::make_shared&lt;planning_scene_monitor::PlanningSceneMonitor&gt;(<span class="stringliteral">&quot;robot_description&quot;</span>, tf_buffer_);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  psm_-&gt;startStateMonitor();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classTransformProvider.html#a19989e1828a009776e02f733002a3b9f">   54</a></span>&#160;<a class="code" href="classTransformProvider.html#a19989e1828a009776e02f733002a3b9f">TransformProvider::~TransformProvider</a>()</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <a class="code" href="classTransformProvider.html#a07410ca245e60ff1d907328baf54c064">stop</a>();</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classTransformProvider.html#a05051ef0b96c00445fe66b2be8c05fc4">   59</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classTransformProvider.html#a05051ef0b96c00445fe66b2be8c05fc4">TransformProvider::start</a>()</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;{</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  stop_ = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  thread_ = std::thread(&amp;TransformProvider::run, <span class="keyword">this</span>);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="classTransformProvider.html#a07410ca245e60ff1d907328baf54c064">   65</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classTransformProvider.html#a07410ca245e60ff1d907328baf54c064">TransformProvider::stop</a>()</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  stop_ = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  thread_.join();</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classTransformProvider.html#a18df58a37629f07e2ab6c179dcc33b0a">   71</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classTransformProvider.html#a18df58a37629f07e2ab6c179dcc33b0a">TransformProvider::addHandle</a>(<a class="code" href="namespacemesh__filter.html#a07c4a34ccdc891a29719367f162c52a1">mesh_filter::MeshHandle</a> handle, <span class="keyword">const</span> std::string&amp; name)</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;{</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordflow">if</span> (!stop_)</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Can not add handles if TransformProvider is running&quot;</span>);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  handle2context_[handle] = std::make_shared&lt;TransformContext&gt;(name);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="classTransformProvider.html#a107f398eee4b9e6ad3397ded3d148da6">   79</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classTransformProvider.html#a107f398eee4b9e6ad3397ded3d148da6">TransformProvider::setFrame</a>(<span class="keyword">const</span> std::string&amp; frame)</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;{</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keywordflow">if</span> (frame_id_ != frame)</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    frame_id_ = frame;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; context_it : handle2context_)</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      <span class="comment">// invalidate transformations</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;      context_it.second-&gt;mutex_.lock();</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;      context_it.second-&gt;transformation_.matrix().setZero();</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;      context_it.second-&gt;mutex_.unlock();</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  }</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &lt;tf2_eigen/tf2_eigen.h&gt;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classTransformProvider.html#ad6822e086b190750562e1599ae80ab99">   42</a></span>&#160;<a class="code" href="classTransformProvider.html#ad6822e086b190750562e1599ae80ab99">TransformProvider::TransformProvider</a>(<span class="keywordtype">double</span> update_rate) : stop_(true), update_rate_(update_rate)</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  tf_buffer_ = std::make_shared&lt;tf2_ros::Buffer&gt;();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  tf_listener_.reset(<span class="keyword">new</span> tf2_ros::TransformListener(*tf_buffer_));</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  psm_.reset(<span class="keyword">new</span> <a class="code" href="classplanning__scene__monitor_1_1PlanningSceneMonitor.html">planning_scene_monitor::PlanningSceneMonitor</a>(<span class="stringliteral">&quot;robot_description&quot;</span>, tf_buffer_));</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  psm_-&gt;startStateMonitor();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classTransformProvider.html#a19989e1828a009776e02f733002a3b9f">   50</a></span>&#160;<a class="code" href="classTransformProvider.html#a19989e1828a009776e02f733002a3b9f">TransformProvider::~TransformProvider</a>()</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <a class="code" href="classTransformProvider.html#a07410ca245e60ff1d907328baf54c064">stop</a>();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classTransformProvider.html#a05051ef0b96c00445fe66b2be8c05fc4">   55</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classTransformProvider.html#a05051ef0b96c00445fe66b2be8c05fc4">TransformProvider::start</a>()</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  stop_ = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  thread_ = std::thread(&amp;TransformProvider::run, <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classTransformProvider.html#a07410ca245e60ff1d907328baf54c064">   61</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classTransformProvider.html#a07410ca245e60ff1d907328baf54c064">TransformProvider::stop</a>()</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;{</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  stop_ = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  thread_.join();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="classTransformProvider.html#a18df58a37629f07e2ab6c179dcc33b0a">   67</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classTransformProvider.html#a18df58a37629f07e2ab6c179dcc33b0a">TransformProvider::addHandle</a>(<a class="code" href="namespacemesh__filter.html#a07c4a34ccdc891a29719367f162c52a1">mesh_filter::MeshHandle</a> handle, <span class="keyword">const</span> std::string&amp; name)</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;{</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordflow">if</span> (!stop_)</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Can not add handles if TransformProvider is running&quot;</span>);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  handle2context_[handle].reset(<span class="keyword">new</span> TransformContext(name));</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classTransformProvider.html#a107f398eee4b9e6ad3397ded3d148da6">   75</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classTransformProvider.html#a107f398eee4b9e6ad3397ded3d148da6">TransformProvider::setFrame</a>(<span class="keyword">const</span> std::string&amp; frame)</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;{</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keywordflow">if</span> (frame_id_ != frame)</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    frame_id_ = frame;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; context_it : handle2context_)</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;      <span class="comment">// invalidate transformations</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;      context_it.second-&gt;mutex_.lock();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;      context_it.second-&gt;transformation_.matrix().setZero();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;      context_it.second-&gt;mutex_.unlock();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="classTransformProvider.html#adbfeda079552e910b07994008117d237">   90</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classTransformProvider.html#adbfeda079552e910b07994008117d237">TransformProvider::getTransform</a>(<a class="code" href="namespacemesh__filter.html#a07c4a34ccdc891a29719367f162c52a1">mesh_filter::MeshHandle</a> handle, Eigen::Isometry3d&amp; transform)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="keyword">auto</span> context_it = handle2context_.find(handle);</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="classTransformProvider.html#adbfeda079552e910b07994008117d237">   94</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classTransformProvider.html#adbfeda079552e910b07994008117d237">TransformProvider::getTransform</a>(<a class="code" href="namespacemesh__filter.html#a07c4a34ccdc891a29719367f162c52a1">mesh_filter::MeshHandle</a> handle, Eigen::Isometry3d&amp; transform)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <span class="keyword">auto</span> context_it = handle2context_.find(handle);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keywordflow">if</span> (context_it == handle2context_.end())</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  {</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    ROS_ERROR(<span class="stringliteral">&quot;Unable to find mesh with handle %d&quot;</span>, handle);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  }</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  context_it-&gt;second-&gt;mutex_.lock();</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  transform = context_it-&gt;second-&gt;transformation_;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  context_it-&gt;second-&gt;mutex_.unlock();</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <span class="keywordflow">return</span> !(transform.matrix().isZero(0));</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;}</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="keywordtype">void</span> TransformProvider::run()</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;{</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <span class="keywordflow">if</span> (handle2context_.empty())</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;TransformProvider is listening to empty list of frames!&quot;</span>);</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <span class="keywordflow">while</span> (ros::ok() &amp;&amp; !stop_)</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  {</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    updateTransforms();</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    update_rate_.sleep();</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  }</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;}</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="classTransformProvider.html#a662f9b6efc25b24aaa0470b8872deff9">  121</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classTransformProvider.html#a662f9b6efc25b24aaa0470b8872deff9">TransformProvider::setUpdateRate</a>(<span class="keywordtype">double</span> update_rate)</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;{</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  update_rate_ = ros::Rate(update_rate);</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;}</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="keywordtype">void</span> TransformProvider::updateTransforms()</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;{</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  <span class="comment">// Don&#39;t bother if frame_id_ is empty (true initially)</span></div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <span class="keywordflow">if</span> (frame_id_.empty())</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  {</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    ROS_DEBUG_THROTTLE(2., <span class="stringliteral">&quot;Not updating transforms because frame_id_ is empty.&quot;</span>);</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  }</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  <span class="keyword">static</span> tf2::Stamped&lt;Eigen::Isometry3d&gt; input_transform, output_transform;</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  <span class="keyword">static</span> moveit::core::RobotStatePtr robot_state;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  robot_state = psm_-&gt;getStateMonitor()-&gt;getCurrentState();</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  <span class="keywordflow">try</span></div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  {</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    geometry_msgs::TransformStamped common_tf =</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        tf_buffer_-&gt;lookupTransform(frame_id_, psm_-&gt;getPlanningScene()-&gt;getPlanningFrame(), ros::Time(0.0));</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    input_transform.stamp_ = common_tf.header.stamp;</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  }</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  <span class="keywordflow">catch</span> (tf2::TransformException&amp; ex)</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  {</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    ROS_ERROR(<span class="stringliteral">&quot;TF Problem: %s&quot;</span>, ex.what());</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  }</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  input_transform.frame_id_ = psm_-&gt;getPlanningScene()-&gt;getPlanningFrame();</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; context_it : handle2context_)</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  {</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keywordflow">try</span></div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    {</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;      <span class="comment">// TODO: check logic here - which global collision body&#39;s transform should be used?</span></div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;      input_transform.setData(robot_state-&gt;getGlobalLinkTransform(context_it.second-&gt;frame_id_));</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;      tf_buffer_-&gt;transform(input_transform, output_transform, frame_id_);</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    }</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keywordflow">catch</span> (<span class="keyword">const</span> tf2::TransformException&amp; ex)</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    {</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;      handle2context_[context_it.first]-&gt;mutex_.lock();</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;      handle2context_[context_it.first]-&gt;transformation_.matrix().setZero();</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;      handle2context_[context_it.first]-&gt;mutex_.unlock();</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;      <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keywordflow">if</span> (context_it == handle2context_.end())</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    ROS_ERROR(<span class="stringliteral">&quot;Unable to find mesh with handle %d&quot;</span>, handle);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  context_it-&gt;second-&gt;mutex_.lock();</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  transform = context_it-&gt;second-&gt;transformation_;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  context_it-&gt;second-&gt;mutex_.unlock();</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="keywordflow">return</span> !(transform.matrix().isZero(0));</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;}</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="keywordtype">void</span> TransformProvider::run()</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;{</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <span class="keywordflow">if</span> (handle2context_.empty())</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;TransformProvider is listening to empty list of frames!&quot;</span>);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <span class="keywordflow">while</span> (ros::ok() &amp;&amp; !stop_)</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    updateTransforms();</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    update_rate_.sleep();</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;}</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="classTransformProvider.html#a662f9b6efc25b24aaa0470b8872deff9">  117</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classTransformProvider.html#a662f9b6efc25b24aaa0470b8872deff9">TransformProvider::setUpdateRate</a>(<span class="keywordtype">double</span> update_rate)</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;{</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  update_rate_ = ros::Rate(update_rate);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;}</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="keywordtype">void</span> TransformProvider::updateTransforms()</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;{</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  <span class="comment">// Don&#39;t bother if frame_id_ is empty (true initially)</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <span class="keywordflow">if</span> (frame_id_.empty())</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    ROS_DEBUG_THROTTLE(2., <span class="stringliteral">&quot;Not updating transforms because frame_id_ is empty.&quot;</span>);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  }</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  <span class="keyword">static</span> tf2::Stamped&lt;Eigen::Isometry3d&gt; input_transform, output_transform;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  <span class="keyword">static</span> moveit::core::RobotStatePtr robot_state;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  robot_state = psm_-&gt;getStateMonitor()-&gt;getCurrentState();</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  <span class="keywordflow">try</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  {</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    geometry_msgs::TransformStamped common_tf =</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        tf_buffer_-&gt;lookupTransform(frame_id_, psm_-&gt;getPlanningScene()-&gt;getPlanningFrame(), ros::Time(0.0));</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    input_transform.stamp_ = common_tf.header.stamp;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  }</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  <span class="keywordflow">catch</span> (tf2::TransformException&amp; ex)</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  {</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    ROS_ERROR(<span class="stringliteral">&quot;TF Problem: %s&quot;</span>, ex.what());</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  }</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  input_transform.frame_id_ = psm_-&gt;getPlanningScene()-&gt;getPlanningFrame();</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; context_it : handle2context_)</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  {</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordflow">try</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    {</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;      <span class="comment">// TODO: check logic here - which global collision body&#39;s transform should be used?</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;      input_transform.setData(robot_state-&gt;getGlobalLinkTransform(context_it.second-&gt;frame_id_));</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;      tf_buffer_-&gt;transform(input_transform, output_transform, frame_id_);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    }</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordflow">catch</span> (<span class="keyword">const</span> tf2::TransformException&amp; ex)</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    {</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;      handle2context_[context_it.first]-&gt;mutex_.lock();</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;      handle2context_[context_it.first]-&gt;transformation_.matrix().setZero();</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;      handle2context_[context_it.first]-&gt;mutex_.unlock();</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;      <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    }</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordflow">catch</span> (std::exception&amp; ex)</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    {</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;      ROS_ERROR(<span class="stringliteral">&quot;Caught %s while updating transforms&quot;</span>, ex.what());</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    }</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keywordflow">catch</span> (std::exception&amp; ex)</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    {</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;      ROS_ERROR(<span class="stringliteral">&quot;Caught %s while updating transforms&quot;</span>, ex.what());</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    }</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    handle2context_[context_it.first]-&gt;mutex_.lock();</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    handle2context_[context_it.first]-&gt;transformation_ = <span class="keyword">static_cast&lt;</span>Eigen::Isometry3d<span class="keyword">&gt;</span>(output_transform);</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    handle2context_[context_it.first]-&gt;mutex_.unlock();</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;  }</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;}</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    handle2context_[context_it.first]-&gt;mutex_.lock();</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    handle2context_[context_it.first]-&gt;transformation_ = <span class="keyword">static_cast&lt;</span>Eigen::Isometry3d<span class="keyword">&gt;</span>(output_transform);</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    handle2context_[context_it.first]-&gt;mutex_.unlock();</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  }</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassTransformProvider_html_ad6822e086b190750562e1599ae80ab99"><div class="ttname"><a href="classTransformProvider.html#ad6822e086b190750562e1599ae80ab99">TransformProvider::TransformProvider</a></div><div class="ttdeci">TransformProvider(double update_rate=30.)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> <a href="transform__provider_8cpp_source.html#l00046">transform_provider.cpp:46</a></div></div>
-<div class="ttc" id="aclassTransformProvider_html_a107f398eee4b9e6ad3397ded3d148da6"><div class="ttname"><a href="classTransformProvider.html#a107f398eee4b9e6ad3397ded3d148da6">TransformProvider::setFrame</a></div><div class="ttdeci">void setFrame(const std::string &amp;frame)</div><div class="ttdoc">sets the camera frame id. The returned transformations are in respect to this coordinate frame</div><div class="ttdef"><b>Definition:</b> <a href="transform__provider_8cpp_source.html#l00079">transform_provider.cpp:79</a></div></div>
-<div class="ttc" id="aclassTransformProvider_html_a19989e1828a009776e02f733002a3b9f"><div class="ttname"><a href="classTransformProvider.html#a19989e1828a009776e02f733002a3b9f">TransformProvider::~TransformProvider</a></div><div class="ttdeci">~TransformProvider()</div><div class="ttdoc">Destructor.</div><div class="ttdef"><b>Definition:</b> <a href="transform__provider_8cpp_source.html#l00054">transform_provider.cpp:54</a></div></div>
-<div class="ttc" id="aclassTransformProvider_html_a662f9b6efc25b24aaa0470b8872deff9"><div class="ttname"><a href="classTransformProvider.html#a662f9b6efc25b24aaa0470b8872deff9">TransformProvider::setUpdateRate</a></div><div class="ttdeci">void setUpdateRate(double update_rate)</div><div class="ttdoc">sets the update rate in Hz. This should be slow enough to reduce the system load but fast enough to g...</div><div class="ttdef"><b>Definition:</b> <a href="transform__provider_8cpp_source.html#l00121">transform_provider.cpp:121</a></div></div>
-<div class="ttc" id="aclassTransformProvider_html_a18df58a37629f07e2ab6c179dcc33b0a"><div class="ttname"><a href="classTransformProvider.html#a18df58a37629f07e2ab6c179dcc33b0a">TransformProvider::addHandle</a></div><div class="ttdeci">void addHandle(mesh_filter::MeshHandle handle, const std::string &amp;name)</div><div class="ttdoc">registers a mesh with its handle</div><div class="ttdef"><b>Definition:</b> <a href="transform__provider_8cpp_source.html#l00071">transform_provider.cpp:71</a></div></div>
+<div class="ttc" id="aclassTransformProvider_html_ad6822e086b190750562e1599ae80ab99"><div class="ttname"><a href="classTransformProvider.html#ad6822e086b190750562e1599ae80ab99">TransformProvider::TransformProvider</a></div><div class="ttdeci">TransformProvider(double update_rate=30.)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> <a href="transform__provider_8cpp_source.html#l00042">transform_provider.cpp:42</a></div></div>
+<div class="ttc" id="aclassTransformProvider_html_a107f398eee4b9e6ad3397ded3d148da6"><div class="ttname"><a href="classTransformProvider.html#a107f398eee4b9e6ad3397ded3d148da6">TransformProvider::setFrame</a></div><div class="ttdeci">void setFrame(const std::string &amp;frame)</div><div class="ttdoc">sets the camera frame id. The returned transformations are in respect to this coordinate frame</div><div class="ttdef"><b>Definition:</b> <a href="transform__provider_8cpp_source.html#l00075">transform_provider.cpp:75</a></div></div>
+<div class="ttc" id="aclassTransformProvider_html_a19989e1828a009776e02f733002a3b9f"><div class="ttname"><a href="classTransformProvider.html#a19989e1828a009776e02f733002a3b9f">TransformProvider::~TransformProvider</a></div><div class="ttdeci">~TransformProvider()</div><div class="ttdoc">Destructor.</div><div class="ttdef"><b>Definition:</b> <a href="transform__provider_8cpp_source.html#l00050">transform_provider.cpp:50</a></div></div>
+<div class="ttc" id="aclassTransformProvider_html_a662f9b6efc25b24aaa0470b8872deff9"><div class="ttname"><a href="classTransformProvider.html#a662f9b6efc25b24aaa0470b8872deff9">TransformProvider::setUpdateRate</a></div><div class="ttdeci">void setUpdateRate(double update_rate)</div><div class="ttdoc">sets the update rate in Hz. This should be slow enough to reduce the system load but fast enough to g...</div><div class="ttdef"><b>Definition:</b> <a href="transform__provider_8cpp_source.html#l00117">transform_provider.cpp:117</a></div></div>
+<div class="ttc" id="aclassTransformProvider_html_a18df58a37629f07e2ab6c179dcc33b0a"><div class="ttname"><a href="classTransformProvider.html#a18df58a37629f07e2ab6c179dcc33b0a">TransformProvider::addHandle</a></div><div class="ttdeci">void addHandle(mesh_filter::MeshHandle handle, const std::string &amp;name)</div><div class="ttdoc">registers a mesh with its handle</div><div class="ttdef"><b>Definition:</b> <a href="transform__provider_8cpp_source.html#l00067">transform_provider.cpp:67</a></div></div>
+<div class="ttc" id="aclassplanning__scene__monitor_1_1PlanningSceneMonitor_html"><div class="ttname"><a href="classplanning__scene__monitor_1_1PlanningSceneMonitor.html">planning_scene_monitor::PlanningSceneMonitor</a></div><div class="ttdoc">PlanningSceneMonitor Subscribes to the topic planning_scene.</div><div class="ttdef"><b>Definition:</b> <a href="planning__scene__monitor_8h_source.html#l00097">planning_scene_monitor.h:97</a></div></div>
 <div class="ttc" id="atransform__provider_8h_html"><div class="ttname"><a href="transform__provider_8h.html">transform_provider.h</a></div></div>
 <div class="ttc" id="anamespacemesh__filter_html_a07c4a34ccdc891a29719367f162c52a1"><div class="ttname"><a href="namespacemesh__filter.html#a07c4a34ccdc891a29719367f162c52a1">mesh_filter::MeshHandle</a></div><div class="ttdeci">unsigned int MeshHandle</div><div class="ttdef"><b>Definition:</b> <a href="mesh__filter__base_8h_source.html#l00060">mesh_filter_base.h:60</a></div></div>
-<div class="ttc" id="aclassTransformProvider_html_adbfeda079552e910b07994008117d237"><div class="ttname"><a href="classTransformProvider.html#adbfeda079552e910b07994008117d237">TransformProvider::getTransform</a></div><div class="ttdeci">bool getTransform(mesh_filter::MeshHandle handle, Eigen::Isometry3d &amp;transform) const</div><div class="ttdoc">returns the current transformation of a mesh given by its handle</div><div class="ttdef"><b>Definition:</b> <a href="transform__provider_8cpp_source.html#l00094">transform_provider.cpp:94</a></div></div>
-<div class="ttc" id="aclassTransformProvider_html_a07410ca245e60ff1d907328baf54c064"><div class="ttname"><a href="classTransformProvider.html#a07410ca245e60ff1d907328baf54c064">TransformProvider::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdoc">stops the update process/thread.</div><div class="ttdef"><b>Definition:</b> <a href="transform__provider_8cpp_source.html#l00065">transform_provider.cpp:65</a></div></div>
-<div class="ttc" id="aclassTransformProvider_html_a05051ef0b96c00445fe66b2be8c05fc4"><div class="ttname"><a href="classTransformProvider.html#a05051ef0b96c00445fe66b2be8c05fc4">TransformProvider::start</a></div><div class="ttdeci">void start()</div><div class="ttdoc">starts the updating process. Done in a separate thread</div><div class="ttdef"><b>Definition:</b> <a href="transform__provider_8cpp_source.html#l00059">transform_provider.cpp:59</a></div></div>
+<div class="ttc" id="aclassTransformProvider_html_adbfeda079552e910b07994008117d237"><div class="ttname"><a href="classTransformProvider.html#adbfeda079552e910b07994008117d237">TransformProvider::getTransform</a></div><div class="ttdeci">bool getTransform(mesh_filter::MeshHandle handle, Eigen::Isometry3d &amp;transform) const</div><div class="ttdoc">returns the current transformation of a mesh given by its handle</div><div class="ttdef"><b>Definition:</b> <a href="transform__provider_8cpp_source.html#l00090">transform_provider.cpp:90</a></div></div>
+<div class="ttc" id="aclassTransformProvider_html_a07410ca245e60ff1d907328baf54c064"><div class="ttname"><a href="classTransformProvider.html#a07410ca245e60ff1d907328baf54c064">TransformProvider::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdoc">stops the update process/thread.</div><div class="ttdef"><b>Definition:</b> <a href="transform__provider_8cpp_source.html#l00061">transform_provider.cpp:61</a></div></div>
+<div class="ttc" id="aclassTransformProvider_html_a05051ef0b96c00445fe66b2be8c05fc4"><div class="ttname"><a href="classTransformProvider.html#a05051ef0b96c00445fe66b2be8c05fc4">TransformProvider::start</a></div><div class="ttdeci">void start()</div><div class="ttdoc">starts the updating process. Done in a seperate thread</div><div class="ttdef"><b>Definition:</b> <a href="transform__provider_8cpp_source.html#l00055">transform_provider.cpp:55</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

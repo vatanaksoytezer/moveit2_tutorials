@@ -126,7 +126,7 @@ $(function() {
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="comment">// construct the quad cost for all variables, as a sum of squared differentiation matrices</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordtype">double</span> multiplier = 1.0;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; derivative_costs.size(); ++i)</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; derivative_costs.size(); i++)</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  {</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    multiplier *= trajectory.<a class="code" href="classchomp_1_1ChompTrajectory.html#a555a33aaa519180084a11cf60575e851">getDiscretization</a>();</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    diff_matrix = getDiffMatrix(num_vars_all, &amp;DIFF_RULES[i][0]);</div>
@@ -146,9 +146,9 @@ $(function() {
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;Eigen::MatrixXd ChompCost::getDiffMatrix(<span class="keywordtype">int</span> size, <span class="keyword">const</span> <span class="keywordtype">double</span>* diff_rule)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  MatrixXd matrix = MatrixXd::Zero(size, size);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; size; ++i)</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; size; i++)</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = -DIFF_RULE_LENGTH / 2; j &lt;= DIFF_RULE_LENGTH / 2; ++j)</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = -DIFF_RULE_LENGTH / 2; j &lt;= DIFF_RULE_LENGTH / 2; j++)</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    {</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;      <span class="keywordtype">int</span> index = i + j;</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;      <span class="keywordflow">if</span> (index &lt; 0)</div>

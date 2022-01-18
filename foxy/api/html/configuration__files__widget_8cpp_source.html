@@ -283,7 +283,7 @@ $(function() {
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;  template_path = config_data_-&gt;appendPaths(config_data_-&gt;template_package_path_, <span class="stringliteral">&quot;package.xml.template&quot;</span>);</div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#afef2261f73e67b0e3ca8cd4c035406cb">description_</a> = <span class="stringliteral">&quot;Defines a ROS package&quot;</span>;</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#acb4868a0e39a8a82ee648a04f1553eaa">gen_func_</a> = boost::bind(&amp;ConfigurationFilesWidget::copyTemplate, <span class="keyword">this</span>, template_path, _1);</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#a694f1895d63d746c97ddcff4aa06d7db">write_on_changes</a> = <a class="code" href="classmoveit__setup__assistant_1_1MoveItConfigData.html#a546b1f4d6cb05beac1c035cb877f8d76a0717106847bea5021b08c247903737c6">MoveItConfigData::AUTHOR_INFO</a>;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#a694f1895d63d746c97ddcff4aa06d7db">write_on_changes</a> = MoveItConfigData::AUTHOR_INFO;</div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;  gen_files_.push_back(file);</div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160; </div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;  <span class="comment">// CMakeLists.txt --------------------------------------------------------------------------------------</span></div>
@@ -296,7 +296,7 @@ $(function() {
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;  gen_files_.push_back(file);</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160; </div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;  <span class="comment">// -------------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;  <span class="comment">// CONFIG FILES -------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;  <span class="comment">// CONIG FILES -------------------------------------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;  <span class="comment">// -------------------------------------------------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;  std::string config_path = <span class="stringliteral">&quot;config&quot;</span>;</div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160; </div>
@@ -320,7 +320,7 @@ $(function() {
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                      <span class="stringliteral">&quot;information about the robot that is not in the URDF file, but it is useful for a variety of &quot;</span></div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                      <span class="stringliteral">&quot;applications. The intention is to include information that has a semantic aspect to it.&quot;</span>;</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#acb4868a0e39a8a82ee648a04f1553eaa">gen_func_</a> = boost::bind(&amp;srdf::SRDFWriter::writeSRDF, config_data_-&gt;srdf_, _1);</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#a694f1895d63d746c97ddcff4aa06d7db">write_on_changes</a> = <a class="code" href="classmoveit__setup__assistant_1_1MoveItConfigData.html#a546b1f4d6cb05beac1c035cb877f8d76a0928f49eaa468d2b3251b96a86f1d57d">MoveItConfigData::SRDF</a>;</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#a694f1895d63d746c97ddcff4aa06d7db">write_on_changes</a> = MoveItConfigData::SRDF;</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;  gen_files_.push_back(file);</div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;  <span class="comment">// special step required so the generated .setup_assistant yaml has this value</span></div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;  config_data_-&gt;srdf_pkg_relative_path_ = file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#a138d4b5df17df1b2af5ab8bdc42f21f8">rel_path_</a>;</div>
@@ -336,16 +336,16 @@ $(function() {
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                      <span class="stringliteral">&quot;planner_configs tag. While defining a planner configuration, the only mandatory parameter is &quot;</span></div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                      <span class="stringliteral">&quot;&#39;type&#39;, which is the name of the motion planner to be used. Any other planner-specific &quot;</span></div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                      <span class="stringliteral">&quot;parameters can be defined but are optional.&quot;</span>;</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#acb4868a0e39a8a82ee648a04f1553eaa">gen_func_</a> = boost::bind(&amp;<a class="code" href="classmoveit__setup__assistant_1_1MoveItConfigData.html#ae4a7605cf75901915b28d3f893733836">MoveItConfigData::outputOMPLPlanningYAML</a>, config_data_, _1);</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#a694f1895d63d746c97ddcff4aa06d7db">write_on_changes</a> = <a class="code" href="classmoveit__setup__assistant_1_1MoveItConfigData.html#a546b1f4d6cb05beac1c035cb877f8d76aa31cbc923d3b18bae7e72a2f083e971b">MoveItConfigData::GROUPS</a>;</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#acb4868a0e39a8a82ee648a04f1553eaa">gen_func_</a> = boost::bind(&amp;MoveItConfigData::outputOMPLPlanningYAML, config_data_, _1);</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#a694f1895d63d746c97ddcff4aa06d7db">write_on_changes</a> = MoveItConfigData::GROUPS;</div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;  gen_files_.push_back(file);</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;  <span class="comment">// chomp_planning.yaml  --------------------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#ac38b69f94e5280255882bf47e5bd5ac7">file_name_</a> = <span class="stringliteral">&quot;chomp_planning.yaml&quot;</span>;</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#a138d4b5df17df1b2af5ab8bdc42f21f8">rel_path_</a> = config_data_-&gt;appendPaths(config_path, file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#ac38b69f94e5280255882bf47e5bd5ac7">file_name_</a>);</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#afef2261f73e67b0e3ca8cd4c035406cb">description_</a> = <span class="stringliteral">&quot;Specifies which chomp planning plugin parameters to be used for the CHOMP planner&quot;</span>;</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#acb4868a0e39a8a82ee648a04f1553eaa">gen_func_</a> = boost::bind(&amp;<a class="code" href="classmoveit__setup__assistant_1_1MoveItConfigData.html#a3b61cd1572b50c459310735edd44f6bd">MoveItConfigData::outputCHOMPPlanningYAML</a>, config_data_, _1);</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#a694f1895d63d746c97ddcff4aa06d7db">write_on_changes</a> = <a class="code" href="classmoveit__setup__assistant_1_1MoveItConfigData.html#a546b1f4d6cb05beac1c035cb877f8d76aa31cbc923d3b18bae7e72a2f083e971b">MoveItConfigData::GROUPS</a>;  <span class="comment">// need to double check if this is actually correct!</span></div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#acb4868a0e39a8a82ee648a04f1553eaa">gen_func_</a> = boost::bind(&amp;MoveItConfigData::outputCHOMPPlanningYAML, config_data_, _1);</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#a694f1895d63d746c97ddcff4aa06d7db">write_on_changes</a> = MoveItConfigData::GROUPS;  <span class="comment">// need to double check if this is actually correct!</span></div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;  gen_files_.push_back(file);</div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; </div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;  <span class="comment">// kinematics.yaml  --------------------------------------------------------------------------------------</span></div>
@@ -353,8 +353,8 @@ $(function() {
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#a138d4b5df17df1b2af5ab8bdc42f21f8">rel_path_</a> = config_data_-&gt;appendPaths(config_path, file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#ac38b69f94e5280255882bf47e5bd5ac7">file_name_</a>);</div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#afef2261f73e67b0e3ca8cd4c035406cb">description_</a> = <span class="stringliteral">&quot;Specifies which kinematic solver plugin to use for each planning group in the SRDF, as well as &quot;</span></div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                      <span class="stringliteral">&quot;the kinematic solver search resolution.&quot;</span>;</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#acb4868a0e39a8a82ee648a04f1553eaa">gen_func_</a> = boost::bind(&amp;<a class="code" href="classmoveit__setup__assistant_1_1MoveItConfigData.html#a88ca0cac3c88f55d881a325fb45bd40d">MoveItConfigData::outputKinematicsYAML</a>, config_data_, _1);</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#a694f1895d63d746c97ddcff4aa06d7db">write_on_changes</a> = <a class="code" href="classmoveit__setup__assistant_1_1MoveItConfigData.html#a546b1f4d6cb05beac1c035cb877f8d76aa31cbc923d3b18bae7e72a2f083e971b">MoveItConfigData::GROUPS</a> | <a class="code" href="classmoveit__setup__assistant_1_1MoveItConfigData.html#a546b1f4d6cb05beac1c035cb877f8d76ae1f352a3ea399b617f7ed63b728f6b35">MoveItConfigData::GROUP_KINEMATICS</a>;</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#acb4868a0e39a8a82ee648a04f1553eaa">gen_func_</a> = boost::bind(&amp;MoveItConfigData::outputKinematicsYAML, config_data_, _1);</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#a694f1895d63d746c97ddcff4aa06d7db">write_on_changes</a> = MoveItConfigData::GROUPS | MoveItConfigData::GROUP_KINEMATICS;</div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;  gen_files_.push_back(file);</div>
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160; </div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;  <span class="comment">// joint_limits.yaml --------------------------------------------------------------------------------------</span></div>
@@ -365,7 +365,7 @@ $(function() {
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                      <span class="stringliteral">&quot;and acceleration than those contained in your URDF. This information is used by our trajectory &quot;</span></div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                      <span class="stringliteral">&quot;filtering system to assign reasonable velocities and timing for the trajectory before it is &quot;</span></div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                      <span class="stringliteral">&quot;passed to the robots controllers.&quot;</span>;</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#acb4868a0e39a8a82ee648a04f1553eaa">gen_func_</a> = boost::bind(&amp;<a class="code" href="classmoveit__setup__assistant_1_1MoveItConfigData.html#a0cb060e532a3dbc7af728ea612de0d30">MoveItConfigData::outputJointLimitsYAML</a>, config_data_, _1);</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#acb4868a0e39a8a82ee648a04f1553eaa">gen_func_</a> = boost::bind(&amp;MoveItConfigData::outputJointLimitsYAML, config_data_, _1);</div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#a694f1895d63d746c97ddcff4aa06d7db">write_on_changes</a> = 0;  <span class="comment">// Can they be changed?</span></div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;  gen_files_.push_back(file);</div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160; </div>
@@ -385,24 +385,24 @@ $(function() {
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#a138d4b5df17df1b2af5ab8bdc42f21f8">rel_path_</a> = config_data_-&gt;appendPaths(config_path, file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#ac38b69f94e5280255882bf47e5bd5ac7">file_name_</a>);</div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#afef2261f73e67b0e3ca8cd4c035406cb">description_</a> = <span class="stringliteral">&quot;Creates dummy configurations for controllers that correspond to defined groups. This is mostly &quot;</span></div>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;                      <span class="stringliteral">&quot;useful for testing.&quot;</span>;</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#acb4868a0e39a8a82ee648a04f1553eaa">gen_func_</a> = boost::bind(&amp;<a class="code" href="classmoveit__setup__assistant_1_1MoveItConfigData.html#ac96c73240c5f73d83e6909610f45f409">MoveItConfigData::outputFakeControllersYAML</a>, config_data_, _1);</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#a694f1895d63d746c97ddcff4aa06d7db">write_on_changes</a> = <a class="code" href="classmoveit__setup__assistant_1_1MoveItConfigData.html#a546b1f4d6cb05beac1c035cb877f8d76aa31cbc923d3b18bae7e72a2f083e971b">MoveItConfigData::GROUPS</a>;</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#acb4868a0e39a8a82ee648a04f1553eaa">gen_func_</a> = boost::bind(&amp;MoveItConfigData::outputFakeControllersYAML, config_data_, _1);</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#a694f1895d63d746c97ddcff4aa06d7db">write_on_changes</a> = MoveItConfigData::GROUPS;</div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;  gen_files_.push_back(file);</div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160; </div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;  <span class="comment">// ros_controllers.yaml --------------------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#ac38b69f94e5280255882bf47e5bd5ac7">file_name_</a> = <span class="stringliteral">&quot;ros_controllers.yaml&quot;</span>;</div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#a138d4b5df17df1b2af5ab8bdc42f21f8">rel_path_</a> = config_data_-&gt;appendPaths(config_path, file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#ac38b69f94e5280255882bf47e5bd5ac7">file_name_</a>);</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#afef2261f73e67b0e3ca8cd4c035406cb">description_</a> = <span class="stringliteral">&quot;Creates configurations for ros_controllers.&quot;</span>;</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#acb4868a0e39a8a82ee648a04f1553eaa">gen_func_</a> = boost::bind(&amp;<a class="code" href="classmoveit__setup__assistant_1_1MoveItConfigData.html#ad65ed096455399bca0ae1f16be175f90">MoveItConfigData::outputROSControllersYAML</a>, config_data_, _1);</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#a694f1895d63d746c97ddcff4aa06d7db">write_on_changes</a> = <a class="code" href="classmoveit__setup__assistant_1_1MoveItConfigData.html#a546b1f4d6cb05beac1c035cb877f8d76aa31cbc923d3b18bae7e72a2f083e971b">MoveItConfigData::GROUPS</a>;</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#acb4868a0e39a8a82ee648a04f1553eaa">gen_func_</a> = boost::bind(&amp;MoveItConfigData::outputROSControllersYAML, config_data_, _1);</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#a694f1895d63d746c97ddcff4aa06d7db">write_on_changes</a> = MoveItConfigData::GROUPS;</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;  gen_files_.push_back(file);</div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160; </div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;  <span class="comment">// sensors_3d.yaml --------------------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#ac38b69f94e5280255882bf47e5bd5ac7">file_name_</a> = <span class="stringliteral">&quot;sensors_3d.yaml&quot;</span>;</div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#a138d4b5df17df1b2af5ab8bdc42f21f8">rel_path_</a> = config_data_-&gt;appendPaths(config_path, file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#ac38b69f94e5280255882bf47e5bd5ac7">file_name_</a>);</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#afef2261f73e67b0e3ca8cd4c035406cb">description_</a> = <span class="stringliteral">&quot;Creates configurations 3d sensors.&quot;</span>;</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#acb4868a0e39a8a82ee648a04f1553eaa">gen_func_</a> = boost::bind(&amp;<a class="code" href="classmoveit__setup__assistant_1_1MoveItConfigData.html#a2900443dbd7174d9eef6aeeac464d8af">MoveItConfigData::output3DSensorPluginYAML</a>, config_data_, _1);</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#a694f1895d63d746c97ddcff4aa06d7db">write_on_changes</a> = <a class="code" href="classmoveit__setup__assistant_1_1MoveItConfigData.html#a546b1f4d6cb05beac1c035cb877f8d76a034b08bd7783b92f8d7fa164129d912f">MoveItConfigData::SENSORS_CONFIG</a>;</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#acb4868a0e39a8a82ee648a04f1553eaa">gen_func_</a> = boost::bind(&amp;MoveItConfigData::output3DSensorPluginYAML, config_data_, _1);</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#a694f1895d63d746c97ddcff4aa06d7db">write_on_changes</a> = MoveItConfigData::SENSORS_CONFIG;</div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;  gen_files_.push_back(file);</div>
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160; </div>
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;  <span class="comment">// -------------------------------------------------------------------------------------------------------------------</span></div>
@@ -632,7 +632,7 @@ $(function() {
 <div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;  template_path = config_data_-&gt;appendPaths(template_launch_path, <span class="stringliteral">&quot;ros_controllers.launch&quot;</span>);</div>
 <div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#afef2261f73e67b0e3ca8cd4c035406cb">description_</a> = <span class="stringliteral">&quot;ros_controllers launch file&quot;</span>;</div>
 <div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#acb4868a0e39a8a82ee648a04f1553eaa">gen_func_</a> = boost::bind(&amp;ConfigurationFilesWidget::copyTemplate, <span class="keyword">this</span>, template_path, _1);</div>
-<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#a694f1895d63d746c97ddcff4aa06d7db">write_on_changes</a> = <a class="code" href="classmoveit__setup__assistant_1_1MoveItConfigData.html#a546b1f4d6cb05beac1c035cb877f8d76aa31cbc923d3b18bae7e72a2f083e971b">MoveItConfigData::GROUPS</a>;</div>
+<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#a694f1895d63d746c97ddcff4aa06d7db">write_on_changes</a> = MoveItConfigData::GROUPS;</div>
 <div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;  gen_files_.push_back(file);</div>
 <div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160; </div>
 <div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;  <span class="comment">// moveit.rviz ------------------------------------------------------------------</span></div>
@@ -653,7 +653,7 @@ $(function() {
 <div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#ac38b69f94e5280255882bf47e5bd5ac7">file_name_</a> = <a class="code" href="namespacemoveit__setup__assistant.html#a21c6757031c3d02f483d85818911017a">SETUP_ASSISTANT_FILE</a>;</div>
 <div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#a138d4b5df17df1b2af5ab8bdc42f21f8">rel_path_</a> = file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#ac38b69f94e5280255882bf47e5bd5ac7">file_name_</a>;</div>
 <div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#afef2261f73e67b0e3ca8cd4c035406cb">description_</a> = <span class="stringliteral">&quot;MoveIt Setup Assistant&#39;s hidden settings file. You should not need to edit this file.&quot;</span>;</div>
-<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#acb4868a0e39a8a82ee648a04f1553eaa">gen_func_</a> = boost::bind(&amp;<a class="code" href="classmoveit__setup__assistant_1_1MoveItConfigData.html#a895e043c409daf5220e3b00cd2baf86d">MoveItConfigData::outputSetupAssistantFile</a>, config_data_, _1);</div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#acb4868a0e39a8a82ee648a04f1553eaa">gen_func_</a> = boost::bind(&amp;MoveItConfigData::outputSetupAssistantFile, config_data_, _1);</div>
 <div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;  file.<a class="code" href="structmoveit__setup__assistant_1_1GenerateFile.html#a694f1895d63d746c97ddcff4aa06d7db">write_on_changes</a> = -1;  <span class="comment">// write on any changes</span></div>
 <div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;  gen_files_.push_back(file);</div>
 <div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160; </div>
@@ -851,7 +851,7 @@ $(function() {
 <div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;  <span class="keywordflow">if</span> (config_data_-&gt;config_pkg_path_.empty())</div>
 <div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;  <span class="comment">// this is a new package</span></div>
 <div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160; </div>
-<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;  <span class="comment">// Check if we have the previous modification timestamp to compare against</span></div>
+<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;  <span class="comment">// Check if we have the previous modification timestamp to compare agains</span></div>
 <div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;  <span class="keywordflow">if</span> (config_data_-&gt;config_pkg_generated_timestamp_ == 0)</div>
 <div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;  <span class="comment">// this package has not been generated with a timestamp, backwards compatible.</span></div>
 <div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160; </div>
@@ -1071,7 +1071,7 @@ $(function() {
 <div class="line"><a name="l00999"></a><span class="lineno">  999</span>&#160;    <span class="comment">// Run the generate function</span></div>
 <div class="line"><a name="l01000"></a><span class="lineno"> 1000</span>&#160;    <span class="keywordflow">if</span> (!file-&gt;gen_func_(absolute_path))</div>
 <div class="line"><a name="l01001"></a><span class="lineno"> 1001</span>&#160;    {</div>
-<div class="line"><a name="l01002"></a><span class="lineno"> 1002</span>&#160;      <span class="comment">// Error occurred</span></div>
+<div class="line"><a name="l01002"></a><span class="lineno"> 1002</span>&#160;      <span class="comment">// Error occured</span></div>
 <div class="line"><a name="l01003"></a><span class="lineno"> 1003</span>&#160;      QMessageBox::critical(<span class="keyword">this</span>, <span class="stringliteral">&quot;Error Generating File&quot;</span>,</div>
 <div class="line"><a name="l01004"></a><span class="lineno"> 1004</span>&#160;                            QString(<span class="stringliteral">&quot;Failed to generate folder or file: &#39;&quot;</span>)</div>
 <div class="line"><a name="l01005"></a><span class="lineno"> 1005</span>&#160;                                .<a class="code" href="namespacerclcpp_1_1names.html#a4c3e21517afd9a6909de322da95c5e81">append</a>(file-&gt;rel_path_.c_str())</div>
@@ -1188,178 +1188,166 @@ $(function() {
 <div class="line"><a name="l01116"></a><span class="lineno"> 1116</span>&#160;  <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; config_data_-&gt;srdf_-&gt;virtual_joints_.size(); ++i)</div>
 <div class="line"><a name="l01117"></a><span class="lineno"> 1117</span>&#160;  {</div>
 <div class="line"><a name="l01118"></a><span class="lineno"> 1118</span>&#160;    <span class="keyword">const</span> srdf::Model::VirtualJoint&amp; vj = config_data_-&gt;srdf_-&gt;virtual_joints_[i];</div>
-<div class="line"><a name="l01119"></a><span class="lineno"> 1119</span>&#160;    vjb &lt;&lt; <span class="stringliteral">&quot;  &lt;node pkg=\&quot;tf2_ros\&quot; type=\&quot;static_transform_publisher\&quot; name=\&quot;virtual_joint_broadcaster_&quot;</span> &lt;&lt; i</div>
-<div class="line"><a name="l01120"></a><span class="lineno"> 1120</span>&#160;        &lt;&lt; <span class="stringliteral">&quot;\&quot; args=\&quot;0 0 0 0 0 0 &quot;</span> &lt;&lt; vj.parent_frame_ &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; vj.child_link_ &lt;&lt; <span class="stringliteral">&quot;\&quot; /&gt;&quot;</span> &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l01121"></a><span class="lineno"> 1121</span>&#160;  }</div>
-<div class="line"><a name="l01122"></a><span class="lineno"> 1122</span>&#160;  addTemplateString(<span class="stringliteral">&quot;[VIRTUAL_JOINT_BROADCASTER]&quot;</span>, vjb.str());</div>
-<div class="line"><a name="l01123"></a><span class="lineno"> 1123</span>&#160; </div>
-<div class="line"><a name="l01124"></a><span class="lineno"> 1124</span>&#160;  <span class="comment">// Pair 8 - Add dependencies to package.xml if the robot.urdf file is relative to a ROS package</span></div>
-<div class="line"><a name="l01125"></a><span class="lineno"> 1125</span>&#160;  <span class="keywordflow">if</span> (config_data_-&gt;urdf_pkg_name_.empty())</div>
-<div class="line"><a name="l01126"></a><span class="lineno"> 1126</span>&#160;  {</div>
-<div class="line"><a name="l01127"></a><span class="lineno"> 1127</span>&#160;    addTemplateString(<span class="stringliteral">&quot;[OTHER_DEPENDENCIES&quot;</span>, <span class="stringliteral">&quot;&quot;</span>);  <span class="comment">// not relative to a ROS package</span></div>
-<div class="line"><a name="l01128"></a><span class="lineno"> 1128</span>&#160;  }</div>
-<div class="line"><a name="l01129"></a><span class="lineno"> 1129</span>&#160;  <span class="keywordflow">else</span></div>
-<div class="line"><a name="l01130"></a><span class="lineno"> 1130</span>&#160;  {</div>
-<div class="line"><a name="l01131"></a><span class="lineno"> 1131</span>&#160;    std::stringstream deps;</div>
-<div class="line"><a name="l01132"></a><span class="lineno"> 1132</span>&#160;    deps &lt;&lt; <span class="stringliteral">&quot;  &lt;run_depend&gt;&quot;</span> &lt;&lt; config_data_-&gt;urdf_pkg_name_ &lt;&lt; <span class="stringliteral">&quot;&lt;/run_depend&gt;\n&quot;</span>;</div>
-<div class="line"><a name="l01133"></a><span class="lineno"> 1133</span>&#160;    addTemplateString(<span class="stringliteral">&quot;[OTHER_DEPENDENCIES]&quot;</span>, deps.str());  <span class="comment">// not relative to a ROS package</span></div>
-<div class="line"><a name="l01134"></a><span class="lineno"> 1134</span>&#160;  }</div>
-<div class="line"><a name="l01135"></a><span class="lineno"> 1135</span>&#160; </div>
-<div class="line"><a name="l01136"></a><span class="lineno"> 1136</span>&#160;  <span class="comment">// Pair 9 - Add ROS Controllers to ros_controllers.launch file</span></div>
-<div class="line"><a name="l01137"></a><span class="lineno"> 1137</span>&#160;  <span class="keywordflow">if</span> (config_data_-&gt;getROSControllers().empty())</div>
-<div class="line"><a name="l01138"></a><span class="lineno"> 1138</span>&#160;  {</div>
-<div class="line"><a name="l01139"></a><span class="lineno"> 1139</span>&#160;    addTemplateString(<span class="stringliteral">&quot;[ROS_CONTROLLERS]&quot;</span>, <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l01140"></a><span class="lineno"> 1140</span>&#160;  }</div>
-<div class="line"><a name="l01141"></a><span class="lineno"> 1141</span>&#160;  <span class="keywordflow">else</span></div>
-<div class="line"><a name="l01142"></a><span class="lineno"> 1142</span>&#160;  {</div>
-<div class="line"><a name="l01143"></a><span class="lineno"> 1143</span>&#160;    std::stringstream controllers;</div>
-<div class="line"><a name="l01144"></a><span class="lineno"> 1144</span>&#160;    <span class="keywordflow">for</span> (ROSControlConfig&amp; controller : config_data_-&gt;getROSControllers())</div>
-<div class="line"><a name="l01145"></a><span class="lineno"> 1145</span>&#160;    {</div>
-<div class="line"><a name="l01146"></a><span class="lineno"> 1146</span>&#160;      <span class="comment">// Check if the controller belongs to controller_list namespace</span></div>
-<div class="line"><a name="l01147"></a><span class="lineno"> 1147</span>&#160;      <span class="keywordflow">if</span> (controller.type_ != <span class="stringliteral">&quot;FollowJointTrajectory&quot;</span>)</div>
-<div class="line"><a name="l01148"></a><span class="lineno"> 1148</span>&#160;        controllers &lt;&lt; controller.name_ &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
-<div class="line"><a name="l01149"></a><span class="lineno"> 1149</span>&#160;    }</div>
-<div class="line"><a name="l01150"></a><span class="lineno"> 1150</span>&#160;    addTemplateString(<span class="stringliteral">&quot;[ROS_CONTROLLERS]&quot;</span>, controllers.str());</div>
-<div class="line"><a name="l01151"></a><span class="lineno"> 1151</span>&#160;  }</div>
-<div class="line"><a name="l01152"></a><span class="lineno"> 1152</span>&#160; </div>
-<div class="line"><a name="l01153"></a><span class="lineno"> 1153</span>&#160;  <span class="comment">// Pair 10 - Add parameter files for the kinematics solvers that should be loaded</span></div>
-<div class="line"><a name="l01154"></a><span class="lineno"> 1154</span>&#160;  <span class="comment">// in addition to kinematics.yaml by planning_context.launch</span></div>
-<div class="line"><a name="l01155"></a><span class="lineno"> 1155</span>&#160;  std::string kinematics_parameters_files_block;</div>
-<div class="line"><a name="l01156"></a><span class="lineno"> 1156</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; groups : config_data_-&gt;group_meta_data_)</div>
-<div class="line"><a name="l01157"></a><span class="lineno"> 1157</span>&#160;  {</div>
-<div class="line"><a name="l01158"></a><span class="lineno"> 1158</span>&#160;    <span class="keywordflow">if</span> (groups.second.kinematics_parameters_file_.empty())</div>
-<div class="line"><a name="l01159"></a><span class="lineno"> 1159</span>&#160;      <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l01160"></a><span class="lineno"> 1160</span>&#160; </div>
-<div class="line"><a name="l01161"></a><span class="lineno"> 1161</span>&#160;    <span class="comment">// add a linebreak if we have more than one entry</span></div>
-<div class="line"><a name="l01162"></a><span class="lineno"> 1162</span>&#160;    <span class="keywordflow">if</span> (!kinematics_parameters_files_block.empty())</div>
-<div class="line"><a name="l01163"></a><span class="lineno"> 1163</span>&#160;      kinematics_parameters_files_block += <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l01164"></a><span class="lineno"> 1164</span>&#160; </div>
-<div class="line"><a name="l01165"></a><span class="lineno"> 1165</span>&#160;    std::string line = <span class="stringliteral">&quot;    &lt;rosparam command=\&quot;load\&quot; ns=\&quot;&quot;</span> + groups.first + <span class="stringliteral">&quot;\&quot; file=\&quot;&quot;</span> +</div>
-<div class="line"><a name="l01166"></a><span class="lineno"> 1166</span>&#160;                       groups.second.kinematics_parameters_file_ + <span class="stringliteral">&quot;\&quot;/&gt;&quot;</span>;</div>
-<div class="line"><a name="l01167"></a><span class="lineno"> 1167</span>&#160;    kinematics_parameters_files_block += line;</div>
-<div class="line"><a name="l01168"></a><span class="lineno"> 1168</span>&#160;  }</div>
-<div class="line"><a name="l01169"></a><span class="lineno"> 1169</span>&#160;  addTemplateString(<span class="stringliteral">&quot;[KINEMATICS_PARAMETERS_FILE_NAMES_BLOCK]&quot;</span>, kinematics_parameters_files_block);</div>
-<div class="line"><a name="l01170"></a><span class="lineno"> 1170</span>&#160; </div>
-<div class="line"><a name="l01171"></a><span class="lineno"> 1171</span>&#160;  addTemplateString(<span class="stringliteral">&quot;[AUTHOR_NAME]&quot;</span>, config_data_-&gt;author_name_);</div>
-<div class="line"><a name="l01172"></a><span class="lineno"> 1172</span>&#160;  addTemplateString(<span class="stringliteral">&quot;[AUTHOR_EMAIL]&quot;</span>, config_data_-&gt;author_email_);</div>
-<div class="line"><a name="l01173"></a><span class="lineno"> 1173</span>&#160;}</div>
-<div class="line"><a name="l01174"></a><span class="lineno"> 1174</span>&#160; </div>
-<div class="line"><a name="l01175"></a><span class="lineno"> 1175</span>&#160;<span class="comment">// ******************************************************************************************</span></div>
-<div class="line"><a name="l01176"></a><span class="lineno"> 1176</span>&#160;<span class="comment">// Insert a string pair into the template_strings_ datastructure</span></div>
-<div class="line"><a name="l01177"></a><span class="lineno"> 1177</span>&#160;<span class="comment">// ******************************************************************************************</span></div>
-<div class="line"><a name="l01178"></a><span class="lineno"> 1178</span>&#160;<span class="keywordtype">bool</span> ConfigurationFilesWidget::addTemplateString(<span class="keyword">const</span> std::string&amp; key, <span class="keyword">const</span> std::string&amp; value)</div>
-<div class="line"><a name="l01179"></a><span class="lineno"> 1179</span>&#160;{</div>
-<div class="line"><a name="l01180"></a><span class="lineno"> 1180</span>&#160;  template_strings_.push_back(std::pair&lt;std::string, std::string&gt;(key, value));</div>
-<div class="line"><a name="l01181"></a><span class="lineno"> 1181</span>&#160; </div>
-<div class="line"><a name="l01182"></a><span class="lineno"> 1182</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l01183"></a><span class="lineno"> 1183</span>&#160;}</div>
-<div class="line"><a name="l01184"></a><span class="lineno"> 1184</span>&#160; </div>
-<div class="line"><a name="l01185"></a><span class="lineno"> 1185</span>&#160;<span class="comment">// ******************************************************************************************</span></div>
-<div class="line"><a name="l01186"></a><span class="lineno"> 1186</span>&#160;<span class="comment">// Copy a template from location &lt;template_path&gt; to location &lt;output_path&gt; and replace package name</span></div>
-<div class="line"><a name="l01187"></a><span class="lineno"> 1187</span>&#160;<span class="comment">// ******************************************************************************************</span></div>
-<div class="line"><a name="l01188"></a><span class="lineno"> 1188</span>&#160;<span class="keywordtype">bool</span> ConfigurationFilesWidget::copyTemplate(<span class="keyword">const</span> std::string&amp; template_path, <span class="keyword">const</span> std::string&amp; output_path)</div>
-<div class="line"><a name="l01189"></a><span class="lineno"> 1189</span>&#160;{</div>
-<div class="line"><a name="l01190"></a><span class="lineno"> 1190</span>&#160;  <span class="comment">// Check if template strings have been loaded yet</span></div>
-<div class="line"><a name="l01191"></a><span class="lineno"> 1191</span>&#160;  <span class="keywordflow">if</span> (template_strings_.empty())</div>
-<div class="line"><a name="l01192"></a><span class="lineno"> 1192</span>&#160;  {</div>
-<div class="line"><a name="l01193"></a><span class="lineno"> 1193</span>&#160;    loadTemplateStrings();</div>
-<div class="line"><a name="l01194"></a><span class="lineno"> 1194</span>&#160;  }</div>
-<div class="line"><a name="l01195"></a><span class="lineno"> 1195</span>&#160; </div>
-<div class="line"><a name="l01196"></a><span class="lineno"> 1196</span>&#160;  <span class="comment">// Error check file</span></div>
-<div class="line"><a name="l01197"></a><span class="lineno"> 1197</span>&#160;  <span class="keywordflow">if</span> (!fs::is_regular_file(template_path))</div>
-<div class="line"><a name="l01198"></a><span class="lineno"> 1198</span>&#160;  {</div>
-<div class="line"><a name="l01199"></a><span class="lineno"> 1199</span>&#160;    ROS_ERROR_STREAM(<span class="stringliteral">&quot;Unable to find template file &quot;</span> &lt;&lt; template_path);</div>
-<div class="line"><a name="l01200"></a><span class="lineno"> 1200</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l01201"></a><span class="lineno"> 1201</span>&#160;  }</div>
-<div class="line"><a name="l01202"></a><span class="lineno"> 1202</span>&#160; </div>
-<div class="line"><a name="l01203"></a><span class="lineno"> 1203</span>&#160;  <span class="comment">// Load file</span></div>
-<div class="line"><a name="l01204"></a><span class="lineno"> 1204</span>&#160;  std::ifstream template_stream(template_path.c_str());</div>
-<div class="line"><a name="l01205"></a><span class="lineno"> 1205</span>&#160;  <span class="keywordflow">if</span> (!template_stream.good())  <span class="comment">// File not found</span></div>
-<div class="line"><a name="l01206"></a><span class="lineno"> 1206</span>&#160;  {</div>
-<div class="line"><a name="l01207"></a><span class="lineno"> 1207</span>&#160;    ROS_ERROR_STREAM(<span class="stringliteral">&quot;Unable to load file &quot;</span> &lt;&lt; template_path);</div>
-<div class="line"><a name="l01208"></a><span class="lineno"> 1208</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l01209"></a><span class="lineno"> 1209</span>&#160;  }</div>
-<div class="line"><a name="l01210"></a><span class="lineno"> 1210</span>&#160; </div>
-<div class="line"><a name="l01211"></a><span class="lineno"> 1211</span>&#160;  <span class="comment">// Load the file to a string using an efficient memory allocation technique</span></div>
-<div class="line"><a name="l01212"></a><span class="lineno"> 1212</span>&#160;  std::string template_string;</div>
-<div class="line"><a name="l01213"></a><span class="lineno"> 1213</span>&#160;  template_stream.seekg(0, std::ios::end);</div>
-<div class="line"><a name="l01214"></a><span class="lineno"> 1214</span>&#160;  template_string.reserve(template_stream.tellg());</div>
-<div class="line"><a name="l01215"></a><span class="lineno"> 1215</span>&#160;  template_stream.seekg(0, std::ios::beg);</div>
-<div class="line"><a name="l01216"></a><span class="lineno"> 1216</span>&#160;  template_string.assign((std::istreambuf_iterator&lt;char&gt;(template_stream)), std::istreambuf_iterator&lt;char&gt;());</div>
-<div class="line"><a name="l01217"></a><span class="lineno"> 1217</span>&#160;  template_stream.close();</div>
-<div class="line"><a name="l01218"></a><span class="lineno"> 1218</span>&#160; </div>
-<div class="line"><a name="l01219"></a><span class="lineno"> 1219</span>&#160;  <span class="comment">// Replace keywords in string ------------------------------------------------------------</span></div>
-<div class="line"><a name="l01220"></a><span class="lineno"> 1220</span>&#160;  <span class="keywordflow">for</span> (std::pair&lt;std::string, std::string&gt;&amp; it : template_strings_)</div>
-<div class="line"><a name="l01221"></a><span class="lineno"> 1221</span>&#160;  {</div>
-<div class="line"><a name="l01222"></a><span class="lineno"> 1222</span>&#160;    boost::replace_all(template_string, it.first, it.second);</div>
-<div class="line"><a name="l01223"></a><span class="lineno"> 1223</span>&#160;  }</div>
-<div class="line"><a name="l01224"></a><span class="lineno"> 1224</span>&#160; </div>
-<div class="line"><a name="l01225"></a><span class="lineno"> 1225</span>&#160;  <span class="comment">// Save string to new location -----------------------------------------------------------</span></div>
-<div class="line"><a name="l01226"></a><span class="lineno"> 1226</span>&#160;  std::ofstream output_stream(output_path.c_str(), std::ios_base::trunc);</div>
-<div class="line"><a name="l01227"></a><span class="lineno"> 1227</span>&#160;  <span class="keywordflow">if</span> (!output_stream.good())</div>
-<div class="line"><a name="l01228"></a><span class="lineno"> 1228</span>&#160;  {</div>
-<div class="line"><a name="l01229"></a><span class="lineno"> 1229</span>&#160;    ROS_ERROR_STREAM(<span class="stringliteral">&quot;Unable to open file for writing &quot;</span> &lt;&lt; output_path);</div>
-<div class="line"><a name="l01230"></a><span class="lineno"> 1230</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l01231"></a><span class="lineno"> 1231</span>&#160;  }</div>
-<div class="line"><a name="l01232"></a><span class="lineno"> 1232</span>&#160; </div>
-<div class="line"><a name="l01233"></a><span class="lineno"> 1233</span>&#160;  output_stream &lt;&lt; template_string.c_str();</div>
-<div class="line"><a name="l01234"></a><span class="lineno"> 1234</span>&#160;  output_stream.close();</div>
-<div class="line"><a name="l01235"></a><span class="lineno"> 1235</span>&#160; </div>
-<div class="line"><a name="l01236"></a><span class="lineno"> 1236</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;  <span class="comment">// file created successfully</span></div>
-<div class="line"><a name="l01237"></a><span class="lineno"> 1237</span>&#160;}</div>
-<div class="line"><a name="l01238"></a><span class="lineno"> 1238</span>&#160; </div>
-<div class="line"><a name="l01239"></a><span class="lineno"> 1239</span>&#160;<span class="comment">// ******************************************************************************************</span></div>
-<div class="line"><a name="l01240"></a><span class="lineno"> 1240</span>&#160;<span class="comment">// Create a folder</span></div>
-<div class="line"><a name="l01241"></a><span class="lineno"> 1241</span>&#160;<span class="comment">// ******************************************************************************************</span></div>
-<div class="line"><a name="l01242"></a><span class="lineno"> 1242</span>&#160;<span class="keywordtype">bool</span> ConfigurationFilesWidget::createFolder(<span class="keyword">const</span> std::string&amp; output_path)</div>
-<div class="line"><a name="l01243"></a><span class="lineno"> 1243</span>&#160;{</div>
-<div class="line"><a name="l01244"></a><span class="lineno"> 1244</span>&#160;  <span class="keywordflow">if</span> (!fs::is_directory(output_path))</div>
-<div class="line"><a name="l01245"></a><span class="lineno"> 1245</span>&#160;  {</div>
-<div class="line"><a name="l01246"></a><span class="lineno"> 1246</span>&#160;    <span class="keywordflow">if</span> (!fs::create_directory(output_path))</div>
-<div class="line"><a name="l01247"></a><span class="lineno"> 1247</span>&#160;    {</div>
-<div class="line"><a name="l01248"></a><span class="lineno"> 1248</span>&#160;      QMessageBox::critical(<span class="keyword">this</span>, <span class="stringliteral">&quot;Error Generating Files&quot;</span>,</div>
-<div class="line"><a name="l01249"></a><span class="lineno"> 1249</span>&#160;                            QString(<span class="stringliteral">&quot;Unable to create directory &quot;</span>).<a class="code" href="namespacerclcpp_1_1names.html#a4c3e21517afd9a6909de322da95c5e81">append</a>(output_path.c_str()));</div>
-<div class="line"><a name="l01250"></a><span class="lineno"> 1250</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l01251"></a><span class="lineno"> 1251</span>&#160;    }</div>
-<div class="line"><a name="l01252"></a><span class="lineno"> 1252</span>&#160;  }</div>
-<div class="line"><a name="l01253"></a><span class="lineno"> 1253</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l01254"></a><span class="lineno"> 1254</span>&#160;}</div>
-<div class="line"><a name="l01255"></a><span class="lineno"> 1255</span>&#160; </div>
-<div class="line"><a name="l01256"></a><span class="lineno"> 1256</span>&#160;}  <span class="comment">// namespace moveit_setup_assistant</span></div>
+<div class="line"><a name="l01119"></a><span class="lineno"> 1119</span>&#160;    <span class="keywordflow">if</span> (vj.type_ != <span class="stringliteral">&quot;fixed&quot;</span>)</div>
+<div class="line"><a name="l01120"></a><span class="lineno"> 1120</span>&#160;      vjb &lt;&lt; <span class="stringliteral">&quot;  &lt;node pkg=\&quot;tf2_ros\&quot; type=\&quot;static_transform_publisher\&quot; name=\&quot;virtual_joint_broadcaster_&quot;</span> &lt;&lt; i</div>
+<div class="line"><a name="l01121"></a><span class="lineno"> 1121</span>&#160;          &lt;&lt; <span class="stringliteral">&quot;\&quot; args=\&quot;0 0 0 0 0 0 &quot;</span> &lt;&lt; vj.parent_frame_ &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; vj.child_link_ &lt;&lt; <span class="stringliteral">&quot;\&quot; /&gt;&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l01122"></a><span class="lineno"> 1122</span>&#160;  }</div>
+<div class="line"><a name="l01123"></a><span class="lineno"> 1123</span>&#160;  addTemplateString(<span class="stringliteral">&quot;[VIRTUAL_JOINT_BROADCASTER]&quot;</span>, vjb.str());</div>
+<div class="line"><a name="l01124"></a><span class="lineno"> 1124</span>&#160; </div>
+<div class="line"><a name="l01125"></a><span class="lineno"> 1125</span>&#160;  <span class="comment">// Pair 8 - Add dependencies to package.xml if the robot.urdf file is relative to a ROS package</span></div>
+<div class="line"><a name="l01126"></a><span class="lineno"> 1126</span>&#160;  <span class="keywordflow">if</span> (config_data_-&gt;urdf_pkg_name_.empty())</div>
+<div class="line"><a name="l01127"></a><span class="lineno"> 1127</span>&#160;  {</div>
+<div class="line"><a name="l01128"></a><span class="lineno"> 1128</span>&#160;    addTemplateString(<span class="stringliteral">&quot;[OTHER_DEPENDENCIES&quot;</span>, <span class="stringliteral">&quot;&quot;</span>);  <span class="comment">// not relative to a ROS package</span></div>
+<div class="line"><a name="l01129"></a><span class="lineno"> 1129</span>&#160;  }</div>
+<div class="line"><a name="l01130"></a><span class="lineno"> 1130</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l01131"></a><span class="lineno"> 1131</span>&#160;  {</div>
+<div class="line"><a name="l01132"></a><span class="lineno"> 1132</span>&#160;    std::stringstream deps;</div>
+<div class="line"><a name="l01133"></a><span class="lineno"> 1133</span>&#160;    deps &lt;&lt; <span class="stringliteral">&quot;  &lt;run_depend&gt;&quot;</span> &lt;&lt; config_data_-&gt;urdf_pkg_name_ &lt;&lt; <span class="stringliteral">&quot;&lt;/run_depend&gt;\n&quot;</span>;</div>
+<div class="line"><a name="l01134"></a><span class="lineno"> 1134</span>&#160;    addTemplateString(<span class="stringliteral">&quot;[OTHER_DEPENDENCIES]&quot;</span>, deps.str());  <span class="comment">// not relative to a ROS package</span></div>
+<div class="line"><a name="l01135"></a><span class="lineno"> 1135</span>&#160;  }</div>
+<div class="line"><a name="l01136"></a><span class="lineno"> 1136</span>&#160; </div>
+<div class="line"><a name="l01137"></a><span class="lineno"> 1137</span>&#160;  <span class="comment">// Pair 9 - Add ROS Controllers to ros_controllers.launch file</span></div>
+<div class="line"><a name="l01138"></a><span class="lineno"> 1138</span>&#160;  <span class="keywordflow">if</span> (config_data_-&gt;getROSControllers().empty())</div>
+<div class="line"><a name="l01139"></a><span class="lineno"> 1139</span>&#160;  {</div>
+<div class="line"><a name="l01140"></a><span class="lineno"> 1140</span>&#160;    addTemplateString(<span class="stringliteral">&quot;[ROS_CONTROLLERS]&quot;</span>, <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l01141"></a><span class="lineno"> 1141</span>&#160;  }</div>
+<div class="line"><a name="l01142"></a><span class="lineno"> 1142</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l01143"></a><span class="lineno"> 1143</span>&#160;  {</div>
+<div class="line"><a name="l01144"></a><span class="lineno"> 1144</span>&#160;    std::stringstream controllers;</div>
+<div class="line"><a name="l01145"></a><span class="lineno"> 1145</span>&#160;    <span class="keywordflow">for</span> (ROSControlConfig&amp; controller : config_data_-&gt;getROSControllers())</div>
+<div class="line"><a name="l01146"></a><span class="lineno"> 1146</span>&#160;    {</div>
+<div class="line"><a name="l01147"></a><span class="lineno"> 1147</span>&#160;      <span class="comment">// Check if the controller belongs to controller_list namespace</span></div>
+<div class="line"><a name="l01148"></a><span class="lineno"> 1148</span>&#160;      <span class="keywordflow">if</span> (controller.type_ != <span class="stringliteral">&quot;FollowJointTrajectory&quot;</span>)</div>
+<div class="line"><a name="l01149"></a><span class="lineno"> 1149</span>&#160;        controllers &lt;&lt; controller.name_ &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a name="l01150"></a><span class="lineno"> 1150</span>&#160;    }</div>
+<div class="line"><a name="l01151"></a><span class="lineno"> 1151</span>&#160;    addTemplateString(<span class="stringliteral">&quot;[ROS_CONTROLLERS]&quot;</span>, controllers.str());</div>
+<div class="line"><a name="l01152"></a><span class="lineno"> 1152</span>&#160;  }</div>
+<div class="line"><a name="l01153"></a><span class="lineno"> 1153</span>&#160; </div>
+<div class="line"><a name="l01154"></a><span class="lineno"> 1154</span>&#160;  <span class="comment">// Pair 10 - Add parameter files for the kinematics solvers that should be loaded</span></div>
+<div class="line"><a name="l01155"></a><span class="lineno"> 1155</span>&#160;  <span class="comment">// in addition to kinematics.yaml by planning_context.launch</span></div>
+<div class="line"><a name="l01156"></a><span class="lineno"> 1156</span>&#160;  std::string kinematics_parameters_files_block;</div>
+<div class="line"><a name="l01157"></a><span class="lineno"> 1157</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; groups : config_data_-&gt;group_meta_data_)</div>
+<div class="line"><a name="l01158"></a><span class="lineno"> 1158</span>&#160;  {</div>
+<div class="line"><a name="l01159"></a><span class="lineno"> 1159</span>&#160;    <span class="keywordflow">if</span> (groups.second.kinematics_parameters_file_.empty())</div>
+<div class="line"><a name="l01160"></a><span class="lineno"> 1160</span>&#160;      <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l01161"></a><span class="lineno"> 1161</span>&#160; </div>
+<div class="line"><a name="l01162"></a><span class="lineno"> 1162</span>&#160;    <span class="comment">// add a linebreak if we have more than one entry</span></div>
+<div class="line"><a name="l01163"></a><span class="lineno"> 1163</span>&#160;    <span class="keywordflow">if</span> (!kinematics_parameters_files_block.empty())</div>
+<div class="line"><a name="l01164"></a><span class="lineno"> 1164</span>&#160;      kinematics_parameters_files_block += <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l01165"></a><span class="lineno"> 1165</span>&#160; </div>
+<div class="line"><a name="l01166"></a><span class="lineno"> 1166</span>&#160;    std::string line = <span class="stringliteral">&quot;    &lt;rosparam command=\&quot;load\&quot; ns=\&quot;&quot;</span> + groups.first + <span class="stringliteral">&quot;\&quot; file=\&quot;&quot;</span> +</div>
+<div class="line"><a name="l01167"></a><span class="lineno"> 1167</span>&#160;                       groups.second.kinematics_parameters_file_ + <span class="stringliteral">&quot;\&quot;/&gt;&quot;</span>;</div>
+<div class="line"><a name="l01168"></a><span class="lineno"> 1168</span>&#160;    kinematics_parameters_files_block += line;</div>
+<div class="line"><a name="l01169"></a><span class="lineno"> 1169</span>&#160;  }</div>
+<div class="line"><a name="l01170"></a><span class="lineno"> 1170</span>&#160;  addTemplateString(<span class="stringliteral">&quot;[KINEMATICS_PARAMETERS_FILE_NAMES_BLOCK]&quot;</span>, kinematics_parameters_files_block);</div>
+<div class="line"><a name="l01171"></a><span class="lineno"> 1171</span>&#160; </div>
+<div class="line"><a name="l01172"></a><span class="lineno"> 1172</span>&#160;  addTemplateString(<span class="stringliteral">&quot;[AUTHOR_NAME]&quot;</span>, config_data_-&gt;author_name_);</div>
+<div class="line"><a name="l01173"></a><span class="lineno"> 1173</span>&#160;  addTemplateString(<span class="stringliteral">&quot;[AUTHOR_EMAIL]&quot;</span>, config_data_-&gt;author_email_);</div>
+<div class="line"><a name="l01174"></a><span class="lineno"> 1174</span>&#160;}</div>
+<div class="line"><a name="l01175"></a><span class="lineno"> 1175</span>&#160; </div>
+<div class="line"><a name="l01176"></a><span class="lineno"> 1176</span>&#160;<span class="comment">// ******************************************************************************************</span></div>
+<div class="line"><a name="l01177"></a><span class="lineno"> 1177</span>&#160;<span class="comment">// Insert a string pair into the template_strings_ datastructure</span></div>
+<div class="line"><a name="l01178"></a><span class="lineno"> 1178</span>&#160;<span class="comment">// ******************************************************************************************</span></div>
+<div class="line"><a name="l01179"></a><span class="lineno"> 1179</span>&#160;<span class="keywordtype">bool</span> ConfigurationFilesWidget::addTemplateString(<span class="keyword">const</span> std::string&amp; key, <span class="keyword">const</span> std::string&amp; value)</div>
+<div class="line"><a name="l01180"></a><span class="lineno"> 1180</span>&#160;{</div>
+<div class="line"><a name="l01181"></a><span class="lineno"> 1181</span>&#160;  template_strings_.push_back(std::pair&lt;std::string, std::string&gt;(key, value));</div>
+<div class="line"><a name="l01182"></a><span class="lineno"> 1182</span>&#160; </div>
+<div class="line"><a name="l01183"></a><span class="lineno"> 1183</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l01184"></a><span class="lineno"> 1184</span>&#160;}</div>
+<div class="line"><a name="l01185"></a><span class="lineno"> 1185</span>&#160; </div>
+<div class="line"><a name="l01186"></a><span class="lineno"> 1186</span>&#160;<span class="comment">// ******************************************************************************************</span></div>
+<div class="line"><a name="l01187"></a><span class="lineno"> 1187</span>&#160;<span class="comment">// Copy a template from location &lt;template_path&gt; to location &lt;output_path&gt; and replace package name</span></div>
+<div class="line"><a name="l01188"></a><span class="lineno"> 1188</span>&#160;<span class="comment">// ******************************************************************************************</span></div>
+<div class="line"><a name="l01189"></a><span class="lineno"> 1189</span>&#160;<span class="keywordtype">bool</span> ConfigurationFilesWidget::copyTemplate(<span class="keyword">const</span> std::string&amp; template_path, <span class="keyword">const</span> std::string&amp; output_path)</div>
+<div class="line"><a name="l01190"></a><span class="lineno"> 1190</span>&#160;{</div>
+<div class="line"><a name="l01191"></a><span class="lineno"> 1191</span>&#160;  <span class="comment">// Check if template strings have been loaded yet</span></div>
+<div class="line"><a name="l01192"></a><span class="lineno"> 1192</span>&#160;  <span class="keywordflow">if</span> (template_strings_.empty())</div>
+<div class="line"><a name="l01193"></a><span class="lineno"> 1193</span>&#160;  {</div>
+<div class="line"><a name="l01194"></a><span class="lineno"> 1194</span>&#160;    loadTemplateStrings();</div>
+<div class="line"><a name="l01195"></a><span class="lineno"> 1195</span>&#160;  }</div>
+<div class="line"><a name="l01196"></a><span class="lineno"> 1196</span>&#160; </div>
+<div class="line"><a name="l01197"></a><span class="lineno"> 1197</span>&#160;  <span class="comment">// Error check file</span></div>
+<div class="line"><a name="l01198"></a><span class="lineno"> 1198</span>&#160;  <span class="keywordflow">if</span> (!fs::is_regular_file(template_path))</div>
+<div class="line"><a name="l01199"></a><span class="lineno"> 1199</span>&#160;  {</div>
+<div class="line"><a name="l01200"></a><span class="lineno"> 1200</span>&#160;    ROS_ERROR_STREAM(<span class="stringliteral">&quot;Unable to find template file &quot;</span> &lt;&lt; template_path);</div>
+<div class="line"><a name="l01201"></a><span class="lineno"> 1201</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l01202"></a><span class="lineno"> 1202</span>&#160;  }</div>
+<div class="line"><a name="l01203"></a><span class="lineno"> 1203</span>&#160; </div>
+<div class="line"><a name="l01204"></a><span class="lineno"> 1204</span>&#160;  <span class="comment">// Load file</span></div>
+<div class="line"><a name="l01205"></a><span class="lineno"> 1205</span>&#160;  std::ifstream template_stream(template_path.c_str());</div>
+<div class="line"><a name="l01206"></a><span class="lineno"> 1206</span>&#160;  <span class="keywordflow">if</span> (!template_stream.good())  <span class="comment">// File not found</span></div>
+<div class="line"><a name="l01207"></a><span class="lineno"> 1207</span>&#160;  {</div>
+<div class="line"><a name="l01208"></a><span class="lineno"> 1208</span>&#160;    ROS_ERROR_STREAM(<span class="stringliteral">&quot;Unable to load file &quot;</span> &lt;&lt; template_path);</div>
+<div class="line"><a name="l01209"></a><span class="lineno"> 1209</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l01210"></a><span class="lineno"> 1210</span>&#160;  }</div>
+<div class="line"><a name="l01211"></a><span class="lineno"> 1211</span>&#160; </div>
+<div class="line"><a name="l01212"></a><span class="lineno"> 1212</span>&#160;  <span class="comment">// Load the file to a string using an efficient memory allocation technique</span></div>
+<div class="line"><a name="l01213"></a><span class="lineno"> 1213</span>&#160;  std::string template_string;</div>
+<div class="line"><a name="l01214"></a><span class="lineno"> 1214</span>&#160;  template_stream.seekg(0, std::ios::end);</div>
+<div class="line"><a name="l01215"></a><span class="lineno"> 1215</span>&#160;  template_string.reserve(template_stream.tellg());</div>
+<div class="line"><a name="l01216"></a><span class="lineno"> 1216</span>&#160;  template_stream.seekg(0, std::ios::beg);</div>
+<div class="line"><a name="l01217"></a><span class="lineno"> 1217</span>&#160;  template_string.assign((std::istreambuf_iterator&lt;char&gt;(template_stream)), std::istreambuf_iterator&lt;char&gt;());</div>
+<div class="line"><a name="l01218"></a><span class="lineno"> 1218</span>&#160;  template_stream.close();</div>
+<div class="line"><a name="l01219"></a><span class="lineno"> 1219</span>&#160; </div>
+<div class="line"><a name="l01220"></a><span class="lineno"> 1220</span>&#160;  <span class="comment">// Replace keywords in string ------------------------------------------------------------</span></div>
+<div class="line"><a name="l01221"></a><span class="lineno"> 1221</span>&#160;  <span class="keywordflow">for</span> (std::pair&lt;std::string, std::string&gt;&amp; it : template_strings_)</div>
+<div class="line"><a name="l01222"></a><span class="lineno"> 1222</span>&#160;  {</div>
+<div class="line"><a name="l01223"></a><span class="lineno"> 1223</span>&#160;    boost::replace_all(template_string, it.first, it.second);</div>
+<div class="line"><a name="l01224"></a><span class="lineno"> 1224</span>&#160;  }</div>
+<div class="line"><a name="l01225"></a><span class="lineno"> 1225</span>&#160; </div>
+<div class="line"><a name="l01226"></a><span class="lineno"> 1226</span>&#160;  <span class="comment">// Save string to new location -----------------------------------------------------------</span></div>
+<div class="line"><a name="l01227"></a><span class="lineno"> 1227</span>&#160;  std::ofstream output_stream(output_path.c_str(), std::ios_base::trunc);</div>
+<div class="line"><a name="l01228"></a><span class="lineno"> 1228</span>&#160;  <span class="keywordflow">if</span> (!output_stream.good())</div>
+<div class="line"><a name="l01229"></a><span class="lineno"> 1229</span>&#160;  {</div>
+<div class="line"><a name="l01230"></a><span class="lineno"> 1230</span>&#160;    ROS_ERROR_STREAM(<span class="stringliteral">&quot;Unable to open file for writing &quot;</span> &lt;&lt; output_path);</div>
+<div class="line"><a name="l01231"></a><span class="lineno"> 1231</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l01232"></a><span class="lineno"> 1232</span>&#160;  }</div>
+<div class="line"><a name="l01233"></a><span class="lineno"> 1233</span>&#160; </div>
+<div class="line"><a name="l01234"></a><span class="lineno"> 1234</span>&#160;  output_stream &lt;&lt; template_string.c_str();</div>
+<div class="line"><a name="l01235"></a><span class="lineno"> 1235</span>&#160;  output_stream.close();</div>
+<div class="line"><a name="l01236"></a><span class="lineno"> 1236</span>&#160; </div>
+<div class="line"><a name="l01237"></a><span class="lineno"> 1237</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;  <span class="comment">// file created successfully</span></div>
+<div class="line"><a name="l01238"></a><span class="lineno"> 1238</span>&#160;}</div>
+<div class="line"><a name="l01239"></a><span class="lineno"> 1239</span>&#160; </div>
+<div class="line"><a name="l01240"></a><span class="lineno"> 1240</span>&#160;<span class="comment">// ******************************************************************************************</span></div>
+<div class="line"><a name="l01241"></a><span class="lineno"> 1241</span>&#160;<span class="comment">// Create a folder</span></div>
+<div class="line"><a name="l01242"></a><span class="lineno"> 1242</span>&#160;<span class="comment">// ******************************************************************************************</span></div>
+<div class="line"><a name="l01243"></a><span class="lineno"> 1243</span>&#160;<span class="keywordtype">bool</span> ConfigurationFilesWidget::createFolder(<span class="keyword">const</span> std::string&amp; output_path)</div>
+<div class="line"><a name="l01244"></a><span class="lineno"> 1244</span>&#160;{</div>
+<div class="line"><a name="l01245"></a><span class="lineno"> 1245</span>&#160;  <span class="keywordflow">if</span> (!fs::is_directory(output_path))</div>
+<div class="line"><a name="l01246"></a><span class="lineno"> 1246</span>&#160;  {</div>
+<div class="line"><a name="l01247"></a><span class="lineno"> 1247</span>&#160;    <span class="keywordflow">if</span> (!fs::create_directory(output_path))</div>
+<div class="line"><a name="l01248"></a><span class="lineno"> 1248</span>&#160;    {</div>
+<div class="line"><a name="l01249"></a><span class="lineno"> 1249</span>&#160;      QMessageBox::critical(<span class="keyword">this</span>, <span class="stringliteral">&quot;Error Generating Files&quot;</span>,</div>
+<div class="line"><a name="l01250"></a><span class="lineno"> 1250</span>&#160;                            QString(<span class="stringliteral">&quot;Unable to create directory &quot;</span>).<a class="code" href="namespacerclcpp_1_1names.html#a4c3e21517afd9a6909de322da95c5e81">append</a>(output_path.c_str()));</div>
+<div class="line"><a name="l01251"></a><span class="lineno"> 1251</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l01252"></a><span class="lineno"> 1252</span>&#160;    }</div>
+<div class="line"><a name="l01253"></a><span class="lineno"> 1253</span>&#160;  }</div>
+<div class="line"><a name="l01254"></a><span class="lineno"> 1254</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l01255"></a><span class="lineno"> 1255</span>&#160;}</div>
+<div class="line"><a name="l01256"></a><span class="lineno"> 1256</span>&#160; </div>
+<div class="line"><a name="l01257"></a><span class="lineno"> 1257</span>&#160;}  <span class="comment">// namespace moveit_setup_assistant</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="astructmoveit__setup__assistant_1_1GenerateFile_html_acb4868a0e39a8a82ee648a04f1553eaa"><div class="ttname"><a href="structmoveit__setup__assistant_1_1GenerateFile.html#acb4868a0e39a8a82ee648a04f1553eaa">moveit_setup_assistant::GenerateFile::gen_func_</a></div><div class="ttdeci">boost::function&lt; bool(std::string)&gt; gen_func_</div><div class="ttdef"><b>Definition:</b> <a href="configuration__files__widget_8h_source.html#l00068">configuration_files_widget.h:68</a></div></div>
-<div class="ttc" id="aclassmoveit__setup__assistant_1_1MoveItConfigData_html_a546b1f4d6cb05beac1c035cb877f8d76a0717106847bea5021b08c247903737c6"><div class="ttname"><a href="classmoveit__setup__assistant_1_1MoveItConfigData.html#a546b1f4d6cb05beac1c035cb877f8d76a0717106847bea5021b08c247903737c6">moveit_setup_assistant::MoveItConfigData::AUTHOR_INFO</a></div><div class="ttdeci">@ AUTHOR_INFO</div><div class="ttdef"><b>Definition:</b> <a href="moveit__config__data_8hpp_source.html#l00238">moveit_config_data.hpp:238</a></div></div>
-<div class="ttc" id="aclassmoveit__setup__assistant_1_1MoveItConfigData_html_a546b1f4d6cb05beac1c035cb877f8d76a034b08bd7783b92f8d7fa164129d912f"><div class="ttname"><a href="classmoveit__setup__assistant_1_1MoveItConfigData.html#a546b1f4d6cb05beac1c035cb877f8d76a034b08bd7783b92f8d7fa164129d912f">moveit_setup_assistant::MoveItConfigData::SENSORS_CONFIG</a></div><div class="ttdeci">@ SENSORS_CONFIG</div><div class="ttdef"><b>Definition:</b> <a href="moveit__config__data_8hpp_source.html#l00239">moveit_config_data.hpp:239</a></div></div>
 <div class="ttc" id="astructmoveit__setup__assistant_1_1GenerateFile_html_afef2261f73e67b0e3ca8cd4c035406cb"><div class="ttname"><a href="structmoveit__setup__assistant_1_1GenerateFile.html#afef2261f73e67b0e3ca8cd4c035406cb">moveit_setup_assistant::GenerateFile::description_</a></div><div class="ttdeci">std::string description_</div><div class="ttdef"><b>Definition:</b> <a href="configuration__files__widget_8h_source.html#l00064">configuration_files_widget.h:64</a></div></div>
 <div class="ttc" id="astructmoveit__setup__assistant_1_1GenerateFile_html_a138d4b5df17df1b2af5ab8bdc42f21f8"><div class="ttname"><a href="structmoveit__setup__assistant_1_1GenerateFile.html#a138d4b5df17df1b2af5ab8bdc42f21f8">moveit_setup_assistant::GenerateFile::rel_path_</a></div><div class="ttdeci">std::string rel_path_</div><div class="ttdef"><b>Definition:</b> <a href="configuration__files__widget_8h_source.html#l00063">configuration_files_widget.h:63</a></div></div>
-<div class="ttc" id="aclassmoveit__setup__assistant_1_1MoveItConfigData_html_ae4a7605cf75901915b28d3f893733836"><div class="ttname"><a href="classmoveit__setup__assistant_1_1MoveItConfigData.html#ae4a7605cf75901915b28d3f893733836">moveit_setup_assistant::MoveItConfigData::outputOMPLPlanningYAML</a></div><div class="ttdeci">bool outputOMPLPlanningYAML(const std::string &amp;file_path)</div><div class="ttdef"><b>Definition:</b> <a href="moveit__config__data_8cpp_source.html#l00238">moveit_config_data.cpp:238</a></div></div>
 <div class="ttc" id="astructmoveit__setup__assistant_1_1GenerateFile_html"><div class="ttname"><a href="structmoveit__setup__assistant_1_1GenerateFile.html">moveit_setup_assistant::GenerateFile</a></div><div class="ttdef"><b>Definition:</b> <a href="configuration__files__widget_8h_source.html#l00057">configuration_files_widget.h:57</a></div></div>
-<div class="ttc" id="aclassmoveit__setup__assistant_1_1MoveItConfigData_html_a0cb060e532a3dbc7af728ea612de0d30"><div class="ttname"><a href="classmoveit__setup__assistant_1_1MoveItConfigData.html#a0cb060e532a3dbc7af728ea612de0d30">moveit_setup_assistant::MoveItConfigData::outputJointLimitsYAML</a></div><div class="ttdeci">bool outputJointLimitsYAML(const std::string &amp;file_path)</div><div class="ttdef"><b>Definition:</b> <a href="moveit__config__data_8cpp_source.html#l01148">moveit_config_data.cpp:1148</a></div></div>
 <div class="ttc" id="aclassmoveit__setup__assistant_1_1ConfigurationFilesWidget_html_adb672ce4801fc884c327953540a97500"><div class="ttname"><a href="classmoveit__setup__assistant_1_1ConfigurationFilesWidget.html#adb672ce4801fc884c327953540a97500">moveit_setup_assistant::ConfigurationFilesWidget::action_list_</a></div><div class="ttdeci">QListWidget * action_list_</div><div class="ttdef"><b>Definition:</b> <a href="configuration__files__widget_8h_source.html#l00095">configuration_files_widget.h:95</a></div></div>
 <div class="ttc" id="aclassmoveit__setup__assistant_1_1ConfigurationFilesWidget_html_a316348fd56001183fb4df91ca2739b41"><div class="ttname"><a href="classmoveit__setup__assistant_1_1ConfigurationFilesWidget.html#a316348fd56001183fb4df91ca2739b41">moveit_setup_assistant::ConfigurationFilesWidget::progress_bar_</a></div><div class="ttdeci">QProgressBar * progress_bar_</div><div class="ttdef"><b>Definition:</b> <a href="configuration__files__widget_8h_source.html#l00094">configuration_files_widget.h:94</a></div></div>
 <div class="ttc" id="aclassmoveit__setup__assistant_1_1ConfigurationFilesWidget_html_a72013d73d41b7901ea087d1cd8ea4566"><div class="ttname"><a href="classmoveit__setup__assistant_1_1ConfigurationFilesWidget.html#a72013d73d41b7901ea087d1cd8ea4566">moveit_setup_assistant::ConfigurationFilesWidget::ConfigurationFilesWidget</a></div><div class="ttdeci">ConfigurationFilesWidget(QWidget *parent, const MoveItConfigDataPtr &amp;config_data)</div><div class="ttdef"><b>Definition:</b> <a href="configuration__files__widget_8cpp_source.html#l00103">configuration_files_widget.cpp:103</a></div></div>
 <div class="ttc" id="aclassmoveit__setup__assistant_1_1ConfigurationFilesWidget_html_ac9e045c0e0eac8bb2d806c2cf68c6a61"><div class="ttname"><a href="classmoveit__setup__assistant_1_1ConfigurationFilesWidget.html#ac9e045c0e0eac8bb2d806c2cf68c6a61">moveit_setup_assistant::ConfigurationFilesWidget::action_label_</a></div><div class="ttdeci">QLabel * action_label_</div><div class="ttdef"><b>Definition:</b> <a href="configuration__files__widget_8h_source.html#l00096">configuration_files_widget.h:96</a></div></div>
-<div class="ttc" id="aclassmoveit__setup__assistant_1_1MoveItConfigData_html_a895e043c409daf5220e3b00cd2baf86d"><div class="ttname"><a href="classmoveit__setup__assistant_1_1MoveItConfigData.html#a895e043c409daf5220e3b00cd2baf86d">moveit_setup_assistant::MoveItConfigData::outputSetupAssistantFile</a></div><div class="ttdeci">bool outputSetupAssistantFile(const std::string &amp;file_path)</div><div class="ttdef"><b>Definition:</b> <a href="moveit__config__data_8cpp_source.html#l00188">moveit_config_data.cpp:188</a></div></div>
 <div class="ttc" id="astructmoveit__setup__assistant_1_1GenerateFile_html_ac38b69f94e5280255882bf47e5bd5ac7"><div class="ttname"><a href="structmoveit__setup__assistant_1_1GenerateFile.html#ac38b69f94e5280255882bf47e5bd5ac7">moveit_setup_assistant::GenerateFile::file_name_</a></div><div class="ttdeci">std::string file_name_</div><div class="ttdef"><b>Definition:</b> <a href="configuration__files__widget_8h_source.html#l00062">configuration_files_widget.h:62</a></div></div>
-<div class="ttc" id="aclassmoveit__setup__assistant_1_1MoveItConfigData_html_a546b1f4d6cb05beac1c035cb877f8d76aa31cbc923d3b18bae7e72a2f083e971b"><div class="ttname"><a href="classmoveit__setup__assistant_1_1MoveItConfigData.html#a546b1f4d6cb05beac1c035cb877f8d76aa31cbc923d3b18bae7e72a2f083e971b">moveit_setup_assistant::MoveItConfigData::GROUPS</a></div><div class="ttdeci">@ GROUPS</div><div class="ttdef"><b>Definition:</b> <a href="moveit__config__data_8hpp_source.html#l00232">moveit_config_data.hpp:232</a></div></div>
 <div class="ttc" id="aclassmoveit__setup__assistant_1_1ConfigurationFilesWidget_html_a17fbf2e4a4dbfadb61351d899362b2f9"><div class="ttname"><a href="classmoveit__setup__assistant_1_1ConfigurationFilesWidget.html#a17fbf2e4a4dbfadb61351d899362b2f9">moveit_setup_assistant::ConfigurationFilesWidget::success_label_</a></div><div class="ttdeci">QLabel * success_label_</div><div class="ttdef"><b>Definition:</b> <a href="configuration__files__widget_8h_source.html#l00097">configuration_files_widget.h:97</a></div></div>
-<div class="ttc" id="aclassmoveit__setup__assistant_1_1MoveItConfigData_html_ad65ed096455399bca0ae1f16be175f90"><div class="ttname"><a href="classmoveit__setup__assistant_1_1MoveItConfigData.html#ad65ed096455399bca0ae1f16be175f90">moveit_setup_assistant::MoveItConfigData::outputROSControllersYAML</a></div><div class="ttdeci">bool outputROSControllersYAML(const std::string &amp;file_path)</div><div class="ttdef"><b>Definition:</b> <a href="moveit__config__data_8cpp_source.html#l00930">moveit_config_data.cpp:930</a></div></div>
 <div class="ttc" id="aclassSetupScreenWidget_html"><div class="ttname"><a href="classSetupScreenWidget.html">SetupScreenWidget</a></div><div class="ttdef"><b>Definition:</b> <a href="setup__screen__widget_8h_source.html#l00044">setup_screen_widget.h:44</a></div></div>
-<div class="ttc" id="aclassmoveit__setup__assistant_1_1MoveItConfigData_html_a3b61cd1572b50c459310735edd44f6bd"><div class="ttname"><a href="classmoveit__setup__assistant_1_1MoveItConfigData.html#a3b61cd1572b50c459310735edd44f6bd">moveit_setup_assistant::MoveItConfigData::outputCHOMPPlanningYAML</a></div><div class="ttdeci">bool outputCHOMPPlanningYAML(const std::string &amp;file_path)</div><div class="ttdef"><b>Definition:</b> <a href="moveit__config__data_8cpp_source.html#l00318">moveit_config_data.cpp:318</a></div></div>
 <div class="ttc" id="anamespacerclcpp_1_1names_html_a4c3e21517afd9a6909de322da95c5e81"><div class="ttname"><a href="namespacerclcpp_1_1names.html#a4c3e21517afd9a6909de322da95c5e81">rclcpp::names::append</a></div><div class="ttdeci">std::string append(const std::string &amp;left, const std::string &amp;right)</div><div class="ttdef"><b>Definition:</b> <a href="rclcpp__utils_8cpp_source.html#l00053">rclcpp_utils.cpp:53</a></div></div>
 <div class="ttc" id="aheader__widget_8h_html"><div class="ttname"><a href="header__widget_8h.html">header_widget.h</a></div></div>
-<div class="ttc" id="anamespacemoveit__setup__assistant_html"><div class="ttname"><a href="namespacemoveit__setup__assistant.html">moveit_setup_assistant</a></div><div class="ttdef"><b>Definition:</b> <a href="compute__default__collisions_8hpp_source.html#l00046">compute_default_collisions.hpp:46</a></div></div>
+<div class="ttc" id="anamespacemoveit__setup__assistant_html"><div class="ttname"><a href="namespacemoveit__setup__assistant.html">moveit_setup_assistant</a></div><div class="ttdef"><b>Definition:</b> <a href="compute__default__collisions_8h_source.html#l00046">compute_default_collisions.h:46</a></div></div>
 <div class="ttc" id="anamespacemoveit__setup__assistant_html_a21c6757031c3d02f483d85818911017a"><div class="ttname"><a href="namespacemoveit__setup__assistant.html#a21c6757031c3d02f483d85818911017a">moveit_setup_assistant::SETUP_ASSISTANT_FILE</a></div><div class="ttdeci">const std::string SETUP_ASSISTANT_FILE</div><div class="ttdef"><b>Definition:</b> <a href="configuration__files__widget_8cpp_source.html#l00098">configuration_files_widget.cpp:98</a></div></div>
 <div class="ttc" id="aclassmoveit__setup__assistant_1_1ConfigurationFilesWidget_html_a8f7c03636e00f637f6688378ffb822be"><div class="ttname"><a href="classmoveit__setup__assistant_1_1ConfigurationFilesWidget.html#a8f7c03636e00f637f6688378ffb822be">moveit_setup_assistant::ConfigurationFilesWidget::focusGiven</a></div><div class="ttdeci">void focusGiven() override</div><div class="ttdoc">Received when this widget is chosen from the navigation menu.</div><div class="ttdef"><b>Definition:</b> <a href="configuration__files__widget_8cpp_source.html#l00763">configuration_files_widget.cpp:763</a></div></div>
 <div class="ttc" id="aclassmoveit__setup__assistant_1_1LoadPathWidget_html_a9e3aabf97aeb11c892cbbdb1c83efa60"><div class="ttname"><a href="classmoveit__setup__assistant_1_1LoadPathWidget.html#a9e3aabf97aeb11c892cbbdb1c83efa60">moveit_setup_assistant::LoadPathWidget::getPath</a></div><div class="ttdeci">std::string getPath() const</div><div class="ttdoc">Returns the file path in std::string format.</div><div class="ttdef"><b>Definition:</b> <a href="header__widget_8cpp_source.html#l00218">header_widget.cpp:218</a></div></div>
 <div class="ttc" id="astructmoveit__setup__assistant_1_1GenerateFile_html_a694f1895d63d746c97ddcff4aa06d7db"><div class="ttname"><a href="structmoveit__setup__assistant_1_1GenerateFile.html#a694f1895d63d746c97ddcff4aa06d7db">moveit_setup_assistant::GenerateFile::write_on_changes</a></div><div class="ttdeci">unsigned long write_on_changes</div><div class="ttdef"><b>Definition:</b> <a href="configuration__files__widget_8h_source.html#l00065">configuration_files_widget.h:65</a></div></div>
-<div class="ttc" id="aclassmoveit__setup__assistant_1_1MoveItConfigData_html_a546b1f4d6cb05beac1c035cb877f8d76ae1f352a3ea399b617f7ed63b728f6b35"><div class="ttname"><a href="classmoveit__setup__assistant_1_1MoveItConfigData.html#a546b1f4d6cb05beac1c035cb877f8d76ae1f352a3ea399b617f7ed63b728f6b35">moveit_setup_assistant::MoveItConfigData::GROUP_KINEMATICS</a></div><div class="ttdeci">@ GROUP_KINEMATICS</div><div class="ttdef"><b>Definition:</b> <a href="moveit__config__data_8hpp_source.html#l00234">moveit_config_data.hpp:234</a></div></div>
-<div class="ttc" id="aclassmoveit__setup__assistant_1_1MoveItConfigData_html_a546b1f4d6cb05beac1c035cb877f8d76a0928f49eaa468d2b3251b96a86f1d57d"><div class="ttname"><a href="classmoveit__setup__assistant_1_1MoveItConfigData.html#a546b1f4d6cb05beac1c035cb877f8d76a0928f49eaa468d2b3251b96a86f1d57d">moveit_setup_assistant::MoveItConfigData::SRDF</a></div><div class="ttdeci">@ SRDF</div><div class="ttdef"><b>Definition:</b> <a href="moveit__config__data_8hpp_source.html#l00240">moveit_config_data.hpp:240</a></div></div>
-<div class="ttc" id="aclassmoveit__setup__assistant_1_1MoveItConfigData_html_a88ca0cac3c88f55d881a325fb45bd40d"><div class="ttname"><a href="classmoveit__setup__assistant_1_1MoveItConfigData.html#a88ca0cac3c88f55d881a325fb45bd40d">moveit_setup_assistant::MoveItConfigData::outputKinematicsYAML</a></div><div class="ttdeci">bool outputKinematicsYAML(const std::string &amp;file_path)</div><div class="ttdef"><b>Definition:</b> <a href="moveit__config__data_8cpp_source.html#l00359">moveit_config_data.cpp:359</a></div></div>
 <div class="ttc" id="aconfiguration__files__widget_8h_html"><div class="ttname"><a href="configuration__files__widget_8h.html">configuration_files_widget.h</a></div></div>
-<div class="ttc" id="aclassmoveit__setup__assistant_1_1MoveItConfigData_html_a2900443dbd7174d9eef6aeeac464d8af"><div class="ttname"><a href="classmoveit__setup__assistant_1_1MoveItConfigData.html#a2900443dbd7174d9eef6aeeac464d8af">moveit_setup_assistant::MoveItConfigData::output3DSensorPluginYAML</a></div><div class="ttdeci">bool output3DSensorPluginYAML(const std::string &amp;file_path)</div><div class="ttdef"><b>Definition:</b> <a href="moveit__config__data_8cpp_source.html#l01107">moveit_config_data.cpp:1107</a></div></div>
 <div class="ttc" id="aclassmoveit__setup__assistant_1_1ConfigurationFilesWidget_html_a39d23e6a5e90d7533ba3456fa838c6f6"><div class="ttname"><a href="classmoveit__setup__assistant_1_1ConfigurationFilesWidget.html#a39d23e6a5e90d7533ba3456fa838c6f6">moveit_setup_assistant::ConfigurationFilesWidget::stack_path_</a></div><div class="ttdeci">LoadPathWidget * stack_path_</div><div class="ttdef"><b>Definition:</b> <a href="configuration__files__widget_8h_source.html#l00093">configuration_files_widget.h:93</a></div></div>
-<div class="ttc" id="aclassmoveit__setup__assistant_1_1MoveItConfigData_html_ac96c73240c5f73d83e6909610f45f409"><div class="ttname"><a href="classmoveit__setup__assistant_1_1MoveItConfigData.html#ac96c73240c5f73d83e6909610f45f409">moveit_setup_assistant::MoveItConfigData::outputFakeControllersYAML</a></div><div class="ttdeci">bool outputFakeControllersYAML(const std::string &amp;file_path)</div><div class="ttdef"><b>Definition:</b> <a href="moveit__config__data_8cpp_source.html#l00535">moveit_config_data.cpp:535</a></div></div>
 <div class="ttc" id="aclassmoveit__setup__assistant_1_1ConfigurationFilesWidget_html_aa259911d9b475224550529101a8b1357"><div class="ttname"><a href="classmoveit__setup__assistant_1_1ConfigurationFilesWidget.html#aa259911d9b475224550529101a8b1357">moveit_setup_assistant::ConfigurationFilesWidget::action_desc_</a></div><div class="ttdeci">QList&lt; QString &gt; action_desc_</div><div class="ttdef"><b>Definition:</b> <a href="configuration__files__widget_8h_source.html#l00098">configuration_files_widget.h:98</a></div></div>
 <div class="ttc" id="anamespacetest__cleanup_html_a121623a04b6c3260c0e3e9c8cb74d9f9"><div class="ttname"><a href="namespacetest__cleanup.html#a121623a04b6c3260c0e3e9c8cb74d9f9">test_cleanup.group</a></div><div class="ttdeci">group</div><div class="ttdef"><b>Definition:</b> <a href="test__cleanup_8py_source.html#l00008">test_cleanup.py:8</a></div></div>
 <!-- start footer part -->

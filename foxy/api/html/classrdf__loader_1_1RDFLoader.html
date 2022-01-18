@@ -75,13 +75,16 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Default constructor.  
+ <a href="classrdf__loader_1_1RDFLoader.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="rdf__loader_8h_source.html">rdf_loader.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae03ef30645392af8dd61df92769e9a2e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrdf__loader_1_1RDFLoader.html#ae03ef30645392af8dd61df92769e9a2e">RDFLoader</a> (const std::shared_ptr&lt; rclcpp::Node &gt; &amp;node, const std::string &amp;ros_name=&quot;robot_description&quot;, bool default_continuous_value=false, double default_timeout=10.0)</td></tr>
-<tr class="memdesc:ae03ef30645392af8dd61df92769e9a2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <a href="classrdf__loader_1_1RDFLoader.html#ae03ef30645392af8dd61df92769e9a2e">More...</a><br /></td></tr>
-<tr class="separator:ae03ef30645392af8dd61df92769e9a2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf756f2c8b50704466b0c41ea74b2e6f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrdf__loader_1_1RDFLoader.html#abf756f2c8b50704466b0c41ea74b2e6f">RDFLoader</a> (const std::shared_ptr&lt; rclcpp::Node &gt; &amp;node, const std::string &amp;robot_description=&quot;robot_description&quot;)</td></tr>
+<tr class="memdesc:abf756f2c8b50704466b0c41ea74b2e6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <a href="classrdf__loader_1_1RDFLoader.html#abf756f2c8b50704466b0c41ea74b2e6f">More...</a><br /></td></tr>
+<tr class="separator:abf756f2c8b50704466b0c41ea74b2e6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace79b92f5a219c0b52b28cdf309f701a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrdf__loader_1_1RDFLoader.html#ace79b92f5a219c0b52b28cdf309f701a">RDFLoader</a> (const std::string &amp;urdf_string, const std::string &amp;srdf_string)</td></tr>
 <tr class="memdesc:ace79b92f5a219c0b52b28cdf309f701a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the robot model from a string representation of the URDF and SRDF documents.  <a href="classrdf__loader_1_1RDFLoader.html#ace79b92f5a219c0b52b28cdf309f701a">More...</a><br /></td></tr>
 <tr class="separator:ace79b92f5a219c0b52b28cdf309f701a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -94,8 +97,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0f8158d75c555baa1734da830b429089"><td class="memItemLeft" align="right" valign="top">const srdf::ModelSharedPtr &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrdf__loader_1_1RDFLoader.html#a0f8158d75c555baa1734da830b429089">getSRDF</a> () const</td></tr>
 <tr class="memdesc:a0f8158d75c555baa1734da830b429089"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the parsed SRDF model.  <a href="classrdf__loader_1_1RDFLoader.html#a0f8158d75c555baa1734da830b429089">More...</a><br /></td></tr>
 <tr class="separator:a0f8158d75c555baa1734da830b429089"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a68fe2243256f962529fe7de0babcc2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrdf__loader_1_1RDFLoader.html#a6a68fe2243256f962529fe7de0babcc2">setNewModelCallback</a> (<a class="el" href="namespacerdf__loader.html#a4911252e62ee62892c89f6f9f5a977f8">NewModelCallback</a> cb)</td></tr>
-<tr class="separator:a6a68fe2243256f962529fe7de0babcc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -116,11 +117,18 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a7979ab54be4862a118a07626cda81ec6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="rdf__loader_8h_source.html#l00085">85</a> of file <a class="el" href="rdf__loader_8h_source.html">rdf_loader.h</a>.</p>
+<div class="textblock"><p>Default constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">robot_description</td><td>The string name corresponding to the ROS param where the URDF is loaded </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="rdf__loader_8h_source.html#l00083">83</a> of file <a class="el" href="rdf__loader_8h_source.html">rdf_loader.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ae03ef30645392af8dd61df92769e9a2e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae03ef30645392af8dd61df92769e9a2e">&#9670;&nbsp;</a></span>RDFLoader() <span class="overload">[1/2]</span></h2>
+<a id="abf756f2c8b50704466b0c41ea74b2e6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf756f2c8b50704466b0c41ea74b2e6f">&#9670;&nbsp;</a></span>RDFLoader() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -135,19 +143,7 @@ Static Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>ros_name</em> = <code>&quot;robot_description&quot;</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>default_continuous_value</em> = <code>false</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>default_timeout</em> = <code>10.0</code>&#160;</td>
+          <td class="paramname"><em>robot_description</em> = <code>&quot;robot_description&quot;</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -158,15 +154,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Default constructor. </p>
-<p>Loads the URDF from a parameter given by the string argument, and the SRDF that has the same name + the "_semantic" suffix</p>
-<p>If the parameter does not exist, attempt to subscribe to topics with the same name and type std_msgs::msg::String.</p>
-<p>(specifying default_continuous_value/default_timeout allows users to specify values without setting ros parameters)</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">node</td><td>ROS interface for parameters / topics </td></tr>
-    <tr><td class="paramname">ros_name</td><td>The string name corresponding to the URDF </td></tr>
-    <tr><td class="paramname">default_continuous_value</td><td>Default value for parameter with "_continuous" suffix. </td></tr>
-    <tr><td class="paramname">default_timeout</td><td>Default value for parameter with "_timeout" suffix. </td></tr>
+    <tr><td class="paramname">robot_description</td><td>The string name corresponding to the ROS param where the URDF is loaded; the SRDF is assumed to be at the same param name + the "_semantic" suffix </td></tr>
   </table>
   </dd>
 </dl>
@@ -203,7 +193,7 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Initialize the robot model from a string representation of the URDF and SRDF documents. </p>
 
-<p class="definition">Definition at line <a class="el" href="rdf__loader_8cpp_source.html#l00118">118</a> of file <a class="el" href="rdf__loader_8cpp_source.html">rdf_loader.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rdf__loader_8cpp_source.html#l00145">145</a> of file <a class="el" href="rdf__loader_8cpp_source.html">rdf_loader.cpp</a>.</p>
 
 </div>
 </div>
@@ -233,7 +223,7 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Get the resolved parameter name for the robot description. </p>
 
-<p class="definition">Definition at line <a class="el" href="rdf__loader_8h_source.html#l00111">111</a> of file <a class="el" href="rdf__loader_8h_source.html">rdf_loader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rdf__loader_8h_source.html#l00095">95</a> of file <a class="el" href="rdf__loader_8h_source.html">rdf_loader.h</a>.</p>
 
 </div>
 </div>
@@ -262,16 +252,7 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Get the parsed SRDF model. </p>
 
-<p class="definition">Definition at line <a class="el" href="rdf__loader_8h_source.html#l00123">123</a> of file <a class="el" href="rdf__loader_8h_source.html">rdf_loader.h</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classrdf__loader_1_1RDFLoader_a0f8158d75c555baa1734da830b429089_icgraph.png" border="0" usemap="#classrdf__loader_1_1RDFLoader_a0f8158d75c555baa1734da830b429089_icgraph" alt=""/></div>
-<map name="classrdf__loader_1_1RDFLoader_a0f8158d75c555baa1734da830b429089_icgraph" id="classrdf__loader_1_1RDFLoader_a0f8158d75c555baa1734da830b429089_icgraph">
-<area shape="rect" title="Get the parsed SRDF model." alt="" coords="108,5,275,47"/>
-<area shape="rect" href="test__rdf__integration_8cpp.html#a3f8ce0e00865f9890e40a4a80533cd4c" title=" " alt="" coords="5,13,60,39"/>
-</map>
-</div>
+<p class="definition">Definition at line <a class="el" href="rdf__loader_8h_source.html#l00107">107</a> of file <a class="el" href="rdf__loader_8h_source.html">rdf_loader.h</a>.</p>
 
 </div>
 </div>
@@ -300,16 +281,7 @@ Here is the caller graph for this function:</div>
 
 <p>Get the parsed URDF model. </p>
 
-<p class="definition">Definition at line <a class="el" href="rdf__loader_8h_source.html#l00117">117</a> of file <a class="el" href="rdf__loader_8h_source.html">rdf_loader.h</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classrdf__loader_1_1RDFLoader_a657072168618e7f95c8179fa91feb560_icgraph.png" border="0" usemap="#classrdf__loader_1_1RDFLoader_a657072168618e7f95c8179fa91feb560_icgraph" alt=""/></div>
-<map name="classrdf__loader_1_1RDFLoader_a657072168618e7f95c8179fa91feb560_icgraph" id="classrdf__loader_1_1RDFLoader_a657072168618e7f95c8179fa91feb560_icgraph">
-<area shape="rect" title="Get the parsed URDF model." alt="" coords="108,5,275,47"/>
-<area shape="rect" href="test__rdf__integration_8cpp.html#a3f8ce0e00865f9890e40a4a80533cd4c" title=" " alt="" coords="5,13,60,39"/>
-</map>
-</div>
+<p class="definition">Definition at line <a class="el" href="rdf__loader_8h_source.html#l00101">101</a> of file <a class="el" href="rdf__loader_8h_source.html">rdf_loader.h</a>.</p>
 
 </div>
 </div>
@@ -339,7 +311,16 @@ Here is the caller graph for this function:</div>
 
 <p>determine if given path points to a xacro file </p>
 
-<p class="definition">Definition at line <a class="el" href="rdf__loader_8cpp_source.html#l00151">151</a> of file <a class="el" href="rdf__loader_8cpp_source.html">rdf_loader.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rdf__loader_8cpp_source.html#l00168">168</a> of file <a class="el" href="rdf__loader_8cpp_source.html">rdf_loader.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrdf__loader_1_1RDFLoader_a0a6182274db2dd51eba414986377b2ea_icgraph.png" border="0" usemap="#classrdf__loader_1_1RDFLoader_a0a6182274db2dd51eba414986377b2ea_icgraph" alt=""/></div>
+<map name="classrdf__loader_1_1RDFLoader_a0a6182274db2dd51eba414986377b2ea_icgraph" id="classrdf__loader_1_1RDFLoader_a0a6182274db2dd51eba414986377b2ea_icgraph">
+<area shape="rect" title="determine if given path points to a xacro file" alt="" coords="108,5,275,47"/>
+<area shape="rect" href="collisions__updater_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,13,60,39"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -379,7 +360,7 @@ Here is the caller graph for this function:</div>
 
 <p>load file from given path into buffer </p>
 
-<p class="definition">Definition at line <a class="el" href="rdf__loader_8cpp_source.html#l00159">159</a> of file <a class="el" href="rdf__loader_8cpp_source.html">rdf_loader.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rdf__loader_8cpp_source.html#l00176">176</a> of file <a class="el" href="rdf__loader_8cpp_source.html">rdf_loader.cpp</a>.</p>
 
 </div>
 </div>
@@ -431,7 +412,7 @@ Here is the caller graph for this function:</div>
 
 <p>helper that generates a file path based on package name and relative file path to package </p>
 
-<p class="definition">Definition at line <a class="el" href="rdf__loader_8cpp_source.html#l00247">247</a> of file <a class="el" href="rdf__loader_8cpp_source.html">rdf_loader.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rdf__loader_8cpp_source.html#l00264">264</a> of file <a class="el" href="rdf__loader_8cpp_source.html">rdf_loader.cpp</a>.</p>
 
 </div>
 </div>
@@ -477,7 +458,7 @@ Here is the caller graph for this function:</div>
 
 <p>run xacro with the given args on the file, return result in buffer </p>
 
-<p class="definition">Definition at line <a class="el" href="rdf__loader_8cpp_source.html#l00190">190</a> of file <a class="el" href="rdf__loader_8cpp_source.html">rdf_loader.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rdf__loader_8cpp_source.html#l00207">207</a> of file <a class="el" href="rdf__loader_8cpp_source.html">rdf_loader.cpp</a>.</p>
 
 </div>
 </div>
@@ -523,35 +504,17 @@ Here is the caller graph for this function:</div>
 
 <p>helper that branches between <a class="el" href="classrdf__loader_1_1RDFLoader.html#afa6af118075aca327eb9b5cb9601709c" title="load file from given path into buffer">loadFileToString()</a> and <a class="el" href="classrdf__loader_1_1RDFLoader.html#aff2eacf6201feb571c6ab1aa979ca705" title="run xacro with the given args on the file, return result in buffer">loadXacroFileToString()</a> based on result of <a class="el" href="classrdf__loader_1_1RDFLoader.html#a0a6182274db2dd51eba414986377b2ea" title="determine if given path points to a xacro file">isXacroFile()</a> </p>
 
-<p class="definition">Definition at line <a class="el" href="rdf__loader_8cpp_source.html#l00236">236</a> of file <a class="el" href="rdf__loader_8cpp_source.html">rdf_loader.cpp</a>.</p>
-
+<p class="definition">Definition at line <a class="el" href="rdf__loader_8cpp_source.html#l00253">253</a> of file <a class="el" href="rdf__loader_8cpp_source.html">rdf_loader.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrdf__loader_1_1RDFLoader_a04be4b2539b9b8800de2a38eccdec31b_icgraph.png" border="0" usemap="#classrdf__loader_1_1RDFLoader_a04be4b2539b9b8800de2a38eccdec31b_icgraph" alt=""/></div>
+<map name="classrdf__loader_1_1RDFLoader_a04be4b2539b9b8800de2a38eccdec31b_icgraph" id="classrdf__loader_1_1RDFLoader_a04be4b2539b9b8800de2a38eccdec31b_icgraph">
+<area shape="rect" title="helper that branches between loadFileToString() and loadXacroFileToString() based on result of isXacr..." alt="" coords="215,5,381,47"/>
+<area shape="rect" href="collisions__updater_8cpp.html#abf01ecd89054144ab5c086f72ba9ef29" title=" " alt="" coords="108,13,167,39"/>
+<area shape="rect" href="collisions__updater_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,13,60,39"/>
+</map>
 </div>
-</div>
-<a id="a6a68fe2243256f962529fe7de0babcc2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6a68fe2243256f962529fe7de0babcc2">&#9670;&nbsp;</a></span>setNewModelCallback()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void rdf_loader::RDFLoader::setNewModelCallback </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacerdf__loader.html#a4911252e62ee62892c89f6f9f5a977f8">NewModelCallback</a>&#160;</td>
-          <td class="paramname"><em>cb</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="rdf__loader_8h_source.html#l00128">128</a> of file <a class="el" href="rdf__loader_8h_source.html">rdf_loader.h</a>.</p>
 
 </div>
 </div>

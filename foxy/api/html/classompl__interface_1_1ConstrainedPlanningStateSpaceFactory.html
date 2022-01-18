@@ -218,7 +218,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Return a priority that this planner should be used for this specific planning problem. </p>
-<p>This state space factory is currently only used if <code>use_ompl_constrained_state_space</code> was set to <code>true</code> in ompl_planning.yaml. In that case it is the only factory to choose from, so the priority does not matter. It returns a low priority so it will never be chosen when others are available. (The second lowest priority is -1 in the <a class="el" href="classompl__interface_1_1PoseModelStateSpaceFactory.html">PoseModelStateSpaceFactory</a>.)</p>
+<p>This state space factory is currently only used if <code>use_ompl_constrained_state_space</code> was set to <code>true</code> in ompl_planning.yaml. In that case it is the only factory to choose from, so the priority does not matter. It returns a low priority so it will never be choosen when others are available. (The second lowest priority is -1 in the <a class="el" href="classompl__interface_1_1PoseModelStateSpaceFactory.html">PoseModelStateSpaceFactory</a>.)</p>
 <p>For more details on this state space selection process, see: <a href="https://github.com/JeroenDM/moveit/pull/2">https://github.com/JeroenDM/moveit/pull/2</a> </p>
 
 <p>Implements <a class="el" href="classompl__interface_1_1ModelBasedStateSpaceFactory.html#aec8bb15b74326b883e30792acd310551">ompl_interface::ModelBasedStateSpaceFactory</a>.</p>

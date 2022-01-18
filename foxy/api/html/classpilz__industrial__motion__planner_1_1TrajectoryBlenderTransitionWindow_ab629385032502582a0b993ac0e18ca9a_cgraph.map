@@ -1,0 +1,5 @@
+<map id="pilz_industrial_motion_planner::TrajectoryBlenderTransitionWindow::blend" name="pilz_industrial_motion_planner::TrajectoryBlenderTransitionWindow::blend">
+<area shape="rect" id="node1" title="Blend two trajectories using transition window. The trajectories have to be equally and uniformly dis..." alt="" coords="5,35,268,91"/>
+<area shape="rect" id="node2" href="$namespacepilz__industrial__motion__planner.html#a85ea227cb54bc473b76cd7efd652ead0" title="Generate joint trajectory from a KDL Cartesian trajectory." alt="" coords="316,5,553,47"/>
+<area shape="rect" id="node3" href="$classpilz__industrial__motion__planner_1_1LimitsContainer.html#aa05824e7f6038376806adf1f3de49c90" title="Obtain the Joint Limits from the container." alt="" coords="340,71,529,127"/>
+</map>

@@ -86,21 +86,21 @@ $(function() {
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * limitations under the License.</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;mutex&gt;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;condition_variable&gt;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;algorithm&gt;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;chrono&gt;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;gmock/gmock.h&gt;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;rclcpp/logging.hpp&gt;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="namespacetesting.html">   29</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacetesting.html">testing</a></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="namespacetesting.html#a7521d672438393dc482f070b1e811179">   31</a></span>&#160;<span class="keyword">const</span> rclcpp::Logger <a class="code" href="namespacetesting.html#a7521d672438393dc482f070b1e811179">LOGGER</a> = rclcpp::get_logger(<span class="stringliteral">&quot;moveit.pilz_industrial_motion_planner.async_test&quot;</span>);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#ifndef ASYNC_TEST_H</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#define ASYNC_TEST_H</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;mutex&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;condition_variable&gt;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;chrono&gt;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;gmock/gmock.h&gt;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;ros/ros.h&gt;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="namespacetesting.html">   30</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacetesting.html">testing</a></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
 <div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classtesting_1_1AsyncTest.html">   69</a></span>&#160;<span class="keyword">class </span><a class="code" href="classtesting_1_1AsyncTest.html">AsyncTest</a></div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;{</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword">public</span>:</div>
@@ -126,7 +126,7 @@ $(function() {
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="preprocessor">    this-&gt;triggerClearEvent(str);                                                                                      \</span></div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="preprocessor">    return true;                                                                                                       \</span></div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="preprocessor">  })</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="async__test_8h.html#a05fc9a603aacee7206587615a0260ac9">  116</a></span>&#160;<span class="preprocessor">#define ACTION_OPEN_BARRIER_VOID(str) ::testing::InvokeWithoutArgs([this]() { this-&gt;triggerClearEvent(str); })</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="async__test_8h.html#a05fc9a603aacee7206587615a0260ac9">  116</a></span>&#160;<span class="preprocessor">#define ACTION_OPEN_BARRIER_VOID(str) ::testing::InvokeWithoutArgs([this](void) { this-&gt;triggerClearEvent(str); })</span></div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
 <div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="classtesting_1_1AsyncTest.html#a4912b2272227e05cc40782cb0723b67e">  118</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classtesting_1_1AsyncTest.html#a4912b2272227e05cc40782cb0723b67e">AsyncTest::triggerClearEvent</a>(<span class="keyword">const</span> std::string&amp; event)</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;{</div>
@@ -134,12 +134,12 @@ $(function() {
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classtesting_1_1AsyncTest.html#ab0b9b36af9527148c38c644a6eee9977">clear_events_</a>.empty())</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  {</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    RCLCPP_DEBUG(<a class="code" href="namespacetesting.html#a7521d672438393dc482f070b1e811179">LOGGER</a>, <span class="stringliteral">&quot;Clearing Barricade[%s]&quot;</span>, event.c_str());</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    ROS_DEBUG_NAMED(<span class="stringliteral">&quot;Test&quot;</span>, <span class="stringliteral">&quot;Clearing Barricade[%s]&quot;</span>, event.c_str());</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <a class="code" href="classtesting_1_1AsyncTest.html#a7c84b7d83711b69248bb156984e6f725">waitlist_</a>.insert(event);</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  }</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classtesting_1_1AsyncTest.html#ab0b9b36af9527148c38c644a6eee9977">clear_events_</a>.erase(event) &lt; 1)</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  {</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    RCLCPP_WARN(<a class="code" href="namespacetesting.html#a7521d672438393dc482f070b1e811179">LOGGER</a>, <span class="stringliteral">&quot;Triggered event &quot;</span> &lt;&lt; event &lt;&lt; <span class="stringliteral">&quot; despite not waiting for it.&quot;</span>);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    ROS_WARN_STREAM(<span class="stringliteral">&quot;Triggered event &quot;</span> &lt;&lt; event &lt;&lt; <span class="stringliteral">&quot; despite not waiting for it.&quot;</span>);</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  }</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  <a class="code" href="classtesting_1_1AsyncTest.html#aab54422f9956c7bb69b47d9226897aac">cv_</a>.notify_one();</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;}</div>
@@ -158,10 +158,10 @@ $(function() {
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  {</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    events_stringstream &lt;&lt; <span class="keyword">event</span> &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  }</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  RCLCPP_DEBUG(<a class="code" href="namespacetesting.html#a7521d672438393dc482f070b1e811179">LOGGER</a>, <span class="stringliteral">&quot;Adding Barricade[%s]&quot;</span>, events_stringstream.str().c_str());</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  ROS_DEBUG_NAMED(<span class="stringliteral">&quot;Test&quot;</span>, <span class="stringliteral">&quot;Adding Barricade[%s]&quot;</span>, events_stringstream.str().c_str());</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  std::copy_if(clear_events.begin(), clear_events.end(), std::inserter(<a class="code" href="classtesting_1_1AsyncTest.html#ab0b9b36af9527148c38c644a6eee9977">clear_events_</a>, <a class="code" href="classtesting_1_1AsyncTest.html#ab0b9b36af9527148c38c644a6eee9977">clear_events_</a>.end()),</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;               [<span class="keyword">this</span>](<span class="keyword">const</span> std::string&amp; event) { return this-&gt;waitlist_.count(event) == 0; });</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;               [<span class="keyword">this</span>](std::string event) { return this-&gt;waitlist_.count(event) == 0; });</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  <a class="code" href="classtesting_1_1AsyncTest.html#a7c84b7d83711b69248bb156984e6f725">waitlist_</a>.clear();</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  <span class="keyword">auto</span> end_time_point = std::chrono::system_clock::now() + std::chrono::milliseconds(timeout_ms);</div>
@@ -185,14 +185,15 @@ $(function() {
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;}</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;}  <span class="comment">// namespace testing</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="preprocessor">#endif  // ASYNC_TEST_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="anamespacetesting_html"><div class="ttname"><a href="namespacetesting.html">testing</a></div><div class="ttdef"><b>Definition:</b> <a href="async__test_8h_source.html#l00029">async_test.h:29</a></div></div>
+<div class="ttc" id="anamespacetesting_html"><div class="ttname"><a href="namespacetesting.html">testing</a></div><div class="ttdef"><b>Definition:</b> <a href="async__test_8h_source.html#l00030">async_test.h:30</a></div></div>
 <div class="ttc" id="aclasstesting_1_1AsyncTest_html_ab0b9b36af9527148c38c644a6eee9977"><div class="ttname"><a href="classtesting_1_1AsyncTest.html#ab0b9b36af9527148c38c644a6eee9977">testing::AsyncTest::clear_events_</a></div><div class="ttdeci">std::set&lt; std::string &gt; clear_events_</div><div class="ttdef"><b>Definition:</b> <a href="async__test_8h_source.html#l00103">async_test.h:103</a></div></div>
 <div class="ttc" id="aclasstesting_1_1AsyncTest_html_aaa48425ff9a17df93bd87bddf194ec85"><div class="ttname"><a href="classtesting_1_1AsyncTest.html#aaa48425ff9a17df93bd87bddf194ec85">testing::AsyncTest::m_</a></div><div class="ttdeci">std::mutex m_</div><div class="ttdef"><b>Definition:</b> <a href="async__test_8h_source.html#l00101">async_test.h:101</a></div></div>
 <div class="ttc" id="aclasstesting_1_1AsyncTest_html_a5846c0b4d7c69f61d6292af422273237"><div class="ttname"><a href="classtesting_1_1AsyncTest.html#a5846c0b4d7c69f61d6292af422273237">testing::AsyncTest::barricade</a></div><div class="ttdeci">bool barricade(const std::string &amp;clear_event, const int timeout_ms=-1)</div><div class="ttdoc">Will block until the event given by clear_event is triggered or a timeout is reached....</div><div class="ttdef"><b>Definition:</b> <a href="async__test_8h_source.html#l00134">async_test.h:134</a></div></div>
 <div class="ttc" id="aclasstesting_1_1AsyncTest_html"><div class="ttname"><a href="classtesting_1_1AsyncTest.html">testing::AsyncTest</a></div><div class="ttdoc">Test class that allows the handling of asynchronous test objects.</div><div class="ttdef"><b>Definition:</b> <a href="async__test_8h_source.html#l00069">async_test.h:69</a></div></div>
-<div class="ttc" id="aclasstesting_1_1AsyncTest_html_a4912b2272227e05cc40782cb0723b67e"><div class="ttname"><a href="classtesting_1_1AsyncTest.html#a4912b2272227e05cc40782cb0723b67e">testing::AsyncTest::triggerClearEvent</a></div><div class="ttdeci">void triggerClearEvent(const std::string &amp;event)</div><div class="ttdoc">Triggers a clear event. If a call to barricade is currently pending it will unblock as soon as all cl...</div><div class="ttdef"><b>Definition:</b> <a href="async__test_8h_source.html#l00118">async_test.h:118</a></div></div>
-<div class="ttc" id="anamespacetesting_html_a7521d672438393dc482f070b1e811179"><div class="ttname"><a href="namespacetesting.html#a7521d672438393dc482f070b1e811179">testing::LOGGER</a></div><div class="ttdeci">const rclcpp::Logger LOGGER</div><div class="ttdef"><b>Definition:</b> <a href="async__test_8h_source.html#l00031">async_test.h:31</a></div></div>
+<div class="ttc" id="aclasstesting_1_1AsyncTest_html_a4912b2272227e05cc40782cb0723b67e"><div class="ttname"><a href="classtesting_1_1AsyncTest.html#a4912b2272227e05cc40782cb0723b67e">testing::AsyncTest::triggerClearEvent</a></div><div class="ttdeci">void triggerClearEvent(const std::string &amp;event)</div><div class="ttdoc">Triggeres a clear event. If a call to barricade is currently pending it will unblock as soon as all c...</div><div class="ttdef"><b>Definition:</b> <a href="async__test_8h_source.html#l00118">async_test.h:118</a></div></div>
 <div class="ttc" id="aclasstesting_1_1AsyncTest_html_aab54422f9956c7bb69b47d9226897aac"><div class="ttname"><a href="classtesting_1_1AsyncTest.html#aab54422f9956c7bb69b47d9226897aac">testing::AsyncTest::cv_</a></div><div class="ttdeci">std::condition_variable cv_</div><div class="ttdef"><b>Definition:</b> <a href="async__test_8h_source.html#l00102">async_test.h:102</a></div></div>
 <div class="ttc" id="aclasstesting_1_1AsyncTest_html_a7c84b7d83711b69248bb156984e6f725"><div class="ttname"><a href="classtesting_1_1AsyncTest.html#a7c84b7d83711b69248bb156984e6f725">testing::AsyncTest::waitlist_</a></div><div class="ttdeci">std::set&lt; std::string &gt; waitlist_</div><div class="ttdef"><b>Definition:</b> <a href="async__test_8h_source.html#l00104">async_test.h:104</a></div></div>
 <!-- start footer part -->

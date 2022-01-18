@@ -1,0 +1,5 @@
+<map id="moveit::core::JointModel::getVariableCount" name="moveit::core::JointModel::getVariableCount">
+<area shape="rect" id="node1" title="Get the number of variables that describe this joint." alt="" coords="5,39,187,80"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1JointModel.html#ab4ba9eac1f786fdeb152012f396daab8" title="Compute the distance between two joint states of the same model (represented by the variable values)" alt="" coords="277,5,458,47"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1core_1_1JointModel.html#adaf152251e15131a66e48f5e1de98dbb" title="Provide random values for the joint variables (within default bounds). Enough memory is assumed to be..." alt="" coords="235,71,500,112"/>
+</map>

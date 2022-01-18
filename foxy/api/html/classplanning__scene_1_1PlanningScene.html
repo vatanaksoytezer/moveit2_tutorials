@@ -105,12 +105,12 @@ Collaboration diagram for planning_scene::PlanningScene:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a808d4e576bbe35f4c0b53bcb41237bba"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning__scene_1_1PlanningScene.html#a808d4e576bbe35f4c0b53bcb41237bba">PlanningScene</a> (const moveit::core::RobotModelConstPtr &amp;robot_model, const collision_detection::WorldPtr &amp;world=std::make_shared&lt; <a class="el" href="classcollision__detection_1_1World.html">collision_detection::World</a> &gt;())</td></tr>
-<tr class="memdesc:a808d4e576bbe35f4c0b53bcb41237bba"><td class="mdescLeft">&#160;</td><td class="mdescRight">construct using an existing RobotModel  <a href="classplanning__scene_1_1PlanningScene.html#a808d4e576bbe35f4c0b53bcb41237bba">More...</a><br /></td></tr>
-<tr class="separator:a808d4e576bbe35f4c0b53bcb41237bba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1053d4f5da23ea202decf2389c365ddd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning__scene_1_1PlanningScene.html#a1053d4f5da23ea202decf2389c365ddd">PlanningScene</a> (const urdf::ModelInterfaceSharedPtr &amp;urdf_model, const srdf::ModelConstSharedPtr &amp;srdf_model, const collision_detection::WorldPtr &amp;world=std::make_shared&lt; <a class="el" href="classcollision__detection_1_1World.html">collision_detection::World</a> &gt;())</td></tr>
-<tr class="memdesc:a1053d4f5da23ea202decf2389c365ddd"><td class="mdescLeft">&#160;</td><td class="mdescRight">construct using a urdf and srdf. <a class="el" href="classA.html">A</a> RobotModel for the <a class="el" href="classplanning__scene_1_1PlanningScene.html" title="This class maintains the representation of the environment as seen by a planning instance....">PlanningScene</a> will be created using the urdf and srdf.  <a href="classplanning__scene_1_1PlanningScene.html#a1053d4f5da23ea202decf2389c365ddd">More...</a><br /></td></tr>
-<tr class="separator:a1053d4f5da23ea202decf2389c365ddd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa76cd9c408f71b531f6c268709fb0a86"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning__scene_1_1PlanningScene.html#aa76cd9c408f71b531f6c268709fb0a86">PlanningScene</a> (const moveit::core::RobotModelConstPtr &amp;robot_model, const collision_detection::WorldPtr &amp;world=collision_detection::WorldPtr(new <a class="el" href="classcollision__detection_1_1World.html">collision_detection::World</a>()))</td></tr>
+<tr class="memdesc:aa76cd9c408f71b531f6c268709fb0a86"><td class="mdescLeft">&#160;</td><td class="mdescRight">construct using an existing RobotModel  <a href="classplanning__scene_1_1PlanningScene.html#aa76cd9c408f71b531f6c268709fb0a86">More...</a><br /></td></tr>
+<tr class="separator:aa76cd9c408f71b531f6c268709fb0a86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a266e5f8360d996098a0909411591d132"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning__scene_1_1PlanningScene.html#a266e5f8360d996098a0909411591d132">PlanningScene</a> (const urdf::ModelInterfaceSharedPtr &amp;urdf_model, const srdf::ModelConstSharedPtr &amp;srdf_model, const collision_detection::WorldPtr &amp;world=collision_detection::WorldPtr(new <a class="el" href="classcollision__detection_1_1World.html">collision_detection::World</a>()))</td></tr>
+<tr class="memdesc:a266e5f8360d996098a0909411591d132"><td class="mdescLeft">&#160;</td><td class="mdescRight">construct using a urdf and srdf. <a class="el" href="classA.html">A</a> RobotModel for the <a class="el" href="classplanning__scene_1_1PlanningScene.html" title="This class maintains the representation of the environment as seen by a planning instance....">PlanningScene</a> will be created using the urdf and srdf.  <a href="classplanning__scene_1_1PlanningScene.html#a266e5f8360d996098a0909411591d132">More...</a><br /></td></tr>
+<tr class="separator:a266e5f8360d996098a0909411591d132"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ed9a6f5d6df518ba89a02c419573ef8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning__scene_1_1PlanningScene.html#a7ed9a6f5d6df518ba89a02c419573ef8">~PlanningScene</a> ()</td></tr>
 <tr class="separator:a7ed9a6f5d6df518ba89a02c419573ef8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a343bc168dde9e2c211d2450f4eb0921a"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning__scene_1_1PlanningScene.html#a343bc168dde9e2c211d2450f4eb0921a">getName</a> () const</td></tr>
@@ -126,7 +126,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a148e13eac088c22bedfd39eb004eb3be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a new child <a class="el" href="classplanning__scene_1_1PlanningScene.html" title="This class maintains the representation of the environment as seen by a planning instance....">PlanningScene</a> that uses this one as parent and has the diffs specified by <em>msg</em> applied.  <a href="classplanning__scene_1_1PlanningScene.html#a148e13eac088c22bedfd39eb004eb3be">More...</a><br /></td></tr>
 <tr class="separator:a148e13eac088c22bedfd39eb004eb3be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada3903d3ec6622bbeb2df558a5cce5f7"><td class="memItemLeft" align="right" valign="top">const PlanningSceneConstPtr &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning__scene_1_1PlanningScene.html#ada3903d3ec6622bbeb2df558a5cce5f7">getParent</a> () const</td></tr>
-<tr class="memdesc:ada3903d3ec6622bbeb2df558a5cce5f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the parent scene (with respect to which the diffs are maintained). This may be empty.  <a href="classplanning__scene_1_1PlanningScene.html#ada3903d3ec6622bbeb2df558a5cce5f7">More...</a><br /></td></tr>
+<tr class="memdesc:ada3903d3ec6622bbeb2df558a5cce5f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the parent scene (whith respect to which the diffs are maintained). This may be empty.  <a href="classplanning__scene_1_1PlanningScene.html#ada3903d3ec6622bbeb2df558a5cce5f7">More...</a><br /></td></tr>
 <tr class="separator:ada3903d3ec6622bbeb2df558a5cce5f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1789ae10386a21ffe1fa41e1a590a6c"><td class="memItemLeft" align="right" valign="top">const moveit::core::RobotModelConstPtr &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning__scene_1_1PlanningScene.html#ae1789ae10386a21ffe1fa41e1a590a6c">getRobotModel</a> () const</td></tr>
 <tr class="memdesc:ae1789ae10386a21ffe1fa41e1a590a6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the kinematic model for which the planning scene is maintained.  <a href="classplanning__scene_1_1PlanningScene.html#ae1789ae10386a21ffe1fa41e1a590a6c">More...</a><br /></td></tr>
@@ -185,9 +185,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a17eaa549d0279f01f8b26e4c04c05d6f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning__scene_1_1PlanningScene.html#a17eaa549d0279f01f8b26e4c04c05d6f">usePlanningSceneMsg</a> (const moveit_msgs::msg::PlanningScene &amp;scene)</td></tr>
 <tr class="memdesc:a17eaa549d0279f01f8b26e4c04c05d6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call <a class="el" href="classplanning__scene_1_1PlanningScene.html#acb5c51321f5d908072920ee2a2f1db58" title="Set this instance of a planning scene to be the same as the one serialized in the scene message,...">setPlanningSceneMsg()</a> or <a class="el" href="classplanning__scene_1_1PlanningScene.html#a6b9894a14d5757ea4317d0be4ebb5b6e" title="Apply changes to this planning scene as diffs, even if the message itself is not marked as being a di...">setPlanningSceneDiffMsg()</a> depending on how the is_diff member of the message is set.  <a href="classplanning__scene_1_1PlanningScene.html#a17eaa549d0279f01f8b26e4c04c05d6f">More...</a><br /></td></tr>
 <tr class="separator:a17eaa549d0279f01f8b26e4c04c05d6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92ccb51285406fcfa325dcf1f88080e6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning__scene_1_1PlanningScene.html#a92ccb51285406fcfa325dcf1f88080e6">shapesAndPosesFromCollisionObjectMessage</a> (const moveit_msgs::msg::CollisionObject &amp;object, Eigen::Isometry3d &amp;object_pose_in_header_frame, std::vector&lt; shapes::ShapeConstPtr &gt; &amp;shapes, EigenSTL::vector_Isometry3d &amp;shape_poses)</td></tr>
-<tr class="memdesc:a92ccb51285406fcfa325dcf1f88080e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes the object message and returns the object pose, shapes and shape poses. If the object pose is empty (identity) but the shape pose is set, this uses the shape pose as the object pose. The shape pose becomes the identity instead.  <a href="classplanning__scene_1_1PlanningScene.html#a92ccb51285406fcfa325dcf1f88080e6">More...</a><br /></td></tr>
-<tr class="separator:a92ccb51285406fcfa325dcf1f88080e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a304eaffcb834ec62a26e1d296c72b726"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning__scene_1_1PlanningScene.html#a304eaffcb834ec62a26e1d296c72b726">processCollisionObjectMsg</a> (const moveit_msgs::msg::CollisionObject &amp;object)</td></tr>
 <tr class="separator:a304eaffcb834ec62a26e1d296c72b726"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f16582ddf99b615ef69c658521731ff"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning__scene_1_1PlanningScene.html#a6f16582ddf99b615ef69c658521731ff">processAttachedCollisionObjectMsg</a> (const moveit_msgs::msg::AttachedCollisionObject &amp;object)</td></tr>
@@ -314,16 +311,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a70c5d8b01c2bbdf5515d790326590b38"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning__scene_1_1PlanningScene.html#a70c5d8b01c2bbdf5515d790326590b38">isPathValid</a> (const <a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html">robot_trajectory::RobotTrajectory</a> &amp;trajectory, const std::string &amp;group=&quot;&quot;, bool verbose=false, std::vector&lt; std::size_t &gt; *invalid_index=nullptr) const</td></tr>
 <tr class="memdesc:a70c5d8b01c2bbdf5515d790326590b38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a given path is valid. Each state is checked for validity (collision avoidance and feasibility)  <a href="classplanning__scene_1_1PlanningScene.html#a70c5d8b01c2bbdf5515d790326590b38">More...</a><br /></td></tr>
 <tr class="separator:a70c5d8b01c2bbdf5515d790326590b38"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf23ce8ede2da10e02cfad24a881a274"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning__scene_1_1PlanningScene.html#aaf23ce8ede2da10e02cfad24a881a274">getCostSources</a> (const <a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html">robot_trajectory::RobotTrajectory</a> &amp;trajectory, std::size_t max_costs, <a class="el" href="ros_2warehouse_2warehouse_2CMakeLists_8txt.html#af4423e580afb68aec7c40fb0bce7d5d4">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">collision_detection::CostSource</a> &gt; &amp;costs, double overlap_fraction=0.9) const</td></tr>
+<tr class="memitem:aaf23ce8ede2da10e02cfad24a881a274"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning__scene_1_1PlanningScene.html#aaf23ce8ede2da10e02cfad24a881a274">getCostSources</a> (const <a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html">robot_trajectory::RobotTrajectory</a> &amp;trajectory, std::size_t max_costs, <a class="el" href="setup__assistant_2CMakeLists_8txt.html#a58ab708fe5c1f47f0642bdaee3056d3b">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">collision_detection::CostSource</a> &gt; &amp;costs, double overlap_fraction=0.9) const</td></tr>
 <tr class="memdesc:aaf23ce8ede2da10e02cfad24a881a274"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the top <em>max_costs</em> cost sources for a specified trajectory. The resulting costs are stored in <em>costs</em>.  <a href="classplanning__scene_1_1PlanningScene.html#aaf23ce8ede2da10e02cfad24a881a274">More...</a><br /></td></tr>
 <tr class="separator:aaf23ce8ede2da10e02cfad24a881a274"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab536eaccd77e4e1f495b782e44ecab5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning__scene_1_1PlanningScene.html#ab536eaccd77e4e1f495b782e44ecab5d">getCostSources</a> (const <a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html">robot_trajectory::RobotTrajectory</a> &amp;trajectory, std::size_t max_costs, const std::string &amp;group_name, <a class="el" href="ros_2warehouse_2warehouse_2CMakeLists_8txt.html#af4423e580afb68aec7c40fb0bce7d5d4">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">collision_detection::CostSource</a> &gt; &amp;costs, double overlap_fraction=0.9) const</td></tr>
+<tr class="memitem:ab536eaccd77e4e1f495b782e44ecab5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning__scene_1_1PlanningScene.html#ab536eaccd77e4e1f495b782e44ecab5d">getCostSources</a> (const <a class="el" href="classrobot__trajectory_1_1RobotTrajectory.html">robot_trajectory::RobotTrajectory</a> &amp;trajectory, std::size_t max_costs, const std::string &amp;group_name, <a class="el" href="setup__assistant_2CMakeLists_8txt.html#a58ab708fe5c1f47f0642bdaee3056d3b">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">collision_detection::CostSource</a> &gt; &amp;costs, double overlap_fraction=0.9) const</td></tr>
 <tr class="memdesc:ab536eaccd77e4e1f495b782e44ecab5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the top <em>max_costs</em> cost sources for a specified trajectory, but only for group <em>group_name</em>. The resulting costs are stored in <em>costs</em>.  <a href="classplanning__scene_1_1PlanningScene.html#ab536eaccd77e4e1f495b782e44ecab5d">More...</a><br /></td></tr>
 <tr class="separator:ab536eaccd77e4e1f495b782e44ecab5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a023e1d69bacf9d57920a39a74e1c19cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning__scene_1_1PlanningScene.html#a023e1d69bacf9d57920a39a74e1c19cd">getCostSources</a> (const <a class="el" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a> &amp;state, std::size_t max_costs, <a class="el" href="ros_2warehouse_2warehouse_2CMakeLists_8txt.html#af4423e580afb68aec7c40fb0bce7d5d4">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">collision_detection::CostSource</a> &gt; &amp;costs) const</td></tr>
+<tr class="memitem:a023e1d69bacf9d57920a39a74e1c19cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning__scene_1_1PlanningScene.html#a023e1d69bacf9d57920a39a74e1c19cd">getCostSources</a> (const <a class="el" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a> &amp;state, std::size_t max_costs, <a class="el" href="setup__assistant_2CMakeLists_8txt.html#a58ab708fe5c1f47f0642bdaee3056d3b">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">collision_detection::CostSource</a> &gt; &amp;costs) const</td></tr>
 <tr class="memdesc:a023e1d69bacf9d57920a39a74e1c19cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the top <em>max_costs</em> cost sources for a specified state. The resulting costs are stored in <em>costs</em>.  <a href="classplanning__scene_1_1PlanningScene.html#a023e1d69bacf9d57920a39a74e1c19cd">More...</a><br /></td></tr>
 <tr class="separator:a023e1d69bacf9d57920a39a74e1c19cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80e68ad67679ee464f74cbe3575eefae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning__scene_1_1PlanningScene.html#a80e68ad67679ee464f74cbe3575eefae">getCostSources</a> (const <a class="el" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a> &amp;state, std::size_t max_costs, const std::string &amp;group_name, <a class="el" href="ros_2warehouse_2warehouse_2CMakeLists_8txt.html#af4423e580afb68aec7c40fb0bce7d5d4">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">collision_detection::CostSource</a> &gt; &amp;costs) const</td></tr>
+<tr class="memitem:a80e68ad67679ee464f74cbe3575eefae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning__scene_1_1PlanningScene.html#a80e68ad67679ee464f74cbe3575eefae">getCostSources</a> (const <a class="el" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a> &amp;state, std::size_t max_costs, const std::string &amp;group_name, <a class="el" href="setup__assistant_2CMakeLists_8txt.html#a58ab708fe5c1f47f0642bdaee3056d3b">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">collision_detection::CostSource</a> &gt; &amp;costs) const</td></tr>
 <tr class="memdesc:a80e68ad67679ee464f74cbe3575eefae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the top <em>max_costs</em> cost sources for a specified state, but only for group <em>group_name</em>. The resulting costs are stored in <em>costs</em>.  <a href="classplanning__scene_1_1PlanningScene.html#a80e68ad67679ee464f74cbe3575eefae">More...</a><br /></td></tr>
 <tr class="separator:a80e68ad67679ee464f74cbe3575eefae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a883d0840394dc31b302fb31c5ac00b53"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning__scene_1_1PlanningScene.html#a883d0840394dc31b302fb31c5ac00b53">printKnownObjects</a> (std::ostream &amp;out=std::cout) const</td></tr>
@@ -560,8 +557,8 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00122">122</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a808d4e576bbe35f4c0b53bcb41237bba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a808d4e576bbe35f4c0b53bcb41237bba">&#9670;&nbsp;</a></span>PlanningScene() <span class="overload">[1/2]</span></h2>
+<a id="aa76cd9c408f71b531f6c268709fb0a86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa76cd9c408f71b531f6c268709fb0a86">&#9670;&nbsp;</a></span>PlanningScene() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -576,7 +573,7 @@ Friends</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const collision_detection::WorldPtr &amp;&#160;</td>
-          <td class="paramname"><em>world</em> = <code>std::make_shared&lt;<a class="el" href="classcollision__detection_1_1World.html">collision_detection::World</a>&gt;()</code>&#160;</td>
+          <td class="paramname"><em>world</em> = <code>collision_detection::WorldPtr(new&#160;<a class="el" href="classcollision__detection_1_1World.html">collision_detection::World</a>())</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -588,12 +585,12 @@ Friends</h2></td></tr>
 
 <p>construct using an existing RobotModel </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00150">150</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00145">145</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a1053d4f5da23ea202decf2389c365ddd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1053d4f5da23ea202decf2389c365ddd">&#9670;&nbsp;</a></span>PlanningScene() <span class="overload">[2/2]</span></h2>
+<a id="a266e5f8360d996098a0909411591d132"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a266e5f8360d996098a0909411591d132">&#9670;&nbsp;</a></span>PlanningScene() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -614,7 +611,7 @@ Friends</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const collision_detection::WorldPtr &amp;&#160;</td>
-          <td class="paramname"><em>world</em> = <code>std::make_shared&lt;<a class="el" href="classcollision__detection_1_1World.html">collision_detection::World</a>&gt;()</code>&#160;</td>
+          <td class="paramname"><em>world</em> = <code>collision_detection::WorldPtr(new&#160;<a class="el" href="classcollision__detection_1_1World.html">collision_detection::World</a>())</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -626,7 +623,7 @@ Friends</h2></td></tr>
 
 <p>construct using a urdf and srdf. <a class="el" href="classA.html">A</a> RobotModel for the <a class="el" href="classplanning__scene_1_1PlanningScene.html" title="This class maintains the representation of the environment as seen by a planning instance....">PlanningScene</a> will be created using the urdf and srdf. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00158">158</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00153">153</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -645,7 +642,7 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00175">175</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00170">170</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -679,7 +676,7 @@ Friends</h2></td></tr>
 <p><a class="el" href="classA.html">A</a> new <a class="el" href="classplanning__scene_1_1PlanningScene.html" title="This class maintains the representation of the environment as seen by a planning instance....">PlanningScene</a> uses an FCL collision detector by default.</p>
 <p>example: to add FCL collision detection (normally not necessary) call planning_scene-&gt;allocateCollisionDetector(collision_detection::CollisionDetectorAllocatorFCL::create()); </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00972">972</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00965">965</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
 
 </div>
 </div>
@@ -711,7 +708,16 @@ Friends</h2></td></tr>
 
 <p>Check whether the current state is in collision, and if needed, updates the collision transforms of the current state before the computation. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00402">402</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00397">397</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning__scene_1_1PlanningScene_a4ebcc755346e443319104e8b964f8faa_cgraph.png" border="0" usemap="#classplanning__scene_1_1PlanningScene_a4ebcc755346e443319104e8b964f8faa_cgraph" alt=""/></div>
+<map name="classplanning__scene_1_1PlanningScene_a4ebcc755346e443319104e8b964f8faa_cgraph" id="classplanning__scene_1_1PlanningScene_a4ebcc755346e443319104e8b964f8faa_cgraph">
+<area shape="rect" title="Check whether the current state is in collision, and if needed, updates the collision transforms of t..." alt="" coords="5,5,192,47"/>
+<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#aeed4b8e82fc31eb7abb405429877343e" title="Get the active collision environment." alt="" coords="240,5,427,47"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -762,7 +768,7 @@ Here is the caller graph for this function:</div>
 
 <p>Check whether the current state is in collision. The current state is expected to be updated. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00367">367</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00369">369</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
 
 </div>
 </div>
@@ -800,7 +806,7 @@ Here is the caller graph for this function:</div>
 
 <p>Check whether a specified state (<em>robot_state</em>) is in collision. The collision transforms of <em>robot_state</em> are expected to be up to date. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00411">411</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00406">406</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -844,7 +850,7 @@ Here is the caller graph for this function:</div>
 
 <p>Check whether a specified state (<em>robot_state</em>) is in collision, with respect to a given allowed collision matrix (<em>acm</em>). </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00427">427</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00429">429</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -899,7 +905,7 @@ Here is the call graph for this function:</div>
 
 <p>Check whether a specified state (<em>robot_state</em>) is in collision. This variant of the function takes a non-const <em>robot_state</em> and calls updateCollisionBodyTransforms() on it. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00374">374</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00376">376</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
 
 </div>
 </div>
@@ -951,7 +957,7 @@ Here is the call graph for this function:</div>
 
 <p>Check whether a specified state (<em>robot_state</em>) is in collision, with respect to a given allowed collision matrix (<em>acm</em>). This variant of the function takes a non-const <em>robot_state</em> and updates its link transforms if needed. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00390">390</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00392">392</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
 
 </div>
 </div>
@@ -983,7 +989,7 @@ Here is the call graph for this function:</div>
 
 <p>Check whether the current state is in collision, but use a collision_detection::CollisionRobot instance that has no padding. Since the function is non-const, the current state transforms are also updated if needed. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00440">440</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00442">442</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1033,7 +1039,7 @@ Here is the call graph for this function:</div>
 <p>Check whether the current state is in collision, but use a collision_detection::CollisionRobot instance that has no padding. <br  />
  </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00412">412</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00414">414</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1089,7 +1095,7 @@ Here is the call graph for this function:</div>
 <p>Check whether a specified state (<em>robot_state</em>) is in collision, but use a collision_detection::CollisionRobot instance that has no padding. <br  />
  </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00420">420</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00422">422</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
 
 </div>
 </div>
@@ -1134,7 +1140,7 @@ Here is the call graph for this function:</div>
 <p>Check whether a specified state (<em>robot_state</em>) is in collision, with respect to a given allowed collision matrix (<em>acm</em>), but use a collision_detection::CollisionRobot instance that has no padding. <br  />
  </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00449">449</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00451">451</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -1180,7 +1186,7 @@ Here is the call graph for this function:</div>
 
 <p>Check whether a specified state (<em>robot_state</em>) is in collision, but use a collision_detection::CollisionRobot instance that has no padding. Update the link transforms of <em>robot_state</em> if needed. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00430">430</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00432">432</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
 
 </div>
 </div>
@@ -1232,7 +1238,7 @@ Here is the call graph for this function:</div>
 
 <p>Check whether a specified state (<em>robot_state</em>) is in collision, with respect to a given allowed collision matrix (<em>acm</em>), but use a collision_detection::CollisionRobot instance that has no padding. This variant of the function takes a non-const <em>robot_state</em> and calls updates the link transforms if needed. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00441">441</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00443">443</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
 
 </div>
 </div>
@@ -1264,7 +1270,7 @@ Here is the call graph for this function:</div>
 
 <p>Check whether the current state is in self collision. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00418">418</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00420">420</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1279,9 +1285,12 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classplanning__scene_1_1PlanningScene_aea9edbc5c65137a736db5a86bd1fed08_icgraph.png" border="0" usemap="#classplanning__scene_1_1PlanningScene_aea9edbc5c65137a736db5a86bd1fed08_icgraph" alt=""/></div>
 <map name="classplanning__scene_1_1PlanningScene_aea9edbc5c65137a736db5a86bd1fed08_icgraph" id="classplanning__scene_1_1PlanningScene_aea9edbc5c65137a736db5a86bd1fed08_icgraph">
-<area shape="rect" title="Check whether the current state is in self collision." alt="" coords="403,5,591,47"/>
+<area shape="rect" title="Check whether the current state is in self collision." alt="" coords="927,35,1115,76"/>
 <area shape="rect" href="pymoveit__core_8cpp.html#acdb1e01a5a6ec640937d8c69c0f7d045" title=" " alt="" coords="204,5,355,47"/>
+<area shape="rect" href="namespacepilz__industrial__motion__planner.html#a1500d3ef06f2a3bfe55be9fcba90460e" title="Checks if current robot state is in self collision." alt="" coords="691,35,879,76"/>
+<area shape="rect" href="unittest__trajectory__functions_8cpp.html#a5be4ae26efc03c367fb3faa0d9c2bea2" title="Test if activated self collision for a pose that would be in self collision without the check results..." alt="" coords="750,101,819,127"/>
 <area shape="rect" href="pymoveit__core_8cpp.html#aae5c18014d007aef7676d42ced1ba2b0" title=" " alt="" coords="5,13,156,39"/>
+<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#a7a90a85d8dcfd1f2aea3cd019db399c8" title="Get the allowed collision matrix." alt="" coords="403,35,643,76"/>
 </map>
 </div>
 
@@ -1323,7 +1332,7 @@ Here is the caller graph for this function:</div>
 
 <p>Check whether the current state is in self collision. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00459">459</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00461">461</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
 
 </div>
 </div>
@@ -1369,7 +1378,7 @@ Here is the caller graph for this function:</div>
 
 <p>Check whether a specified state (<em>robot_state</em>) is in self collision. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00474">474</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00476">476</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
 
 </div>
 </div>
@@ -1421,7 +1430,7 @@ Here is the caller graph for this function:</div>
 
 <p>Check whether a specified state (<em>robot_state</em>) is in self collision, with respect to a given allowed collision matrix (<em>acm</em>) </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00493">493</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00495">495</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
 
 </div>
 </div>
@@ -1467,7 +1476,7 @@ Here is the caller graph for this function:</div>
 
 <p>Check whether a specified state (<em>robot_state</em>) is in self collision. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00466">466</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00468">468</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
 
 </div>
 </div>
@@ -1519,7 +1528,7 @@ Here is the caller graph for this function:</div>
 
 <p>Check whether a specified state (<em>robot_state</em>) is in self collision, with respect to a given allowed collision matrix (<em>acm</em>). The link transforms of <em>robot_state</em> are updated if needed. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00483">483</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00485">485</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
 
 </div>
 </div>
@@ -1540,7 +1549,7 @@ Here is the caller graph for this function:</div>
 
 <p>Clear the diffs accumulated for this planning scene, with respect to: the parent <a class="el" href="classplanning__scene_1_1PlanningScene.html" title="This class maintains the representation of the environment as seen by a planning instance....">PlanningScene</a> (if it exists) the parent CollisionDetector (if it exists) This function is a no-op if there is no parent planning scene. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00324">324</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00319">319</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1582,7 +1591,7 @@ Here is the call graph for this function:</div>
 
 <p>Clone a planning scene. Even if the scene <em>scene</em> depends on a parent, the cloned scene will not. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00237">237</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00232">232</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -1603,7 +1612,7 @@ Here is the call graph for this function:</div>
 
 <p>Make sure that all the data maintained in this scene is local. All unmodified data is copied from the parent and the pointer to the parent is discarded. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01102">1102</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01041">1041</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -1626,7 +1635,7 @@ Here is the call graph for this function:</div>
 <p>The child scene has its own copy of the world. It maintains a list (in world_diff_) of changes made to the child world.</p>
 <p>The robot_model_, robot_state_, scene_transforms_, and acm_ are not copied. They are shared with the parent. So if changes to these are made in the parent they will be visible in the child. But if any of these is modified (i.e. if the get*NonConst functions are called) in the child then a copy is made and subsequent changes to the corresponding member of the parent will no longer be visible in the child. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00245">245</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00240">240</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -1648,7 +1657,7 @@ Here is the call graph for this function:</div>
 
 <p>Return a new child <a class="el" href="classplanning__scene_1_1PlanningScene.html" title="This class maintains the representation of the environment as seen by a planning instance....">PlanningScene</a> that uses this one as parent and has the diffs specified by <em>msg</em> applied. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00250">250</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00245">245</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1687,7 +1696,7 @@ Here is the call graph for this function:</div>
 
 <p>The distance between the robot model at state <em>robot_state</em> to the nearest collision (ignoring self-collisions) </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00599">599</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00601">601</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
 
 </div>
 </div>
@@ -1727,7 +1736,7 @@ Here is the call graph for this function:</div>
 
 <p>The distance between the robot model at state <em>robot_state</em> to the nearest collision, ignoring self-collisions and elements that are allowed to collide. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00632">632</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00634">634</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
 
 </div>
 </div>
@@ -1757,7 +1766,7 @@ Here is the call graph for this function:</div>
 
 <p>The distance between the robot model at state <em>robot_state</em> to the nearest collision (ignoring self-collisions) </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00590">590</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00592">592</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1806,7 +1815,7 @@ Here is the call graph for this function:</div>
 
 <p>The distance between the robot model at state <em>robot_state</em> to the nearest collision, ignoring self-collisions and elements that are allowed to collide. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00622">622</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00624">624</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
 
 </div>
 </div>
@@ -1836,7 +1845,7 @@ Here is the call graph for this function:</div>
 
 <p>The distance between the robot model at state <em>robot_state</em> to the nearest collision (ignoring self-collisions), if the robot has no padding. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00614">614</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00616">616</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
 
 </div>
 </div>
@@ -1876,7 +1885,7 @@ Here is the call graph for this function:</div>
 
 <p>The distance between the robot model at state <em>robot_state</em> to the nearest collision, ignoring self-collisions and elements that always allowed to collide, if the robot has no padding. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00651">651</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00653">653</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
 
 </div>
 </div>
@@ -1906,7 +1915,7 @@ Here is the call graph for this function:</div>
 
 <p>The distance between the robot model at state <em>robot_state</em> to the nearest collision (ignoring self-collisions), if the robot has no padding. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00606">606</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00608">608</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
 
 </div>
 </div>
@@ -1946,7 +1955,7 @@ Here is the call graph for this function:</div>
 
 <p>The distance between the robot model at state <em>robot_state</em> to the nearest collision, ignoring self-collisions and elements that are allowed to collide, if the robot has no padding. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00641">641</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00643">643</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
 
 </div>
 </div>
@@ -1975,17 +1984,17 @@ Here is the call graph for this function:</div>
 
 <p>Get the allowed collision matrix. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00314">314</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00316">316</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classplanning__scene_1_1PlanningScene_a7a90a85d8dcfd1f2aea3cd019db399c8_cgraph.png" border="0" usemap="#classplanning__scene_1_1PlanningScene_a7a90a85d8dcfd1f2aea3cd019db399c8_cgraph" alt=""/></div>
 <map name="classplanning__scene_1_1PlanningScene_a7a90a85d8dcfd1f2aea3cd019db399c8_cgraph" id="classplanning__scene_1_1PlanningScene_a7a90a85d8dcfd1f2aea3cd019db399c8_cgraph">
-<area shape="rect" title="Get the allowed collision matrix." alt="" coords="5,71,245,112"/>
-<area shape="rect" href="namespacepilz__industrial__motion__planner.html#a5c92ab367085e62823804a18f42772ae" title="Checks if current robot state is in self collision." alt="" coords="317,37,505,79"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#afa1f72a766bdf75d81f4404058322576" title="Update the transforms for the collision bodies. This call is needed before calling collision checking..." alt="" coords="293,103,529,144"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#a564140d144754d149b292e70c4c59b55" title="Given positions for the variables that make up a group, in the order found in the group (including va..." alt="" coords="577,5,761,47"/>
-<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#aaec5557d55b862d9dd832b3d4c221836" title="Update all transforms." alt="" coords="577,71,761,112"/>
+<area shape="rect" title="Get the allowed collision matrix." alt="" coords="5,39,245,80"/>
+<area shape="rect" href="namespacepilz__industrial__motion__planner.html#a1500d3ef06f2a3bfe55be9fcba90460e" title="Checks if current robot state is in self collision." alt="" coords="317,5,505,47"/>
+<area shape="rect" href="classmoveit_1_1core_1_1RobotState.html#afa1f72a766bdf75d81f4404058322576" title="Update the transforms for the collision bodies. This call is needed before calling collision checking..." alt="" coords="293,71,529,112"/>
+<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#aea9edbc5c65137a736db5a86bd1fed08" title="Check whether the current state is in self collision." alt="" coords="577,5,765,47"/>
+<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#a6841b7eae6f77d00e36d30ea255bb053" title="Get the active collision detector for the robot." alt="" coords="813,5,1049,47"/>
 </map>
 </div>
 <div class="dynheader">
@@ -2018,7 +2027,7 @@ Here is the caller graph for this function:</div>
 
 <p>Get the allowed collision matrix. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00549">549</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00551">551</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -2050,7 +2059,7 @@ Here is the caller graph for this function:</div>
 
 <p>Construct a message (<em>attached_collision_object</em>) with the attached collision object data from the <a class="el" href="namespaceplanning__scene.html" title="This namespace includes the central class for representing planning contexts.">planning_scene</a> for the requested object. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00741">741</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00733">733</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -2072,7 +2081,7 @@ Here is the caller graph for this function:</div>
 
 <p>Construct a vector of messages (<em>attached_collision_objects</em>) with the attached collision object data for all objects in <a class="el" href="namespaceplanning__scene.html" title="This namespace includes the central class for representing planning contexts.">planning_scene</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00757">757</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00749">749</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -2094,7 +2103,7 @@ Here is the caller graph for this function:</div>
 
 <p>Get the names of the links that are involved in collisions for the current state. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00485">485</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00487">487</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -2124,7 +2133,7 @@ Here is the caller graph for this function:</div>
 
 <p>Get the names of the links that are involved in collisions for the current state. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00505">505</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00507">507</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
 
 </div>
 </div>
@@ -2164,7 +2173,7 @@ Here is the caller graph for this function:</div>
 
 <p>Get the names of the links that are involved in collisions for the state <em>robot_state</em>. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00519">519</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00521">521</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
 
 </div>
 </div>
@@ -2202,7 +2211,7 @@ Here is the caller graph for this function:</div>
 
 <p>Get the names of the links that are involved in collisions for the state <em>robot_state</em> given the allowed collision matrix (<em>acm</em>) </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00493">493</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00495">495</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -2253,7 +2262,7 @@ Here is the call graph for this function:</div>
 
 <p>Get the names of the links that are involved in collisions for the state <em>robot_state</em>. Update the link transforms for <em>robot_state</em> if needed. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00512">512</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00514">514</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
 
 </div>
 </div>
@@ -2299,7 +2308,7 @@ Here is the call graph for this function:</div>
 
 <p>Get the names of the links that are involved in collisions for the state <em>robot_state</em> given the allowed collision matrix (<em>acm</em>) </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00526">526</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00528">528</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -2330,7 +2339,7 @@ Here is the call graph for this function:</div>
 
 <p>Get the names of the links that are involved in collisions for the current state. Update the link transforms for the current state if needed. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00464">464</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00466">466</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -2360,7 +2369,7 @@ Here is the call graph for this function:</div>
 
 <p>Get the names of the links that are involved in collisions for the current state. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00543">543</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00545">545</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
 
 </div>
 </div>
@@ -2400,7 +2409,7 @@ Here is the call graph for this function:</div>
 
 <p>Get the names of the links that are involved in collisions for the state <em>robot_state</em>. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00549">549</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00551">551</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
 
 </div>
 </div>
@@ -2438,7 +2447,7 @@ Here is the call graph for this function:</div>
 
 <p>Get the names of the links that are involved in collisions for the state <em>robot_state</em> given the allowed collision matrix (<em>acm</em>) </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00472">472</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00474">474</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -2478,7 +2487,7 @@ Here is the call graph for this function:</div>
 
 <p>Get the names of the links that are involved in collisions for the state <em>robot_state</em>. Update the link transforms for <em>robot_state</em> if needed. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00557">557</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00559">559</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
 
 </div>
 </div>
@@ -2524,7 +2533,7 @@ Here is the call graph for this function:</div>
 
 <p>Get the names of the links that are involved in collisions for the state <em>robot_state</em> given the allowed collision matrix (<em>acm</em>). Update the link transforms for <em>robot_state</em> if needed. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00566">566</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00568">568</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
 
 </div>
 </div>
@@ -2551,7 +2560,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00269">269</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00271">271</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
 
 </div>
 </div>
@@ -2580,14 +2589,18 @@ Here is the call graph for this function:</div>
 
 <p>Get the active collision environment. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00290">290</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00292">292</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classplanning__scene_1_1PlanningScene_aeed4b8e82fc31eb7abb405429877343e_icgraph.png" border="0" usemap="#classplanning__scene_1_1PlanningScene_aeed4b8e82fc31eb7abb405429877343e_icgraph" alt=""/></div>
 <map name="classplanning__scene_1_1PlanningScene_aeed4b8e82fc31eb7abb405429877343e_icgraph" id="classplanning__scene_1_1PlanningScene_aeed4b8e82fc31eb7abb405429877343e_icgraph">
-<area shape="rect" title="Get the active collision environment." alt="" coords="265,5,452,47"/>
-<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#a063befaa099e1ccd7c6827a6776dcc0b" title="Construct a message (scene) with the data requested in comp. If all options in comp are filled,..." alt="" coords="5,5,217,47"/>
+<area shape="rect" title="Get the active collision environment." alt="" coords="699,71,885,112"/>
+<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#a4ebcc755346e443319104e8b964f8faa" title="Check whether the current state is in collision, and if needed, updates the collision transforms of t..." alt="" coords="451,37,638,79"/>
+<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#a063befaa099e1ccd7c6827a6776dcc0b" title="Construct a message (scene) with the data requested in comp. If all options in comp are filled,..." alt="" coords="439,103,651,144"/>
+<area shape="rect" href="pymoveit__core_8cpp.html#acdb1e01a5a6ec640937d8c69c0f7d045" title=" " alt="" coords="222,5,373,47"/>
+<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#a126bf18f2497eaed9675d57b287ce783" title="Check if a given path is valid. Each state is checked for validity (collision avoidance,..." alt="" coords="204,71,391,112"/>
+<area shape="rect" href="pymoveit__core_8cpp.html#aae5c18014d007aef7676d42ced1ba2b0" title=" " alt="" coords="5,13,156,39"/>
 </map>
 </div>
 
@@ -2611,7 +2624,7 @@ Here is the caller graph for this function:</div>
 
 <p>Get a specific collision detector for the world. If not found return active CollisionWorld. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00297">297</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00292">292</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -2632,7 +2645,7 @@ Here is the caller graph for this function:</div>
 
 <p>Get the representation of the collision robot This can be used to set padding and link scale on the active collision_robot. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00510">510</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00512">512</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -2661,17 +2674,20 @@ Here is the caller graph for this function:</div>
 
 <p>Get the active collision detector for the robot. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00296">296</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00298">298</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classplanning__scene_1_1PlanningScene_a6841b7eae6f77d00e36d30ea255bb053_icgraph.png" border="0" usemap="#classplanning__scene_1_1PlanningScene_a6841b7eae6f77d00e36d30ea255bb053_icgraph" alt=""/></div>
 <map name="classplanning__scene_1_1PlanningScene_a6841b7eae6f77d00e36d30ea255bb053_icgraph" id="classplanning__scene_1_1PlanningScene_a6841b7eae6f77d00e36d30ea255bb053_icgraph">
-<area shape="rect" title="Get the active collision detector for the robot." alt="" coords="639,39,875,80"/>
-<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#a731692d0c1d45e7f9cd41db1eb1c5f3f" title="Check whether a specified state (robot_state) is in collision, with respect to a given allowed collis..." alt="" coords="403,5,590,47"/>
-<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#aea9edbc5c65137a736db5a86bd1fed08" title="Check whether the current state is in self collision." alt="" coords="403,71,591,112"/>
-<area shape="rect" href="pymoveit__core_8cpp.html#acdb1e01a5a6ec640937d8c69c0f7d045" title=" " alt="" coords="204,71,355,112"/>
-<area shape="rect" href="pymoveit__core_8cpp.html#aae5c18014d007aef7676d42ced1ba2b0" title=" " alt="" coords="5,78,156,105"/>
+<area shape="rect" title="Get the active collision detector for the robot." alt="" coords="1163,39,1399,80"/>
+<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#a731692d0c1d45e7f9cd41db1eb1c5f3f" title="Check whether a specified state (robot_state) is in collision, with respect to a given allowed collis..." alt="" coords="927,5,1114,47"/>
+<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#aea9edbc5c65137a736db5a86bd1fed08" title="Check whether the current state is in self collision." alt="" coords="927,71,1115,112"/>
+<area shape="rect" href="pymoveit__core_8cpp.html#acdb1e01a5a6ec640937d8c69c0f7d045" title=" " alt="" coords="204,41,355,83"/>
+<area shape="rect" href="namespacepilz__industrial__motion__planner.html#a1500d3ef06f2a3bfe55be9fcba90460e" title="Checks if current robot state is in self collision." alt="" coords="691,71,879,112"/>
+<area shape="rect" href="unittest__trajectory__functions_8cpp.html#a5be4ae26efc03c367fb3faa0d9c2bea2" title="Test if activated self collision for a pose that would be in self collision without the check results..." alt="" coords="750,137,819,163"/>
+<area shape="rect" href="pymoveit__core_8cpp.html#aae5c18014d007aef7676d42ced1ba2b0" title=" " alt="" coords="5,49,156,75"/>
+<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#a7a90a85d8dcfd1f2aea3cd019db399c8" title="Get the allowed collision matrix." alt="" coords="403,71,643,112"/>
 </map>
 </div>
 
@@ -2695,7 +2711,7 @@ Here is the caller graph for this function:</div>
 
 <p>Get a specific collision detector for the unpadded robot. If no found return active unpadded CollisionRobot. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00310">310</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00305">305</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -2727,7 +2743,7 @@ Here is the caller graph for this function:</div>
 
 <p>Construct a message (<em>collision_object</em>) with the collision object data from the <a class="el" href="namespaceplanning__scene.html" title="This namespace includes the central class for representing planning contexts.">planning_scene</a> for the requested object. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00692">692</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00685">685</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -2749,7 +2765,7 @@ Here is the caller graph for this function:</div>
 
 <p>Construct a vector of messages (<em>collision_objects</em>) with the collision object data for all objects in <a class="el" href="namespaceplanning__scene.html" title="This namespace includes the central class for representing planning contexts.">planning_scene</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00729">729</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00721">721</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -2780,7 +2796,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="ros_2warehouse_2warehouse_2CMakeLists_8txt.html#af4423e580afb68aec7c40fb0bce7d5d4">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">collision_detection::CostSource</a> &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="setup__assistant_2CMakeLists_8txt.html#a58ab708fe5c1f47f0642bdaee3056d3b">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">collision_detection::CostSource</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>costs</em>&#160;</td>
         </tr>
         <tr>
@@ -2793,7 +2809,7 @@ Here is the caller graph for this function:</div>
 
 <p>Get the top <em>max_costs</em> cost sources for a specified state, but only for group <em>group_name</em>. The resulting costs are stored in <em>costs</em>. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l02228">2228</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l02212">2212</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -2818,7 +2834,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="ros_2warehouse_2warehouse_2CMakeLists_8txt.html#af4423e580afb68aec7c40fb0bce7d5d4">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">collision_detection::CostSource</a> &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="setup__assistant_2CMakeLists_8txt.html#a58ab708fe5c1f47f0642bdaee3056d3b">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">collision_detection::CostSource</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>costs</em>&#160;</td>
         </tr>
         <tr>
@@ -2831,7 +2847,7 @@ Here is the caller graph for this function:</div>
 
 <p>Get the top <em>max_costs</em> cost sources for a specified state. The resulting costs are stored in <em>costs</em>. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l02222">2222</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l02206">2206</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -2862,7 +2878,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="ros_2warehouse_2warehouse_2CMakeLists_8txt.html#af4423e580afb68aec7c40fb0bce7d5d4">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">collision_detection::CostSource</a> &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="setup__assistant_2CMakeLists_8txt.html#a58ab708fe5c1f47f0642bdaee3056d3b">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">collision_detection::CostSource</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>costs</em>, </td>
         </tr>
         <tr>
@@ -2881,7 +2897,7 @@ Here is the caller graph for this function:</div>
 
 <p>Get the top <em>max_costs</em> cost sources for a specified trajectory, but only for group <em>group_name</em>. The resulting costs are stored in <em>costs</em>. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l02188">2188</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l02172">2172</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -2906,7 +2922,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="ros_2warehouse_2warehouse_2CMakeLists_8txt.html#af4423e580afb68aec7c40fb0bce7d5d4">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">collision_detection::CostSource</a> &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="setup__assistant_2CMakeLists_8txt.html#a58ab708fe5c1f47f0642bdaee3056d3b">std::set</a>&lt; <a class="el" href="structcollision__detection_1_1CostSource.html">collision_detection::CostSource</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>costs</em>, </td>
         </tr>
         <tr>
@@ -2925,7 +2941,7 @@ Here is the caller graph for this function:</div>
 
 <p>Get the top <em>max_costs</em> cost sources for a specified trajectory. The resulting costs are stored in <em>costs</em>. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l02182">2182</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l02166">2166</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -2954,23 +2970,23 @@ Here is the caller graph for this function:</div>
 
 <p>Get the state at which the robot is assumed to be. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00182">182</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00184">184</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classplanning__scene_1_1PlanningScene_ab4de68060bb1d854e4d37f26436b7ebb_icgraph.png" border="0" usemap="#classplanning__scene_1_1PlanningScene_ab4de68060bb1d854e4d37f26436b7ebb_icgraph" alt=""/></div>
 <map name="classplanning__scene_1_1PlanningScene_ab4de68060bb1d854e4d37f26436b7ebb_icgraph" id="classplanning__scene_1_1PlanningScene_ab4de68060bb1d854e4d37f26436b7ebb_icgraph">
-<area shape="rect" title="Get the state at which the robot is assumed to be." alt="" coords="547,169,733,211"/>
-<area shape="rect" href="pymoveit__core_8cpp.html#acdb1e01a5a6ec640937d8c69c0f7d045" title=" " alt="" coords="317,5,468,47"/>
-<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#ac463d3a38790ee505445b2feb206a6ed" title="Get the names of the links that are involved in collisions for the state robot_state given the allowe..." alt="" coords="299,71,486,112"/>
-<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#a351202a8fec49dff6646a454ac3e9a7e" title="Get the transform corresponding to the frame id. This will be known if id is a link name,..." alt="" coords="295,136,491,177"/>
-<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#a1c4051599aa9702d96097634db499621" title="Construct a message (scene) with all the necessary data so that the scene can be later reconstructed ..." alt="" coords="287,201,499,243"/>
-<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#a46f024838af9e42c7afb0950c11a97f7" title="Check if a given path is valid. Each state is checked for validity (collision avoidance and feasibili..." alt="" coords="299,267,486,308"/>
-<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#af25fb475284fa13842c6d0d0adeada78" title=" " alt="" coords="295,332,490,373"/>
-<area shape="rect" href="pymoveit__core_8cpp.html#aae5c18014d007aef7676d42ced1ba2b0" title=" " alt="" coords="47,13,197,39"/>
-<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#a6f16582ddf99b615ef69c658521731ff" title=" " alt="" coords="5,129,239,185"/>
-<area shape="rect" href="test__planning__scene_8cpp.html#a8657479fb681ab94486683c9e03019fa" title=" " alt="" coords="95,209,149,235"/>
-<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#ad4bd37ca382d39ef17072e73e806cc3b" title="Check if a given state is valid. This means checking for collisions, feasibility and whether the user..." alt="" coords="29,267,215,308"/>
+<area shape="rect" title="Get the state at which the robot is assumed to be." alt="" coords="592,169,779,211"/>
+<area shape="rect" href="pymoveit__core_8cpp.html#acdb1e01a5a6ec640937d8c69c0f7d045" title=" " alt="" coords="363,5,513,47"/>
+<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#ac463d3a38790ee505445b2feb206a6ed" title="Get the names of the links that are involved in collisions for the state robot_state given the allowe..." alt="" coords="345,71,531,112"/>
+<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#a351202a8fec49dff6646a454ac3e9a7e" title="Get the transform corresponding to the frame id. This will be known if id is a link name,..." alt="" coords="340,136,536,177"/>
+<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#a1c4051599aa9702d96097634db499621" title="Construct a message (scene) with all the necessary data so that the scene can be later reconstructed ..." alt="" coords="332,201,544,243"/>
+<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#a46f024838af9e42c7afb0950c11a97f7" title="Check if a given path is valid. Each state is checked for validity (collision avoidance and feasibili..." alt="" coords="345,267,531,308"/>
+<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#af25fb475284fa13842c6d0d0adeada78" title=" " alt="" coords="341,332,535,373"/>
+<area shape="rect" href="pymoveit__core_8cpp.html#aae5c18014d007aef7676d42ced1ba2b0" title=" " alt="" coords="69,13,220,39"/>
+<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#a769413a3663cdc1280f4bb6ea9dbf460" title=" " alt="" coords="5,136,284,177"/>
+<area shape="rect" href="test__planning__scene_8cpp.html#a8657479fb681ab94486683c9e03019fa" title=" " alt="" coords="117,209,172,235"/>
+<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#ad4bd37ca382d39ef17072e73e806cc3b" title="Check if a given state is valid. This means checking for collisions, feasibility and whether the user..." alt="" coords="51,267,238,308"/>
 </map>
 </div>
 
@@ -2993,7 +3009,7 @@ Here is the caller graph for this function:</div>
 
 <p>Get the state at which the robot is assumed to be. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00515">515</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00517">517</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -3026,7 +3042,7 @@ Here is the caller graph for this function:</div>
 
 <p>Get a copy of the current state with components overwritten by the state message <em>update</em>. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00526">526</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00528">528</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -3058,7 +3074,7 @@ Here is the caller graph for this function:</div>
 
 <p>Get the transform corresponding to the frame <em>id</em>. This will be known if <em>id</em> is a link name, an attached body id or a collision object. Return identity when no transform is available. Use <a class="el" href="classplanning__scene_1_1PlanningScene.html#a4ffd859140c70a6c1cd4eb2e8db0d94f" title="Check if a transform to the frame id is known. This will be known if id is a link name,...">knowsFrameTransform()</a> to test if this function will be successful or not. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01806">1806</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01790">1790</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -3080,7 +3096,7 @@ Here is the caller graph for this function:</div>
 
 <p>Get the transform corresponding to the frame <em>id</em>. This will be known if <em>id</em> is a link name, an attached body id or a collision object. Return identity when no transform is available. Use <a class="el" href="classplanning__scene_1_1PlanningScene.html#a4ffd859140c70a6c1cd4eb2e8db0d94f" title="Check if a transform to the frame id is known. This will be known if id is a link name,...">knowsFrameTransform()</a> to test if this function will be successful or not. Because this function is non-const, the current state transforms are also updated, if needed. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01798">1798</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01782">1782</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -3113,7 +3129,7 @@ Here is the call graph for this function:</div>
 
 <p>Get the transform corresponding to the frame <em>id</em>. This will be known if <em>id</em> is a link name, an attached body id or a collision object. Return identity when no transform is available. Use <a class="el" href="classplanning__scene_1_1PlanningScene.html#a4ffd859140c70a6c1cd4eb2e8db0d94f" title="Check if a transform to the frame id is known. This will be known if id is a link name,...">knowsFrameTransform()</a> to test if this function will be successful or not. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01793">1793</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01777">1777</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -3129,8 +3145,8 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classplanning__scene_1_1PlanningScene_a351202a8fec49dff6646a454ac3e9a7e_icgraph.png" border="0" usemap="#classplanning__scene_1_1PlanningScene_a351202a8fec49dff6646a454ac3e9a7e_icgraph" alt=""/></div>
 <map name="classplanning__scene_1_1PlanningScene_a351202a8fec49dff6646a454ac3e9a7e_icgraph" id="classplanning__scene_1_1PlanningScene_a351202a8fec49dff6646a454ac3e9a7e_icgraph">
-<area shape="rect" title="Get the transform corresponding to the frame id. This will be known if id is a link name,..." alt="" coords="287,13,483,54"/>
-<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#a6f16582ddf99b615ef69c658521731ff" title=" " alt="" coords="5,5,239,61"/>
+<area shape="rect" title="Get the transform corresponding to the frame id. This will be known if id is a link name,..." alt="" coords="332,5,528,47"/>
+<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#a769413a3663cdc1280f4bb6ea9dbf460" title=" " alt="" coords="5,5,284,47"/>
 </map>
 </div>
 
@@ -3172,7 +3188,7 @@ Here is the caller graph for this function:</div>
 
 <p>Get the transform corresponding to the frame <em>id</em>. This will be known if <em>id</em> is a link name, an attached body id or a collision object. Return identity when no transform is available. Use <a class="el" href="classplanning__scene_1_1PlanningScene.html#a4ffd859140c70a6c1cd4eb2e8db0d94f" title="Check if a transform to the frame id is known. This will be known if id is a link name,...">knowsFrameTransform()</a> to test if this function will be successful or not. This function also updates the link transforms of <em>state</em>. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00242">242</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00244">244</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
 
 </div>
 </div>
@@ -3192,7 +3208,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01912">1912</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01896">1896</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -3212,7 +3228,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01878">1878</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01862">1862</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -3241,7 +3257,7 @@ Here is the caller graph for this function:</div>
 
 <p>Get the predicate that decides whether motion segments are considered valid or invalid for reasons beyond ones covered by collision checking and constraint evaluation. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00814">814</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00807">807</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
 
 </div>
 </div>
@@ -3270,7 +3286,7 @@ Here is the caller graph for this function:</div>
 
 <p>Get the name of the planning scene. This is empty by default. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00141">141</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00143">143</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -3299,7 +3315,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01898">1898</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01882">1882</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -3331,7 +3347,7 @@ Here is the caller graph for this function:</div>
 
 <p>Construct a vector of messages (<em>object_colors</em>) with the colors of the objects from the <a class="el" href="namespaceplanning__scene.html" title="This namespace includes the central class for representing planning contexts.">planning_scene</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00786">786</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00778">778</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -3351,7 +3367,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01851">1851</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01835">1835</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -3385,7 +3401,7 @@ Here is the caller graph for this function:</div>
 
 <p>Construct a message (<em>octomap</em>) with the octomap data from the <a class="el" href="namespaceplanning__scene.html" title="This namespace includes the central class for representing planning contexts.">planning_scene</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00765">765</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00757">757</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -3412,9 +3428,9 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Get the parent scene (with respect to which the diffs are maintained). This may be empty. </p>
+<p>Get the parent scene (whith respect to which the diffs are maintained). This may be empty. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00169">169</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00171">171</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
 
 </div>
 </div>
@@ -3443,7 +3459,7 @@ Here is the caller graph for this function:</div>
 
 <p>Get the frame in which planning is performed. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00199">199</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00201">201</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
 
 </div>
 </div>
@@ -3465,7 +3481,7 @@ Here is the caller graph for this function:</div>
 
 <p>Fill the message <em>scene</em> with the differences between this instance of <a class="el" href="classplanning__scene_1_1PlanningScene.html" title="This class maintains the representation of the environment as seen by a planning instance....">PlanningScene</a> with respect to the parent. If there is no parent, everything is considered to be a diff and the function behaves like <a class="el" href="classplanning__scene_1_1PlanningScene.html#a1c4051599aa9702d96097634db499621" title="Construct a message (scene) with all the necessary data so that the scene can be later reconstructed ...">getPlanningSceneMsg()</a> </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00577">577</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00579">579</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -3487,7 +3503,7 @@ Here is the caller graph for this function:</div>
 
 <p>Construct a message (<em>scene</em>) with all the necessary data so that the scene can be later reconstructed to be exactly the same using <a class="el" href="classplanning__scene_1_1PlanningScene.html#acb5c51321f5d908072920ee2a2f1db58" title="Set this instance of a planning scene to be the same as the one serialized in the scene message,...">setPlanningSceneMsg()</a> </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00801">801</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00793">793</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -3540,7 +3556,7 @@ Here is the caller graph for this function:</div>
 
 <p>Construct a message (<em>scene</em>) with the data requested in <em>comp</em>. If all options in <em>comp</em> are filled, this will be a complete planning scene message. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00822">822</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00814">814</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -3578,7 +3594,7 @@ Here is the call graph for this function:</div>
 
 <p>Get the kinematic model for which the planning scene is maintained. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00175">175</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00177">177</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -3621,7 +3637,7 @@ Here is the caller graph for this function:</div>
 
 <p>Get the predicate that decides whether states are considered valid or invalid for reasons beyond ones covered by collision checking and constraint evaluation. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00800">800</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00793">793</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
 
 </div>
 </div>
@@ -3669,7 +3685,7 @@ Here is the caller graph for this function:</div>
 
 <p>Get the set of fixed transforms from known frames to the planning frame. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00206">206</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00208">208</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -3704,7 +3720,7 @@ Here is the caller graph for this function:</div>
 
 <p>Get the set of fixed transforms from known frames to the planning frame. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00563">563</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00565">565</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -3733,7 +3749,7 @@ Here is the caller graph for this function:</div>
 
 <p>Get the representation of the world. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00276">276</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00278">278</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -3769,7 +3785,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00283">283</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00285">285</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
 
 </div>
 </div>
@@ -3789,7 +3805,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01888">1888</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01872">1872</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -3819,7 +3835,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01841">1841</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01825">1825</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -3861,7 +3877,7 @@ Here is the caller graph for this function:</div>
 
 <p>Check if a message includes any information about a planning scene, or it is just a default, empty message. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00135">135</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00130">130</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -3891,7 +3907,7 @@ Here is the caller graph for this function:</div>
 
 <p>Check if a message includes any information about a planning scene world, or it is just a default, empty message. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00145">145</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00140">140</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -3921,7 +3937,7 @@ Here is the caller graph for this function:</div>
 
 <p>Check if a message includes any information about a robot state, or it is just a default, empty message. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00140">140</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00135">135</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -3983,7 +3999,7 @@ Here is the caller graph for this function:</div>
 
 <p>Check if a given path is valid. Each state is checked for validity (collision avoidance, feasibility and constraint satisfaction). It is also checked that the goal constraints are satisfied by the last state on the passed in trajectory. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l02077">2077</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l02061">2061</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -4050,7 +4066,7 @@ Here is the call graph for this function:</div>
 
 <p>Check if a given path is valid. Each state is checked for validity (collision avoidance, feasibility and constraint satisfaction). It is also checked that the goal constraints are satisfied by the last state on the passed in trajectory. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l02068">2068</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l02052">2052</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -4121,7 +4137,7 @@ Here is the call graph for this function:</div>
 
 <p>Check if a given path is valid. Each state is checked for validity (collision avoidance, feasibility and constraint satisfaction). It is also checked that the goal constraints are satisfied by the last state on the passed in trajectory. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l02087">2087</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l02071">2071</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -4171,7 +4187,7 @@ Here is the call graph for this function:</div>
 
 <p>Check if a given path is valid. Each state is checked for validity (collision avoidance and feasibility) </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l02059">2059</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l02043">2043</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -4182,7 +4198,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="classplanning__scene_1_1PlanningScene.html#ae1789ae10386a21ffe1fa41e1a590a6c" title="Get the kinematic model for which the planning scene is maintained." alt="" coords="264,71,451,112"/>
 <area shape="rect" href="classplanning__scene_1_1PlanningScene.html#aa8aa5cd7aab5f814bdf6cf30fd501e9e" title="Get the set of fixed transforms from known frames to the planning frame." alt="" coords="264,136,451,177"/>
 <area shape="rect" href="namespacemoveit_1_1core.html#af616e81ab82b75721fdbfcd77892c92a" title="Convert a robot state msg (with accompanying extra transforms) to a MoveIt robot state." alt="" coords="267,201,447,243"/>
-<area shape="rect" href="classrobot__trajectory_1_1RobotTrajectory.html#a99b9016fc88eebd0646d701d3868febf" title="Copy the content of the trajectory message into this class. The trajectory message itself is not requ..." alt="" coords="240,267,475,308"/>
+<area shape="rect" href="classrobot__trajectory_1_1RobotTrajectory.html#a4556a5245c841731bce178c0d235a721" title="Copy the content of the trajectory message into this class. The trajectory message itself is not requ..." alt="" coords="240,267,475,308"/>
 </map>
 </div>
 <div class="dynheader">
@@ -4249,7 +4265,7 @@ Here is the caller graph for this function:</div>
 
 <p>Check if a given path is valid. Each state is checked for validity (collision avoidance, feasibility and constraint satisfaction). It is also checked that the goal constraints are satisfied by the last state on the passed in trajectory. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l02157">2157</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l02141">2141</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -4299,7 +4315,7 @@ Here is the caller graph for this function:</div>
 
 <p>Check if a given path is valid. Each state is checked for validity (collision avoidance, feasibility and constraint satisfaction). </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l02166">2166</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l02150">2150</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -4308,6 +4324,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" title="Check if a given path is valid. Each state is checked for validity (collision avoidance,..." alt="" coords="5,39,192,80"/>
 <area shape="rect" href="classplanning__scene_1_1PlanningScene.html#a4ebcc755346e443319104e8b964f8faa" title="Check whether the current state is in collision, and if needed, updates the collision transforms of t..." alt="" coords="264,5,451,47"/>
 <area shape="rect" href="classrobot__trajectory_1_1RobotTrajectory.html#af356952b9847bc920b773f2f83cb9943" title=" " alt="" coords="240,71,475,112"/>
+<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#aeed4b8e82fc31eb7abb405429877343e" title="Get the active collision environment." alt="" coords="523,5,709,47"/>
 </map>
 </div>
 
@@ -4365,7 +4382,7 @@ Here is the call graph for this function:</div>
 
 <p>Check if a given path is valid. Each state is checked for validity (collision avoidance, feasibility and constraint satisfaction). It is also checked that the goal constraints are satisfied by the last state on the passed in trajectory. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l02100">2100</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l02084">2084</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -4418,7 +4435,7 @@ Here is the call graph for this function:</div>
 
 <p>Check if a given path is valid. Each state is checked for validity (collision avoidance and feasibility) </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l02174">2174</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l02158">2158</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -4456,7 +4473,7 @@ Here is the call graph for this function:</div>
 
 <p>Check if a given state is in collision (with the environment or self collision) If a group name is specified, collision checking is done for that group only. It is expected that the link transforms of <em>state</em> are up to date. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01956">1956</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01940">1940</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -4494,7 +4511,7 @@ Here is the call graph for this function:</div>
 
 <p>Check if a given state is in collision (with the environment or self collision) If a group name is specified, collision checking is done for that group only. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01940">1940</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01924">1924</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -4526,7 +4543,7 @@ Here is the call graph for this function:</div>
 
 <p>Check if the current state is in collision (with the environment or self collision). If a group name is specified, collision checking is done for that group only. Since the function is non-const, the current state transforms are updated before the collision check. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01948">1948</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01932">1932</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -4576,7 +4593,7 @@ Here is the caller graph for this function:</div>
 
 <p>Check if the current state is in collision (with the environment or self collision). If a group name is specified, collision checking is done for that group only. It is expected the current state transforms are up to date. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00336">336</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00338">338</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
 
 </div>
 </div>
@@ -4622,7 +4639,7 @@ Here is the caller graph for this function:</div>
 
 <p>Check if a given state is in collision (with the environment or self collision) If a group name is specified, collision checking is done for that group only. The link transforms for <em>state</em> are updated before the collision check. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00345">345</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00347">347</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
 
 </div>
 </div>
@@ -4660,7 +4677,7 @@ Here is the caller graph for this function:</div>
 
 <p>Check if a given state satisfies a set of constraints. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l02012">2012</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01996">1996</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -4698,7 +4715,7 @@ Here is the caller graph for this function:</div>
 
 <p>Check if a given state satisfies a set of constraints. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01992">1992</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01976">1976</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -4745,7 +4762,7 @@ Here is the call graph for this function:</div>
 
 <p>Check if a given state satisfies a set of constraints. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l02004">2004</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01988">1988</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -4783,7 +4800,7 @@ Here is the call graph for this function:</div>
 
 <p>Check if a given state satisfies a set of constraints. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01984">1984</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01968">1968</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -4826,7 +4843,7 @@ Here is the caller graph for this function:</div>
 
 <p>Check if a given state is feasible, in accordance to the feasibility predicate specified by <a class="el" href="classplanning__scene_1_1PlanningScene.html#ae87ae61744b8bcfa6914c69b41170d07" title="Specify a predicate that decides whether states are considered valid or invalid for reasons beyond on...">setStateFeasibilityPredicate()</a>. Returns true if no feasibility predicate was specified. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01977">1977</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01961">1961</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -4858,7 +4875,7 @@ Here is the caller graph for this function:</div>
 
 <p>Check if a given state is feasible, in accordance to the feasibility predicate specified by <a class="el" href="classplanning__scene_1_1PlanningScene.html#ae87ae61744b8bcfa6914c69b41170d07" title="Specify a predicate that decides whether states are considered valid or invalid for reasons beyond on...">setStateFeasibilityPredicate()</a>. Returns true if no feasibility predicate was specified. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01966">1966</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01950">1950</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -4912,7 +4929,7 @@ Here is the caller graph for this function:</div>
 
 <p>Check if a given state is valid. This means checking for collisions, feasibility and whether the user specified validity conditions hold as well. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l02048">2048</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l02032">2032</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -4924,7 +4941,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="classplanning__scene_1_1PlanningScene.html#ae1789ae10386a21ffe1fa41e1a590a6c" title="Get the kinematic model for which the planning scene is maintained." alt="" coords="499,71,685,112"/>
 <area shape="rect" href="classplanning__scene_1_1PlanningScene.html#aa8aa5cd7aab5f814bdf6cf30fd501e9e" title="Get the set of fixed transforms from known frames to the planning frame." alt="" coords="499,136,685,177"/>
 <area shape="rect" href="namespacemoveit_1_1core.html#af616e81ab82b75721fdbfcd77892c92a" title="Convert a robot state msg (with accompanying extra transforms) to a MoveIt robot state." alt="" coords="502,201,682,243"/>
-<area shape="rect" href="classrobot__trajectory_1_1RobotTrajectory.html#a99b9016fc88eebd0646d701d3868febf" title="Copy the content of the trajectory message into this class. The trajectory message itself is not requ..." alt="" coords="475,267,709,308"/>
+<area shape="rect" href="classrobot__trajectory_1_1RobotTrajectory.html#a4556a5245c841731bce178c0d235a721" title="Copy the content of the trajectory message into this class. The trajectory message itself is not requ..." alt="" coords="475,267,709,308"/>
 </map>
 </div>
 
@@ -4970,7 +4987,7 @@ Here is the call graph for this function:</div>
 
 <p>Check if a given state is valid. This means checking for collisions, feasibility and whether the user specified validity conditions hold as well. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l02038">2038</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l02022">2022</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -4982,7 +4999,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="classplanning__scene_1_1PlanningScene.html#ae1789ae10386a21ffe1fa41e1a590a6c" title="Get the kinematic model for which the planning scene is maintained." alt="" coords="499,71,685,112"/>
 <area shape="rect" href="classplanning__scene_1_1PlanningScene.html#aa8aa5cd7aab5f814bdf6cf30fd501e9e" title="Get the set of fixed transforms from known frames to the planning frame." alt="" coords="499,136,685,177"/>
 <area shape="rect" href="namespacemoveit_1_1core.html#af616e81ab82b75721fdbfcd77892c92a" title="Convert a robot state msg (with accompanying extra transforms) to a MoveIt robot state." alt="" coords="502,201,682,243"/>
-<area shape="rect" href="classrobot__trajectory_1_1RobotTrajectory.html#a99b9016fc88eebd0646d701d3868febf" title="Copy the content of the trajectory message into this class. The trajectory message itself is not requ..." alt="" coords="475,267,709,308"/>
+<area shape="rect" href="classrobot__trajectory_1_1RobotTrajectory.html#a4556a5245c841731bce178c0d235a721" title="Copy the content of the trajectory message into this class. The trajectory message itself is not requ..." alt="" coords="475,267,709,308"/>
 </map>
 </div>
 
@@ -5022,7 +5039,7 @@ Here is the call graph for this function:</div>
 
 <p>Check if a given state is valid. This means checking for collisions and feasibility. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l02018">2018</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l02002">2002</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -5076,7 +5093,7 @@ Here is the call graph for this function:</div>
 
 <p>Check if a given state is valid. This means checking for collisions, feasibility and whether the user specified validity conditions hold as well. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l02030">2030</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l02014">2014</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -5088,7 +5105,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="classplanning__scene_1_1PlanningScene.html#ae1789ae10386a21ffe1fa41e1a590a6c" title="Get the kinematic model for which the planning scene is maintained." alt="" coords="499,71,685,112"/>
 <area shape="rect" href="classplanning__scene_1_1PlanningScene.html#aa8aa5cd7aab5f814bdf6cf30fd501e9e" title="Get the set of fixed transforms from known frames to the planning frame." alt="" coords="499,136,685,177"/>
 <area shape="rect" href="namespacemoveit_1_1core.html#af616e81ab82b75721fdbfcd77892c92a" title="Convert a robot state msg (with accompanying extra transforms) to a MoveIt robot state." alt="" coords="502,201,682,243"/>
-<area shape="rect" href="classrobot__trajectory_1_1RobotTrajectory.html#a99b9016fc88eebd0646d701d3868febf" title="Copy the content of the trajectory message into this class. The trajectory message itself is not requ..." alt="" coords="475,267,709,308"/>
+<area shape="rect" href="classrobot__trajectory_1_1RobotTrajectory.html#a4556a5245c841731bce178c0d235a721" title="Copy the content of the trajectory message into this class. The trajectory message itself is not requ..." alt="" coords="475,267,709,308"/>
 </map>
 </div>
 
@@ -5128,7 +5145,7 @@ Here is the call graph for this function:</div>
 
 <p>Check if a given state is valid. This means checking for collisions and feasibility. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l02024">2024</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l02008">2008</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -5171,7 +5188,7 @@ Here is the caller graph for this function:</div>
 
 <p>Check if a transform to the frame <em>id</em> is known. This will be known if <em>id</em> is a link name, an attached body id or a collision object. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01829">1829</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01813">1813</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -5193,15 +5210,15 @@ Here is the caller graph for this function:</div>
 
 <p>Check if a transform to the frame <em>id</em> is known. This will be known if <em>id</em> is a link name, an attached body id or a collision object. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01824">1824</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01808">1808</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classplanning__scene_1_1PlanningScene_a4ffd859140c70a6c1cd4eb2e8db0d94f_icgraph.png" border="0" usemap="#classplanning__scene_1_1PlanningScene_a4ffd859140c70a6c1cd4eb2e8db0d94f_icgraph" alt=""/></div>
 <map name="classplanning__scene_1_1PlanningScene_a4ffd859140c70a6c1cd4eb2e8db0d94f_icgraph" id="classplanning__scene_1_1PlanningScene_a4ffd859140c70a6c1cd4eb2e8db0d94f_icgraph">
-<area shape="rect" title="Check if a transform to the frame id is known. This will be known if id is a link name,..." alt="" coords="531,13,748,54"/>
-<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#a351202a8fec49dff6646a454ac3e9a7e" title="Get the transform corresponding to the frame id. This will be known if id is a link name,..." alt="" coords="287,13,483,54"/>
-<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#a6f16582ddf99b615ef69c658521731ff" title=" " alt="" coords="5,5,239,61"/>
+<area shape="rect" title="Check if a transform to the frame id is known. This will be known if id is a link name,..." alt="" coords="576,5,793,47"/>
+<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#a351202a8fec49dff6646a454ac3e9a7e" title="Get the transform corresponding to the frame id. This will be known if id is a link name,..." alt="" coords="332,5,528,47"/>
+<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#a769413a3663cdc1280f4bb6ea9dbf460" title=" " alt="" coords="5,5,284,47"/>
 </map>
 </div>
 
@@ -5225,14 +5242,15 @@ Here is the caller graph for this function:</div>
 
 <p>Load the geometry of the planning scene from a stream. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00930">930</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00913">913</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classplanning__scene_1_1PlanningScene_a5ea266c7ba324b5dce2d8e61509076b7_icgraph.png" border="0" usemap="#classplanning__scene_1_1PlanningScene_a5ea266c7ba324b5dce2d8e61509076b7_icgraph" alt=""/></div>
 <map name="classplanning__scene_1_1PlanningScene_a5ea266c7ba324b5dce2d8e61509076b7_icgraph" id="classplanning__scene_1_1PlanningScene_a5ea266c7ba324b5dce2d8e61509076b7_icgraph">
-<area shape="rect" title="Load the geometry of the planning scene from a stream." alt="" coords="108,5,351,47"/>
-<area shape="rect" href="publish__scene__from__text_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,13,60,39"/>
+<area shape="rect" title="Load the geometry of the planning scene from a stream." alt="" coords="280,27,523,69"/>
+<area shape="rect" href="publish__scene__from__text_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="91,5,146,32"/>
+<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#ad0cc39905bf06b2ea73b8a226f881242" title="Save the geometry of the planning scene to a stream, as plain text." alt="" coords="5,57,232,98"/>
 </map>
 </div>
 
@@ -5266,7 +5284,7 @@ Here is the caller graph for this function:</div>
 
 <p>Load the geometry of the planning scene from a stream at a certain location using offset. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00935">935</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00918">918</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -5288,7 +5306,7 @@ Here is the caller graph for this function:</div>
 
 <p>Outputs debug information about the planning scene contents. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l02241">2241</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l02225">2225</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -5308,27 +5326,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01365">1365</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classplanning__scene_1_1PlanningScene_a6f16582ddf99b615ef69c658521731ff_cgraph.png" border="0" usemap="#classplanning__scene_1_1PlanningScene_a6f16582ddf99b615ef69c658521731ff_cgraph" alt=""/></div>
-<map name="classplanning__scene_1_1PlanningScene_a6f16582ddf99b615ef69c658521731ff_cgraph" id="classplanning__scene_1_1PlanningScene_a6f16582ddf99b615ef69c658521731ff_cgraph">
-<area shape="rect" title=" " alt="" coords="5,293,239,349"/>
-<area shape="rect" href="classmoveit_1_1core_1_1AttachedBody.html#a1b5208f4d6c74fd1c31d89015f153d93" title="Return the posture that is necessary for the object to be released, (if any). This is useful for exam..." alt="" coords="319,5,521,47"/>
-<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#a351202a8fec49dff6646a454ac3e9a7e" title="Get the transform corresponding to the frame id. This will be known if id is a link name,..." alt="" coords="322,71,518,112"/>
-<area shape="rect" href="classmoveit_1_1core_1_1AttachedBody.html#ad6ba631b74e575e53a07b333a4054a15" title="Get the pose of the attached body relative to the parent link." alt="" coords="319,136,521,177"/>
-<area shape="rect" href="classmoveit_1_1core_1_1AttachedBody.html#ad7e41060467df2a8db42540d86cfbcf6" title="Get the shape poses (the transforms to the shapes of this body, relative to the pose)...." alt="" coords="319,201,521,243"/>
-<area shape="rect" href="classmoveit_1_1core_1_1AttachedBody.html#a8832405dda038c3e28a7969cb63993d1" title="Get the shapes that make up this attached body." alt="" coords="319,267,521,308"/>
-<area shape="rect" href="classmoveit_1_1core_1_1AttachedBody.html#a6b79d5b6840236f1a14735c16bcbede8" title="Get subframes of this object (relative to the object pose). The returned transforms are guaranteed to..." alt="" coords="319,332,521,373"/>
-<area shape="rect" href="classmoveit_1_1core_1_1AttachedBody.html#a1added4f50dd7c18b8559e160885cbf1" title="Get the links that the attached body is allowed to touch." alt="" coords="319,397,521,439"/>
-<area shape="rect" href="namespacemoveit_1_1core.html#a192b65b3ebc8eb7b6ccd155808c68aa1" title="Check if a message includes any information about a planning scene, or whether it is empty." alt="" coords="337,463,503,490"/>
-<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#a8794b3be8e182d38fe962855c570ac40" title=" " alt="" coords="327,515,513,556"/>
-<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#a92ccb51285406fcfa325dcf1f88080e6" title="Takes the object message and returns the object pose, shapes and shape poses. If the object pose is e..." alt="" coords="287,581,553,637"/>
-<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#ab4de68060bb1d854e4d37f26436b7ebb" title="Get the state at which the robot is assumed to be." alt="" coords="617,39,803,80"/>
-<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#a4ffd859140c70a6c1cd4eb2e8db0d94f" title="Check if a transform to the frame id is known. This will be known if id is a link name,..." alt="" coords="601,104,819,145"/>
-</map>
-</div>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01283">1283</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -5348,7 +5346,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01583">1583</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01582">1582</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -5368,7 +5366,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01271">1271</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01190">1190</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -5388,7 +5386,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01309">1309</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01228">1228</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -5418,7 +5416,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01332">1332</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01250">1250</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -5447,7 +5445,18 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01234">1234</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01173">1173</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning__scene_1_1PlanningScene_a769413a3663cdc1280f4bb6ea9dbf460_cgraph.png" border="0" usemap="#classplanning__scene_1_1PlanningScene_a769413a3663cdc1280f4bb6ea9dbf460_cgraph" alt=""/></div>
+<map name="classplanning__scene_1_1PlanningScene_a769413a3663cdc1280f4bb6ea9dbf460_cgraph" id="classplanning__scene_1_1PlanningScene_a769413a3663cdc1280f4bb6ea9dbf460_cgraph">
+<area shape="rect" title=" " alt="" coords="5,39,284,80"/>
+<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#a351202a8fec49dff6646a454ac3e9a7e" title="Get the transform corresponding to the frame id. This will be known if id is a link name,..." alt="" coords="332,39,528,80"/>
+<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#ab4de68060bb1d854e4d37f26436b7ebb" title="Get the state at which the robot is assumed to be." alt="" coords="591,5,778,47"/>
+<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#a4ffd859140c70a6c1cd4eb2e8db0d94f" title="Check if a transform to the frame id is known. This will be known if id is a link name,..." alt="" coords="576,71,793,112"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -5469,7 +5478,7 @@ Here is the call graph for this function:</div>
 
 <p>If there is a parent specified for this scene, then the diffs with respect to that parent are applied to a specified planning scene, whatever that scene may be. If there is no parent specified, this function is a no-op. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00346">346</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00341">341</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -5502,7 +5511,7 @@ Here is the call graph for this function:</div>
 
 <p>Clear all collision objects in planning scene. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01297">1297</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01216">1216</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -5522,7 +5531,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01934">1934</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01918">1918</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -5553,7 +5562,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01872">1872</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01856">1856</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -5575,7 +5584,16 @@ Here is the call graph for this function:</div>
 
 <p>Save the geometry of the planning scene to a stream, as plain text. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00888">888</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00880">880</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning__scene_1_1PlanningScene_ad0cc39905bf06b2ea73b8a226f881242_cgraph.png" border="0" usemap="#classplanning__scene_1_1PlanningScene_ad0cc39905bf06b2ea73b8a226f881242_cgraph" alt=""/></div>
+<map name="classplanning__scene_1_1PlanningScene_ad0cc39905bf06b2ea73b8a226f881242_cgraph" id="classplanning__scene_1_1PlanningScene_ad0cc39905bf06b2ea73b8a226f881242_cgraph">
+<area shape="rect" title="Save the geometry of the planning scene to a stream, as plain text." alt="" coords="5,5,232,47"/>
+<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#a5ea266c7ba324b5dce2d8e61509076b7" title="Load the geometry of the planning scene from a stream." alt="" coords="280,5,523,47"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -5597,7 +5615,7 @@ Here is the call graph for this function:</div>
 
 <p>Set the callback to be triggered when changes are made to the current scene state. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00533">533</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00535">535</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -5619,7 +5637,7 @@ Here is the call graph for this function:</div>
 
 <p>Set the callback to be triggered when changes are made to the current scene world. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00540">540</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l00542">542</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -5641,7 +5659,7 @@ Here is the call graph for this function:</div>
 
 <p>Set the current robot state. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01097">1097</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01036">1036</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -5663,7 +5681,7 @@ Here is the call graph for this function:</div>
 
 <p>Set the current robot state to be <em>state</em>. If not all joint values are specified, the previously maintained joint values are kept. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01064">1064</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01003">1003</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -5713,7 +5731,7 @@ Here is the caller graph for this function:</div>
 <p>Specify a predicate that decides whether motion segments are considered valid or invalid for reasons beyond ones covered by collision checking and constraint evaluation. <br  />
  </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00807">807</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00800">800</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
 
 </div>
 </div>
@@ -5743,7 +5761,7 @@ Here is the caller graph for this function:</div>
 
 <p>Set the name of the planning scene. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00147">147</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00149">149</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
 
 </div>
 </div>
@@ -5773,7 +5791,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01922">1922</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01906">1906</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -5803,16 +5821,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01865">1865</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classplanning__scene_1_1PlanningScene_a8794b3be8e182d38fe962855c570ac40_icgraph.png" border="0" usemap="#classplanning__scene_1_1PlanningScene_a8794b3be8e182d38fe962855c570ac40_icgraph" alt=""/></div>
-<map name="classplanning__scene_1_1PlanningScene_a8794b3be8e182d38fe962855c570ac40_icgraph" id="classplanning__scene_1_1PlanningScene_a8794b3be8e182d38fe962855c570ac40_icgraph">
-<area shape="rect" title=" " alt="" coords="287,13,473,54"/>
-<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#a6f16582ddf99b615ef69c658521731ff" title=" " alt="" coords="5,5,239,61"/>
-</map>
-</div>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01849">1849</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -5834,7 +5843,7 @@ Here is the caller graph for this function:</div>
 
 <p>Apply changes to this planning scene as diffs, even if the message itself is not marked as being a diff (is_diff member). <a class="el" href="classA.html">A</a> parent is not required to exist. However, the existing data in the planning instance is not cleared. Data from the message is only appended (and in cases such as e.g., the robot state, is overwritten). </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01158">1158</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01097">1097</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -5856,7 +5865,7 @@ Here is the caller graph for this function:</div>
 
 <p>Set this instance of a planning scene to be the same as the one serialized in the <em>scene</em> message, even if the message itself is marked as being a diff (is_diff member) </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01209">1209</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01148">1148</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -5895,60 +5904,7 @@ Here is the caller graph for this function:</div>
 
 <p>Specify a predicate that decides whether states are considered valid or invalid for reasons beyond ones covered by collision checking and constraint evaluation. This is useful for setting up problem specific constraints (e.g., stability) </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00793">793</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
-
-</div>
-</div>
-<a id="a92ccb51285406fcfa325dcf1f88080e6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a92ccb51285406fcfa325dcf1f88080e6">&#9670;&nbsp;</a></span>shapesAndPosesFromCollisionObjectMessage()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool planning_scene::PlanningScene::shapesAndPosesFromCollisionObjectMessage </td>
-          <td>(</td>
-          <td class="paramtype">const moveit_msgs::msg::CollisionObject &amp;&#160;</td>
-          <td class="paramname"><em>object</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Eigen::Isometry3d &amp;&#160;</td>
-          <td class="paramname"><em>object_pose_in_header_frame</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::vector&lt; shapes::ShapeConstPtr &gt; &amp;&#160;</td>
-          <td class="paramname"><em>shapes</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">EigenSTL::vector_Isometry3d &amp;&#160;</td>
-          <td class="paramname"><em>shape_poses</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Takes the object message and returns the object pose, shapes and shape poses. If the object pose is empty (identity) but the shape pose is set, this uses the shape pose as the object pose. The shape pose becomes the identity instead. </p>
-
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01625">1625</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classplanning__scene_1_1PlanningScene_a92ccb51285406fcfa325dcf1f88080e6_icgraph.png" border="0" usemap="#classplanning__scene_1_1PlanningScene_a92ccb51285406fcfa325dcf1f88080e6_icgraph" alt=""/></div>
-<map name="classplanning__scene_1_1PlanningScene_a92ccb51285406fcfa325dcf1f88080e6_icgraph" id="classplanning__scene_1_1PlanningScene_a92ccb51285406fcfa325dcf1f88080e6_icgraph">
-<area shape="rect" title="Takes the object message and returns the object pose, shapes and shape poses. If the object pose is e..." alt="" coords="287,5,553,61"/>
-<area shape="rect" href="classplanning__scene_1_1PlanningScene.html#a6f16582ddf99b615ef69c658521731ff" title=" " alt="" coords="5,5,239,61"/>
-</map>
-</div>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00786">786</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
 
 </div>
 </div>
@@ -5970,7 +5926,7 @@ Here is the caller graph for this function:</div>
 
 <p>Call <a class="el" href="classplanning__scene_1_1PlanningScene.html#acb5c51321f5d908072920ee2a2f1db58" title="Set this instance of a planning scene to be the same as the one serialized in the scene message,...">setPlanningSceneMsg()</a> or <a class="el" href="classplanning__scene_1_1PlanningScene.html#a6b9894a14d5757ea4317d0be4ebb5b6e" title="Apply changes to this planning scene as diffs, even if the message itself is not marked as being a di...">setPlanningSceneDiffMsg()</a> depending on how the is_diff member of the message is set. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01243">1243</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8cpp_source.html#l01182">1182</a> of file <a class="el" href="planning__scene_8cpp_source.html">planning_scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -5997,7 +5953,7 @@ Here is the caller graph for this function:</div>
 
 <p>Enumerates the available collision detectors. </p>
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l01027">1027</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l01016">1016</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
 
 </div>
 </div>
@@ -6022,7 +5978,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00136">136</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00138">138</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
 
 </div>
 </div>
@@ -6046,7 +6002,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00135">135</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="planning__scene_8h_source.html#l00137">137</a> of file <a class="el" href="planning__scene_8h_source.html">planning_scene.h</a>.</p>
 
 </div>
 </div>

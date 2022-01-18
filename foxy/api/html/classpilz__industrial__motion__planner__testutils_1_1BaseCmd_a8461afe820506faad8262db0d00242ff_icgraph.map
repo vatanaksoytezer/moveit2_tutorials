@@ -1,4 +1,5 @@
 <map id="pilz_industrial_motion_planner_testutils::BaseCmd::getGoalConfiguration" name="pilz_industrial_motion_planner_testutils::BaseCmd::getGoalConfiguration">
-<area shape="rect" id="node1" title=" " alt="" coords="123,5,331,61"/>
-<area shape="rect" id="node2" href="$integrationtest__command__list__manager_8cpp.html#aabe8087a75851069c12792f1bb292302" title="Checks that exception is thrown if first goal is not reachable." alt="" coords="5,20,75,47"/>
+<area shape="rect" id="node1" title=" " alt="" coords="123,16,331,72"/>
+<area shape="rect" id="node2" href="$integrationtest__command__list__manager_8cpp.html#aabe8087a75851069c12792f1bb292302" title="Checks that exception is thrown if first goal is not reachable." alt="" coords="5,5,75,32"/>
+<area shape="rect" id="node3" href="$unittest__trajectory__generator__lin_8cpp.html#adc7f1c3e9a8ba277b94f909849cef5ee" title="test joint linear movement with discontinuities in joint space" alt="" coords="5,56,75,83"/>
 </map>

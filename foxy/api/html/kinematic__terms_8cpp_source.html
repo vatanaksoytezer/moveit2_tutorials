@@ -116,7 +116,7 @@ $(function() {
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordtype">int</span> num_vels = half - 1;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  MatrixXd jac = MatrixXd::Zero(num_vels * 2, num_vals);</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_vels; ++i)</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_vels; i++)</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  {</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">// v = (j_i+1 - j_i)*(1/dt)</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">// We calculate v with the dt from the second pt</span></div>

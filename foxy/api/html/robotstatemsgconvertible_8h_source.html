@@ -104,23 +104,26 @@ $(function() {
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> *  POSSIBILITY OF SUCH DAMAGE.</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"> *********************************************************************/</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;moveit_msgs/msg/robot_state.hpp&gt;</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="robot__model_8h.html">moveit/robot_model/robot_model.h</a>&gt;</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacepilz__industrial__motion__planner__testutils.html">pilz_industrial_motion_planner_testutils</a></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">class </span>RobotStateMsgConvertible</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keyword">virtual</span> moveit_msgs::msg::RobotState <a class="code" href="classpilz__industrial__motion__planner__testutils_1_1RobotStateMsgConvertible.html#a2fcc8080d4ebfc78ea3fb473d187f888">toMoveitMsgsRobotState</a>() <span class="keyword">const</span> = 0;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;};</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}  <span class="comment">// namespace pilz_industrial_motion_planner_testutils</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#ifndef ROBOTSTATEMSGCONVERTIBLE_H</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#define ROBOTSTATEMSGCONVERTIBLE_H</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;moveit_msgs/RobotState.h&gt;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="robot__model_8h.html">moveit/robot_model/robot_model.h</a>&gt;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacepilz__industrial__motion__planner__testutils.html">pilz_industrial_motion_planner_testutils</a></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">class </span>RobotStateMsgConvertible</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;{</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keyword">virtual</span> moveit_msgs::RobotState <a class="code" href="classpilz__industrial__motion__planner__testutils_1_1RobotStateMsgConvertible.html#a6294cfab7c5b4b66735378aedcbb8fde">toMoveitMsgsRobotState</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;};</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}  <span class="comment">// namespace pilz_industrial_motion_planner_testutils</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#endif  // ROBOTSTATEMSGCONVERTIBLE_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="arobot__model_8h_html"><div class="ttname"><a href="robot__model_8h.html">robot_model.h</a></div></div>
-<div class="ttc" id="anamespacepilz__industrial__motion__planner__testutils_html"><div class="ttname"><a href="namespacepilz__industrial__motion__planner__testutils.html">pilz_industrial_motion_planner_testutils</a></div><div class="ttdef"><b>Definition:</b> <a href="basecmd_8h_source.html#l00041">basecmd.h:41</a></div></div>
-<div class="ttc" id="aclasspilz__industrial__motion__planner__testutils_1_1RobotStateMsgConvertible_html_a2fcc8080d4ebfc78ea3fb473d187f888"><div class="ttname"><a href="classpilz__industrial__motion__planner__testutils_1_1RobotStateMsgConvertible.html#a2fcc8080d4ebfc78ea3fb473d187f888">pilz_industrial_motion_planner_testutils::RobotStateMsgConvertible::toMoveitMsgsRobotState</a></div><div class="ttdeci">virtual moveit_msgs::msg::RobotState toMoveitMsgsRobotState() const =0</div></div>
+<div class="ttc" id="anamespacepilz__industrial__motion__planner__testutils_html"><div class="ttname"><a href="namespacepilz__industrial__motion__planner__testutils.html">pilz_industrial_motion_planner_testutils</a></div><div class="ttdef"><b>Definition:</b> <a href="basecmd_8h_source.html#l00042">basecmd.h:42</a></div></div>
+<div class="ttc" id="aclasspilz__industrial__motion__planner__testutils_1_1RobotStateMsgConvertible_html_a6294cfab7c5b4b66735378aedcbb8fde"><div class="ttname"><a href="classpilz__industrial__motion__planner__testutils_1_1RobotStateMsgConvertible.html#a6294cfab7c5b4b66735378aedcbb8fde">pilz_industrial_motion_planner_testutils::RobotStateMsgConvertible::toMoveitMsgsRobotState</a></div><div class="ttdeci">virtual moveit_msgs::RobotState toMoveitMsgsRobotState() const =0</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
