@@ -1,0 +1,14 @@
+<map id="TEST_F" name="TEST_F">
+<area shape="rect" id="node1" title=" " alt="" coords="5,307,75,334"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1RobotModelBuilder.html#a00626af413f74d1a48c805cf92cb9e29" title="Adds a chain of links and joints to the builder. The joint names are generated automatically as &quot;&lt;par..." alt="" coords="145,5,335,47"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1core_1_1RobotModelBuilder.html#a1a03556e02633162c32167b138808238" title="Adds a collision box to a specific link." alt="" coords="145,71,335,112"/>
+<area shape="rect" id="node4" href="$classmoveit_1_1core_1_1RobotModelBuilder.html#a470fe4821c9f70dc96e59204830ffef7" title="Adds a new group using a list of links and a list of joints." alt="" coords="145,136,335,177"/>
+<area shape="rect" id="node5" href="$classmoveit_1_1core_1_1RobotModelBuilder.html#a9d71dd9c8cc3f34ad687b860a5fa80de" title="Adds a virtual joint to the SRDF." alt="" coords="145,201,335,243"/>
+<area shape="rect" id="node6" href="$classmoveit_1_1core_1_1RobotModelBuilder.html#a742857e69f69dcf03f647aa98a44498d" title="Builds and returns the robot model added to the builder." alt="" coords="145,267,335,308"/>
+<area shape="rect" id="node7" href="$classmoveit_1_1core_1_1RobotState.html#a55cae73d3315d1283436db1df51f4fe0" title="Compute an axis&#45;aligned bounding box that contains the current state. The format for aabb is (minx,..." alt="" coords="148,332,332,373"/>
+<area shape="rect" id="node8" href="$classmoveit_1_1core_1_1LinkModel.html#abad2a16b391682da7b54891abad4230e" title="Get the offset of the center of the bounding box of this link when the link is positioned at origin." alt="" coords="123,397,357,439"/>
+<area shape="rect" id="node9" href="$classmoveit_1_1core_1_1RobotState.html#a2b2cdba896e3cda3e307e117eaef39c2" title="Get the model of a particular link." alt="" coords="148,463,332,504"/>
+<area shape="rect" id="node11" href="$classmoveit_1_1core_1_1LinkModel.html#a5691f5a8779d9536a3f15cb08a8961ab" title="Get the extents of the link&#39;s geometry (dimensions of axis&#45;aligned bounding box around all shapes tha..." alt="" coords="143,528,337,569"/>
+<area shape="rect" id="node12" href="$classmoveit_1_1core_1_1RobotModelBuilder.html#a3d8ec06341b89b1545ac0b385c4bbc0e" title="Returns true if the building process so far has been valid." alt="" coords="145,593,335,635"/>
+<area shape="rect" id="node10" href="$classmoveit_1_1core_1_1RobotState.html#a54879052daa602ea0319cbe3ded82ff3" title="Set the position of a single variable. An exception is thrown if the variable name is not known." alt="" coords="405,463,589,504"/>
+</map>

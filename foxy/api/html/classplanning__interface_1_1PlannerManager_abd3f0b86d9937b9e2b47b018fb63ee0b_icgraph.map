@@ -1,0 +1,4 @@
+<map id="planning_interface::PlannerManager::getPlanningContext" name="planning_interface::PlannerManager::getPlanningContext">
+<area shape="rect" id="node1" title="Construct a planning context given the current scene and a planning request. If a problem is encounte..." alt="" coords="275,5,496,61"/>
+<area shape="rect" id="node2" href="$classplanning__interface_1_1PlanningContext.html#a112440fb0e22251da0e36240dedfbfc8" title="Set the planning scene for this context." alt="" coords="5,5,227,61"/>
+</map>

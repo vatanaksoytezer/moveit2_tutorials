@@ -1,0 +1,5 @@
+<map id="collision_detection::CollisionPlugin" name="collision_detection::CollisionPlugin">
+<area shape="rect" id="node1" title="Plugin API for loading a custom collision detection robot/world." alt="" coords="5,53,149,94"/>
+<area shape="rect" id="node2" href="$classcollision__detection_1_1CollisionDetectorBtPluginLoader.html" title=" " alt="" coords="203,5,399,61"/>
+<area shape="rect" id="node3" href="$classcollision__detection_1_1CollisionDetectorFCLPluginLoader.html" title=" " alt="" coords="197,85,404,141"/>
+</map>

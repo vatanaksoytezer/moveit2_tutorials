@@ -1,0 +1,5 @@
+<map id="TEST" name="TEST">
+<area shape="rect" id="node1" title="Check that the clone function returns a equal profile." alt="" coords="5,60,60,87"/>
+<area shape="rect" id="node2" href="$classpilz__industrial__motion__planner_1_1VelocityProfileATrap.html#ab02e26062bacb4d3e10037773b4ceb04" title="returns copy of current VelocityProfile object" alt="" coords="108,5,323,61"/>
+<area shape="rect" id="node3" href="$classpilz__industrial__motion__planner_1_1VelocityProfileATrap.html#ab8735c0f5fddb7dddbf64a226fa09fe5" title="Profile with given acceleration/constant/deceleration durations. Each duration must obey the maximal ..." alt="" coords="108,85,323,141"/>
+</map>

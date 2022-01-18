@@ -1,0 +1,5 @@
+<map id="kinematics_metrics::KinematicsMetrics::getManipulabilityEllipsoid" name="kinematics_metrics::KinematicsMetrics::getManipulabilityEllipsoid">
+<area shape="rect" id="node1" title="Get the (translation) manipulability ellipsoid for a given group at a given joint configuration." alt="" coords="5,31,204,87"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1RobotState.html#a3242f96101baaed7ce83881c67d182bc" title="Compute the Jacobian with reference to a particular point on a given link, for a specified group." alt="" coords="252,5,436,47"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1core_1_1JointModelGroup.html#a0db655aa0f72015d6d6531fa2cc48965" title="Check if this group is a linear chain." alt="" coords="253,71,435,112"/>
+</map>

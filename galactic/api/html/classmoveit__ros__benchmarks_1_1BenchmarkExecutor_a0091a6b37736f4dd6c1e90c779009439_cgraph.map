@@ -1,0 +1,5 @@
+<map id="moveit_ros_benchmarks::BenchmarkExecutor::loadPlanningScene" name="moveit_ros_benchmarks::BenchmarkExecutor::loadPlanningScene">
+<area shape="rect" id="node1" title="Load the planning scene with the given name from the warehouse." alt="" coords="5,31,188,87"/>
+<area shape="rect" id="node2" href="$classmoveit__warehouse_1_1PlanningSceneStorage.html#af5014412053aeff8443a4f83845bf2d7" title="Get the latest planning scene named scene_name." alt="" coords="237,5,472,47"/>
+<area shape="rect" id="node3" href="$classmoveit__warehouse_1_1PlanningSceneStorage.html#aedbbc7d951d8c25abea4568164462258" title=" " alt="" coords="236,71,473,112"/>
+</map>

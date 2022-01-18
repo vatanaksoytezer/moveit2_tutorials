@@ -1,0 +1,8 @@
+<map id="moveit::core::LinkModel::getName" name="moveit::core::LinkModel::getName">
+<area shape="rect" id="node1" title="The name of this link." alt="" coords="244,166,423,207"/>
+<area shape="rect" id="node2" href="$classmoveit__setup__assistant_1_1KinematicChainWidget.html#a8dc4bb1c71fe15497f518f1331115442" title=" " alt="" coords="8,5,193,61"/>
+<area shape="rect" id="node3" href="$classmoveit__setup__assistant_1_1PlanningGroupsWidget.html#ae28e1187ff0f945e04e5788c792c7717" title=" " alt="" coords="11,85,190,141"/>
+<area shape="rect" id="node4" href="$classmoveit_1_1core_1_1RobotModel.html#a9390607f3bd23f21e5fb5771b45acad8" title="Get the array of joints that are active (not fixed, not mimic) in this model." alt="" coords="5,166,196,207"/>
+<area shape="rect" id="node5" href="$classconstraint__samplers_1_1IKConstraintSampler.html#a1fc93305d848dbc5e21af78e0ba1d82e" title="Gets the link name associated with this sampler." alt="" coords="19,232,182,288"/>
+<area shape="rect" id="node6" href="$test__constraints_8cpp.html#a0b1f5a3d6803a1b4f1057a54d3356231" title=" " alt="" coords="66,312,135,339"/>
+</map>

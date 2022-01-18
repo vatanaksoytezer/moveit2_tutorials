@@ -1,0 +1,6 @@
+<map id="planning_scene_monitor::CurrentStateMonitor::getCurrentState" name="planning_scene_monitor::CurrentStateMonitor::getCurrentState">
+<area shape="rect" id="node1" title="Get the current state." alt="" coords="5,63,187,119"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1RobotState.html#a72e5062115857bc793f0ba6be6aca059" title="Get a raw pointer to the positions of the variables stored in this state. Use carefully...." alt="" coords="235,5,419,47"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1core_1_1RobotState.html#a3c363244052c265d92180ee2fd3a5eb9" title="By default, if velocities are never set or initialized, the state remembers that there are no velocit..." alt="" coords="235,71,419,112"/>
+<area shape="rect" id="node4" href="$classmoveit_1_1core_1_1RobotState.html#a04b9343fdf57f04895fa21c326164d0f" title="It is assumed positions is an array containing the new positions for all variables in this state...." alt="" coords="235,136,419,177"/>
+</map>

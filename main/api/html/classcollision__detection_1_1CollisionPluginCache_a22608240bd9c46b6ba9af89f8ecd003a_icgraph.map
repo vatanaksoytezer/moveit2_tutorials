@@ -1,0 +1,5 @@
+<map id="collision_detection::CollisionPluginCache::activate" name="collision_detection::CollisionPluginCache::activate">
+<area shape="rect" id="node1" title="Activate a specific collision plugin for the given planning scene instance." alt="" coords="224,39,391,95"/>
+<area shape="rect" id="node2" href="$classcollision__detection_1_1CollisionPluginLoader.html#a305efaa136b925cc5f3459eaf1ce816c" title="Fetch plugin name from parameter server and activate the plugin for the given scene." alt="" coords="5,5,176,61"/>
+<area shape="rect" id="node3" href="$test__multi__threaded_8cpp.html#ad41b8bdce67cc855d0a802424635ab9f" title="Tests the collision detector in multiple threads." alt="" coords="56,85,125,112"/>
+</map>

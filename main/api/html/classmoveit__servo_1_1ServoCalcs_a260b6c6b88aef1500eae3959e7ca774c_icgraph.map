@@ -1,0 +1,6 @@
+<map id="moveit_servo::ServoCalcs::updateJoints" name="moveit_servo::ServoCalcs::updateJoints">
+<area shape="rect" id="node1" title="Parse the incoming joint msg for the joints of our MoveGroup." alt="" coords="721,5,912,47"/>
+<area shape="rect" id="node2" href="$classmoveit__servo_1_1ServoCalcs.html#abc7fc9277c10322e7af56c7e889c2cd8" title="Do calculations for a single iteration. Publish one outgoing command." alt="" coords="483,5,673,47"/>
+<area shape="rect" id="node3" href="$classmoveit__servo_1_1ServoCalcs.html#abada414babad9c28179c0ce88ca6917b" title="Run the main calculation loop." alt="" coords="244,5,435,47"/>
+<area shape="rect" id="node4" href="$classmoveit__servo_1_1ServoCalcs.html#ad942432113d0c473d1b04acfcb21e052" title="Start the timer where we do work and publish outputs." alt="" coords="5,5,196,47"/>
+</map>

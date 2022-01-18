@@ -1,0 +1,4 @@
+<map id="planning_scene::PlanningScene::distanceToCollision" name="planning_scene::PlanningScene::distanceToCollision">
+<area shape="rect" id="node1" title="The distance between the robot model at state robot_state to the nearest collision (ignoring self&#45;col..." alt="" coords="5,5,200,47"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1RobotState.html#afa1f72a766bdf75d81f4404058322576" title="Update the transforms for the collision bodies. This call is needed before calling collision checking..." alt="" coords="248,5,484,47"/>
+</map>

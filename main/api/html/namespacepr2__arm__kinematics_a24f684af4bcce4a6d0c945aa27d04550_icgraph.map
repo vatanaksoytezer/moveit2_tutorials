@@ -1,0 +1,31 @@
+<map id="pr2_arm_kinematics::distance" name="pr2_arm_kinematics::distance">
+<area shape="rect" id="node1" title=" " alt="" coords="899,628,1053,670"/>
+<area shape="rect" id="node2" href="$classompl__interface_1_1PoseModelStateSpace.html#ad65ebc5ab7b222263c0286feda9787f4" title=" " alt="" coords="261,44,532,86"/>
+<area shape="rect" id="node3" href="$classompl__interface_1_1ModelBasedStateSpace.html#a97edd002b372e5890e02b4e041609dd4" title=" " alt="" coords="580,74,851,115"/>
+<area shape="rect" id="node4" href="$classtrajectory__processing_1_1CircularPathSegment.html#a90d4d6eaec6fb7f2377637145659f1ce" title=" " alt="" coords="632,140,799,196"/>
+<area shape="rect" id="node6" href="$namespacepr2__arm__kinematics.html#a31e48e861fab1c1a426bda845bf56303" title=" " alt="" coords="612,220,819,262"/>
+<area shape="rect" id="node9" href="$classompl__interface_1_1ModelBasedStateSpace.html#ad4633497054181f7b4810c6b7ab8e1bd" title=" " alt="" coords="611,286,819,327"/>
+<area shape="rect" id="node11" href="$classmoveit_1_1core_1_1RobotState.html#ab4350d31968cbac757a0794427813dcb" title="Remove accelerations from this state (this differs from setting them to zero)" alt="" coords="623,351,807,392"/>
+<area shape="rect" id="node12" href="$classmoveit_1_1core_1_1RobotState.html#a7edbdff28a1333edc0429b98744ab4ca" title="Reduce RobotState to kinematic information (remove velocity, acceleration and effort,..." alt="" coords="623,416,807,458"/>
+<area shape="rect" id="node13" href="$classmoveit__servo_1_1ServoCalcs.html#af60cee9b0b121079abda886bb4e60817" title="Avoid overshooting joint limits." alt="" coords="620,482,811,523"/>
+<area shape="rect" id="node14" href="$namespacetestutils.html#ad85119748f255af37a1ddca4b438962f" title="Check that a given vector of accelerations represents a trapezoid velocity profile." alt="" coords="605,548,825,574"/>
+<area shape="rect" id="node19" href="$classompl__interface_1_1GoalSampleableRegionMux.html#acbc39f6f7899dc10edf4181dda9ce0fd" title="Is the goal satisfied for this state (given a distance)" alt="" coords="598,599,833,640"/>
+<area shape="rect" id="node20" href="$compare__collision__speed__checking__fcl__bullet_8cpp.html#a985d8335cf9f804c72c930126781e7a4" title="Runs a collision detection benchmark and measures the time." alt="" coords="634,665,797,692"/>
+<area shape="rect" id="node21" href="$classompl__interface_1_1ConstrainedSampler.html#aeb7bb6ef1d91df65b7dd08cfd195b880" title="Sample a state using the specified Gaussian." alt="" coords="612,716,819,758"/>
+<area shape="rect" id="node22" href="$classompl__interface_1_1ValidConstrainedSampler.html#adde6bbc7b55d034bbf7185213e9c11e6" title=" " alt="" coords="596,782,835,823"/>
+<area shape="rect" id="node23" href="$classompl__interface_1_1ConstraintApproximationStateSampler.html#ada3b84cce65c52d504b2c5728075ee93" title=" " alt="" coords="612,848,819,904"/>
+<area shape="rect" id="node24" href="$classompl__interface_1_1ConstrainedSampler.html#a117009bf0e604396905a278f079c8480" title="Sample a state (uniformly) within a certain distance of another state." alt="" coords="607,928,823,970"/>
+<area shape="rect" id="node25" href="$classmoveit_1_1core_1_1RobotState.html#a3a536c5dedb52fe45e696ddcd1781345" title=" " alt="" coords="623,994,807,1035"/>
+<area shape="rect" id="node26" href="$classmesh__filter__test_1_1MeshFilterTest.html#af3da96d1909e3b4ef62fba2240c6d887" title=" " alt="" coords="614,1059,817,1100"/>
+<area shape="rect" id="node27" href="$classmoveit__servo_1_1ServoCalcs.html#ad2463b0abfe92815c96bb6cdf7f9e9be" title="Suddenly halt for a joint limit or other critical issue. Is handled differently for position vs...." alt="" coords="620,1124,811,1166"/>
+<area shape="rect" id="node28" href="$integrationtest__command__list__manager_8cpp.html#a3d41f6e81271e4fe1fc4c2bc32e046ad" title="Checks that exception is thrown if two consecutive blend radii overlap." alt="" coords="681,1190,750,1217"/>
+<area shape="rect" id="node29" href="$test__collision__common__panda_8h.html#aab97612ac359bd9fc11e4ddc89a524f0" title=" " alt="" coords="656,1241,775,1268"/>
+<area shape="rect" id="node5" href="$classtrajectory__processing_1_1CircularPathSegment.html#a28829eae7be85f2703484950ed0c4046" title=" " alt="" coords="313,140,480,196"/>
+<area shape="rect" id="node7" href="$classpr2__arm__kinematics_1_1PR2ArmIKSolver.html#aa43e423c92bc7e7e6d4c71b61f8bbfaa" title=" " alt="" coords="295,220,498,262"/>
+<area shape="rect" id="node8" href="$classpr2__arm__kinematics_1_1PR2ArmIKSolver.html#a610febcc067ce01ad248d9c8d4c010ad" title=" " alt="" coords="9,213,209,269"/>
+<area shape="rect" id="node10" href="$classompl__interface_1_1PoseModelStateSpace.html#a3f75caf24d9db149f2c701bc07918fc2" title=" " alt="" coords="297,286,496,327"/>
+<area shape="rect" id="node15" href="$namespacetestutils.html#aff7e22a5989e2e292e9ce0b20b3fd195" title="Check that the rotational path of a given trajectory is a quaternion slerp." alt="" coords="305,507,488,548"/>
+<area shape="rect" id="node17" href="$namespacetestutils.html#a2fdced2dd08d4d1c6ba87e72c2096776" title="Check that the translational path of a given trajectory has a trapezoid velocity profile." alt="" coords="305,572,488,614"/>
+<area shape="rect" id="node16" href="$classTrajectoryGeneratorCIRCTest.html#aa870399f4f43b67f1a4080a1e79417f9" title=" " alt="" coords="5,510,213,551"/>
+<area shape="rect" id="node18" href="$unittest__trajectory__generator__lin_8cpp.html#a1581eae5f7812d4fa88ed284c90dd9e6" title="test the trapezoid shape of the planning trajectory in Cartesian space" alt="" coords="75,580,144,606"/>
+</map>

@@ -1,0 +1,10 @@
+<map id="moveit_servo::ServoCalcs::cartesianServoCalcs" name="moveit_servo::ServoCalcs::cartesianServoCalcs">
+<area shape="rect" id="node1" title="Do servoing calculations for Cartesian twist commands." alt="" coords="5,169,196,211"/>
+<area shape="rect" id="node2" href="$classmoveit__servo_1_1ServoCalcs.html#acda48f8e1c9c89e616c7693fb0adf981" title=" " alt="" coords="278,5,469,47"/>
+<area shape="rect" id="node3" href="$classmoveit__servo_1_1ServoCalcs.html#adc8a971bac39624e373bea2ae1d76006" title=" " alt="" coords="272,71,475,112"/>
+<area shape="rect" id="node4" href="$classmoveit__servo_1_1ServoCalcs.html#ab0f0d493e2cf6af1059b0c8a72235cca" title="Handles all aspects of the servoing after the desired joint commands are established Joint and Cartes..." alt="" coords="278,136,469,177"/>
+<area shape="rect" id="node5" href="$classmoveit__servo_1_1ServoCalcs.html#adcaca01a96ab7241b1a00189e44c31c1" title=" " alt="" coords="278,201,469,243"/>
+<area shape="rect" id="node7" href="$classmoveit__servo_1_1ServoCalcs.html#adb08b11683ced9a4e00f61acb1f15e79" title="If incoming velocity commands are from a unitless joystick, scale them to physical units...." alt="" coords="277,267,470,308"/>
+<area shape="rect" id="node8" href="$classmoveit__servo_1_1ServoCalcs.html#a4b10bbcd55ca716e56faf9bf2b91e050" title="Possibly calculate a velocity scaling factor, due to proximity of singularity and direction of motion..." alt="" coords="244,332,503,373"/>
+<area shape="rect" id="node6" href="$classmoveit__servo_1_1ServoCalcs.html#a0d6eb7db6c056194e0e4d27f1bf3ebd6" title=" " alt="" coords="551,201,741,243"/>
+</map>

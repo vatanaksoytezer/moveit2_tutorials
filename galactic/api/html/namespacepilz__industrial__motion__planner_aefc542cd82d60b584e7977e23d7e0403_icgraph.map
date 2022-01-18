@@ -1,0 +1,5 @@
+<map id="pilz_industrial_motion_planner::computePoseIK" name="pilz_industrial_motion_planner::computePoseIK">
+<area shape="rect" id="node1" title="compute the inverse kinematics of a given pose, also check robot self collision" alt="" coords="240,35,427,76"/>
+<area shape="rect" id="node2" href="$namespacepilz__industrial__motion__planner.html#a40ec128f5a3915c2d1d4ad2148a6b05a" title=" " alt="" coords="5,5,192,47"/>
+<area shape="rect" id="node3" href="$unittest__trajectory__functions_8cpp.html#a8507caaa36989e2a020f3836bf2e34f6" title="Test computePoseIK for invalid group_name." alt="" coords="64,71,133,98"/>
+</map>

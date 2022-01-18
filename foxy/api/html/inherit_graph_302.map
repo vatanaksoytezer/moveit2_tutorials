@@ -1,0 +1,11 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classpilz__industrial__motion__planner__testutils_1_1MotionPlanRequestConvertible.html" title="Interface class to express that a derived class can be converted into a planning_interface::MotionPla..." alt="" coords="5,97,224,153"/>
+<area shape="rect" id="node2" href="$classpilz__industrial__motion__planner__testutils_1_1MotionCmd.html" title="Base class for commands storing all general information of a command." alt="" coords="272,105,493,146"/>
+<area shape="rect" id="node3" href="$classpilz__industrial__motion__planner__testutils_1_1BaseCmd.html" title=" " alt="" coords="541,32,833,88"/>
+<area shape="rect" id="node6" href="$classpilz__industrial__motion__planner__testutils_1_1BaseCmd.html" title=" " alt="" coords="583,137,791,193"/>
+<area shape="rect" id="node4" href="$classpilz__industrial__motion__planner__testutils_1_1Ptp.html" title=" " alt="" coords="881,5,1173,61"/>
+<area shape="rect" id="node5" href="$classpilz__industrial__motion__planner__testutils_1_1Gripper.html" title=" " alt="" coords="1221,13,1416,54"/>
+<area shape="rect" id="node7" href="$classpilz__industrial__motion__planner__testutils_1_1Circ.html" title="Data class storing all information regarding a Circ command." alt="" coords="928,86,1127,157"/>
+<area shape="rect" id="node8" href="$classpilz__industrial__motion__planner__testutils_1_1Lin.html" title="Data class storing all information regarding a linear command." alt="" coords="937,181,1118,237"/>
+<area shape="rect" id="node9" href="$classpilz__industrial__motion__planner__testutils_1_1Ptp.html" title="Data class storing all information regarding a Ptp command." alt="" coords="937,261,1118,317"/>
+</map>

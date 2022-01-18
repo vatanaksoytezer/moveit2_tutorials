@@ -1,0 +1,5 @@
+<map id="trajopt_interface::TrajOptPlanningContext::solve" name="trajopt_interface::TrajOptPlanningContext::solve">
+<area shape="rect" id="node1" title="Solve the motion planning problem and store the detailed result in res. This function should not clea..." alt="" coords="5,31,180,87"/>
+<area shape="rect" id="node2" href="$classplanning__interface_1_1PlanningContext.html#a65d3d60fa6759e8510ed2348f3c71d77" title="Get the name of the group this planning context is for." alt="" coords="228,5,472,47"/>
+<area shape="rect" id="node3" href="$namespacemoveit_1_1core.html#af616e81ab82b75721fdbfcd77892c92a" title="Convert a robot state msg (with accompanying extra transforms) to a MoveIt robot state." alt="" coords="260,71,440,112"/>
+</map>

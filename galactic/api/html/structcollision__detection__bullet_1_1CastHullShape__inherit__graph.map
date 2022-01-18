@@ -1,0 +1,4 @@
+<map id="collision_detection_bullet::CastHullShape" name="collision_detection_bullet::CastHullShape">
+<area shape="rect" id="node1" title="Casted collision shape used for checking if an object is collision free between two discrete poses." alt="" coords="5,80,175,121"/>
+<area shape="rect" id="node2" title=" " alt="" coords="28,5,152,32"/>
+</map>

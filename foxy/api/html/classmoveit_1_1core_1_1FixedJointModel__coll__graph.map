@@ -1,0 +1,5 @@
+<map id="moveit::core::FixedJointModel" name="moveit::core::FixedJointModel">
+<area shape="rect" id="node1" title="A fixed joint." alt="" coords="9,185,183,227"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1JointModel.html" title="A joint from the robot. Models the transform that this joint applies in the kinematic chain...." alt="" coords="5,109,187,136"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1core_1_1LinkModel.html" title="A link from the robot. Contains the constant transform applied to the link and its geometry." alt="" coords="7,5,185,32"/>
+</map>

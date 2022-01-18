@@ -1,0 +1,5 @@
+<map id="pilz_industrial_motion_planner::TrajectoryBlenderTransitionWindow" name="pilz_industrial_motion_planner::TrajectoryBlenderTransitionWindow">
+<area shape="rect" id="node1" title="Trajectory blender implementing transition window algorithm." alt="" coords="5,200,268,256"/>
+<area shape="rect" id="node2" href="$classpilz__industrial__motion__planner_1_1TrajectoryBlender.html" title="Base class of trajectory blenders." alt="" coords="37,109,237,151"/>
+<area shape="rect" id="node3" href="$classpilz__industrial__motion__planner_1_1LimitsContainer.html" title="This class combines CartesianLimit and JointLimits into on single class." alt="" coords="42,5,231,47"/>
+</map>

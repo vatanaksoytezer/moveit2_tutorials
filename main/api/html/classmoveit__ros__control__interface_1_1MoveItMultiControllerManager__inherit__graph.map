@@ -1,0 +1,4 @@
+<map id="moveit_ros_control_interface::MoveItMultiControllerManager" name="moveit_ros_control_interface::MoveItMultiControllerManager">
+<area shape="rect" id="node1" title="MoveItMultiControllerManager discovers all running ros_control node and delegates member function to ..." alt="" coords="5,95,243,151"/>
+<area shape="rect" id="node2" href="$classmoveit__controller__manager_1_1MoveItControllerManager.html" title="MoveIt does not enforce how controllers are implemented. To make your controllers usable by MoveIt,..." alt="" coords="23,5,225,47"/>
+</map>

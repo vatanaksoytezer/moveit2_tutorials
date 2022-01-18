@@ -1,0 +1,5 @@
+<map id="pilz_industrial_motion_planner_testutils::CircAuxiliary&lt; ConfigType, BuilderType &gt;" name="pilz_industrial_motion_planner_testutils::CircAuxiliary&lt; ConfigType, BuilderType &gt;">
+<area shape="rect" id="node1" title="Base class to define an auxiliary point needed to specify circ commands." alt="" coords="5,45,235,101"/>
+<area shape="rect" id="node2" href="$classpilz__industrial__motion__planner__testutils_1_1Center.html" title="Class to define the center point of the circle on which the robot is supposed to move via circ comman..." alt="" coords="283,5,489,61"/>
+<area shape="rect" id="node3" href="$classpilz__industrial__motion__planner__testutils_1_1Interim.html" title="Class to define a point on the circle on which the robot is supposed to move via circ command." alt="" coords="283,85,489,141"/>
+</map>

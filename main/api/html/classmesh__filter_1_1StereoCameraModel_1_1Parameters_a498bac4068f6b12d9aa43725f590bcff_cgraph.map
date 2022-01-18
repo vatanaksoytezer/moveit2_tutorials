@@ -1,0 +1,6 @@
+<map id="mesh_filter::StereoCameraModel::Parameters::setRenderParameters" name="mesh_filter::StereoCameraModel::Parameters::setRenderParameters">
+<area shape="rect" id="node1" title="set the shader parameters required for the model rendering" alt="" coords="5,95,297,136"/>
+<area shape="rect" id="node2" href="$classmesh__filter_1_1GLRenderer.html#a30887d1ecd49980a9044b880414a04a4" title="set the size of fram buffers" alt="" coords="345,5,524,47"/>
+<area shape="rect" id="node3" href="$classmesh__filter_1_1GLRenderer.html#a5291985a5255c18d941ab3022e9d9a08" title="set the camera parameters" alt="" coords="345,95,524,136"/>
+<area shape="rect" id="node4" href="$classmesh__filter_1_1GLRenderer.html#ac014a369ec4c6a6100aa0fa43b4aad60" title="sets the near and far clipping plane distances in meters" alt="" coords="345,160,524,201"/>
+</map>

@@ -1,0 +1,12 @@
+<map id="TEST" name="TEST">
+<area shape="rect" id="node1" title=" " alt="" coords="5,177,60,203"/>
+<area shape="rect" id="node2" href="$classplanning__scene_1_1PlanningScene.html#a343bc168dde9e2c211d2450f4eb0921a" title="Get the name of the planning scene. This is empty by default." alt="" coords="134,39,321,80"/>
+<area shape="rect" id="node3" href="$classplanning__scene_1_1PlanningScene.html#a1c4051599aa9702d96097634db499621" title="Construct a message (scene) with all the necessary data so that the scene can be later reconstructed ..." alt="" coords="121,104,333,145"/>
+<area shape="rect" id="node8" href="$classplanning__scene_1_1PlanningScene.html#ae1789ae10386a21ffe1fa41e1a590a6c" title="Get the kinematic model for which the planning scene is maintained." alt="" coords="134,169,321,211"/>
+<area shape="rect" id="node9" href="$namespacemoveit_1_1core.html#a9d39f2316f4754a5fe4bd8abe00e7660" title="Loads a URDF Model Interface from moveit_resources." alt="" coords="108,235,347,262"/>
+<area shape="rect" id="node10" href="$classplanning__scene_1_1PlanningScene.html#acb5c51321f5d908072920ee2a2f1db58" title="Set this instance of a planning scene to be the same as the one serialized in the scene message,..." alt="" coords="122,287,333,328"/>
+<area shape="rect" id="node4" href="$classplanning__scene_1_1PlanningScene.html#ab4de68060bb1d854e4d37f26436b7ebb" title="Get the state at which the robot is assumed to be." alt="" coords="395,5,581,47"/>
+<area shape="rect" id="node5" href="$classplanning__scene_1_1PlanningScene.html#a3680dcb050fa3507aac3edd118fca28e" title=" " alt="" coords="395,71,581,112"/>
+<area shape="rect" id="node6" href="$classplanning__scene_1_1PlanningScene.html#a9a72fc24fa288e2213d45e6312b4964b" title=" " alt="" coords="395,136,581,177"/>
+<area shape="rect" id="node7" href="$namespacemoveit_1_1core.html#a0aafbf7242f36d6efd7bd73ecee400e8" title="Convert a MoveIt robot state to a robot state message." alt="" coords="398,201,578,243"/>
+</map>

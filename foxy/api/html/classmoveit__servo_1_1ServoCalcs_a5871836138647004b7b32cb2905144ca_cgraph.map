@@ -1,0 +1,6 @@
+<map id="moveit_servo::ServoCalcs::jointServoCalcs" name="moveit_servo::ServoCalcs::jointServoCalcs">
+<area shape="rect" id="node1" title="Do servoing calculations for direct commands to a joint." alt="" coords="5,71,196,112"/>
+<area shape="rect" id="node2" href="$classmoveit__servo_1_1ServoCalcs.html#acda48f8e1c9c89e616c7693fb0adf981" title=" " alt="" coords="244,5,435,47"/>
+<area shape="rect" id="node3" href="$classmoveit__servo_1_1ServoCalcs.html#ab0f0d493e2cf6af1059b0c8a72235cca" title="Handles all aspects of the servoing after the desired joint commands are established Joint and Cartes..." alt="" coords="244,71,435,112"/>
+<area shape="rect" id="node4" href="$classmoveit__servo_1_1ServoCalcs.html#ab067ce21cc68695a3bdf246517b8b85b" title="If incoming velocity commands are from a unitless joystick, scale them to physical units...." alt="" coords="244,136,435,177"/>
+</map>

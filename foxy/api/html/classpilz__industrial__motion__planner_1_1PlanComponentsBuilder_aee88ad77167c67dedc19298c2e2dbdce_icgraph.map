@@ -1,0 +1,4 @@
+<map id="pilz_industrial_motion_planner::PlanComponentsBuilder::append" name="pilz_industrial_motion_planner::PlanComponentsBuilder::append">
+<area shape="rect" id="node1" title="Appends the specified trajectory to the trajectory container under construction." alt="" coords="123,5,365,61"/>
+<area shape="rect" id="node2" href="$integrationtest__plan__components__builder_8cpp.html#ab4b993ed000ccc59264b8f78d4842068" title="Checks that exception is thrown if no robot model is set." alt="" coords="5,20,75,47"/>
+</map>

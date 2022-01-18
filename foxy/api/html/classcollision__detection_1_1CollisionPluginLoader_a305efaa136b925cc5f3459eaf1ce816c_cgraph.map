@@ -1,0 +1,4 @@
+<map id="collision_detection::CollisionPluginLoader::setupScene" name="collision_detection::CollisionPluginLoader::setupScene">
+<area shape="rect" id="node1" title="Fetch plugin name from parameter server and activate the plugin for the given scene." alt="" coords="5,5,176,61"/>
+<area shape="rect" id="node2" href="$classcollision__detection_1_1CollisionPluginCache.html#a22608240bd9c46b6ba9af89f8ecd003a" title="Activate a specific collision plugin for the given planning scene instance." alt="" coords="224,5,391,61"/>
+</map>

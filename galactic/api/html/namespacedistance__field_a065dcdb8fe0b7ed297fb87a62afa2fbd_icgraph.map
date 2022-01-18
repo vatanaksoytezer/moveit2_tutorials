@@ -1,0 +1,6 @@
+<map id="distance_field::findInternalPointsConvex" name="distance_field::findInternalPointsConvex">
+<area shape="rect" id="node1" title="Find all points on a regular grid that are internal to the body, assuming the body is a convex shape...." alt="" coords="453,46,648,87"/>
+<area shape="rect" id="node2" href="$classcollision__detection_1_1BodyDecomposition.html#a6d19937a6478ac033b3ba0a4edd8e9bd" title=" " alt="" coords="215,13,405,54"/>
+<area shape="rect" id="node4" href="$classdistance__field_1_1DistanceField.html#a3ff4e4053688842a27968fa7cb0ae750" title="Moves the shape in the distance field from the old pose to the new pose, removing points that are no ..." alt="" coords="219,78,401,119"/>
+<area shape="rect" id="node3" href="$classcollision__detection_1_1BodyDecomposition.html#a66efef721c7cff0dfac64616b6d1f0d2" title=" " alt="" coords="5,5,167,61"/>
+</map>

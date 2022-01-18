@@ -1,0 +1,15 @@
+<map id="planning_scene::PlanningScene::processAttachedCollisionObjectMsg" name="planning_scene::PlanningScene::processAttachedCollisionObjectMsg">
+<area shape="rect" id="node1" title=" " alt="" coords="5,293,239,349"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1AttachedBody.html#a1b5208f4d6c74fd1c31d89015f153d93" title="Return the posture that is necessary for the object to be released, (if any). This is useful for exam..." alt="" coords="319,5,521,47"/>
+<area shape="rect" id="node3" href="$classplanning__scene_1_1PlanningScene.html#a351202a8fec49dff6646a454ac3e9a7e" title="Get the transform corresponding to the frame id. This will be known if id is a link name,..." alt="" coords="322,71,518,112"/>
+<area shape="rect" id="node6" href="$classmoveit_1_1core_1_1AttachedBody.html#ad6ba631b74e575e53a07b333a4054a15" title="Get the pose of the attached body relative to the parent link." alt="" coords="319,136,521,177"/>
+<area shape="rect" id="node7" href="$classmoveit_1_1core_1_1AttachedBody.html#ad7e41060467df2a8db42540d86cfbcf6" title="Get the shape poses (the transforms to the shapes of this body, relative to the pose)...." alt="" coords="319,201,521,243"/>
+<area shape="rect" id="node8" href="$classmoveit_1_1core_1_1AttachedBody.html#a8832405dda038c3e28a7969cb63993d1" title="Get the shapes that make up this attached body." alt="" coords="319,267,521,308"/>
+<area shape="rect" id="node9" href="$classmoveit_1_1core_1_1AttachedBody.html#a6b79d5b6840236f1a14735c16bcbede8" title="Get subframes of this object (relative to the object pose). The returned transforms are guaranteed to..." alt="" coords="319,332,521,373"/>
+<area shape="rect" id="node10" href="$classmoveit_1_1core_1_1AttachedBody.html#a1added4f50dd7c18b8559e160885cbf1" title="Get the links that the attached body is allowed to touch." alt="" coords="319,397,521,439"/>
+<area shape="rect" id="node11" href="$namespacemoveit_1_1core.html#a192b65b3ebc8eb7b6ccd155808c68aa1" title="Check if a message includes any information about a planning scene, or whether it is empty." alt="" coords="337,463,503,490"/>
+<area shape="rect" id="node12" href="$classplanning__scene_1_1PlanningScene.html#a8794b3be8e182d38fe962855c570ac40" title=" " alt="" coords="327,515,513,556"/>
+<area shape="rect" id="node13" href="$classplanning__scene_1_1PlanningScene.html#a92ccb51285406fcfa325dcf1f88080e6" title="Takes the object message and returns the object pose, shapes and shape poses. If the object pose is e..." alt="" coords="287,581,553,637"/>
+<area shape="rect" id="node4" href="$classplanning__scene_1_1PlanningScene.html#ab4de68060bb1d854e4d37f26436b7ebb" title="Get the state at which the robot is assumed to be." alt="" coords="617,39,803,80"/>
+<area shape="rect" id="node5" href="$classplanning__scene_1_1PlanningScene.html#a4ffd859140c70a6c1cd4eb2e8db0d94f" title="Check if a transform to the frame id is known. This will be known if id is a link name,..." alt="" coords="601,104,819,145"/>
+</map>

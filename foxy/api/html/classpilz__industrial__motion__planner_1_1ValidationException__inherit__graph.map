@@ -1,0 +1,7 @@
+<map id="pilz_industrial_motion_planner::ValidationException" name="pilz_industrial_motion_planner::ValidationException">
+<area shape="rect" id="node1" title="A base class for all validations exceptions inheriting from std::runtime_exception." alt="" coords="164,93,379,134"/>
+<area shape="rect" id="node3" href="$classpilz__industrial__motion__planner_1_1ValidationBoundsViolationException.html" title="Thrown when the limits from the param server are weaker than the ones obtained from the urdf." alt="" coords="427,5,684,61"/>
+<area shape="rect" id="node4" href="$classpilz__industrial__motion__planner_1_1ValidationDifferentLimitsException.html" title="Thrown when the limits differ." alt="" coords="451,85,659,141"/>
+<area shape="rect" id="node5" href="$classpilz__industrial__motion__planner_1_1ValidationJointMissingException.html" title="Thrown the limits for a joint are defined in the urdf but not in the node parameters (loaded from yam..." alt="" coords="440,165,671,221"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,100,116,127"/>
+</map>

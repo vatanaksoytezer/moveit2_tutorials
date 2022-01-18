@@ -1,0 +1,5 @@
+<map id="moveit::core::LinkModel::getParentJointModel" name="moveit::core::LinkModel::getParentJointModel">
+<area shape="rect" id="node1" title="Get the joint model whose child this link is. There will always be a parent joint." alt="" coords="244,39,423,80"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1RobotModel.html#afb12941677dbbae66a30531c5dfd2dd6" title="Get a joint by its name. Output error and return nullptr when the joint is missing." alt="" coords="5,5,196,47"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1core_1_1RobotModel.html#ad195a514ad301e7e66ea4411b5fd39e3" title="Check if a link exists. Return true if it does." alt="" coords="5,71,196,112"/>
+</map>

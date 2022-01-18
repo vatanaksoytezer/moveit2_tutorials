@@ -1,0 +1,4 @@
+<map id="pilz_industrial_motion_planner::PlanningContextLoader" name="pilz_industrial_motion_planner::PlanningContextLoader">
+<area shape="rect" id="node1" title="Base class for all PlanningContextLoaders. Since planning_interface::PlanningContext has a non empty ..." alt="" coords="5,109,243,151"/>
+<area shape="rect" id="node2" href="$classpilz__industrial__motion__planner_1_1LimitsContainer.html" title="This class combines CartesianLimit and JointLimits into on single class." alt="" coords="29,5,219,47"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="moveit::core::JointModel::getJointIndex" name="moveit::core::JointModel::getJointIndex">
+<area shape="rect" id="node1" title="Get the index of this joint within the robot model." alt="" coords="5,5,187,47"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1JointModel.html#ac997d44f51ca03d13f0d54cf699e0662" title="Force the specified values to be inside bounds and normalized. Quaternions are normalized,..." alt="" coords="235,5,416,47"/>
+</map>

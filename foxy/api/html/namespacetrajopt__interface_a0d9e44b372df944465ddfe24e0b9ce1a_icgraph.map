@@ -1,0 +1,5 @@
+<map id="trajopt_interface::concatVector" name="trajopt_interface::concatVector">
+<area shape="rect" id="node1" title="Appends b to a of type VectorXd." alt="" coords="284,53,423,94"/>
+<area shape="rect" id="node2" href="$structtrajopt__interface_1_1CartPoseTermInfo.html#aabda3a79a43e43e21bcfcb2609a13258" title="Used to add term to pci from json." alt="" coords="5,5,236,61"/>
+<area shape="rect" id="node3" href="$structtrajopt__interface_1_1JointVelTermInfo.html#a1535ec15769cbf543e4650eaea20e19a" title="Converts term info into cost/constraint and adds it to trajopt problem." alt="" coords="9,85,232,141"/>
+</map>

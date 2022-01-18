@@ -1,0 +1,6 @@
+<map id="collision_detection::CollisionData" name="collision_detection::CollisionData">
+<area shape="rect" id="node1" title="Data structure which is passed to the collision callback function of the collision manager." alt="" coords="273,71,417,112"/>
+<area shape="rect" id="node2" href="$structcollision__detection_1_1CollisionRequest.html" title="Representation of a collision checking request." alt="" coords="23,5,167,47"/>
+<area shape="rect" id="node3" href="$structcollision__detection_1_1CollisionResult.html" title="Representation of a collision checking result." alt="" coords="23,71,167,112"/>
+<area shape="rect" id="node4" href="$classcollision__detection_1_1AllowedCollisionMatrix.html" title="Definition of a structure for the allowed collision matrix. All elements in the collision world are r..." alt="" coords="5,136,185,177"/>
+</map>

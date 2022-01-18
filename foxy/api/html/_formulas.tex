@@ -1,0 +1,28 @@
+\batchmode
+\documentclass{article}
+\usepackage{ifthen}
+\usepackage{epsfig}
+\usepackage[utf8]{inputenc}
+\usepackage{newunicodechar}
+  \newunicodechar{⁻}{${}^{-}$}% Superscript minus
+  \newunicodechar{²}{${}^{2}$}% Superscript two
+  \newunicodechar{³}{${}^{3}$}% Superscript three
+
+\pagestyle{empty}
+\begin{document}
+\begin{align*} cost = \sum_{t=0}^{T-2} \sum_j c_j (x_{t+1,j} - x_{t,j})^2 \end{align*}
+\pagebreak
+
+$c_j$
+\pagebreak
+
+\begin{align*} \sum_i c_i (x_i - xtarg_i)^2 \end{align*}
+\pagebreak
+
+$i$
+\pagebreak
+
+$c_i$
+\pagebreak
+
+\end{document}

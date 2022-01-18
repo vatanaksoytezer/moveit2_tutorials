@@ -1,0 +1,26 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" title=" " alt="" coords="5,355,84,382"/>
+<area shape="rect" id="node2" href="$classmoveit__rviz__plugin_1_1MotionPlanningFrame.html" title=" " alt="" coords="150,5,322,47"/>
+<area shape="rect" id="node3" href="$classmoveit__rviz__plugin_1_1MotionPlanningFrameJointsWidget.html" title=" " alt="" coords="132,71,340,127"/>
+<area shape="rect" id="node4" href="$classmoveit__rviz__plugin_1_1ProgressBarEditor.html" title="Number editor via progress bar dragging." alt="" coords="163,152,309,193"/>
+<area shape="rect" id="node5" href="$classmoveit__setup__assistant_1_1ControllerEditWidget.html" title=" " alt="" coords="147,217,325,259"/>
+<area shape="rect" id="node6" href="$classmoveit__setup__assistant_1_1DoubleListWidget.html" title=" " alt="" coords="147,283,325,324"/>
+<area shape="rect" id="node7" href="$classmoveit__setup__assistant_1_1GroupEditWidget.html" title=" " alt="" coords="147,348,325,389"/>
+<area shape="rect" id="node8" href="$classmoveit__setup__assistant_1_1HeaderWidget.html" title=" " alt="" coords="147,413,325,455"/>
+<area shape="rect" id="node9" href="$classmoveit__setup__assistant_1_1KinematicChainWidget.html" title=" " alt="" coords="147,479,325,520"/>
+<area shape="rect" id="node10" href="$classmoveit__setup__assistant_1_1SetupAssistantWidget.html" title=" " alt="" coords="147,544,325,585"/>
+<area shape="rect" id="node11" href="$classmoveit__setup__assistant_1_1SliderWidget.html" title=" " alt="" coords="147,609,325,651"/>
+<area shape="rect" id="node12" href="$classSetupScreenWidget.html" title=" " alt="" coords="161,675,311,702"/>
+<area shape="rect" id="node13" href="$classmoveit__setup__assistant_1_1AuthorInformationWidget.html" title=" " alt="" coords="388,308,583,349"/>
+<area shape="rect" id="node14" href="$classmoveit__setup__assistant_1_1ConfigurationFilesWidget.html" title=" " alt="" coords="389,373,582,415"/>
+<area shape="rect" id="node15" href="$classmoveit__setup__assistant_1_1DefaultCollisionsWidget.html" title="User interface for editing the default collision matrix list in an SRDF." alt="" coords="392,439,579,480"/>
+<area shape="rect" id="node16" href="$classmoveit__setup__assistant_1_1EndEffectorsWidget.html" title=" " alt="" coords="397,504,574,545"/>
+<area shape="rect" id="node17" href="$classmoveit__setup__assistant_1_1PassiveJointsWidget.html" title=" " alt="" coords="397,569,574,611"/>
+<area shape="rect" id="node18" href="$classmoveit__setup__assistant_1_1PerceptionWidget.html" title=" " alt="" coords="397,635,574,676"/>
+<area shape="rect" id="node19" href="$classmoveit__setup__assistant_1_1PlanningGroupsWidget.html" title=" " alt="" coords="396,700,575,741"/>
+<area shape="rect" id="node20" href="$classmoveit__setup__assistant_1_1RobotPosesWidget.html" title=" " alt="" coords="397,765,574,807"/>
+<area shape="rect" id="node21" href="$classmoveit__setup__assistant_1_1ROSControllersWidget.html" title=" " alt="" coords="397,831,574,872"/>
+<area shape="rect" id="node22" href="$classmoveit__setup__assistant_1_1SimulationWidget.html" title=" " alt="" coords="397,896,574,937"/>
+<area shape="rect" id="node23" href="$classmoveit__setup__assistant_1_1StartScreenWidget.html" title="Start screen user interface for MoveIt Configuration Assistant." alt="" coords="397,961,574,1003"/>
+<area shape="rect" id="node24" href="$classmoveit__setup__assistant_1_1VirtualJointsWidget.html" title=" " alt="" coords="397,1027,574,1068"/>
+</map>

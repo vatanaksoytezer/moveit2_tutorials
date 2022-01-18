@@ -1,0 +1,8 @@
+<map id="trajopt_interface::JointVelTermInfo::addObjectiveTerms" name="trajopt_interface::JointVelTermInfo::addObjectiveTerms">
+<area shape="rect" id="node1" title="Converts term info into cost/constraint and adds it to trajopt problem." alt="" coords="5,115,228,171"/>
+<area shape="rect" id="node2" href="$problem__description_8cpp.html#a952e333ffd7fdcc4bac96206e24744ca" title="Checks the size of the parameter given and throws if incorrect." alt="" coords="309,5,463,32"/>
+<area shape="rect" id="node3" href="$namespacetrajopt__interface.html#a0d9e44b372df944465ddfe24e0b9ce1a" title="Appends b to a of type VectorXd." alt="" coords="317,57,455,98"/>
+<area shape="rect" id="node4" href="$classtrajopt__interface_1_1TrajOptProblem.html#a24dab2ad94bb33d4725036b8be9ecfe5" title="Returns the problem DOF. This is the number of columns in the optization matrix. Note that this is no..." alt="" coords="280,122,492,163"/>
+<area shape="rect" id="node5" href="$classtrajopt__interface_1_1TrajOptProblem.html#a958a1408597a091dd11cfdc0fdb884cd" title="Returns the number of steps in the problem. This is the number of rows in the optimization matrix." alt="" coords="276,187,496,229"/>
+<area shape="rect" id="node6" href="$classtrajopt__interface_1_1TrajOptProblem.html#aaf258ff267bba07537d1f05a5da9296c" title=" " alt="" coords="295,253,477,294"/>
+</map>

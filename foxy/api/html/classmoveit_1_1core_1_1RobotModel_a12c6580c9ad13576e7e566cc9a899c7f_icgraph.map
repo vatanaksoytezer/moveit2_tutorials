@@ -1,0 +1,4 @@
+<map id="moveit::core::RobotModel::getModelFrame" name="moveit::core::RobotModel::getModelFrame">
+<area shape="rect" id="node1" title="Get the frame in which the transforms for this model are computed (when using a RobotState)...." alt="" coords="123,5,313,47"/>
+<area shape="rect" id="node2" href="$test__kinematic__complex_8cpp.html#a0e801af07878675ef75fa777a90a6eb9" title=" " alt="" coords="5,13,75,39"/>
+</map>

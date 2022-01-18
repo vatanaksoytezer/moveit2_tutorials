@@ -1,0 +1,5 @@
+<map id="moveit_simple_controller_manager::ActionBasedControllerHandle&lt; T &gt;" name="moveit_simple_controller_manager::ActionBasedControllerHandle&lt; T &gt;">
+<area shape="rect" id="node1" title="Base class for controller handles that interact with a controller through a ROS action server." alt="" coords="5,199,245,255"/>
+<area shape="rect" id="node2" href="$classmoveit__simple__controller__manager_1_1ActionBasedControllerHandleBase.html" title=" " alt="" coords="5,95,245,151"/>
+<area shape="rect" id="node3" href="$classmoveit__controller__manager_1_1MoveItControllerHandle.html" title="MoveIt sends commands to a controller via a handle that satisfies this interface." alt="" coords="24,5,227,47"/>
+</map>

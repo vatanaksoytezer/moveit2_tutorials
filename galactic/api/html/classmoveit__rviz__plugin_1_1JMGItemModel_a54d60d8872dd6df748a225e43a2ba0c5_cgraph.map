@@ -1,0 +1,6 @@
+<map id="moveit_rviz_plugin::JMGItemModel::flags" name="moveit_rviz_plugin::JMGItemModel::flags">
+<area shape="rect" id="node1" title=" " alt="" coords="5,71,171,112"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1RobotState.html#a5ecd3e71d7283f30be300c83cfd84041" title="Get the robot model this state is constructed for." alt="" coords="219,5,403,47"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1core_1_1JointModel.html#add20b6d4e10df54752f2c9ba61d8ee0a" title="Get the type of joint." alt="" coords="220,71,401,112"/>
+<area shape="rect" id="node4" href="$classmoveit_1_1core_1_1RobotState.html#aae57a83ed9ad7c34982b6a943341026c" title="Get the position of a particular variable. An exception is thrown if the variable is not known." alt="" coords="219,136,403,177"/>
+</map>

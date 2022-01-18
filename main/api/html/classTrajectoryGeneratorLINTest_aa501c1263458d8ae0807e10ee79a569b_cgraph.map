@@ -1,0 +1,31 @@
+<map id="TrajectoryGeneratorLINTest::SetUp" name="TrajectoryGeneratorLINTest::SetUp">
+<area shape="rect" id="node1" title="Create test scenario for lin trajectory generator." alt="" coords="5,667,204,709"/>
+<area shape="rect" id="node2" href="$namespacetestutils.html#aee400d4013caab0af4681d89dc96d66c" title=" " alt="" coords="275,195,473,221"/>
+<area shape="rect" id="node3" href="$classpilz__industrial__motion__planner_1_1JointLimitsAggregator.html#a78abef0abbf23021c1edc1451af3e3c8" title="Aggregates(combines) the joint limits from joint model and node parameters. The rules for the combina..." alt="" coords="261,245,487,301"/>
+<area shape="rect" id="node15" href="$classrobot__model__loader_1_1RobotModelLoader.html#a40e202c404ae62a984861b273a401fcd" title="Get the constructed planning_models::RobotModel." alt="" coords="294,325,454,381"/>
+<area shape="rect" id="node16" href="$unittest__trajectory__generator__lin_8cpp.html#a34130ca374ad83542f688d26fe11071f" title=" " alt="" coords="268,405,480,432"/>
+<area shape="rect" id="node17" href="$unittest__trajectory__generator__lin_8cpp.html#afae7457c0e74df612a6a1af7289b8cfa" title=" " alt="" coords="267,456,481,483"/>
+<area shape="rect" id="node18" href="$unittest__trajectory__generator__lin_8cpp.html#ae2b5e395155711586a6cb2fc4c8ab77e" title=" " alt="" coords="298,507,450,533"/>
+<area shape="rect" id="node19" href="$unittest__trajectory__generator__lin_8cpp.html#a0258d4e48c5d63bd1bb8c56e97bd09af" title=" " alt="" coords="252,557,496,584"/>
+<area shape="rect" id="node20" href="$unittest__trajectory__generator__lin_8cpp.html#a71fba2ed2fe2866bdf3b45cce5e02e66" title=" " alt="" coords="273,609,475,650"/>
+<area shape="rect" id="node21" href="$unittest__trajectory__generator__lin_8cpp.html#a169f9b6a4f108182586576bf167e8c38" title=" " alt="" coords="272,675,476,701"/>
+<area shape="rect" id="node22" href="$unittest__trajectory__generator__lin_8cpp.html#a22ea2026f42d7d03ff263bb5dadafda7" title=" " alt="" coords="287,726,461,767"/>
+<area shape="rect" id="node23" href="$classpilz__industrial__motion__planner_1_1CartesianLimit.html#a550ec57d1779f6e0b34f27554769d8a2" title="Set the maximum rotational velocity." alt="" coords="275,792,473,848"/>
+<area shape="rect" id="node24" href="$classpilz__industrial__motion__planner_1_1CartesianLimit.html#a98bee11f3336595d2b6a06e7a724e311" title="Set the maximum translational acceleration." alt="" coords="253,872,495,928"/>
+<area shape="rect" id="node25" href="$classpilz__industrial__motion__planner_1_1CartesianLimit.html#afc6ae3a75bde60fd382bd702cf5104dc" title="Set the maximum translational deceleration." alt="" coords="252,952,496,1008"/>
+<area shape="rect" id="node26" href="$classpilz__industrial__motion__planner_1_1CartesianLimit.html#a6cc92d1b40f64bdcbb6fe02b523d9e92" title="Set the maximal translational velocity." alt="" coords="267,1032,481,1088"/>
+<area shape="rect" id="node27" href="$unittest__trajectory__generator__lin_8cpp.html#a4409c5f6b48b286c0bfb7d337c1bb7da" title=" " alt="" coords="301,1112,447,1139"/>
+<area shape="rect" id="node28" href="$unittest__trajectory__generator__lin_8cpp.html#ab52141f7c51b11e67584b679ae66caf7" title=" " alt="" coords="287,1163,461,1189"/>
+<area shape="rect" id="node29" href="$unittest__trajectory__generator__lin_8cpp.html#a46fca6c46f55708a2ce54714b697372c" title=" " alt="" coords="271,1213,477,1240"/>
+<area shape="rect" id="node4" href="$classpilz__industrial__motion__planner_1_1JointLimitsContainer.html#a40383e43f2853d45c9456333cda2a537" title="Add a limit." alt="" coords="566,5,785,61"/>
+<area shape="rect" id="node5" href="$classpilz__industrial__motion__planner_1_1JointLimitsAggregator.html#a442930b2020131d17e2e9248050794ee" title="Checks if the position limits from the given joint_limit are stricter than the limits of the joint_mo..." alt="" coords="561,165,789,221"/>
+<area shape="rect" id="node8" href="$classpilz__industrial__motion__planner_1_1JointLimitsAggregator.html#abf9d281b216ce7c89d930cb00a3b2e4a" title="Checks if the velocity limit from the given joint_limit are stricter than the limit of the joint_mode..." alt="" coords="561,85,789,141"/>
+<area shape="rect" id="node10" href="$namespacepilz__industrial__motion__planner_1_1joint__limits__interface.html#ac682308f1616f72e41067b74e6a8957c" title=" " alt="" coords="567,405,784,461"/>
+<area shape="rect" id="node11" href="$namespacepilz__industrial__motion__planner_1_1joint__limits__interface.html#aae7165a7b65ce68169a0363771f68d35" title=" " alt="" coords="583,485,768,541"/>
+<area shape="rect" id="node12" href="$classpilz__industrial__motion__planner_1_1JointLimitsAggregator.html#abf8235616e4fbeafe33278ae57ede18f" title="Update the position limits with the ones from the joint_model." alt="" coords="544,325,807,381"/>
+<area shape="rect" id="node14" href="$classpilz__industrial__motion__planner_1_1JointLimitsAggregator.html#a6ee5ac793eb0e93f5c98c621dafbf126" title="Update the velocity limit with the one from the joint_model." alt="" coords="544,245,807,301"/>
+<area shape="rect" id="node6" href="$classmoveit_1_1core_1_1JointModel.html#aa1d2f99c9025d01a92e47bc356938f77" title="Get the name of the joint." alt="" coords="856,246,1037,287"/>
+<area shape="rect" id="node7" href="$classmoveit_1_1core_1_1JointModel.html#accc3352876f4d640f5b57904bf6ab265" title="Check if the set of values for the variables of this joint are within bounds." alt="" coords="855,173,1039,214"/>
+<area shape="rect" id="node9" href="$classmoveit_1_1core_1_1JointModel.html#a0ee14b22009db973b8a4be4e2c911dca" title="Check if the set of velocities for the variables of this joint are within bounds." alt="" coords="855,93,1039,134"/>
+<area shape="rect" id="node13" href="$classmoveit_1_1core_1_1JointModel.html#ad55551ed55d54b9d67e6e7d7865330d1" title="Get the bounds for a variable. Throw an exception if the variable was not found." alt="" coords="856,318,1037,359"/>
+</map>

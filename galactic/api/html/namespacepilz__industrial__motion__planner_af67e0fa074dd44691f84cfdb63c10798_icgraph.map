@@ -1,0 +1,4 @@
+<map id="pilz_industrial_motion_planner::isRobotStateEqual" name="pilz_industrial_motion_planner::isRobotStateEqual">
+<area shape="rect" id="node1" title="Check if the two robot states have the same joint position/velocity/acceleration." alt="" coords="123,5,328,47"/>
+<area shape="rect" id="node2" href="$unittest__trajectory__functions_8cpp.html#a740e85b52d45b6c074ad5ff1fe158eba" title="Check that function isRobotStateEqual() returns &#39;false&#39; if the positions of the robot states are not ..." alt="" coords="5,13,75,39"/>
+</map>

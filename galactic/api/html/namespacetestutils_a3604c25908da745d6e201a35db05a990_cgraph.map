@@ -1,0 +1,5 @@
+<map id="testutils::createDummyRequest" name="testutils::createDummyRequest">
+<area shape="rect" id="node1" title="create a dummy motion plan request with zero start state No goal constraint is given." alt="" coords="5,46,235,73"/>
+<area shape="rect" id="node2" href="$namespacemoveit_1_1core.html#a0aafbf7242f36d6efd7bd73ecee400e8" title="Convert a MoveIt robot state to a robot state message." alt="" coords="285,5,465,47"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1core_1_1RobotState.html#aba31c6f758e3dabd32c1acbd069e189e" title="Set all joints to their default positions. The default position is 0, or if that is not within bounds..." alt="" coords="283,71,467,112"/>
+</map>

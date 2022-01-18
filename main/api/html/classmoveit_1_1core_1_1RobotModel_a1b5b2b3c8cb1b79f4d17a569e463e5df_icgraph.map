@@ -1,0 +1,5 @@
+<map id="moveit::core::RobotModel::updateMimicJoints" name="moveit::core::RobotModel::updateMimicJoints">
+<area shape="rect" id="node1" title="Update the variable values for the state of a group with respect to the mimic joints." alt="" coords="271,39,461,80"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1RobotModel.html#adcb6a06041f7e08d238afc9e5785bb87" title="Get a joint by its name. Output error and return nullptr when the joint is missing." alt="" coords="19,5,209,47"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1core_1_1RobotModel.html#a572a62a548e4155a11cf4f359cf2fe06" title="Compute the random values for a RobotState." alt="" coords="5,71,223,112"/>
+</map>

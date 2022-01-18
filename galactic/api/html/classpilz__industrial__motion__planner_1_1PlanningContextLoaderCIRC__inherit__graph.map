@@ -1,0 +1,4 @@
+<map id="pilz_industrial_motion_planner::PlanningContextLoaderCIRC" name="pilz_industrial_motion_planner::PlanningContextLoaderCIRC">
+<area shape="rect" id="node1" title="Plugin that can generate instances of PlanningContextCIRC. Generates instances of PlanningContextLIN." alt="" coords="5,95,273,136"/>
+<area shape="rect" id="node2" href="$classpilz__industrial__motion__planner_1_1PlanningContextLoader.html" title="Base class for all PlanningContextLoaders. Since planning_interface::PlanningContext has a non empty ..." alt="" coords="21,5,258,47"/>
+</map>

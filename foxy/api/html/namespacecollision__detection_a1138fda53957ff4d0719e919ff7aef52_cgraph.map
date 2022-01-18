@@ -1,0 +1,6 @@
+<map id="collision_detection::getCollisionObjectPointDecomposition" name="collision_detection::getCollisionObjectPointDecomposition">
+<area shape="rect" id="node1" title=" " alt="" coords="5,86,285,127"/>
+<area shape="rect" id="node2" href="$namespacecollision__detection.html#a89a04b404337b615d0b85a10267d6faf" title=" " alt="" coords="349,5,572,61"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1core_1_1AttachedBody.html#a385c7ec39f012ce26eb81b32fa22cae9" title="Get the global transforms (in world frame) for the collision bodies. The returned transforms are guar..." alt="" coords="333,86,588,127"/>
+<area shape="rect" id="node4" href="$classmoveit_1_1core_1_1AttachedBody.html#a8832405dda038c3e28a7969cb63993d1" title="Get the shapes that make up this attached body." alt="" coords="359,151,562,193"/>
+</map>

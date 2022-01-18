@@ -1,0 +1,6 @@
+<map id="chomp::getRandomDouble" name="chomp::getRandomDouble">
+<area shape="rect" id="node1" title=" " alt="" coords="5,42,200,69"/>
+<area shape="rect" id="node2" href="$classchomp_1_1ChompTrajectory.html#afb272cf4167ff09cf8a264e305e70b8f" title="Gets the number of points (that are free to be optimized) in the trajectory." alt="" coords="480,5,664,47"/>
+<area shape="rect" id="node3" href="$classchomp_1_1ChompTrajectory.html#a972938a9774b1e0654d56ed7dd7da0e9" title="Gets the number of joints in each trajectory point." alt="" coords="248,35,432,76"/>
+<area shape="rect" id="node4" href="$classchomp_1_1ChompTrajectory.html#a61bca7c981f6f94adaee9703828d34ff" title="Gets the number of points in the trajectory." alt="" coords="248,100,432,141"/>
+</map>

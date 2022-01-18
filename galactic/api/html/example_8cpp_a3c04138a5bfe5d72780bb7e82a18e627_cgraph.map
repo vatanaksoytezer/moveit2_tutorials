@@ -1,0 +1,7 @@
+<map id="main" name="main">
+<area shape="rect" id="node1" title=" " alt="" coords="5,78,60,105"/>
+<area shape="rect" id="node2" href="$classkinematics__cache_1_1KinematicsCache.html#a46016876d5a61ae1c840b592828ef972" title="Generate the cache map spending timeout (seconds) on the generation process)" alt="" coords="108,5,328,47"/>
+<area shape="rect" id="node3" href="$classkinematics__cache_1_1KinematicsCache.html#ab5367fd01ee3cd1625029a196a30ba01" title="Get number of candidate solutions for a particular pose." alt="" coords="108,71,328,112"/>
+<area shape="rect" id="node5" href="$classkinematics__cache__ros_1_1KinematicsCacheROS.html#adaad7fb176ba75d5c6de69a76a6a6173" title="Initialization function." alt="" coords="119,136,317,177"/>
+<area shape="rect" id="node4" href="$classkinematics__cache_1_1KinematicsCache.html#af0e82fff93a9c4671700a8db77b042a6" title="Get a candidate solution for a particular pose. Note that the pose will be projected onto the grid us..." alt="" coords="376,71,596,112"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="pilz_industrial_motion_planner::TrajectoryGeneratorPTP" name="pilz_industrial_motion_planner::TrajectoryGeneratorPTP">
+<area shape="rect" id="node1" title="This class implements a point&#45;to&#45;point trajectory generator based on VelocityProfileATrap." alt="" coords="5,200,244,241"/>
+<area shape="rect" id="node2" href="$classpilz__industrial__motion__planner_1_1TrajectoryGenerator.html" title="Base class of trajectory generators." alt="" coords="17,109,232,151"/>
+<area shape="rect" id="node3" href="$classpilz__industrial__motion__planner_1_1LimitsContainer.html" title="This class combines CartesianLimit and JointLimits into on single class." alt="" coords="30,5,219,47"/>
+</map>

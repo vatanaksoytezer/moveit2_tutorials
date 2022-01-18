@@ -1,0 +1,7 @@
+<map id="moveit::core::JointModelGroup::getVariableRandomPositionsNearBy" name="moveit::core::JointModelGroup::getVariableRandomPositionsNearBy">
+<area shape="rect" id="node1" title="Compute random values for the state of the joint group." alt="" coords="5,31,261,87"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1JointModelGroup.html#a73ffd03fe3aab533b00fc9b8bfac09f8" title=" " alt="" coords="309,5,528,47"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1core_1_1JointModelGroup.html#a8c796aff98af787009d7eabbedd5f9c8" title="Update the variable values for the state of a group with respect to the mimic joints...." alt="" coords="323,71,514,112"/>
+<area shape="rect" id="node4" href="$classmoveit_1_1core_1_1JointModelGroup.html#a7800de8f63af6914613ffbbfcb389ba4" title="Get the names of the end effectors attached to this group." alt="" coords="576,37,844,79"/>
+<area shape="rect" id="node5" href="$classmoveit_1_1core_1_1RobotModel.html#aab2b18a6b558b161452bea7ff0357d63" title="Get the joint group that corresponds to a given end&#45;effector name." alt="" coords="615,103,805,144"/>
+</map>

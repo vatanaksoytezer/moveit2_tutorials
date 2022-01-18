@@ -1,0 +1,6 @@
+<map id="moveit_servo::JoyToServoPub::JoyToServoPub" name="moveit_servo::JoyToServoPub::JoyToServoPub">
+<area shape="rect" id="node1" title=" " alt="" coords="5,23,196,65"/>
+<area shape="rect" id="node2" href="$classmoveit__servo_1_1JoyToServoPub.html#afb37d43e9b17d64b4e273d9cf47ea330" title=" " alt="" coords="244,23,435,65"/>
+<area shape="rect" id="node3" href="$joystick__servo__example_8cpp.html#a966b52ba3c20f244129298658a301cd0" title="// This converts a joystick axes and buttons array to a TwistStamped or JointJog message" alt="" coords="485,5,619,32"/>
+<area shape="rect" id="node4" href="$joystick__servo__example_8cpp.html#a7f88145a527fe0008075ae3dff54a933" title="// This should update the frame_to_publish_ as needed for changing command frame via controller" alt="" coords="483,56,621,83"/>
+</map>

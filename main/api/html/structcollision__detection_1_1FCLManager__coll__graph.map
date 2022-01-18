@@ -1,0 +1,4 @@
+<map id="collision_detection::FCLManager" name="collision_detection::FCLManager">
+<area shape="rect" id="node1" title="Bundles an FCLObject and a broadphase FCL collision manager." alt="" coords="5,109,149,151"/>
+<area shape="rect" id="node2" href="$structcollision__detection_1_1FCLObject.html" title="A general high&#45;level object which consists of multiple FCLCollisionObjects. It is the top level data ..." alt="" coords="5,5,149,47"/>
+</map>

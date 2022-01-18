@@ -1,0 +1,5 @@
+<map id="collision_detection::CollisionEnv::setLinkScale" name="collision_detection::CollisionEnv::setLinkScale">
+<area shape="rect" id="node1" title="Set the link scaling using a map (from link names to scale value)" alt="" coords="5,43,204,84"/>
+<area shape="rect" id="node2" href="$classcollision__detection_1_1CollisionEnv.html#a83b6fa8d0882a047291317606bca4ee2" title="Get the link scaling as a map (from link names to scale value)" alt="" coords="263,5,463,47"/>
+<area shape="rect" id="node3" href="$classcollision__detection_1_1CollisionEnv.html#ada4164c1890c8527138f5e5e1d96c446" title="When the scale or padding is changed for a set of links by any of the functions in this class,..." alt="" coords="252,71,473,127"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="TEST" name="TEST">
+<area shape="rect" id="node1" title="Check that a exception is thrown if a already loaded PlanningContextLoader is loaded." alt="" coords="5,20,60,47"/>
+<area shape="rect" id="node2" href="$classpilz__industrial__motion__planner_1_1CommandPlanner.html#abc7d7fd62e53a3156ee3ca2d6c5c527c" title="Register a PlanningContextLoader to be used by the CommandPlanner." alt="" coords="108,5,311,61"/>
+</map>

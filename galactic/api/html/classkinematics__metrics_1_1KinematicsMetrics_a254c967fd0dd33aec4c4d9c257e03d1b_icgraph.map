@@ -1,0 +1,4 @@
+<map id="kinematics_metrics::KinematicsMetrics::getManipulability" name="kinematics_metrics::KinematicsMetrics::getManipulability">
+<area shape="rect" id="node1" title="Get the manipulability = sigma_min/sigma_max where sigma_min and sigma_max are the smallest and large..." alt="" coords="252,5,403,61"/>
+<area shape="rect" id="node2" href="$classkinematics__metrics_1_1KinematicsMetrics.html#af66c93a782774448e2f4f394ebf202a9" title="Get the (translation) manipulability ellipsoid for a given group at a given joint configuration." alt="" coords="5,5,204,61"/>
+</map>

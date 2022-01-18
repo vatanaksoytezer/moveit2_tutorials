@@ -1,0 +1,20 @@
+<map id="TrajectoryGeneratorLINTest::checkLinResponse" name="TrajectoryGeneratorLINTest::checkLinResponse">
+<area shape="rect" id="node1" title=" " alt="" coords="5,471,204,513"/>
+<area shape="rect" id="node2" href="$namespacetestutils.html#ab92bd7b28971f78ffe134429c7e3d333" title="Check that given trajectory is straight line." alt="" coords="268,158,451,199"/>
+<area shape="rect" id="node11" href="$namespacetestutils.html#a6941dcc98ca4e3988e382fd3de978667" title="check joint trajectory of consistency, position, velocity and acceleration limits" alt="" coords="252,445,467,472"/>
+<area shape="rect" id="node16" href="$structplanning__interface_1_1MotionPlanResponse.html#acec831a8d2cfd2ef0aa0b6ed94d8d59a" title=" " alt="" coords="276,496,443,552"/>
+<area shape="rect" id="node18" href="$namespacetestutils.html#a16cef7d20ff377c527415f1898b6d740" title="check if the goal given in joint space is reached Only the last point in the trajectory is veryfied." alt="" coords="269,576,449,603"/>
+<area shape="rect" id="node3" href="$namespacetestutils.html#a6103ebf4ba5ba7a0b6e28c6c4f793bee" title="check SLERP. The orientation should rotate around the same axis linearly." alt="" coords="547,5,709,32"/>
+<area shape="rect" id="node4" href="$namespacepilz__industrial__motion__planner.html#a846707e0c70fe0ce82d46c752642e37e" title="compute the pose of a link at give robot state" alt="" coords="789,49,976,90"/>
+<area shape="rect" id="node6" href="$namespacetestutils.html#a3adb3ee10723d5a032569890776fc5ea" title="Determines the goal position from the given request. TRUE if successful, FALSE otherwise." alt="" coords="515,107,741,133"/>
+<area shape="rect" id="node8" href="$classmoveit_1_1core_1_1RobotState.html#aa0d9f132691a3f24186dcdff72be5d28" title="Get the transformation matrix from the model frame (root of model) to the frame identified by frame_i..." alt="" coords="536,158,720,199"/>
+<area shape="rect" id="node9" href="$namespacemoveit_1_1core.html#a5792ec6b3f0ca1dcb27eea3ff61315b6" title="Convert a joint state to a MoveIt robot state." alt="" coords="541,223,715,265"/>
+<area shape="rect" id="node10" href="$classmoveit_1_1core_1_1RobotState.html#aba31c6f758e3dabd32c1acbd069e189e" title="Set all joints to their default positions. The default position is 0, or if that is not within bounds..." alt="" coords="536,289,720,330"/>
+<area shape="rect" id="node5" href="$classmoveit_1_1core_1_1RobotState.html#acb5a70a55390ddecac5d79bbc1a929ba" title="Check if a transformation matrix from the model frame (root of model) to frame frame_id is known." alt="" coords="1024,49,1208,90"/>
+<area shape="rect" id="node7" href="$trajectory__functions_8h.html#a2fe53a81df95276f6522dfe5ab280a6c" title=" " alt="" coords="803,115,962,141"/>
+<area shape="rect" id="node12" href="$namespacetestutils.html#a3c3c86cff874d688226f74f9e8ea4b91" title="is Acceleration Bounded" alt="" coords="541,354,715,395"/>
+<area shape="rect" id="node13" href="$namespacetestutils.html#ac5d5277d059651d070458ced4dd21d3d" title="is Position Bounded" alt="" coords="527,420,729,447"/>
+<area shape="rect" id="node14" href="$namespacetestutils.html#a4dc6934eb856b588dbbef7744c766bb3" title="check if the sizes of the joint position/veloicty/acceleration are correct" alt="" coords="515,471,741,497"/>
+<area shape="rect" id="node15" href="$namespacetestutils.html#a318192937ca55e8c39e41410d9de0f22" title="is Velocity Bounded" alt="" coords="527,521,729,548"/>
+<area shape="rect" id="node17" href="$namespacemoveit_1_1core.html#a0aafbf7242f36d6efd7bd73ecee400e8" title="Convert a MoveIt robot state to a robot state message." alt="" coords="538,573,718,614"/>
+</map>

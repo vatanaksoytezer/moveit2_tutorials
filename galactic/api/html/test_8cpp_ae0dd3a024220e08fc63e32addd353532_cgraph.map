@@ -1,0 +1,8 @@
+<map id="TEST" name="TEST">
+<area shape="rect" id="node1" title=" " alt="" coords="5,143,60,170"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1RobotModelBuilder.html#a00626af413f74d1a48c805cf92cb9e29" title="Adds a chain of links and joints to the builder. The joint names are generated automatically as &quot;&lt;par..." alt="" coords="108,5,299,47"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1core_1_1RobotModelBuilder.html#a470fe4821c9f70dc96e59204830ffef7" title="Adds a new group using a list of links and a list of joints." alt="" coords="108,71,299,112"/>
+<area shape="rect" id="node4" href="$classmoveit_1_1core_1_1RobotModelBuilder.html#a9d71dd9c8cc3f34ad687b860a5fa80de" title="Adds a virtual joint to the SRDF." alt="" coords="108,136,299,177"/>
+<area shape="rect" id="node5" href="$classmoveit_1_1core_1_1RobotModelBuilder.html#a742857e69f69dcf03f647aa98a44498d" title="Builds and returns the robot model added to the builder." alt="" coords="108,201,299,243"/>
+<area shape="rect" id="node6" href="$classmoveit_1_1core_1_1RobotModelBuilder.html#a3d8ec06341b89b1545ac0b385c4bbc0e" title="Returns true if the building process so far has been valid." alt="" coords="108,267,299,308"/>
+</map>

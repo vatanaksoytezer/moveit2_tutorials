@@ -1,0 +1,4 @@
+<map id="moveit::core::computeTurnDriveTurnGeometry" name="moveit::core::computeTurnDriveTurnGeometry">
+<area shape="rect" id="node1" title="Compute the geometry to turn toward the target point, drive straight and then turn to target orientat..." alt="" coords="236,5,432,47"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1PlanarJointModel.html#a1ee52e6d0291b91a76b8119e74f0a8ae" title="Computes the state that lies at time t in [0, 1] on the segment that connects from state to to state...." alt="" coords="5,5,188,47"/>
+</map>

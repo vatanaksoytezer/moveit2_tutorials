@@ -1,0 +1,5 @@
+<map id="moveit_setup_assistant::PlanningGroupsWidget::changeScreen" name="moveit_setup_assistant::PlanningGroupsWidget::changeScreen">
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,184,87"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1JointModel.html#a43a3a6bd53bd7a4eda4768d7444a384d" title="Get the link that this joint connects to. There will always be such a link." alt="" coords="232,5,413,47"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1core_1_1LinkModel.html#a99ed1c1c371bdb1b007484fd399e435c" title="The name of this link." alt="" coords="233,71,412,112"/>
+</map>

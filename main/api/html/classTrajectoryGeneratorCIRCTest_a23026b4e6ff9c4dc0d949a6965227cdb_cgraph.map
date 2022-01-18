@@ -1,0 +1,21 @@
+<map id="TrajectoryGeneratorCIRCTest::SetUp" name="TrajectoryGeneratorCIRCTest::SetUp">
+<area shape="rect" id="node1" title="Create test scenario for circ trajectory generator." alt="" coords="5,413,213,454"/>
+<area shape="rect" id="node2" href="$namespacetestutils.html#aee400d4013caab0af4681d89dc96d66c" title=" " alt="" coords="284,195,483,221"/>
+<area shape="rect" id="node3" href="$classpilz__industrial__motion__planner_1_1JointLimitsAggregator.html#a78abef0abbf23021c1edc1451af3e3c8" title="Aggregates(combines) the joint limits from joint model and node parameters. The rules for the combina..." alt="" coords="270,245,497,301"/>
+<area shape="rect" id="node15" href="$classrobot__model__loader_1_1RobotModelLoader.html#a40e202c404ae62a984861b273a401fcd" title="Get the constructed planning_models::RobotModel." alt="" coords="303,325,463,381"/>
+<area shape="rect" id="node16" href="$classpilz__industrial__motion__planner_1_1CartesianLimit.html#a550ec57d1779f6e0b34f27554769d8a2" title="Set the maximum rotational velocity." alt="" coords="285,405,482,461"/>
+<area shape="rect" id="node17" href="$classpilz__industrial__motion__planner_1_1CartesianLimit.html#a98bee11f3336595d2b6a06e7a724e311" title="Set the maximum translational acceleration." alt="" coords="262,485,505,541"/>
+<area shape="rect" id="node18" href="$classpilz__industrial__motion__planner_1_1CartesianLimit.html#afc6ae3a75bde60fd382bd702cf5104dc" title="Set the maximum translational deceleration." alt="" coords="261,565,505,621"/>
+<area shape="rect" id="node19" href="$classpilz__industrial__motion__planner_1_1CartesianLimit.html#a6cc92d1b40f64bdcbb6fe02b523d9e92" title="Set the maximal translational velocity." alt="" coords="277,645,490,701"/>
+<area shape="rect" id="node4" href="$classpilz__industrial__motion__planner_1_1JointLimitsContainer.html#a40383e43f2853d45c9456333cda2a537" title="Add a limit." alt="" coords="575,5,794,61"/>
+<area shape="rect" id="node5" href="$classpilz__industrial__motion__planner_1_1JointLimitsAggregator.html#a442930b2020131d17e2e9248050794ee" title="Checks if the position limits from the given joint_limit are stricter than the limits of the joint_mo..." alt="" coords="571,165,799,221"/>
+<area shape="rect" id="node8" href="$classpilz__industrial__motion__planner_1_1JointLimitsAggregator.html#abf9d281b216ce7c89d930cb00a3b2e4a" title="Checks if the velocity limit from the given joint_limit are stricter than the limit of the joint_mode..." alt="" coords="571,85,799,141"/>
+<area shape="rect" id="node10" href="$namespacepilz__industrial__motion__planner_1_1joint__limits__interface.html#ac682308f1616f72e41067b74e6a8957c" title=" " alt="" coords="576,405,793,461"/>
+<area shape="rect" id="node11" href="$namespacepilz__industrial__motion__planner_1_1joint__limits__interface.html#aae7165a7b65ce68169a0363771f68d35" title=" " alt="" coords="592,485,777,541"/>
+<area shape="rect" id="node12" href="$classpilz__industrial__motion__planner_1_1JointLimitsAggregator.html#abf8235616e4fbeafe33278ae57ede18f" title="Update the position limits with the ones from the joint_model." alt="" coords="553,325,816,381"/>
+<area shape="rect" id="node14" href="$classpilz__industrial__motion__planner_1_1JointLimitsAggregator.html#a6ee5ac793eb0e93f5c98c621dafbf126" title="Update the velocity limit with the one from the joint_model." alt="" coords="553,245,816,301"/>
+<area shape="rect" id="node6" href="$classmoveit_1_1core_1_1JointModel.html#aa1d2f99c9025d01a92e47bc356938f77" title="Get the name of the joint." alt="" coords="865,245,1047,286"/>
+<area shape="rect" id="node7" href="$classmoveit_1_1core_1_1JointModel.html#accc3352876f4d640f5b57904bf6ab265" title="Check if the set of values for the variables of this joint are within bounds." alt="" coords="864,173,1048,214"/>
+<area shape="rect" id="node9" href="$classmoveit_1_1core_1_1JointModel.html#a0ee14b22009db973b8a4be4e2c911dca" title="Check if the set of velocities for the variables of this joint are within bounds." alt="" coords="864,93,1048,134"/>
+<area shape="rect" id="node13" href="$classmoveit_1_1core_1_1JointModel.html#ad55551ed55d54b9d67e6e7d7865330d1" title="Get the bounds for a variable. Throw an exception if the variable was not found." alt="" coords="865,325,1047,366"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="collision_detection::CollisionGeometryData" name="collision_detection::CollisionGeometryData">
+<area shape="rect" id="node1" title="Wrapper around world, link and attached objects&#39; geometry data." alt="" coords="529,64,712,105"/>
+<area shape="rect" id="node2" href="$structcollision__detection_1_1World_1_1Object.html" title="A representation of an object." alt="" coords="279,5,423,47"/>
+<area shape="rect" id="node3" href="$classEIGEN__MAKE__ALIGNED__OPERATOR__NEW.html" title="ROS/KDL based interface for the inverse kinematics of the PR2 arm." alt="" coords="5,5,177,47"/>
+<area shape="rect" id="node4" href="$classmoveit_1_1core_1_1LinkModel.html" title="A link from the robot. Contains the constant transform applied to the link and its geometry." alt="" coords="261,71,440,98"/>
+<area shape="rect" id="node5" href="$classmoveit_1_1core_1_1AttachedBody.html" title="Object defining bodies that can be attached to robot links." alt="" coords="249,122,452,149"/>
+</map>

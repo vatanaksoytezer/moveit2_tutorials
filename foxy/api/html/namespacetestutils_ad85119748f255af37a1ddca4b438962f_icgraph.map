@@ -1,0 +1,7 @@
+<map id="testutils::hasTrapezoidVelocity" name="testutils::hasTrapezoidVelocity">
+<area shape="rect" id="node1" title="Check that a given vector of accelerations represents a trapezoid velocity profile." alt="" coords="492,46,712,73"/>
+<area shape="rect" id="node2" href="$namespacetestutils.html#aff7e22a5989e2e292e9ce0b20b3fd195" title="Check that the rotational path of a given trajectory is a quaternion slerp." alt="" coords="261,5,444,47"/>
+<area shape="rect" id="node4" href="$namespacetestutils.html#a2fdced2dd08d4d1c6ba87e72c2096776" title="Check that the translational path of a given trajectory has a trapezoid velocity profile." alt="" coords="261,71,444,112"/>
+<area shape="rect" id="node3" href="$classTrajectoryGeneratorCIRCTest.html#aa870399f4f43b67f1a4080a1e79417f9" title=" " alt="" coords="5,9,213,51"/>
+<area shape="rect" id="node5" href="$unittest__trajectory__generator__lin_8cpp.html#a1581eae5f7812d4fa88ed284c90dd9e6" title="test the trapezoid shape of the planning trajectory in Cartesian space" alt="" coords="75,78,144,105"/>
+</map>

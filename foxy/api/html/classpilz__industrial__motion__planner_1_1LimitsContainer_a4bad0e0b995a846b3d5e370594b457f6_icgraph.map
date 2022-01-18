@@ -1,0 +1,7 @@
+<map id="pilz_industrial_motion_planner::LimitsContainer::setCartesianLimits" name="pilz_industrial_motion_planner::LimitsContainer::setCartesianLimits">
+<area shape="rect" id="node1" title="Set cartesian limits." alt="" coords="264,112,453,168"/>
+<area shape="rect" id="node2" href="$classpilz__industrial__motion__planner_1_1CommandPlanner.html#ab5f6c26cbb353c979e7f8d7eba1c2cdb" title="Initializes the planner Upon initialization this planner will look for plugins implementing pilz_indu..." alt="" coords="9,5,212,61"/>
+<area shape="rect" id="node3" href="$classPlanningContextTest.html#ab819445015130f87e69f722739625321" title=" " alt="" coords="33,86,188,127"/>
+<area shape="rect" id="node4" href="$classTrajectoryGeneratorCommonTest.html#a80e3885bdb7b0ce80bc85c3a75e0e28b" title=" " alt="" coords="5,151,216,193"/>
+<area shape="rect" id="node5" href="$unittest__planning__context__loaders_8cpp.html#af8e05395dbb8d5340343e9cd5168188b" title="Check that load Context returns initialized shared pointer." alt="" coords="76,217,145,244"/>
+</map>

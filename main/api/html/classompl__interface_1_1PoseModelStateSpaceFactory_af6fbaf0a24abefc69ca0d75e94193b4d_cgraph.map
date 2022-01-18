@@ -1,0 +1,5 @@
+<map id="ompl_interface::PoseModelStateSpaceFactory::canRepresentProblem" name="ompl_interface::PoseModelStateSpaceFactory::canRepresentProblem">
+<area shape="rect" id="node1" title="Decide whether the type of state space constructed by this factory could represent problems specified..." alt="" coords="5,31,244,87"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1JointModelGroup.html#a9e9fc99b081e21f447696c4d80dce95b" title=" " alt="" coords="292,5,495,47"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1core_1_1JointModelGroup.html#aa84a6083c84b6efcba6b84c18e9cec15" title="Get the number of variables that describe this joint group. This includes variables necessary for mim..." alt="" coords="303,71,484,112"/>
+</map>

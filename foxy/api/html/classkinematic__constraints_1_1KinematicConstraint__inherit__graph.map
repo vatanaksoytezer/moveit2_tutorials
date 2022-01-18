@@ -1,0 +1,7 @@
+<map id="kinematic_constraints::KinematicConstraint" name="kinematic_constraints::KinematicConstraint">
+<area shape="rect" id="node1" title="Base class for representing a kinematic constraint." alt="" coords="5,104,172,145"/>
+<area shape="rect" id="node2" href="$classkinematic__constraints_1_1JointConstraint.html" title="Class for handling single DOF joint constraints." alt="" coords="222,5,389,47"/>
+<area shape="rect" id="node3" href="$classkinematic__constraints_1_1OrientationConstraint.html" title="Class for constraints on the orientation of a link." alt="" coords="220,71,391,112"/>
+<area shape="rect" id="node4" href="$classkinematic__constraints_1_1PositionConstraint.html" title="Class for constraints on the XYZ position of a link." alt="" coords="222,136,389,177"/>
+<area shape="rect" id="node5" href="$classkinematic__constraints_1_1VisibilityConstraint.html" title="Class for constraints on the visibility relationship between a sensor and a target." alt="" coords="222,201,389,243"/>
+</map>

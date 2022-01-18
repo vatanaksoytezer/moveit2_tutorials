@@ -1,0 +1,6 @@
+<map id="mesh_filter::StereoCameraModel" name="mesh_filter::StereoCameraModel">
+<area shape="rect" id="node1" title="Model for Disparity based devices. E.g stereo camera systems or OpenNI compatible devices." alt="" coords="22,200,218,241"/>
+<area shape="rect" id="node2" href="$classmesh__filter_1_1SensorModel.html" title="Abstract Interface defining a sensor model for mesh filtering." alt="" coords="5,103,192,130"/>
+<area shape="rect" id="node3" href="$classmesh__filter_1_1StereoCameraModel_1_1Parameters.html" title="Parameters for Stereo&#45;like devices." alt="" coords="217,96,413,137"/>
+<area shape="rect" id="node4" href="$classmesh__filter_1_1SensorModel_1_1Parameters.html" title="Abstract Interface defining Sensor Parameters." alt="" coords="221,5,408,47"/>
+</map>

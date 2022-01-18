@@ -1,0 +1,9 @@
+<map id="planning_scene::PlanningScene::getRobotModel" name="planning_scene::PlanningScene::getRobotModel">
+<area shape="rect" id="node1" title="Get the kinematic model for which the planning scene is maintained." alt="" coords="517,136,704,177"/>
+<area shape="rect" id="node2" href="$classplanning__scene_1_1PlanningScene.html#a548ecbe8c71328bcebb516eae50a7d20" title="Check whether the current state is in collision, but use a collision_detection::CollisionRobot instan..." alt="" coords="240,5,469,47"/>
+<area shape="rect" id="node3" href="$classplanning__scene_1_1PlanningScene.html#a148e13eac088c22bedfd39eb004eb3be" title="Return a new child PlanningScene that uses this one as parent and has the diffs specified by msg appl..." alt="" coords="261,71,448,112"/>
+<area shape="rect" id="node4" href="$classplanning__scene_1_1PlanningScene.html#a46f024838af9e42c7afb0950c11a97f7" title="Check if a given path is valid. Each state is checked for validity (collision avoidance and feasibili..." alt="" coords="261,136,448,177"/>
+<area shape="rect" id="node6" href="$classplanning__scene_1_1PlanningScene.html#afadcb6c1258754b333aab83e643278b4" title=" " alt="" coords="257,201,453,243"/>
+<area shape="rect" id="node7" href="$test__planning__scene_8cpp.html#a8657479fb681ab94486683c9e03019fa" title=" " alt="" coords="327,267,382,294"/>
+<area shape="rect" id="node5" href="$classplanning__scene_1_1PlanningScene.html#ad4bd37ca382d39ef17072e73e806cc3b" title="Check if a given state is valid. This means checking for collisions, feasibility and whether the user..." alt="" coords="5,136,192,177"/>
+</map>

@@ -1,0 +1,11 @@
+<map id="moveit_controller_manager::MoveItControllerHandle" name="moveit_controller_manager::MoveItControllerHandle">
+<area shape="rect" id="node1" title="MoveIt sends commands to a controller via a handle that satisfies this interface." alt="" coords="5,115,208,156"/>
+<area shape="rect" id="node2" href="$classmoveit__controller__manager__example_1_1ExampleControllerHandle.html" title=" " alt="" coords="256,41,517,83"/>
+<area shape="rect" id="node3" href="$classmoveit__simple__controller__manager_1_1ActionBasedControllerHandleBase.html" title=" " alt="" coords="267,107,507,163"/>
+<area shape="rect" id="node9" href="$classtest__moveit__controller__manager_1_1TestMoveItControllerHandle.html" title=" " alt="" coords="271,187,502,243"/>
+<area shape="rect" id="node4" href="$classmoveit__simple__controller__manager_1_1ActionBasedControllerHandle.html" title=" " alt="" coords="565,5,805,76"/>
+<area shape="rect" id="node6" href="$classmoveit__simple__controller__manager_1_1ActionBasedControllerHandle.html" title=" " alt="" coords="565,100,805,171"/>
+<area shape="rect" id="node8" href="$classmoveit__simple__controller__manager_1_1ActionBasedControllerHandle.html" title="Base class for controller handles that interact with a controller through a ROS action server." alt="" coords="565,195,805,251"/>
+<area shape="rect" id="node5" href="$classmoveit__simple__controller__manager_1_1FollowJointTrajectoryControllerHandle.html" title=" " alt="" coords="865,13,1095,69"/>
+<area shape="rect" id="node7" href="$classmoveit__simple__controller__manager_1_1GripperControllerHandle.html" title=" " alt="" coords="853,115,1107,156"/>
+</map>

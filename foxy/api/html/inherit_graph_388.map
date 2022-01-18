@@ -1,0 +1,6 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$structtrajopt__interface_1_1TermInfo.html" title=" " alt="" coords="5,71,144,112"/>
+<area shape="rect" id="node2" href="$structtrajopt__interface_1_1CartPoseTermInfo.html" title="This term is used when the goal frame is fixed in cartesian space." alt="" coords="192,5,331,47"/>
+<area shape="rect" id="node3" href="$structtrajopt__interface_1_1JointPoseTermInfo.html" title="Joint space position cost Position operates on a single point (unlike velocity, etc)...." alt="" coords="192,71,331,112"/>
+<area shape="rect" id="node4" href="$structtrajopt__interface_1_1JointVelTermInfo.html" title=" " alt="" coords="192,136,331,177"/>
+</map>

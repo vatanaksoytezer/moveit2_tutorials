@@ -1,0 +1,5 @@
+<map id="moveit::core::RobotState::zeroAccelerations" name="moveit::core::RobotState::zeroAccelerations">
+<area shape="rect" id="node1" title="Set all accelerations to 0.0." alt="" coords="304,50,488,91"/>
+<area shape="rect" id="node2" href="$classtrajectory__processing_1_1TimeOptimalTrajectoryGeneration.html#a5ad18a23d5b6f0beedaa4b6e20f8b01b" title=" " alt="" coords="5,5,256,61"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1hybrid__planning_1_1ForwardTrajectory.html#a49dba1b9183969a92b7a8c9c23cb2fed" title=" " alt="" coords="37,86,225,127"/>
+</map>

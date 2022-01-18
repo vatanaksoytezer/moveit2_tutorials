@@ -1,0 +1,8 @@
+<map id="trajopt_interface::JointPoseTermInfo::addObjectiveTerms" name="trajopt_interface::JointPoseTermInfo::addObjectiveTerms">
+<area shape="rect" id="node1" title="Converts term info into cost/constraint and adds it to trajopt problem." alt="" coords="5,129,239,185"/>
+<area shape="rect" id="node2" href="$problem__description_8cpp.html#a952e333ffd7fdcc4bac96206e24744ca" title="Checks the size of the parameter given and throws if incorrect." alt="" coords="326,5,481,32"/>
+<area shape="rect" id="node3" href="$classtrajopt__interface_1_1TrajOptProblem.html#a52e63ccb17c3d46de74e91ca030f9dfb" title="Returns the kinematic DOF of the active joint model group." alt="" coords="287,56,520,112"/>
+<area shape="rect" id="node4" href="$classtrajopt__interface_1_1TrajOptProblem.html#a4bb2285f60035c9f5a45751ba105f46b" title="Returns TrajOptProb.has_time." alt="" coords="298,137,509,178"/>
+<area shape="rect" id="node5" href="$classtrajopt__interface_1_1TrajOptProblem.html#a958a1408597a091dd11cfdc0fdb884cd" title="Returns the number of steps in the problem. This is the number of rows in the optimization matrix." alt="" coords="293,202,513,243"/>
+<area shape="rect" id="node6" href="$classtrajopt__interface_1_1TrajOptProblem.html#aaf258ff267bba07537d1f05a5da9296c" title=" " alt="" coords="313,267,494,309"/>
+</map>

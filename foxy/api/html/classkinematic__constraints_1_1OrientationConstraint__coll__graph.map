@@ -1,0 +1,5 @@
+<map id="kinematic_constraints::OrientationConstraint" name="kinematic_constraints::OrientationConstraint">
+<area shape="rect" id="node1" title="Class for constraints on the orientation of a link." alt="" coords="102,109,273,151"/>
+<area shape="rect" id="node2" href="$classkinematic__constraints_1_1KinematicConstraint.html" title="Base class for representing a kinematic constraint." alt="" coords="5,5,172,47"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1core_1_1LinkModel.html" title="A link from the robot. Contains the constant transform applied to the link and its geometry." alt="" coords="197,13,375,39"/>
+</map>

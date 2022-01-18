@@ -1,0 +1,5 @@
+<map id="moveit::planning_interface::MoveGroupInterface::getJointNames" name="moveit::planning_interface::MoveGroupInterface::getJointNames">
+<area shape="rect" id="node1" title="Get vector of names of joints available in move group." alt="" coords="5,50,272,91"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl.html#a85c033ed09c50bc557955b3b190548fc" title=" " alt="" coords="320,5,567,61"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1core_1_1JointModelGroup.html#aaaeee5ac20a07f6d5c1fe43a892f005a" title="Get the names of the variables that make up the joints included in this group. The number of returned..." alt="" coords="349,86,538,127"/>
+</map>

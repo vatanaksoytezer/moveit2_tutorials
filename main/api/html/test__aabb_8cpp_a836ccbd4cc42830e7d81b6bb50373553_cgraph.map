@@ -1,0 +1,11 @@
+<map id="TEST_F" name="TEST_F">
+<area shape="rect" id="node1" title=" " alt="" coords="5,242,75,269"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1RobotModelBuilder.html#a00626af413f74d1a48c805cf92cb9e29" title="Adds a chain of links and joints to the builder. The joint names are generated automatically as &quot;&lt;par..." alt="" coords="123,5,313,47"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1core_1_1RobotModelBuilder.html#a1a03556e02633162c32167b138808238" title="Adds a collision box to a specific link." alt="" coords="123,71,313,112"/>
+<area shape="rect" id="node4" href="$classmoveit_1_1core_1_1RobotModelBuilder.html#ab18312d1925b48fdb9003cf52e62fb8a" title="Adds a collision mesh to a specific link." alt="" coords="123,136,313,177"/>
+<area shape="rect" id="node5" href="$classmoveit_1_1core_1_1RobotModelBuilder.html#a470fe4821c9f70dc96e59204830ffef7" title="Adds a new group using a list of links and a list of joints." alt="" coords="123,201,313,243"/>
+<area shape="rect" id="node6" href="$classmoveit_1_1core_1_1RobotModelBuilder.html#a9d71dd9c8cc3f34ad687b860a5fa80de" title="Adds a virtual joint to the SRDF." alt="" coords="123,267,313,308"/>
+<area shape="rect" id="node7" href="$classmoveit_1_1core_1_1RobotModelBuilder.html#a742857e69f69dcf03f647aa98a44498d" title="Builds and returns the robot model added to the builder." alt="" coords="123,332,313,373"/>
+<area shape="rect" id="node8" href="$classmoveit_1_1core_1_1RobotState.html#a55cae73d3315d1283436db1df51f4fe0" title="Compute an axis&#45;aligned bounding box that contains the current state. The format for aabb is (minx,..." alt="" coords="126,397,310,439"/>
+<area shape="rect" id="node9" href="$classmoveit_1_1core_1_1RobotModelBuilder.html#a3d8ec06341b89b1545ac0b385c4bbc0e" title="Returns true if the building process so far has been valid." alt="" coords="123,463,313,504"/>
+</map>

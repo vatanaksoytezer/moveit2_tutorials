@@ -1,0 +1,6 @@
+<map id="moveit::planning_interface::MoveGroupInterface::getPoseReferenceFrame" name="moveit::planning_interface::MoveGroupInterface::getPoseReferenceFrame">
+<area shape="rect" id="node1" title="Get the reference frame set by setPoseReferenceFrame(). By default this is the reference frame of the..." alt="" coords="345,93,676,134"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#adb2ad3165848ef703d8fa8e4fb031f53" title=" " alt="" coords="35,5,267,61"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a2f5d16e0d376ead65e03375ae7475726" title="Set the joint state goal for a particular joint by computing IK." alt="" coords="14,85,289,141"/>
+<area shape="rect" id="node4" href="$classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a344d714020cfbbfed36ccf7b3c5055da" title="Specify the parent link of the end&#45;effector. This end_effector_link will be used in calls to pose tar..." alt="" coords="5,166,297,207"/>
+</map>

@@ -1,0 +1,17 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" title=" " alt="" coords="5,213,116,240"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1ConstructException.html" title="This may be thrown during construction of objects if errors occur." alt="" coords="194,5,397,32"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1Exception.html" title="This may be thrown if unrecoverable errors occur." alt="" coords="225,56,365,83"/>
+<area shape="rect" id="node4" href="$classpilz__industrial__motion__planner_1_1AggregationException.html" title="A base class for all aggregation exceptions inheriting from std::runtime_exception." alt="" coords="181,107,410,149"/>
+<area shape="rect" id="node6" href="$classpilz__industrial__motion__planner_1_1MoveItErrorCodeException.html" title="Exception storing an moveit_msgs::msg::MoveItErrorCodes value." alt="" coords="166,173,425,214"/>
+<area shape="rect" id="node8" href="$classpilz__industrial__motion__planner_1_1PlanningException.html" title="A base class for all pilz_industrial_motion_planner exceptions inheriting from std::runtime_exception..." alt="" coords="192,238,399,279"/>
+<area shape="rect" id="node10" href="$classpilz__industrial__motion__planner_1_1ValidationException.html" title="A base class for all validations exceptions inheriting from std::runtime_exception." alt="" coords="188,310,403,351"/>
+<area shape="rect" id="node14" href="$classpilz__industrial__motion__planner__testutils_1_1JointConfigurationException.html" title=" " alt="" coords="164,376,427,432"/>
+<area shape="rect" id="node15" href="$classpilz__industrial__motion__planner__testutils_1_1TestDataLoaderReadingException.html" title=" " alt="" coords="194,456,397,512"/>
+<area shape="rect" id="node5" href="$classpilz__industrial__motion__planner_1_1AggregationBoundsViolationException.html" title=" " alt="" coords="475,67,745,123"/>
+<area shape="rect" id="node7" href="$classpilz__industrial__motion__planner_1_1TemplatedMoveItErrorCodeException.html" title=" " alt="" coords="491,147,729,203"/>
+<area shape="rect" id="node9" href="$classpilz__industrial__motion__planner_1_1ContextLoaderRegistrationException.html" title=" " alt="" coords="480,227,740,283"/>
+<area shape="rect" id="node11" href="$classpilz__industrial__motion__planner_1_1ValidationBoundsViolationException.html" title="Thrown when the limits from the param server are weaker than the ones obtained from the urdf." alt="" coords="481,307,739,363"/>
+<area shape="rect" id="node12" href="$classpilz__industrial__motion__planner_1_1ValidationDifferentLimitsException.html" title="Thrown when the limits differ." alt="" coords="506,387,714,443"/>
+<area shape="rect" id="node13" href="$classpilz__industrial__motion__planner_1_1ValidationJointMissingException.html" title="Thrown the limits for a joint are defined in the urdf but not in the node parameters (loaded from yam..." alt="" coords="495,467,725,523"/>
+</map>

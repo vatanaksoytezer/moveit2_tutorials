@@ -1,0 +1,4 @@
+<map id="collision_detection_bullet::addDiscreteSingleResult" name="collision_detection_bullet::addDiscreteSingleResult">
+<area shape="rect" id="node1" title="Converts a bullet contact result to MoveIt format and adds it to the result data structure." alt="" coords="285,5,477,61"/>
+<area shape="rect" id="node2" href="$structcollision__detection__bullet_1_1BroadphaseContactResultCallback.html#a0a716959f3c45d76fb4134a0c74f980b" title="This callback is used after btManifoldResult processed a collision result." alt="" coords="5,5,237,61"/>
+</map>

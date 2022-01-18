@@ -1,0 +1,5 @@
+<map id="pilz_industrial_motion_planner::JointLimitsContainer::getCommonLimit" name="pilz_industrial_motion_planner::JointLimitsContainer::getCommonLimit">
+<area shape="rect" id="node1" title="Returns joint limit fusion of all(position, velocity, acceleration, deceleration) limits for given jo..." alt="" coords="5,45,224,101"/>
+<area shape="rect" id="node2" href="$classpilz__industrial__motion__planner_1_1JointLimitsContainer.html#a040d5fa11dbedd32a857862bd4ce0b67" title="getLimit get the limit for the given joint name" alt="" coords="272,5,491,61"/>
+<area shape="rect" id="node3" href="$classpilz__industrial__motion__planner_1_1JointLimitsContainer.html#a04121778e9f7811b2553d1821c434e23" title="Check if there is a limit for a joint with the given name in this container." alt="" coords="272,85,491,141"/>
+</map>

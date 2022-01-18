@@ -1,0 +1,5 @@
+<map id="collision_detection::CollisionEnvHybrid" name="collision_detection::CollisionEnvHybrid">
+<area shape="rect" id="node1" title="This hybrid collision environment combines FCL and a distance field. Both can be used to calculate co..." alt="" coords="5,184,159,225"/>
+<area shape="rect" id="node2" href="$classcollision__detection_1_1CollisionEnvFCL.html" title="FCL implementation of the CollisionEnv." alt="" coords="10,95,154,136"/>
+<area shape="rect" id="node3" href="$classcollision__detection_1_1CollisionEnv.html" title="Provides the interface to the individual collision checking libraries." alt="" coords="10,5,154,47"/>
+</map>

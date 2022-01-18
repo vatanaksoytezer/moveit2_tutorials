@@ -1,0 +1,5 @@
+<map id="pilz_industrial_motion_planner::isStateColliding" name="pilz_industrial_motion_planner::isStateColliding">
+<area shape="rect" id="node1" title="Checks if current robot state is in self collision." alt="" coords="5,39,193,80"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1RobotState.html#a564140d144754d149b292e70c4c59b55" title="Given positions for the variables that make up a group, in the order found in the group (including va..." alt="" coords="241,5,425,47"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1core_1_1RobotState.html#aaec5557d55b862d9dd832b3d4c221836" title="Update all transforms." alt="" coords="241,71,425,112"/>
+</map>

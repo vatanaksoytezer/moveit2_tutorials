@@ -1,0 +1,4 @@
+<map id="pilz_industrial_motion_planner::CartesianLimit::hasMaxTranslationalDeceleration" name="pilz_industrial_motion_planner::CartesianLimit::hasMaxTranslationalDeceleration">
+<area shape="rect" id="node1" title="Check if translational deceleration limit is set." alt="" coords="123,5,369,61"/>
+<area shape="rect" id="node2" href="$unittest__cartesian__limits__aggregator_8cpp.html#ad4d89f3f967085d3a51c3b8442117b64" title="Check if only velocity is set." alt="" coords="5,20,75,47"/>
+</map>

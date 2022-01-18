@@ -1,0 +1,8 @@
+<map id="ompl_interface::ModelBasedStateSpace::ModelBasedStateSpace" name="ompl_interface::ModelBasedStateSpace::ModelBasedStateSpace">
+<area shape="rect" id="node1" title=" " alt="" coords="5,136,261,177"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1JointModelGroup.html#a14fb89fcb1b1d7297b5ddd3d063c715f" title="Get the active joints in this group (that have controllable DOF). This does not include mimic joints." alt="" coords="333,5,540,47"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1core_1_1JointModelGroup.html#a968738524d8001bec09dcafd1f0cf992" title="Get the bounds for all the active joints." alt="" coords="309,71,564,112"/>
+<area shape="rect" id="node4" href="$classmoveit_1_1core_1_1JointModelGroup.html#a2f165c9374e28ac4052490819c790f45" title="Get the name of the joint group." alt="" coords="346,136,527,177"/>
+<area shape="rect" id="node5" href="$classmoveit_1_1core_1_1JointModelGroup.html#aa84a6083c84b6efcba6b84c18e9cec15" title="Get the number of variables that describe this joint group. This includes variables necessary for mim..." alt="" coords="346,201,527,243"/>
+<area shape="rect" id="node6" href="$classompl__interface_1_1ModelBasedStateSpace.html#aac24022a339f0d1ac0f0495ead0fa8b9" title=" " alt="" coords="312,267,561,308"/>
+</map>

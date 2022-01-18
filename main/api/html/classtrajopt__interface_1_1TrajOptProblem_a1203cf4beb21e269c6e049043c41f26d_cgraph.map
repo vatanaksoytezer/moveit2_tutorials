@@ -1,0 +1,6 @@
+<map id="trajopt_interface::TrajOptProblem::TrajOptProblem" name="trajopt_interface::TrajOptProblem::TrajOptProblem">
+<area shape="rect" id="node1" title=" " alt="" coords="5,71,236,112"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1JointModelGroup.html#ad3a2b2661f3303f1d6fb8a8a08008174" title="Get the names of the active joints in this group. These are the names of the joints returned by getJo..." alt="" coords="288,5,535,47"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1core_1_1JointModelGroup.html#a968738524d8001bec09dcafd1f0cf992" title="Get the bounds for all the active joints." alt="" coords="284,71,539,112"/>
+<area shape="rect" id="node4" href="$classmoveit_1_1core_1_1RobotState.html#a7504fac0746b7254f45e3c27f2a4c6da" title="Get the model of a particular joint group." alt="" coords="319,136,503,177"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="pick_place::PlacePlan::plan" name="pick_place::PlacePlan::plan">
+<area shape="rect" id="node1" title=" " alt="" coords="5,71,168,112"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1JointModelGroup.html#a7800de8f63af6914613ffbbfcb389ba4" title="Get the names of the end effectors attached to this group." alt="" coords="216,5,484,47"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1core_1_1JointModelGroup.html#a67ad6dbf1a0ae757fe6ebdbce2018e0f" title="Get the name of the group this end&#45;effector attaches to (first) and the name of the link in that grou..." alt="" coords="228,71,472,112"/>
+<area shape="rect" id="node4" href="$classmoveit_1_1core_1_1AttachedBody.html#a857be05cdda0157e486176c034105426" title="Get the name of the attached body." alt="" coords="249,136,451,177"/>
+</map>

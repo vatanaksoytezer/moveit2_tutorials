@@ -1,0 +1,4 @@
+<map id="srv_kinematics_plugin::SrvKinematicsPlugin::getPositionFK" name="srv_kinematics_plugin::SrvKinematicsPlugin::getPositionFK">
+<area shape="rect" id="node1" title="Given a set of joint angles and a set of links, compute their pose." alt="" coords="5,5,173,61"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1JointModelGroup.html#aaaeee5ac20a07f6d5c1fe43a892f005a" title="Get the names of the variables that make up the joints included in this group. The number of returned..." alt="" coords="221,13,411,54"/>
+</map>

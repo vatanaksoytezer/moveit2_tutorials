@@ -1,0 +1,6 @@
+<map id="moveit_rviz_plugin::JMGItemModel::setData" name="moveit_rviz_plugin::JMGItemModel::setData">
+<area shape="rect" id="node1" title=" " alt="" coords="5,71,191,112"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1JointModel.html#a749ce652067b82e5ec5b3ffe3baca733" title="Get the index of this joint&#39;s first variable within the full robot state." alt="" coords="249,5,431,47"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1core_1_1JointModel.html#ad55551ed55d54b9d67e6e7d7865330d1" title="Get the bounds for a variable. Throw an exception if the variable was not found." alt="" coords="249,71,431,112"/>
+<area shape="rect" id="node4" href="$classmoveit_1_1core_1_1JointModelGroup.html#ab0d0e29514820e4ccb2647456ba5cc25" title="Get the index locations in the complete robot state for all the variables in this group." alt="" coords="239,136,441,177"/>
+</map>

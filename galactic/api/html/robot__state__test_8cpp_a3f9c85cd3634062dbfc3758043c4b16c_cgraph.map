@@ -1,0 +1,9 @@
+<map id="TEST" name="TEST">
+<area shape="rect" id="node1" title=" " alt="" coords="5,177,60,203"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1RobotModelBuilder.html#a9d71dd9c8cc3f34ad687b860a5fa80de" title="Adds a virtual joint to the SRDF." alt="" coords="108,5,299,47"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1core_1_1RobotModelBuilder.html#a742857e69f69dcf03f647aa98a44498d" title="Builds and returns the robot model added to the builder." alt="" coords="108,71,299,112"/>
+<area shape="rect" id="node4" href="$classmoveit_1_1core_1_1RobotState.html#abf6f716f6cf1ba8c4a63807b11962c41" title="Get the number of variables that make up this state." alt="" coords="111,136,295,177"/>
+<area shape="rect" id="node5" href="$classmoveit_1_1core_1_1RobotState.html#aae57a83ed9ad7c34982b6a943341026c" title="Get the position of a particular variable. An exception is thrown if the variable is not known." alt="" coords="111,201,295,243"/>
+<area shape="rect" id="node6" href="$classmoveit_1_1core_1_1RobotModelBuilder.html#a3d8ec06341b89b1545ac0b385c4bbc0e" title="Returns true if the building process so far has been valid." alt="" coords="108,267,299,308"/>
+<area shape="rect" id="node7" href="$classmoveit_1_1core_1_1RobotState.html#aba31c6f758e3dabd32c1acbd069e189e" title="Set all joints to their default positions. The default position is 0, or if that is not within bounds..." alt="" coords="111,332,295,373"/>
+</map>

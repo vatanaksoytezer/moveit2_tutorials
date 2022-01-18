@@ -1,0 +1,8 @@
+<map id="mesh_filter_test::MeshFilterTest::MeshFilterTest" name="mesh_filter_test::MeshFilterTest::MeshFilterTest">
+<area shape="rect" id="node1" title=" " alt="" coords="5,104,208,145"/>
+<area shape="rect" id="node2" href="$classmesh__filter_1_1MeshFilterBase.html#a85dc1295bee6cbc2bfde9a2d4e8c9127" title="adds a mesh to the filter object." alt="" coords="256,5,459,47"/>
+<area shape="rect" id="node4" href="$classmesh__filter_1_1MeshFilterBase.html#a95e4a5ee09c087c083e1ae8d1cc71965" title="set the offset component of padding. This value is added to the scaled sensor&#45;specific constant compo..." alt="" coords="256,71,459,112"/>
+<area shape="rect" id="node5" href="$classmesh__filter_1_1MeshFilterBase.html#ac25841b619542c32ed70b474124e2951" title="set the scale component of padding used to multiply with sensor&#45;specific padding coefficients to get ..." alt="" coords="256,136,459,177"/>
+<area shape="rect" id="node6" href="$classmesh__filter_1_1MeshFilterBase.html#a4933962abaa85732fb599554c666b967" title="set the shadow threshold. points that are further away than the rendered model are filtered out...." alt="" coords="256,201,459,243"/>
+<area shape="rect" id="node3" href="$classmesh__filter_1_1MeshFilterBase.html#a0709974f4134d1fa42db2a7978bb0c90" title="used within a Job to allow the main thread adding meshes" alt="" coords="507,5,709,47"/>
+</map>

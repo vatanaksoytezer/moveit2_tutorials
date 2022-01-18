@@ -1,0 +1,11 @@
+<map id="TEST" name="TEST">
+<area shape="rect" id="node1" title=" " alt="" coords="5,242,60,269"/>
+<area shape="rect" id="node2" href="$classcollision__detection_1_1World.html#a5e18424a37de7f24092f2e7c7898e620" title="Add a pose and shapes to an object in the map. This function makes repeated calls to addToObjectInter..." alt="" coords="151,5,305,47"/>
+<area shape="rect" id="node3" href="$classcollision__detection_1_1World.html#adc4d485fb4e992dccafebd760b22c23c" title="Clear all objects. If there are no other pointers to corresponding instances of Objects,..." alt="" coords="150,71,306,112"/>
+<area shape="rect" id="node4" href="$classcollision__detection_1_1World.html#ae38319d2cc56a77e5f43f76892ac8725" title="Get a particular object." alt="" coords="156,136,300,177"/>
+<area shape="rect" id="node5" href="$classcollision__detection_1_1World.html#a1f31fe9d2e4c623cabb9fa8f88749101" title="Check if a particular object exists in the collision world." alt="" coords="156,201,300,243"/>
+<area shape="rect" id="node6" href="$classcollision__detection_1_1World.html#a31e4c0573c302c06ba391839d6c4f17c" title="Update the pose of a shape in an object. Shape equality is verified by comparing pointers...." alt="" coords="125,267,331,308"/>
+<area shape="rect" id="node7" href="$classcollision__detection_1_1World.html#a206bc9df40cb659a0a34353523a689e4" title="Remove a particular object. If there are no external pointers to the corresponding instance of Object..." alt="" coords="145,332,311,373"/>
+<area shape="rect" id="node8" href="$classcollision__detection_1_1World.html#a49d198631f76d2f2a5550821187070ed" title="Remove shape from object. Shape equality is verified by comparing pointers. Ownership of the object i..." alt="" coords="108,397,348,439"/>
+<area shape="rect" id="node9" href="$classcollision__detection_1_1World.html#a1a7d25081a838ac51cf567ff1f003f6a" title=" " alt="" coords="156,463,300,504"/>
+</map>

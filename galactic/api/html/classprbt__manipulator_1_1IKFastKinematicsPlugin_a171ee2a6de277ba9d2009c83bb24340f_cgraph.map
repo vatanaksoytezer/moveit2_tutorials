@@ -1,0 +1,4 @@
+<map id="prbt_manipulator::IKFastKinematicsPlugin::getPositionIK" name="prbt_manipulator::IKFastKinematicsPlugin::getPositionIK">
+<area shape="rect" id="node1" title="Given a desired pose of the end&#45;effector, compute the set joint angles solutions that are able to rea..." alt="" coords="5,5,235,47"/>
+<area shape="rect" id="node2" href="$classikfast_1_1IkSolutionList.html#ac9679184adc4a704c4c6497eef3cb597" title="returns the number of solutions stored" alt="" coords="283,5,437,47"/>
+</map>

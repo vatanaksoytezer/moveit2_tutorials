@@ -1,0 +1,5 @@
+<map id="planning_scene_monitor::LockedPlanningSceneRO::operator&#45;&gt;" name="planning_scene_monitor::LockedPlanningSceneRO::operator&#45;&gt;">
+<area shape="rect" id="node1" title=" " alt="" coords="5,45,195,101"/>
+<area shape="rect" id="node2" href="$classplanning__scene__monitor_1_1PlanningSceneMonitor.html#a1329d6847747435c065cbba04ec17334" title="Unlock the scene from reading (multiple threads can lock for reading at the same time)" alt="" coords="243,5,424,61"/>
+<area shape="rect" id="node3" href="$classplanning__scene__monitor_1_1PlanningSceneMonitor.html#af862365cde56d7541340429ea5db5eaf" title="Lock the scene from writing (only one thread can lock for writing and no other thread can lock for re..." alt="" coords="243,85,424,141"/>
+</map>

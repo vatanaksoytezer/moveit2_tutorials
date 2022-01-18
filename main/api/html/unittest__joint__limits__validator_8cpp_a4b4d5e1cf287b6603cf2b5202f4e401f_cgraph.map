@@ -1,0 +1,8 @@
+<map id="TEST_F" name="TEST_F">
+<area shape="rect" id="node1" title="Check max_deceleration inequality." alt="" coords="5,180,75,207"/>
+<area shape="rect" id="node2" href="$classpilz__industrial__motion__planner_1_1JointLimitsContainer.html#a40383e43f2853d45c9456333cda2a537" title="Add a limit." alt="" coords="143,5,361,61"/>
+<area shape="rect" id="node3" href="$classpilz__industrial__motion__planner_1_1JointLimitsValidator.html#ac9d7d3eaa7cdcf283a5719961094697e" title="Validates that the acceleration of all limits is equal." alt="" coords="123,85,381,141"/>
+<area shape="rect" id="node4" href="$classpilz__industrial__motion__planner_1_1JointLimitsValidator.html#a4452e6c87e46501c3da07a043b857a57" title="Validates that the deceleration of all limits is equal." alt="" coords="123,165,381,221"/>
+<area shape="rect" id="node5" href="$classpilz__industrial__motion__planner_1_1JointLimitsValidator.html#a20bd4c67cbcec136faf5ba89bfb5d3e2" title="Validates that the position limits of all limits are equal." alt="" coords="138,245,366,301"/>
+<area shape="rect" id="node6" href="$classpilz__industrial__motion__planner_1_1JointLimitsValidator.html#a58c7beb84a30d198056b4bd5ece3009c" title="Validates that the velocity of all limits is equal." alt="" coords="138,325,366,381"/>
+</map>

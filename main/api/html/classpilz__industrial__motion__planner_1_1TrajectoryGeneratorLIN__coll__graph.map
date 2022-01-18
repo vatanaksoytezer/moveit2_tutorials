@@ -1,0 +1,5 @@
+<map id="pilz_industrial_motion_planner::TrajectoryGeneratorLIN" name="pilz_industrial_motion_planner::TrajectoryGeneratorLIN">
+<area shape="rect" id="node1" title="This class implements a linear trajectory generator in Cartesian space. The Cartesian trajetory are b..." alt="" coords="5,200,241,241"/>
+<area shape="rect" id="node2" href="$classpilz__industrial__motion__planner_1_1TrajectoryGenerator.html" title="Base class of trajectory generators." alt="" coords="16,109,231,151"/>
+<area shape="rect" id="node3" href="$classpilz__industrial__motion__planner_1_1LimitsContainer.html" title="This class combines CartesianLimit and JointLimits into on single class." alt="" coords="29,5,218,47"/>
+</map>

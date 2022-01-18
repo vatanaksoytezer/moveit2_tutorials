@@ -1,0 +1,4 @@
+<map id="moveit::core::RobotState::setVariablePosition" name="moveit::core::RobotState::setVariablePosition">
+<area shape="rect" id="node1" title="Set the position of a single variable. The variable is specified by its index (a value associated by ..." alt="" coords="5,5,189,47"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1RobotState.html#a61b8f09e3940519f1abc6f6862305e2f" title="Given an array with velocity values for all variables, set those values as the velocities in this sta..." alt="" coords="237,5,421,47"/>
+</map>

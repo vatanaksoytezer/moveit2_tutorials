@@ -1,0 +1,4 @@
+<map id="pilz_industrial_motion_planner::JointLimitsContainer::getCommonLimit" name="pilz_industrial_motion_planner::JointLimitsContainer::getCommonLimit">
+<area shape="rect" id="node1" title="Returns joint limit fusion of all(position, velocity, acceleration, deceleration) limits for all join..." alt="" coords="123,5,341,61"/>
+<area shape="rect" id="node2" href="$unittest__joint__limits__container_8cpp.html#a40f95300c8bc8dfc1055b114705b88de" title="An uninitialized container should not have any limits set." alt="" coords="5,20,75,47"/>
+</map>

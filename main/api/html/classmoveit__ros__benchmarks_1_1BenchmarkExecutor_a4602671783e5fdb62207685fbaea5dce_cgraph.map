@@ -1,0 +1,7 @@
+<map id="moveit_ros_benchmarks::BenchmarkExecutor::computeTrajectoryDistance" name="moveit_ros_benchmarks::BenchmarkExecutor::computeTrajectoryDistance">
+<area shape="rect" id="node1" title=" " alt="" coords="5,97,205,153"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1RobotState.html#a95a2bc2b77d410e4c07a7c464e33a438" title="Return the sum of joint distances to &quot;other&quot; state. An L1 norm. Only considers active joints." alt="" coords="279,5,463,47"/>
+<area shape="rect" id="node3" href="$classrobot__trajectory_1_1RobotTrajectory.html#afdd5cc4e84e484af2dc6ea337f62719e" title=" " alt="" coords="253,71,488,112"/>
+<area shape="rect" id="node4" href="$classrobot__trajectory_1_1RobotTrajectory.html#af356952b9847bc920b773f2f83cb9943" title=" " alt="" coords="253,136,488,177"/>
+<area shape="rect" id="node5" href="$classrobot__trajectory_1_1RobotTrajectory.html#ababf812aa287c586d9ad0b190e1d2482" title=" " alt="" coords="253,201,488,243"/>
+</map>

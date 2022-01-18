@@ -1,0 +1,17 @@
+<map id="TEST" name="TEST">
+<area shape="rect" id="node1" title=" " alt="" coords="5,307,60,334"/>
+<area shape="rect" id="node2" href="$classtrajectory__processing_1_1IterativeSplineParameterization.html#ab01c18e50f1663358c658651e1fde2c5" title=" " alt="" coords="108,293,344,349"/>
+<area shape="rect" id="node7" href="$classrobot__trajectory_1_1RobotTrajectory.html#ababf812aa287c586d9ad0b190e1d2482" title=" " alt="" coords="392,593,627,635"/>
+<area shape="rect" id="node12" href="$classrobot__trajectory_1_1RobotTrajectory.html#a23eca045c783372e4869cd3cccb2fb66" title="Returns the duration after start that a waypoint will be reached." alt="" coords="109,424,343,465"/>
+<area shape="rect" id="node13" href="$test__time__parameterization_8cpp.html#af5870b8c7d637a7126165e5e5f4c8372" title=" " alt="" coords="125,201,327,227"/>
+<area shape="rect" id="node14" href="$test__time__parameterization_8cpp.html#a9e9c53951a8d9ae89aa8517fe0a63df8" title=" " alt="" coords="168,78,284,105"/>
+<area shape="rect" id="node3" href="$classrobot__trajectory_1_1RobotTrajectory.html#afdd5cc4e84e484af2dc6ea337f62719e" title=" " alt="" coords="392,332,627,373"/>
+<area shape="rect" id="node4" href="$classrobot__trajectory_1_1RobotTrajectory.html#a6eaef50c3127c83dbc5ca393376435b1" title=" " alt="" coords="392,71,627,112"/>
+<area shape="rect" id="node5" href="$classmoveit_1_1core_1_1RobotModel.html#a0e6fe94c867b3452abdeecc2d7373ca2" title="Get the bounds for a specific variable. Throw an exception of variable is not found." alt="" coords="414,397,605,439"/>
+<area shape="rect" id="node6" href="$classrobot__trajectory_1_1RobotTrajectory.html#af356952b9847bc920b773f2f83cb9943" title=" " alt="" coords="392,463,627,504"/>
+<area shape="rect" id="node8" href="$classrobot__trajectory_1_1RobotTrajectory.html#aa02527d5b79f3249febefb4780743746" title=" " alt="" coords="392,528,627,569"/>
+<area shape="rect" id="node9" href="$classrobot__trajectory_1_1RobotTrajectory.html#ab1e226f85689e3f9058a6b807f309a64" title=" " alt="" coords="392,136,627,177"/>
+<area shape="rect" id="node10" href="$classmoveit_1_1core_1_1RobotState.html#a54879052daa602ea0319cbe3ded82ff3" title="Set the position of a single variable. An exception is thrown if the variable name is not known." alt="" coords="417,201,601,243"/>
+<area shape="rect" id="node11" href="$classrobot__trajectory_1_1RobotTrajectory.html#a7804317b96eb6c13639839b1276ac04c" title=" " alt="" coords="392,267,627,308"/>
+<area shape="rect" id="node15" href="$classrobot__trajectory_1_1RobotTrajectory.html#a55e7beedfc60e0a6e523bd7d9278d884" title="Print information about the trajectory." alt="" coords="392,5,627,47"/>
+</map>

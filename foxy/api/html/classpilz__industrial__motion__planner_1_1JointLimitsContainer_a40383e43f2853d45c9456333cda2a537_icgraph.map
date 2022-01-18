@@ -1,0 +1,13 @@
+<map id="pilz_industrial_motion_planner::JointLimitsContainer::addLimit" name="pilz_industrial_motion_planner::JointLimitsContainer::addLimit">
+<area shape="rect" id="node1" title="Add a limit." alt="" coords="539,214,757,270"/>
+<area shape="rect" id="node2" href="$namespacetestutils.html#a5d16cd86a3cbc9dc92338716995f3eb3" title="Create limits for tests to avoid the need to get the limits from the node parameter." alt="" coords="281,71,474,98"/>
+<area shape="rect" id="node5" href="$classpilz__industrial__motion__planner_1_1JointLimitsAggregator.html#a78abef0abbf23021c1edc1451af3e3c8" title="Aggregates(combines) the joint limits from joint model and node parameters. The rules for the combina..." alt="" coords="264,214,491,270"/>
+<area shape="rect" id="node11" href="$unittest__joint__limits__container_8cpp.html#a73c31495b757309e539be4288c83683b" title="Check AddLimit for positive and null deceleration." alt="" coords="343,294,412,321"/>
+<area shape="rect" id="node3" href="$classPlanningContextTest.html#ab819445015130f87e69f722739625321" title=" " alt="" coords="33,5,188,47"/>
+<area shape="rect" id="node4" href="$unittest__planning__context__loaders_8cpp.html#af8e05395dbb8d5340343e9cd5168188b" title="Check that load Context returns initialized shared pointer." alt="" coords="76,71,145,98"/>
+<area shape="rect" id="node6" href="$classTrajectoryGeneratorCIRCTest.html#a23026b4e6ff9c4dc0d949a6965227cdb" title="Create test scenario for circ trajectory generator." alt="" coords="7,123,215,164"/>
+<area shape="rect" id="node7" href="$classTrajectoryBlenderTransitionWindowTest.html#a053df89241e6ed29c6d277de86a01f6e" title="Create test scenario for trajectory blender." alt="" coords="11,188,210,229"/>
+<area shape="rect" id="node8" href="$classTrajectoryGeneratorLINTest.html#aa501c1263458d8ae0807e10ee79a569b" title="Create test scenario for lin trajectory generator." alt="" coords="11,253,210,295"/>
+<area shape="rect" id="node9" href="$classTrajectoryGeneratorCommonTest.html#a80e3885bdb7b0ce80bc85c3a75e0e28b" title=" " alt="" coords="5,319,216,360"/>
+<area shape="rect" id="node10" href="$unittest__joint__limits__aggregator_8cpp.html#a0a5b27dc7195a628f23dc3763bd898a3" title="Check for that the size of the map and the size of the given joint models is equal." alt="" coords="76,385,145,411"/>
+</map>

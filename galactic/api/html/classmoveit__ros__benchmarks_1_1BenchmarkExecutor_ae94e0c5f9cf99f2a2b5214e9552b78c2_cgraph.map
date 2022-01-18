@@ -1,0 +1,9 @@
+<map id="moveit_ros_benchmarks::BenchmarkExecutor::initializeBenchmarks" name="moveit_ros_benchmarks::BenchmarkExecutor::initializeBenchmarks">
+<area shape="rect" id="node1" title=" " alt="" coords="5,111,188,167"/>
+<area shape="rect" id="node2" href="$classmoveit__ros__benchmarks_1_1BenchmarkOptions.html#abe50cf25e02e9564a1bea551ea969174" title="Get the name of the planning group to run the benchmark with." alt="" coords="236,5,497,47"/>
+<area shape="rect" id="node3" href="$classmoveit__ros__benchmarks_1_1BenchmarkOptions.html#a1439fb17f83aad98fcc8be7780296113" title="Get all planning pipeline names mapped to their parameter configuration." alt="" coords="247,71,486,127"/>
+<area shape="rect" id="node4" href="$classmoveit__ros__benchmarks_1_1BenchmarkExecutor.html#a1aab2927252220b2044b3272c3d91f83" title="Initialize benchmark query data from start states and constraints." alt="" coords="269,151,464,207"/>
+<area shape="rect" id="node7" href="$classmoveit__ros__benchmarks_1_1BenchmarkExecutor.html#a6d970c3bd08f8f123915d6c53571e205" title="Check that the desired planner plugins and algorithms exist for the given group." alt="" coords="268,231,465,287"/>
+<area shape="rect" id="node5" href="$classmoveit__ros__benchmarks_1_1BenchmarkOptions.html#a66ee5d1c753c207cbda526a6bb655a5b" title="Set the ROS namespace the node handle should use for parameter lookup." alt="" coords="545,127,797,168"/>
+<area shape="rect" id="node6" href="$classmoveit__ros__benchmarks_1_1BenchmarkOptions.html#a94ee993995807eb305d9f93def0471ed" title="Get the port of the warehouse database host server." alt="" coords="567,192,776,233"/>
+</map>

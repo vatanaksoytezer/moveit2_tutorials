@@ -1,0 +1,6 @@
+<map id="moveit_simple_controller_manager::FollowJointTrajectoryControllerHandle" name="moveit_simple_controller_manager::FollowJointTrajectoryControllerHandle">
+<area shape="rect" id="node1" title=" " alt="" coords="832,13,1063,69"/>
+<area shape="rect" id="node2" href="$classmoveit__simple__controller__manager_1_1ActionBasedControllerHandle.html" title=" " alt="" coords="544,5,784,76"/>
+<area shape="rect" id="node3" href="$classmoveit__simple__controller__manager_1_1ActionBasedControllerHandleBase.html" title=" " alt="" coords="256,13,496,69"/>
+<area shape="rect" id="node4" href="$classmoveit__controller__manager_1_1MoveItControllerHandle.html" title="MoveIt sends commands to a controller via a handle that satisfies this interface." alt="" coords="5,20,208,61"/>
+</map>

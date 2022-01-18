@@ -1,0 +1,4 @@
+<map id="chomp::ChompTrajectory::getNumJoints" name="chomp::ChompTrajectory::getNumJoints">
+<area shape="rect" id="node1" title="Gets the number of joints in each trajectory point." alt="" coords="5,5,189,47"/>
+<area shape="rect" id="node2" href="$classchomp_1_1ChompTrajectory.html#afb272cf4167ff09cf8a264e305e70b8f" title="Gets the number of points (that are free to be optimized) in the trajectory." alt="" coords="237,5,421,47"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="kinematic_constraints::OrientationConstraint::equal" name="kinematic_constraints::OrientationConstraint::equal">
+<area shape="rect" id="node1" title="Check if two orientation constraints are the same." alt="" coords="5,31,176,87"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1RobotState.html#aa0d9f132691a3f24186dcdff72be5d28" title="Get the transformation matrix from the model frame (root of model) to the frame identified by frame_i..." alt="" coords="225,5,409,47"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1core_1_1RobotState.html#a309800a933676917ea4848b972a4318b" title="Get the link transform w.r.t. the root link (model frame) of the RobotModel. This is typically the ro..." alt="" coords="224,71,409,112"/>
+<area shape="rect" id="node4" href="$classmoveit_1_1core_1_1RobotState.html#a867985359844193ea81c2d23ac2c49b4" title="Returns true if anything in this state is dirty." alt="" coords="457,37,641,79"/>
+<area shape="rect" id="node5" href="$classmoveit_1_1core_1_1JointModel.html#a32646942dc054f77e3eff984affb7ced" title="Get the index of this joint within the robot model." alt="" coords="459,103,640,144"/>
+<area shape="rect" id="node6" href="$classmoveit_1_1core_1_1JointModel.html#ac997d44f51ca03d13f0d54cf699e0662" title="Force the specified values to be inside bounds and normalized. Quaternions are normalized,..." alt="" coords="689,103,871,144"/>
+</map>

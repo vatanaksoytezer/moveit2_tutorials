@@ -1,0 +1,8 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classmoveit__warehouse_1_1MoveItMessageStorage.html" title="This class provides the mechanism to connect to a database and reads needed ROS parameters when appro..." alt="" coords="5,136,204,177"/>
+<area shape="rect" id="node2" href="$classmoveit__warehouse_1_1ConstraintsStorage.html" title=" " alt="" coords="252,5,480,47"/>
+<area shape="rect" id="node3" href="$classmoveit__warehouse_1_1PlanningSceneStorage.html" title=" " alt="" coords="261,71,471,112"/>
+<area shape="rect" id="node4" href="$classmoveit__warehouse_1_1PlanningSceneWorldStorage.html" title=" " alt="" coords="261,136,471,177"/>
+<area shape="rect" id="node5" href="$classmoveit__warehouse_1_1RobotStateStorage.html" title=" " alt="" coords="253,201,479,243"/>
+<area shape="rect" id="node6" href="$classmoveit__warehouse_1_1TrajectoryConstraintsStorage.html" title=" " alt="" coords="257,267,475,308"/>
+</map>

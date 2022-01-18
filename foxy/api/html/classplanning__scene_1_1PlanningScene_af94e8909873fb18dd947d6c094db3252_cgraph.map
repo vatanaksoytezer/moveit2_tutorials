@@ -1,0 +1,4 @@
+<map id="planning_scene::PlanningScene::isPathValid" name="planning_scene::PlanningScene::isPathValid">
+<area shape="rect" id="node1" title="Check if a given path is valid. Each state is checked for validity (collision avoidance,..." alt="" coords="5,5,192,47"/>
+<area shape="rect" id="node2" href="$classplanning__scene_1_1PlanningScene.html#ae1789ae10386a21ffe1fa41e1a590a6c" title="Get the kinematic model for which the planning scene is maintained." alt="" coords="240,5,427,47"/>
+</map>

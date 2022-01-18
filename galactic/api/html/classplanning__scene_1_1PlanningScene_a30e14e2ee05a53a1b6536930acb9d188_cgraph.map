@@ -1,0 +1,4 @@
+<map id="planning_scene::PlanningScene::setCurrentState" name="planning_scene::PlanningScene::setCurrentState">
+<area shape="rect" id="node1" title="Set the current robot state to be state. If not all joint values are specified, the previously mainta..." alt="" coords="5,5,192,47"/>
+<area shape="rect" id="node2" href="$classplanning__scene_1_1PlanningScene.html#a519f8e3d99bad7027334f83432b9fad9" title="Get the state at which the robot is assumed to be." alt="" coords="240,5,475,47"/>
+</map>

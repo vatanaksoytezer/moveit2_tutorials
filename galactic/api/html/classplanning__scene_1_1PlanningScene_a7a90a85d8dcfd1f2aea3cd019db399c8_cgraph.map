@@ -1,0 +1,7 @@
+<map id="planning_scene::PlanningScene::getAllowedCollisionMatrix" name="planning_scene::PlanningScene::getAllowedCollisionMatrix">
+<area shape="rect" id="node1" title="Get the allowed collision matrix." alt="" coords="5,71,245,112"/>
+<area shape="rect" id="node2" href="$namespacepilz__industrial__motion__planner.html#a5c92ab367085e62823804a18f42772ae" title="Checks if current robot state is in self collision." alt="" coords="317,37,505,79"/>
+<area shape="rect" id="node5" href="$classmoveit_1_1core_1_1RobotState.html#afa1f72a766bdf75d81f4404058322576" title="Update the transforms for the collision bodies. This call is needed before calling collision checking..." alt="" coords="293,103,529,144"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1core_1_1RobotState.html#a564140d144754d149b292e70c4c59b55" title="Given positions for the variables that make up a group, in the order found in the group (including va..." alt="" coords="577,5,761,47"/>
+<area shape="rect" id="node4" href="$classmoveit_1_1core_1_1RobotState.html#aaec5557d55b862d9dd832b3d4c221836" title="Update all transforms." alt="" coords="577,71,761,112"/>
+</map>

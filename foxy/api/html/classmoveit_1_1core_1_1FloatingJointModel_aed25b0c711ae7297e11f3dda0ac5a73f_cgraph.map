@@ -1,0 +1,4 @@
+<map id="moveit::core::FloatingJointModel::computeTransform" name="moveit::core::FloatingJointModel::computeTransform">
+<area shape="rect" id="node1" title="Given the joint values for a joint, compute the corresponding transform. The computed transform is gu..." alt="" coords="5,5,200,47"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1FloatingJointModel.html#a78b75b45d46d33dc764e3f5b3e6bf699" title="Compute the distance between two joint states of the same model (represented by the variable values)" alt="" coords="248,5,443,47"/>
+</map>

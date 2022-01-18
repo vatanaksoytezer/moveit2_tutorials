@@ -1,0 +1,4 @@
+<map id="planning_scene::SceneTransforms::canTransform" name="planning_scene::SceneTransforms::canTransform">
+<area shape="rect" id="node1" title="Check whether data can be transformed from a particular frame." alt="" coords="5,5,248,47"/>
+<area shape="rect" id="node2" href="$namespacemoveit_1_1core.html#a192b65b3ebc8eb7b6ccd155808c68aa1" title="Check if a message includes any information about a planning scene, or whether it is empty." alt="" coords="296,13,461,39"/>
+</map>

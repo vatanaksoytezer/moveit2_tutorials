@@ -1,0 +1,7 @@
+<map id="trajopt_interface::CartPoseTermInfo::addObjectiveTerms" name="trajopt_interface::CartPoseTermInfo::addObjectiveTerms">
+<area shape="rect" id="node1" title="Used to add term to pci from json." alt="" coords="5,111,236,167"/>
+<area shape="rect" id="node2" href="$namespacetrajopt__interface.html#a0d9e44b372df944465ddfe24e0b9ce1a" title="Appends b to a of type VectorXd." alt="" coords="331,5,470,47"/>
+<area shape="rect" id="node3" href="$classtrajopt__interface_1_1TrajOptProblem.html#a52e63ccb17c3d46de74e91ca030f9dfb" title="Returns the kinematic DOF of the active joint model group." alt="" coords="284,71,517,127"/>
+<area shape="rect" id="node4" href="$classtrajopt__interface_1_1TrajOptProblem.html#a0a42406a55a976ca51ea24bec23e94cc" title=" " alt="" coords="296,151,505,207"/>
+<area shape="rect" id="node5" href="$classtrajopt__interface_1_1TrajOptProblem.html#a14dd2a04ac35183be0e91423017cdc6d" title="Returns the values of the specified joints (start_col to num_col) for the specified timestep i." alt="" coords="299,232,502,273"/>
+</map>

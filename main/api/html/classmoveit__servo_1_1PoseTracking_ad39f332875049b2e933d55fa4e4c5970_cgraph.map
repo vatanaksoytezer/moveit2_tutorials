@@ -1,0 +1,4 @@
+<map id="moveit_servo::PoseTracking::updatePIDConfig" name="moveit_servo::PoseTracking::updatePIDConfig">
+<area shape="rect" id="node1" title="Change PID parameters. Motion is stopped before the update." alt="" coords="5,5,209,47"/>
+<area shape="rect" id="node2" href="$classmoveit__servo_1_1PoseTracking.html#aa38b7b59ca81d408bdaa27c529046577" title="A method for a different thread to stop motion and return early from control loop." alt="" coords="257,5,461,47"/>
+</map>

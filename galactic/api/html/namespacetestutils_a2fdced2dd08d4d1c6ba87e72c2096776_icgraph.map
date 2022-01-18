@@ -1,0 +1,5 @@
+<map id="testutils::checkCartesianTranslationalPath" name="testutils::checkCartesianTranslationalPath">
+<area shape="rect" id="node1" title="Check that the translational path of a given trajectory has a trapezoid velocity profile." alt="" coords="261,35,444,76"/>
+<area shape="rect" id="node2" href="$classTrajectoryGeneratorCIRCTest.html#aa870399f4f43b67f1a4080a1e79417f9" title=" " alt="" coords="5,5,213,47"/>
+<area shape="rect" id="node3" href="$unittest__trajectory__generator__lin_8cpp.html#a1581eae5f7812d4fa88ed284c90dd9e6" title="test the trapezoid shape of the planning trajectory in Cartesian space" alt="" coords="75,71,144,98"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="trajopt_interface::TrajOptProblem::GetActiveGroupNumDOF" name="trajopt_interface::TrajOptProblem::GetActiveGroupNumDOF">
+<area shape="rect" id="node1" title="Returns the kinematic DOF of the active joint model group." alt="" coords="287,45,520,101"/>
+<area shape="rect" id="node2" href="$structtrajopt__interface_1_1CartPoseTermInfo.html#aabda3a79a43e43e21bcfcb2609a13258" title="Used to add term to pci from json." alt="" coords="7,5,237,61"/>
+<area shape="rect" id="node3" href="$structtrajopt__interface_1_1JointPoseTermInfo.html#ac9ef00057a3b431f1e24f64434bfe2f2" title="Converts term info into cost/constraint and adds it to trajopt problem." alt="" coords="5,85,239,141"/>
+</map>

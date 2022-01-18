@@ -1,0 +1,5 @@
+<map id="collision_detection::distanceCallback" name="collision_detection::distanceCallback">
+<area shape="rect" id="node1" title="Callback function used by the FCLManager used for each pair of collision objects to calculate collisi..." alt="" coords="5,53,149,94"/>
+<area shape="rect" id="node2" href="$classcollision__detection_1_1AllowedCollisionMatrix.html#a74486fe3a716208c2c271e81e99e2b1f" title="Get the allowed collision predicate between two elements. Return true if a predicate for entry is inc..." alt="" coords="199,5,379,61"/>
+<area shape="rect" id="node3" href="$structcollision__detection_1_1CollisionGeometryData.html#a697b8cf0334a95ff367db32dda1e7b00" title="Returns the name which is saved in the member pointed to in ptr." alt="" coords="197,85,380,141"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="planning_scene_monitor::CurrentStateMonitor::getCurrentStateTime" name="planning_scene_monitor::CurrentStateMonitor::getCurrentStateTime">
+<area shape="rect" id="node1" title="Get the time stamp for the current state." alt="" coords="5,31,187,87"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1RobotState.html#a8b0ce76545fcb5676ae79f3e463c8223" title="Get raw access to the velocities of the variables that make up this state. The values are in the same..." alt="" coords="235,5,419,47"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1core_1_1RobotState.html#a61b8f09e3940519f1abc6f6862305e2f" title="Given an array with velocity values for all variables, set those values as the velocities in this sta..." alt="" coords="235,71,419,112"/>
+</map>

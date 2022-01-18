@@ -1,0 +1,5 @@
+<map id="moveit::core::JointModel::distance" name="moveit::core::JointModel::distance">
+<area shape="rect" id="node1" title="Compute the distance between two joint states of the same model (represented by the variable values)" alt="" coords="237,39,419,80"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1RobotState.html#a47d15624f2b73d1a06905a0db11162cf" title=" " alt="" coords="5,5,189,47"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1core_1_1JointModel.html#a2210b2f0a42da63674e79cbe77ff9eec" title="Get the local names of the variable that make up the joint (suffixes that are attached to joint names..." alt="" coords="5,71,189,112"/>
+</map>

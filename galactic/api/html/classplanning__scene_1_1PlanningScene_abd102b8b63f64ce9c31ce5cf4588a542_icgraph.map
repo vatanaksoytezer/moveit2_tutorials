@@ -1,0 +1,5 @@
+<map id="planning_scene::PlanningScene::isStateColliding" name="planning_scene::PlanningScene::isStateColliding">
+<area shape="rect" id="node1" title="Check if the current state is in collision (with the environment or self collision)...." alt="" coords="240,39,427,80"/>
+<area shape="rect" id="node2" href="$classplanning__scene_1_1PlanningScene.html#ac58ce6668c2eb6866ad78a1c8c60c5a5" title="Check if a given path is valid. Each state is checked for validity (collision avoidance,..." alt="" coords="5,5,192,47"/>
+<area shape="rect" id="node3" href="$classplanning__scene_1_1PlanningScene.html#a9ae31eb392220aa92d26eb45863eff7e" title="Check if a given state is valid. This means checking for collisions and feasibility." alt="" coords="5,71,192,112"/>
+</map>

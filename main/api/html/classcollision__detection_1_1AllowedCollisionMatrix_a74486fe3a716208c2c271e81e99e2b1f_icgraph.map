@@ -1,0 +1,6 @@
+<map id="collision_detection::AllowedCollisionMatrix::getAllowedCollision" name="collision_detection::AllowedCollisionMatrix::getAllowedCollision">
+<area shape="rect" id="node1" title="Get the allowed collision predicate between two elements. Return true if a predicate for entry is inc..." alt="" coords="233,63,413,119"/>
+<area shape="rect" id="node2" href="$namespacecollision__detection__bullet.html#a7378689977f4fe9e4a111a6ed5bd41bb" title="Allowed = true." alt="" coords="23,5,167,47"/>
+<area shape="rect" id="node3" href="$namespacecollision__detection.html#afe5f36ac1401954437df985998eed346" title="Callback function used by the FCLManager used for each pair of collision objects to calculate collisi..." alt="" coords="23,71,167,112"/>
+<area shape="rect" id="node4" href="$classcollision__detection_1_1AllowedCollisionMatrix.html#a93d717b980d83a69e4baf42ad1deaa4f" title="Print the allowed collision matrix." alt="" coords="5,137,185,193"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="moveit::core::JointModel::getLocalVariableNames" name="moveit::core::JointModel::getLocalVariableNames">
+<area shape="rect" id="node1" title="Get the local names of the variable that make up the joint (suffixes that are attached to joint names..." alt="" coords="5,39,189,80"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1JointModel.html#ab4ba9eac1f786fdeb152012f396daab8" title="Compute the distance between two joint states of the same model (represented by the variable values)" alt="" coords="279,5,461,47"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1core_1_1JointModel.html#adaf152251e15131a66e48f5e1de98dbb" title="Provide random values for the joint variables (within default bounds). Enough memory is assumed to be..." alt="" coords="237,71,503,112"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="TEST_F" name="TEST_F">
+<area shape="rect" id="node1" title="test the trapezoid shape of the planning trajectory in Cartesian space" alt="" coords="5,46,75,73"/>
+<area shape="rect" id="node2" href="$namespacetestutils.html#a2fdced2dd08d4d1c6ba87e72c2096776" title="Check that the translational path of a given trajectory has a trapezoid velocity profile." alt="" coords="123,39,305,80"/>
+<area shape="rect" id="node3" href="$namespacetestutils.html#ad85119748f255af37a1ddca4b438962f" title="Check that a given vector of accelerations represents a trapezoid velocity profile." alt="" coords="353,46,573,73"/>
+<area shape="rect" id="node4" href="$namespacepr2__arm__kinematics.html#a24f684af4bcce4a6d0c945aa27d04550" title=" " alt="" coords="637,5,792,47"/>
+<area shape="rect" id="node5" href="$namespacetestutils.html#a0084beb9bba6496da596d6433544786e" title=" " alt="" coords="621,71,808,112"/>
+</map>

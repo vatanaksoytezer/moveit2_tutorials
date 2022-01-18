@@ -1,0 +1,9 @@
+<map id="occupancy_map_monitor::DepthImageOctomapUpdater::forgetShape" name="occupancy_map_monitor::DepthImageOctomapUpdater::forgetShape">
+<area shape="rect" id="node1" title=" " alt="" coords="5,181,227,237"/>
+<area shape="rect" id="node2" href="$classoccupancy__map__monitor_1_1OccupancyMapMonitor.html#a1d3fce5952f5421d3c2422c3b7079927" title="Gets the map frame (this is set either by the constor or a parameter)." alt="" coords="331,5,516,61"/>
+<area shape="rect" id="node3" href="$classmesh__filter_1_1StereoCameraModel_1_1Parameters.html#a2bf6f09d5960e2eeaea8365e65e8a6d7" title="sets the camera parameters of the pinhole camera where the disparities were obtained...." alt="" coords="275,86,572,127"/>
+<area shape="rect" id="node4" href="$classmesh__filter_1_1SensorModel_1_1Parameters.html#a52ca89ebb70ae2395bbd615f3ba52f78" title="sets the image size" alt="" coords="323,151,523,193"/>
+<area shape="rect" id="node5" href="$classoccupancy__map__monitor_1_1OccupancyMapMonitor.html#af75888e806c2674a7b2d8ffb91574d24" title="Sets the map frame." alt="" coords="331,217,516,273"/>
+<area shape="rect" id="node6" href="$classoccupancy__map__monitor_1_1DepthImageOctomapUpdater.html#addb34b294b57aeab62d21b72e2518150" title=" " alt="" coords="313,297,534,353"/>
+<area shape="rect" id="node7" href="$classoccupancy__map__monitor_1_1OccupancyMapUpdater.html#ac8ec2277b7542249ad525eaa3bb8b6d2" title=" " alt="" coords="331,377,516,433"/>
+</map>

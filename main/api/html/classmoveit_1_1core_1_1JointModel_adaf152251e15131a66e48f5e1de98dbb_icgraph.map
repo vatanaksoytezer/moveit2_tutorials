@@ -1,0 +1,4 @@
+<map id="moveit::core::JointModel::getVariableRandomPositionsNearBy" name="moveit::core::JointModel::getVariableRandomPositionsNearBy">
+<area shape="rect" id="node1" title="Provide random values for the joint variables (within default bounds). Enough memory is assumed to be..." alt="" coords="237,5,503,47"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1JointModel.html#a2210b2f0a42da63674e79cbe77ff9eec" title="Get the local names of the variable that make up the joint (suffixes that are attached to joint names..." alt="" coords="5,5,189,47"/>
+</map>

@@ -1,0 +1,11 @@
+<map id="collision_detection::CollisionResult::clear" name="collision_detection::CollisionResult::clear">
+<area shape="rect" id="node1" title="Clear a previously stored result." alt="" coords="593,115,760,156"/>
+<area shape="rect" id="node2" href="$pymoveit__core_8cpp.html#acc94745d086d831b81cd77df07b4f1b9" title=" " alt="" coords="373,5,545,47"/>
+<area shape="rect" id="node4" href="$test__multi__threaded_8cpp.html#afbc4f38aad5c160dc25d8cc48c67e75d" title=" " alt="" coords="378,71,541,98"/>
+<area shape="rect" id="node7" href="$test__bullet__continuous__collision__checking_8cpp.html#ac603f07e4fe91e8b8704f211fb3479b3" title="Continuous self collision checks are not supported yet by the bullet integration." alt="" coords="425,122,494,149"/>
+<area shape="rect" id="node8" href="$test__planning__scene_8cpp.html#ac902326be3b24afae4d75c0b45de02f6" title=" " alt="" coords="425,173,494,199"/>
+<area shape="rect" id="node9" href="$test__collision__common__panda_8h.html#aa8c613f5fc2ae39fcdb585399b91d02b" title="Adding obstacles to the world which are tested against the robot. Simple cases." alt="" coords="400,223,519,250"/>
+<area shape="rect" id="node3" href="$pymoveit__core_8cpp.html#aae5c18014d007aef7676d42ced1ba2b0" title=" " alt="" coords="149,13,299,39"/>
+<area shape="rect" id="node5" href="$test__multi__threaded_8cpp.html#ac4ec2632451a0670af2e66e3e7461f1f" title=" " alt="" coords="123,67,325,94"/>
+<area shape="rect" id="node6" href="$test__multi__threaded_8cpp.html#ad41b8bdce67cc855d0a802424635ab9f" title="Tests the collision detector in multiple threads." alt="" coords="5,93,75,119"/>
+</map>

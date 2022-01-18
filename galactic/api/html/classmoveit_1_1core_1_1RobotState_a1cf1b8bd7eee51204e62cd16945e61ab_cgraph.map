@@ -1,0 +1,5 @@
+<map id="moveit::core::RobotState::setJointVelocities" name="moveit::core::RobotState::setJointVelocities">
+<area shape="rect" id="node1" title=" " alt="" coords="5,39,189,80"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1JointModelGroup.html#aa84a6083c84b6efcba6b84c18e9cec15" title="Get the number of variables that describe this joint group. This includes variables necessary for mim..." alt="" coords="239,5,420,47"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1core_1_1RobotState.html#a564140d144754d149b292e70c4c59b55" title="Given positions for the variables that make up a group, in the order found in the group (including va..." alt="" coords="237,71,421,112"/>
+</map>

@@ -1,0 +1,16 @@
+<map id="SetupScreenWidget" name="SetupScreenWidget">
+<area shape="rect" id="node1" title=" " alt="" coords="132,373,281,399"/>
+<area shape="rect" id="node3" href="$classmoveit__setup__assistant_1_1AuthorInformationWidget.html" title=" " alt="" coords="329,5,524,47"/>
+<area shape="rect" id="node4" href="$classmoveit__setup__assistant_1_1ConfigurationFilesWidget.html" title=" " alt="" coords="330,71,523,112"/>
+<area shape="rect" id="node5" href="$classmoveit__setup__assistant_1_1DefaultCollisionsWidget.html" title="User interface for editing the default collision matrix list in an SRDF." alt="" coords="333,136,520,177"/>
+<area shape="rect" id="node6" href="$classmoveit__setup__assistant_1_1EndEffectorsWidget.html" title=" " alt="" coords="338,201,515,243"/>
+<area shape="rect" id="node7" href="$classmoveit__setup__assistant_1_1PassiveJointsWidget.html" title=" " alt="" coords="338,267,515,308"/>
+<area shape="rect" id="node8" href="$classmoveit__setup__assistant_1_1PerceptionWidget.html" title=" " alt="" coords="338,332,515,373"/>
+<area shape="rect" id="node9" href="$classmoveit__setup__assistant_1_1PlanningGroupsWidget.html" title=" " alt="" coords="337,397,516,439"/>
+<area shape="rect" id="node10" href="$classmoveit__setup__assistant_1_1RobotPosesWidget.html" title=" " alt="" coords="338,463,515,504"/>
+<area shape="rect" id="node11" href="$classmoveit__setup__assistant_1_1ROSControllersWidget.html" title=" " alt="" coords="338,528,515,569"/>
+<area shape="rect" id="node12" href="$classmoveit__setup__assistant_1_1SimulationWidget.html" title=" " alt="" coords="338,593,515,635"/>
+<area shape="rect" id="node13" href="$classmoveit__setup__assistant_1_1StartScreenWidget.html" title="Start screen user interface for MoveIt Configuration Assistant." alt="" coords="338,659,515,700"/>
+<area shape="rect" id="node14" href="$classmoveit__setup__assistant_1_1VirtualJointsWidget.html" title=" " alt="" coords="338,724,515,765"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,373,84,399"/>
+</map>

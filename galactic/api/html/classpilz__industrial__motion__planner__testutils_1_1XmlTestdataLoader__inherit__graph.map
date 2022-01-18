@@ -1,0 +1,4 @@
+<map id="pilz_industrial_motion_planner_testutils::XmlTestdataLoader" name="pilz_industrial_motion_planner_testutils::XmlTestdataLoader">
+<area shape="rect" id="node1" title="Implements a test data loader which uses a xml file to store the test data." alt="" coords="5,109,232,165"/>
+<area shape="rect" id="node2" href="$classpilz__industrial__motion__planner__testutils_1_1TestdataLoader.html" title="Abstract base class describing the interface to access test data like robot poses and robot commands." alt="" coords="18,5,219,61"/>
+</map>

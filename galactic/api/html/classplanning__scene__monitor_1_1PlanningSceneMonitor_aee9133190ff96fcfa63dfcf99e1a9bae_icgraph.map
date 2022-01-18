@@ -1,0 +1,8 @@
+<map id="planning_scene_monitor::PlanningSceneMonitor::updateFrameTransforms" name="planning_scene_monitor::PlanningSceneMonitor::updateFrameTransforms">
+<area shape="rect" id="node1" title="Update the transforms for the frames that are not part of the kinematic model using tf...." alt="" coords="528,125,716,181"/>
+<area shape="rect" id="node2" href="$classplanning__scene__monitor_1_1PlanningSceneMonitor.html#a13605aff88a440b26643d2408167a4f8" title="Callback for a new attached object msg." alt="" coords="267,5,448,61"/>
+<area shape="rect" id="node4" href="$classplanning__scene__monitor_1_1PlanningSceneMonitor.html#a851ad3e05e8d8ca82d3971a534aac3d7" title="Callback for a new collision object msg." alt="" coords="266,85,449,141"/>
+<area shape="rect" id="node5" href="$classplanning__scene__monitor_1_1PlanningSceneMonitor.html#ace449c17fa50a4c238f6c23569e200d0" title="Callback for a new planning scene world." alt="" coords="235,165,480,221"/>
+<area shape="rect" id="node6" href="$classplanning__scene__monitor_1_1PlanningSceneMonitor.html#a840498a919120a495c67b5f81d97c4ae" title="Callback for octomap updates." alt="" coords="262,245,453,301"/>
+<area shape="rect" id="node3" href="$classplanning__scene__monitor_1_1PlanningSceneMonitor.html#a963f74004e92a77e1c8592b4d436e4f3" title="Start the current state monitor." alt="" coords="5,5,187,61"/>
+</map>

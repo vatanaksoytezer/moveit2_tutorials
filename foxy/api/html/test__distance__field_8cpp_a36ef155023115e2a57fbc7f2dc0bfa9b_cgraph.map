@@ -1,0 +1,5 @@
+<map id="check_distance_field" name="check_distance_field">
+<area shape="rect" id="node1" title=" " alt="" coords="5,46,163,73"/>
+<area shape="rect" id="node2" href="$classdistance__field_1_1PropagationDistanceField.html#a75f4b793d5a4b9143b839c872959d413" title="Gets full cell data given an index." alt="" coords="211,5,409,47"/>
+<area shape="rect" id="node3" href="$classdistance__field_1_1PropagationDistanceField.html#a4904f0b6dc38faa912a56abe67fa2910" title="Converts from a world location to a set of integer indices. Should return false if the world location..." alt="" coords="211,71,409,112"/>
+</map>

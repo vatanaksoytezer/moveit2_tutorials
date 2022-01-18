@@ -1,0 +1,7 @@
+<map id="testutils::getExpectedGoalPose" name="testutils::getExpectedGoalPose">
+<area shape="rect" id="node1" title="Determines the goal position from the given request. TRUE if successful, FALSE otherwise." alt="" coords="483,71,708,98"/>
+<area shape="rect" id="node2" href="$namespacetestutils.html#ab92bd7b28971f78ffe134429c7e3d333" title="Check that given trajectory is straight line." alt="" coords="252,35,435,76"/>
+<area shape="rect" id="node5" href="$namespacetestutils.html#a435b47ce199b64cc63117aad099c5cbf" title="check if the goal given in cartesian space is reached Only the last point in the trajectory is veryfi..." alt="" coords="253,101,433,127"/>
+<area shape="rect" id="node3" href="$classTrajectoryGeneratorLINTest.html#a3341aac2919075600b39a93fa18247b1" title=" " alt="" coords="5,5,204,47"/>
+<area shape="rect" id="node4" href="$integrationtest__command__planning_8cpp.html#abbde4091052e784704a49966ba151392" title="Tests if linear motions with start and goal state given as joint configuration are executed correctly..." alt="" coords="70,71,139,98"/>
+</map>

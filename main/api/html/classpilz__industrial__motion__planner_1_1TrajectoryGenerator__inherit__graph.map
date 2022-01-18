@@ -1,0 +1,6 @@
+<map id="pilz_industrial_motion_planner::TrajectoryGenerator" name="pilz_industrial_motion_planner::TrajectoryGenerator">
+<area shape="rect" id="node1" title="Base class of trajectory generators." alt="" coords="5,71,220,112"/>
+<area shape="rect" id="node2" href="$classpilz__industrial__motion__planner_1_1TrajectoryGeneratorCIRC.html" title="This class implements a trajectory generator of arcs in Cartesian space. The arc is specified by a st..." alt="" coords="268,5,515,47"/>
+<area shape="rect" id="node3" href="$classpilz__industrial__motion__planner_1_1TrajectoryGeneratorLIN.html" title="This class implements a linear trajectory generator in Cartesian space. The Cartesian trajetory are b..." alt="" coords="273,71,509,112"/>
+<area shape="rect" id="node4" href="$classpilz__industrial__motion__planner_1_1TrajectoryGeneratorPTP.html" title="This class implements a point&#45;to&#45;point trajectory generator based on VelocityProfileATrap." alt="" coords="272,136,511,177"/>
+</map>

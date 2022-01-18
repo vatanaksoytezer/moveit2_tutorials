@@ -1,0 +1,5 @@
+<map id="moveit::core::RevoluteJointModel" name="moveit::core::RevoluteJointModel">
+<area shape="rect" id="node1" title="A revolute joint." alt="" coords="5,185,204,227"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1JointModel.html" title="A joint from the robot. Models the transform that this joint applies in the kinematic chain...." alt="" coords="14,109,195,136"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1core_1_1LinkModel.html" title="A link from the robot. Contains the constant transform applied to the link and its geometry." alt="" coords="15,5,194,32"/>
+</map>

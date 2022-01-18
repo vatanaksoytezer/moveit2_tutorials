@@ -1,0 +1,5 @@
+<map id="occupancy_map_monitor::OccupancyMapUpdater" name="occupancy_map_monitor::OccupancyMapUpdater">
+<area shape="rect" id="node1" title="Base class for classes which update the occupancy map." alt="" coords="5,39,191,80"/>
+<area shape="rect" id="node2" href="$classoccupancy__map__monitor_1_1DepthImageOctomapUpdater.html" title=" " alt="" coords="239,5,460,47"/>
+<area shape="rect" id="node3" href="$classoccupancy__map__monitor_1_1PointCloudOctomapUpdater.html" title=" " alt="" coords="244,71,455,112"/>
+</map>

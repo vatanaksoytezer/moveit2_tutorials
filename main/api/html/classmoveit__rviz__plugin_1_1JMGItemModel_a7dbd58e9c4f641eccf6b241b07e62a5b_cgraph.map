@@ -1,0 +1,5 @@
+<map id="moveit_rviz_plugin::JMGItemModel::headerData" name="moveit_rviz_plugin::JMGItemModel::headerData">
+<area shape="rect" id="node1" title=" " alt="" coords="5,39,216,80"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1RobotState.html#a5ecd3e71d7283f30be300c83cfd84041" title="Get the robot model this state is constructed for." alt="" coords="273,5,457,47"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1core_1_1JointModelGroup.html#ab0d0e29514820e4ccb2647456ba5cc25" title="Get the index locations in the complete robot state for all the variables in this group." alt="" coords="264,71,467,112"/>
+</map>

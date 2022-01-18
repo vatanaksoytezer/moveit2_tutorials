@@ -1,0 +1,5 @@
+<map id="moveit::core::RobotModel::getVariableRandomPositions" name="moveit::core::RobotModel::getVariableRandomPositions">
+<area shape="rect" id="node1" title="Compute the random values for a RobotState." alt="" coords="244,39,461,80"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1RobotModel.html#adcb6a06041f7e08d238afc9e5785bb87" title="Get a joint by its name. Output error and return nullptr when the joint is missing." alt="" coords="5,5,196,47"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1core_1_1RobotModel.html#aef85568fb4db9d1615c20bdf249fb147" title="Get a link by its name. Output error and return nullptr when the link is missing." alt="" coords="5,71,196,112"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="constraint_samplers::ConstraintSampler::setGroupStateValidityCallback" name="constraint_samplers::ConstraintSampler::setGroupStateValidityCallback">
+<area shape="rect" id="node1" title="Sets the callback used to determine the state validity during sampling. The sampler will attempt to s..." alt="" coords="5,5,233,61"/>
+<area shape="rect" id="node2" href="$classconstraint__samplers_1_1ConstraintSampler.html#a2b0acafa8128725651b1443b59955590" title="Samples given the constraints, populating state. The value DEFAULT_MAX_SAMPLING_ATTEMPTS will be pass..." alt="" coords="281,5,436,61"/>
+</map>

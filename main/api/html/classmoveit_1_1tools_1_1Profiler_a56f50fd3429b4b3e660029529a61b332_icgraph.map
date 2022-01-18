@@ -1,0 +1,5 @@
+<map id="moveit::tools::Profiler::begin" name="moveit::tools::Profiler::begin">
+<area shape="rect" id="node1" title="Begin counting time for a specific chunk of code." alt="" coords="257,39,420,80"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1tools_1_1Profiler.html#a320297934743c2b71ec133969ab5b478" title="Begin counting time for a specific chunk of code." alt="" coords="26,5,189,47"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1tools_1_1Profiler_1_1ScopedBlock.html#ad5f0c41781aeed731f627e5dd0779de8" title="Start counting time for the block named name of the profiler prof." alt="" coords="5,71,209,112"/>
+</map>

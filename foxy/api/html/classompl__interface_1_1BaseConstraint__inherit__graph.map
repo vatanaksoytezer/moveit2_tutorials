@@ -1,0 +1,6 @@
+<map id="ompl_interface::BaseConstraint" name="ompl_interface::BaseConstraint">
+<area shape="rect" id="node1" title="Abstract base class for different types of constraints, implementations of ompl::base::Constraint." alt="" coords="114,80,341,107"/>
+<area shape="rect" id="node3" href="$classompl__interface_1_1BoxConstraint.html" title="Box shaped position constraints." alt="" coords="5,162,225,189"/>
+<area shape="rect" id="node4" href="$classompl__interface_1_1EqualityPositionConstraint.html" title="Equality constraints on a link&#39;s position." alt="" coords="250,155,431,196"/>
+<area shape="rect" id="node2" title=" " alt="" coords="143,5,312,32"/>
+</map>

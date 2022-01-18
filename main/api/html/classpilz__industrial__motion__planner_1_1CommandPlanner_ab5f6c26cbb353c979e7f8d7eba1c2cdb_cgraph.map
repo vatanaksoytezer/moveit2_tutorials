@@ -1,0 +1,6 @@
+<map id="pilz_industrial_motion_planner::CommandPlanner::initialize" name="pilz_industrial_motion_planner::CommandPlanner::initialize">
+<area shape="rect" id="node1" title="Initializes the planner Upon initialization this planner will look for plugins implementing pilz_indu..." alt="" coords="5,85,208,141"/>
+<area shape="rect" id="node2" href="$classpilz__industrial__motion__planner_1_1CommandPlanner.html#abc7d7fd62e53a3156ee3ca2d6c5c527c" title="Register a PlanningContextLoader to be used by the CommandPlanner." alt="" coords="256,5,459,61"/>
+<area shape="rect" id="node3" href="$classpilz__industrial__motion__planner_1_1LimitsContainer.html#a4bad0e0b995a846b3d5e370594b457f6" title="Set cartesian limits." alt="" coords="263,85,452,141"/>
+<area shape="rect" id="node4" href="$classpilz__industrial__motion__planner_1_1LimitsContainer.html#a8bbc4136be28081f1aeb1f8e942fcf75" title="Set joint limits." alt="" coords="263,165,452,221"/>
+</map>

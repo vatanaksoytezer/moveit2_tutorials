@@ -1,0 +1,13 @@
+<map id="moveit::tools::Profiler::instance" name="moveit::tools::Profiler::instance">
+<area shape="rect" id="node1" title="Return an instance of the class." alt="" coords="248,289,411,331"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1tools_1_1Profiler.html#aed4355d6693366ea71295a56f02123fa" title="Maintain the average of a specific value." alt="" coords="21,5,184,47"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1tools_1_1Profiler.html#a320297934743c2b71ec133969ab5b478" title="Begin counting time for a specific chunk of code." alt="" coords="21,71,184,112"/>
+<area shape="rect" id="node4" href="$classmoveit_1_1tools_1_1Profiler.html#a5d6fe4f22b48d41d37e2e88ec67310a8" title="Clear counted time and events." alt="" coords="21,136,184,177"/>
+<area shape="rect" id="node5" href="$classmoveit_1_1tools_1_1Profiler.html#abd91c1b48ca7462be7da533697f96ad3" title="Print the status of the profiled code chunks and events to the console (using msg::Console)" alt="" coords="21,201,184,243"/>
+<area shape="rect" id="node6" href="$classmoveit_1_1tools_1_1Profiler.html#a6be4a68eb3f9ff2d47395a1664e77823" title="Stop counting time for a specific chunk of code." alt="" coords="5,267,200,294"/>
+<area shape="rect" id="node7" href="$classmoveit_1_1tools_1_1Profiler.html#ad63bb2800124d911f78e73768cca620f" title="Count a specific event for a number of times." alt="" coords="21,319,184,360"/>
+<area shape="rect" id="node8" href="$classmoveit_1_1tools_1_1Profiler.html#a6269409710c512542c9855ed2394d743" title="Check if the profiler is counting time or not." alt="" coords="21,384,184,425"/>
+<area shape="rect" id="node9" href="$classmoveit_1_1tools_1_1Profiler.html#a2dac0b4cdedddace7f9dbf8c7cb5284e" title="Start counting time." alt="" coords="21,449,184,491"/>
+<area shape="rect" id="node10" href="$classmoveit_1_1tools_1_1Profiler.html#a28ac8c1c97ffaaf788d031f4c4f3d9b5" title="Print the status of the profiled code chunks and events. Optionally, computation done by different th..." alt="" coords="21,515,184,556"/>
+<area shape="rect" id="node11" href="$classmoveit_1_1tools_1_1Profiler.html#aacb53839072402c490bc223a20b1926a" title="Stop counting time." alt="" coords="21,580,184,621"/>
+</map>

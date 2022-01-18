@@ -1,0 +1,5 @@
+<map id="pilz_industrial_motion_planner::ValidationJointMissingException" name="pilz_industrial_motion_planner::ValidationJointMissingException">
+<area shape="rect" id="node1" title="Thrown the limits for a joint are defined in the urdf but not in the node parameters (loaded from yam..." alt="" coords="5,169,236,225"/>
+<area shape="rect" id="node2" href="$classpilz__industrial__motion__planner_1_1ValidationException.html" title="A base class for all validations exceptions inheriting from std::runtime_exception." alt="" coords="13,80,228,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="65,5,176,32"/>
+</map>

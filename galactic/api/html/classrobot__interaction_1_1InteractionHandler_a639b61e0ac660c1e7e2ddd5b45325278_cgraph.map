@@ -1,0 +1,4 @@
+<map id="robot_interaction::InteractionHandler::clearLastJointMarkerPose" name="robot_interaction::InteractionHandler::clearLastJointMarkerPose">
+<area shape="rect" id="node1" title="Clear the last interactive_marker command pose for the given joint." alt="" coords="5,5,192,61"/>
+<area shape="rect" id="node2" href="$classrobot__interaction_1_1LockedRobotState.html#a54e021aecfa80901c3569f5fd8588aa8" title=" " alt="" coords="240,13,467,54"/>
+</map>

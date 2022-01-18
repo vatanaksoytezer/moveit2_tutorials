@@ -1,0 +1,7 @@
+<map id="TEST" name="TEST">
+<area shape="rect" id="node1" title=" " alt="" coords="5,107,60,134"/>
+<area shape="rect" id="node2" href="$classcollision__detection_1_1World.html#a5e18424a37de7f24092f2e7c7898e620" title="Add a pose and shapes to an object in the map. This function makes repeated calls to addToObjectInter..." alt="" coords="150,5,305,47"/>
+<area shape="rect" id="node3" href="$classcollision__detection_1_1World.html#a1f31fe9d2e4c623cabb9fa8f88749101" title="Check if a particular object exists in the collision world." alt="" coords="155,71,299,112"/>
+<area shape="rect" id="node4" href="$namespacemoveit_1_1core.html#a192b65b3ebc8eb7b6ccd155808c68aa1" title="Check if a message includes any information about a planning scene, or whether it is empty." alt="" coords="145,137,310,163"/>
+<area shape="rect" id="node5" href="$namespacemoveit_1_1core.html#a9d39f2316f4754a5fe4bd8abe00e7660" title="Loads a URDF Model Interface from moveit_resources." alt="" coords="108,187,347,214"/>
+</map>

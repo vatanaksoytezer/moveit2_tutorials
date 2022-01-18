@@ -1,0 +1,9 @@
+<map id="ompl_interface::ModelBasedStateSpace" name="ompl_interface::ModelBasedStateSpace">
+<area shape="rect" id="node1" title=" " alt="" coords="10,496,218,537"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,399,180,426"/>
+<area shape="rect" id="node3" href="$structompl__interface_1_1ModelBasedStateSpaceSpecification.html" title=" " alt="" coords="205,392,413,433"/>
+<area shape="rect" id="node4" href="$classmoveit_1_1core_1_1JointModelGroup.html" title=" " alt="" coords="218,288,399,329"/>
+<area shape="rect" id="node5" href="$classmoveit_1_1core_1_1JointModel.html" title="A joint from the robot. Models the transform that this joint applies in the kinematic chain...." alt="" coords="202,109,383,136"/>
+<area shape="rect" id="node7" href="$classmoveit_1_1core_1_1RobotModel.html" title="Definition of a kinematic model. This class is not thread safe, however multiple instances can be cre..." alt="" coords="413,199,604,225"/>
+<area shape="rect" id="node6" href="$classmoveit_1_1core_1_1LinkModel.html" title="A link from the robot. Contains the constant transform applied to the link and its geometry." alt="" coords="311,5,490,32"/>
+</map>

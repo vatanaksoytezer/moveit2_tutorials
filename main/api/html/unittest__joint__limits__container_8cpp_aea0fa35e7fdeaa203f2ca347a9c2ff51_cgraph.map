@@ -1,0 +1,5 @@
+<map id="TEST_F" name="TEST_F">
+<area shape="rect" id="node1" title="empty position limits for first joint, second one should be returned" alt="" coords="5,60,75,87"/>
+<area shape="rect" id="node2" href="$classpilz__industrial__motion__planner_1_1JointLimitsContainer.html#a40383e43f2853d45c9456333cda2a537" title="Add a limit." alt="" coords="123,5,341,61"/>
+<area shape="rect" id="node3" href="$classpilz__industrial__motion__planner_1_1JointLimitsContainer.html#afb4ac8f881951d0f3be65e23c428a2a6" title="Returns joint limit fusion of all(position, velocity, acceleration, deceleration) limits for all join..." alt="" coords="123,85,341,141"/>
+</map>

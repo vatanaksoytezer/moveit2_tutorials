@@ -1,0 +1,8 @@
+<map id="moveit::core::JointModelGroup::interpolate" name="moveit::core::JointModelGroup::interpolate">
+<area shape="rect" id="node1" title=" " alt="" coords="5,93,187,135"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1JointModelGroup.html#a0f60ea765fd917f911480a7615f8ff32" title="Get the unique set of end effector tips included in a particular joint model group as defined by the ..." alt="" coords="235,93,425,135"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1core_1_1JointModelGroup.html#a71f71bbb186917dd5fcf41bf88b2e5fb" title="Get a joint by its name. Throw an exception if the joint is not part of this group." alt="" coords="473,5,655,47"/>
+<area shape="rect" id="node4" href="$classmoveit_1_1core_1_1JointModelGroup.html#a2f165c9374e28ac4052490819c790f45" title="Get the name of the joint group." alt="" coords="703,127,884,168"/>
+<area shape="rect" id="node5" href="$classmoveit_1_1core_1_1JointModel.html#a8e6b8bcc807187617b1b2e5242a4af69" title="Get the number of variables that describe this joint." alt="" coords="473,123,655,164"/>
+<area shape="rect" id="node6" href="$classmoveit_1_1core_1_1JointModelGroup.html#a7af014f4116c40ea1884cd7ae82f8da6" title="Check if a joint is part of this group." alt="" coords="473,188,655,229"/>
+</map>

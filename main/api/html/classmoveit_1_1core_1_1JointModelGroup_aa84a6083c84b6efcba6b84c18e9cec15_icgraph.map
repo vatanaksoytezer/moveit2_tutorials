@@ -1,0 +1,10 @@
+<map id="moveit::core::JointModelGroup::getVariableCount" name="moveit::core::JointModelGroup::getVariableCount">
+<area shape="rect" id="node1" title="Get the number of variables that describe this joint group. This includes variables necessary for mim..." alt="" coords="309,217,491,258"/>
+<area shape="rect" id="node2" href="$classompl__interface_1_1PoseModelStateSpaceFactory.html#af6fbaf0a24abefc69ca0d75e94193b4d" title="Decide whether the type of state space constructed by this factory could represent problems specified..." alt="" coords="14,5,253,61"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1core_1_1RobotState.html#a8dd891c19219b03bfa36e4e61113adbe" title="For a given group, copy the position values of the variables that make up the group into another loca..." alt="" coords="39,86,227,127"/>
+<area shape="rect" id="node4" href="$classmoveit_1_1core_1_1RobotState.html#a0f0d3723db378c41e961aa0896a1874f" title="For a given group, copy the velocity values of the variables that make up the group into another loca..." alt="" coords="37,151,229,193"/>
+<area shape="rect" id="node5" href="$classompl__interface_1_1ModelBasedStateSpace.html#ab8f006a82a6b722625b1f4f393f4a8bc" title=" " alt="" coords="5,217,261,258"/>
+<area shape="rect" id="node6" href="$classmoveit_1_1core_1_1RobotState.html#ab4fa76fc793c057a393723f9fd803005" title="Given positions for the variables that make up a group, in the order found in the group (including va..." alt="" coords="41,282,225,323"/>
+<area shape="rect" id="node7" href="$classmoveit_1_1core_1_1RobotState.html#a1cf1b8bd7eee51204e62cd16945e61ab" title=" " alt="" coords="41,347,225,389"/>
+<area shape="rect" id="node8" href="$robot__state__test_8cpp.html#adb3b487fd2559db6519d52dec17ab77d" title=" " alt="" coords="99,413,168,440"/>
+</map>

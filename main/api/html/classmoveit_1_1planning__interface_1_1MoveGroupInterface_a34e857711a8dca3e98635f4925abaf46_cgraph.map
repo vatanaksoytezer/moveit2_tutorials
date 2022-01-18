@@ -1,0 +1,5 @@
+<map id="moveit::planning_interface::MoveGroupInterface::setStartStateToCurrentState" name="moveit::planning_interface::MoveGroupInterface::setStartStateToCurrentState">
+<area shape="rect" id="node1" title="Set the starting state for planning to be that reported by the robot&#39;s joint state publication." alt="" coords="5,43,261,99"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl.html#a85c033ed09c50bc557955b3b190548fc" title=" " alt="" coords="309,5,556,61"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1core_1_1JointModelGroup.html#a2f165c9374e28ac4052490819c790f45" title="Get the name of the joint group." alt="" coords="342,86,523,127"/>
+</map>

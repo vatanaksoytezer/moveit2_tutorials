@@ -1,0 +1,5 @@
+<map id="moveit::planning_interface::MoveGroupInterface::setApproximateJointValueTarget" name="moveit::planning_interface::MoveGroupInterface::setApproximateJointValueTarget">
+<area shape="rect" id="node1" title="Set the joint state goal for a particular joint by computing IK." alt="" coords="5,5,280,61"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#acea4f3acee5b32dda59786ce62c96aef" title="Get the reference frame set by setPoseReferenceFrame(). By default this is the reference frame of the..." alt="" coords="328,13,659,54"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a10a9d94597ba094bd59cb1ca9f69e75e" title="Get the current end&#45;effector link. This returns the value set by setEndEffectorLink() (or indirectly ..." alt="" coords="707,13,1000,54"/>
+</map>

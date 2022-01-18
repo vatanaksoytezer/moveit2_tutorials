@@ -1,0 +1,4 @@
+<map id="srv_kinematics_plugin::SrvKinematicsPlugin::getPositionIK" name="srv_kinematics_plugin::SrvKinematicsPlugin::getPositionIK">
+<area shape="rect" id="node1" title="Given a desired pose of the end&#45;effector, compute the joint angles to reach it." alt="" coords="5,5,173,61"/>
+<area shape="rect" id="node2" href="$classsrv__kinematics__plugin_1_1SrvKinematicsPlugin.html#a2cdc680dfe777326d23f906a20165363" title="Given a desired pose of the end&#45;effector, search for the joint angles required to reach it...." alt="" coords="221,5,389,61"/>
+</map>

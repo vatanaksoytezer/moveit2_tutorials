@@ -1,0 +1,5 @@
+<map id="moveit::core::RobotState::hasVelocities" name="moveit::core::RobotState::hasVelocities">
+<area shape="rect" id="node1" title="By default, if velocities are never set or initialized, the state remembers that there are no velocit..." alt="" coords="241,50,425,91"/>
+<area shape="rect" id="node2" href="$classplanning__scene__monitor_1_1CurrentStateMonitor.html#aec82f6b6a4cfd395d89b35fa19fdf2da" title="Get the current state." alt="" coords="9,5,190,61"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1hybrid__planning_1_1ForwardTrajectory.html#a49dba1b9183969a92b7a8c9c23cb2fed" title=" " alt="" coords="5,86,193,127"/>
+</map>

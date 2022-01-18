@@ -1,0 +1,5 @@
+<map id="setToHome" name="setToHome">
+<area shape="rect" id="node1" title="Brings the panda robot in user defined home position." alt="" coords="244,42,339,69"/>
+<area shape="rect" id="node2" href="$classCollisionDetectionEnvTest.html#a2d712c3d01e16ea76d3c842c1c6454dc" title=" " alt="" coords="5,5,196,47"/>
+<area shape="rect" id="node3" href="$test__fcl__env_8cpp.html#addac74ae59149027a02f6cf3da72e608" title="Continuous self collision checks of the robot." alt="" coords="66,71,135,98"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="moveit::core::RobotState::setVariableAcceleration" name="moveit::core::RobotState::setVariableAcceleration">
+<area shape="rect" id="node1" title="Set the acceleration of a variable. If an unknown variable name is specified, an exception is thrown." alt="" coords="304,46,488,87"/>
+<area shape="rect" id="node2" href="$classtrajectory__processing_1_1TimeOptimalTrajectoryGeneration.html#a5ad18a23d5b6f0beedaa4b6e20f8b01b" title=" " alt="" coords="5,5,256,61"/>
+<area shape="rect" id="node3" href="$robot__state__test_8cpp.html#a0a60a2f41ceb978a0c3e889302e33df8" title=" " alt="" coords="103,85,158,112"/>
+</map>

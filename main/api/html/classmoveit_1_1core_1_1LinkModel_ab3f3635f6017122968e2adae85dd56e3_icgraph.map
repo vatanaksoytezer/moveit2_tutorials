@@ -1,0 +1,5 @@
+<map id="moveit::core::LinkModel::getParentLinkModel" name="moveit::core::LinkModel::getParentLinkModel">
+<area shape="rect" id="node1" title="Get the link model whose child this link is (through some joint). There may not always be a parent li..." alt="" coords="271,39,449,80"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1RobotState.html#af8cd62bf201a3d2a7ae739d4f117a3a4" title="For a given group, copy the acceleration values of the variables that make up the group into another ..." alt="" coords="5,5,223,47"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1core_1_1RobotModel.html#ad195a514ad301e7e66ea4411b5fd39e3" title="Check if a link exists. Return true if it does." alt="" coords="19,71,209,112"/>
+</map>

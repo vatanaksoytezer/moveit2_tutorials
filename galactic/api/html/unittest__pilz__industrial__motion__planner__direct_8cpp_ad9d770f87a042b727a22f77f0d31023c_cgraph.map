@@ -1,0 +1,5 @@
+<map id="TEST" name="TEST">
+<area shape="rect" id="node1" title="Check that getPlanningContext() fails if the underlying ContextLoader fails to load the context." alt="" coords="5,60,60,87"/>
+<area shape="rect" id="node2" href="$classpilz__industrial__motion__planner_1_1CommandPlanner.html#a906cc608980d96b6e661aae974b3c738" title="Returns a PlanningContext that can be used to solve(calculate) the trajectory that corresponds to com..." alt="" coords="108,5,311,61"/>
+<area shape="rect" id="node3" href="$classpilz__industrial__motion__planner_1_1CommandPlanner.html#abc7d7fd62e53a3156ee3ca2d6c5c527c" title="Register a PlanningContextLoader to be used by the CommandPlanner." alt="" coords="108,85,311,141"/>
+</map>

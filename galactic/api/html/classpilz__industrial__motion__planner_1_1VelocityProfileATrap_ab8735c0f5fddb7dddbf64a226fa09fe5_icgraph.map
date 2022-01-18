@@ -1,0 +1,4 @@
+<map id="pilz_industrial_motion_planner::VelocityProfileATrap::setProfileAllDurations" name="pilz_industrial_motion_planner::VelocityProfileATrap::setProfileAllDurations">
+<area shape="rect" id="node1" title="Profile with given acceleration/constant/deceleration durations. Each duration must obey the maximal ..." alt="" coords="108,5,323,61"/>
+<area shape="rect" id="node2" href="$unittest__velocity__profile__atrap_8cpp.html#a526fc9eb842c4e562444d99eb9fa10ee" title="Define Profile with setProfileAllDurations with to low duration." alt="" coords="5,20,60,47"/>
+</map>

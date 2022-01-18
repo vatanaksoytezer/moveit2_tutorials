@@ -1,0 +1,4 @@
+<map id="collision_detection::CollisionEnvDistanceField::checkRobotCollision" name="collision_detection::CollisionEnvDistanceField::checkRobotCollision">
+<area shape="rect" id="node1" title="Check whether the robot model is in collision with the world. Any collisions between a robot link and..." alt="" coords="252,5,451,61"/>
+<area shape="rect" id="node2" href="$classcollision__detection_1_1CollisionEnvDistanceField.html#a93f481174e8da4a99cbe6b4770a67d08" title="Check whether the robot model is in collision with itself or the world at a particular state...." alt="" coords="5,5,204,61"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="pilz_industrial_motion_planner::ValidationBoundsViolationException" name="pilz_industrial_motion_planner::ValidationBoundsViolationException">
+<area shape="rect" id="node1" title="Thrown when the limits from the param server are weaker than the ones obtained from the urdf." alt="" coords="5,169,263,225"/>
+<area shape="rect" id="node2" href="$classpilz__industrial__motion__planner_1_1ValidationException.html" title="A base class for all validations exceptions inheriting from std::runtime_exception." alt="" coords="27,80,241,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="79,5,189,32"/>
+</map>

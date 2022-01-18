@@ -1,0 +1,6 @@
+<map id="moveit::core::RobotState::getGlobalLinkTransform" name="moveit::core::RobotState::getGlobalLinkTransform">
+<area shape="rect" id="node1" title="Get the link transform w.r.t. the root link (model frame) of the RobotModel. This is typically the ro..." alt="" coords="5,39,191,80"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1RobotState.html#a867985359844193ea81c2d23ac2c49b4" title="Returns true if anything in this state is dirty." alt="" coords="239,5,423,47"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1core_1_1JointModel.html#a32646942dc054f77e3eff984affb7ced" title="Get the index of this joint within the robot model." alt="" coords="240,71,421,112"/>
+<area shape="rect" id="node4" href="$classmoveit_1_1core_1_1JointModel.html#ac997d44f51ca03d13f0d54cf699e0662" title="Force the specified values to be inside bounds and normalized. Quaternions are normalized,..." alt="" coords="471,71,652,112"/>
+</map>

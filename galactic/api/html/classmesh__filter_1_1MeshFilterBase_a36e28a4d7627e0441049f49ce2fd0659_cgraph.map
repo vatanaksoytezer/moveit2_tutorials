@@ -1,0 +1,5 @@
+<map id="mesh_filter::MeshFilterBase::removeMesh" name="mesh_filter::MeshFilterBase::removeMesh">
+<area shape="rect" id="node1" title="removes a mesh given by its handle" alt="" coords="5,39,208,80"/>
+<area shape="rect" id="node2" href="$classmesh__filter_1_1FilterJob.html#aab9861e3e90d02300f106f8c76224c04" title=" " alt="" coords="279,5,435,47"/>
+<area shape="rect" id="node3" href="$classmesh__filter_1_1MeshFilterBase.html#a1a60b9e3531ddca293d5b777e7eadd47" title="used within a Job to allow the main thread removing meshes" alt="" coords="256,71,459,112"/>
+</map>

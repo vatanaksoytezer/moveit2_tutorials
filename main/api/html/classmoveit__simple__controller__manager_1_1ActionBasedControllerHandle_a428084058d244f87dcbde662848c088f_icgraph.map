@@ -1,0 +1,4 @@
+<map id="moveit_simple_controller_manager::ActionBasedControllerHandle::controllerDoneCallback" name="moveit_simple_controller_manager::ActionBasedControllerHandle::controllerDoneCallback">
+<area shape="rect" id="node1" title="Callback function to call when the result is received from the controller action server." alt="" coords="327,13,567,69"/>
+<area shape="rect" id="node2" href="$classmoveit__simple__controller__manager_1_1ActionBasedControllerHandle.html#a3680db7d456d98985f5dc779d52c769b" title="Cancels trajectory execution by triggering the controller action server&#39;s cancellation callback." alt="" coords="5,5,279,76"/>
+</map>

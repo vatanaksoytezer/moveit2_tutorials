@@ -1,0 +1,4 @@
+<map id="occupancy_map_monitor::OccupancyMapMonitor::setUpdateCallback" name="occupancy_map_monitor::OccupancyMapMonitor::setUpdateCallback">
+<area shape="rect" id="node1" title="Set the callback to trigger when updates to the maintained octomap are received." alt="" coords="108,5,293,61"/>
+<area shape="rect" id="node2" href="$occupancy__map__server_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,20,60,47"/>
+</map>

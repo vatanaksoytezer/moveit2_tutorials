@@ -1,0 +1,6 @@
+<map id="moveit::planning_interface::MoveGroupInterface::setEndEffectorLink" name="moveit::planning_interface::MoveGroupInterface::setEndEffectorLink">
+<area shape="rect" id="node1" title="Specify the parent link of the end&#45;effector. This end_effector_link will be used in calls to pose tar..." alt="" coords="5,50,297,91"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl.html#a28e03ac14fb8735120c953e75d03e435" title=" " alt="" coords="387,5,634,61"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#acea4f3acee5b32dda59786ce62c96aef" title="Get the reference frame set by setPoseReferenceFrame(). By default this is the reference frame of the..." alt="" coords="345,86,676,127"/>
+<area shape="rect" id="node4" href="$classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a10a9d94597ba094bd59cb1ca9f69e75e" title="Get the current end&#45;effector link. This returns the value set by setEndEffectorLink() (or indirectly ..." alt="" coords="724,86,1017,127"/>
+</map>
