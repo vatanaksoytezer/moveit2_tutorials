@@ -47,7 +47,11 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorials.html">Tutorials</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="how_to_guides.html">How-To Guides</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">How To Generate API Doxygen Reference Locally</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">How To Generate API Doxygen Reference Locally</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#steps">Steps</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../concepts/concepts.html">Concepts</a></li>
@@ -98,19 +102,36 @@
   <div class="section" id="how-to-generate-api-doxygen-reference-locally">
 <h1>How To Generate API Doxygen Reference Locally<a class="headerlink" href="#how-to-generate-api-doxygen-reference-locally" title="Permalink to this headline"></a></h1>
 <p>Run doxygen in the root of the moveit2 repository.</p>
-<p>This explains what how to generate doxygen reference locally:</p>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>Install <code class="docutils literal notranslate"><span class="pre">doxygen</span></code>:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get install doxygen
+</pre></div>
+</div>
+</div>
+<div class="section" id="steps">
+<h2>Steps<a class="headerlink" href="#steps" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>Navigate to the moveit2 repository:</p></li>
+</ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~/ws_moveit/src/moveit2
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>doxygen
+<ul class="simple">
+<li><p>Run reference generation command with desired output directory path:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">DOXYGEN_OUTPUT_DIRECTORY</span><span class="o">=</span>~/docs doxygen
 </pre></div>
 </div>
-<p>It will generate a /doc/* directory containing the documentation.</p>
-<p>The documentation entrypoint in a browser is index.html which you can access with:
-.. code-block:: bash</p>
-<blockquote>
-<div><p>firefox ~/ws_moveit/src/moveit2/doc/index.html</p>
-</div></blockquote>
+<ul class="simple">
+<li><p>The documentation entrypoint in a browser is index.html which you can access with:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>firefox ~/docs/index.html
+</pre></div>
+</div>
+</div>
 </div>
 
 
