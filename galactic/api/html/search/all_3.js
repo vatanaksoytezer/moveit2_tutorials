@@ -745,6 +745,6 @@ var searchData=
   ['cycledetector_1205',['CycleDetector',['../structmoveit__setup__assistant_1_1CycleDetector.html',1,'moveit_setup_assistant::CycleDetector'],['../structmoveit__setup__assistant_1_1CycleDetector.html#afbef94590dafe623beefaf78ca66a1a5',1,'moveit_setup_assistant::CycleDetector::CycleDetector()']]],
   ['cylinderd_1206',['Cylinderd',['../namespacefcl.html#aa2a1f90e86a1280dc66e50c9502e5ed0',1,'fcl']]],
   ['distancerequesttypes_1207',['DistanceRequestTypes',['../namespacecollision__detection_1_1DistanceRequestTypes.html',1,'collision_detection']]],
-  ['contributing_20to_20moveit_1208',['Contributing to MoveIt',['../md_moveit2_CONTRIBUTING.html',1,'']]],
+  ['contributing_20to_20moveit_1208',['Contributing to MoveIt',['../md_CONTRIBUTING.html',1,'']]],
   ['creating_20python_20bindings_20for_20c_2b_2b_20classes_1209',['Creating Python bindings for C++ classes',['../py_bindings_roscpp.html',1,'']]]
 ];

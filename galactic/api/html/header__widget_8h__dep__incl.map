@@ -1,17 +1,17 @@
-<map id="moveit2/moveit_setup_assistant/src/widgets/header_widget.h" name="moveit2/moveit_setup_assistant/src/widgets/header_widget.h">
-<area shape="rect" id="node1" title=" " alt="" coords="1491,5,1661,61"/>
-<area shape="rect" id="node2" href="$author__information__widget_8cpp.html" title=" " alt="" coords="5,109,235,165"/>
-<area shape="rect" id="node3" href="$configuration__files__widget_8cpp.html" title=" " alt="" coords="259,109,482,165"/>
-<area shape="rect" id="node4" href="$default__collisions__widget_8cpp.html" title=" " alt="" coords="507,109,725,165"/>
-<area shape="rect" id="node5" href="$end__effectors__widget_8cpp.html" title=" " alt="" coords="749,109,941,165"/>
-<area shape="rect" id="node6" href="$header__widget_8cpp.html" title=" " alt="" coords="966,109,1135,165"/>
-<area shape="rect" id="node7" href="$passive__joints__widget_8cpp.html" title=" " alt="" coords="1160,109,1357,165"/>
-<area shape="rect" id="node8" href="$perception__widget_8cpp.html" title=" " alt="" coords="1381,109,1555,165"/>
-<area shape="rect" id="node9" href="$planning__groups__widget_8cpp.html" title=" " alt="" coords="1579,109,1789,165"/>
-<area shape="rect" id="node10" href="$robot__poses__widget_8cpp.html" title=" " alt="" coords="1814,109,1997,165"/>
-<area shape="rect" id="node11" href="$ros__controllers__widget_8cpp.html" title=" " alt="" coords="2021,109,2221,165"/>
-<area shape="rect" id="node12" href="$setup__assistant__widget_8cpp.html" title=" " alt="" coords="2246,109,2453,165"/>
-<area shape="rect" id="node13" href="$simulation__widget_8cpp.html" title=" " alt="" coords="2477,109,2651,165"/>
-<area shape="rect" id="node14" href="$start__screen__widget_8cpp.html" title=" " alt="" coords="2675,109,2859,165"/>
-<area shape="rect" id="node15" href="$virtual__joints__widget_8cpp.html" title=" " alt="" coords="2883,109,3072,165"/>
+<map id="moveit_setup_assistant/src/widgets/header_widget.h" name="moveit_setup_assistant/src/widgets/header_widget.h">
+<area shape="rect" id="node1" title=" " alt="" coords="1486,5,1698,47"/>
+<area shape="rect" id="node2" href="$author__information__widget_8cpp.html" title=" " alt="" coords="5,95,235,151"/>
+<area shape="rect" id="node3" href="$configuration__files__widget_8cpp.html" title=" " alt="" coords="259,95,448,151"/>
+<area shape="rect" id="node4" href="$default__collisions__widget_8cpp.html" title=" " alt="" coords="472,95,691,151"/>
+<area shape="rect" id="node5" href="$end__effectors__widget_8cpp.html" title=" " alt="" coords="715,95,907,151"/>
+<area shape="rect" id="node6" href="$header__widget_8cpp.html" title=" " alt="" coords="931,102,1157,143"/>
+<area shape="rect" id="node7" href="$passive__joints__widget_8cpp.html" title=" " alt="" coords="1181,95,1379,151"/>
+<area shape="rect" id="node8" href="$perception__widget_8cpp.html" title=" " alt="" coords="1403,95,1581,151"/>
+<area shape="rect" id="node9" href="$planning__groups__widget_8cpp.html" title=" " alt="" coords="1605,95,1782,151"/>
+<area shape="rect" id="node10" href="$robot__poses__widget_8cpp.html" title=" " alt="" coords="1806,95,1989,151"/>
+<area shape="rect" id="node11" href="$ros__controllers__widget_8cpp.html" title=" " alt="" coords="2013,95,2213,151"/>
+<area shape="rect" id="node12" href="$setup__assistant__widget_8cpp.html" title=" " alt="" coords="2238,95,2445,151"/>
+<area shape="rect" id="node13" href="$simulation__widget_8cpp.html" title=" " alt="" coords="2469,95,2646,151"/>
+<area shape="rect" id="node14" href="$start__screen__widget_8cpp.html" title=" " alt="" coords="2671,95,2855,151"/>
+<area shape="rect" id="node15" href="$virtual__joints__widget_8cpp.html" title=" " alt="" coords="2879,95,3068,151"/>
 </map>
