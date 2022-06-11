@@ -8,7 +8,7 @@ pull_request_rules:
         branches:
           - humble
         labels:
-          - {{ destination_branch }}
+          - humble
         title:
           - "Backport of {{ title }} (#{{ number }}) to {{ destination_branch }}"
 
@@ -21,7 +21,7 @@ pull_request_rules:
         branches:
           - galactic
         labels:
-          - {{ destination_branch }}
+          - galactic
         title:
           - "Backport of {{ title }} (#{{ number }}) to {{ destination_branch }}"
 
@@ -34,7 +34,7 @@ pull_request_rules:
         branches:
           - foxy
         labels:
-          - {{ destination_branch }}
+          - foxy
         title:
           - "Backport of {{ title }} (#{{ number }}) to {{ destination_branch }}"
 
