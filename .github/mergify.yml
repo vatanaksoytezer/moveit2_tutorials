@@ -10,7 +10,7 @@ pull_request_rules:
         labels:
           - humble
         title:
-          - "Backport of {{ title }} (#{{ number }}) to {{ destination_branch }}"
+          - Backport of {{ title }} ('#'{{ number }}) to {{ destination_branch }}
 
   - name: backport to galactic at reviewers discretion
     conditions:
@@ -23,7 +23,7 @@ pull_request_rules:
         labels:
           - galactic
         title:
-          - "Backport of {{ title }} (#{{ number }}) to {{ destination_branch }}"
+          - Backport of {{ title }} ('#'{{ number }}) to {{ destination_branch }}
 
   - name: backport to foxy at reviewers discretion
     conditions:
@@ -36,7 +36,7 @@ pull_request_rules:
         labels:
           - foxy
         title:
-          - "Backport of {{ title }} (#{{ number }}) to {{ destination_branch }}"
+          - Backport of {{ title }} ('#'{{ number }}) to {{ destination_branch }}
 
   - name: ask to resolve conflict
     conditions:
