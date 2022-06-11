@@ -1,0 +1,5 @@
+<map id="collision_detection::PosedDistanceField" name="collision_detection::PosedDistanceField">
+<area shape="rect" id="node1" title=" " alt="" coords="26,184,183,225"/>
+<area shape="rect" id="node2" href="$classdistance__field_1_1PropagationDistanceField.html" title="A DistanceField implementation that uses a vector propagation method. Distances propagate outward fro..." alt="" coords="5,95,204,136"/>
+<area shape="rect" id="node3" href="$classdistance__field_1_1DistanceField.html" title="DistanceField is an abstract base class for computing distances from sets of 3D obstacle points...." alt="" coords="16,5,193,47"/>
+</map>

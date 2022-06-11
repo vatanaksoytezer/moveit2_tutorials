@@ -10,7 +10,7 @@
       <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/override.css" type="text/css" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
-    <link rel="canonical" href="https://moveit.picknik.ai/rolling//rolling/doc/examples/move_group_interface/move_group_interface_tutorial.html" />
+    <link rel="canonical" href="https://moveit.picknik.ai/humble//rolling/doc/examples/move_group_interface/move_group_interface_tutorial.html" />
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -46,9 +46,6 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../tutorials/tutorials.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../how_to_guides/how_to_guides.html">How-To Guides</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../concepts/concepts.html">Concepts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../how_to_contribute/how_to_contribute.html">Contributing</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../examples.html">Examples</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../examples.html#movegroup-ros-wrappers-in-c">MoveGroup - ROS Wrappers in C++</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Move Group C++ Interface</a><ul>
@@ -86,7 +83,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../examples.html#miscellaneous">Miscellaneous</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../concepts/concepts.html">Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../how_to_guides/how_to_guides.html">How-To Guides</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/api.html">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../how_to_contribute/how_to_contribute.html">Contributing</a></li>
 </ul>
 
         </div>
@@ -122,7 +122,7 @@
       
       You're reading the documentation for the non-stable development version of MoveIt 2.
       For the stable, released version, please have a look at
-      <a href="../../../../galactic/doc/examples/move_group_interface/move_group_interface_tutorial.html">Galactic</a>.
+      <a href="../../../../humble/doc/examples/move_group_interface/move_group_interface_tutorial.html">Humble</a>.
       
   </p>
 </div>
@@ -263,7 +263,7 @@ Note that we are just planning, not asking move_group
 to actually move the robot.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">moveit</span><span class="o">::</span><span class="n">planning_interface</span><span class="o">::</span><span class="n">MoveGroupInterface</span><span class="o">::</span><span class="n">Plan</span><span class="w"> </span><span class="n">my_plan</span><span class="p">;</span><span class="w"></span>
 
-<span class="kt">bool</span><span class="w"> </span><span class="n">success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">move_group</span><span class="p">.</span><span class="n">plan</span><span class="p">(</span><span class="n">my_plan</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">moveit</span><span class="o">::</span><span class="n">planning_interface</span><span class="o">::</span><span class="n">MoveItErrorCode</span><span class="o">::</span><span class="n">SUCCESS</span><span class="p">);</span><span class="w"></span>
+<span class="kt">bool</span><span class="w"> </span><span class="n">success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">move_group</span><span class="p">.</span><span class="n">plan</span><span class="p">(</span><span class="n">my_plan</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">moveit</span><span class="o">::</span><span class="n">core</span><span class="o">::</span><span class="n">MoveItErrorCode</span><span class="o">::</span><span class="n">SUCCESS</span><span class="p">);</span><span class="w"></span>
 
 <span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Visualizing plan 1 (pose goal) %s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">success</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;FAILED&quot;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
@@ -321,7 +321,7 @@ or set explicit factors in your code if you need your robot to move faster.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">move_group</span><span class="p">.</span><span class="n">setMaxVelocityScalingFactor</span><span class="p">(</span><span class="mf">0.05</span><span class="p">);</span><span class="w"></span>
 <span class="n">move_group</span><span class="p">.</span><span class="n">setMaxAccelerationScalingFactor</span><span class="p">(</span><span class="mf">0.05</span><span class="p">);</span><span class="w"></span>
 
-<span class="n">success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">move_group</span><span class="p">.</span><span class="n">plan</span><span class="p">(</span><span class="n">my_plan</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">moveit</span><span class="o">::</span><span class="n">planning_interface</span><span class="o">::</span><span class="n">MoveItErrorCode</span><span class="o">::</span><span class="n">SUCCESS</span><span class="p">);</span><span class="w"></span>
+<span class="n">success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">move_group</span><span class="p">.</span><span class="n">plan</span><span class="p">(</span><span class="n">my_plan</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">moveit</span><span class="o">::</span><span class="n">core</span><span class="o">::</span><span class="n">MoveItErrorCode</span><span class="o">::</span><span class="n">SUCCESS</span><span class="p">);</span><span class="w"></span>
 <span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Visualizing plan 2 (joint space goal) %s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">success</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;FAILED&quot;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
@@ -391,7 +391,7 @@ start state that we just created.</p>
 Let’s increase the planning time from the default 5 seconds to be sure the planner has enough time to succeed.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">move_group</span><span class="p">.</span><span class="n">setPlanningTime</span><span class="p">(</span><span class="mf">10.0</span><span class="p">);</span><span class="w"></span>
 
-<span class="n">success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">move_group</span><span class="p">.</span><span class="n">plan</span><span class="p">(</span><span class="n">my_plan</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">moveit</span><span class="o">::</span><span class="n">planning_interface</span><span class="o">::</span><span class="n">MoveItErrorCode</span><span class="o">::</span><span class="n">SUCCESS</span><span class="p">);</span><span class="w"></span>
+<span class="n">success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">move_group</span><span class="p">.</span><span class="n">plan</span><span class="p">(</span><span class="n">my_plan</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">moveit</span><span class="o">::</span><span class="n">core</span><span class="o">::</span><span class="n">MoveItErrorCode</span><span class="o">::</span><span class="n">SUCCESS</span><span class="p">);</span><span class="w"></span>
 <span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Visualizing plan 3 (constraints) %s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">success</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;FAILED&quot;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
@@ -476,7 +476,7 @@ Pull requests are welcome.</p>
 <span class="n">another_pose</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.59</span><span class="p">;</span><span class="w"></span>
 <span class="n">move_group</span><span class="p">.</span><span class="n">setPoseTarget</span><span class="p">(</span><span class="n">another_pose</span><span class="p">);</span><span class="w"></span>
 
-<span class="n">success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">move_group</span><span class="p">.</span><span class="n">plan</span><span class="p">(</span><span class="n">my_plan</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">moveit</span><span class="o">::</span><span class="n">planning_interface</span><span class="o">::</span><span class="n">MoveItErrorCode</span><span class="o">::</span><span class="n">SUCCESS</span><span class="p">);</span><span class="w"></span>
+<span class="n">success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">move_group</span><span class="p">.</span><span class="n">plan</span><span class="p">(</span><span class="n">my_plan</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">moveit</span><span class="o">::</span><span class="n">core</span><span class="o">::</span><span class="n">MoveItErrorCode</span><span class="o">::</span><span class="n">SUCCESS</span><span class="p">);</span><span class="w"></span>
 <span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Visualizing plan 5 (with no obstacles) %s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">success</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;FAILED&quot;</span><span class="p">);</span><span class="w"></span>
 
 <span class="n">visual_tools</span><span class="p">.</span><span class="n">deleteAllMarkers</span><span class="p">();</span><span class="w"></span>
@@ -535,7 +535,7 @@ Pull requests are welcome.</p>
 </pre></div>
 </div>
 <p>Now, when we plan a trajectory it will avoid the obstacle.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">move_group</span><span class="p">.</span><span class="n">plan</span><span class="p">(</span><span class="n">my_plan</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">moveit</span><span class="o">::</span><span class="n">planning_interface</span><span class="o">::</span><span class="n">MoveItErrorCode</span><span class="o">::</span><span class="n">SUCCESS</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">move_group</span><span class="p">.</span><span class="n">plan</span><span class="p">(</span><span class="n">my_plan</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">moveit</span><span class="o">::</span><span class="n">core</span><span class="o">::</span><span class="n">MoveItErrorCode</span><span class="o">::</span><span class="n">SUCCESS</span><span class="p">);</span><span class="w"></span>
 <span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Visualizing plan 6 (pose goal move around cuboid) %s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">success</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;FAILED&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="n">visual_tools</span><span class="p">.</span><span class="n">publishText</span><span class="p">(</span><span class="n">text_pose</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Obstacle_Goal&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rvt</span><span class="o">::</span><span class="n">WHITE</span><span class="p">,</span><span class="w"> </span><span class="n">rvt</span><span class="o">::</span><span class="n">XLARGE</span><span class="p">);</span><span class="w"></span>
 <span class="n">visual_tools</span><span class="p">.</span><span class="n">publishTrajectoryLine</span><span class="p">(</span><span class="n">my_plan</span><span class="p">.</span><span class="n">trajectory_</span><span class="p">,</span><span class="w"> </span><span class="n">joint_model_group</span><span class="p">);</span><span class="w"></span>
@@ -593,7 +593,7 @@ You could also use applyAttachedCollisionObject to attach an object to the robot
 </div>
 <p>Replan, but now with the object in hand.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">move_group</span><span class="p">.</span><span class="n">setStartStateToCurrentState</span><span class="p">();</span><span class="w"></span>
-<span class="n">success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">move_group</span><span class="p">.</span><span class="n">plan</span><span class="p">(</span><span class="n">my_plan</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">moveit</span><span class="o">::</span><span class="n">planning_interface</span><span class="o">::</span><span class="n">MoveItErrorCode</span><span class="o">::</span><span class="n">SUCCESS</span><span class="p">);</span><span class="w"></span>
+<span class="n">success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">move_group</span><span class="p">.</span><span class="n">plan</span><span class="p">(</span><span class="n">my_plan</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">moveit</span><span class="o">::</span><span class="n">core</span><span class="o">::</span><span class="n">MoveItErrorCode</span><span class="o">::</span><span class="n">SUCCESS</span><span class="p">);</span><span class="w"></span>
 <span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Visualizing plan 7 (move around cuboid with cylinder) %s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">success</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;FAILED&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="n">visual_tools</span><span class="p">.</span><span class="n">publishTrajectoryLine</span><span class="p">(</span><span class="n">my_plan</span><span class="p">.</span><span class="n">trajectory_</span><span class="p">,</span><span class="w"> </span><span class="n">joint_model_group</span><span class="p">);</span><span class="w"></span>
 <span class="n">visual_tools</span><span class="p">.</span><span class="n">trigger</span><span class="p">();</span><span class="w"></span>
@@ -687,7 +687,8 @@ You could also use applyAttachedCollisionObject to attach an object to the robot
     </dl>
     <dl>
       <dt>MoveIt 2 - Stable</dt>
-        <dd><a href="../../../../galactic/doc/examples/move_group_interface/move_group_interface_tutorial.html">Galactic (recommended)</a></dd>
+        <dd><a href="../../../../humble/doc/examples/move_group_interface/move_group_interface_tutorial.html">Humble (recommended)</a></dd>
+        <dd><a href="../../../../galactic/doc/examples/move_group_interface/move_group_interface_tutorial.html">Galactic</a></dd>
         <dd><a href="../../../../foxy/index.html">Foxy</a></dd>
    </dl>
     <dl>

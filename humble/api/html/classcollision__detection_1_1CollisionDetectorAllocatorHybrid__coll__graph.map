@@ -1,0 +1,5 @@
+<map id="collision_detection::CollisionDetectorAllocatorHybrid" name="collision_detection::CollisionDetectorAllocatorHybrid">
+<area shape="rect" id="node1" title="An allocator for Hybrid collision detectors." alt="" coords="556,13,756,69"/>
+<area shape="rect" id="node2" href="$classcollision__detection_1_1CollisionDetectorAllocatorTemplate.html" title=" " alt="" coords="253,5,508,76"/>
+<area shape="rect" id="node3" href="$classcollision__detection_1_1CollisionDetectorAllocator.html" title="An allocator for a compatible CollisionWorld/CollisionRobot pair." alt="" coords="5,20,205,61"/>
+</map>

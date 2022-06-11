@@ -13,6 +13,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="theme.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -137,11 +138,11 @@ $(function() {
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;{</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> rclcpp::Logger <a class="code" href="namespaceplanning__request__adapter.html#af64b3fa8ebc256d9c5133c6c80ade28f">LOGGER</a> = rclcpp::get_logger(<span class="stringliteral">&quot;moveit_ros_robot_interaction.interaction_handler&quot;</span>);</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<a class="code" href="classrobot__interaction_1_1InteractionHandler.html#a84d2a9b77e5b87d69d6cc13a03f96d69">InteractionHandler::InteractionHandler</a>(<span class="keyword">const</span> RobotInteractionPtr&amp; <a class="code" href="namespacerobot__interaction.html">robot_interaction</a>, <span class="keyword">const</span> std::string&amp; name,</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<a class="code" href="classrobot__interaction_1_1InteractionHandler.html#a84d2a9b77e5b87d69d6cc13a03f96d69">InteractionHandler::InteractionHandler</a>(<span class="keyword">const</span> RobotInteractionPtr&amp; <a class="code" href="namespacerobot__interaction.html">robot_interaction</a>, <span class="keyword">const</span> std::string&amp; <a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>,</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                                       <span class="keyword">const</span> <a class="code" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a>&amp; initial_robot_state,</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                       <span class="keyword">const</span> std::shared_ptr&lt;tf2_ros::Buffer&gt;&amp; tf_buffer)</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  : LockedRobotState(initial_robot_state)</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  , name_(fixName(name))</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  , name_(fixName(<a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>))</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  , planning_frame_(<a class="code" href="namespacerobot__interaction.html">robot_interaction</a>-&gt;getRobotModel()-&gt;getModelFrame())</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  , tf_buffer_(tf_buffer)</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  , kinematic_options_map_(<a class="code" href="namespacerobot__interaction.html">robot_interaction</a>-&gt;getKinematicOptionsMap())</div>
@@ -150,10 +151,10 @@ $(function() {
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;{</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<a class="code" href="classrobot__interaction_1_1InteractionHandler.html#a84d2a9b77e5b87d69d6cc13a03f96d69">InteractionHandler::InteractionHandler</a>(<span class="keyword">const</span> RobotInteractionPtr&amp; <a class="code" href="namespacerobot__interaction.html">robot_interaction</a>, <span class="keyword">const</span> std::string&amp; name,</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<a class="code" href="classrobot__interaction_1_1InteractionHandler.html#a84d2a9b77e5b87d69d6cc13a03f96d69">InteractionHandler::InteractionHandler</a>(<span class="keyword">const</span> RobotInteractionPtr&amp; <a class="code" href="namespacerobot__interaction.html">robot_interaction</a>, <span class="keyword">const</span> std::string&amp; <a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>,</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                                       <span class="keyword">const</span> std::shared_ptr&lt;tf2_ros::Buffer&gt;&amp; tf_buffer)</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  : LockedRobotState(<a class="code" href="namespacerobot__interaction.html">robot_interaction</a>-&gt;getRobotModel())</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  , name_(fixName(name))</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  , name_(fixName(<a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>))</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  , planning_frame_(<a class="code" href="namespacerobot__interaction.html">robot_interaction</a>-&gt;getRobotModel()-&gt;getModelFrame())</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  , tf_buffer_(tf_buffer)</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  , kinematic_options_map_(<a class="code" href="namespacerobot__interaction.html">robot_interaction</a>-&gt;getKinematicOptionsMap())</div>
@@ -162,10 +163,10 @@ $(function() {
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;{</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;std::string InteractionHandler::fixName(std::string name)</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;std::string InteractionHandler::fixName(std::string <a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>)</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;{</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  std::replace(name.begin(), name.end(), <span class="charliteral">&#39;_&#39;</span>, <span class="charliteral">&#39;-&#39;</span>);  <span class="comment">// we use _ as a special char in marker name</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <span class="keywordflow">return</span> name;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  std::replace(<a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>.begin(), <a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>.end(), <span class="charliteral">&#39;_&#39;</span>, <span class="charliteral">&#39;-&#39;</span>);  <span class="comment">// we use _ as a special char in marker name</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>;</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="keywordtype">void</span> <a class="code" href="classrobot__interaction_1_1InteractionHandler.html#ae467c390d8cef1bb3f21b812e33caa8b">InteractionHandler::setPoseOffset</a>(<span class="keyword">const</span> EndEffectorInteraction&amp; eef, <span class="keyword">const</span> geometry_msgs::msg::Pose&amp; m)</div>
@@ -428,25 +429,25 @@ $(function() {
 <div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160; </div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;<span class="comment">// return true if the state changed.</span></div>
 <div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;<span class="comment">// MUST hold state_lock_ when calling this!</span></div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;<span class="keywordtype">bool</span> InteractionHandler::setErrorState(<span class="keyword">const</span> std::string&amp; name, <span class="keywordtype">bool</span> new_error_state)</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;<span class="keywordtype">bool</span> InteractionHandler::setErrorState(<span class="keyword">const</span> std::string&amp; <a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>, <span class="keywordtype">bool</span> new_error_state)</div>
 <div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;{</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;  <span class="keywordtype">bool</span> old_error_state = error_state_.find(name) != error_state_.end();</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;  <span class="keywordtype">bool</span> old_error_state = error_state_.find(<a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>) != error_state_.end();</div>
 <div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160; </div>
 <div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;  <span class="keywordflow">if</span> (new_error_state == old_error_state)</div>
 <div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160; </div>
 <div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;  <span class="keywordflow">if</span> (new_error_state)</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    error_state_.insert(name);</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    error_state_.insert(<a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>);</div>
 <div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;  <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00369"></a><span class="lineno"><a class="line" href="classrobot__interaction_1_1InteractionHandler.html#a69f31f43dbb0f54cb6f0a1905645ebc4">  369</a></span>&#160;    error_state_.erase(name);</div>
+<div class="line"><a name="l00369"></a><span class="lineno"><a class="line" href="classrobot__interaction_1_1InteractionHandler.html#a69f31f43dbb0f54cb6f0a1905645ebc4">  369</a></span>&#160;    error_state_.erase(<a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>);</div>
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160; </div>
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;}</div>
 <div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160; </div>
-<div class="line"><a name="l00374"></a><span class="lineno"><a class="line" href="classrobot__interaction_1_1InteractionHandler.html#a7b5c9d9780079761bb90b76edaec9d3a">  374</a></span>&#160;<span class="keywordtype">bool</span> InteractionHandler::getErrorState(<span class="keyword">const</span> std::string&amp; name)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00374"></a><span class="lineno"><a class="line" href="classrobot__interaction_1_1InteractionHandler.html#a7b5c9d9780079761bb90b76edaec9d3a">  374</a></span>&#160;<span class="keywordtype">bool</span> InteractionHandler::getErrorState(<span class="keyword">const</span> std::string&amp; <a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;  boost::mutex::scoped_lock lock(<a class="code" href="classrobot__interaction_1_1LockedRobotState.html#a95e7f6af34f82c57f92c10815055b1ae">state_lock_</a>);</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;  <span class="keywordflow">return</span> error_state_.find(name) != error_state_.end();</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;  <span class="keywordflow">return</span> error_state_.find(<a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>) != error_state_.end();</div>
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;}</div>
 <div class="line"><a name="l00379"></a><span class="lineno"><a class="line" href="classrobot__interaction_1_1InteractionHandler.html#a50726756084ada70e1d5db72d4ab08a7">  379</a></span>&#160; </div>
 <div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classrobot__interaction_1_1InteractionHandler.html#adae279198f1fa2a0d9984b1bb746d91d">InteractionHandler::transformFeedbackPose</a>(</div>
@@ -552,6 +553,7 @@ $(function() {
 <div class="ttc" id="aclassrobot__interaction_1_1InteractionHandler_html_a29384ed826f81b20b3850c1c91981e4d"><div class="ttname"><a href="classrobot__interaction_1_1InteractionHandler.html#a29384ed826f81b20b3850c1c91981e4d">robot_interaction::InteractionHandler::handleJoint</a></div><div class="ttdeci">virtual void handleJoint(const JointInteraction &amp;vj, const visualization_msgs::msg::InteractiveMarkerFeedback::ConstSharedPtr &amp;feedback)</div><div class="ttdoc">Update the internal state maintained by the handler using information from the received feedback mess...</div><div class="ttdef"><b>Definition:</b> <a href="interaction__handler_8cpp_source.html#l00295">interaction_handler.cpp:295</a></div></div>
 <div class="ttc" id="astructrobot__interaction_1_1JointInteraction_html_adc389e6151eeb678e6a9e7da8370f702"><div class="ttname"><a href="structrobot__interaction_1_1JointInteraction.html#adc389e6151eeb678e6a9e7da8370f702">robot_interaction::JointInteraction::joint_name</a></div><div class="ttdeci">std::string joint_name</div><div class="ttdoc">The name of the joint.</div><div class="ttdef"><b>Definition:</b> <a href="interaction_8h_source.html#l00168">interaction.h:168</a></div></div>
 <div class="ttc" id="aclassrobot__interaction_1_1InteractionHandler_html_a9e9da0ef4c9f129fa13ddda1e94faeea"><div class="ttname"><a href="classrobot__interaction_1_1InteractionHandler.html#a9e9da0ef4c9f129fa13ddda1e94faeea">robot_interaction::InteractionHandler::clearLastMarkerPoses</a></div><div class="ttdeci">void clearLastMarkerPoses()</div><div class="ttdoc">Clear the last interactive_marker command poses for all end-effectors and joints.</div><div class="ttdef"><b>Definition:</b> <a href="interaction__handler_8cpp_source.html#l00223">interaction_handler.cpp:223</a></div></div>
+<div class="ttc" id="anamespacesetup_html_ab3a7a0638d76a01367c5bc3cc699447f"><div class="ttname"><a href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">setup.name</a></div><div class="ttdeci">name</div><div class="ttdef"><b>Definition:</b> <a href="moveit__configs__utils_2setup_8py_source.html#l00006">setup.py:6</a></div></div>
 <div class="ttc" id="anamespaceplanning__request__adapter_html_af64b3fa8ebc256d9c5133c6c80ade28f"><div class="ttname"><a href="namespaceplanning__request__adapter.html#af64b3fa8ebc256d9c5133c6c80ade28f">planning_request_adapter::LOGGER</a></div><div class="ttdeci">rclcpp::Logger LOGGER</div><div class="ttdef"><b>Definition:</b> <a href="planning__request__adapter_8cpp_source.html#l00078">planning_request_adapter.cpp:78</a></div></div>
 <div class="ttc" id="astructrobot__interaction_1_1EndEffectorInteraction_html"><div class="ttname"><a href="structrobot__interaction_1_1EndEffectorInteraction.html">robot_interaction::EndEffectorInteraction</a></div><div class="ttdef"><b>Definition:</b> <a href="interaction_8h_source.html#l00139">interaction.h:139</a></div></div>
 <div class="ttc" id="aclassrobot__interaction_1_1InteractionHandler_html_ae467c390d8cef1bb3f21b812e33caa8b"><div class="ttname"><a href="classrobot__interaction_1_1InteractionHandler.html#ae467c390d8cef1bb3f21b812e33caa8b">robot_interaction::InteractionHandler::setPoseOffset</a></div><div class="ttdeci">void setPoseOffset(const EndEffectorInteraction &amp;eef, const geometry_msgs::msg::Pose &amp;m)</div><div class="ttdoc">Set the offset from EEF to its marker.</div><div class="ttdef"><b>Definition:</b> <a href="interaction__handler_8cpp_source.html#l00132">interaction_handler.cpp:132</a></div></div>

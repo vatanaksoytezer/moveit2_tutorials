@@ -10,7 +10,7 @@
       <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/override.css" type="text/css" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
-    <link rel="canonical" href="https://moveit.picknik.ai/rolling//rolling/doc/tutorials/quickstart_in_rviz/quickstart_in_rviz_tutorial.html" />
+    <link rel="canonical" href="https://moveit.picknik.ai/humble//rolling/doc/tutorials/quickstart_in_rviz/quickstart_in_rviz_tutorial.html" />
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -24,7 +24,7 @@
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="How-To Guides" href="../../how_to_guides/how_to_guides.html" />
+    <link rel="next" title="Your First C++ MoveIt Project" href="../your_first_project/your_first_project.html" />
     <link rel="prev" title="Getting Started" href="../getting_started/getting_started.html" /> 
 </head>
 
@@ -66,18 +66,22 @@
 <li class="toctree-l3"><a class="reference internal" href="#next-steps">Next Steps</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#rviz-visual-tools">RViz Visual Tools</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#saving-your-configuration">Saving Your Configuration</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#next-tutorials">Next Tutorials</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#next-tutorial">Next Tutorial</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../your_first_project/your_first_project.html">Your First C++ MoveIt Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualizing_in_rviz/visualizing_in_rviz.html">Visualizing In RViz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../planning_around_objects/planning_around_objects.html">Planning Around Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pick_and_place_with_moveit_task_constructor/pick_and_place_with_moveit_task_constructor.html">Pick and Place with MoveIt Task Constructor</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../how_to_guides/how_to_guides.html">How-To Guides</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../concepts/concepts.html">Concepts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../how_to_contribute/how_to_contribute.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../examples/examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../concepts/concepts.html">Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../how_to_guides/how_to_guides.html">How-To Guides</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/api.html">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../how_to_contribute/how_to_contribute.html">Contributing</a></li>
 </ul>
 
         </div>
@@ -113,7 +117,7 @@
       
       You're reading the documentation for the non-stable development version of MoveIt 2.
       For the stable, released version, please have a look at
-      <a href="../../../../galactic/doc/tutorials/quickstart_in_rviz/quickstart_in_rviz_tutorial.html">Galactic</a>.
+      <a href="../../../../humble/doc/tutorials/quickstart_in_rviz/quickstart_in_rviz_tutorial.html">Humble</a>.
       
   </p>
 </div>
@@ -123,7 +127,7 @@
   <div class="section" id="moveit-quickstart-in-rviz">
 <h1>MoveIt Quickstart in RViz<a class="headerlink" href="#moveit-quickstart-in-rviz" title="Permalink to this headline"></a></h1>
 <a class="reference internal image-reference" href="../../../_images/rviz_plugin_head.png"><img alt="../../../_images/rviz_plugin_head.png" src="../../../_images/rviz_plugin_head.png" style="width: 700px;" /></a>
-<p>This tutorial will quickly get you motion planning using MoveIt via RViz and the MoveIt plugin. Rviz is the primary visualizer in ROS and an incredibly useful tool for debugging robotics. The MoveIt Rviz plugin allows you to setup virtual environments (scenes), create start and goal states for the robot interactively, test various motion planners, and visualize the output. Let’s go!</p>
+<p>This tutorial will teach you how to create motion plans in MoveIt using RViz and the MoveIt Display plugin. Rviz is the primary visualizer in ROS and a very useful tool for debugging robotics. The MoveIt Display plugin allows you to setup virtual environments (planning scenes), create start and goal states for the robot interactively, test various motion planners, and visualize the output. Let’s get started!</p>
 <div class="section" id="getting-started">
 <h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline"></a></h2>
 <p>If you haven’t already done so, make sure you’ve completed the steps in <a class="reference internal" href="../getting_started/getting_started.html"><span class="doc">Getting Started</span></a>.</p>
@@ -285,14 +289,9 @@ should be able to see a visualization of the arm moving and a trail.</p></li>
 <h3>Saving Your Configuration<a class="headerlink" href="#saving-your-configuration" title="Permalink to this headline"></a></h3>
 <p>RViz enables you to save your configuration under <code class="docutils literal notranslate"><span class="pre">File-&gt;Save</span> <span class="pre">Config</span></code>. You should do this before continuing on to the next tutorials.</p>
 </div>
-<div class="section" id="next-tutorials">
-<h3>Next Tutorials<a class="headerlink" href="#next-tutorials" title="Permalink to this headline"></a></h3>
-<ul class="simple">
-<li><p>To easily control your robot using C++, check out the <a class="reference internal" href="../../examples/move_group_interface/move_group_interface_tutorial.html"><span class="doc">Move Group C++ Interface</span></a></p></li>
-<li><p>To easily control your robot using Python, check out the <a class="reference internal" href="../../examples/move_group_python_interface/move_group_python_interface_tutorial.html"><span class="doc">Move Group Python Interface</span></a></p></li>
-<li><p>To create your own <code class="docutils literal notranslate"><span class="pre">*_moveit_config</span></code> package, check out the <a class="reference internal" href="../../examples/setup_assistant/setup_assistant_tutorial.html"><span class="doc">Setup Assistant</span></a></p></li>
-<li><p>Save and restore robot states from a database or from disk using <a class="reference internal" href="../../examples/persistent_scenes_and_states/persistent_scenes_and_states.html"><span class="doc">warehouse_ros</span></a></p></li>
-</ul>
+<div class="section" id="next-tutorial">
+<h3>Next Tutorial<a class="headerlink" href="#next-tutorial" title="Permalink to this headline"></a></h3>
+<p>In <a class="reference internal" href="../your_first_project/your_first_project.html"><span class="doc">Your First MoveIt Project</span></a>, you will create a C++ program using MoveIt to plan and execute moves.</p>
 </div>
 </div>
 </div>
@@ -303,7 +302,7 @@ should be able to see a visualization of the arm moving and a trail.</p></li>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="../getting_started/getting_started.html" class="btn btn-neutral float-left" title="Getting Started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../../how_to_guides/how_to_guides.html" class="btn btn-neutral float-right" title="How-To Guides" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../your_first_project/your_first_project.html" class="btn btn-neutral float-right" title="Your First C++ MoveIt Project" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
@@ -336,7 +335,8 @@ should be able to see a visualization of the arm moving and a trail.</p></li>
     </dl>
     <dl>
       <dt>MoveIt 2 - Stable</dt>
-        <dd><a href="../../../../galactic/doc/tutorials/quickstart_in_rviz/quickstart_in_rviz_tutorial.html">Galactic (recommended)</a></dd>
+        <dd><a href="../../../../humble/doc/tutorials/quickstart_in_rviz/quickstart_in_rviz_tutorial.html">Humble (recommended)</a></dd>
+        <dd><a href="../../../../galactic/doc/tutorials/quickstart_in_rviz/quickstart_in_rviz_tutorial.html">Galactic</a></dd>
         <dd><a href="../../../../foxy/index.html">Foxy</a></dd>
    </dl>
     <dl>

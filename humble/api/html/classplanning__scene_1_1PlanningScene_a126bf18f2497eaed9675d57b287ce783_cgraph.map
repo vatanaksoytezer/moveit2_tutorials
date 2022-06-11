@@ -1,0 +1,5 @@
+<map id="planning_scene::PlanningScene::isPathValid" name="planning_scene::PlanningScene::isPathValid">
+<area shape="rect" id="node1" title="Check if a given path is valid. Each state is checked for validity (collision avoidance,..." alt="" coords="5,39,192,80"/>
+<area shape="rect" id="node2" href="$classplanning__scene_1_1PlanningScene.html#a4ebcc755346e443319104e8b964f8faa" title="Check whether the current state is in collision, and if needed, updates the collision transforms of t..." alt="" coords="264,5,451,47"/>
+<area shape="rect" id="node3" href="$classrobot__trajectory_1_1RobotTrajectory.html#af356952b9847bc920b773f2f83cb9943" title=" " alt="" coords="240,71,475,112"/>
+</map>

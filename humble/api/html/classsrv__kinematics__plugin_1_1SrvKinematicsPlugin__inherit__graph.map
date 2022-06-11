@@ -1,0 +1,4 @@
+<map id="srv_kinematics_plugin::SrvKinematicsPlugin" name="srv_kinematics_plugin::SrvKinematicsPlugin">
+<area shape="rect" id="node1" title="Specific implementation of kinematics using ROS service calls to communicate with external IK solvers..." alt="" coords="25,80,193,121"/>
+<area shape="rect" id="node2" href="$classkinematics_1_1KinematicsBase.html" title="Provides an interface for kinematics solvers." alt="" coords="5,5,212,32"/>
+</map>

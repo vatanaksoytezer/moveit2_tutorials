@@ -1,5 +1,0 @@
-<map id="mesh_filter::MeshFilterBase::getFilteredDepth" name="mesh_filter::MeshFilterBase::getFilteredDepth">
-<area shape="rect" id="node1" title="retrieves the filtered depth values" alt="" coords="5,43,208,84"/>
-<area shape="rect" id="node2" href="$classmesh__filter_1_1GLRenderer.html#a277ac95d491ba30ee3d7a51a2938c7df" title="retrieves the depth buffer from OpenGL" alt="" coords="279,5,458,47"/>
-<area shape="rect" id="node3" href="$classmesh__filter_1_1SensorModel_1_1Parameters.html#ad2fdd1c2573166b134e3384f75d0c4ad" title="transforms depth values from filtered depth to metric depth values" alt="" coords="256,71,481,127"/>
-</map>

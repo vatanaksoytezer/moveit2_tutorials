@@ -13,6 +13,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="theme.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -124,6 +125,11 @@ Enumerations</h2></td></tr>
 <br />
  }</td></tr>
 <tr class="separator:ae2cab91c85583e7a3024014a4994fd06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a454d223a87e5286d9cfdbc89dc544961"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemoveit_1_1hybrid__planning.html#a454d223a87e5286d9cfdbc89dc544961">LocalFeedbackEnum</a> { <a class="el" href="namespacemoveit_1_1hybrid__planning.html#a454d223a87e5286d9cfdbc89dc544961a59ca4019882442c774a65b107fab4c23">COLLISION_AHEAD</a> = 1, 
+<a class="el" href="namespacemoveit_1_1hybrid__planning.html#a454d223a87e5286d9cfdbc89dc544961a4fe17ded68fc20b80489fce86e3b41e4">LOCAL_PLANNER_STUCK</a> = 2
+ }</td></tr>
+<tr class="memdesc:a454d223a87e5286d9cfdbc89dc544961"><td class="mdescLeft">&#160;</td><td class="mdescRight">Expected feedback types.  <a href="namespacemoveit_1_1hybrid__planning.html#a454d223a87e5286d9cfdbc89dc544961">More...</a><br /></td></tr>
+<tr class="separator:a454d223a87e5286d9cfdbc89dc544961"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25f37262c36c67d3619b459d9a0fd695"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemoveit_1_1hybrid__planning.html#a25f37262c36c67d3619b459d9a0fd695">LocalPlannerState</a> : int8_t { <br />
 &#160;&#160;<a class="el" href="namespacemoveit_1_1hybrid__planning.html#a25f37262c36c67d3619b459d9a0fd695a8d12a2ca7e5a64036d7251a3eda51a38">LocalPlannerState::ABORT</a> = -1, 
 <a class="el" href="namespacemoveit_1_1hybrid__planning.html#a25f37262c36c67d3619b459d9a0fd695abb1ca97ec761fc37101737ba0aa2e7c5">LocalPlannerState::ERROR</a> = 0, 
@@ -137,6 +143,8 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:af38ef0434fa3c6beb19c9f28cf015d66"><td class="memItemLeft" align="right" valign="top">constexpr std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemoveit_1_1hybrid__planning.html#af38ef0434fa3c6beb19c9f28cf015d66">toString</a> (const <a class="el" href="namespacemoveit_1_1hybrid__planning.html#a454d223a87e5286d9cfdbc89dc544961">LocalFeedbackEnum</a> &amp;code)</td></tr>
+<tr class="separator:af38ef0434fa3c6beb19c9f28cf015d66"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13ae90bec8392b34b9beb63c00d789ec"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a13ae90bec8392b34b9beb63c00d789ec"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemoveit_1_1hybrid__planning.html#a13ae90bec8392b34b9beb63c00d789ec">declareOrGetParam</a> (const std::string &amp;param_name, T &amp;output_value, const T &amp;default_value, const rclcpp::Node::SharedPtr &amp;node)</td></tr>
 <tr class="separator:a13ae90bec8392b34b9beb63c00d789ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -186,6 +194,28 @@ Variables</h2></td></tr>
 </table>
 
 <p class="definition">Definition at line <a class="el" href="hybrid__planning__events_8h_source.html#l00077">77</a> of file <a class="el" href="hybrid__planning__events_8h_source.html">hybrid_planning_events.h</a>.</p>
+
+</div>
+</div>
+<a id="a454d223a87e5286d9cfdbc89dc544961"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a454d223a87e5286d9cfdbc89dc544961">&#9670;&nbsp;</a></span>LocalFeedbackEnum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespacemoveit_1_1hybrid__planning.html#a454d223a87e5286d9cfdbc89dc544961">moveit::hybrid_planning::LocalFeedbackEnum</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Expected feedback types. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a454d223a87e5286d9cfdbc89dc544961a59ca4019882442c774a65b107fab4c23"></a>COLLISION_AHEAD&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a454d223a87e5286d9cfdbc89dc544961a4fe17ded68fc20b80489fce86e3b41e4"></a>LOCAL_PLANNER_STUCK&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="feedback__types_8h_source.html#l00083">83</a> of file <a class="el" href="feedback__types_8h_source.html">feedback_types.h</a>.</p>
 
 </div>
 </div>
@@ -275,6 +305,44 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
+<a id="af38ef0434fa3c6beb19c9f28cf015d66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af38ef0434fa3c6beb19c9f28cf015d66">&#9670;&nbsp;</a></span>toString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr std::string_view moveit::hybrid_planning::toString </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacemoveit_1_1hybrid__planning.html#a454d223a87e5286d9cfdbc89dc544961">LocalFeedbackEnum</a> &amp;&#160;</td>
+          <td class="paramname"><em>code</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="feedback__types_8h_source.html#l00089">89</a> of file <a class="el" href="feedback__types_8h_source.html">feedback_types.h</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacemoveit_1_1hybrid__planning_af38ef0434fa3c6beb19c9f28cf015d66_icgraph.png" border="0" usemap="#namespacemoveit_1_1hybrid__planning_af38ef0434fa3c6beb19c9f28cf015d66_icgraph" alt=""/></div>
+<map name="namespacemoveit_1_1hybrid__planning_af38ef0434fa3c6beb19c9f28cf015d66_icgraph" id="namespacemoveit_1_1hybrid__planning_af38ef0434fa3c6beb19c9f28cf015d66_icgraph">
+<area shape="rect" title=" " alt="" coords="265,50,445,91"/>
+<area shape="rect" href="classmoveit_1_1hybrid__planning_1_1ReplanInvalidatedTrajectory.html#a33a05ac37b0f7c7bc2af60be3e577321" title=" " alt="" coords="5,5,217,61"/>
+<area shape="rect" href="classmoveit_1_1hybrid__planning_1_1ForwardTrajectory.html#a004dec961e56440b5df8093bf55b2a58" title=" " alt="" coords="17,86,205,127"/>
+</map>
+</div>
+
+</div>
+</div>
 <h2 class="groupheader">Variable Documentation</h2>
 <a id="a1cfd36cae85c790c1a0b735fc2dfd624"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1cfd36cae85c790c1a0b735fc2dfd624">&#9670;&nbsp;</a></span>PLAN_REQUEST_PARAM_NS</h2>
@@ -336,7 +404,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="global__planner__component_8cpp_source.html#l00051">51</a> of file <a class="el" href="global__planner__component_8cpp_source.html">global_planner_component.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="global__planner__component_8cpp_source.html#l00052">52</a> of file <a class="el" href="global__planner__component_8cpp_source.html">global_planner_component.cpp</a>.</p>
 
 </div>
 </div>

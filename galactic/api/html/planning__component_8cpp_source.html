@@ -13,6 +13,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="theme.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -310,11 +311,11 @@ $(function() {
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;  considered_start_state_.reset();</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;}</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160; </div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;std::map&lt;std::string, double&gt; <a class="code" href="classmoveit__cpp_1_1PlanningComponent.html#a1b48a15df3246b58b7ce1f58ecf501bd">PlanningComponent::getNamedTargetStateValues</a>(<span class="keyword">const</span> std::string&amp; name)</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;std::map&lt;std::string, double&gt; <a class="code" href="classmoveit__cpp_1_1PlanningComponent.html#a1b48a15df3246b58b7ce1f58ecf501bd">PlanningComponent::getNamedTargetStateValues</a>(<span class="keyword">const</span> std::string&amp; <a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>)</div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;{</div>
 <div class="line"><a name="l00243"></a><span class="lineno"><a class="line" href="classmoveit__cpp_1_1PlanningComponent.html#af78dc3381b208f8c03b5bdcd9093b76d">  243</a></span>&#160;  <span class="comment">// TODO(henningkayser): verify result</span></div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;  std::map&lt;std::string, double&gt; positions;</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;  joint_model_group_-&gt;<a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html#acab0bce2702c96185be7fcfdeb9758c2">getVariableDefaultPositions</a>(name, positions);</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;  joint_model_group_-&gt;<a class="code" href="classmoveit_1_1core_1_1JointModelGroup.html#acab0bce2702c96185be7fcfdeb9758c2">getVariableDefaultPositions</a>(<a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>, positions);</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;  <span class="keywordflow">return</span> positions;</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;}</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; </div>
@@ -430,6 +431,7 @@ $(function() {
 <div class="ttc" id="aclassmoveit_1_1core_1_1JointModelGroup_html_acd1810d6d30c941a804301b7278ab146"><div class="ttname"><a href="classmoveit_1_1core_1_1JointModelGroup.html#acd1810d6d30c941a804301b7278ab146">moveit::core::JointModelGroup::getDefaultStateNames</a></div><div class="ttdeci">const std::vector&lt; std::string &gt; &amp; getDefaultStateNames() const</div><div class="ttdoc">Get the names of the known default states (as specified in the SRDF)</div><div class="ttdef"><b>Definition:</b> <a href="joint__model__group_8h_source.html#l00360">joint_model_group.h:360</a></div></div>
 <div class="ttc" id="aclassmoveit__cpp_1_1PlanningComponent_html_a66046e476ffb45002432c9020ff0a91f"><div class="ttname"><a href="classmoveit__cpp_1_1PlanningComponent.html#a66046e476ffb45002432c9020ff0a91f">moveit_cpp::PlanningComponent::plan</a></div><div class="ttdeci">PlanSolution plan()</div><div class="ttdoc">Run a plan from start or current state to fulfill the last goal constraints provided by setGoal() usi...</div><div class="ttdef"><b>Definition:</b> <a href="planning__component_8cpp_source.html#l00232">planning_component.cpp:232</a></div></div>
 <div class="ttc" id="aclassmoveit__cpp_1_1PlanningComponent_html_a8433a0d1779c6d1c0ca34f2ddca3e12d"><div class="ttname"><a href="classmoveit__cpp_1_1PlanningComponent.html#a8433a0d1779c6d1c0ca34f2ddca3e12d">moveit_cpp::PlanningComponent::~PlanningComponent</a></div><div class="ttdeci">~PlanningComponent()</div><div class="ttdoc">Destructor.</div><div class="ttdef"><b>Definition:</b> <a href="planning__component_8cpp_source.html#l00116">planning_component.cpp:116</a></div></div>
+<div class="ttc" id="anamespacesetup_html_ab3a7a0638d76a01367c5bc3cc699447f"><div class="ttname"><a href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">setup.name</a></div><div class="ttdeci">name</div><div class="ttdef"><b>Definition:</b> <a href="moveit__configs__utils_2setup_8py_source.html#l00006">setup.py:6</a></div></div>
 <div class="ttc" id="aplanning__component_8h_html"><div class="ttname"><a href="planning__component_8h.html">planning_component.h</a></div></div>
 <div class="ttc" id="anamespaceplanning__request__adapter_html_af64b3fa8ebc256d9c5133c6c80ade28f"><div class="ttname"><a href="namespaceplanning__request__adapter.html#af64b3fa8ebc256d9c5133c6c80ade28f">planning_request_adapter::LOGGER</a></div><div class="ttdeci">rclcpp::Logger LOGGER</div><div class="ttdef"><b>Definition:</b> <a href="planning__request__adapter_8cpp_source.html#l00078">planning_request_adapter.cpp:78</a></div></div>
 <div class="ttc" id="astructmoveit__cpp_1_1PlanningComponent_1_1PlanRequestParameters_html_a1a0ec2a6ccef75adf257e6401741fab4"><div class="ttname"><a href="structmoveit__cpp_1_1PlanningComponent_1_1PlanRequestParameters.html#a1a0ec2a6ccef75adf257e6401741fab4">moveit_cpp::PlanningComponent::PlanRequestParameters::max_velocity_scaling_factor</a></div><div class="ttdeci">double max_velocity_scaling_factor</div><div class="ttdef"><b>Definition:</b> <a href="planning__component_8h_source.html#l00142">planning_component.h:142</a></div></div>

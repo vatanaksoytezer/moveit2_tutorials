@@ -13,6 +13,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="theme.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -132,6 +133,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl__interface_1_1OMPLPlannerManager.html">OMPLPlannerManager</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl__interface_1_1OrientationConstraint.html">OrientationConstraint</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Orientation constraints parameterized using exponential coordinates.  <a href="classompl__interface_1_1OrientationConstraint.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl__interface_1_1PlanningContextManager.html">PlanningContextManager</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl__interface_1_1PoseModelStateSpace.html">PoseModelStateSpace</a></td></tr>
@@ -179,7 +183,7 @@ Functions</h2></td></tr>
 <tr class="separator:af92b6f225146d9789d32afa8d0befec5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad67d4678219176027df4c876a3231cb8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceompl__interface.html#ad67d4678219176027df4c876a3231cb8">MOVEIT_CLASS_FORWARD</a> (<a class="el" href="classompl__interface_1_1BoxConstraint.html">BoxConstraint</a>)</td></tr>
 <tr class="separator:ad67d4678219176027df4c876a3231cb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab0ec8a06959d5cb1c4f7e768b4cbaea"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceompl__interface.html#aab0ec8a06959d5cb1c4f7e768b4cbaea">MOVEIT_CLASS_FORWARD</a> (OrientationConstraint)</td></tr>
+<tr class="memitem:aab0ec8a06959d5cb1c4f7e768b4cbaea"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceompl__interface.html#aab0ec8a06959d5cb1c4f7e768b4cbaea">MOVEIT_CLASS_FORWARD</a> (<a class="el" href="classompl__interface_1_1OrientationConstraint.html">OrientationConstraint</a>)</td></tr>
 <tr class="separator:aab0ec8a06959d5cb1c4f7e768b4cbaea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9bcfd6c3257fe96b9676d786d11631b8"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceompl__interface.html#a9bcfd6c3257fe96b9676d786d11631b8">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classompl__interface_1_1Bounds.html">ompl_interface::Bounds</a> &amp;bounds)</td></tr>
 <tr class="memdesc:a9bcfd6c3257fe96b9676d786d11631b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pretty printing of bounds.  <a href="namespaceompl__interface.html#a9bcfd6c3257fe96b9676d786d11631b8">More...</a><br /></td></tr>
@@ -187,9 +191,15 @@ Functions</h2></td></tr>
 <tr class="memitem:ae69509cc8852c0ac498e2c1d8bea9e0d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classompl__interface_1_1Bounds.html">Bounds</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceompl__interface.html#ae69509cc8852c0ac498e2c1d8bea9e0d">positionConstraintMsgToBoundVector</a> (const moveit_msgs::msg::PositionConstraint &amp;pos_con)</td></tr>
 <tr class="memdesc:ae69509cc8852c0ac498e2c1d8bea9e0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract position constraints from the MoveIt message.  <a href="namespaceompl__interface.html#ae69509cc8852c0ac498e2c1d8bea9e0d">More...</a><br /></td></tr>
 <tr class="separator:ae69509cc8852c0ac498e2c1d8bea9e0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3010521aa3f126ab1b4c4c8027c19f34"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classompl__interface_1_1Bounds.html">Bounds</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceompl__interface.html#a3010521aa3f126ab1b4c4c8027c19f34">orientationConstraintMsgToBoundVector</a> (const moveit_msgs::msg::OrientationConstraint &amp;ori_con)</td></tr>
+<tr class="memdesc:a3010521aa3f126ab1b4c4c8027c19f34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract orientation constraints from the MoveIt message.  <a href="namespaceompl__interface.html#a3010521aa3f126ab1b4c4c8027c19f34">More...</a><br /></td></tr>
+<tr class="separator:a3010521aa3f126ab1b4c4c8027c19f34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac59c481ebfead520db9f3188f465ae6d"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classompl__interface_1_1BaseConstraint.html">BaseConstraint</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceompl__interface.html#ac59c481ebfead520db9f3188f465ae6d">createOMPLConstraint</a> (const moveit::core::RobotModelConstPtr &amp;robot_model, const std::string &amp;group, const moveit_msgs::msg::Constraints &amp;constraints)</td></tr>
 <tr class="memdesc:ac59c481ebfead520db9f3188f465ae6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory to create constraints based on what is in the MoveIt constraint message.  <a href="namespaceompl__interface.html#ac59c481ebfead520db9f3188f465ae6d">More...</a><br /></td></tr>
 <tr class="separator:ac59c481ebfead520db9f3188f465ae6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa050df2d2be7dfe8861febd1e0a6e90e"><td class="memItemLeft" align="right" valign="top">Eigen::Matrix3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceompl__interface.html#aa050df2d2be7dfe8861febd1e0a6e90e">angularVelocityToAngleAxis</a> (const double &amp;angle, const Eigen::Ref&lt; const Eigen::Vector3d &gt; &amp;axis)</td></tr>
+<tr class="memdesc:aa050df2d2be7dfe8861febd1e0a6e90e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a matrix to convert angular velocity to angle-axis velocity Based on: <a href="https://ethz.ch/content/dam/ethz/special-interest/mavt/robotics-n-intelligent-systems/rsl-dam/documents/RobotDynamics2016/RD2016script.pdf">https://ethz.ch/content/dam/ethz/special-interest/mavt/robotics-n-intelligent-systems/rsl-dam/documents/RobotDynamics2016/RD2016script.pdf</a> Eq. 2.107.  <a href="namespaceompl__interface.html#aa050df2d2be7dfe8861febd1e0a6e90e">More...</a><br /></td></tr>
+<tr class="separator:aa050df2d2be7dfe8861febd1e0a6e90e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acce550d26a55a815cd166e03a0cf87cf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceompl__interface.html#acce550d26a55a815cd166e03a0cf87cf">MOVEIT_CLASS_FORWARD</a> (<a class="el" href="classompl__interface_1_1ModelBasedPlanningContext.html">ModelBasedPlanningContext</a>)</td></tr>
 <tr class="separator:acce550d26a55a815cd166e03a0cf87cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9edc3bf1baee409904158cbd476ac034"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceompl__interface.html#a9edc3bf1baee409904158cbd476ac034">MOVEIT_CLASS_FORWARD</a> (<a class="el" href="classompl__interface_1_1ConstrainedPlanningStateSpace.html">ConstrainedPlanningStateSpace</a>)</td></tr>
@@ -377,7 +387,56 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="constraints__library_8cpp_source.html#l00245">245</a> of file <a class="el" href="constraints__library_8cpp_source.html">constraints_library.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="constraints__library_8cpp_source.html#l00247">247</a> of file <a class="el" href="constraints__library_8cpp_source.html">constraints_library.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aa050df2d2be7dfe8861febd1e0a6e90e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa050df2d2be7dfe8861febd1e0a6e90e">&#9670;&nbsp;</a></span>angularVelocityToAngleAxis()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::Matrix3d ompl_interface::angularVelocityToAngleAxis </td>
+          <td>(</td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>angle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::Ref&lt; const Eigen::Vector3d &gt; &amp;&#160;</td>
+          <td class="paramname"><em>axis</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return a matrix to convert angular velocity to angle-axis velocity Based on: <a href="https://ethz.ch/content/dam/ethz/special-interest/mavt/robotics-n-intelligent-systems/rsl-dam/documents/RobotDynamics2016/RD2016script.pdf">https://ethz.ch/content/dam/ethz/special-interest/mavt/robotics-n-intelligent-systems/rsl-dam/documents/RobotDynamics2016/RD2016script.pdf</a> Eq. 2.107. </p>
+
+<p class="definition">Definition at line <a class="el" href="ompl__constraints_8h_source.html#l00481">481</a> of file <a class="el" href="ompl__constraints_8h_source.html">ompl_constraints.h</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceompl__interface_aa050df2d2be7dfe8861febd1e0a6e90e_icgraph.png" border="0" usemap="#namespaceompl__interface_aa050df2d2be7dfe8861febd1e0a6e90e_icgraph" alt=""/></div>
+<map name="namespaceompl__interface_aa050df2d2be7dfe8861febd1e0a6e90e_icgraph" id="namespaceompl__interface_aa050df2d2be7dfe8861febd1e0a6e90e_icgraph">
+<area shape="rect" title="Return a matrix to convert angular velocity to angle&#45;axis velocity Based on: https://ethz...." alt="" coords="263,5,492,47"/>
+<area shape="rect" href="classompl__interface_1_1OrientationConstraint.html#a57fa947313f56b363c92fd673d7b0a4d" title="For inequality constraints: calculate the Jacobian for the current parameters that are being constrai..." alt="" coords="5,5,215,47"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -415,14 +474,14 @@ Functions</h2></td></tr>
 
 <p>Factory to create constraints based on what is in the MoveIt constraint message. </p>
 
-<p class="definition">Definition at line <a class="el" href="ompl__constraints_8cpp_source.html#l00336">336</a> of file <a class="el" href="ompl__constraints_8cpp_source.html">ompl_constraints.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ompl__constraints_8cpp_source.html#l00367">367</a> of file <a class="el" href="ompl__constraints_8cpp_source.html">ompl_constraints.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceompl__interface_ac59c481ebfead520db9f3188f465ae6d_icgraph.png" border="0" usemap="#namespaceompl__interface_ac59c481ebfead520db9f3188f465ae6d_icgraph" alt=""/></div>
 <map name="namespaceompl__interface_ac59c481ebfead520db9f3188f465ae6d_icgraph" id="namespaceompl__interface_ac59c481ebfead520db9f3188f465ae6d_icgraph">
 <area shape="rect" title="Factory to create constraints based on what is in the MoveIt constraint message." alt="" coords="320,13,593,39"/>
-<area shape="rect" href="classompl__interface_1_1PlanningContextManager.html#ad52e84f359ebb977564939f8aef47178" title="This is the function that constructs new planning contexts if no previous ones exist that are suitabl..." alt="" coords="5,5,272,47"/>
+<area shape="rect" href="classompl__interface_1_1PlanningContextManager.html#a245e9bbf2bae51dca8df2ac9bf2adee7" title="This is the function that constructs new planning contexts if no previous ones exist that are suitabl..." alt="" coords="5,5,272,47"/>
 </map>
 </div>
 
@@ -611,7 +670,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">ompl_interface::MOVEIT_CLASS_FORWARD </td>
           <td>(</td>
-          <td class="paramtype">OrientationConstraint&#160;</td>
+          <td class="paramtype"><a class="el" href="classompl__interface_1_1OrientationConstraint.html">OrientationConstraint</a>&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
@@ -817,6 +876,39 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
+<a id="a3010521aa3f126ab1b4c4c8027c19f34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3010521aa3f126ab1b4c4c8027c19f34">&#9670;&nbsp;</a></span>orientationConstraintMsgToBoundVector()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classompl__interface_1_1Bounds.html">Bounds</a> ompl_interface::orientationConstraintMsgToBoundVector </td>
+          <td>(</td>
+          <td class="paramtype">const moveit_msgs::msg::OrientationConstraint &amp;&#160;</td>
+          <td class="paramname"><em>ori_con</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Extract orientation constraints from the MoveIt message. </p>
+<p>These bounds are assumed to be centered around the target orientation / desired orientation given in the "orientation" field in the message. These bounds represent orientation error between the desired orientation and the current orientation of the end-effector.</p>
+<p>The "absolute_x_axis_tolerance", "absolute_y_axis_tolerance" and "absolute_z_axis_tolerance" are interpreted as the width of the tolerance regions around the target orientation, represented using exponential coordinates. </p>
+
+<p class="definition">Definition at line <a class="el" href="ompl__constraints_8cpp_source.html#l00350">350</a> of file <a class="el" href="ompl__constraints_8cpp_source.html">ompl_constraints.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceompl__interface_a3010521aa3f126ab1b4c4c8027c19f34_icgraph.png" border="0" usemap="#namespaceompl__interface_a3010521aa3f126ab1b4c4c8027c19f34_icgraph" alt=""/></div>
+<map name="namespaceompl__interface_a3010521aa3f126ab1b4c4c8027c19f34_icgraph" id="namespaceompl__interface_a3010521aa3f126ab1b4c4c8027c19f34_icgraph">
+<area shape="rect" title="Extract orientation constraints from the MoveIt message." alt="" coords="280,5,492,47"/>
+<area shape="rect" href="classompl__interface_1_1OrientationConstraint.html#a99490c0da3ab91aba65211bd666d7d73" title="Parse bounds on orientation parameters from MoveIt&#39;s constraint message." alt="" coords="5,5,232,47"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="ae69509cc8852c0ac498e2c1d8bea9e0d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae69509cc8852c0ac498e2c1d8bea9e0d">&#9670;&nbsp;</a></span>positionConstraintMsgToBoundVector()</h2>
 
@@ -836,14 +928,14 @@ Here is the call graph for this function:</div>
 <p>Extract position constraints from the MoveIt message. </p>
 <p>Assumes there is a single primitive of type <code>shape_msgs/SolidPrimitive.BOX</code>. The dimensions of the box are the bounds on the deviation of the link origin from the target pose, given in constraint_regions.primitive_poses[0]. </p>
 
-<p class="definition">Definition at line <a class="el" href="ompl__constraints_8cpp_source.html#l00316">316</a> of file <a class="el" href="ompl__constraints_8cpp_source.html">ompl_constraints.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ompl__constraints_8cpp_source.html#l00333">333</a> of file <a class="el" href="ompl__constraints_8cpp_source.html">ompl_constraints.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceompl__interface_ae69509cc8852c0ac498e2c1d8bea9e0d_icgraph.png" border="0" usemap="#namespaceompl__interface_ae69509cc8852c0ac498e2c1d8bea9e0d_icgraph" alt=""/></div>
 <map name="namespaceompl__interface_ae69509cc8852c0ac498e2c1d8bea9e0d_icgraph" id="namespaceompl__interface_ae69509cc8852c0ac498e2c1d8bea9e0d_icgraph">
 <area shape="rect" title="Extract position constraints from the MoveIt message." alt="" coords="273,5,485,47"/>
-<area shape="rect" href="classompl__interface_1_1BoxConstraint.html#adc17d0a1e334e87c171964c7f3e86f7a" title="Parse bounds on position and orientation parameters from MoveIt&#39;s constraint message." alt="" coords="5,5,225,47"/>
+<area shape="rect" href="classompl__interface_1_1BoxConstraint.html#adc17d0a1e334e87c171964c7f3e86f7a" title="Parse bounds on position parameters from MoveIt&#39;s constraint message." alt="" coords="5,5,225,47"/>
 </map>
 </div>
 

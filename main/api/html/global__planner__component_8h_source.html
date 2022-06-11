@@ -13,6 +13,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="theme.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -127,48 +128,64 @@ $(function() {
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">class </span><a class="code" href="classmoveit_1_1hybrid__planning_1_1GlobalPlannerComponent.html">GlobalPlannerComponent</a></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <a class="code" href="classmoveit_1_1hybrid__planning_1_1GlobalPlannerComponent.html#afacedadfceb7db584405d7dcb2e85d65">GlobalPlannerComponent</a>(<span class="keyword">const</span> rclcpp::NodeOptions&amp; <a class="code" href="namespacemoveit__benchmark__statistics.html#ae22bb8022508842c27a92bd715ef205e">options</a>);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="comment">// This function is required to make this class a valid NodeClass</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="comment">// see https://docs.ros2.org/foxy/api/rclcpp_components/register__node__macro_8hpp.html</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="comment">// Skip linting due to unconventional function naming</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  rclcpp::node_interfaces::NodeBaseInterface::SharedPtr <a class="code" href="classmoveit_1_1hybrid__planning_1_1GlobalPlannerComponent.html#a82b84e5bcb66b3499e739d2b951cc54a">get_node_base_interface</a>()  <span class="comment">// NOLINT</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">return</span> node_-&gt;get_node_base_interface();  <span class="comment">// NOLINT</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  std::shared_ptr&lt;rclcpp::Node&gt; node_;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <a class="code" href="classmoveit_1_1hybrid__planning_1_1GlobalPlannerComponent.html#afacedadfceb7db584405d7dcb2e85d65">GlobalPlannerComponent</a>(<span class="keyword">const</span> rclcpp::NodeOptions&amp; <a class="code" href="namespacemoveit__benchmark__statistics.html#ae22bb8022508842c27a92bd715ef205e">options</a>);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <a class="code" href="classmoveit_1_1hybrid__planning_1_1GlobalPlannerComponent.html#aef0dc77c6d154d9483c709e7684f91ce">~GlobalPlannerComponent</a>()</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">// Join the thread used for long-running callbacks</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">if</span> (long_callback_thread_.joinable())</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      long_callback_thread_.join();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  }</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  std::string planner_plugin_name_;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="comment">// Global planner plugin loader</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  std::unique_ptr&lt;pluginlib::ClassLoader&lt;GlobalPlannerInterface&gt;&gt; global_planner_plugin_loader_;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="comment">// Global planner instance</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  std::shared_ptr&lt;GlobalPlannerInterface&gt; global_planner_instance_;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="comment">// This function is required to make this class a valid NodeClass</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="comment">// see https://docs.ros2.org/foxy/api/rclcpp_components/register__node__macro_8hpp.html</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="comment">// Skip linting due to unconventional function naming</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  rclcpp::node_interfaces::NodeBaseInterface::SharedPtr <a class="code" href="classmoveit_1_1hybrid__planning_1_1GlobalPlannerComponent.html#a82b84e5bcb66b3499e739d2b951cc54a">get_node_base_interface</a>()  <span class="comment">// NOLINT</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">return</span> node_-&gt;get_node_base_interface();  <span class="comment">// NOLINT</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  }</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="comment">// Global planning request action server</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  rclcpp_action::Server&lt;moveit_msgs::action::GlobalPlanner&gt;::SharedPtr global_planning_request_server_;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  std::shared_ptr&lt;rclcpp::Node&gt; node_;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="comment">// Global trajectory publisher</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  rclcpp::Publisher&lt;moveit_msgs::msg::MotionPlanResponse&gt;::SharedPtr global_trajectory_pub_;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="comment">// Goal callback for global planning request action server</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keywordtype">void</span> globalPlanningRequestCallback(</div>
-<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="classmoveit_1_1hybrid__planning_1_1GlobalPlannerComponent.html">   87</a></span>&#160;      std::shared_ptr&lt;rclcpp_action::ServerGoalHandle&lt;moveit_msgs::action::GlobalPlanner&gt;&gt; goal_handle);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="comment">// Initialize planning scene monitor and load pipelines</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keywordtype">bool</span> initializeGlobalPlanner();</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;};</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  std::string planner_plugin_name_;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="comment">// Global planner plugin loader</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  std::unique_ptr&lt;pluginlib::ClassLoader&lt;GlobalPlannerInterface&gt;&gt; global_planner_plugin_loader_;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="classmoveit_1_1hybrid__planning_1_1GlobalPlannerComponent.html">   87</a></span>&#160;  <span class="comment">// Global planner instance</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  std::shared_ptr&lt;GlobalPlannerInterface&gt; global_planner_instance_;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="comment">// Global planning request action server</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  rclcpp_action::Server&lt;moveit_msgs::action::GlobalPlanner&gt;::SharedPtr global_planning_request_server_;</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}  <span class="comment">// namespace moveit::hybrid_planning</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="comment">// Global trajectory publisher</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  rclcpp::Publisher&lt;moveit_msgs::msg::MotionPlanResponse&gt;::SharedPtr global_trajectory_pub_;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <span class="comment">// Goal callback for global planning request action server</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <span class="keywordtype">void</span> globalPlanningRequestCallback(</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;      std::shared_ptr&lt;rclcpp_action::ServerGoalHandle&lt;moveit_msgs::action::GlobalPlanner&gt;&gt; goal_handle);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="comment">// Initialize planning scene monitor and load pipelines</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <span class="keywordtype">bool</span> initializeGlobalPlanner();</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <span class="comment">// This thread is used for long-running callbacks. It&#39;s a member so they do not go out of scope.</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  std::thread long_callback_thread_;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <span class="comment">// A unique callback group, to avoid mixing callbacks with other action servers</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  rclcpp::CallbackGroup::SharedPtr cb_group_;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;};</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}  <span class="comment">// namespace moveit::hybrid_planning</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassmoveit_1_1hybrid__planning_1_1GlobalPlannerComponent_html"><div class="ttname"><a href="classmoveit_1_1hybrid__planning_1_1GlobalPlannerComponent.html">moveit::hybrid_planning::GlobalPlannerComponent</a></div><div class="ttdef"><b>Definition:</b> <a href="global__planner__component_8h_source.html#l00087">global_planner_component.h:87</a></div></div>
 <div class="ttc" id="anamespacemoveit_1_1hybrid__planning_html"><div class="ttname"><a href="namespacemoveit_1_1hybrid__planning.html">moveit::hybrid_planning</a></div><div class="ttdef"><b>Definition:</b> <a href="global__planner__component_8h_source.html#l00052">global_planner_component.h:52</a></div></div>
-<div class="ttc" id="aclassmoveit_1_1hybrid__planning_1_1GlobalPlannerComponent_html_afacedadfceb7db584405d7dcb2e85d65"><div class="ttname"><a href="classmoveit_1_1hybrid__planning_1_1GlobalPlannerComponent.html#afacedadfceb7db584405d7dcb2e85d65">moveit::hybrid_planning::GlobalPlannerComponent::GlobalPlannerComponent</a></div><div class="ttdeci">GlobalPlannerComponent(const rclcpp::NodeOptions &amp;options)</div><div class="ttdef"><b>Definition:</b> <a href="global__planner__component_8cpp_source.html#l00053">global_planner_component.cpp:53</a></div></div>
-<div class="ttc" id="aclassmoveit_1_1hybrid__planning_1_1GlobalPlannerComponent_html_a82b84e5bcb66b3499e739d2b951cc54a"><div class="ttname"><a href="classmoveit_1_1hybrid__planning_1_1GlobalPlannerComponent.html#a82b84e5bcb66b3499e739d2b951cc54a">moveit::hybrid_planning::GlobalPlannerComponent::get_node_base_interface</a></div><div class="ttdeci">rclcpp::node_interfaces::NodeBaseInterface::SharedPtr get_node_base_interface()</div><div class="ttdef"><b>Definition:</b> <a href="global__planner__component_8h_source.html#l00127">global_planner_component.h:127</a></div></div>
-<div class="ttc" id="anamespacemoveit__benchmark__statistics_html_ae22bb8022508842c27a92bd715ef205e"><div class="ttname"><a href="namespacemoveit__benchmark__statistics.html#ae22bb8022508842c27a92bd715ef205e">moveit_benchmark_statistics.options</a></div><div class="ttdeci">options</div><div class="ttdef"><b>Definition:</b> <a href="moveit__benchmark__statistics_8py_source.html#l00769">moveit_benchmark_statistics.py:769</a></div></div>
+<div class="ttc" id="aclassmoveit_1_1hybrid__planning_1_1GlobalPlannerComponent_html_afacedadfceb7db584405d7dcb2e85d65"><div class="ttname"><a href="classmoveit_1_1hybrid__planning_1_1GlobalPlannerComponent.html#afacedadfceb7db584405d7dcb2e85d65">moveit::hybrid_planning::GlobalPlannerComponent::GlobalPlannerComponent</a></div><div class="ttdeci">GlobalPlannerComponent(const rclcpp::NodeOptions &amp;options)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> <a href="global__planner__component_8cpp_source.html#l00054">global_planner_component.cpp:54</a></div></div>
+<div class="ttc" id="aclassmoveit_1_1hybrid__planning_1_1GlobalPlannerComponent_html_aef0dc77c6d154d9483c709e7684f91ce"><div class="ttname"><a href="classmoveit_1_1hybrid__planning_1_1GlobalPlannerComponent.html#aef0dc77c6d154d9483c709e7684f91ce">moveit::hybrid_planning::GlobalPlannerComponent::~GlobalPlannerComponent</a></div><div class="ttdeci">~GlobalPlannerComponent()</div><div class="ttdoc">Destructor.</div><div class="ttdef"><b>Definition:</b> <a href="global__planner__component_8h_source.html#l00126">global_planner_component.h:126</a></div></div>
+<div class="ttc" id="aclassmoveit_1_1hybrid__planning_1_1GlobalPlannerComponent_html_a82b84e5bcb66b3499e739d2b951cc54a"><div class="ttname"><a href="classmoveit_1_1hybrid__planning_1_1GlobalPlannerComponent.html#a82b84e5bcb66b3499e739d2b951cc54a">moveit::hybrid_planning::GlobalPlannerComponent::get_node_base_interface</a></div><div class="ttdeci">rclcpp::node_interfaces::NodeBaseInterface::SharedPtr get_node_base_interface()</div><div class="ttdef"><b>Definition:</b> <a href="global__planner__component_8h_source.html#l00138">global_planner_component.h:138</a></div></div>
+<div class="ttc" id="anamespacemoveit__benchmark__statistics_html_ae22bb8022508842c27a92bd715ef205e"><div class="ttname"><a href="namespacemoveit__benchmark__statistics.html#ae22bb8022508842c27a92bd715ef205e">moveit_benchmark_statistics.options</a></div><div class="ttdeci">options</div><div class="ttdef"><b>Definition:</b> <a href="moveit__benchmark__statistics_8py_source.html#l00772">moveit_benchmark_statistics.py:772</a></div></div>
 <div class="ttc" id="aglobal__planner__interface_8h_html"><div class="ttname"><a href="global__planner__interface_8h.html">global_planner_interface.h</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

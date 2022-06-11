@@ -1,0 +1,6 @@
+<map id="pilz_industrial_motion_planner_testutils::GoalConstraintMsgConvertible" name="pilz_industrial_motion_planner_testutils::GoalConstraintMsgConvertible">
+<area shape="rect" id="node1" title="Interface class to express that a derived class can be converted into a moveit_msgs::msg::Constraints..." alt="" coords="5,43,248,99"/>
+<area shape="rect" id="node2" href="$classpilz__industrial__motion__planner__testutils_1_1RobotConfiguration.html" title="Class to define robot configuration in space." alt="" coords="296,50,567,91"/>
+<area shape="rect" id="node3" href="$classpilz__industrial__motion__planner__testutils_1_1CartesianConfiguration.html" title="Class to define a robot configuration in space with the help of cartesian coordinates." alt="" coords="642,5,850,61"/>
+<area shape="rect" id="node4" href="$classpilz__industrial__motion__planner__testutils_1_1JointConfiguration.html" title="Class to define a robot configuration in space with the help of joint values." alt="" coords="615,86,877,127"/>
+</map>

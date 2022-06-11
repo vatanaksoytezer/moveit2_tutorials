@@ -10,7 +10,7 @@
       <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/override.css" type="text/css" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
-    <link rel="canonical" href="https://moveit.picknik.ai/rolling//rolling/doc/examples/controller_configuration/controller_configuration_tutorial.html" />
+    <link rel="canonical" href="https://moveit.picknik.ai/humble//rolling/doc/examples/controller_configuration/controller_configuration_tutorial.html" />
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -46,9 +46,6 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../tutorials/tutorials.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../how_to_guides/how_to_guides.html">How-To Guides</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../concepts/concepts.html">Concepts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../how_to_contribute/how_to_contribute.html">Contributing</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../examples.html">Examples</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../examples.html#movegroup-ros-wrappers-in-c">MoveGroup - ROS Wrappers in C++</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../examples.html#using-moveit-directly-through-the-c-api">Using MoveIt Directly Through the C++ API</a></li>
@@ -78,7 +75,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../examples.html#miscellaneous">Miscellaneous</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../concepts/concepts.html">Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../how_to_guides/how_to_guides.html">How-To Guides</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/api.html">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../how_to_contribute/how_to_contribute.html">Contributing</a></li>
 </ul>
 
         </div>
@@ -114,7 +114,7 @@
       
       You're reading the documentation for the non-stable development version of MoveIt 2.
       For the stable, released version, please have a look at
-      <a href="../../../../galactic/doc/examples/controller_configuration/controller_configuration_tutorial.html">Galactic</a>.
+      <a href="../../../../humble/doc/examples/controller_configuration/controller_configuration_tutorial.html">Humble</a>.
       
   </p>
 </div>
@@ -125,7 +125,7 @@
 <h1>Low Level Controllers<a class="headerlink" href="#low-level-controllers" title="Permalink to this headline"></a></h1>
 <p>MoveIt typically publishes manipulator motion commands to a <a class="reference external" href="https://github.com/ros-controls/ros2_controllers/tree/master/joint_trajectory_controller">JointTrajectoryController</a>. This tutorial assumes MoveGroup is being used to control the robot rather than MoveItCpp or MoveIt Servo. A minimal setup is as follows:</p>
 <ol class="arabic simple">
-<li><p>A YAML config file. As best practice, we suggest naming this <code class="code docutils literal notranslate"><span class="pre">moveit_controllers.yaml</span></code>. It tells MoveIt which controllers are available, which joints are associated with each, and the MoveIt controller interface type (<code class="code docutils literal notranslate"><span class="pre">FollowJointTrajectory</span></code> or <code class="code docutils literal notranslate"><span class="pre">GripperCommand</span></code>). <a class="reference external" href="https://github.com/ros-planning/moveit_resources/blob/ros2/panda_moveit_config/config/panda_controllers.yaml">Example controller config file</a>.</p></li>
+<li><p>A YAML config file. As best practice, we suggest naming this <code class="code docutils literal notranslate"><span class="pre">moveit_controllers.yaml</span></code>. It tells MoveIt which controllers are available, which joints are associated with each, and the MoveIt controller interface type (<code class="code docutils literal notranslate"><span class="pre">FollowJointTrajectory</span></code> or <code class="code docutils literal notranslate"><span class="pre">GripperCommand</span></code>). <a class="reference external" href="https://github.com/ros-planning/moveit_resources/blob/ros2/panda_moveit_config/config/moveit_controllers.yaml">Example controller config file</a>.</p></li>
 <li><p>A launch file. This launch file must load the <code class="code docutils literal notranslate"><span class="pre">moveit_controllers</span></code> yaml file and specify the <code class="code docutils literal notranslate"><span class="pre">moveit_simple_controller_manager/MoveItSimpleControllerManager</span></code>. After these yaml files are loaded, they are passed as parameters to the Move Group node. <a class="reference external" href="https://github.com/ros-planning/moveit_resources/blob/ros2/panda_moveit_config/launch/demo.launch.py">Example Move Group launch file</a>.</p></li>
 <li><p>Launch the corresponding <code class="code docutils literal notranslate"><span class="pre">ros2_control</span></code> JointTrajectoryControllers. This is separate from the MoveIt2 ecosystem. <a class="reference external" href="https://github.com/ros-controls/ros2_control_demos">Example ros2_control launching</a>. Each JointTrajectoryController provides an action interface. Given the yaml file above, MoveIt automatically connects to this action interface.</p></li>
 <li><p>Note: it is not required to use <code class="code docutils literal notranslate"><span class="pre">ros2_control</span></code> for your robot. You could write a proprietary action interface. In practice, 99% of users choose <code class="code docutils literal notranslate"><span class="pre">ros2_control</span></code>.</p></li>
@@ -280,7 +280,8 @@
     </dl>
     <dl>
       <dt>MoveIt 2 - Stable</dt>
-        <dd><a href="../../../../galactic/doc/examples/controller_configuration/controller_configuration_tutorial.html">Galactic (recommended)</a></dd>
+        <dd><a href="../../../../humble/doc/examples/controller_configuration/controller_configuration_tutorial.html">Humble (recommended)</a></dd>
+        <dd><a href="../../../../galactic/doc/examples/controller_configuration/controller_configuration_tutorial.html">Galactic</a></dd>
         <dd><a href="../../../../foxy/index.html">Foxy</a></dd>
    </dl>
     <dl>

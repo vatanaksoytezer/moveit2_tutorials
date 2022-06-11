@@ -1,0 +1,4 @@
+<map id="moveit::core::RobotState::setVariableAcceleration" name="moveit::core::RobotState::setVariableAcceleration">
+<area shape="rect" id="node1" title="Set the acceleration of a single variable. The variable is specified by its index (a value associated..." alt="" coords="5,5,189,47"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1RobotState.html#aa4cac190ffed854f609b4552fe247554" title="Given an array with effort values for all variables, set those values as the effort in this state." alt="" coords="237,5,421,47"/>
+</map>

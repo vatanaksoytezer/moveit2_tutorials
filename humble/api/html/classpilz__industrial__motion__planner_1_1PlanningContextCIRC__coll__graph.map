@@ -1,0 +1,9 @@
+<map id="pilz_industrial_motion_planner::PlanningContextCIRC" name="pilz_industrial_motion_planner::PlanningContextCIRC">
+<area shape="rect" id="node1" title="PlanningContext for obtaining CIRC trajectories." alt="" coords="1316,64,1540,105"/>
+<area shape="rect" id="node2" href="$classpilz__industrial__motion__planner_1_1PlanningContextBase.html" title=" " alt="" coords="1041,57,1267,113"/>
+<area shape="rect" id="node3" href="$classplanning__interface_1_1PlanningContext.html" title="Representation of a particular planning context – the planning scene and the request are known,..." alt="" coords="724,5,867,47"/>
+<area shape="rect" id="node4" title=" " alt="" coords="381,13,529,39"/>
+<area shape="rect" id="node5" href="$classpilz__industrial__motion__planner_1_1LimitsContainer.html" title="This class combines CartesianLimit and JointLimits into on single class." alt="" coords="5,93,195,135"/>
+<area shape="rect" id="node7" href="$classpilz__industrial__motion__planner_1_1TrajectoryGenerator.html" title="Base class of trajectory generators." alt="" coords="348,123,563,164"/>
+<area shape="rect" id="node6" href="$classpilz__industrial__motion__planner_1_1TrajectoryGeneratorCIRC.html" title="This class implements a trajectory generator of arcs in Cartesian space. The arc is specified by a st..." alt="" coords="672,123,919,164"/>
+</map>

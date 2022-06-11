@@ -1,0 +1,7 @@
+<map id="moveit::planning_interface::MoveGroupInterface::setStartState" name="moveit::planning_interface::MoveGroupInterface::setStartState">
+<area shape="rect" id="node1" title="If a different start state should be considered instead of the current state of the robot,..." alt="" coords="5,133,261,174"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl.html#a85c033ed09c50bc557955b3b190548fc" title=" " alt="" coords="311,5,558,61"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl.html#acc232befd1cfbf355910bafd90b9efd2" title=" " alt="" coords="309,85,560,141"/>
+<area shape="rect" id="node4" href="$classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl.html#a7ebe4c5752f775d5050c1fe2bcc2dc91" title=" " alt="" coords="311,165,558,221"/>
+<area shape="rect" id="node5" href="$classmoveit_1_1core_1_1RobotState.html#aba31c6f758e3dabd32c1acbd069e189e" title="Set all joints to their default positions. The default position is 0, or if that is not within bounds..." alt="" coords="343,246,527,287"/>
+</map>

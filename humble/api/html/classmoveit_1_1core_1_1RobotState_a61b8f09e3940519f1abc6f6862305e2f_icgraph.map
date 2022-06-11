@@ -1,0 +1,6 @@
+<map id="moveit::core::RobotState::setVariableVelocities" name="moveit::core::RobotState::setVariableVelocities">
+<area shape="rect" id="node1" title="Given an array with velocity values for all variables, set those values as the velocities in this sta..." alt="" coords="264,86,448,127"/>
+<area shape="rect" id="node2" href="$classplanning__scene__monitor_1_1CurrentStateMonitor.html#a9d8f66b7d89ab08a1850a1706629cf7a" title="Get the time stamp for the current state." alt="" coords="20,5,201,61"/>
+<area shape="rect" id="node3" href="$classTrajectoryGeneratorCommonTest.html#a80e3885bdb7b0ce80bc85c3a75e0e28b" title=" " alt="" coords="5,86,216,127"/>
+<area shape="rect" id="node4" href="$classmoveit_1_1core_1_1RobotState.html#a3c2dfa62fcf0be2cba3dc7019ba48b11" title="Set the position of a single variable. The variable is specified by its index (a value associated by ..." alt="" coords="19,151,203,193"/>
+</map>

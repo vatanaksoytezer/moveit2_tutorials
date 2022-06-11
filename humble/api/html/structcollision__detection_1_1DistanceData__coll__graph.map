@@ -1,0 +1,8 @@
+<map id="collision_detection::DistanceData" name="collision_detection::DistanceData">
+<area shape="rect" id="node1" title="Data structure which is passed to the distance callback function of the collision manager." alt="" coords="901,39,1045,80"/>
+<area shape="rect" id="node2" href="$structcollision__detection_1_1DistanceResult.html" title="Result of a distance request." alt="" coords="684,5,828,47"/>
+<area shape="rect" id="node3" href="$structcollision__detection_1_1DistanceResultsData.html" title="Generic representation of the distance information for a pair of objects." alt="" coords="333,5,500,47"/>
+<area shape="rect" id="node4" href="$classEIGEN__MAKE__ALIGNED__OPERATOR__NEW.html" title="ROS/KDL based interface for the inverse kinematics of the PR2 arm." alt="" coords="5,5,177,47"/>
+<area shape="rect" id="node5" href="$structcollision__detection_1_1DistanceRequest.html" title="Representation of a distance&#45;reporting request." alt="" coords="684,71,828,112"/>
+<area shape="rect" id="node6" href="$classcollision__detection_1_1AllowedCollisionMatrix.html" title="Definition of a structure for the allowed collision matrix. All elements in the collision world are r..." alt="" coords="327,71,507,112"/>
+</map>

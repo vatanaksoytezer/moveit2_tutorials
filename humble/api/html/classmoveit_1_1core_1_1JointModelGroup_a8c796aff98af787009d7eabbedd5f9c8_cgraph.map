@@ -1,0 +1,5 @@
+<map id="moveit::core::JointModelGroup::updateMimicJoints" name="moveit::core::JointModelGroup::updateMimicJoints">
+<area shape="rect" id="node1" title="Update the variable values for the state of a group with respect to the mimic joints...." alt="" coords="5,39,196,80"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1JointModelGroup.html#a7800de8f63af6914613ffbbfcb389ba4" title="Get the names of the end effectors attached to this group." alt="" coords="244,5,512,47"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1core_1_1RobotModel.html#aab2b18a6b558b161452bea7ff0357d63" title="Get the joint group that corresponds to a given end&#45;effector name." alt="" coords="283,71,473,112"/>
+</map>

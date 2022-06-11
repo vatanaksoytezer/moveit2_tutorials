@@ -1,0 +1,6 @@
+<map id="TEST_F" name="TEST_F">
+<area shape="rect" id="node1" title="Tests if circular motions with start &amp; goal state given as joint configuration and center point given..." alt="" coords="5,71,75,97"/>
+<area shape="rect" id="node2" href="$namespacetestutils.html#a6103ebf4ba5ba7a0b6e28c6c4f793bee" title="check SLERP. The orientation should rotate around the same axis linearly." alt="" coords="146,5,307,32"/>
+<area shape="rect" id="node3" href="$classpilz__industrial__motion__planner__testutils_1_1BaseCmd.html#aae290507f293e36b98d9ddc468223ca1" title=" " alt="" coords="123,56,331,112"/>
+<area shape="rect" id="node4" href="$namespacetestutils.html#a16cef7d20ff377c527415f1898b6d740" title="check if the goal given in joint space is reached Only the last point in the trajectory is veryfied." alt="" coords="137,136,317,163"/>
+</map>

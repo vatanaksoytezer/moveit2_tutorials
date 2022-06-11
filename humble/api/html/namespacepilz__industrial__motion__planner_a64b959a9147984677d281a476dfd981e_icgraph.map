@@ -1,0 +1,5 @@
+<map id="pilz_industrial_motion_planner::generateJointTrajectory" name="pilz_industrial_motion_planner::generateJointTrajectory">
+<area shape="rect" id="node1" title="Generate joint trajectory from a KDL Cartesian trajectory." alt="" coords="316,46,553,87"/>
+<area shape="rect" id="node2" href="$classpilz__industrial__motion__planner_1_1TrajectoryBlenderTransitionWindow.html#a9d63c28af784da96600f19b2d3ca33b0" title="Blend two trajectories using transition window. The trajectories have to be equally and uniformly dis..." alt="" coords="5,5,268,61"/>
+<area shape="rect" id="node3" href="$unittest__trajectory__blender__transition__window_8cpp.html#a7d39ac8fe9fc6f0c8607fe4f76d3bcc9" title="Tests the blending of two cartesian trajectories which differ from a straight line." alt="" coords="102,85,171,112"/>
+</map>

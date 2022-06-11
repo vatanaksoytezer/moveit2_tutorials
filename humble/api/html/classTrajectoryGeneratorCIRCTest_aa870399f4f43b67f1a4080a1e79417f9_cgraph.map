@@ -1,0 +1,16 @@
+<map id="TrajectoryGeneratorCIRCTest::checkCircResult" name="TrajectoryGeneratorCIRCTest::checkCircResult">
+<area shape="rect" id="node1" title=" " alt="" coords="5,161,213,203"/>
+<area shape="rect" id="node2" href="$namespacetestutils.html#aff7e22a5989e2e292e9ce0b20b3fd195" title="Check that the rotational path of a given trajectory is a quaternion slerp." alt="" coords="277,37,460,79"/>
+<area shape="rect" id="node6" href="$namespacetestutils.html#a2fdced2dd08d4d1c6ba87e72c2096776" title="Check that the translational path of a given trajectory has a trapezoid velocity profile." alt="" coords="277,103,460,144"/>
+<area shape="rect" id="node7" href="$namespacetestutils.html#a6941dcc98ca4e3988e382fd3de978667" title="check joint trajectory of consistency, position, velocity and acceleration limits" alt="" coords="261,169,476,195"/>
+<area shape="rect" id="node12" href="$structplanning__interface_1_1MotionPlanResponse.html#acec831a8d2cfd2ef0aa0b6ed94d8d59a" title=" " alt="" coords="285,219,452,275"/>
+<area shape="rect" id="node14" href="$namespacetestutils.html#a16cef7d20ff377c527415f1898b6d740" title="check if the goal given in joint space is reached Only the last point in the trajectory is veryfied." alt="" coords="279,299,459,326"/>
+<area shape="rect" id="node3" href="$namespacetestutils.html#ad85119748f255af37a1ddca4b438962f" title="Check that a given vector of accelerations represents a trapezoid velocity profile." alt="" coords="527,45,747,71"/>
+<area shape="rect" id="node4" href="$namespacepr2__arm__kinematics.html#a24f684af4bcce4a6d0c945aa27d04550" title=" " alt="" coords="815,5,969,47"/>
+<area shape="rect" id="node5" href="$namespacetestutils.html#a0084beb9bba6496da596d6433544786e" title=" " alt="" coords="799,71,985,112"/>
+<area shape="rect" id="node8" href="$namespacetestutils.html#a3c3c86cff874d688226f74f9e8ea4b91" title="is Acceleration Bounded" alt="" coords="550,96,725,137"/>
+<area shape="rect" id="node9" href="$namespacetestutils.html#ac5d5277d059651d070458ced4dd21d3d" title="is Position Bounded" alt="" coords="536,162,739,189"/>
+<area shape="rect" id="node10" href="$namespacetestutils.html#a4dc6934eb856b588dbbef7744c766bb3" title="check if the sizes of the joint position/veloicty/acceleration are correct" alt="" coords="524,213,751,239"/>
+<area shape="rect" id="node11" href="$namespacetestutils.html#a318192937ca55e8c39e41410d9de0f22" title="is Velocity Bounded" alt="" coords="536,263,739,290"/>
+<area shape="rect" id="node13" href="$namespacemoveit_1_1core.html#a0aafbf7242f36d6efd7bd73ecee400e8" title="Convert a MoveIt robot state to a robot state message." alt="" coords="547,315,727,356"/>
+</map>

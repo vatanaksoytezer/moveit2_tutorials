@@ -1,5 +1,4 @@
 <map id="pilz_industrial_motion_planner::CommandPlanner::registerContextLoader" name="pilz_industrial_motion_planner::CommandPlanner::registerContextLoader">
-<area shape="rect" id="node1" title="Register a PlanningContextLoader to be used by the CommandPlanner." alt="" coords="256,39,459,95"/>
-<area shape="rect" id="node2" href="$classpilz__industrial__motion__planner_1_1CommandPlanner.html#ab5f6c26cbb353c979e7f8d7eba1c2cdb" title="Initializes the planner Upon initialization this planner will look for plugins implementing pilz_indu..." alt="" coords="5,5,208,61"/>
-<area shape="rect" id="node3" href="$unittest__pilz__industrial__motion__planner__direct_8cpp.html#aa809bb592086bdd2fca03787f1acd25d" title="Check that a exception is thrown if a already loaded PlanningContextLoader is loaded." alt="" coords="79,85,134,112"/>
+<area shape="rect" id="node1" title="Register a PlanningContextLoader to be used by the CommandPlanner." alt="" coords="108,5,311,61"/>
+<area shape="rect" id="node2" href="$unittest__pilz__industrial__motion__planner__direct_8cpp.html#aa809bb592086bdd2fca03787f1acd25d" title="Check that a exception is thrown if a already loaded PlanningContextLoader is loaded." alt="" coords="5,20,60,47"/>
 </map>

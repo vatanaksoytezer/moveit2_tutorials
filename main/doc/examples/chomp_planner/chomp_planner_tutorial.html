@@ -10,7 +10,7 @@
       <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/override.css" type="text/css" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
-    <link rel="canonical" href="https://moveit.picknik.ai/rolling//rolling/doc/examples/chomp_planner/chomp_planner_tutorial.html" />
+    <link rel="canonical" href="https://moveit.picknik.ai/humble//rolling/doc/examples/chomp_planner/chomp_planner_tutorial.html" />
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -46,9 +46,6 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../tutorials/tutorials.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../how_to_guides/how_to_guides.html">How-To Guides</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../concepts/concepts.html">Concepts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../how_to_contribute/how_to_contribute.html">Contributing</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../examples.html">Examples</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../examples.html#movegroup-ros-wrappers-in-c">MoveGroup - ROS Wrappers in C++</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../examples.html#using-moveit-directly-through-the-c-api">Using MoveIt Directly Through the C++ API</a></li>
@@ -82,7 +79,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../examples.html#miscellaneous">Miscellaneous</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../concepts/concepts.html">Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../how_to_guides/how_to_guides.html">How-To Guides</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/api.html">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../how_to_contribute/how_to_contribute.html">Contributing</a></li>
 </ul>
 
         </div>
@@ -118,7 +118,7 @@
       
       You're reading the documentation for the non-stable development version of MoveIt 2.
       For the stable, released version, please have a look at
-      <a href="../../../../galactic/doc/examples/chomp_planner/chomp_planner_tutorial.html">Galactic</a>.
+      <a href="../../../../humble/doc/examples/chomp_planner/chomp_planner_tutorial.html">Humble</a>.
       
   </p>
 </div>
@@ -216,36 +216,59 @@
 <p>Here, it is demonstrated that CHOMP can also be used as a post-processing optimization technique for plans obtained by other planning algorithms. The intuition behind this is that some randomized planning algorithm produces an initial guess for CHOMP. CHOMP then takes this initial guess and further optimizes the trajectory.
 To achieve this, follow the steps:</p>
 <ol class="arabic">
-<li><p>Create a new launch file <code class="docutils literal notranslate"><span class="pre">ompl-chomp_planning_pipeline.launch</span></code> in the <code class="docutils literal notranslate"><span class="pre">&lt;robot_moveit_config&gt;/launch</span></code> folder of your robot with the following contents:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;launch&gt;
-  &lt;!-- load OMPL planning pipeline, but add the CHOMP planning adapter. --&gt;
-  &lt;include file=&quot;$(find panda_moveit_config)/launch/ompl_planning_pipeline.launch.xml&quot;&gt;
-    &lt;arg name=&quot;planning_adapters&quot; value=&quot;
-       default_planner_request_adapters/AddTimeParameterization
-       default_planner_request_adapters/FixWorkspaceBounds
-       default_planner_request_adapters/FixStartStateBounds
-       default_planner_request_adapters/FixStartStateCollision
-       default_planner_request_adapters/FixStartStatePathConstraints
-       chomp/OptimizerAdapter&quot;
-       /&gt;
-  &lt;/include&gt;
-  &lt;!-- load chomp config --&gt;
-  &lt;rosparam command=&quot;load&quot; file=&quot;$(find panda_moveit_config)/config/chomp_planning.yaml&quot;/&gt;
-  &lt;!-- override trajectory_initialization_method --&gt;
-  &lt;param name=&quot;trajectory_initialization_method&quot; value=&quot;fillTrajectory&quot;/&gt;
-&lt;/launch&gt;
+<li><p>Edit <code class="docutils literal notranslate"><span class="pre">ompl_planning.yaml</span></code> in the <code class="docutils literal notranslate"><span class="pre">&lt;robot_moveit_config&gt;/launch</span></code> folder of your robot. Add <code class="docutils literal notranslate"><span class="pre">chomp/OptimizerAdapter</span></code> to the bottom of the list of request_adapters:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">request_adapters</span><span class="p">:</span> <span class="o">&gt;-</span>
+  <span class="o">...</span>
+  <span class="n">default_planner_request_adapters</span><span class="o">/</span><span class="n">FixStartStatePathConstraints</span>
+  <span class="n">chomp</span><span class="o">/</span><span class="n">OptimizerAdapter</span>
 </pre></div>
 </div>
 </li>
-<li><p>This launch file defines the new planning pipeline <code class="docutils literal notranslate"><span class="pre">ompl-chomp</span></code>, deriving from the <code class="docutils literal notranslate"><span class="pre">ompl</span></code> pipeline,
-but adding the CHOMP post-processor as a planning adapter. Also, the <code class="docutils literal notranslate"><span class="pre">trajectory_initialization_method</span></code> is overridden to use the OMPL-generated trajectory.</p></li>
-<li><p>Now you can launch the newly configure planning pipeline as follows:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">roslaunch</span> <span class="n">panda_moveit_config</span> <span class="n">demo</span><span class="o">.</span><span class="n">launch</span> <span class="n">pipeline</span><span class="o">:=</span><span class="n">ompl</span><span class="o">-</span><span class="n">chomp</span>
+<li><p>Add a new yaml configuration file for chomp (or update the existing one), <code class="docutils literal notranslate"><span class="pre">chomp_planning.yaml</span></code>. Note the last line – the <code class="docutils literal notranslate"><span class="pre">fillTrajectory</span></code> method means that OMPL will provide the input for the CHOMP algorithm:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">start_state_max_bounds_error</span><span class="p">:</span> <span class="mf">0.1</span>
+<span class="n">planning_time_limit</span><span class="p">:</span> <span class="mf">10.0</span>
+<span class="n">max_iterations</span><span class="p">:</span> <span class="mi">200</span>
+<span class="n">max_iterations_after_collision_free</span><span class="p">:</span> <span class="mi">5</span>
+<span class="n">smoothness_cost_weight</span><span class="p">:</span> <span class="mf">0.1</span>
+<span class="n">obstacle_cost_weight</span><span class="p">:</span> <span class="mf">1.0</span>
+<span class="n">learning_rate</span><span class="p">:</span> <span class="mf">0.01</span>
+<span class="n">animate_path</span><span class="p">:</span> <span class="n">true</span>
+<span class="n">add_randomness</span><span class="p">:</span> <span class="n">false</span>
+<span class="n">smoothness_cost_velocity</span><span class="p">:</span> <span class="mf">0.0</span>
+<span class="n">smoothness_cost_acceleration</span><span class="p">:</span> <span class="mf">1.0</span>
+<span class="n">smoothness_cost_jerk</span><span class="p">:</span> <span class="mf">0.0</span>
+<span class="n">hmc_discretization</span><span class="p">:</span> <span class="mf">0.01</span>
+<span class="n">hmc_stochasticity</span><span class="p">:</span> <span class="mf">0.01</span>
+<span class="n">hmc_annealing_factor</span><span class="p">:</span> <span class="mf">0.99</span>
+<span class="n">use_hamiltonian_monte_carlo</span><span class="p">:</span> <span class="n">false</span>
+<span class="n">ridge_factor</span><span class="p">:</span> <span class="mf">0.0</span>
+<span class="n">use_pseudo_inverse</span><span class="p">:</span> <span class="n">false</span>
+<span class="n">pseudo_inverse_ridge_factor</span><span class="p">:</span> <span class="mf">1e-4</span>
+<span class="n">animate_endeffector</span><span class="p">:</span> <span class="n">false</span>
+<span class="n">joint_update_limit</span><span class="p">:</span> <span class="mf">0.1</span>
+<span class="n">collision_clearence</span><span class="p">:</span> <span class="mf">0.2</span>
+<span class="n">collision_threshold</span><span class="p">:</span> <span class="mf">0.07</span>
+<span class="n">random_jump_amount</span><span class="p">:</span> <span class="mf">1.0</span>
+<span class="n">use_stochastic_descent</span><span class="p">:</span> <span class="n">true</span>
+<span class="n">enable_failure_recovery</span><span class="p">:</span> <span class="n">false</span>
+<span class="n">max_recovery_attempts</span><span class="p">:</span> <span class="mi">5</span>
+<span class="c1"># OMPL initializes the trajectory:</span>
+<span class="n">trajectory_initialization_method</span><span class="p">:</span> <span class="s2">&quot;fillTrajectory&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Add the CHOMP config file to the launch file of your robot, <code class="docutils literal notranslate"><span class="pre">&lt;robot_moveit_config&gt;/launch/demo.launch.py</span></code>, if it is not already:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span><span class="n">planning_pipelines</span><span class="p">(</span><span class="s2">&quot;ompl&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;ompl&quot;</span><span class="p">,</span> <span class="s2">&quot;chomp&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</li>
+<li><p>Now you can launch the newly configured planning pipeline as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ros2</span> <span class="n">launch</span> <span class="n">moveit_resources_panda_moveit_config</span> <span class="n">demo</span><span class="o">.</span><span class="n">launch</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </div>
 </li>
 </ol>
-<p>This will launch RViz, select OMPL in the Motion Planning panel under the Context tab. Set the desired start and goal states by moving the end-effector around in the same way as was done for CHOMP above. Finally click on the Plan button to start planning. The planner will now first run OMPL, then run CHOMP on OMPL’s output to produce an optimized path.</p>
+<p>This will launch RViz. Select OMPL in the Motion Planning panel under the Context tab. Set the desired start and goal states by moving the end-effector around in the same way as was done for CHOMP above. Finally click on the Plan button to start planning. The planner will now first run OMPL, then run CHOMP on OMPL’s output to produce an optimized path.</p>
 </div>
 </div>
 
@@ -288,7 +311,8 @@ but adding the CHOMP post-processor as a planning adapter. Also, the <code class
     </dl>
     <dl>
       <dt>MoveIt 2 - Stable</dt>
-        <dd><a href="../../../../galactic/doc/examples/chomp_planner/chomp_planner_tutorial.html">Galactic (recommended)</a></dd>
+        <dd><a href="../../../../humble/doc/examples/chomp_planner/chomp_planner_tutorial.html">Humble (recommended)</a></dd>
+        <dd><a href="../../../../galactic/doc/examples/chomp_planner/chomp_planner_tutorial.html">Galactic</a></dd>
         <dd><a href="../../../../foxy/index.html">Foxy</a></dd>
    </dl>
     <dl>

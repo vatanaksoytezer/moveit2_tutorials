@@ -1,0 +1,4 @@
+<map id="moveit::core::RobotModel::getLinkModel" name="moveit::core::RobotModel::getLinkModel">
+<area shape="rect" id="node1" title="Get a link by its name. Output error and return nullptr when the link is missing." alt="" coords="5,5,196,47"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1RobotModel.html#a86fbf5aa10ec7160f309add03d912c55" title="Compute the default values for a RobotState." alt="" coords="244,5,455,47"/>
+</map>

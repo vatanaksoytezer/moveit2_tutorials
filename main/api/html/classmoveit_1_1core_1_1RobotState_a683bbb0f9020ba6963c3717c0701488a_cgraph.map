@@ -1,0 +1,4 @@
+<map id="moveit::core::RobotState::clearAttachedBodies" name="moveit::core::RobotState::clearAttachedBodies">
+<area shape="rect" id="node1" title="Clear the bodies attached to a specific link." alt="" coords="5,5,189,47"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1LinkModel.html#af30cc07d5b7409ac39b152a9cd94b563" title="The index of this joint when traversing the kinematic tree in depth first fashion." alt="" coords="237,5,416,47"/>
+</map>

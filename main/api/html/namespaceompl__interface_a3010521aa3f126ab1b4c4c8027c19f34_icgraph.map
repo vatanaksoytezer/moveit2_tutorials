@@ -1,0 +1,4 @@
+<map id="ompl_interface::orientationConstraintMsgToBoundVector" name="ompl_interface::orientationConstraintMsgToBoundVector">
+<area shape="rect" id="node1" title="Extract orientation constraints from the MoveIt message." alt="" coords="280,5,492,47"/>
+<area shape="rect" id="node2" href="$classompl__interface_1_1OrientationConstraint.html#a99490c0da3ab91aba65211bd666d7d73" title="Parse bounds on orientation parameters from MoveIt&#39;s constraint message." alt="" coords="5,5,232,47"/>
+</map>

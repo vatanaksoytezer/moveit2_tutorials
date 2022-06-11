@@ -13,6 +13,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="theme.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -284,13 +285,13 @@ $(function() {
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;  <span class="keywordflow">return</span> loadFileToString(buffer, path);</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;}</div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="keywordtype">bool</span> RDFLoader::loadPkgFileToString(std::string&amp; buffer, <span class="keyword">const</span> std::string&amp; package_name,</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="keywordtype">bool</span> RDFLoader::loadPkgFileToString(std::string&amp; buffer, <span class="keyword">const</span> std::string&amp; <a class="code" href="namespacesetup.html#a3c783d982ab5a3d08b5fcf646a62976d">package_name</a>,</div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                                    <span class="keyword">const</span> std::string&amp; relative_path, <span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; xacro_args)</div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;{</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;  std::string package_path;</div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;  <span class="keywordflow">try</span></div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;  {</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    package_path = <a class="code" href="namespacecreate__ikfast__moveit__plugin.html#a0c9b4e891e3b0ed1d9e9da320cee114b">ament_index_cpp::get_package_share_directory</a>(package_name);</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    package_path = <a class="code" href="namespacecreate__ikfast__moveit__plugin.html#a0c9b4e891e3b0ed1d9e9da320cee114b">ament_index_cpp::get_package_share_directory</a>(<a class="code" href="namespacesetup.html#a3c783d982ab5a3d08b5fcf646a62976d">package_name</a>);</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;  }</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;  <span class="keywordflow">catch</span> (<span class="keyword">const</span> ament_index_cpp::PackageNotFoundError&amp; e)</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;  {</div>
@@ -334,6 +335,7 @@ $(function() {
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassrdf__loader_1_1RDFLoader_html_ae03ef30645392af8dd61df92769e9a2e"><div class="ttname"><a href="classrdf__loader_1_1RDFLoader.html#ae03ef30645392af8dd61df92769e9a2e">rdf_loader::RDFLoader::RDFLoader</a></div><div class="ttdeci">RDFLoader(const std::shared_ptr&lt; rclcpp::Node &gt; &amp;node, const std::string &amp;ros_name=&quot;robot_description&quot;, bool default_continuous_value=false, double default_timeout=10.0)</div><div class="ttdoc">Default constructor.</div><div class="ttdef"><b>Definition:</b> <a href="rdf__loader_8cpp_source.html#l00092">rdf_loader.cpp:92</a></div></div>
 <div class="ttc" id="anamespacecreate__ikfast__moveit__plugin_html_a0c9b4e891e3b0ed1d9e9da320cee114b"><div class="ttname"><a href="namespacecreate__ikfast__moveit__plugin.html#a0c9b4e891e3b0ed1d9e9da320cee114b">create_ikfast_moveit_plugin.get_package_share_directory</a></div><div class="ttdeci">def get_package_share_directory(pkg_name)</div><div class="ttdef"><b>Definition:</b> <a href="create__ikfast__moveit__plugin_8py_source.html#l00070">create_ikfast_moveit_plugin.py:70</a></div></div>
+<div class="ttc" id="anamespacesetup_html_a3c783d982ab5a3d08b5fcf646a62976d"><div class="ttname"><a href="namespacesetup.html#a3c783d982ab5a3d08b5fcf646a62976d">setup.package_name</a></div><div class="ttdeci">string package_name</div><div class="ttdef"><b>Definition:</b> <a href="moveit__configs__utils_2setup_8py_source.html#l00003">setup.py:3</a></div></div>
 <div class="ttc" id="aclassmoveit_1_1tools_1_1Profiler_1_1ScopedStart_html"><div class="ttname"><a href="classmoveit_1_1tools_1_1Profiler_1_1ScopedStart.html">moveit::tools::Profiler::ScopedStart</a></div><div class="ttdoc">This instance will call Profiler::start() when constructed and Profiler::stop() when it goes out of s...</div><div class="ttdef"><b>Definition:</b> <a href="profiler_8h_source.html#l00098">profiler.h:98</a></div></div>
 <div class="ttc" id="aprofiler_8h_html"><div class="ttname"><a href="profiler_8h.html">profiler.h</a></div></div>
 <div class="ttc" id="anamespaceplanning__request__adapter_html_af64b3fa8ebc256d9c5133c6c80ade28f"><div class="ttname"><a href="namespaceplanning__request__adapter.html#af64b3fa8ebc256d9c5133c6c80ade28f">planning_request_adapter::LOGGER</a></div><div class="ttdeci">rclcpp::Logger LOGGER</div><div class="ttdef"><b>Definition:</b> <a href="planning__request__adapter_8cpp_source.html#l00078">planning_request_adapter.cpp:78</a></div></div>

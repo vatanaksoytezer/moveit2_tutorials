@@ -13,6 +13,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="theme.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -138,18 +139,42 @@ $(function() {
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  EXPECT_EQ(<span class="stringliteral">&quot;gonzo&quot;</span>, loader.<a class="code" href="classrdf__loader_1_1RDFLoader.html#a0f8158d75c555baa1734da830b429089">getSRDF</a>()-&gt;getName());</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="test__rdf__integration_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">   69</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="test__rdf__integration_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>** argv)</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="test__rdf__integration_8cpp.html#a9ec6124b417a5b057b1eb6169b815889">   69</a></span>&#160;<a class="code" href="test__rdf__integration_8cpp.html#a3f8ce0e00865f9890e40a4a80533cd4c">TEST</a>(RDFIntegration, executor)</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;{</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  rclcpp::init(argc, argv);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  ::testing::InitGoogleTest(&amp;argc, argv);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keywordtype">int</span> ret = RUN_ALL_TESTS();</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  rclcpp::shutdown();</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordflow">return</span> ret;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="comment">// RDFLoader should successfully load URDF and SRDF strings from a ROS topic when the node that is</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="comment">// passed to it is spinning.</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="comment">// GIVEN a node that has been added to an executor that is spinning on another thread</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  rclcpp::Node::SharedPtr node = std::make_shared&lt;rclcpp::Node&gt;(<span class="stringliteral">&quot;executor&quot;</span>);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="comment">// Create a thread to spin an Executor.</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  std::thread([node]() {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    rclcpp::executors::SingleThreadedExecutor executor;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    executor.add_node(node);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    executor.spin();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  }).detach();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="comment">// WHEN the RDFLoader is created</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <a class="code" href="classrdf__loader_1_1RDFLoader.html">rdf_loader::RDFLoader</a> loader(node, <span class="stringliteral">&quot;topic_description&quot;</span>);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="comment">// THEN the RDFLoader should return non-null values for the URDF and SRDF model.</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  ASSERT_NE(<span class="keyword">nullptr</span>, loader.<a class="code" href="classrdf__loader_1_1RDFLoader.html#a657072168618e7f95c8179fa91feb560">getURDF</a>());</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  EXPECT_EQ(<span class="stringliteral">&quot;gonzo&quot;</span>, loader.<a class="code" href="classrdf__loader_1_1RDFLoader.html#a657072168618e7f95c8179fa91feb560">getURDF</a>()-&gt;name_);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  ASSERT_NE(<span class="keyword">nullptr</span>, loader.<a class="code" href="classrdf__loader_1_1RDFLoader.html#a0f8158d75c555baa1734da830b429089">getSRDF</a>());</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  EXPECT_EQ(<span class="stringliteral">&quot;gonzo&quot;</span>, loader.<a class="code" href="classrdf__loader_1_1RDFLoader.html#a0f8158d75c555baa1734da830b429089">getSRDF</a>()-&gt;getName());</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="test__rdf__integration_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">   93</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="test__rdf__integration_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>** argv)</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;{</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  rclcpp::init(argc, argv);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  ::testing::InitGoogleTest(&amp;argc, argv);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keywordtype">int</span> ret = RUN_ALL_TESTS();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  rclcpp::shutdown();</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="atest__rdf__integration_8cpp_html_a3f8ce0e00865f9890e40a4a80533cd4c"><div class="ttname"><a href="test__rdf__integration_8cpp.html#a3f8ce0e00865f9890e40a4a80533cd4c">TEST</a></div><div class="ttdeci">TEST(RDFIntegration, default_arguments)</div><div class="ttdef"><b>Definition:</b> <a href="test__rdf__integration_8cpp_source.html#l00041">test_rdf_integration.cpp:41</a></div></div>
-<div class="ttc" id="atest__rdf__integration_8cpp_html_a3c04138a5bfe5d72780bb7e82a18e627"><div class="ttname"><a href="test__rdf__integration_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></div><div class="ttdeci">int main(int argc, char **argv)</div><div class="ttdef"><b>Definition:</b> <a href="test__rdf__integration_8cpp_source.html#l00069">test_rdf_integration.cpp:69</a></div></div>
+<div class="ttc" id="atest__rdf__integration_8cpp_html_a3c04138a5bfe5d72780bb7e82a18e627"><div class="ttname"><a href="test__rdf__integration_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></div><div class="ttdeci">int main(int argc, char **argv)</div><div class="ttdef"><b>Definition:</b> <a href="test__rdf__integration_8cpp_source.html#l00093">test_rdf_integration.cpp:93</a></div></div>
 <div class="ttc" id="aclassrdf__loader_1_1RDFLoader_html_a0f8158d75c555baa1734da830b429089"><div class="ttname"><a href="classrdf__loader_1_1RDFLoader.html#a0f8158d75c555baa1734da830b429089">rdf_loader::RDFLoader::getSRDF</a></div><div class="ttdeci">const srdf::ModelSharedPtr &amp; getSRDF() const</div><div class="ttdoc">Get the parsed SRDF model.</div><div class="ttdef"><b>Definition:</b> <a href="rdf__loader_8h_source.html#l00123">rdf_loader.h:123</a></div></div>
 <div class="ttc" id="aclassrdf__loader_1_1RDFLoader_html"><div class="ttname"><a href="classrdf__loader_1_1RDFLoader.html">rdf_loader::RDFLoader</a></div><div class="ttdef"><b>Definition:</b> <a href="rdf__loader_8h_source.html#l00085">rdf_loader.h:85</a></div></div>
 <div class="ttc" id="aclassrdf__loader_1_1RDFLoader_html_a657072168618e7f95c8179fa91feb560"><div class="ttname"><a href="classrdf__loader_1_1RDFLoader.html#a657072168618e7f95c8179fa91feb560">rdf_loader::RDFLoader::getURDF</a></div><div class="ttdeci">const urdf::ModelInterfaceSharedPtr &amp; getURDF() const</div><div class="ttdoc">Get the parsed URDF model.</div><div class="ttdef"><b>Definition:</b> <a href="rdf__loader_8h_source.html#l00117">rdf_loader.h:117</a></div></div>

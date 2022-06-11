@@ -1,0 +1,4 @@
+<map id="moveit::core::RobotModel::getRootLink" name="moveit::core::RobotModel::getRootLink">
+<area shape="rect" id="node1" title="Get the physical root link of the robot." alt="" coords="244,5,435,47"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1RobotModel.html#a9390607f3bd23f21e5fb5771b45acad8" title="Get the array of joints that are active (not fixed, not mimic) in this model." alt="" coords="5,5,196,47"/>
+</map>

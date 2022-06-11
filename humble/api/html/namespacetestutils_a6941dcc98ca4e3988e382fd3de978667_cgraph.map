@@ -1,0 +1,7 @@
+<map id="testutils::checkJointTrajectory" name="testutils::checkJointTrajectory">
+<area shape="rect" id="node1" title="check joint trajectory of consistency, position, velocity and acceleration limits" alt="" coords="5,97,220,123"/>
+<area shape="rect" id="node2" href="$namespacetestutils.html#a3c3c86cff874d688226f74f9e8ea4b91" title="is Acceleration Bounded" alt="" coords="294,5,469,47"/>
+<area shape="rect" id="node3" href="$namespacetestutils.html#ac5d5277d059651d070458ced4dd21d3d" title="is Position Bounded" alt="" coords="280,71,483,98"/>
+<area shape="rect" id="node4" href="$namespacetestutils.html#a4dc6934eb856b588dbbef7744c766bb3" title="check if the sizes of the joint position/veloicty/acceleration are correct" alt="" coords="268,122,495,149"/>
+<area shape="rect" id="node5" href="$namespacetestutils.html#a318192937ca55e8c39e41410d9de0f22" title="is Velocity Bounded" alt="" coords="280,173,483,199"/>
+</map>

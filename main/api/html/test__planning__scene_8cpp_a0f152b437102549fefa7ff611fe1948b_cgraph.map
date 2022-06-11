@@ -1,0 +1,10 @@
+<map id="TEST" name="TEST">
+<area shape="rect" id="node1" title=" " alt="" coords="5,111,60,138"/>
+<area shape="rect" id="node2" href="$test__planning__scene_8cpp.html#a3c967769ca26ac3bc50c646579cfcc21" title=" " alt="" coords="128,17,327,43"/>
+<area shape="rect" id="node4" href="$test__planning__scene_8cpp.html#a8b97fcaaadf48c90580a6a8460279c5b" title=" " alt="" coords="143,71,311,112"/>
+<area shape="rect" id="node6" href="$test__planning__scene_8cpp.html#a82de2ceb5f79b4109a54d5dc65da942d" title=" " alt="" coords="148,136,307,177"/>
+<area shape="rect" id="node8" href="$namespacemoveit_1_1core.html#a9d39f2316f4754a5fe4bd8abe00e7660" title="Loads a URDF Model Interface from moveit_resources." alt="" coords="108,202,347,229"/>
+<area shape="rect" id="node3" href="$classplanning__scene_1_1PlanningScene.html#a5f89d2af67f94d4555e9bc66a1b4ec47" title="Return a new child PlanningScene that uses this one as parent." alt="" coords="441,5,628,47"/>
+<area shape="rect" id="node5" href="$classplanning__scene_1_1PlanningScene.html#a0e1c3e079858a6a99613b4b58859f51a" title="Construct a vector of messages (attached_collision_objects) with the attached collision object data f..." alt="" coords="395,71,675,112"/>
+<area shape="rect" id="node7" href="$classplanning__scene_1_1PlanningScene.html#a510692917f61e707ede37c2899312139" title="Construct a vector of messages (collision_objects) with the collision object data for all objects in ..." alt="" coords="423,136,646,177"/>
+</map>

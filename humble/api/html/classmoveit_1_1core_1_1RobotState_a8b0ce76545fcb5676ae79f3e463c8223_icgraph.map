@@ -1,0 +1,4 @@
+<map id="moveit::core::RobotState::getVariableVelocities" name="moveit::core::RobotState::getVariableVelocities">
+<area shape="rect" id="node1" title="Get raw access to the velocities of the variables that make up this state. The values are in the same..." alt="" coords="235,13,419,54"/>
+<area shape="rect" id="node2" href="$classplanning__scene__monitor_1_1CurrentStateMonitor.html#a9d8f66b7d89ab08a1850a1706629cf7a" title="Get the time stamp for the current state." alt="" coords="5,5,187,61"/>
+</map>

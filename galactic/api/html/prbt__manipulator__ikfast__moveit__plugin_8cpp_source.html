@@ -13,6 +13,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="theme.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -488,7 +489,7 @@ $(function() {
 <div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;  redundant_joint_discretization_[redundant_joint_indices_[0]] = discretization.begin()-&gt;second;</div>
 <div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;}</div>
 <div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160; </div>
-<div class="line"><a name="l00553"></a><span class="lineno"><a class="line" href="classprbt__manipulator_1_1IKFastKinematicsPlugin.html#a500c01357cc50a6213f63b3f2f898495">  553</a></span>&#160;<span class="keywordtype">bool</span> IKFastKinematicsPlugin::setRedundantJoints(<span class="keyword">const</span> std::vector&lt;unsigned int&gt;&amp; redundant_joint_indices)</div>
+<div class="line"><a name="l00553"></a><span class="lineno"><a class="line" href="classprbt__manipulator_1_1IKFastKinematicsPlugin.html#a500c01357cc50a6213f63b3f2f898495">  553</a></span>&#160;<span class="keywordtype">bool</span> IKFastKinematicsPlugin::setRedundantJoints(<span class="keyword">const</span> std::vector&lt;unsigned int&gt;&amp; <span class="comment">/* unused */</span>)</div>
 <div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;{</div>
 <div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;  RCLCPP_ERROR_STREAM(LOGGER, <span class="stringliteral">&quot;Changing the redundant joints isn&#39;t permitted by this group&#39;s solver &quot;</span>);</div>
 <div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
@@ -795,7 +796,7 @@ $(function() {
 <div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;}</div>
 <div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160; </div>
 <div class="line"><a name="l00859"></a><span class="lineno"><a class="line" href="classprbt__manipulator_1_1IKFastKinematicsPlugin.html#a0f0ea2eb5fb79f41f0249a1ce2e8c422">  859</a></span>&#160;<span class="keywordtype">bool</span> IKFastKinematicsPlugin::searchPositionIK(<span class="keyword">const</span> geometry_msgs::msg::Pose&amp; ik_pose,</div>
-<div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160;                                              <span class="keyword">const</span> std::vector&lt;double&gt;&amp; ik_seed_state, <span class="keywordtype">double</span> timeout,</div>
+<div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160;                                              <span class="keyword">const</span> std::vector&lt;double&gt;&amp; ik_seed_state, <span class="keywordtype">double</span> <span class="comment">/* unused */</span>,</div>
 <div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;                                              <span class="keyword">const</span> std::vector&lt;double&gt;&amp; consistency_limits,</div>
 <div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;                                              std::vector&lt;double&gt;&amp; solution, <span class="keyword">const</span> <a class="code" href="classkinematics_1_1KinematicsBase.html#a151d379adb69059e7f2f666d06cd919a">IKCallbackFn</a>&amp; solution_callback,</div>
 <div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160;                                              moveit_msgs::msg::MoveItErrorCodes&amp; error_code,</div>
@@ -1027,7 +1028,7 @@ $(function() {
 <div class="line"><a name="l01089"></a><span class="lineno"> 1089</span>&#160;<span class="comment">// Used when there are no redundant joints - aka no free params</span></div>
 <div class="line"><a name="l01090"></a><span class="lineno"><a class="line" href="classprbt__manipulator_1_1IKFastKinematicsPlugin.html#a9035a516e333408c1711c55984a3abca"> 1090</a></span>&#160;<span class="keywordtype">bool</span> IKFastKinematicsPlugin::getPositionIK(<span class="keyword">const</span> geometry_msgs::msg::Pose&amp; ik_pose, <span class="keyword">const</span> std::vector&lt;double&gt;&amp; ik_seed_state,</div>
 <div class="line"><a name="l01091"></a><span class="lineno"> 1091</span>&#160;                                           std::vector&lt;double&gt;&amp; solution, moveit_msgs::msg::MoveItErrorCodes&amp; error_code,</div>
-<div class="line"><a name="l01092"></a><span class="lineno"> 1092</span>&#160;                                           <span class="keyword">const</span> <a class="code" href="structkinematics_1_1KinematicsQueryOptions.html">kinematics::KinematicsQueryOptions</a>&amp; <a class="code" href="namespacemoveit__benchmark__statistics.html#ae22bb8022508842c27a92bd715ef205e">options</a>)<span class="keyword"> const</span></div>
+<div class="line"><a name="l01092"></a><span class="lineno"> 1092</span>&#160;                                           <span class="keyword">const</span> <a class="code" href="structkinematics_1_1KinematicsQueryOptions.html">kinematics::KinematicsQueryOptions</a>&amp; <span class="comment">/* unused */</span>)<span class="keyword"> const</span></div>
 <div class="line"><a name="l01093"></a><span class="lineno"> 1093</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l01094"></a><span class="lineno"> 1094</span>&#160;  RCLCPP_DEBUG_STREAM(LOGGER, <span class="stringliteral">&quot;getPositionIK&quot;</span>);</div>
 <div class="line"><a name="l01095"></a><span class="lineno"> 1095</span>&#160; </div>

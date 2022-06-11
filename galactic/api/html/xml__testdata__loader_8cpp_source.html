@@ -13,6 +13,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="theme.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -248,7 +249,7 @@ $(function() {
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;}</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="keyword">const</span> pt::ptree::value_type&amp; XmlTestdataLoader::findNodeWithName(<span class="keyword">const</span> boost::property_tree::ptree&amp; tree,</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                                                                 <span class="keyword">const</span> std::string&amp; name, <span class="keyword">const</span> std::string&amp; key,</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                                                                 <span class="keyword">const</span> std::string&amp; <a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>, <span class="keyword">const</span> std::string&amp; key,</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                                                                 <span class="keyword">const</span> std::string&amp; path)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;  std::string path_str{ (path.empty() ? <a class="code" href="namespacepilz__industrial__motion__planner__testutils.html#a896046879bb2dc42d8ecc3d99f3df176">NAME_PATH_STR</a> : path) };</div>
@@ -272,7 +273,7 @@ $(function() {
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    {</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;      <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    }</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="keywordflow">if</span> (node.data() == name)</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="keywordflow">if</span> (node.data() == <a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>)</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    {</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;      <span class="keywordflow">return</span> val;</div>
 <div class="line"><a name="l00206"></a><span class="lineno"><a class="line" href="classpilz__industrial__motion__planner__testutils_1_1XmlTestdataLoader.html#a2de7215b619d2621ee21e54af291d9b5">  206</a></span>&#160;    }</div>
@@ -284,7 +285,7 @@ $(function() {
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;      .append(<span class="stringliteral">&quot;\&quot; with &quot;</span>)</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;      .append(path_str)</div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;      .append(<span class="stringliteral">&quot;=\&quot;&quot;</span>)</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;      .append(name)</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;      .append(<a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>)</div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;      .append(<span class="stringliteral">&quot;\&quot; &quot;</span></div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;              <span class="stringliteral">&quot;not &quot;</span></div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;              <span class="stringliteral">&quot;foun&quot;</span></div>
@@ -670,6 +671,7 @@ $(function() {
 <div class="ttc" id="anamespacepilz__industrial__motion__planner__testutils_html_aa03a2abc9be00372a53ec833556d0e99"><div class="ttname"><a href="namespacepilz__industrial__motion__planner__testutils.html#aa03a2abc9be00372a53ec833556d0e99">pilz_industrial_motion_planner_testutils::PtpJointCart</a></div><div class="ttdeci">Ptp&lt; JointConfiguration, CartesianConfiguration &gt; PtpJointCart</div><div class="ttdef"><b>Definition:</b> <a href="command__types__typedef_8h_source.html#l00082">command_types_typedef.h:82</a></div></div>
 <div class="ttc" id="aclasspilz__industrial__motion__planner__testutils_1_1CmdReader_html_a82a9c870231849db501f8190aa2b90f1"><div class="ttname"><a href="classpilz__industrial__motion__planner__testutils_1_1CmdReader.html#a82a9c870231849db501f8190aa2b90f1">pilz_industrial_motion_planner_testutils::CmdReader::getAccelerationScale</a></div><div class="ttdeci">double getAccelerationScale() const</div><div class="ttdef"><b>Definition:</b> <a href="xml__testdata__loader_8cpp_source.html#l00133">xml_testdata_loader.cpp:133</a></div></div>
 <div class="ttc" id="aclasspilz__industrial__motion__planner__testutils_1_1CmdGetterAdapter_html_a6d71fbbc16b5b8bbeddf77f53164f8ed"><div class="ttname"><a href="classpilz__industrial__motion__planner__testutils_1_1CmdGetterAdapter.html#a6d71fbbc16b5b8bbeddf77f53164f8ed">pilz_industrial_motion_planner_testutils::CmdGetterAdapter::CmdGetterAdapter</a></div><div class="ttdeci">CmdGetterAdapter(FuncType func)</div><div class="ttdef"><b>Definition:</b> <a href="xml__testdata__loader_8cpp_source.html#l00156">xml_testdata_loader.cpp:156</a></div></div>
+<div class="ttc" id="anamespacesetup_html_ab3a7a0638d76a01367c5bc3cc699447f"><div class="ttname"><a href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">setup.name</a></div><div class="ttdeci">name</div><div class="ttdef"><b>Definition:</b> <a href="moveit__configs__utils_2setup_8py_source.html#l00006">setup.py:6</a></div></div>
 <div class="ttc" id="aclasspilz__industrial__motion__planner__testutils_1_1CmdReader_html_a62a8f1185d7762036f18025c18467c45"><div class="ttname"><a href="classpilz__industrial__motion__planner__testutils_1_1CmdReader.html#a62a8f1185d7762036f18025c18467c45">pilz_industrial_motion_planner_testutils::CmdReader::getTargetLink</a></div><div class="ttdeci">std::string getTargetLink() const</div><div class="ttdef"><b>Definition:</b> <a href="xml__testdata__loader_8cpp_source.html#l00113">xml_testdata_loader.cpp:113</a></div></div>
 <div class="ttc" id="aclasspilz__industrial__motion__planner__testutils_1_1XmlTestdataLoader_html_adbff5a2d0cf05cf521eead8606b3f555"><div class="ttname"><a href="classpilz__industrial__motion__planner__testutils_1_1XmlTestdataLoader.html#adbff5a2d0cf05cf521eead8606b3f555">pilz_industrial_motion_planner_testutils::XmlTestdataLoader::getCircJointCenterCart</a></div><div class="ttdeci">CircJointCenterCart getCircJointCenterCart(const std::string &amp;cmd_name) const override</div><div class="ttdef"><b>Definition:</b> <a href="xml__testdata__loader_8cpp_source.html#l00511">xml_testdata_loader.cpp:511</a></div></div>
 <div class="ttc" id="anamespacepilz__industrial__motion__planner__testutils_html_a264c70ebbcd4a903c4874ecc750da527"><div class="ttname"><a href="namespacepilz__industrial__motion__planner__testutils.html#a264c70ebbcd4a903c4874ecc750da527">pilz_industrial_motion_planner_testutils::PTP_STR</a></div><div class="ttdeci">const std::string PTP_STR</div><div class="ttdef"><b>Definition:</b> <a href="xml__constants_8h_source.html#l00082">xml_constants.h:82</a></div></div>

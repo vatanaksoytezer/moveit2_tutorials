@@ -13,6 +13,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="theme.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -110,7 +111,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af1e4deb15315fae4a46de87b9ddbc990"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl__interface_1_1EqualityPositionConstraint.html#af1e4deb15315fae4a46de87b9ddbc990">EqualityPositionConstraint</a> (const moveit::core::RobotModelConstPtr &amp;robot_model, const std::string &amp;group, const unsigned int num_dofs)</td></tr>
 <tr class="separator:af1e4deb15315fae4a46de87b9ddbc990"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab34aff5212d1dc88e2bb5fbeca856393"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl__interface_1_1EqualityPositionConstraint.html#ab34aff5212d1dc88e2bb5fbeca856393">parseConstraintMsg</a> (const moveit_msgs::msg::Constraints &amp;constraints) override</td></tr>
-<tr class="memdesc:ab34aff5212d1dc88e2bb5fbeca856393"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse bounds on position and orientation parameters from MoveIt's constraint message.  <a href="classompl__interface_1_1EqualityPositionConstraint.html#ab34aff5212d1dc88e2bb5fbeca856393">More...</a><br /></td></tr>
+<tr class="memdesc:ab34aff5212d1dc88e2bb5fbeca856393"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse bounds on position parameters from MoveIt's constraint message.  <a href="classompl__interface_1_1EqualityPositionConstraint.html#ab34aff5212d1dc88e2bb5fbeca856393">More...</a><br /></td></tr>
 <tr class="separator:ab34aff5212d1dc88e2bb5fbeca856393"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a63273f212f4ab2740b7248d4a5e2a6be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl__interface_1_1EqualityPositionConstraint.html#a63273f212f4ab2740b7248d4a5e2a6be">function</a> (const Eigen::Ref&lt; const Eigen::VectorXd &gt; &amp;joint_values, Eigen::Ref&lt; Eigen::VectorXd &gt; out) const override</td></tr>
 <tr class="separator:a63273f212f4ab2740b7248d4a5e2a6be"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -177,7 +178,7 @@ Additional Inherited Members</h2></td></tr>
 <p>The dimension value for the others are ignored. For example, a box with dimensions [1.0, 1e-5, 1.0] will result in equality constraints on the y-position, and no constraints on the x or z-position.</p>
 <p>TODO(jeroendm) We could make this a base class <code>EqualityConstraints</code> with a specialization for position and orientation constraints in the future. But the direct overriding of <code>function</code> and <code>jacobian</code> is probably more performant. </p>
 
-<p class="definition">Definition at line <a class="el" href="ompl__constraints_8h_source.html#l00316">316</a> of file <a class="el" href="ompl__constraints_8h_source.html">ompl_constraints.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ompl__constraints_8h_source.html#l00341">341</a> of file <a class="el" href="ompl__constraints_8h_source.html">ompl_constraints.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="af1e4deb15315fae4a46de87b9ddbc990"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af1e4deb15315fae4a46de87b9ddbc990">&#9670;&nbsp;</a></span>EqualityPositionConstraint()</h2>
@@ -211,7 +212,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ompl__constraints_8cpp_source.html#l00235">235</a> of file <a class="el" href="ompl__constraints_8cpp_source.html">ompl_constraints.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ompl__constraints_8cpp_source.html#l00231">231</a> of file <a class="el" href="ompl__constraints_8cpp_source.html">ompl_constraints.cpp</a>.</p>
 
 </div>
 </div>
@@ -250,7 +251,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ompl__constraints_8cpp_source.html#l00281">281</a> of file <a class="el" href="ompl__constraints_8cpp_source.html">ompl_constraints.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ompl__constraints_8cpp_source.html#l00272">272</a> of file <a class="el" href="ompl__constraints_8cpp_source.html">ompl_constraints.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -303,7 +304,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ompl__constraints_8cpp_source.html#l00299">299</a> of file <a class="el" href="ompl__constraints_8cpp_source.html">ompl_constraints.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ompl__constraints_8cpp_source.html#l00290">290</a> of file <a class="el" href="ompl__constraints_8cpp_source.html">ompl_constraints.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -349,12 +350,12 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Parse bounds on position and orientation parameters from MoveIt's constraint message. </p>
+<p>Parse bounds on position parameters from MoveIt's constraint message. </p>
 <p>This can be non-trivial given the often complex structure of these messages. </p>
 
 <p>Implements <a class="el" href="classompl__interface_1_1BaseConstraint.html#a21895199523312ca4b4647e63943998e">ompl_interface::BaseConstraint</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="ompl__constraints_8cpp_source.html#l00241">241</a> of file <a class="el" href="ompl__constraints_8cpp_source.html">ompl_constraints.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ompl__constraints_8cpp_source.html#l00237">237</a> of file <a class="el" href="ompl__constraints_8cpp_source.html">ompl_constraints.cpp</a>.</p>
 
 </div>
 </div>

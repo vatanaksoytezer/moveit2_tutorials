@@ -1,0 +1,16 @@
+<map id="moveit::planning_interface::MoveGroupInterface::stop" name="moveit::planning_interface::MoveGroupInterface::stop">
+<area shape="rect" id="node1" title="Stop any trajectory execution, if one is active." alt="" coords="5,156,204,197"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#a71e3819bd31711dcb81c18305ca9a521" title="Set the JointValueTarget and use it for future planning requests." alt="" coords="252,149,508,205"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl.html#a43758a93035c24ec52ada30a73dea723" title=" " alt="" coords="556,31,815,87"/>
+<area shape="rect" id="node11" href="$classmoveit_1_1planning__interface_1_1MoveGroupInterface_1_1MoveGroupInterfaceImpl.html#acc232befd1cfbf355910bafd90b9efd2" title=" " alt="" coords="560,111,811,167"/>
+<area shape="rect" id="node12" href="$classmoveit_1_1core_1_1RobotState.html#aa40ffd60c2e50769f9a61d71ab7faa23" title=" " alt="" coords="593,192,777,233"/>
+<area shape="rect" id="node13" href="$classmoveit_1_1core_1_1RobotState.html#afd01134540eb6ccc57e75d1f8c4f48d5" title=" " alt="" coords="593,257,777,299"/>
+<area shape="rect" id="node4" href="$namespacekinematic__constraints.html#a449c87b5d209ba3b9a62d73b4278da77" title="Generates a constraint message intended to be used as a goal constraint for a joint group...." alt="" coords="863,39,1057,80"/>
+<area shape="rect" id="node5" href="$classmoveit_1_1core_1_1RobotState.html#a5902793ed7f64dfc073e37c91154c497" title="For a given group, copy the position values of the variables that make up the group into another loca..." alt="" coords="1106,5,1294,47"/>
+<area shape="rect" id="node10" href="$classmoveit_1_1core_1_1JointModelGroup.html#aaaeee5ac20a07f6d5c1fe43a892f005a" title="Get the names of the variables that make up the joints included in this group. The number of returned..." alt="" coords="1105,71,1295,112"/>
+<area shape="rect" id="node6" href="$classmoveit_1_1core_1_1RobotState.html#a4c3dc21cb7e8b21d0552677a3aeb819e" title="Given velocities for the variables that make up a group, in the order found in the group (including v..." alt="" coords="1343,5,1527,47"/>
+<area shape="rect" id="node7" href="$classmoveit_1_1core_1_1RobotState.html#a3c2938fb8c9467dff253db4b5c1992ca" title="For a given group, copy the velocity values of the variables that make up the group into another loca..." alt="" coords="1575,5,1767,47"/>
+<area shape="rect" id="node8" href="$classmoveit_1_1core_1_1RobotState.html#a47eb1edf2046387de44c3a9dee3433e6" title="Given accelerations for the variables that make up a group, in the order found in the group (includin..." alt="" coords="1815,5,2021,47"/>
+<area shape="rect" id="node9" href="$classmoveit_1_1core_1_1RobotState.html#ac39ff2e3e4801ba1092a4c8eb44dd071" title="For a given group, copy the acceleration values of the variables that make up the group into another ..." alt="" coords="2069,5,2287,47"/>
+<area shape="rect" id="node14" href="$classmoveit_1_1core_1_1JointModel.html#a749ce652067b82e5ec5b3ffe3baca733" title="Get the index of this joint&#39;s first variable within the full robot state." alt="" coords="869,257,1051,299"/>
+</map>

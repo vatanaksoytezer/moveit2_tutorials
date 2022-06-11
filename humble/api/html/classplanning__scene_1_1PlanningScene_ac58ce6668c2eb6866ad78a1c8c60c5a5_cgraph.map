@@ -1,0 +1,6 @@
+<map id="planning_scene::PlanningScene::isPathValid" name="planning_scene::PlanningScene::isPathValid">
+<area shape="rect" id="node1" title="Check if a given path is valid. Each state is checked for validity (collision avoidance,..." alt="" coords="5,71,192,112"/>
+<area shape="rect" id="node2" href="$classrobot__trajectory_1_1RobotTrajectory.html#af356952b9847bc920b773f2f83cb9943" title=" " alt="" coords="240,5,475,47"/>
+<area shape="rect" id="node3" href="$classplanning__scene_1_1PlanningScene.html#abd102b8b63f64ce9c31ce5cf4588a542" title="Check if the current state is in collision (with the environment or self collision)...." alt="" coords="264,71,451,112"/>
+<area shape="rect" id="node4" href="$classplanning__scene_1_1PlanningScene.html#a233d4b740bd1fcda86f5fb3ddd75374b" title="Check if a given state is feasible, in accordance to the feasibility predicate specified by setStateF..." alt="" coords="264,136,451,177"/>
+</map>

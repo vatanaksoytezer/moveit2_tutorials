@@ -13,6 +13,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="theme.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -230,7 +231,7 @@ $(function() {
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    error_code.val = moveit_msgs::msg::MoveItErrorCodes::INVALID_GROUP_NAME;</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;}</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="keywordtype">bool</span> MoveGroupKinematicsService::computeIKService(<span class="keyword">const</span> std::shared_ptr&lt;rmw_request_id_t&gt; request_header,</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="keywordtype">bool</span> MoveGroupKinematicsService::computeIKService(<span class="keyword">const</span> std::shared_ptr&lt;rmw_request_id_t&gt; <span class="comment">/* unused */</span>,</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                                                  <span class="keyword">const</span> std::shared_ptr&lt;moveit_msgs::srv::GetPositionIK::Request&gt; req,</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                                                  std::shared_ptr&lt;moveit_msgs::srv::GetPositionIK::Response&gt; res)</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;{</div>
@@ -262,7 +263,7 @@ $(function() {
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;}</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="keywordtype">bool</span> MoveGroupKinematicsService::computeFKService(<span class="keyword">const</span> std::shared_ptr&lt;rmw_request_id_t&gt; request_header,</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="keywordtype">bool</span> MoveGroupKinematicsService::computeFKService(<span class="keyword">const</span> std::shared_ptr&lt;rmw_request_id_t&gt; <span class="comment">/* unused */</span>,</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                                                  <span class="keyword">const</span> std::shared_ptr&lt;moveit_msgs::srv::GetPositionFK::Request&gt; req,</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                                                  std::shared_ptr&lt;moveit_msgs::srv::GetPositionFK::Response&gt; res)</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;{</div>

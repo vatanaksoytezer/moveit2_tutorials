@@ -1,0 +1,4 @@
+<map id="trajopt_interface::TrajOptProblem::GetNumDOF" name="trajopt_interface::TrajOptProblem::GetNumDOF">
+<area shape="rect" id="node1" title="Returns the problem DOF. This is the number of columns in the optization matrix. Note that this is no..." alt="" coords="276,13,488,54"/>
+<area shape="rect" id="node2" href="$structtrajopt__interface_1_1JointVelTermInfo.html#a1535ec15769cbf543e4650eaea20e19a" title="Converts term info into cost/constraint and adds it to trajopt problem." alt="" coords="5,5,228,61"/>
+</map>

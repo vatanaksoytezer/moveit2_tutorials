@@ -10,7 +10,7 @@
       <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/override.css" type="text/css" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
-    <link rel="canonical" href="https://moveit.picknik.ai/rolling//rolling/doc/examples/robot_model_and_robot_state/robot_model_and_robot_state_tutorial.html" />
+    <link rel="canonical" href="https://moveit.picknik.ai/humble//rolling/doc/examples/robot_model_and_robot_state/robot_model_and_robot_state_tutorial.html" />
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -46,9 +46,6 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../tutorials/tutorials.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../how_to_guides/how_to_guides.html">How-To Guides</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../concepts/concepts.html">Concepts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../how_to_contribute/how_to_contribute.html">Contributing</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../examples.html">Examples</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../examples.html#movegroup-ros-wrappers-in-c">MoveGroup - ROS Wrappers in C++</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../examples.html#using-moveit-directly-through-the-c-api">Using MoveIt Directly Through the C++ API</a><ul class="current">
@@ -80,7 +77,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../planning_with_approximated_constraint_manifolds/planning_with_approximated_constraint_manifolds_tutorial.html">Planning with Approximated Constraint Manifolds</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../pick_place/pick_place_tutorial.html">Pick and Place</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../moveit_grasps/moveit_grasps_tutorial.html">MoveIt Grasps</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../moveit_task_constructor/moveit_task_constructor_tutorial.html">MoveIt Task Constructor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../moveit_deep_grasps/moveit_deep_grasps_tutorial.html">MoveIt Deep Grasps</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../subframes/subframes_tutorial.html">Subframes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../moveit_cpp/moveitcpp_tutorial.html">MoveItCpp Tutorial</a></li>
@@ -93,7 +89,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../examples.html#miscellaneous">Miscellaneous</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../concepts/concepts.html">Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../how_to_guides/how_to_guides.html">How-To Guides</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/api.html">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../how_to_contribute/how_to_contribute.html">Contributing</a></li>
 </ul>
 
         </div>
@@ -129,7 +128,7 @@
       
       You're reading the documentation for the non-stable development version of MoveIt 2.
       For the stable, released version, please have a look at
-      <a href="../../../../galactic/doc/examples/robot_model_and_robot_state/robot_model_and_robot_state_tutorial.html">Galactic</a>.
+      <a href="../../../../humble/doc/examples/robot_model_and_robot_state/robot_model_and_robot_state_tutorial.html">Humble</a>.
       
   </p>
 </div>
@@ -334,59 +333,22 @@ end_effector_state that we computed in the step above.</p></li>
 </ul>
 </dd>
 </dl>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">yaml</span>
-<span class="kn">from</span> <span class="nn">launch</span> <span class="kn">import</span> <span class="n">LaunchDescription</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">launch</span> <span class="kn">import</span> <span class="n">LaunchDescription</span>
 <span class="kn">from</span> <span class="nn">launch_ros.actions</span> <span class="kn">import</span> <span class="n">Node</span>
-<span class="kn">from</span> <span class="nn">launch.actions</span> <span class="kn">import</span> <span class="n">ExecuteProcess</span>
-<span class="kn">from</span> <span class="nn">ament_index_python.packages</span> <span class="kn">import</span> <span class="n">get_package_share_directory</span>
-<span class="kn">import</span> <span class="nn">xacro</span>
-
-
-<span class="k">def</span> <span class="nf">load_file</span><span class="p">(</span><span class="n">package_name</span><span class="p">,</span> <span class="n">file_path</span><span class="p">):</span>
-    <span class="n">package_path</span> <span class="o">=</span> <span class="n">get_package_share_directory</span><span class="p">(</span><span class="n">package_name</span><span class="p">)</span>
-    <span class="n">absolute_file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">package_path</span><span class="p">,</span> <span class="n">file_path</span><span class="p">)</span>
-
-    <span class="k">try</span><span class="p">:</span>
-        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">absolute_file_path</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-    <span class="k">except</span> <span class="ne">EnvironmentError</span><span class="p">:</span>  <span class="c1"># parent of IOError, OSError *and* WindowsError where available</span>
-        <span class="k">return</span> <span class="kc">None</span>
-
-
-<span class="k">def</span> <span class="nf">load_yaml</span><span class="p">(</span><span class="n">package_name</span><span class="p">,</span> <span class="n">file_path</span><span class="p">):</span>
-    <span class="n">package_path</span> <span class="o">=</span> <span class="n">get_package_share_directory</span><span class="p">(</span><span class="n">package_name</span><span class="p">)</span>
-    <span class="n">absolute_file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">package_path</span><span class="p">,</span> <span class="n">file_path</span><span class="p">)</span>
-
-    <span class="k">try</span><span class="p">:</span>
-        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">absolute_file_path</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">yaml</span><span class="o">.</span><span class="n">safe_load</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">EnvironmentError</span><span class="p">:</span>  <span class="c1"># parent of IOError, OSError *and* WindowsError where available</span>
-        <span class="k">return</span> <span class="kc">None</span>
+<span class="kn">from</span> <span class="nn">moveit_configs_utils</span> <span class="kn">import</span> <span class="n">MoveItConfigsBuilder</span>
 
 
 <span class="k">def</span> <span class="nf">generate_launch_description</span><span class="p">():</span>
-    <span class="c1"># planning_context</span>
-    <span class="n">robot_description_config</span> <span class="o">=</span> <span class="n">load_file</span><span class="p">(</span>
-        <span class="s2">&quot;moveit_resources_panda_description&quot;</span><span class="p">,</span> <span class="s2">&quot;urdf/panda.urdf&quot;</span>
-    <span class="p">)</span>
-
-    <span class="n">robot_description_semantic_config</span> <span class="o">=</span> <span class="n">load_file</span><span class="p">(</span>
-        <span class="s2">&quot;moveit_resources_panda_moveit_config&quot;</span><span class="p">,</span> <span class="s2">&quot;config/panda.srdf&quot;</span>
-    <span class="p">)</span>
-
-    <span class="n">kinematics_yaml</span> <span class="o">=</span> <span class="n">load_yaml</span><span class="p">(</span>
-        <span class="s2">&quot;moveit_resources_panda_moveit_config&quot;</span><span class="p">,</span> <span class="s2">&quot;config/kinematics.yaml&quot;</span>
-    <span class="p">)</span>
+    <span class="n">moveit_config</span> <span class="o">=</span> <span class="n">MoveItConfigsBuilder</span><span class="p">(</span><span class="s2">&quot;moveit_resources_panda&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">to_moveit_configs</span><span class="p">()</span>
 
     <span class="n">tutorial_node</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span>
         <span class="n">package</span><span class="o">=</span><span class="s2">&quot;moveit2_tutorials&quot;</span><span class="p">,</span>
         <span class="n">executable</span><span class="o">=</span><span class="s2">&quot;robot_model_and_robot_state_tutorial&quot;</span><span class="p">,</span>
         <span class="n">output</span><span class="o">=</span><span class="s2">&quot;screen&quot;</span><span class="p">,</span>
         <span class="n">parameters</span><span class="o">=</span><span class="p">[</span>
-            <span class="p">{</span><span class="s2">&quot;robot_description&quot;</span><span class="p">:</span> <span class="n">robot_description_config</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">&quot;robot_description_semantic&quot;</span><span class="p">:</span> <span class="n">robot_description_semantic_config</span><span class="p">},</span>
-            <span class="n">kinematics_yaml</span><span class="p">,</span>
+            <span class="n">moveit_config</span><span class="o">.</span><span class="n">robot_description</span><span class="p">,</span>
+            <span class="n">moveit_config</span><span class="o">.</span><span class="n">robot_description_semantic</span><span class="p">,</span>
+            <span class="n">moveit_config</span><span class="o">.</span><span class="n">robot_description_kinematics</span><span class="p">,</span>
         <span class="p">],</span>
     <span class="p">)</span>
 
@@ -436,7 +398,8 @@ end_effector_state that we computed in the step above.</p></li>
     </dl>
     <dl>
       <dt>MoveIt 2 - Stable</dt>
-        <dd><a href="../../../../galactic/doc/examples/robot_model_and_robot_state/robot_model_and_robot_state_tutorial.html">Galactic (recommended)</a></dd>
+        <dd><a href="../../../../humble/doc/examples/robot_model_and_robot_state/robot_model_and_robot_state_tutorial.html">Humble (recommended)</a></dd>
+        <dd><a href="../../../../galactic/doc/examples/robot_model_and_robot_state/robot_model_and_robot_state_tutorial.html">Galactic</a></dd>
         <dd><a href="../../../../foxy/index.html">Foxy</a></dd>
    </dl>
     <dl>

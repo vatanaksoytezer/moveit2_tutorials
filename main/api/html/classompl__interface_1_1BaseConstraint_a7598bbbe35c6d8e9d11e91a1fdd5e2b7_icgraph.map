@@ -1,5 +1,7 @@
 <map id="ompl_interface::BaseConstraint::forwardKinematics" name="ompl_interface::BaseConstraint::forwardKinematics">
-<area shape="rect" id="node1" title="Wrapper for forward kinematics calculated by MoveIt&#39;s Robot State." alt="" coords="273,39,500,80"/>
+<area shape="rect" id="node1" title="Wrapper for forward kinematics calculated by MoveIt&#39;s Robot State." alt="" coords="273,104,500,145"/>
 <area shape="rect" id="node2" href="$classompl__interface_1_1BoxConstraint.html#ac73cde24845bd9de57e599a939811911" title="For inequality constraints: calculate the value of the parameter that is being constrained by the bou..." alt="" coords="5,5,225,47"/>
-<area shape="rect" id="node3" href="$classompl__interface_1_1EqualityPositionConstraint.html#a63273f212f4ab2740b7248d4a5e2a6be" title=" " alt="" coords="14,71,217,112"/>
+<area shape="rect" id="node3" href="$classompl__interface_1_1OrientationConstraint.html#aae7f1ba7f7c4cad2fadb9506ebf705b4" title="For inequality constraints: calculate the value of the parameter that is being constrained by the bou..." alt="" coords="15,71,216,112"/>
+<area shape="rect" id="node4" href="$classompl__interface_1_1OrientationConstraint.html#a57fa947313f56b363c92fd673d7b0a4d" title="For inequality constraints: calculate the Jacobian for the current parameters that are being constrai..." alt="" coords="11,136,220,177"/>
+<area shape="rect" id="node5" href="$classompl__interface_1_1EqualityPositionConstraint.html#a63273f212f4ab2740b7248d4a5e2a6be" title=" " alt="" coords="14,201,217,243"/>
 </map>

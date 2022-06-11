@@ -13,6 +13,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="theme.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -173,8 +174,8 @@ $(function() {
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="comment">// Set the trajectory monitor callback so we can block until at least one sample was taken.</span></div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  std::atomic&lt;bool&gt; callback_called{ <span class="keyword">false</span> };</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  trajectory_monitor.<a class="code" href="classplanning__scene__monitor_1_1TrajectoryMonitor.html#af16da423c90fc589e38cfa057be120cb">setOnStateAddCallback</a>(</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;      [&amp;](<span class="keyword">const</span> moveit::core::RobotStateConstPtr&amp; robot_state, <span class="keyword">const</span> rclcpp::Time&amp; time) { callback_called = <span class="keyword">true</span>; });</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  trajectory_monitor.<a class="code" href="classplanning__scene__monitor_1_1TrajectoryMonitor.html#af16da423c90fc589e38cfa057be120cb">setOnStateAddCallback</a>([&amp;](<span class="keyword">const</span> moveit::core::RobotStateConstPtr&amp; <span class="comment">/* unused */</span>,</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                                               <span class="keyword">const</span> rclcpp::Time&amp; <span class="comment">/* unused */</span>) { callback_called = <span class="keyword">true</span>; });</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <span class="comment">// WHEN we call the startTrajectoryMonitor function</span></div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  trajectory_monitor.startTrajectoryMonitor();</div>

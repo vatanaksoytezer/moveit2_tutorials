@@ -13,6 +13,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="theme.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -66,7 +67,7 @@ $(function() {
 <div class="title">MoveIt 2 Migration Guide </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md11"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md10"></a>
 Logging</h1>
 <p>In MoveIt 1 we commonly use named ROS logging macros (i.e. <code>ROS_INFO_NAMED</code>) with file-specific logger names defined as <code>constexpr char LOGNAME[]="logger_name"</code>. ROS 2 provides similar macros (i.e. <code>RCLCPP_INFO</code>) that instead of an optional name always require a <code>rclcpp::Logger</code> instance for scoping the namespace. All source files that use ROS logging should now define a file-specific <code>static const rclcpp::Logger</code> named <code>LOGGER</code>, located at the top of the file and inside the namespace with the narrowest scope (if there is one). This leads to the following basic migration steps:</p>
 <ol type="1">
@@ -79,11 +80,11 @@ Logging</h1>
 </pre><p class="startli"><b>New:</b> </p><pre class="fragment">RCLCPP_INFO(LOGGER, "Very important info message");
 </pre></li>
 </ol>
-<h2><a class="anchor" id="autotoc_md12"></a>
+<h2><a class="anchor" id="autotoc_md11"></a>
 Logger naming convention</h2>
 <p>Migrating the loggers is a good opportunity to make logger names more consistent. In order to create unique and descriptive logger names we encourage the following naming pattern: general <code>LIBRARY_NAME.SOURCE_FILE_NAME</code>. For instance, the file <code><a class="el" href="joint__model__group_8cpp.html">joint_model_group.cpp</a></code> inside the library <code>moveit_robot_model</code> contains the following logger: </p><pre class="fragment">static const rclcpp::Logger LOGGER = rclcpp::get_logger("moveit_robot_model.joint_model_group");
 </pre><p>For finding the <code>LIBRARY_NAME</code> refer to the line <code><a class="el" href="ros_2warehouse_2warehouse_2CMakeLists_8txt.html#af4423e580afb68aec7c40fb0bce7d5d4">set(MOVEIT_LIB_NAME LIBRARY_NAME)</a></code> at the top of the library's <code>CMakeLists.txt</code>. If the source file name is the same or very similar to the library name it is sufficient to only use the source file name.</p>
-<h2><a class="anchor" id="autotoc_md13"></a>
+<h2><a class="anchor" id="autotoc_md12"></a>
 Logging in header files</h2>
 <p>Some classes declared in header files may contain log messages, for instance to warn about not-implemented virtual functions in abstract classes. <a class="el" href="classA.html">A</a> logger defined in the header file would not tell us what derived class is missing the implementation, since the source name would be resolved from the header file. For this case, the base class should declare a private member variable <code>static const rclcpp::Logger LOGGER</code> which is to be defined in the implementing class using the corresponding source file name. </p>
 </div></div><!-- contents -->

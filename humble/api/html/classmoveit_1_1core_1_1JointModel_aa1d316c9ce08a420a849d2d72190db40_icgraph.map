@@ -1,0 +1,4 @@
+<map id="moveit::core::JointModel::getMimicOffset" name="moveit::core::JointModel::getMimicOffset">
+<area shape="rect" id="node1" title="If mimicking a joint, this is the offset added to that joint&#39;s value." alt="" coords="237,5,419,47"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1RobotState.html#a50bea1ff63c9083552a48a0b13257156" title="Get a MarkerArray that fully describes the robot markers for a given robot. Update the state first." alt="" coords="5,5,189,47"/>
+</map>

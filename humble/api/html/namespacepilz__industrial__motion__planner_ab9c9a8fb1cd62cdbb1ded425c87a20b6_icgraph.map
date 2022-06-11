@@ -1,0 +1,4 @@
+<map id="pilz_industrial_motion_planner::determineAndCheckSamplingTime" name="pilz_industrial_motion_planner::determineAndCheckSamplingTime">
+<area shape="rect" id="node1" title="Determines the sampling time and checks that both trajectroies use the same sampling time." alt="" coords="123,5,435,47"/>
+<area shape="rect" id="node2" href="$unittest__trajectory__functions_8cpp.html#ae16ad53116511c214504f8232f40e9ef" title="Check that function determineAndCheckSamplingTime() returns &#39;false&#39; if both of the needed vectors hav..." alt="" coords="5,13,75,39"/>
+</map>

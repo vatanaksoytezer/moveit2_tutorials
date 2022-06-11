@@ -13,6 +13,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="theme.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -174,14 +175,14 @@ $(function() {
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
 <div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="classserialize__msg_1_1PythonMsgSerializeTest.html#a78aeaccc997b475203cba16c8a3a1b1c">  103</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classserialize__msg_1_1PythonMsgSerializeTest.html#a78aeaccc997b475203cba16c8a3a1b1c">test_rejectUnicode</a>(self):</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keyword">with</span> self.assertRaisesRegexp(Exception, <span class="stringliteral">&quot;Python argument types in&quot;</span>):</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            self.<a class="code" href="classserialize__msg_1_1PythonMsgSerializeTest.html#ae517ca2ae07d02cdb7a4156fe92378a6">helper</a>.compareEmbeddedZeros(<span class="stringliteral">u&quot;kdasd&quot;</span>)</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            self.<a class="code" href="classserialize__msg_1_1PythonMsgSerializeTest.html#ae517ca2ae07d02cdb7a4156fe92378a6">helper</a>.compareEmbeddedZeros(<span class="stringliteral">u&quot;kdasd&quot;</span>)  <span class="comment"># fmt: skip</span></div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    @unittest.skipIf(py_version_maj == 2, <span class="stringliteral">&quot;does not trigger with python 2.7&quot;</span>)</div>
 <div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="classserialize__msg_1_1PythonMsgSerializeTest.html#a4b6653e909ed92968c8b4244ff2c057d">  108</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classserialize__msg_1_1PythonMsgSerializeTest.html#a4b6653e909ed92968c8b4244ff2c057d">test_rejectUnicodeTuple</a>(self):</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keyword">with</span> self.assertRaisesRegexp(</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            RuntimeError, <span class="stringliteral">&quot;Underlying python object is not a Bytes/String instance&quot;</span></div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        ):</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            self.<a class="code" href="classserialize__msg_1_1PythonMsgSerializeTest.html#ae517ca2ae07d02cdb7a4156fe92378a6">helper</a>.compareVectorTuple((<span class="stringliteral">u&quot;kdasd&quot;</span>,))</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            self.<a class="code" href="classserialize__msg_1_1PythonMsgSerializeTest.html#ae517ca2ae07d02cdb7a4156fe92378a6">helper</a>.compareVectorTuple((<span class="stringliteral">u&quot;kdasd&quot;</span>,))  <span class="comment"># fmt: skip</span></div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="keywordflow">if</span> __name__ == <span class="stringliteral">&quot;__main__&quot;</span>:</div>

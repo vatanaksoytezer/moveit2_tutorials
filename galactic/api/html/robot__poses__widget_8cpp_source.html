@@ -13,6 +13,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="theme.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -394,14 +395,14 @@ $(function() {
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;<span class="comment">// ******************************************************************************************</span></div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;<span class="keywordtype">void</span> RobotPosesWidget::previewClicked(<span class="keywordtype">int</span> row, <span class="keywordtype">int</span> <span class="comment">/*column*/</span>, <span class="keywordtype">int</span> <span class="comment">/*previous_row*/</span>, <span class="keywordtype">int</span> <span class="comment">/*previous_column*/</span>)</div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;{</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;  QTableWidgetItem* name = data_table_-&gt;item(row, 0);</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;  QTableWidgetItem* <a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a> = data_table_-&gt;item(row, 0);</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;  QTableWidgetItem* <a class="code" href="namespacetest__cleanup.html#a121623a04b6c3260c0e3e9c8cb74d9f9">group</a> = data_table_-&gt;item(row, 1);</div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160; </div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;  <span class="comment">// nullptr check before dereferencing</span></div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;  <span class="keywordflow">if</span> (name &amp;&amp; <a class="code" href="namespacetest__cleanup.html#a121623a04b6c3260c0e3e9c8cb74d9f9">group</a>)</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a> &amp;&amp; <a class="code" href="namespacetest__cleanup.html#a121623a04b6c3260c0e3e9c8cb74d9f9">group</a>)</div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;  {</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    <span class="comment">// Find the selected in datastructure</span></div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    srdf::Model::GroupState* pose = findPoseByName(name-&gt;text().toStdString(), <a class="code" href="namespacetest__cleanup.html#a121623a04b6c3260c0e3e9c8cb74d9f9">group</a>-&gt;text().toStdString());</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    srdf::Model::GroupState* pose = findPoseByName(<a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>-&gt;text().toStdString(), <a class="code" href="namespacetest__cleanup.html#a121623a04b6c3260c0e3e9c8cb74d9f9">group</a>-&gt;text().toStdString());</div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; </div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    showPose(pose);</div>
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;  }</div>
@@ -478,11 +479,11 @@ $(function() {
 <div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;<span class="comment">// ******************************************************************************************</span></div>
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;<span class="keywordtype">void</span> RobotPosesWidget::edit(<span class="keywordtype">int</span> row)</div>
 <div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;{</div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;  <span class="keyword">const</span> std::string&amp; name = data_table_-&gt;item(row, 0)-&gt;text().toStdString();</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;  <span class="keyword">const</span> std::string&amp; <a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a> = data_table_-&gt;item(row, 0)-&gt;text().toStdString();</div>
 <div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;  <span class="keyword">const</span> std::string&amp; <a class="code" href="namespacetest__cleanup.html#a121623a04b6c3260c0e3e9c8cb74d9f9">group</a> = data_table_-&gt;item(row, 1)-&gt;text().toStdString();</div>
 <div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160; </div>
 <div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;  <span class="comment">// Find the selected in datastruture</span></div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;  srdf::Model::GroupState* pose = findPoseByName(name, <a class="code" href="namespacetest__cleanup.html#a121623a04b6c3260c0e3e9c8cb74d9f9">group</a>);</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;  srdf::Model::GroupState* pose = findPoseByName(<a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>, <a class="code" href="namespacetest__cleanup.html#a121623a04b6c3260c0e3e9c8cb74d9f9">group</a>);</div>
 <div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;  current_edit_pose_ = pose;</div>
 <div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160; </div>
 <div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;  <span class="comment">// Set pose name</span></div>
@@ -602,14 +603,14 @@ $(function() {
 <div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;<span class="comment">// ******************************************************************************************</span></div>
 <div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;<span class="comment">// Find the associated data by name</span></div>
 <div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;<span class="comment">// ******************************************************************************************</span></div>
-<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;srdf::Model::GroupState* RobotPosesWidget::findPoseByName(<span class="keyword">const</span> std::string&amp; name, <span class="keyword">const</span> std::string&amp; <a class="code" href="namespacetest__cleanup.html#a121623a04b6c3260c0e3e9c8cb74d9f9">group</a>)</div>
+<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;srdf::Model::GroupState* RobotPosesWidget::findPoseByName(<span class="keyword">const</span> std::string&amp; <a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>, <span class="keyword">const</span> std::string&amp; <a class="code" href="namespacetest__cleanup.html#a121623a04b6c3260c0e3e9c8cb74d9f9">group</a>)</div>
 <div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;{</div>
 <div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;  <span class="comment">// Find the group state we are editing based on the pose name</span></div>
 <div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;  srdf::Model::GroupState* searched_state = <span class="keyword">nullptr</span>;  <span class="comment">// used for holding our search results</span></div>
 <div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160; </div>
 <div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;  <span class="keywordflow">for</span> (srdf::Model::GroupState&amp; state : config_data_-&gt;srdf_-&gt;group_states_)</div>
 <div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;  {</div>
-<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;    <span class="keywordflow">if</span> (state.name_ == name &amp;&amp; state.group_ == <a class="code" href="namespacetest__cleanup.html#a121623a04b6c3260c0e3e9c8cb74d9f9">group</a>)  <span class="comment">// match</span></div>
+<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;    <span class="keywordflow">if</span> (state.name_ == <a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a> &amp;&amp; state.group_ == <a class="code" href="namespacetest__cleanup.html#a121623a04b6c3260c0e3e9c8cb74d9f9">group</a>)  <span class="comment">// match</span></div>
 <div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;    {</div>
 <div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;      searched_state = &amp;state;</div>
 <div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;      <span class="keywordflow">break</span>;</div>
@@ -629,12 +630,12 @@ $(function() {
 <div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;    <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;  <span class="keywordtype">int</span> row = ranges[0].bottomRow();</div>
 <div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160; </div>
-<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;  <span class="keyword">const</span> std::string&amp; name = data_table_-&gt;item(row, 0)-&gt;text().toStdString();</div>
+<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;  <span class="keyword">const</span> std::string&amp; <a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a> = data_table_-&gt;item(row, 0)-&gt;text().toStdString();</div>
 <div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;  <span class="keyword">const</span> std::string&amp; <a class="code" href="namespacetest__cleanup.html#a121623a04b6c3260c0e3e9c8cb74d9f9">group</a> = data_table_-&gt;item(row, 1)-&gt;text().toStdString();</div>
 <div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160; </div>
 <div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;  <span class="comment">// Confirm user wants to delete group</span></div>
 <div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;  <span class="keywordflow">if</span> (QMessageBox::question(<span class="keyword">this</span>, <span class="stringliteral">&quot;Confirm Pose Deletion&quot;</span>,</div>
-<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;                            QString(<span class="stringliteral">&quot;Are you sure you want to delete the pose &#39;&quot;</span>).<a class="code" href="namespacerclcpp_1_1names.html#a4c3e21517afd9a6909de322da95c5e81">append</a>(name.c_str()).append(<span class="stringliteral">&quot;&#39;?&quot;</span>),</div>
+<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;                            QString(<span class="stringliteral">&quot;Are you sure you want to delete the pose &#39;&quot;</span>).<a class="code" href="namespacerclcpp_1_1names.html#a4c3e21517afd9a6909de322da95c5e81">append</a>(<a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>.c_str()).append(<span class="stringliteral">&quot;&#39;?&quot;</span>),</div>
 <div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;                            QMessageBox::Ok | QMessageBox::Cancel) == QMessageBox::Cancel)</div>
 <div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;  {</div>
 <div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;    <span class="keywordflow">return</span>;</div>
@@ -645,7 +646,7 @@ $(function() {
 <div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;       pose_it != config_data_-&gt;srdf_-&gt;group_states_.end(); ++pose_it)</div>
 <div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;  {</div>
 <div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;    <span class="comment">// check if this is the group we want to delete</span></div>
-<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;    <span class="keywordflow">if</span> (pose_it-&gt;name_ == name &amp;&amp; pose_it-&gt;group_ == <a class="code" href="namespacetest__cleanup.html#a121623a04b6c3260c0e3e9c8cb74d9f9">group</a>)  <span class="comment">// match</span></div>
+<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;    <span class="keywordflow">if</span> (pose_it-&gt;name_ == <a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a> &amp;&amp; pose_it-&gt;group_ == <a class="code" href="namespacetest__cleanup.html#a121623a04b6c3260c0e3e9c8cb74d9f9">group</a>)  <span class="comment">// match</span></div>
 <div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;    {</div>
 <div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;      config_data_-&gt;srdf_-&gt;group_states_.erase(pose_it);</div>
 <div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;      <span class="keywordflow">break</span>;</div>
@@ -663,14 +664,14 @@ $(function() {
 <div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;<span class="keywordtype">void</span> RobotPosesWidget::doneEditing()</div>
 <div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;{</div>
 <div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;  <span class="comment">// Get a reference to the supplied strings</span></div>
-<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;  <span class="keyword">const</span> std::string&amp; name = pose_name_field_-&gt;text().toStdString();</div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;  <span class="keyword">const</span> std::string&amp; <a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a> = pose_name_field_-&gt;text().toStdString();</div>
 <div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;  <span class="keyword">const</span> std::string&amp; <a class="code" href="namespacetest__cleanup.html#a121623a04b6c3260c0e3e9c8cb74d9f9">group</a> = group_name_field_-&gt;currentText().toStdString();</div>
 <div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160; </div>
 <div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;  <span class="comment">// Used for editing existing groups</span></div>
 <div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;  srdf::Model::GroupState* searched_data = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160; </div>
 <div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;  <span class="comment">// Check that name field is not empty</span></div>
-<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;  <span class="keywordflow">if</span> (name.empty())</div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>.empty())</div>
 <div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;  {</div>
 <div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;    QMessageBox::warning(<span class="keyword">this</span>, <span class="stringliteral">&quot;Error Saving&quot;</span>, <span class="stringliteral">&quot;A name must be given for the pose!&quot;</span>);</div>
 <div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;    pose_name_field_-&gt;setFocus();</div>
@@ -687,7 +688,7 @@ $(function() {
 <div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;  <span class="comment">// If creating a new pose, check if the (name, group) pair already exists</span></div>
 <div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;  <span class="keywordflow">if</span> (!current_edit_pose_)</div>
 <div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;  {</div>
-<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;    searched_data = findPoseByName(name, <a class="code" href="namespacetest__cleanup.html#a121623a04b6c3260c0e3e9c8cb74d9f9">group</a>);</div>
+<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;    searched_data = findPoseByName(<a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>, <a class="code" href="namespacetest__cleanup.html#a121623a04b6c3260c0e3e9c8cb74d9f9">group</a>);</div>
 <div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;    <span class="keywordflow">if</span> (searched_data != current_edit_pose_)</div>
 <div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;    {</div>
 <div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;      <span class="keywordflow">if</span> (QMessageBox::warning(<span class="keyword">this</span>, <span class="stringliteral">&quot;Warning Saving&quot;</span>, <span class="stringliteral">&quot;A pose already exists with that name! Overwrite?&quot;</span>,</div>
@@ -710,7 +711,7 @@ $(function() {
 <div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;  }</div>
 <div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160; </div>
 <div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;  <span class="comment">// Copy name data ----------------------------------------------------</span></div>
-<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;  searched_data-&gt;name_ = name;</div>
+<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;  searched_data-&gt;name_ = <a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>;</div>
 <div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;  searched_data-&gt;group_ = <a class="code" href="namespacetest__cleanup.html#a121623a04b6c3260c0e3e9c8cb74d9f9">group</a>;</div>
 <div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160; </div>
 <div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;  <span class="comment">// Copy joint positions ----------------------------------------</span></div>
@@ -830,10 +831,10 @@ $(function() {
 <div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;<span class="comment">// ******************************************************************************************</span></div>
 <div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;<span class="comment">// Call when one of the sliders has its value changed</span></div>
 <div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;<span class="comment">// ******************************************************************************************</span></div>
-<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;<span class="keywordtype">void</span> RobotPosesWidget::updateRobotModel(<span class="keyword">const</span> std::string&amp; name, <span class="keywordtype">double</span> value)</div>
+<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;<span class="keywordtype">void</span> RobotPosesWidget::updateRobotModel(<span class="keyword">const</span> std::string&amp; <a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>, <span class="keywordtype">double</span> value)</div>
 <div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;{</div>
 <div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;  <a class="code" href="classmoveit_1_1core_1_1RobotState.html">moveit::core::RobotState</a>&amp; robot_state = config_data_-&gt;getPlanningScene()-&gt;getCurrentStateNonConst();</div>
-<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;  robot_state.<a class="code" href="classmoveit_1_1core_1_1RobotState.html#a54879052daa602ea0319cbe3ded82ff3">setVariablePosition</a>(name, value);</div>
+<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;  robot_state.<a class="code" href="classmoveit_1_1core_1_1RobotState.html#a54879052daa602ea0319cbe3ded82ff3">setVariablePosition</a>(<a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>, value);</div>
 <div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160; </div>
 <div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;  <span class="comment">// Update the robot model/rviz</span></div>
 <div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;  publishJoints();</div>
@@ -993,6 +994,7 @@ $(function() {
 <div class="ttc" id="aclassmoveit_1_1core_1_1RobotState_html_aae57a83ed9ad7c34982b6a943341026c"><div class="ttname"><a href="classmoveit_1_1core_1_1RobotState.html#aae57a83ed9ad7c34982b6a943341026c">moveit::core::RobotState::getVariablePosition</a></div><div class="ttdeci">double getVariablePosition(const std::string &amp;variable) const</div><div class="ttdoc">Get the position of a particular variable. An exception is thrown if the variable is not known.</div><div class="ttdef"><b>Definition:</b> <a href="robot__state_8h_source.html#l00273">robot_state.h:273</a></div></div>
 <div class="ttc" id="aclassmoveit_1_1core_1_1RobotState_html_aba31c6f758e3dabd32c1acbd069e189e"><div class="ttname"><a href="classmoveit_1_1core_1_1RobotState.html#aba31c6f758e3dabd32c1acbd069e189e">moveit::core::RobotState::setToDefaultValues</a></div><div class="ttdeci">void setToDefaultValues()</div><div class="ttdoc">Set all joints to their default positions. The default position is 0, or if that is not within bounds...</div><div class="ttdef"><b>Definition:</b> <a href="robot__state_8cpp_source.html#l00428">robot_state.cpp:428</a></div></div>
 <div class="ttc" id="aclassSetupScreenWidget_html"><div class="ttname"><a href="classSetupScreenWidget.html">SetupScreenWidget</a></div><div class="ttdef"><b>Definition:</b> <a href="setup__screen__widget_8h_source.html#l00044">setup_screen_widget.h:44</a></div></div>
+<div class="ttc" id="anamespacesetup_html_ab3a7a0638d76a01367c5bc3cc699447f"><div class="ttname"><a href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">setup.name</a></div><div class="ttdeci">name</div><div class="ttdef"><b>Definition:</b> <a href="moveit__configs__utils_2setup_8py_source.html#l00006">setup.py:6</a></div></div>
 <div class="ttc" id="aclassmoveit_1_1core_1_1JointModelGroup_html_a5c96362127bca0b1263983def71cf86a"><div class="ttname"><a href="classmoveit_1_1core_1_1JointModelGroup.html#a5c96362127bca0b1263983def71cf86a">moveit::core::JointModelGroup::getJointModels</a></div><div class="ttdeci">const std::vector&lt; const JointModel * &gt; &amp; getJointModels() const</div><div class="ttdoc">Get all the joints in this group (including fixed and mimic joints).</div><div class="ttdef"><b>Definition:</b> <a href="joint__model__group_8h_source.html#l00209">joint_model_group.h:209</a></div></div>
 <div class="ttc" id="anamespacerclcpp_1_1names_html_a4c3e21517afd9a6909de322da95c5e81"><div class="ttname"><a href="namespacerclcpp_1_1names.html#a4c3e21517afd9a6909de322da95c5e81">rclcpp::names::append</a></div><div class="ttdeci">std::string append(const std::string &amp;left, const std::string &amp;right)</div><div class="ttdef"><b>Definition:</b> <a href="rclcpp__utils_8cpp_source.html#l00053">rclcpp_utils.cpp:53</a></div></div>
 <div class="ttc" id="arobot__poses__widget_8h_html"><div class="ttname"><a href="robot__poses__widget_8h.html">robot_poses_widget.h</a></div></div>

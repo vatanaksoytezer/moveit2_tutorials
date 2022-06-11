@@ -10,7 +10,7 @@
       <link rel="stylesheet" href="_static/tabs.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/override.css" type="text/css" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
-    <link rel="canonical" href="https://moveit.picknik.ai/rolling//rolling/index.html" />
+    <link rel="canonical" href="https://moveit.picknik.ai/humble//rolling/index.html" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -45,11 +45,11 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="doc/tutorials/tutorials.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="doc/how_to_guides/how_to_guides.html">How-To Guides</a></li>
-<li class="toctree-l1"><a class="reference internal" href="doc/concepts/concepts.html">Concepts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="doc/how_to_contribute/how_to_contribute.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="doc/examples/examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc/concepts/concepts.html">Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc/how_to_guides/how_to_guides.html">How-To Guides</a></li>
 <li class="toctree-l1"><a class="reference internal" href="doc/api/api.html">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc/how_to_contribute/how_to_contribute.html">Contributing</a></li>
 </ul>
 
         </div>
@@ -84,7 +84,7 @@
       
       You're reading the documentation for the non-stable development version of MoveIt 2.
       For the stable, released version, please have a look at
-      <a href="../galactic/index.html">Galactic</a>.
+      <a href="../humble/index.html">Humble</a>.
       
   </p>
 </div>
@@ -114,25 +114,10 @@
 <li class="toctree-l1"><a class="reference internal" href="doc/tutorials/tutorials.html">Tutorials</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="doc/tutorials/getting_started/getting_started.html">Getting Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="doc/tutorials/quickstart_in_rviz/quickstart_in_rviz_tutorial.html">MoveIt Quickstart in RViz</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="doc/how_to_guides/how_to_guides.html">How-To Guides</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="doc/how_to_guides/how_to_guide.html">How-To Guide</a></li>
-<li class="toctree-l2"><a class="reference internal" href="doc/how_to_guides/how_to_generate_api_doxygen_locally.html">How To Generate API Doxygen Reference Locally</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="doc/concepts/concepts.html">Concepts</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="doc/concepts/kinematics.html">Kinematics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="doc/concepts/motion_planning.html">Motion Planning</a></li>
-<li class="toctree-l2"><a class="reference internal" href="doc/concepts/move_group.html">The <code class="docutils literal notranslate"><span class="pre">move_group</span></code> node</a></li>
-<li class="toctree-l2"><a class="reference internal" href="doc/concepts/planning_scene_monitor.html">Planning Scene Monitor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="doc/concepts/trajectory_processing.html">Trajectory Processing</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="doc/how_to_contribute/how_to_contribute.html">Contributing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="doc/how_to_contribute/how_to_contribute_to_site.html">How to Contribute to This Site</a></li>
-<li class="toctree-l2"><a class="reference internal" href="doc/how_to_contribute/how_to_write_tutorials.html">How to Write a MoveIt Tutorial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="doc/how_to_contribute/how_to_write_how_to_guides.html">How to Write a MoveIt How-To Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc/tutorials/your_first_project/your_first_project.html">Your First C++ MoveIt Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc/tutorials/visualizing_in_rviz/visualizing_in_rviz.html">Visualizing In RViz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc/tutorials/planning_around_objects/planning_around_objects.html">Planning Around Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc/tutorials/pick_and_place_with_moveit_task_constructor/pick_and_place_with_moveit_task_constructor.html">Pick and Place with MoveIt Task Constructor</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="doc/examples/examples.html">Examples</a><ul>
@@ -143,7 +128,32 @@
 <li class="toctree-l2"><a class="reference internal" href="doc/examples/examples.html#miscellaneous">Miscellaneous</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="doc/concepts/concepts.html">Concepts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="doc/concepts/kinematics.html">Kinematics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc/concepts/motion_planning.html">Motion Planning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc/concepts/hybrid_planning/hybrid_planning.html">Hybrid Planning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc/concepts/move_group.html">The <code class="docutils literal notranslate"><span class="pre">move_group</span></code> node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc/concepts/planning_scene_monitor.html">Planning Scene Monitor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc/concepts/trajectory_processing.html">Trajectory Processing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="doc/how_to_guides/how_to_guides.html">How-To Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="doc/how_to_guides/how_to_guide.html">How-To Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc/how_to_guides/how_to_generate_api_doxygen_locally.html">How To Generate API Doxygen Reference Locally</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc/how_to_guides/how_to_setup_docker_containers_in_ubuntu.html">How to Set Up MoveIt 2 Docker Containers in Ubuntu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc/how_to_guides/how_to_write_doxygen.html">How to Contribute Doxygen Comments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc/how_to_guides/how_to_write_doxygen.html#learning-objectives">Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc/how_to_guides/how_to_write_doxygen.html#instructions">Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc/how_to_guides/how_to_write_doxygen.html#further-reading">Further Reading</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="doc/api/api.html">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc/how_to_contribute/how_to_contribute.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="doc/how_to_contribute/how_to_contribute_to_site.html">How to Contribute to This Site</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc/how_to_contribute/how_to_write_tutorials.html">How to Write a MoveIt Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc/how_to_contribute/how_to_write_how_to_guides.html">How to Write a MoveIt How-To Guide</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -197,7 +207,8 @@
     </dl>
     <dl>
       <dt>MoveIt 2 - Stable</dt>
-        <dd><a href="../galactic/index.html">Galactic (recommended)</a></dd>
+        <dd><a href="../humble/index.html">Humble (recommended)</a></dd>
+        <dd><a href="../galactic/index.html">Galactic</a></dd>
         <dd><a href="../foxy/index.html">Foxy</a></dd>
    </dl>
     <dl>

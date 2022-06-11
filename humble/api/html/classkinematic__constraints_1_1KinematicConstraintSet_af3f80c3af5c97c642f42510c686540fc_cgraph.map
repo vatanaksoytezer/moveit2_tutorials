@@ -1,0 +1,6 @@
+<map id="kinematic_constraints::KinematicConstraintSet::add" name="kinematic_constraints::KinematicConstraintSet::add">
+<area shape="rect" id="node1" title="Add a vector of position constraints." alt="" coords="5,39,221,80"/>
+<area shape="rect" id="node2" href="$classkinematic__constraints_1_1VisibilityConstraint.html#aab123b54941e557956a10cd842f29dbc" title="Configure the constraint based on a moveit_msgs::msg::VisibilityConstraint." alt="" coords="269,31,436,87"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1core_1_1Transforms.html#a0df4298ff63f3dabcbf35312294ffe96" title="Get the planning frame corresponding to this set of transforms." alt="" coords="484,5,668,47"/>
+<area shape="rect" id="node4" href="$classmoveit_1_1core_1_1Transforms.html#a3bdeb2753de48a7eb59780a381565fc7" title="Transform a pose in from_frame to the target_frame." alt="" coords="484,71,668,112"/>
+</map>

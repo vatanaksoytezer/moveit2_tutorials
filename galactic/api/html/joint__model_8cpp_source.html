@@ -13,6 +13,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="theme.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -116,8 +117,8 @@ $(function() {
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">namespace </span>core</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<a class="code" href="classmoveit_1_1core_1_1JointModel.html#a1f7d5542ac0ccd8cde728e101db378b8">JointModel::JointModel</a>(<span class="keyword">const</span> std::string&amp; name)</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  : name_(name)</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<a class="code" href="classmoveit_1_1core_1_1JointModel.html#a1f7d5542ac0ccd8cde728e101db378b8">JointModel::JointModel</a>(<span class="keyword">const</span> std::string&amp; <a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>)</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  : name_(<a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>)</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  , type_(UNKNOWN)</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  , parent_link_model_(nullptr)</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  , child_link_model_(nullptr)</div>
@@ -335,6 +336,7 @@ $(function() {
 <div class="ttc" id="aclassmoveit_1_1core_1_1JointModel_html_a484dd6d22e03da1cc45306f753c8b01a"><div class="ttname"><a href="classmoveit_1_1core_1_1JointModel.html#a484dd6d22e03da1cc45306f753c8b01a">moveit::core::JointModel::variable_bounds_</a></div><div class="ttdeci">Bounds variable_bounds_</div><div class="ttdoc">The bounds for each variable (low, high) in the same order as variable_names_.</div><div class="ttdef"><b>Definition:</b> <a href="joint__model_8h_source.html#l00540">joint_model.h:540</a></div></div>
 <div class="ttc" id="aclassmoveit_1_1core_1_1JointModel_html_afc4c6e2275ac4de0c7b23fe7c827962e"><div class="ttname"><a href="classmoveit_1_1core_1_1JointModel.html#afc4c6e2275ac4de0c7b23fe7c827962e">moveit::core::JointModel::variable_names_</a></div><div class="ttdeci">std::vector&lt; std::string &gt; variable_names_</div><div class="ttdoc">The full names to use for the variables that make up this joint.</div><div class="ttdef"><b>Definition:</b> <a href="joint__model_8h_source.html#l00537">joint_model.h:537</a></div></div>
 <div class="ttc" id="aclassmoveit_1_1core_1_1JointModel_html_a6c1c75a4d125fd607f48bff4ca019b2caa253217ef470e1bda8720760952ccc44"><div class="ttname"><a href="classmoveit_1_1core_1_1JointModel.html#a6c1c75a4d125fd607f48bff4ca019b2caa253217ef470e1bda8720760952ccc44">moveit::core::JointModel::UNKNOWN</a></div><div class="ttdeci">@ UNKNOWN</div><div class="ttdef"><b>Definition:</b> <a href="joint__model_8h_source.html#l00181">joint_model.h:181</a></div></div>
+<div class="ttc" id="anamespacesetup_html_ab3a7a0638d76a01367c5bc3cc699447f"><div class="ttname"><a href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">setup.name</a></div><div class="ttdeci">name</div><div class="ttdef"><b>Definition:</b> <a href="moveit__configs__utils_2setup_8py_source.html#l00006">setup.py:6</a></div></div>
 <div class="ttc" id="aclassmoveit_1_1core_1_1JointModel_html_a6783e4aa52f405b187fa40e2acc509aa"><div class="ttname"><a href="classmoveit_1_1core_1_1JointModel.html#a6783e4aa52f405b187fa40e2acc509aa">moveit::core::JointModel::~JointModel</a></div><div class="ttdeci">virtual ~JointModel()</div></div>
 <div class="ttc" id="alink__model_8h_html"><div class="ttname"><a href="link__model_8h.html">link_model.h</a></div></div>
 <div class="ttc" id="aclassmoveit_1_1core_1_1JointModel_html_a74dbc6293c3f31f3141cea810a802174"><div class="ttname"><a href="classmoveit_1_1core_1_1JointModel.html#a74dbc6293c3f31f3141cea810a802174">moveit::core::JointModel::harmonizePosition</a></div><div class="ttdeci">virtual bool harmonizePosition(double *values, const Bounds &amp;other_bounds) const</div><div class="ttdef"><b>Definition:</b> <a href="joint__model_8cpp_source.html#l00159">joint_model.cpp:159</a></div></div>

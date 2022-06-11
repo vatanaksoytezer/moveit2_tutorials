@@ -1,0 +1,16 @@
+<map id="PlanningContextTest::SetUp" name="PlanningContextTest::SetUp">
+<area shape="rect" id="node1" title=" " alt="" coords="5,370,160,411"/>
+<area shape="rect" id="node2" href="$namespacetestutils.html#a5d16cd86a3cbc9dc92338716995f3eb3" title="Create limits for tests to avoid the need to get the limits from the node parameter." alt="" coords="233,20,427,47"/>
+<area shape="rect" id="node4" href="$classrobot__model__loader_1_1RobotModelLoader.html#a40e202c404ae62a984861b273a401fcd" title="Get the constructed planning_models::RobotModel." alt="" coords="250,71,410,127"/>
+<area shape="rect" id="node5" href="$unittest__planning__context_8cpp.html#a0258d4e48c5d63bd1bb8c56e97bd09af" title=" " alt="" coords="208,151,452,177"/>
+<area shape="rect" id="node6" href="$unittest__planning__context_8cpp.html#a3ef26f92433dcdbf9ac9c73dfdf72ac8" title=" " alt="" coords="225,201,435,228"/>
+<area shape="rect" id="node7" href="$classpilz__industrial__motion__planner_1_1LimitsContainer.html#a4bad0e0b995a846b3d5e370594b457f6" title="Set cartesian limits." alt="" coords="235,252,425,308"/>
+<area shape="rect" id="node8" href="$classmoveit_1_1core_1_1RobotState.html#a564140d144754d149b292e70c4c59b55" title="Given positions for the variables that make up a group, in the order found in the group (including va..." alt="" coords="238,333,422,374"/>
+<area shape="rect" id="node9" href="$classpilz__industrial__motion__planner_1_1LimitsContainer.html#a8bbc4136be28081f1aeb1f8e942fcf75" title="Set joint limits." alt="" coords="235,399,425,455"/>
+<area shape="rect" id="node10" href="$classpilz__industrial__motion__planner_1_1CartesianLimit.html#a550ec57d1779f6e0b34f27554769d8a2" title="Set the maximum rotational velocity." alt="" coords="231,479,429,535"/>
+<area shape="rect" id="node11" href="$classpilz__industrial__motion__planner_1_1CartesianLimit.html#a98bee11f3336595d2b6a06e7a724e311" title="Set the maximum translational acceleration." alt="" coords="209,559,451,615"/>
+<area shape="rect" id="node12" href="$classpilz__industrial__motion__planner_1_1CartesianLimit.html#afc6ae3a75bde60fd382bd702cf5104dc" title="Set the maximum translational deceleration." alt="" coords="208,639,452,695"/>
+<area shape="rect" id="node13" href="$classpilz__industrial__motion__planner_1_1CartesianLimit.html#a6cc92d1b40f64bdcbb6fe02b523d9e92" title="Set the maximal translational velocity." alt="" coords="223,719,437,775"/>
+<area shape="rect" id="node14" href="$classmoveit_1_1core_1_1RobotState.html#aba31c6f758e3dabd32c1acbd069e189e" title="Set all joints to their default positions. The default position is 0, or if that is not within bounds..." alt="" coords="238,799,422,841"/>
+<area shape="rect" id="node3" href="$classpilz__industrial__motion__planner_1_1JointLimitsContainer.html#a40383e43f2853d45c9456333cda2a537" title="Add a limit." alt="" coords="500,5,719,61"/>
+</map>

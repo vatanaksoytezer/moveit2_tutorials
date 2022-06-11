@@ -13,6 +13,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="theme.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -140,7 +141,7 @@ $(function() {
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="comment">// count trajectory messages sent by servo</span></div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordtype">size_t</span> received_count = 0;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  std::function&lt;void(<span class="keyword">const</span> trajectory_msgs::msg::JointTrajectory::ConstSharedPtr)&gt; traj_callback =</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      [&amp;received_count](<span class="keyword">const</span> trajectory_msgs::msg::JointTrajectory::ConstSharedPtr msg) { ++received_count; };</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      [&amp;received_count](<span class="keyword">const</span> trajectory_msgs::msg::JointTrajectory::ConstSharedPtr <span class="comment">/* unused */</span>) { ++received_count; };</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keyword">auto</span> traj_sub = node_-&gt;create_subscription&lt;trajectory_msgs::msg::JointTrajectory&gt;(</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      resolveServoTopicName(parameters-&gt;command_out_topic), 1, traj_callback);</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
@@ -193,7 +194,7 @@ $(function() {
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <span class="comment">// count trajectory messages sent by servo</span></div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <span class="keywordtype">size_t</span> received_count = 0;</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  std::function&lt;void(<span class="keyword">const</span> trajectory_msgs::msg::JointTrajectory::ConstSharedPtr)&gt; traj_callback =</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;      [&amp;received_count](<span class="keyword">const</span> trajectory_msgs::msg::JointTrajectory::ConstSharedPtr msg) { ++received_count; };</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;      [&amp;received_count](<span class="keyword">const</span> trajectory_msgs::msg::JointTrajectory::ConstSharedPtr <span class="comment">/* unused */</span>) { ++received_count; };</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <span class="keyword">auto</span> traj_sub = node_-&gt;create_subscription&lt;trajectory_msgs::msg::JointTrajectory&gt;(cmd_out_topic, 1, traj_callback);</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  <span class="comment">// Create publisher to send servo commands</span></div>

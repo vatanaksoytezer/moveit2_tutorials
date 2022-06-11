@@ -1,4 +1,0 @@
-<map id="planning_scene::PlanningScene::getCollidingLinks" name="planning_scene::PlanningScene::getCollidingLinks">
-<area shape="rect" id="node1" title="Get the names of the links that are involved in collisions for the state robot_state given the allowe..." alt="" coords="5,5,192,47"/>
-<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1RobotState.html#afa1f72a766bdf75d81f4404058322576" title="Update the transforms for the collision bodies. This call is needed before calling collision checking..." alt="" coords="240,5,476,47"/>
-</map>

@@ -10,7 +10,7 @@
       <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/override.css" type="text/css" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
-    <link rel="canonical" href="https://moveit.picknik.ai/rolling//rolling/doc/examples/time_parameterization/time_parameterization_tutorial.html" />
+    <link rel="canonical" href="https://moveit.picknik.ai/humble//rolling/doc/examples/time_parameterization/time_parameterization_tutorial.html" />
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -46,9 +46,6 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../tutorials/tutorials.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../how_to_guides/how_to_guides.html">How-To Guides</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../concepts/concepts.html">Concepts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../how_to_contribute/how_to_contribute.html">Contributing</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../examples.html">Examples</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../examples.html#movegroup-ros-wrappers-in-c">MoveGroup - ROS Wrappers in C++</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../examples.html#using-moveit-directly-through-the-c-api">Using MoveIt Directly Through the C++ API</a><ul class="current">
@@ -67,12 +64,12 @@
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="#time-parameterization-algorithms">Time Parameterization Algorithms</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#jerk-limited-trajectory-smoothing">Jerk-Limited Trajectory Smoothing</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../planning_with_approximated_constraint_manifolds/planning_with_approximated_constraint_manifolds_tutorial.html">Planning with Approximated Constraint Manifolds</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../pick_place/pick_place_tutorial.html">Pick and Place</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../moveit_grasps/moveit_grasps_tutorial.html">MoveIt Grasps</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../moveit_task_constructor/moveit_task_constructor_tutorial.html">MoveIt Task Constructor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../moveit_deep_grasps/moveit_deep_grasps_tutorial.html">MoveIt Deep Grasps</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../subframes/subframes_tutorial.html">Subframes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../moveit_cpp/moveitcpp_tutorial.html">MoveItCpp Tutorial</a></li>
@@ -85,7 +82,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../examples.html#miscellaneous">Miscellaneous</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../concepts/concepts.html">Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../how_to_guides/how_to_guides.html">How-To Guides</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/api.html">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../how_to_contribute/how_to_contribute.html">Contributing</a></li>
 </ul>
 
         </div>
@@ -121,7 +121,7 @@
       
       You're reading the documentation for the non-stable development version of MoveIt 2.
       For the stable, released version, please have a look at
-      <a href="../../../../galactic/doc/examples/time_parameterization/time_parameterization_tutorial.html">Galactic</a>.
+      <a href="../../../../humble/doc/examples/time_parameterization/time_parameterization_tutorial.html">Humble</a>.
       
   </p>
 </div>
@@ -135,7 +135,7 @@
 <h2>Speed Control<a class="headerlink" href="#speed-control" title="Permalink to this headline"></a></h2>
 <div class="section" id="from-file">
 <h3>From File<a class="headerlink" href="#from-file" title="Permalink to this headline"></a></h3>
-<p>By default MoveIt sets the velocity and acceleration of a joint trajectory to the default allowed in the robot’s URDF or <code class="docutils literal notranslate"><span class="pre">joint_limits.yaml</span></code>. The <code class="docutils literal notranslate"><span class="pre">joint_limits.yaml</span></code> is generated from the Setup Assistant and is initially an exact copy of the values within the URDF. The user can then modify those values to be less than the original URDF values if special constraints are needed. Specific joint properties can be changed with the keys <code class="docutils literal notranslate"><span class="pre">max_position,</span> <span class="pre">min_position,</span> <span class="pre">max_velocity,</span> <span class="pre">max_acceleration</span></code>. Joint limits can be turned on or off with the keys <code class="docutils literal notranslate"><span class="pre">has_velocity_limits,</span> <span class="pre">has_acceleration_limits</span></code>.</p>
+<p>By default MoveIt sets the joint velocity and acceleration limits of a joint trajectory to the default allowed in the robot’s URDF or <code class="docutils literal notranslate"><span class="pre">joint_limits.yaml</span></code>. The <code class="docutils literal notranslate"><span class="pre">joint_limits.yaml</span></code> is generated from the Setup Assistant and is initially an exact copy of the values within the URDF. The user can then modify those values to be less than the original URDF values if special constraints are needed. Specific joint properties can be changed with the keys <code class="docutils literal notranslate"><span class="pre">max_position,</span> <span class="pre">min_position,</span> <span class="pre">max_velocity,</span> <span class="pre">max_acceleration,</span> <span class="pre">max_jerk</span></code>. Joint limits can be turned on or off with the keys <code class="docutils literal notranslate"><span class="pre">has_velocity_limits,</span> <span class="pre">has_acceleration_limits,</span> <span class="pre">has_jerk_limits</span></code>.</p>
 </div>
 <div class="section" id="during-runtime">
 <h3>During Runtime<a class="headerlink" href="#during-runtime" title="Permalink to this headline"></a></h3>
@@ -150,11 +150,22 @@
 <li><p><a class="reference external" href="https://github.com/ros-planning/moveit2/blob/main/moveit_core/trajectory_processing/src/iterative_spline_parameterization.cpp">Iterative Spline Parameterization</a></p></li>
 <li><p><a class="reference external" href="https://github.com/ros-planning/moveit2/blob/main/moveit_core/trajectory_processing/src/time_optimal_trajectory_generation.cpp">Time-optimal Trajectory Generation</a></p></li>
 </ul>
-<p>The Iterative Parabolic Time Parameterization algorithm is used by default in the <a class="reference internal" href="../motion_planning_pipeline/motion_planning_pipeline_tutorial.html"><span class="doc">Motion Planning Pipeline</span></a>
-as a Planning Request Adapter as documented in <a class="reference external" href="../motion_planning_pipeline/motion_planning_pipeline_tutorial.html#using-a-planning-request-adapter">this tutorial</a>.
-Although the Iterative Parabolic Time Parameterization algorithm MoveIt uses has been used by hundreds of robots over the years, there is known <a class="reference external" href="https://github.com/ros-planning/moveit/issues/160">bug with it</a>.</p>
-<p>The Iterative Spline Parameterization algorithm was merged with <a class="reference external" href="https://github.com/ros-planning/moveit/pull/382">PR 382</a> as an approach to deal with these issues. While preliminary experiments are very promising, we are waiting for more feedback from the community before replacing the Iterative Parabolic Time Parameterization algorithm completely.</p>
-<p>Time-optimal Trajectory Generation introduced in PRs <a class="reference external" href="https://github.com/ros-planning/moveit/pull/809">#809</a> and <a class="reference external" href="https://github.com/ros-planning/moveit/pull/1365">#1365</a> produces trajectories with very smooth and continuous velocity profiles. The method is based on fitting path segments to the original trajectory and then sampling new waypoints from the optimized path. This is different from strict time parameterization methods as resulting waypoints may divert from the original trajectory within a certain tolerance. As a consequence, additional collision checks might be required when using this method.</p>
+<p>Iterative Parabolic Time Parameterization (IPTP) was MoveIt’s initial time parameterization algorithm. However, there is a known <a class="reference external" href="https://github.com/ros-planning/moveit/issues/160">bug with it</a>.</p>
+<p>The Iterative Spline Time Parameterization (ISTP) algorithm was merged with <a class="reference external" href="https://github.com/ros-planning/moveit/pull/382">PR 382</a>.</p>
+<p>Time-optimal Trajectory Generation (TOTG) introduced in PRs <a class="reference external" href="https://github.com/ros-planning/moveit/pull/809">#809</a> and <a class="reference external" href="https://github.com/ros-planning/moveit/pull/1365">#1365</a> produces trajectories with very smooth and continuous velocity profiles. The method is based on fitting path segments to the original trajectory and then sampling new waypoints from the optimized path. This is different from strict time parameterization methods as resulting waypoints may divert from the original trajectory within a certain tolerance. As a consequence, additional collision checks might be required when using this method. It is the default everywhere in MoveIt2.</p>
+<p>Usage of a time parameterization algorithm as a Planning Request Adapter is documented in <a class="reference external" href="../motion_planning_pipeline/motion_planning_pipeline_tutorial.html#using-a-planning-request-adapter">this tutorial</a>.</p>
+</div>
+<div class="section" id="jerk-limited-trajectory-smoothing">
+<h2>Jerk-Limited Trajectory Smoothing<a class="headerlink" href="#jerk-limited-trajectory-smoothing" title="Permalink to this headline"></a></h2>
+<p>A time parameterization algorithm such as TOTG calculates velocities and accelerations for a trajectory, but none of the time parameterization algorithms support jerk limits. This is not ideal – large jerks  along a trajectory can cause jerky motion or damage hardware. As a further post-processing step, the Ruckig jerk-limited smoothing algorithm can be appliied to limit joint jerks over the trajectories.</p>
+<p>To apply the Ruckig smoothing algorithm, jerk limits should be defined in a <code class="docutils literal notranslate"><span class="pre">joint_limits.yaml</span></code> file. If you do not specify a jerk limit for any joint, a reasonable default will be applied and a warning printed.</p>
+<p>Finally, add the Ruckig smoothing algorithm to the list of planning request adapters (typically in <code class="docutils literal notranslate"><span class="pre">ompl_planning.yaml</span></code>). The Ruckig smoothing algorithm should run last, so put it at the top of list:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">request_adapters</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">&gt;-</span><span class="w"></span>
+<span class="w">  </span><span class="no">default_planner_request_adapters/AddRuckigTrajectorySmoothing</span><span class="w"></span>
+<span class="w">  </span><span class="no">default_planner_request_adapters/AddTimeOptimalParameterization</span><span class="w"></span>
+<span class="w">  </span><span class="no">...</span><span class="w"></span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -197,7 +208,8 @@ Although the Iterative Parabolic Time Parameterization algorithm MoveIt uses has
     </dl>
     <dl>
       <dt>MoveIt 2 - Stable</dt>
-        <dd><a href="../../../../galactic/doc/examples/time_parameterization/time_parameterization_tutorial.html">Galactic (recommended)</a></dd>
+        <dd><a href="../../../../humble/doc/examples/time_parameterization/time_parameterization_tutorial.html">Humble (recommended)</a></dd>
+        <dd><a href="../../../../galactic/doc/examples/time_parameterization/time_parameterization_tutorial.html">Galactic</a></dd>
         <dd><a href="../../../../foxy/index.html">Foxy</a></dd>
    </dl>
     <dl>

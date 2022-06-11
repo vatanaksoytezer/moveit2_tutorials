@@ -10,7 +10,7 @@
       <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/override.css" type="text/css" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
-    <link rel="canonical" href="https://moveit.picknik.ai/rolling//rolling/doc/examples/moveit_deep_grasps/moveit_deep_grasps_tutorial.html" />
+    <link rel="canonical" href="https://moveit.picknik.ai/humble//rolling/doc/examples/moveit_deep_grasps/moveit_deep_grasps_tutorial.html" />
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -25,7 +25,7 @@
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Subframes" href="../subframes/subframes_tutorial.html" />
-    <link rel="prev" title="MoveIt Task Constructor" href="../moveit_task_constructor/moveit_task_constructor_tutorial.html" /> 
+    <link rel="prev" title="MoveIt Grasps" href="../moveit_grasps/moveit_grasps_tutorial.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -46,9 +46,6 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../tutorials/tutorials.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../how_to_guides/how_to_guides.html">How-To Guides</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../concepts/concepts.html">Concepts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../how_to_contribute/how_to_contribute.html">Contributing</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../examples.html">Examples</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../examples.html#movegroup-ros-wrappers-in-c">MoveGroup - ROS Wrappers in C++</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../examples.html#using-moveit-directly-through-the-c-api">Using MoveIt Directly Through the C++ API</a><ul class="current">
@@ -64,7 +61,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../planning_with_approximated_constraint_manifolds/planning_with_approximated_constraint_manifolds_tutorial.html">Planning with Approximated Constraint Manifolds</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../pick_place/pick_place_tutorial.html">Pick and Place</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../moveit_grasps/moveit_grasps_tutorial.html">MoveIt Grasps</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../moveit_task_constructor/moveit_task_constructor_tutorial.html">MoveIt Task Constructor</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">MoveIt Deep Grasps</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#getting-started">Getting Started</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#conceptual-overview">Conceptual Overview</a></li>
@@ -88,7 +84,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../examples.html#miscellaneous">Miscellaneous</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../concepts/concepts.html">Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../how_to_guides/how_to_guides.html">How-To Guides</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/api.html">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../how_to_contribute/how_to_contribute.html">Contributing</a></li>
 </ul>
 
         </div>
@@ -124,7 +123,7 @@
       
       You're reading the documentation for the non-stable development version of MoveIt 2.
       For the stable, released version, please have a look at
-      <a href="../../../../galactic/doc/examples/moveit_deep_grasps/moveit_deep_grasps_tutorial.html">Galactic</a>.
+      <a href="../../../../humble/doc/examples/moveit_deep_grasps/moveit_deep_grasps_tutorial.html">Humble</a>.
       
   </p>
 </div>
@@ -139,8 +138,7 @@
 <p><a class="reference internal" href="../../../_images/mtc_gpd_panda.gif"><img alt="gif1" src="../../../_images/mtc_gpd_panda.gif" style="width: 250pt;" /></a> <a class="reference internal" href="../../../_images/mtc_gqcnn_panda.gif"><img alt="gif2" src="../../../_images/mtc_gqcnn_panda.gif" style="width: 250pt;" /></a></p>
 <div class="section" id="getting-started">
 <h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline"></a></h2>
-<p>If you haven’t already done so, make sure you’ve completed the steps in <a class="reference internal" href="../../tutorials/getting_started/getting_started.html"><span class="doc">Getting Started</span></a>.
-It is also worthwhile to complete the steps in <a class="reference internal" href="../moveit_task_constructor/moveit_task_constructor_tutorial.html"><span class="doc">MoveIt Task Constructor</span></a>.</p>
+<p>If you haven’t already done so, make sure you’ve completed the steps in <a class="reference internal" href="../../tutorials/getting_started/getting_started.html"><span class="doc">Getting Started</span></a>.</p>
 <p>There are additional dependencies to install in order to run the demos. Therefore, the deep grasping packages are
 located in their own repository. Please see <a class="reference external" href="https://github.com/PickNikRobotics/deep_grasp_demo">Deep Grasp Demo</a>.
 This repository contains detailed instructions for installation, running the demos, simulating depth sensors, and tips for performance.</p>
@@ -228,7 +226,7 @@ such as the bar clamp (seen on the right). Experiment with the <code class="docu
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../moveit_task_constructor/moveit_task_constructor_tutorial.html" class="btn btn-neutral float-left" title="MoveIt Task Constructor" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../moveit_grasps/moveit_grasps_tutorial.html" class="btn btn-neutral float-left" title="MoveIt Grasps" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="../subframes/subframes_tutorial.html" class="btn btn-neutral float-right" title="Subframes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
@@ -262,7 +260,8 @@ such as the bar clamp (seen on the right). Experiment with the <code class="docu
     </dl>
     <dl>
       <dt>MoveIt 2 - Stable</dt>
-        <dd><a href="../../../../galactic/doc/examples/moveit_deep_grasps/moveit_deep_grasps_tutorial.html">Galactic (recommended)</a></dd>
+        <dd><a href="../../../../humble/doc/examples/moveit_deep_grasps/moveit_deep_grasps_tutorial.html">Humble (recommended)</a></dd>
+        <dd><a href="../../../../galactic/doc/examples/moveit_deep_grasps/moveit_deep_grasps_tutorial.html">Galactic</a></dd>
         <dd><a href="../../../../foxy/index.html">Foxy</a></dd>
    </dl>
     <dl>

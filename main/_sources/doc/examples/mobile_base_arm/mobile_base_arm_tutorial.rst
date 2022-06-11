@@ -27,7 +27,7 @@ Build the colcon workspace: ::
 
 Source the colcon workspace: ::
 
-  source ~/ws_moveit2/install/setup.bash
+  source ~/ws_moveit/install/setup.bash
 
 Setting up IK solver for mobile-base and arm
 --------------------------------------------

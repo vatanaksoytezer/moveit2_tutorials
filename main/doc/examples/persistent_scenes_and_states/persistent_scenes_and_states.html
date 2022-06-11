@@ -10,7 +10,7 @@
       <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/override.css" type="text/css" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
-    <link rel="canonical" href="https://moveit.picknik.ai/rolling//rolling/doc/examples/persistent_scenes_and_states/persistent_scenes_and_states.html" />
+    <link rel="canonical" href="https://moveit.picknik.ai/humble//rolling/doc/examples/persistent_scenes_and_states/persistent_scenes_and_states.html" />
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -46,9 +46,6 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../tutorials/tutorials.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../how_to_guides/how_to_guides.html">How-To Guides</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../concepts/concepts.html">Concepts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../how_to_contribute/how_to_contribute.html">Contributing</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../examples.html">Examples</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../examples.html#movegroup-ros-wrappers-in-c">MoveGroup - ROS Wrappers in C++</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../examples.html#using-moveit-directly-through-the-c-api">Using MoveIt Directly Through the C++ API</a></li>
@@ -75,7 +72,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../examples.html#miscellaneous">Miscellaneous</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../concepts/concepts.html">Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../how_to_guides/how_to_guides.html">How-To Guides</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/api.html">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../how_to_contribute/how_to_contribute.html">Contributing</a></li>
 </ul>
 
         </div>
@@ -111,7 +111,7 @@
       
       You're reading the documentation for the non-stable development version of MoveIt 2.
       For the stable, released version, please have a look at
-      <a href="../../../../galactic/doc/examples/persistent_scenes_and_states/persistent_scenes_and_states.html">Galactic</a>.
+      <a href="../../../../humble/doc/examples/persistent_scenes_and_states/persistent_scenes_and_states.html">Humble</a>.
       
   </p>
 </div>
@@ -165,13 +165,7 @@ If the database file does not exist yet, an empty database will be created.</p>
     <span class="n">executable</span><span class="o">=</span><span class="s2">&quot;move_group&quot;</span><span class="p">,</span>
     <span class="n">output</span><span class="o">=</span><span class="s2">&quot;screen&quot;</span><span class="p">,</span>
     <span class="n">parameters</span><span class="o">=</span><span class="p">[</span>
-        <span class="n">robot_description</span><span class="p">,</span>
-        <span class="n">robot_description_semantic</span><span class="p">,</span>
-        <span class="n">kinematics_yaml</span><span class="p">,</span>
-        <span class="n">ompl_planning_pipeline_config</span><span class="p">,</span>
-        <span class="n">trajectory_execution</span><span class="p">,</span>
-        <span class="n">moveit_controllers</span><span class="p">,</span>
-        <span class="n">planning_scene_monitor_parameters</span><span class="p">,</span>
+        <span class="n">moveit_config</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(),</span>
         <span class="c1"># here</span>
         <span class="n">warehouse_ros_config</span><span class="p">,</span>
     <span class="p">],</span>
@@ -188,10 +182,11 @@ If the database file does not exist yet, an empty database will be created.</p>
     <span class="n">output</span><span class="o">=</span><span class="s2">&quot;log&quot;</span><span class="p">,</span>
     <span class="n">arguments</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;-d&quot;</span><span class="p">,</span> <span class="n">rviz_config_file</span><span class="p">],</span>
     <span class="n">parameters</span><span class="o">=</span><span class="p">[</span>
-        <span class="n">robot_description</span><span class="p">,</span>
-        <span class="n">robot_description_semantic</span><span class="p">,</span>
-        <span class="n">ompl_planning_pipeline_config</span><span class="p">,</span>
-        <span class="n">kinematics_yaml</span><span class="p">,</span>
+        <span class="n">moveit_config</span><span class="o">.</span><span class="n">robot_description</span><span class="p">,</span>
+        <span class="n">moveit_config</span><span class="o">.</span><span class="n">robot_description_semantic</span><span class="p">,</span>
+        <span class="n">moveit_config</span><span class="o">.</span><span class="n">robot_description_kinematics</span><span class="p">,</span>
+        <span class="n">moveit_config</span><span class="o">.</span><span class="n">planning_pipelines</span><span class="p">,</span>
+        <span class="n">moveit_config</span><span class="o">.</span><span class="n">joint_limits</span><span class="p">,</span>
         <span class="c1"># here</span>
         <span class="n">warehouse_ros_config</span><span class="p">,</span>
     <span class="p">],</span>
@@ -277,7 +272,8 @@ To restore a state, select it in the list and click on “Set as Start” resp. 
     </dl>
     <dl>
       <dt>MoveIt 2 - Stable</dt>
-        <dd><a href="../../../../galactic/doc/examples/persistent_scenes_and_states/persistent_scenes_and_states.html">Galactic (recommended)</a></dd>
+        <dd><a href="../../../../humble/doc/examples/persistent_scenes_and_states/persistent_scenes_and_states.html">Humble (recommended)</a></dd>
+        <dd><a href="../../../../galactic/doc/examples/persistent_scenes_and_states/persistent_scenes_and_states.html">Galactic</a></dd>
         <dd><a href="../../../../foxy/index.html">Foxy</a></dd>
    </dl>
     <dl>

@@ -1,0 +1,4 @@
+<map id="kinematic_constraints::KinematicConstraintSet::add" name="kinematic_constraints::KinematicConstraintSet::add">
+<area shape="rect" id="node1" title="Add a vector of joint constraints." alt="" coords="5,13,221,54"/>
+<area shape="rect" id="node2" href="$classkinematic__constraints_1_1OrientationConstraint.html#a84922767a2ef4774373cbdf6ab0bda39" title="Configure the constraint based on a moveit_msgs::msg::OrientationConstraint." alt="" coords="269,5,440,61"/>
+</map>

@@ -13,6 +13,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="theme.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -202,10 +203,10 @@ $(function() {
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespacemoveit_1_1py__bindings__tools.html#a1e909ff3f36717b1c79f981fffa32f45">py_bindings_tools::listFromString</a>(robot_model_-&gt;getJointModelGroupNames());</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  }</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  bp::list <a class="code" href="namespacepilz__industrial__motion__planner_1_1joint__limits__interface.html#aae7165a7b65ce68169a0363771f68d35">getJointLimits</a>(<span class="keyword">const</span> std::string&amp; name)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  bp::list <a class="code" href="namespacepilz__industrial__motion__planner_1_1joint__limits__interface.html#aae7165a7b65ce68169a0363771f68d35">getJointLimits</a>(<span class="keyword">const</span> std::string&amp; <a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="keyword">  </span>{</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    bp::list result;</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keyword">const</span> <a class="code" href="classmoveit_1_1core_1_1JointModel.html">moveit::core::JointModel</a>* jm = robot_model_-&gt;getJointModel(name);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keyword">const</span> <a class="code" href="classmoveit_1_1core_1_1JointModel.html">moveit::core::JointModel</a>* jm = robot_model_-&gt;getJointModel(<a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>);</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keywordflow">if</span> (jm)</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    {</div>
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;      <span class="keyword">const</span> std::vector&lt;moveit_msgs::msg::JointLimits&gt;&amp; lim = jm-&gt;<a class="code" href="classmoveit_1_1core_1_1JointModel.html#a71319f9df3880381c571e14eda07493b">getVariableBoundsMsg</a>();</div>
@@ -225,13 +226,13 @@ $(function() {
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordflow">return</span> robot_model_-&gt;getModelFrame().c_str();</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  }</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  bp::list getLinkPose(<span class="keyword">const</span> std::string&amp; name)</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  bp::list getLinkPose(<span class="keyword">const</span> std::string&amp; <a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>)</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  {</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    bp::list l;</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keywordflow">if</span> (!ensureCurrentState())</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;      <span class="keywordflow">return</span> l;</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    moveit::core::RobotStatePtr state = current_state_monitor_-&gt;getCurrentState();</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keyword">const</span> <a class="code" href="classmoveit_1_1core_1_1LinkModel.html">moveit::core::LinkModel</a>* lm = state-&gt;getLinkModel(name);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keyword">const</span> <a class="code" href="classmoveit_1_1core_1_1LinkModel.html">moveit::core::LinkModel</a>* lm = state-&gt;getLinkModel(<a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>);</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordflow">if</span> (lm)</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    {</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;      <span class="comment">// getGlobalLinkTransform() returns a valid isometry by contract</span></div>
@@ -264,13 +265,13 @@ $(function() {
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keywordflow">return</span> l;</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;  }</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;  bp::list getCurrentJointValues(<span class="keyword">const</span> std::string&amp; name)</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;  bp::list getCurrentJointValues(<span class="keyword">const</span> std::string&amp; <a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>)</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  {</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    bp::list l;</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keywordflow">if</span> (!ensureCurrentState())</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;      <span class="keywordflow">return</span> l;</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    moveit::core::RobotStatePtr state = current_state_monitor_-&gt;getCurrentState();</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="keyword">const</span> <a class="code" href="classmoveit_1_1core_1_1JointModel.html">moveit::core::JointModel</a>* jm = state-&gt;getJointModel(name);</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="keyword">const</span> <a class="code" href="classmoveit_1_1core_1_1JointModel.html">moveit::core::JointModel</a>* jm = state-&gt;getJointModel(<a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>);</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="keywordflow">if</span> (jm)</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    {</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;      <span class="keyword">const</span> <span class="keywordtype">double</span>* pos = state-&gt;getJointPositions(jm);</div>
@@ -521,6 +522,7 @@ $(function() {
 <div class="ttc" id="anamespacesetup_html_aa2586b6c4dd84a0aaaf49cb1565cee6e"><div class="ttname"><a href="namespacesetup.html#aa2586b6c4dd84a0aaaf49cb1565cee6e">setup.d</a></div><div class="ttdeci">d</div><div class="ttdef"><b>Definition:</b> <a href="moveit__commander_2setup_8py_source.html#l00004">setup.py:4</a></div></div>
 <div class="ttc" id="aclassmoveit_1_1core_1_1JointModelGroup_html_acd1810d6d30c941a804301b7278ab146"><div class="ttname"><a href="classmoveit_1_1core_1_1JointModelGroup.html#acd1810d6d30c941a804301b7278ab146">moveit::core::JointModelGroup::getDefaultStateNames</a></div><div class="ttdeci">const std::vector&lt; std::string &gt; &amp; getDefaultStateNames() const</div><div class="ttdoc">Get the names of the known default states (as specified in the SRDF)</div><div class="ttdef"><b>Definition:</b> <a href="joint__model__group_8h_source.html#l00360">joint_model_group.h:360</a></div></div>
 <div class="ttc" id="anamespacemoveit_1_1py__bindings__tools_html_a32ae52cc53f1b9462bbbb37c23f47dbc"><div class="ttname"><a href="namespacemoveit_1_1py__bindings__tools.html#a32ae52cc53f1b9462bbbb37c23f47dbc">moveit::py_bindings_tools::dictFromType</a></div><div class="ttdeci">boost::python::dict dictFromType(const std::map&lt; std::string, T &gt; &amp;v)</div><div class="ttdef"><b>Definition:</b> <a href="py__conversions_8h_source.html#l00132">py_conversions.h:132</a></div></div>
+<div class="ttc" id="anamespacesetup_html_ab3a7a0638d76a01367c5bc3cc699447f"><div class="ttname"><a href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">setup.name</a></div><div class="ttdeci">name</div><div class="ttdef"><b>Definition:</b> <a href="moveit__configs__utils_2setup_8py_source.html#l00006">setup.py:6</a></div></div>
 <div class="ttc" id="acommon__objects_8h_html"><div class="ttname"><a href="common__objects_8h.html">common_objects.h</a></div></div>
 <div class="ttc" id="aclassmoveit_1_1core_1_1JointModelGroup_html_a0b1752d210db29e6a05f7d0e70c4ce4f"><div class="ttname"><a href="classmoveit_1_1core_1_1JointModelGroup.html#a0b1752d210db29e6a05f7d0e70c4ce4f">moveit::core::JointModelGroup::getLinkModelNames</a></div><div class="ttdeci">const std::vector&lt; std::string &gt; &amp; getLinkModelNames() const</div><div class="ttdoc">Get the names of the links that are part of this joint group.</div><div class="ttdef"><b>Definition:</b> <a href="joint__model__group_8h_source.html#l00284">joint_model_group.h:284</a></div></div>
 <div class="ttc" id="aclassmoveit_1_1py__bindings__tools_1_1GILReleaser_html"><div class="ttname"><a href="classmoveit_1_1py__bindings__tools_1_1GILReleaser.html">moveit::py_bindings_tools::GILReleaser</a></div><div class="ttdoc">RAII Helper to release the Global Interpreter Lock (GIL)</div><div class="ttdef"><b>Definition:</b> <a href="gil__releaser_8h_source.html#l00118">gil_releaser.h:118</a></div></div>

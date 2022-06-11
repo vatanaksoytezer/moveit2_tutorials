@@ -1,5 +1,0 @@
-<map id="moveit::core::RobotState::attachBody" name="moveit::core::RobotState::attachBody">
-<area shape="rect" id="node1" title="Add an attached body to this state. Ownership of the memory for the attached body is assumed by the s..." alt="" coords="172,23,356,65"/>
-<area shape="rect" id="node2" href="$test__collision__distance__field_8cpp.html#a56e5140b67b0faaad8824694f12fc901" title=" " alt="" coords="30,5,99,32"/>
-<area shape="rect" id="node3" href="$test__collision__common__pr2_8h.html#a164d50285b5759151d1378ebf66a3747" title=" " alt="" coords="5,56,124,83"/>
-</map>

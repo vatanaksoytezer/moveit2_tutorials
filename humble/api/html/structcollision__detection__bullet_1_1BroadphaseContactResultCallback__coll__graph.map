@@ -1,0 +1,7 @@
+<map id="collision_detection_bullet::BroadphaseContactResultCallback" name="collision_detection_bullet::BroadphaseContactResultCallback">
+<area shape="rect" id="node1" title="Callback structure for both discrete and continuous broadphase collision pair." alt="" coords="525,73,727,129"/>
+<area shape="rect" id="node2" href="$structcollision__detection__bullet_1_1ContactTestData.html" title="Bundles the data for a collision query." alt="" coords="223,37,404,79"/>
+<area shape="rect" id="node3" href="$structcollision__detection_1_1CollisionRequest.html" title="Representation of a collision checking request." alt="" coords="5,5,149,47"/>
+<area shape="rect" id="node4" href="$structcollision__detection_1_1CollisionResult.html" title="Representation of a collision checking result." alt="" coords="5,71,149,112"/>
+<area shape="rect" id="node5" href="$classcollision__detection_1_1AllowedCollisionMatrix.html" title="Definition of a structure for the allowed collision matrix. All elements in the collision world are r..." alt="" coords="223,103,403,144"/>
+</map>

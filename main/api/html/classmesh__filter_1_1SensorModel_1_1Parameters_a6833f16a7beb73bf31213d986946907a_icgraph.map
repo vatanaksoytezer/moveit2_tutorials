@@ -1,4 +1,0 @@
-<map id="mesh_filter::SensorModel::Parameters::transformModelDepthToMetricDepth" name="mesh_filter::SensorModel::Parameters::transformModelDepthToMetricDepth">
-<area shape="rect" id="node1" title="transforms depth values from rendered model to metric depth values" alt="" coords="256,5,511,61"/>
-<area shape="rect" id="node2" href="$classmesh__filter_1_1MeshFilterBase.html#a975fdfcbe99c6e91cd614eb1f41affc4" title="retrieves the depth values of the rendered model" alt="" coords="5,13,208,54"/>
-</map>

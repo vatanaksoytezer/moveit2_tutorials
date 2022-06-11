@@ -1,0 +1,7 @@
+<map id="pr2_arm_kinematics::PR2ArmKinematicsPlugin::initialize" name="pr2_arm_kinematics::PR2ArmKinematicsPlugin::initialize">
+<area shape="rect" id="node1" title="Initialization function for the kinematics." alt="" coords="5,97,200,153"/>
+<area shape="rect" id="node2" href="$namespacepr2__arm__kinematics.html#a191692da6ba1e08ad26beff4496601bf" title=" " alt="" coords="274,5,429,47"/>
+<area shape="rect" id="node3" href="$namespacepr2__arm__kinematics.html#a27f81775e28c2f83325083ff671133f1" title=" " alt="" coords="274,71,429,112"/>
+<area shape="rect" id="node4" href="$classmoveit_1_1core_1_1RobotModel.html#a000d9e24a0c24a909b58c6a5b4b82a32" title="Get the parsed URDF model." alt="" coords="256,136,447,177"/>
+<area shape="rect" id="node5" href="$classkinematics_1_1KinematicsBase.html#a2c8ecd6268c1aef0fbcfde3b7a42809e" title=" " alt="" coords="248,201,455,243"/>
+</map>

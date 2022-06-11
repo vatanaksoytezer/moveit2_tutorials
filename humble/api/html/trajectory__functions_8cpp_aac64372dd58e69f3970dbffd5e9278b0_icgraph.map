@@ -1,0 +1,4 @@
+<map id="getConstraintPose" name="getConstraintPose">
+<area shape="rect" id="node1" title="Adapt goal pose, defined by position+orientation, to consider offset." alt="" coords="195,5,336,32"/>
+<area shape="rect" id="node2" href="$trajectory__functions_8cpp.html#a199eb7ef1c0299ab9020ea507446f06a" title="Conviencency method, passing args from a goal constraint." alt="" coords="5,5,147,32"/>
+</map>

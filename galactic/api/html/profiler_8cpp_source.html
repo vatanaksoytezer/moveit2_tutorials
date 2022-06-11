@@ -13,6 +13,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="theme.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -157,34 +158,34 @@ $(function() {
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  lock_.unlock();</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmoveit_1_1tools_1_1Profiler.html#a657a4c3d927cf4ee43c5b4e2c0bbad2b">Profiler::event</a>(<span class="keyword">const</span> std::string&amp; name, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> times)</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmoveit_1_1tools_1_1Profiler.html#a657a4c3d927cf4ee43c5b4e2c0bbad2b">Profiler::event</a>(<span class="keyword">const</span> std::string&amp; <a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> times)</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;{</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  lock_.lock();</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  data_[boost::this_thread::get_id()].events[name] += times;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  data_[boost::this_thread::get_id()].events[<a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>] += times;</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  lock_.unlock();</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmoveit_1_1tools_1_1Profiler.html#aa94ec26521a7f7fc0b90cccda3fcc2e6">Profiler::average</a>(<span class="keyword">const</span> std::string&amp; name, <span class="keyword">const</span> <span class="keywordtype">double</span> value)</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmoveit_1_1tools_1_1Profiler.html#aa94ec26521a7f7fc0b90cccda3fcc2e6">Profiler::average</a>(<span class="keyword">const</span> std::string&amp; <a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>, <span class="keyword">const</span> <span class="keywordtype">double</span> value)</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;{</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  lock_.lock();</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  AvgInfo&amp; <a class="code" href="namespaceplan.html#a0d1d9218112fb104ea1d563b4a920e07">a</a> = data_[boost::this_thread::get_id()].avg[name];</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  AvgInfo&amp; <a class="code" href="namespaceplan.html#a0d1d9218112fb104ea1d563b4a920e07">a</a> = data_[boost::this_thread::get_id()].avg[<a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>];</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <a class="code" href="namespaceplan.html#a0d1d9218112fb104ea1d563b4a920e07">a</a>.total += value;</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <a class="code" href="namespaceplan.html#a0d1d9218112fb104ea1d563b4a920e07">a</a>.totalSqr += value * value;</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <a class="code" href="namespaceplan.html#a0d1d9218112fb104ea1d563b4a920e07">a</a>.parts++;</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  lock_.unlock();</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;}</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmoveit_1_1tools_1_1Profiler.html#a56f50fd3429b4b3e660029529a61b332">Profiler::begin</a>(<span class="keyword">const</span> std::string&amp; name)</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmoveit_1_1tools_1_1Profiler.html#a56f50fd3429b4b3e660029529a61b332">Profiler::begin</a>(<span class="keyword">const</span> std::string&amp; <a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>)</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;{</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  lock_.lock();</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  data_[boost::this_thread::get_id()].time[name].set();</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  data_[boost::this_thread::get_id()].time[<a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>].set();</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  lock_.unlock();</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmoveit_1_1tools_1_1Profiler.html#ae0bc9b3c7b08347a25210e96eb38a6ea">Profiler::end</a>(<span class="keyword">const</span> std::string&amp; name)</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmoveit_1_1tools_1_1Profiler.html#ae0bc9b3c7b08347a25210e96eb38a6ea">Profiler::end</a>(<span class="keyword">const</span> std::string&amp; <a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>)</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;{</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  lock_.lock();</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  data_[boost::this_thread::get_id()].time[name].update();</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  data_[boost::this_thread::get_id()].time[<a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>].update();</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  lock_.unlock();</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;}</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
@@ -369,6 +370,7 @@ $(function() {
 <div class="ttc" id="aclassmoveit_1_1tools_1_1Profiler_html_acfa3cf078f3202074d9a533c38b99800"><div class="ttname"><a href="classmoveit_1_1tools_1_1Profiler.html#acfa3cf078f3202074d9a533c38b99800">moveit::tools::Profiler::status</a></div><div class="ttdeci">void status(std::ostream &amp;out=std::cout, bool merge=true)</div><div class="ttdoc">Print the status of the profiled code chunks and events. Optionally, computation done by different th...</div></div>
 <div class="ttc" id="aclassmoveit_1_1tools_1_1Profiler_html_a1fc23b9b7d4675c8ce80485229c2f96f"><div class="ttname"><a href="classmoveit_1_1tools_1_1Profiler.html#a1fc23b9b7d4675c8ce80485229c2f96f">moveit::tools::Profiler::console</a></div><div class="ttdeci">void console()</div><div class="ttdoc">Print the status of the profiled code chunks and events to the console (using msg::Console)</div></div>
 <div class="ttc" id="anamespacesetup_html_aa2586b6c4dd84a0aaaf49cb1565cee6e"><div class="ttname"><a href="namespacesetup.html#aa2586b6c4dd84a0aaaf49cb1565cee6e">setup.d</a></div><div class="ttdeci">d</div><div class="ttdef"><b>Definition:</b> <a href="moveit__commander_2setup_8py_source.html#l00004">setup.py:4</a></div></div>
+<div class="ttc" id="anamespacesetup_html_ab3a7a0638d76a01367c5bc3cc699447f"><div class="ttname"><a href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">setup.name</a></div><div class="ttdeci">name</div><div class="ttdef"><b>Definition:</b> <a href="moveit__configs__utils_2setup_8py_source.html#l00006">setup.py:6</a></div></div>
 <div class="ttc" id="anamespaceplanning__request__adapter_html_af64b3fa8ebc256d9c5133c6c80ade28f"><div class="ttname"><a href="namespaceplanning__request__adapter.html#af64b3fa8ebc256d9c5133c6c80ade28f">planning_request_adapter::LOGGER</a></div><div class="ttdeci">rclcpp::Logger LOGGER</div><div class="ttdef"><b>Definition:</b> <a href="planning__request__adapter_8cpp_source.html#l00078">planning_request_adapter.cpp:78</a></div></div>
 <div class="ttc" id="akinematics_2cached__ik__kinematics__plugin_2CMakeLists_8txt_html_a092c219805988bc95d15b40ee47d2a9b"><div class="ttname"><a href="kinematics_2cached__ik__kinematics__plugin_2CMakeLists_8txt.html#a092c219805988bc95d15b40ee47d2a9b">if</a></div><div class="ttdeci">rclcpp moveit_core moveit_msgs Boost if(trac_ik_kinematics_plugin_FOUND) include_directories($</div><div class="ttdef"><b>Definition:</b> <a href="kinematics_2cached__ik__kinematics__plugin_2CMakeLists_8txt_source.html#l00016">CMakeLists.txt:16</a></div></div>
 <div class="ttc" id="anamespacemoveit_html"><div class="ttname"><a href="namespacemoveit.html">moveit</a></div><div class="ttdoc">Main namespace for MoveIt.</div><div class="ttdef"><b>Definition:</b> <a href="background__processing_8h_source.html#l00046">background_processing.h:46</a></div></div>

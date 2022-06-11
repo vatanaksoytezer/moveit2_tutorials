@@ -1,0 +1,8 @@
+<map id="testutils::checkBlendingCartSpaceContinuity" name="testutils::checkBlendingCartSpaceContinuity">
+<area shape="rect" id="node1" title=" " alt="" coords="5,143,184,185"/>
+<area shape="rect" id="node2" href="$namespacetestutils.html#a7d42823122f458b262fae3503ae928df" title="compute Cartesian velocity" alt="" coords="244,5,463,32"/>
+<area shape="rect" id="node3" href="$classpilz__industrial__motion__planner_1_1LimitsContainer.html#acb2ed704bda819986f21f7e836b5cce7" title="Return the cartesian limits." alt="" coords="259,56,448,112"/>
+<area shape="rect" id="node4" href="$classpilz__industrial__motion__planner_1_1CartesianLimit.html#a238c218afd7f810c629010bdd976443f" title="Return the maximal rotational velocity [rad/s], 0 if nothing was set." alt="" coords="254,136,453,192"/>
+<area shape="rect" id="node5" href="$classpilz__industrial__motion__planner_1_1CartesianLimit.html#adf1477f7582ef5d4ace6d2462a2a3825" title="Return the maximal translational acceleration [m/s^2], 0 if nothing was set." alt="" coords="232,216,475,272"/>
+<area shape="rect" id="node6" href="$classpilz__industrial__motion__planner_1_1CartesianLimit.html#ae271329c2a90afec8db744e9b3f53548" title="Return the maximal translational velocity [m/s], 0 if nothing was set." alt="" coords="246,296,461,352"/>
+</map>

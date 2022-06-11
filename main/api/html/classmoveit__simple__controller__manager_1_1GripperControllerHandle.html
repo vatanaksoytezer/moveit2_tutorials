@@ -13,6 +13,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="theme.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -101,8 +102,8 @@ Collaboration diagram for moveit_simple_controller_manager::GripperControllerHan
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad95f10aff4fb6af0512d4d31d8ef0b24"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit__simple__controller__manager_1_1GripperControllerHandle.html#ad95f10aff4fb6af0512d4d31d8ef0b24">GripperControllerHandle</a> (const rclcpp::Node::SharedPtr &amp;node, const std::string &amp;name, const std::string &amp;ns)</td></tr>
-<tr class="separator:ad95f10aff4fb6af0512d4d31d8ef0b24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab42caafb33007407b1724952b3ba9237"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit__simple__controller__manager_1_1GripperControllerHandle.html#ab42caafb33007407b1724952b3ba9237">GripperControllerHandle</a> (const rclcpp::Node::SharedPtr &amp;node, const std::string &amp;name, const std::string &amp;ns, const double max_effort=0.0)</td></tr>
+<tr class="separator:ab42caafb33007407b1724952b3ba9237"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a653210b528649a8bd83ca74e7db35bc5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoveit__simple__controller__manager_1_1GripperControllerHandle.html#a653210b528649a8bd83ca74e7db35bc5">sendTrajectory</a> (const moveit_msgs::msg::RobotTrajectory &amp;trajectory) override</td></tr>
 <tr class="memdesc:a653210b528649a8bd83ca74e7db35bc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a trajectory to the controller.  <a href="classmoveit__simple__controller__manager_1_1GripperControllerHandle.html#a653210b528649a8bd83ca74e7db35bc5">More...</a><br /></td></tr>
 <tr class="separator:a653210b528649a8bd83ca74e7db35bc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -188,8 +189,8 @@ Additional Inherited Members</h2></td></tr>
 <div class="textblock">
 <p class="definition">Definition at line <a class="el" href="gripper__controller__handle_8h_source.html#l00083">83</a> of file <a class="el" href="gripper__controller__handle_8h_source.html">gripper_controller_handle.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ad95f10aff4fb6af0512d4d31d8ef0b24"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad95f10aff4fb6af0512d4d31d8ef0b24">&#9670;&nbsp;</a></span>GripperControllerHandle()</h2>
+<a id="ab42caafb33007407b1724952b3ba9237"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab42caafb33007407b1724952b3ba9237">&#9670;&nbsp;</a></span>GripperControllerHandle()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -213,7 +214,13 @@ Additional Inherited Members</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>ns</em>&#160;</td>
+          <td class="paramname"><em>ns</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>max_effort</em> = <code>0.0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -257,7 +264,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gripper__controller__handle_8h_source.html#l00234">234</a> of file <a class="el" href="gripper__controller__handle_8h_source.html">gripper_controller_handle.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gripper__controller__handle_8h_source.html#l00241">241</a> of file <a class="el" href="gripper__controller__handle_8h_source.html">gripper_controller_handle.h</a>.</p>
 
 </div>
 </div>
@@ -285,7 +292,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gripper__controller__handle_8h_source.html#l00239">239</a> of file <a class="el" href="gripper__controller__handle_8h_source.html">gripper_controller_handle.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gripper__controller__handle_8h_source.html#l00246">246</a> of file <a class="el" href="gripper__controller__handle_8h_source.html">gripper_controller_handle.h</a>.</p>
 
 </div>
 </div>
@@ -318,7 +325,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classmoveit__controller__manager_1_1MoveItControllerHandle.html#ab216aa3657976bc5aeffe4f21eb20de0">moveit_controller_manager::MoveItControllerHandle</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="gripper__controller__handle_8h_source.html#l00128">128</a> of file <a class="el" href="gripper__controller__handle_8h_source.html">gripper_controller_handle.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gripper__controller__handle_8h_source.html#l00130">130</a> of file <a class="el" href="gripper__controller__handle_8h_source.html">gripper_controller_handle.h</a>.</p>
 
 </div>
 </div>
@@ -346,7 +353,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gripper__controller__handle_8h_source.html#l00228">228</a> of file <a class="el" href="gripper__controller__handle_8h_source.html">gripper_controller_handle.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gripper__controller__handle_8h_source.html#l00235">235</a> of file <a class="el" href="gripper__controller__handle_8h_source.html">gripper_controller_handle.h</a>.</p>
 
 </div>
 </div>
@@ -384,7 +391,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gripper__controller__handle_8h_source.html#l00244">244</a> of file <a class="el" href="gripper__controller__handle_8h_source.html">gripper_controller_handle.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gripper__controller__handle_8h_source.html#l00251">251</a> of file <a class="el" href="gripper__controller__handle_8h_source.html">gripper_controller_handle.h</a>.</p>
 
 </div>
 </div>

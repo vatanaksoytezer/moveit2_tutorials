@@ -1,0 +1,4 @@
+<map id="ompl_interface::angularVelocityToAngleAxis" name="ompl_interface::angularVelocityToAngleAxis">
+<area shape="rect" id="node1" title="Return a matrix to convert angular velocity to angle&#45;axis velocity Based on: https://ethz...." alt="" coords="263,5,492,47"/>
+<area shape="rect" id="node2" href="$classompl__interface_1_1OrientationConstraint.html#a57fa947313f56b363c92fd673d7b0a4d" title="For inequality constraints: calculate the Jacobian for the current parameters that are being constrai..." alt="" coords="5,5,215,47"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="default_planner_request_adapters::FixStartStateCollision::adaptAndPlan" name="default_planner_request_adapters::FixStartStateCollision::adaptAndPlan">
+<area shape="rect" id="node1" title="Adapt the planning request if needed, call the planner function planner and update the planning respo..." alt="" coords="5,5,240,61"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1RobotState.html#afd01134540eb6ccc57e75d1f8c4f48d5" title=" " alt="" coords="288,13,472,54"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1core_1_1JointModel.html#a749ce652067b82e5ec5b3ffe3baca733" title="Get the index of this joint&#39;s first variable within the full robot state." alt="" coords="520,13,701,54"/>
+</map>

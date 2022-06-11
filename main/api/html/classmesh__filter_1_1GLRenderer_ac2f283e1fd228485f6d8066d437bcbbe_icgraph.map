@@ -1,5 +1,0 @@
-<map id="mesh_filter::GLRenderer::getColorBuffer" name="mesh_filter::GLRenderer::getColorBuffer">
-<area shape="rect" id="node1" title="retrieves the color buffer from OpenGL" alt="" coords="256,39,435,80"/>
-<area shape="rect" id="node2" href="$classmesh__filter_1_1MeshFilterBase.html#aa32975ce113c4f9b8635680111c1d5d3" title="retrieves the labels of the input data" alt="" coords="5,5,208,47"/>
-<area shape="rect" id="node3" href="$classmesh__filter_1_1MeshFilterBase.html#a03de6f4e13877cf9ffc83c5dc2901800" title="retrieves the labels of the rendered model" alt="" coords="5,71,208,112"/>
-</map>

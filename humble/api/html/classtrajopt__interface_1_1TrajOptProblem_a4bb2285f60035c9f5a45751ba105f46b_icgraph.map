@@ -1,0 +1,4 @@
+<map id="trajopt_interface::TrajOptProblem::GetHasTime" name="trajopt_interface::TrajOptProblem::GetHasTime">
+<area shape="rect" id="node1" title="Returns TrajOptProb.has_time." alt="" coords="287,13,497,54"/>
+<area shape="rect" id="node2" href="$structtrajopt__interface_1_1JointPoseTermInfo.html#ac9ef00057a3b431f1e24f64434bfe2f2" title="Converts term info into cost/constraint and adds it to trajopt problem." alt="" coords="5,5,239,61"/>
+</map>

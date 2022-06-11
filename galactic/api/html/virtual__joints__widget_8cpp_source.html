@@ -13,6 +13,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="theme.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -350,13 +351,13 @@ $(function() {
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;<span class="comment">// ******************************************************************************************</span></div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;<span class="comment">// Edit vjoint</span></div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;<span class="comment">// ******************************************************************************************</span></div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;<span class="keywordtype">void</span> VirtualJointsWidget::edit(<span class="keyword">const</span> std::string&amp; name)</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;<span class="keywordtype">void</span> VirtualJointsWidget::edit(<span class="keyword">const</span> std::string&amp; <a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>)</div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;{</div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;  <span class="comment">// Remember what we are editing</span></div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;  current_edit_vjoint_ = name;</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;  current_edit_vjoint_ = <a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>;</div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160; </div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;  <span class="comment">// Find the selected in datastruture</span></div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;  srdf::Model::VirtualJoint* vjoint = findVJointByName(name);</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;  srdf::Model::VirtualJoint* vjoint = findVJointByName(<a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>);</div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160; </div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;  <span class="comment">// Set vjoint name</span></div>
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;  <a class="code" href="classmoveit__setup__assistant_1_1VirtualJointsWidget.html#a71551928930e161516a5f27a2a435a39">vjoint_name_field_</a>-&gt;setText(vjoint-&gt;name_.c_str());</div>
@@ -423,14 +424,14 @@ $(function() {
 <div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;<span class="comment">// ******************************************************************************************</span></div>
 <div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;<span class="comment">// Find the associated data by name</span></div>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;<span class="comment">// ******************************************************************************************</span></div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;srdf::Model::VirtualJoint* VirtualJointsWidget::findVJointByName(<span class="keyword">const</span> std::string&amp; name)</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;srdf::Model::VirtualJoint* VirtualJointsWidget::findVJointByName(<span class="keyword">const</span> std::string&amp; <a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>)</div>
 <div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;{</div>
 <div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;  <span class="comment">// Find the group state we are editing based on the vjoint name</span></div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;  srdf::Model::VirtualJoint* searched_group = <span class="keyword">nullptr</span>;  <span class="comment">// used for holding our search results</span></div>
 <div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160; </div>
 <div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;  <span class="keywordflow">for</span> (srdf::Model::VirtualJoint&amp; virtual_joint : config_data_-&gt;srdf_-&gt;virtual_joints_)</div>
 <div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;  {</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    <span class="keywordflow">if</span> (virtual_joint.name_ == name)  <span class="comment">// string match</span></div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    <span class="keywordflow">if</span> (virtual_joint.name_ == <a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>)  <span class="comment">// string match</span></div>
 <div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    {</div>
 <div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;      searched_group = &amp;virtual_joint;  <span class="comment">// convert to pointer from iterator</span></div>
 <div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;      <span class="keywordflow">break</span>;                            <span class="comment">// we are done searching</span></div>
@@ -686,6 +687,7 @@ $(function() {
 <div class="ttc" id="aclassmoveit__setup__assistant_1_1VirtualJointsWidget_html_a2c1004661a6f9b343a01a6b1f79a1392"><div class="ttname"><a href="classmoveit__setup__assistant_1_1VirtualJointsWidget.html#a2c1004661a6f9b343a01a6b1f79a1392">moveit_setup_assistant::VirtualJointsWidget::referenceFrameChanged</a></div><div class="ttdeci">void referenceFrameChanged()</div><div class="ttdoc">Event sent when this widget updated the root joint, which changes the frame of reference for the mode...</div></div>
 <div class="ttc" id="aclassmoveit__setup__assistant_1_1VirtualJointsWidget_html_a4c32a6081904cf6570c9a0076a91067a"><div class="ttname"><a href="classmoveit__setup__assistant_1_1VirtualJointsWidget.html#a4c32a6081904cf6570c9a0076a91067a">moveit_setup_assistant::VirtualJointsWidget::parent_name_field_</a></div><div class="ttdeci">QLineEdit * parent_name_field_</div><div class="ttdef"><b>Definition:</b> <a href="virtual__joints__widget_8h_source.html#l00080">virtual_joints_widget.h:80</a></div></div>
 <div class="ttc" id="aclassSetupScreenWidget_html"><div class="ttname"><a href="classSetupScreenWidget.html">SetupScreenWidget</a></div><div class="ttdef"><b>Definition:</b> <a href="setup__screen__widget_8h_source.html#l00044">setup_screen_widget.h:44</a></div></div>
+<div class="ttc" id="anamespacesetup_html_ab3a7a0638d76a01367c5bc3cc699447f"><div class="ttname"><a href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">setup.name</a></div><div class="ttdeci">name</div><div class="ttdef"><b>Definition:</b> <a href="moveit__configs__utils_2setup_8py_source.html#l00006">setup.py:6</a></div></div>
 <div class="ttc" id="anamespacerclcpp_1_1names_html_a4c3e21517afd9a6909de322da95c5e81"><div class="ttname"><a href="namespacerclcpp_1_1names.html#a4c3e21517afd9a6909de322da95c5e81">rclcpp::names::append</a></div><div class="ttdeci">std::string append(const std::string &amp;left, const std::string &amp;right)</div><div class="ttdef"><b>Definition:</b> <a href="rclcpp__utils_8cpp_source.html#l00053">rclcpp_utils.cpp:53</a></div></div>
 <div class="ttc" id="aheader__widget_8h_html"><div class="ttname"><a href="header__widget_8h.html">header_widget.h</a></div></div>
 <div class="ttc" id="anamespacemoveit__setup__assistant_html"><div class="ttname"><a href="namespacemoveit__setup__assistant.html">moveit_setup_assistant</a></div><div class="ttdef"><b>Definition:</b> <a href="compute__default__collisions_8hpp_source.html#l00046">compute_default_collisions.hpp:46</a></div></div>

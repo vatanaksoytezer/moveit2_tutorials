@@ -1,0 +1,7 @@
+<map id="testutils::checkSLERP" name="testutils::checkSLERP">
+<area shape="rect" id="node1" title="check SLERP. The orientation should rotate around the same axis linearly." alt="" coords="483,71,644,98"/>
+<area shape="rect" id="node2" href="$namespacetestutils.html#ab92bd7b28971f78ffe134429c7e3d333" title="Check that given trajectory is straight line." alt="" coords="252,35,435,76"/>
+<area shape="rect" id="node5" href="$integrationtest__command__planning_8cpp.html#a19a9d4fe7dfee57763e35779821337e6" title="Tests if circular motions with start &amp; goal state given as joint configuration and center point given..." alt="" coords="309,101,378,127"/>
+<area shape="rect" id="node3" href="$classTrajectoryGeneratorLINTest.html#a3341aac2919075600b39a93fa18247b1" title=" " alt="" coords="5,5,204,47"/>
+<area shape="rect" id="node4" href="$integrationtest__command__planning_8cpp.html#abbde4091052e784704a49966ba151392" title="Tests if linear motions with start and goal state given as joint configuration are executed correctly..." alt="" coords="70,71,139,98"/>
+</map>

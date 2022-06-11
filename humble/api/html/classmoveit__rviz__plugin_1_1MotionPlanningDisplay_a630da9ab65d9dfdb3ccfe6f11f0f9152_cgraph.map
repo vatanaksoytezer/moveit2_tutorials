@@ -1,0 +1,4 @@
+<map id="moveit_rviz_plugin::MotionPlanningDisplay::drawQueryGoalState" name="moveit_rviz_plugin::MotionPlanningDisplay::drawQueryGoalState">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,185,61"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1JointModelGroup.html#a14fb89fcb1b1d7297b5ddd3d063c715f" title="Get the active joints in this group (that have controllable DOF). This does not include mimic joints." alt="" coords="233,13,440,54"/>
+</map>

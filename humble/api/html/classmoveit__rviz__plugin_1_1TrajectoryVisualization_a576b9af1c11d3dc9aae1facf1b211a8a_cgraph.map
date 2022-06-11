@@ -1,0 +1,8 @@
+<map id="moveit_rviz_plugin::TrajectoryVisualization::onInitialize" name="moveit_rviz_plugin::TrajectoryVisualization::onInitialize">
+<area shape="rect" id="node1" title=" " alt="" coords="5,109,184,165"/>
+<area shape="rect" id="node2" href="$classmoveit__rviz__plugin_1_1TrajectoryVisualization.html#a80365577e8df5a14cbcaff9b9cf2d295" title="ROS callback for an incoming path message." alt="" coords="235,71,438,127"/>
+<area shape="rect" id="node6" href="$classmoveit__rviz__plugin_1_1TrajectoryPanel.html#a49ed741e7b3acac32f18506c2dd72061" title=" " alt="" coords="232,152,441,193"/>
+<area shape="rect" id="node3" href="$classrobot__trajectory_1_1RobotTrajectory.html#a9f13f4305a66b59b8f0d4c30e26125a8" title="Add a specified part of a trajectory to the end of the current trajectory. The default (when start_in..." alt="" coords="489,5,724,47"/>
+<area shape="rect" id="node4" href="$classmoveit__rviz__plugin_1_1TrajectoryVisualization.html#acb1491abea2702e89fec5b6c85ec29ac" title=" " alt="" coords="515,71,698,127"/>
+<area shape="rect" id="node5" href="$classrobot__trajectory_1_1RobotTrajectory.html#a99b9016fc88eebd0646d701d3868febf" title="Copy the content of the trajectory message into this class. The trajectory message itself is not requ..." alt="" coords="489,152,724,193"/>
+</map>

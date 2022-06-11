@@ -1,0 +1,8 @@
+<map id="TEST" name="TEST">
+<area shape="rect" id="node1" title=" " alt="" coords="5,103,60,130"/>
+<area shape="rect" id="node2" href="$classplanning__scene_1_1PlanningScene.html#a351202a8fec49dff6646a454ac3e9a7e" title="Get the transform corresponding to the frame id. This will be known if id is a link name,..." alt="" coords="132,37,328,79"/>
+<area shape="rect" id="node5" href="$namespacemoveit_1_1core.html#a9d39f2316f4754a5fe4bd8abe00e7660" title="Loads a URDF Model Interface from moveit_resources." alt="" coords="111,103,349,130"/>
+<area shape="rect" id="node6" href="$classplanning__scene_1_1PlanningScene.html#a304eaffcb834ec62a26e1d296c72b726" title=" " alt="" coords="108,155,352,196"/>
+<area shape="rect" id="node3" href="$classplanning__scene_1_1PlanningScene.html#ab4de68060bb1d854e4d37f26436b7ebb" title="Get the state at which the robot is assumed to be." alt="" coords="415,5,602,47"/>
+<area shape="rect" id="node4" href="$classplanning__scene_1_1PlanningScene.html#a4ffd859140c70a6c1cd4eb2e8db0d94f" title="Check if a transform to the frame id is known. This will be known if id is a link name,..." alt="" coords="400,71,617,112"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="collision_detection::CollisionEnv::checkSelfCollision" name="collision_detection::CollisionEnv::checkSelfCollision">
+<area shape="rect" id="node1" title="Check for robot self collision. Any collision between any pair of links is checked for,..." alt="" coords="264,5,500,47"/>
+<area shape="rect" id="node2" href="$classcollision__detection_1_1CollisionEnv.html#abe2a4b6ad72a714b668e4c49acd7431c" title="Check whether the robot model is in collision with itself or the world at a particular state...." alt="" coords="5,5,216,47"/>
+</map>

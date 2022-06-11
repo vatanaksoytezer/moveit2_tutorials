@@ -1,0 +1,5 @@
+<map id="pilz_industrial_motion_planner::JointLimitsAggregator::checkVelocityBoundsThrowing" name="pilz_industrial_motion_planner::JointLimitsAggregator::checkVelocityBoundsThrowing">
+<area shape="rect" id="node1" title="Checks if the velocity limit from the given joint_limit are stricter than the limit of the joint_mode..." alt="" coords="5,31,233,87"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1JointModel.html#aa1d2f99c9025d01a92e47bc356938f77" title="Get the name of the joint." alt="" coords="283,5,464,47"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1core_1_1JointModel.html#a0ee14b22009db973b8a4be4e2c911dca" title="Check if the set of velocities for the variables of this joint are within bounds." alt="" coords="281,71,465,112"/>
+</map>

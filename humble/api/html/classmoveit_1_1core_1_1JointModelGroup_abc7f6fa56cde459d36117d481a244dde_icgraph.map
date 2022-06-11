@@ -1,0 +1,8 @@
+<map id="moveit::core::JointModelGroup::getMaximumExtent" name="moveit::core::JointModelGroup::getMaximumExtent">
+<area shape="rect" id="node1" title=" " alt="" coords="607,119,805,160"/>
+<area shape="rect" id="node2" href="$classmoveit_1_1core_1_1JointModelGroup.html#a3a893bcd372e65bfdad62d43de3ee9e7" title="Compute random values for the state of the joint group." alt="" coords="303,111,559,167"/>
+<area shape="rect" id="node3" href="$classmoveit_1_1core_1_1JointModelGroup.html#acd1810d6d30c941a804301b7278ab146" title="Get the names of the known default states (as specified in the SRDF)" alt="" coords="21,5,239,47"/>
+<area shape="rect" id="node4" href="$classmoveit_1_1core_1_1JointModelGroup.html#a6b5fffc4c9d577eeb7efb013b7b99df6" title="Get the names of the links returned by getUpdatedLinkModels()" alt="" coords="5,71,255,127"/>
+<area shape="rect" id="node5" href="$classmoveit_1_1core_1_1JointModelGroup.html#a5d4310920202175313140c60eb2ea956" title="Get the names of the links returned by getUpdatedLinkModels()" alt="" coords="5,151,255,207"/>
+<area shape="rect" id="node6" href="$classmoveit_1_1core_1_1JointModelGroup.html#aeb20ebb9da3e49e13c575640a96b6c4e" title="True if this name is in the set of links that are to be updated when the state of this group changes...." alt="" coords="39,232,221,273"/>
+</map>

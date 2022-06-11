@@ -1,6 +1,0 @@
-<map id="sbpl_interface::EnvironmentChain3D::getBFSCostToGoal" name="sbpl_interface::EnvironmentChain3D::getBFSCostToGoal">
-<area shape="rect" id="node1" title=" " alt="" coords="807,5,1012,47"/>
-<area shape="rect" id="node2" href="$classsbpl__interface_1_1EnvironmentChain3D.html#a1ff774a51bd7ffa13d25bebf37d47297" title=" " alt="" coords="520,5,759,47"/>
-<area shape="rect" id="node3" href="$classsbpl__interface_1_1EnvironmentChain3D.html#aa037eeae85b3155d2831843a79892a34" title="Get the heuristic from one state to another state." alt="" coords="259,5,472,47"/>
-<area shape="rect" id="node4" href="$classsbpl__interface_1_1EnvironmentChain3D.html#a21de7710f7ef9628469dcf379b3f7590" title="Get the heuristic of a state to the planner&#39;s start state." alt="" coords="5,5,211,47"/>
-</map>

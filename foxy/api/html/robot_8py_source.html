@@ -13,6 +13,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="theme.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -263,7 +264,7 @@ $(function() {
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="keywordflow">return</span> mrkr</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
 <div class="line"><a name="l00193"></a><span class="lineno"><a class="line" href="classmoveit__commander_1_1robot_1_1RobotCommander.html#a618b6dce85b3114cf9ee2b0c745c374f">  193</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classmoveit__commander_1_1robot_1_1RobotCommander.html#a618b6dce85b3114cf9ee2b0c745c374f">get_root_link</a>(self):</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Get the name of the root link of the robot model &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Get the name of the root link of the robot model&quot;&quot;&quot;</span></div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <span class="keywordflow">return</span> self.<a class="code" href="classmoveit__commander_1_1robot_1_1RobotCommander.html#a94b0597815a312aa7c4ea4238510ff66">_r</a>.get_robot_root_link()</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
 <div class="line"><a name="l00197"></a><span class="lineno"><a class="line" href="classmoveit__commander_1_1robot_1_1RobotCommander.html#a2c97c663846948114b20cac39c76256d">  197</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classmoveit__commander_1_1robot_1_1RobotCommander.html#a2c97c663846948114b20cac39c76256d">get_active_joint_names</a>(self, group=None):</div>
@@ -312,7 +313,7 @@ $(function() {
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        <span class="keywordflow">return</span> self.<a class="code" href="classmoveit__commander_1_1robot_1_1RobotCommander.html#a94b0597815a312aa7c4ea4238510ff66">_r</a>.<a class="code" href="classmoveit__commander_1_1robot_1_1RobotCommander.html#ae74cfb906da4ed1bc775c6d963be99b2">get_group_names</a>()</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; </div>
 <div class="line"><a name="l00242"></a><span class="lineno"><a class="line" href="classmoveit__commander_1_1robot_1_1RobotCommander.html#a3a0b1ee024c28cd5acb935645f68a6c0">  242</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classmoveit__commander_1_1robot_1_1RobotCommander.html#a3a0b1ee024c28cd5acb935645f68a6c0">get_current_state</a>(self):</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        <span class="stringliteral">&quot;&quot;&quot; Get a RobotState message describing the current state of the robot&quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Get a RobotState message describing the current state of the robot&quot;&quot;&quot;</span></div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        s = RobotState()</div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        s.deserialize(self.<a class="code" href="classmoveit__commander_1_1robot_1_1RobotCommander.html#a94b0597815a312aa7c4ea4238510ff66">_r</a>.<a class="code" href="classmoveit__commander_1_1robot_1_1RobotCommander.html#a3a0b1ee024c28cd5acb935645f68a6c0">get_current_state</a>())</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        <span class="keywordflow">return</span> s</div>

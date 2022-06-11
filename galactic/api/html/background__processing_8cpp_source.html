@@ -13,6 +13,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="theme.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -168,16 +169,16 @@ $(function() {
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  }</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmoveit_1_1tools_1_1BackgroundProcessing.html#afc0bd8d3dc2ad1e17946d6ef2b441c80">BackgroundProcessing::addJob</a>(<span class="keyword">const</span> boost::function&lt;<span class="keywordtype">void</span>()&gt;&amp; job, <span class="keyword">const</span> std::string&amp; name)</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmoveit_1_1tools_1_1BackgroundProcessing.html#afc0bd8d3dc2ad1e17946d6ef2b441c80">BackgroundProcessing::addJob</a>(<span class="keyword">const</span> boost::function&lt;<span class="keywordtype">void</span>()&gt;&amp; job, <span class="keyword">const</span> std::string&amp; <a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>)</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;{</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  {</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    boost::mutex::scoped_lock _(action_lock_);</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    actions_.push_back(job);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    action_names_.push_back(name);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    action_names_.push_back(<a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>);</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    new_action_condition_.notify_all();</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  }</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <span class="keywordflow">if</span> (queue_change_event_)</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    queue_change_event_(<a class="code" href="classmoveit_1_1tools_1_1BackgroundProcessing.html#ab9e5dab259098f46b9a71d4c982d233ba934cf03f14904e6f86eb78e6052082d1">ADD</a>, name);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    queue_change_event_(<a class="code" href="classmoveit_1_1tools_1_1BackgroundProcessing.html#ab9e5dab259098f46b9a71d4c982d233ba934cf03f14904e6f86eb78e6052082d1">ADD</a>, <a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>);</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
 <div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="classmoveit_1_1tools_1_1BackgroundProcessing.html#ae204830b7100ce34a0c494801fcdcc0c">  111</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmoveit_1_1tools_1_1BackgroundProcessing.html#a50c16096b3407addf1aabd6f1d358d3b">BackgroundProcessing::clear</a>()</div>
@@ -222,6 +223,7 @@ $(function() {
 <div class="ttc" id="aclassmoveit_1_1tools_1_1BackgroundProcessing_html_ae204830b7100ce34a0c494801fcdcc0c"><div class="ttname"><a href="classmoveit_1_1tools_1_1BackgroundProcessing.html#ae204830b7100ce34a0c494801fcdcc0c">moveit::tools::BackgroundProcessing::BackgroundProcessing</a></div><div class="ttdeci">BackgroundProcessing()</div><div class="ttdoc">Constructor. The background thread is activated automatically.</div><div class="ttdef"><b>Definition:</b> <a href="background__processing_8cpp_source.html#l00111">background_processing.cpp:111</a></div></div>
 <div class="ttc" id="aclassmoveit_1_1tools_1_1BackgroundProcessing_html_a11deda0b0f8dcd207ae061616e420546"><div class="ttname"><a href="classmoveit_1_1tools_1_1BackgroundProcessing.html#a11deda0b0f8dcd207ae061616e420546">moveit::tools::BackgroundProcessing::JobUpdateCallback</a></div><div class="ttdeci">boost::function&lt; void(JobEvent, const std::string &amp;)&gt; JobUpdateCallback</div><div class="ttdoc">The signature for callback triggered when job events take place: the event that took place and the na...</div><div class="ttdef"><b>Definition:</b> <a href="background__processing_8h_source.html#l00168">background_processing.h:168</a></div></div>
 <div class="ttc" id="abackground__processing_8h_html"><div class="ttname"><a href="background__processing_8h.html">background_processing.h</a></div></div>
+<div class="ttc" id="anamespacesetup_html_ab3a7a0638d76a01367c5bc3cc699447f"><div class="ttname"><a href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">setup.name</a></div><div class="ttdeci">name</div><div class="ttdef"><b>Definition:</b> <a href="moveit__configs__utils_2setup_8py_source.html#l00006">setup.py:6</a></div></div>
 <div class="ttc" id="aclassmoveit_1_1tools_1_1BackgroundProcessing_html_ab9e5dab259098f46b9a71d4c982d233ba0b9dccd1cde1d0556c12a638f0edbd62"><div class="ttname"><a href="classmoveit_1_1tools_1_1BackgroundProcessing.html#ab9e5dab259098f46b9a71d4c982d233ba0b9dccd1cde1d0556c12a638f0edbd62">moveit::tools::BackgroundProcessing::REMOVE</a></div><div class="ttdeci">@ REMOVE</div><div class="ttdoc">Called when a job is removed from the queue without execution.</div><div class="ttdef"><b>Definition:</b> <a href="background__processing_8h_source.html#l00193">background_processing.h:193</a></div></div>
 <div class="ttc" id="anamespacemoveit_html"><div class="ttname"><a href="namespacemoveit.html">moveit</a></div><div class="ttdoc">Main namespace for MoveIt.</div><div class="ttdef"><b>Definition:</b> <a href="background__processing_8h_source.html#l00046">background_processing.h:46</a></div></div>
 <div class="ttc" id="aclassmoveit_1_1tools_1_1BackgroundProcessing_html_afc0bd8d3dc2ad1e17946d6ef2b441c80"><div class="ttname"><a href="classmoveit_1_1tools_1_1BackgroundProcessing.html#afc0bd8d3dc2ad1e17946d6ef2b441c80">moveit::tools::BackgroundProcessing::addJob</a></div><div class="ttdeci">void addJob(const JobCallback &amp;job, const std::string &amp;name)</div><div class="ttdoc">Add a job to the queue of jobs to execute. A name is also specifies for the job.</div><div class="ttdef"><b>Definition:</b> <a href="background__processing_8cpp_source.html#l00163">background_processing.cpp:163</a></div></div>

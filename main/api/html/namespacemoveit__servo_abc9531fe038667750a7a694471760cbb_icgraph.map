@@ -1,0 +1,4 @@
+<map id="moveit_servo::enforceVelocityLimits" name="moveit_servo::enforceVelocityLimits">
+<area shape="rect" id="node1" title="Decrease robot position change and velocity, if needed, to satisfy joint velocity limits." alt="" coords="123,5,343,47"/>
+<area shape="rect" id="node2" href="$enforce__limits__tests_8cpp.html#ac2637e106557268dacb4887a8dda41ea" title=" " alt="" coords="5,13,75,39"/>
+</map>

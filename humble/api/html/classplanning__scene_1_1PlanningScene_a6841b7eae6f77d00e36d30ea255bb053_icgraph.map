@@ -1,0 +1,7 @@
+<map id="planning_scene::PlanningScene::getCollisionEnvUnpadded" name="planning_scene::PlanningScene::getCollisionEnvUnpadded">
+<area shape="rect" id="node1" title="Get the active collision detector for the robot." alt="" coords="639,39,875,80"/>
+<area shape="rect" id="node2" href="$classplanning__scene_1_1PlanningScene.html#a731692d0c1d45e7f9cd41db1eb1c5f3f" title="Check whether a specified state (robot_state) is in collision, with respect to a given allowed collis..." alt="" coords="403,5,590,47"/>
+<area shape="rect" id="node3" href="$classplanning__scene_1_1PlanningScene.html#aea9edbc5c65137a736db5a86bd1fed08" title="Check whether the current state is in self collision." alt="" coords="403,71,591,112"/>
+<area shape="rect" id="node4" href="$pymoveit__core_8cpp.html#acdb1e01a5a6ec640937d8c69c0f7d045" title=" " alt="" coords="204,71,355,112"/>
+<area shape="rect" id="node5" href="$pymoveit__core_8cpp.html#aae5c18014d007aef7676d42ced1ba2b0" title=" " alt="" coords="5,78,156,105"/>
+</map>

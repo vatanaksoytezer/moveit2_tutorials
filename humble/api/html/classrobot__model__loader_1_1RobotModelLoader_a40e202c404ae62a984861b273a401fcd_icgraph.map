@@ -1,0 +1,15 @@
+<map id="robot_model_loader::RobotModelLoader::getModel" name="robot_model_loader::RobotModelLoader::getModel">
+<area shape="rect" id="node1" title="Get the constructed planning_models::RobotModel." alt="" coords="508,325,668,381"/>
+<area shape="rect" id="node2" href="$classCommandPlannerTest.html#aec51ab9a80428cc7a1881d7270e31319" title="initialize the planner plugin The planner is loaded using the pluginlib. Checks that the planner was ..." alt="" coords="251,5,426,47"/>
+<area shape="rect" id="node4" href="$classPlanningContextLoadersTest.html#a8730daee2f98a07465e19108df64df7e" title="To initialize the planning context loader The planning context loader is loaded using the pluginlib...." alt="" coords="235,71,442,112"/>
+<area shape="rect" id="node5" href="$classTrajectoryGeneratorPTPTest.html#ae6cc9df0fa26934396e9ddf0b3439e3d" title="Create test fixture for ptp trajectory generator." alt="" coords="238,136,439,177"/>
+<area shape="rect" id="node6" href="$classIntegrationTestSequenceService.html#acac3a6183163d4a69ae2771bd9cd70ad" title=" " alt="" coords="223,201,454,243"/>
+<area shape="rect" id="node7" href="$classTrajectoryGeneratorCIRCTest.html#a23026b4e6ff9c4dc0d949a6965227cdb" title="Create test scenario for circ trajectory generator." alt="" coords="235,267,443,308"/>
+<area shape="rect" id="node8" href="$classTrajectoryBlenderTransitionWindowTest.html#a053df89241e6ed29c6d277de86a01f6e" title="Create test scenario for trajectory blender." alt="" coords="239,332,438,373"/>
+<area shape="rect" id="node9" href="$classTrajectoryGeneratorLINTest.html#aa501c1263458d8ae0807e10ee79a569b" title="Create test scenario for lin trajectory generator." alt="" coords="239,397,438,439"/>
+<area shape="rect" id="node10" href="$classIntegrationTestCommandPlanning.html#a19f889f2d9372a4268fc3f92897fe190" title=" " alt="" coords="217,463,460,504"/>
+<area shape="rect" id="node11" href="$classPlanningContextTest.html#ab819445015130f87e69f722739625321" title=" " alt="" coords="261,528,416,569"/>
+<area shape="rect" id="node12" href="$classTrajectoryFunctionsTestBase.html#a2200d66e974e12266afd4e792570ca50" title="Create test scenario for trajectory functions." alt="" coords="235,593,442,635"/>
+<area shape="rect" id="node13" href="$classTrajectoryGeneratorCommonTest.html#a80e3885bdb7b0ce80bc85c3a75e0e28b" title=" " alt="" coords="233,659,444,700"/>
+<area shape="rect" id="node3" href="$classCommandPlannerTest.html#a6cde73498ba5839999f36596dfd874bc" title=" " alt="" coords="5,5,169,47"/>
+</map>

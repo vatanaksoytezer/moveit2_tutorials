@@ -13,6 +13,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="theme.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -441,15 +442,15 @@ $(function() {
 <div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;  }</div>
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160; </div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;  std::string package_name;</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;  std::string <a class="code" href="namespacesetup.html#a3c783d982ab5a3d08b5fcf646a62976d">package_name</a>;</div>
 <div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;  std::string relative_filename;</div>
 <div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;  <span class="keywordtype">bool</span> package_found =</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;      config_data_-&gt;extractPackageNameFromPath(filename.toStdString(), package_name, relative_filename);</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;      config_data_-&gt;extractPackageNameFromPath(filename.toStdString(), <a class="code" href="namespacesetup.html#a3c783d982ab5a3d08b5fcf646a62976d">package_name</a>, relative_filename);</div>
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160; </div>
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;  QString lookup_path = filename;</div>
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;  <span class="keywordflow">if</span> (package_found)</div>
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;  {</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    lookup_path = QString(<span class="stringliteral">&quot;$(find %1)/%2&quot;</span>).arg(package_name.c_str()).arg(relative_filename.c_str());</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    lookup_path = QString(<span class="stringliteral">&quot;$(find %1)/%2&quot;</span>).arg(<a class="code" href="namespacesetup.html#a3c783d982ab5a3d08b5fcf646a62976d">package_name</a>.c_str()).arg(relative_filename.c_str());</div>
 <div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;  }</div>
 <div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;  <a class="code" href="classmoveit__setup__assistant_1_1GroupEditWidget.html#ae20ca5580c503fa0a15eff376fcbc46d">kinematics_parameters_file_field_</a>-&gt;setText(lookup_path);</div>
 <div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;}</div>
@@ -457,6 +458,7 @@ $(function() {
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;}  <span class="comment">// namespace moveit_setup_assistant</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassmoveit__setup__assistant_1_1GroupEditWidget_html_a7c42fdaf26a3436c6c887234463a0aa6"><div class="ttname"><a href="classmoveit__setup__assistant_1_1GroupEditWidget.html#a7c42fdaf26a3436c6c887234463a0aa6">moveit_setup_assistant::GroupEditWidget::kinematics_resolution_field_</a></div><div class="ttdeci">QLineEdit * kinematics_resolution_field_</div><div class="ttdef"><b>Definition:</b> <a href="group__edit__widget_8h_source.html#l00076">group_edit_widget.h:76</a></div></div>
+<div class="ttc" id="anamespacesetup_html_a3c783d982ab5a3d08b5fcf646a62976d"><div class="ttname"><a href="namespacesetup.html#a3c783d982ab5a3d08b5fcf646a62976d">setup.package_name</a></div><div class="ttdeci">string package_name</div><div class="ttdef"><b>Definition:</b> <a href="moveit__configs__utils_2setup_8py_source.html#l00003">setup.py:3</a></div></div>
 <div class="ttc" id="aclassmoveit__setup__assistant_1_1GroupEditWidget_html_a0b0eafd023d4940d562ad8cdca19f09e"><div class="ttname"><a href="classmoveit__setup__assistant_1_1GroupEditWidget.html#a0b0eafd023d4940d562ad8cdca19f09e">moveit_setup_assistant::GroupEditWidget::kinematics_solver_field_</a></div><div class="ttdeci">QComboBox * kinematics_solver_field_</div><div class="ttdef"><b>Definition:</b> <a href="group__edit__widget_8h_source.html#l00075">group_edit_widget.h:75</a></div></div>
 <div class="ttc" id="aclassmoveit__setup__assistant_1_1GroupEditWidget_html_a108fcda97f7227e3a5f815d91438a071"><div class="ttname"><a href="classmoveit__setup__assistant_1_1GroupEditWidget.html#a108fcda97f7227e3a5f815d91438a071">moveit_setup_assistant::GroupEditWidget::kinematics_timeout_field_</a></div><div class="ttdeci">QLineEdit * kinematics_timeout_field_</div><div class="ttdef"><b>Definition:</b> <a href="group__edit__widget_8h_source.html#l00077">group_edit_widget.h:77</a></div></div>
 <div class="ttc" id="aclassmoveit__setup__assistant_1_1GroupEditWidget_html_a5efd39461f96021edddd387b46af9ba8"><div class="ttname"><a href="classmoveit__setup__assistant_1_1GroupEditWidget.html#a5efd39461f96021edddd387b46af9ba8">moveit_setup_assistant::GroupEditWidget::loadKinematicPlannersComboBox</a></div><div class="ttdeci">void loadKinematicPlannersComboBox()</div><div class="ttdoc">Populate the combo dropdown box with kinematic planners.</div><div class="ttdef"><b>Definition:</b> <a href="group__edit__widget_8cpp_source.html#l00336">group_edit_widget.cpp:336</a></div></div>

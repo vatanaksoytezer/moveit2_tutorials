@@ -10,7 +10,7 @@
       <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/override.css" type="text/css" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
-    <link rel="canonical" href="https://moveit.picknik.ai/rolling//rolling/doc/examples/motion_planning_pipeline/motion_planning_pipeline_tutorial.html" />
+    <link rel="canonical" href="https://moveit.picknik.ai/humble//rolling/doc/examples/motion_planning_pipeline/motion_planning_pipeline_tutorial.html" />
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -46,9 +46,6 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../tutorials/tutorials.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../how_to_guides/how_to_guides.html">How-To Guides</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../concepts/concepts.html">Concepts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../how_to_contribute/how_to_contribute.html">Contributing</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../examples.html">Examples</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../examples.html#movegroup-ros-wrappers-in-c">MoveGroup - ROS Wrappers in C++</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../examples.html#using-moveit-directly-through-the-c-api">Using MoveIt Directly Through the C++ API</a><ul class="current">
@@ -79,7 +76,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../planning_with_approximated_constraint_manifolds/planning_with_approximated_constraint_manifolds_tutorial.html">Planning with Approximated Constraint Manifolds</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../pick_place/pick_place_tutorial.html">Pick and Place</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../moveit_grasps/moveit_grasps_tutorial.html">MoveIt Grasps</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../moveit_task_constructor/moveit_task_constructor_tutorial.html">MoveIt Task Constructor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../moveit_deep_grasps/moveit_deep_grasps_tutorial.html">MoveIt Deep Grasps</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../subframes/subframes_tutorial.html">Subframes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../moveit_cpp/moveitcpp_tutorial.html">MoveItCpp Tutorial</a></li>
@@ -92,7 +88,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../examples.html#miscellaneous">Miscellaneous</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../concepts/concepts.html">Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../how_to_guides/how_to_guides.html">How-To Guides</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/api.html">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../how_to_contribute/how_to_contribute.html">Contributing</a></li>
 </ul>
 
         </div>
@@ -128,7 +127,7 @@
       
       You're reading the documentation for the non-stable development version of MoveIt 2.
       For the stable, released version, please have a look at
-      <a href="../../../../galactic/doc/examples/motion_planning_pipeline/motion_planning_pipeline_tutorial.html">Galactic</a>.
+      <a href="../../../../humble/doc/examples/motion_planning_pipeline/motion_planning_pipeline_tutorial.html">Humble</a>.
       
   </p>
 </div>
@@ -151,11 +150,11 @@ run you through the C++ code to instantiate and call such a planning pipeline.</
 <div class="section" id="running-the-code">
 <h2>Running the Code<a class="headerlink" href="#running-the-code" title="Permalink to this headline"></a></h2>
 <p>Open two shells. In the first shell start RViz and wait for everything to finish loading:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">roslaunch</span> <span class="n">panda_moveit_config</span> <span class="n">demo</span><span class="o">.</span><span class="n">launch</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ros2</span> <span class="n">launch</span> <span class="n">moveit2_tutorials</span> <span class="n">move_group</span><span class="o">.</span><span class="n">launch</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </div>
 <p>In the second shell, run the launch file:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">roslaunch</span> <span class="n">moveit_tutorials</span> <span class="n">motion_planning_pipeline_tutorial</span><span class="o">.</span><span class="n">launch</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ros2</span> <span class="n">launch</span> <span class="n">moveit2_tutorials</span> <span class="n">motion_planning_pipeline_tutorial</span><span class="o">.</span><span class="n">launch</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </div>
 <p><strong>Note:</strong> This tutorial uses the <strong>RvizVisualToolsGui</strong> panel to step through the demo. To add this panel to RViz, follow the instructions in the <a class="reference external" href="/doc/tutorials/quickstart_in_rviz/quickstart_in_rviz_tutorial.html#rviz-visual-tools">Visualization Tutorial</a>.</p>
@@ -179,10 +178,14 @@ run you through the C++ code to instantiate and call such a planning pipeline.</
 <h3>Start<a class="headerlink" href="#start" title="Permalink to this headline"></a></h3>
 <p>Setting up to start using a planning pipeline is pretty easy. Before we can load the planner, we need two objects,
 a RobotModel and a PlanningScene.</p>
-<p>We will start by instantiating a <a class="reference external" href="http://docs.ros.org/noetic/api/moveit_ros_planning/html/classrobot__model__loader_1_1RobotModelLoader.html">RobotModelLoader</a> object, which will look up the robot description on the ROS
-parameter server and construct a <a class="reference external" href="http://docs.ros.org/noetic/api/moveit_core/html/cpp/classmoveit_1_1core_1_1RobotModel.html">RobotModel</a> for us to use.</p>
+<p>We will start by instantiating a
+<a class="reference external" href="https://github.com/ros-planning/moveit2/blob/main/moveit_ros/planning/robot_model_loader/include/moveit/robot_model_loader/robot_model_loader.h">RobotModelLoader</a>
+object, which will look up the robot description on the ROS
+parameter server and construct a
+<a class="reference external" href="https://github.com/ros-planning/moveit2/blob/main/moveit_core/robot_model/include/moveit/robot_model/robot_model.h">RobotModel</a>
+for us to use.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">robot_model_loader</span><span class="o">::</span><span class="n">RobotModelLoaderPtr</span><span class="w"> </span><span class="nf">robot_model_loader</span><span class="p">(</span><span class="w"></span>
-<span class="w">    </span><span class="k">new</span><span class="w"> </span><span class="n">robot_model_loader</span><span class="o">::</span><span class="n">RobotModelLoader</span><span class="p">(</span><span class="s">&quot;robot_description&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="k">new</span><span class="w"> </span><span class="n">robot_model_loader</span><span class="o">::</span><span class="n">RobotModelLoader</span><span class="p">(</span><span class="n">node</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;robot_description&quot;</span><span class="p">));</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Using the RobotModelLoader, we can construct a planing scene monitor that
@@ -190,7 +193,7 @@ will create a planning scene, monitors planning scene diffs, and apply the diffs
 internal planning scene. We then call startSceneMonitor, startWorldGeometryMonitor and
 startStateMonitor to fully initialize the planning scene monitor</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">planning_scene_monitor</span><span class="o">::</span><span class="n">PlanningSceneMonitorPtr</span><span class="w"> </span><span class="nf">psm</span><span class="p">(</span><span class="w"></span>
-<span class="w">    </span><span class="k">new</span><span class="w"> </span><span class="n">planning_scene_monitor</span><span class="o">::</span><span class="n">PlanningSceneMonitor</span><span class="p">(</span><span class="n">robot_model_loader</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="k">new</span><span class="w"> </span><span class="n">planning_scene_monitor</span><span class="o">::</span><span class="n">PlanningSceneMonitor</span><span class="p">(</span><span class="n">node</span><span class="p">,</span><span class="w"> </span><span class="n">robot_model_loader</span><span class="p">));</span><span class="w"></span>
 
 <span class="cm">/* listen for planning scene messages on topic /XXX and apply them to the internal planning scene</span>
 <span class="cm">                     the internal planning scene accordingly */</span><span class="w"></span>
@@ -219,7 +222,7 @@ startStateMonitor to fully initialize the planning scene monitor</p>
 <p>We can now setup the PlanningPipeline object, which will use the ROS parameter server
 to determine the set of request adapters and the planning plugin to use</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">planning_pipeline</span><span class="o">::</span><span class="n">PlanningPipelinePtr</span><span class="w"> </span><span class="nf">planning_pipeline</span><span class="p">(</span><span class="w"></span>
-<span class="w">    </span><span class="k">new</span><span class="w"> </span><span class="n">planning_pipeline</span><span class="o">::</span><span class="n">PlanningPipeline</span><span class="p">(</span><span class="n">robot_model</span><span class="p">,</span><span class="w"> </span><span class="n">node_handle</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;planning_plugin&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;request_adapters&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="k">new</span><span class="w"> </span><span class="n">planning_pipeline</span><span class="o">::</span><span class="n">PlanningPipeline</span><span class="p">(</span><span class="n">robot_model</span><span class="p">,</span><span class="w"> </span><span class="n">node</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;planning_plugin&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;request_adapters&quot;</span><span class="p">));</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -228,7 +231,7 @@ to determine the set of request adapters and the planning plugin to use</p>
 <p>The package MoveItVisualTools provides many capabilities for visualizing objects, robots,
 and trajectories in RViz as well as debugging tools such as step-by-step introspection of a script.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span><span class="w"> </span><span class="nn">rvt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nn">rviz_visual_tools</span><span class="p">;</span><span class="w"></span>
-<span class="n">moveit_visual_tools</span><span class="o">::</span><span class="n">MoveItVisualTools</span><span class="w"> </span><span class="nf">visual_tools</span><span class="p">(</span><span class="s">&quot;panda_link0&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">moveit_visual_tools</span><span class="o">::</span><span class="n">MoveItVisualTools</span><span class="w"> </span><span class="nf">visual_tools</span><span class="p">(</span><span class="n">node</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;panda_link0&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;move_group_tutorial&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">psm</span><span class="p">);</span><span class="w"></span>
 <span class="n">visual_tools</span><span class="p">.</span><span class="n">deleteAllMarkers</span><span class="p">();</span><span class="w"></span>
 
 <span class="cm">/* Remote control is an introspection tool that allows users to step through a high level script</span>
@@ -254,7 +257,7 @@ and trajectories in RViz as well as debugging tools such as step-by-step introsp
 specifying the desired pose of the end-effector as input.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">planning_interface</span><span class="o">::</span><span class="n">MotionPlanRequest</span><span class="w"> </span><span class="n">req</span><span class="p">;</span><span class="w"></span>
 <span class="n">planning_interface</span><span class="o">::</span><span class="n">MotionPlanResponse</span><span class="w"> </span><span class="n">res</span><span class="p">;</span><span class="w"></span>
-<span class="n">geometry_msgs</span><span class="o">::</span><span class="n">PoseStamped</span><span class="w"> </span><span class="n">pose</span><span class="p">;</span><span class="w"></span>
+<span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">PoseStamped</span><span class="w"> </span><span class="n">pose</span><span class="p">;</span><span class="w"></span>
 <span class="n">pose</span><span class="p">.</span><span class="n">header</span><span class="p">.</span><span class="n">frame_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;panda_link0&quot;</span><span class="p">;</span><span class="w"></span>
 <span class="n">pose</span><span class="p">.</span><span class="n">pose</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.3</span><span class="p">;</span><span class="w"></span>
 <span class="n">pose</span><span class="p">.</span><span class="n">pose</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span><span class="w"></span>
@@ -268,12 +271,12 @@ and 0.01 radians in orientation</p>
 <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">tolerance_angle</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mf">0.01</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
-<p>We will create the request as a constraint using a helper function available
-from the
-<a class="reference external" href="http://docs.ros.org/noetic/api/moveit_core/html/cpp/namespacekinematic__constraints.html#a88becba14be9ced36fefc7980271e132">kinematic_constraints</a>
+<p>We will create the request as a constraint using a helper
+function available from the
+<a class="reference external" href="https://github.com/ros-planning/moveit2/blob/main/moveit_core/kinematic_constraints/include/moveit/kinematic_constraints/kinematic_constraint.h">kinematic_constraints</a>
 package.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">req</span><span class="p">.</span><span class="n">group_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;panda_arm&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="n">moveit_msgs</span><span class="o">::</span><span class="n">Constraints</span><span class="w"> </span><span class="n">pose_goal</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
+<span class="n">moveit_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Constraints</span><span class="w"> </span><span class="n">pose_goal</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
 <span class="w">    </span><span class="n">kinematic_constraints</span><span class="o">::</span><span class="n">constructGoalConstraints</span><span class="p">(</span><span class="s">&quot;panda_link8&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">pose</span><span class="p">,</span><span class="w"> </span><span class="n">tolerance_pose</span><span class="p">,</span><span class="w"> </span><span class="n">tolerance_angle</span><span class="p">);</span><span class="w"></span>
 <span class="n">req</span><span class="p">.</span><span class="n">goal_constraints</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">pose_goal</span><span class="p">);</span><span class="w"></span>
 </pre></div>
@@ -289,7 +292,7 @@ representation while planning</p>
 <span class="cm">/* Check that the planning was successful */</span><span class="w"></span>
 <span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">res</span><span class="p">.</span><span class="n">error_code_</span><span class="p">.</span><span class="n">val</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">res</span><span class="p">.</span><span class="n">error_code_</span><span class="p">.</span><span class="n">SUCCESS</span><span class="p">)</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="n">ROS_ERROR</span><span class="p">(</span><span class="s">&quot;Could not compute plan successfully&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">RCLCPP_ERROR</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Could not compute plan successfully&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
@@ -297,18 +300,18 @@ representation while planning</p>
 </div>
 <div class="section" id="visualize-the-result">
 <h3>Visualize the result<a class="headerlink" href="#visualize-the-result" title="Permalink to this headline"></a></h3>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">ros</span><span class="o">::</span><span class="n">Publisher</span><span class="w"> </span><span class="n">display_publisher</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
-<span class="w">    </span><span class="n">node_handle</span><span class="p">.</span><span class="n">advertise</span><span class="o">&lt;</span><span class="n">moveit_msgs</span><span class="o">::</span><span class="n">DisplayTrajectory</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;/display_planned_path&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span><span class="w"></span>
-<span class="n">moveit_msgs</span><span class="o">::</span><span class="n">DisplayTrajectory</span><span class="w"> </span><span class="n">display_trajectory</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">rclcpp</span><span class="o">::</span><span class="n">Publisher</span><span class="o">&lt;</span><span class="n">moveit_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">DisplayTrajectory</span><span class="o">&gt;::</span><span class="n">SharedPtr</span><span class="w"> </span><span class="n">display_publisher</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
+<span class="w">    </span><span class="n">node</span><span class="o">-&gt;</span><span class="n">create_publisher</span><span class="o">&lt;</span><span class="n">moveit_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">DisplayTrajectory</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;/display_planned_path&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="n">moveit_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">DisplayTrajectory</span><span class="w"> </span><span class="n">display_trajectory</span><span class="p">;</span><span class="w"></span>
 
 <span class="cm">/* Visualize the trajectory */</span><span class="w"></span>
-<span class="n">ROS_INFO</span><span class="p">(</span><span class="s">&quot;Visualizing the trajectory&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="n">moveit_msgs</span><span class="o">::</span><span class="n">MotionPlanResponse</span><span class="w"> </span><span class="n">response</span><span class="p">;</span><span class="w"></span>
+<span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Visualizing the trajectory&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">moveit_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">MotionPlanResponse</span><span class="w"> </span><span class="n">response</span><span class="p">;</span><span class="w"></span>
 <span class="n">res</span><span class="p">.</span><span class="n">getMessage</span><span class="p">(</span><span class="n">response</span><span class="p">);</span><span class="w"></span>
 
 <span class="n">display_trajectory</span><span class="p">.</span><span class="n">trajectory_start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">response</span><span class="p">.</span><span class="n">trajectory_start</span><span class="p">;</span><span class="w"></span>
 <span class="n">display_trajectory</span><span class="p">.</span><span class="n">trajectory</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">trajectory</span><span class="p">);</span><span class="w"></span>
-<span class="n">display_publisher</span><span class="p">.</span><span class="n">publish</span><span class="p">(</span><span class="n">display_trajectory</span><span class="p">);</span><span class="w"></span>
+<span class="n">display_publisher</span><span class="o">-&gt;</span><span class="n">publish</span><span class="p">(</span><span class="n">display_trajectory</span><span class="p">);</span><span class="w"></span>
 <span class="n">visual_tools</span><span class="p">.</span><span class="n">publishTrajectoryLine</span><span class="p">(</span><span class="n">display_trajectory</span><span class="p">.</span><span class="n">trajectory</span><span class="p">.</span><span class="n">back</span><span class="p">(),</span><span class="w"> </span><span class="n">joint_model_group</span><span class="p">);</span><span class="w"></span>
 <span class="n">visual_tools</span><span class="p">.</span><span class="n">trigger</span><span class="p">();</span><span class="w"></span>
 
@@ -329,7 +332,8 @@ representation while planning</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">moveit</span><span class="o">::</span><span class="n">core</span><span class="o">::</span><span class="n">RobotState</span><span class="w"> </span><span class="nf">goal_state</span><span class="p">(</span><span class="o">*</span><span class="n">robot_state</span><span class="p">);</span><span class="w"></span>
 <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">joint_values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mf">-1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.7</span><span class="p">,</span><span class="w"> </span><span class="mf">0.7</span><span class="p">,</span><span class="w"> </span><span class="mf">-1.5</span><span class="p">,</span><span class="w"> </span><span class="mf">-0.7</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
 <span class="n">goal_state</span><span class="p">.</span><span class="n">setJointGroupPositions</span><span class="p">(</span><span class="n">joint_model_group</span><span class="p">,</span><span class="w"> </span><span class="n">joint_values</span><span class="p">);</span><span class="w"></span>
-<span class="n">moveit_msgs</span><span class="o">::</span><span class="n">Constraints</span><span class="w"> </span><span class="n">joint_goal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">kinematic_constraints</span><span class="o">::</span><span class="n">constructGoalConstraints</span><span class="p">(</span><span class="n">goal_state</span><span class="p">,</span><span class="w"> </span><span class="n">joint_model_group</span><span class="p">);</span><span class="w"></span>
+<span class="n">moveit_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Constraints</span><span class="w"> </span><span class="n">joint_goal</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
+<span class="w">    </span><span class="n">kinematic_constraints</span><span class="o">::</span><span class="n">constructGoalConstraints</span><span class="p">(</span><span class="n">goal_state</span><span class="p">,</span><span class="w"> </span><span class="n">joint_model_group</span><span class="p">);</span><span class="w"></span>
 
 <span class="n">req</span><span class="p">.</span><span class="n">goal_constraints</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span><span class="w"></span>
 <span class="n">req</span><span class="p">.</span><span class="n">goal_constraints</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">joint_goal</span><span class="p">);</span><span class="w"></span>
@@ -345,18 +349,18 @@ representation while planning</p>
 <span class="cm">/* Check that the planning was successful */</span><span class="w"></span>
 <span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">res</span><span class="p">.</span><span class="n">error_code_</span><span class="p">.</span><span class="n">val</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">res</span><span class="p">.</span><span class="n">error_code_</span><span class="p">.</span><span class="n">SUCCESS</span><span class="p">)</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="n">ROS_ERROR</span><span class="p">(</span><span class="s">&quot;Could not compute plan successfully&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">RCLCPP_ERROR</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Could not compute plan successfully&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 <span class="cm">/* Visualize the trajectory */</span><span class="w"></span>
-<span class="n">ROS_INFO</span><span class="p">(</span><span class="s">&quot;Visualizing the trajectory&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Visualizing the trajectory&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="n">res</span><span class="p">.</span><span class="n">getMessage</span><span class="p">(</span><span class="n">response</span><span class="p">);</span><span class="w"></span>
 <span class="n">display_trajectory</span><span class="p">.</span><span class="n">trajectory_start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">response</span><span class="p">.</span><span class="n">trajectory_start</span><span class="p">;</span><span class="w"></span>
 <span class="n">display_trajectory</span><span class="p">.</span><span class="n">trajectory</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">trajectory</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Now you should see two planned trajectories in series</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">display_publisher</span><span class="p">.</span><span class="n">publish</span><span class="p">(</span><span class="n">display_trajectory</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">display_publisher</span><span class="o">-&gt;</span><span class="n">publish</span><span class="p">(</span><span class="n">display_trajectory</span><span class="p">);</span><span class="w"></span>
 <span class="n">visual_tools</span><span class="p">.</span><span class="n">publishTrajectoryLine</span><span class="p">(</span><span class="n">display_trajectory</span><span class="p">.</span><span class="n">trajectory</span><span class="p">.</span><span class="n">back</span><span class="p">(),</span><span class="w"> </span><span class="n">joint_model_group</span><span class="p">);</span><span class="w"></span>
 <span class="n">visual_tools</span><span class="p">.</span><span class="n">trigger</span><span class="p">();</span><span class="w"></span>
 
@@ -396,23 +400,25 @@ representation while planning</p>
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
 <span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">res</span><span class="p">.</span><span class="n">error_code_</span><span class="p">.</span><span class="n">val</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">res</span><span class="p">.</span><span class="n">error_code_</span><span class="p">.</span><span class="n">SUCCESS</span><span class="p">)</span><span class="w"></span>
 <span class="w">  </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">ROS_ERROR</span><span class="p">(</span><span class="s">&quot;Could not compute plan successfully&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">RCLCPP_ERROR</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Could not compute plan successfully&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
 <span class="w">  </span><span class="cm">/* Visualize the trajectory */</span><span class="w"></span>
-<span class="w">  </span><span class="n">ROS_INFO</span><span class="p">(</span><span class="s">&quot;Visualizing the trajectory&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Visualizing the trajectory&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="w">  </span><span class="n">res</span><span class="p">.</span><span class="n">getMessage</span><span class="p">(</span><span class="n">response</span><span class="p">);</span><span class="w"></span>
 <span class="w">  </span><span class="n">display_trajectory</span><span class="p">.</span><span class="n">trajectory_start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">response</span><span class="p">.</span><span class="n">trajectory_start</span><span class="p">;</span><span class="w"></span>
 <span class="w">  </span><span class="n">display_trajectory</span><span class="p">.</span><span class="n">trajectory</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">trajectory</span><span class="p">);</span><span class="w"></span>
 <span class="w">  </span><span class="cm">/* Now you should see three planned trajectories in series*/</span><span class="w"></span>
-<span class="w">  </span><span class="n">display_publisher</span><span class="p">.</span><span class="n">publish</span><span class="p">(</span><span class="n">display_trajectory</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">display_publisher</span><span class="o">-&gt;</span><span class="n">publish</span><span class="p">(</span><span class="n">display_trajectory</span><span class="p">);</span><span class="w"></span>
 <span class="w">  </span><span class="n">visual_tools</span><span class="p">.</span><span class="n">publishTrajectoryLine</span><span class="p">(</span><span class="n">display_trajectory</span><span class="p">.</span><span class="n">trajectory</span><span class="p">.</span><span class="n">back</span><span class="p">(),</span><span class="w"> </span><span class="n">joint_model_group</span><span class="p">);</span><span class="w"></span>
 <span class="w">  </span><span class="n">visual_tools</span><span class="p">.</span><span class="n">trigger</span><span class="p">();</span><span class="w"></span>
 
 <span class="w">  </span><span class="cm">/* Wait for user input */</span><span class="w"></span>
 <span class="w">  </span><span class="n">visual_tools</span><span class="p">.</span><span class="n">prompt</span><span class="p">(</span><span class="s">&quot;Press &#39;next&#39; in the RvizVisualToolsGui window to finish the demo&quot;</span><span class="p">);</span><span class="w"></span>
 
-<span class="w">  </span><span class="n">ROS_INFO</span><span class="p">(</span><span class="s">&quot;Done&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">LOGGER</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Done&quot;</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">rclcpp</span><span class="o">::</span><span class="n">shutdown</span><span class="p">();</span><span class="w"></span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
@@ -421,7 +427,7 @@ representation while planning</p>
 </div>
 <div class="section" id="the-launch-file">
 <h2>The Launch File<a class="headerlink" href="#the-launch-file" title="Permalink to this headline"></a></h2>
-<p>The entire launch file is <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/main/doc/examples/motion_planning_pipeline/launch/motion_planning_pipeline_tutorial.launch">here</a> on GitHub. All the code in this tutorial can be compiled and run from the moveit_tutorials package that you have as part of your MoveIt setup.</p>
+<p>The entire launch file is <a class="reference external" href="https://github.com/ros-planning/moveit2_tutorials/blob/main/doc/examples/motion_planning_pipeline/launch/motion_planning_pipeline_tutorial.launch.py">here</a> on GitHub. All the code in this tutorial can be compiled and run from the moveit_tutorials package that you have as part of your MoveIt setup.</p>
 </div>
 </div>
 
@@ -464,7 +470,8 @@ representation while planning</p>
     </dl>
     <dl>
       <dt>MoveIt 2 - Stable</dt>
-        <dd><a href="../../../../galactic/doc/examples/motion_planning_pipeline/motion_planning_pipeline_tutorial.html">Galactic (recommended)</a></dd>
+        <dd><a href="../../../../humble/doc/examples/motion_planning_pipeline/motion_planning_pipeline_tutorial.html">Humble (recommended)</a></dd>
+        <dd><a href="../../../../galactic/doc/examples/motion_planning_pipeline/motion_planning_pipeline_tutorial.html">Galactic</a></dd>
         <dd><a href="../../../../foxy/index.html">Foxy</a></dd>
    </dl>
     <dl>

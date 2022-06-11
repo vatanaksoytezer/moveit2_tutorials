@@ -13,6 +13,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="theme.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -110,7 +111,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac6c42f822cef8f13b12aabb077fd13ab"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl__interface_1_1BoxConstraint.html#ac6c42f822cef8f13b12aabb077fd13ab">BoxConstraint</a> (const moveit::core::RobotModelConstPtr &amp;robot_model, const std::string &amp;group, const unsigned int num_dofs)</td></tr>
 <tr class="separator:ac6c42f822cef8f13b12aabb077fd13ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc17d0a1e334e87c171964c7f3e86f7a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl__interface_1_1BoxConstraint.html#adc17d0a1e334e87c171964c7f3e86f7a">parseConstraintMsg</a> (const moveit_msgs::msg::Constraints &amp;constraints) override</td></tr>
-<tr class="memdesc:adc17d0a1e334e87c171964c7f3e86f7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse bounds on position and orientation parameters from MoveIt's constraint message.  <a href="classompl__interface_1_1BoxConstraint.html#adc17d0a1e334e87c171964c7f3e86f7a">More...</a><br /></td></tr>
+<tr class="memdesc:adc17d0a1e334e87c171964c7f3e86f7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse bounds on position parameters from MoveIt's constraint message.  <a href="classompl__interface_1_1BoxConstraint.html#adc17d0a1e334e87c171964c7f3e86f7a">More...</a><br /></td></tr>
 <tr class="separator:adc17d0a1e334e87c171964c7f3e86f7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac73cde24845bd9de57e599a939811911"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl__interface_1_1BoxConstraint.html#ac73cde24845bd9de57e599a939811911">calcError</a> (const Eigen::Ref&lt; const Eigen::VectorXd &gt; &amp;x) const override</td></tr>
 <tr class="memdesc:ac73cde24845bd9de57e599a939811911"><td class="mdescLeft">&#160;</td><td class="mdescRight">For inequality constraints: calculate the value of the parameter that is being constrained by the bounds.  <a href="classompl__interface_1_1BoxConstraint.html#ac73cde24845bd9de57e599a939811911">More...</a><br /></td></tr>
@@ -224,7 +225,7 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">Eigen::VectorXd ompl_interface::BoxConstraint::calcError </td>
           <td>(</td>
           <td class="paramtype">const Eigen::Ref&lt; const Eigen::VectorXd &gt; &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -241,7 +242,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classompl__interface_1_1BaseConstraint.html#a6001149aa171e9788b89623015fc3256">ompl_interface::BaseConstraint</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="ompl__constraints_8cpp_source.html#l00222">222</a> of file <a class="el" href="ompl__constraints_8cpp_source.html">ompl_constraints.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ompl__constraints_8cpp_source.html#l00218">218</a> of file <a class="el" href="ompl__constraints_8cpp_source.html">ompl_constraints.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -273,7 +274,7 @@ Here is the call graph for this function:</div>
           <td class="memname">Eigen::MatrixXd ompl_interface::BoxConstraint::calcErrorJacobian </td>
           <td>(</td>
           <td class="paramtype">const Eigen::Ref&lt; const Eigen::VectorXd &gt; &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -293,7 +294,7 @@ Here is the call graph for this function:</div>
 
 <p>Reimplemented from <a class="el" href="classompl__interface_1_1BaseConstraint.html#a42229647f33044cb406359867107d41d">ompl_interface::BaseConstraint</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="ompl__constraints_8cpp_source.html#l00227">227</a> of file <a class="el" href="ompl__constraints_8cpp_source.html">ompl_constraints.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ompl__constraints_8cpp_source.html#l00223">223</a> of file <a class="el" href="ompl__constraints_8cpp_source.html">ompl_constraints.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -339,7 +340,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Parse bounds on position and orientation parameters from MoveIt's constraint message. </p>
+<p>Parse bounds on position parameters from MoveIt's constraint message. </p>
 <p>This can be non-trivial given the often complex structure of these messages. </p>
 
 <p>Implements <a class="el" href="classompl__interface_1_1BaseConstraint.html#a21895199523312ca4b4647e63943998e">ompl_interface::BaseConstraint</a>.</p>
@@ -350,7 +351,7 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classompl__interface_1_1BoxConstraint_adc17d0a1e334e87c171964c7f3e86f7a_cgraph.png" border="0" usemap="#classompl__interface_1_1BoxConstraint_adc17d0a1e334e87c171964c7f3e86f7a_cgraph" alt=""/></div>
 <map name="classompl__interface_1_1BoxConstraint_adc17d0a1e334e87c171964c7f3e86f7a_cgraph" id="classompl__interface_1_1BoxConstraint_adc17d0a1e334e87c171964c7f3e86f7a_cgraph">
-<area shape="rect" title="Parse bounds on position and orientation parameters from MoveIt&#39;s constraint message." alt="" coords="5,39,225,80"/>
+<area shape="rect" title="Parse bounds on position parameters from MoveIt&#39;s constraint message." alt="" coords="5,39,225,80"/>
 <area shape="rect" href="namespaceompl__interface.html#ae69509cc8852c0ac498e2c1d8bea9e0d" title="Extract position constraints from the MoveIt message." alt="" coords="273,5,485,47"/>
 <area shape="rect" href="classompl__interface_1_1Bounds.html#a4c92c925eecbe0c25d7f42553ed06ddc" title=" " alt="" coords="291,71,467,112"/>
 </map>

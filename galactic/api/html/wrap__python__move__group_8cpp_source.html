@@ -13,6 +13,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="theme.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -500,10 +501,10 @@ $(function() {
 <div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;    <span class="keywordflow">return</span> getPlanningPipelineId().c_str();</div>
 <div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;  }</div>
 <div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160; </div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;  bp::dict getNamedTargetValuesPython(<span class="keyword">const</span> std::string&amp; name)</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;  bp::dict getNamedTargetValuesPython(<span class="keyword">const</span> std::string&amp; <a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>)</div>
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;  {</div>
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;    bp::dict output;</div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;    std::map&lt;std::string, double&gt; positions = getNamedTargetValues(name);</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;    std::map&lt;std::string, double&gt; positions = getNamedTargetValues(<a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>);</div>
 <div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;    std::map&lt;std::string, double&gt;::iterator iterator;</div>
 <div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160; </div>
 <div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;    <span class="keywordflow">for</span> (iterator = positions.begin(); iterator != positions.end(); ++iterator)</div>
@@ -928,6 +929,7 @@ $(function() {
 <div class="ttc" id="aclasstrajectory__processing_1_1IterativeParabolicTimeParameterization_html_add98b37306db64f26057b71e45592a57"><div class="ttname"><a href="classtrajectory__processing_1_1IterativeParabolicTimeParameterization.html#add98b37306db64f26057b71e45592a57">trajectory_processing::IterativeParabolicTimeParameterization::computeTimeStamps</a></div><div class="ttdeci">bool computeTimeStamps(robot_trajectory::RobotTrajectory &amp;trajectory, const double max_velocity_scaling_factor=1.0, const double max_acceleration_scaling_factor=1.0) const</div><div class="ttdef"><b>Definition:</b> <a href="iterative__time__parameterization_8cpp_source.html#l00491">iterative_time_parameterization.cpp:491</a></div></div>
 <div class="ttc" id="anamespacesetup_html_aa2586b6c4dd84a0aaaf49cb1565cee6e"><div class="ttname"><a href="namespacesetup.html#aa2586b6c4dd84a0aaaf49cb1565cee6e">setup.d</a></div><div class="ttdeci">d</div><div class="ttdef"><b>Definition:</b> <a href="moveit__commander_2setup_8py_source.html#l00004">setup.py:4</a></div></div>
 <div class="ttc" id="aclassmoveit_1_1planning__interface_1_1MoveItErrorCode_html"><div class="ttname"><a href="classmoveit_1_1planning__interface_1_1MoveItErrorCode.html">moveit::planning_interface::MoveItErrorCode</a></div><div class="ttdef"><b>Definition:</b> <a href="move__group__interface_8h_source.html#l00136">move_group_interface.h:136</a></div></div>
+<div class="ttc" id="anamespacesetup_html_ab3a7a0638d76a01367c5bc3cc699447f"><div class="ttname"><a href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">setup.name</a></div><div class="ttdeci">name</div><div class="ttdef"><b>Definition:</b> <a href="moveit__configs__utils_2setup_8py_source.html#l00006">setup.py:6</a></div></div>
 <div class="ttc" id="aiterative__spline__parameterization_8h_html"><div class="ttname"><a href="iterative__spline__parameterization_8h.html">iterative_spline_parameterization.h</a></div></div>
 <div class="ttc" id="aclassmoveit_1_1py__bindings__tools_1_1GILReleaser_html"><div class="ttname"><a href="classmoveit_1_1py__bindings__tools_1_1GILReleaser.html">moveit::py_bindings_tools::GILReleaser</a></div><div class="ttdoc">RAII Helper to release the Global Interpreter Lock (GIL)</div><div class="ttdef"><b>Definition:</b> <a href="gil__releaser_8h_source.html#l00118">gil_releaser.h:118</a></div></div>
 <div class="ttc" id="aclassmoveit_1_1planning__interface_1_1MoveGroupInterface_html_ad7e98fbd9e27f349b4accc153ee513fe"><div class="ttname"><a href="classmoveit_1_1planning__interface_1_1MoveGroupInterface.html#ad7e98fbd9e27f349b4accc153ee513fe">moveit::planning_interface::MoveGroupInterface::getJointValueTarget</a></div><div class="ttdeci">const moveit::core::RobotState &amp; getJointValueTarget() const</div><div class="ttdoc">Get the currently set joint state goal, replaced by private getTargetRobotState()</div><div class="ttdef"><b>Definition:</b> <a href="move__group__interface_8cpp_source.html#l01932">move_group_interface.cpp:1932</a></div></div>

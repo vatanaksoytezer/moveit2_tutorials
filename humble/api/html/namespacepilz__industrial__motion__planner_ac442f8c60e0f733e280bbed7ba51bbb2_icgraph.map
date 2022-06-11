@@ -1,0 +1,4 @@
+<map id="pilz_industrial_motion_planner::verifySampleJointLimits" name="pilz_industrial_motion_planner::verifySampleJointLimits">
+<area shape="rect" id="node1" title="verify the velocity/acceleration limits of current sample (based on backward difference computation) ..." alt="" coords="123,5,364,47"/>
+<area shape="rect" id="node2" href="$unittest__trajectory__functions_8cpp.html#a29502e662a0a9caa0f8803a4c6794f72" title="Check that function VerifySampleJointLimits() returns &#39;false&#39; in case of very small sample duration." alt="" coords="5,13,75,39"/>
+</map>

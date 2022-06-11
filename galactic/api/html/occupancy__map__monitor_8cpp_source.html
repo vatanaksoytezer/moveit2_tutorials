@@ -13,6 +13,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="theme.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -335,7 +336,7 @@ $(function() {
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;}</div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<span class="keywordtype">bool</span> OccupancyMapMonitor::saveMapCallback(<span class="keyword">const</span> std::shared_ptr&lt;rmw_request_id_t&gt; request_header,</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<span class="keywordtype">bool</span> OccupancyMapMonitor::saveMapCallback(<span class="keyword">const</span> std::shared_ptr&lt;rmw_request_id_t&gt; <span class="comment">/* unused */</span>,</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;                                          <span class="keyword">const</span> std::shared_ptr&lt;moveit_msgs::srv::SaveMap::Request&gt; request,</div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                                          std::shared_ptr&lt;moveit_msgs::srv::SaveMap::Response&gt; response)</div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;{</div>
@@ -353,7 +354,7 @@ $(function() {
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;}</div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160; </div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;<span class="keywordtype">bool</span> OccupancyMapMonitor::loadMapCallback(<span class="keyword">const</span> std::shared_ptr&lt;rmw_request_id_t&gt; request_header,</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;<span class="keywordtype">bool</span> OccupancyMapMonitor::loadMapCallback(<span class="keyword">const</span> std::shared_ptr&lt;rmw_request_id_t&gt; <span class="comment">/* unused */</span>,</div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                                          <span class="keyword">const</span> std::shared_ptr&lt;moveit_msgs::srv::LoadMap::Request&gt; request,</div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;                                          std::shared_ptr&lt;moveit_msgs::srv::LoadMap::Response&gt; response)</div>
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;{</div>

@@ -13,6 +13,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="theme.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -129,7 +130,7 @@ $(function() {
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;{</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <a class="code" href="classpilz__industrial__motion__planner_1_1JointLimitsContainer.html">pilz_industrial_motion_planner::JointLimitsContainer</a> container;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">const</span> std::string&amp; name : joint_names)</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">const</span> std::string&amp; <a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a> : joint_names)</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  {</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="structpilz__industrial__motion__planner_1_1joint__limits__interface_1_1JointLimits.html">JointLimit</a> limit;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    limit.<a class="code" href="structjoint__limits_1_1JointLimits.html#af6c866a379ffc1f7a80a7dcb56ea08fd">has_position_limits</a> = <span class="keyword">true</span>;</div>
@@ -142,7 +143,7 @@ $(function() {
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    limit.<a class="code" href="structpilz__industrial__motion__planner_1_1joint__limits__interface_1_1JointLimits.html#a0bad9925dd3e5cff03307acad71c8df7">has_deceleration_limits</a> = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    limit.<a class="code" href="structpilz__industrial__motion__planner_1_1joint__limits__interface_1_1JointLimits.html#af52633b4d281d88937eba0dff095a621">max_deceleration</a> = -1;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    container.<a class="code" href="classpilz__industrial__motion__planner_1_1JointLimitsContainer.html#a40383e43f2853d45c9456333cda2a537">addLimit</a>(name, limit);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    container.<a class="code" href="classpilz__industrial__motion__planner_1_1JointLimitsContainer.html#a40383e43f2853d45c9456333cda2a537">addLimit</a>(<a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>, limit);</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  }</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordflow">return</span> container;</div>
@@ -1101,11 +1102,11 @@ $(function() {
 <div class="line"><a name="l01029"></a><span class="lineno"> 1029</span>&#160;{</div>
 <div class="line"><a name="l01030"></a><span class="lineno"> 1030</span>&#160;  datasets.clear();</div>
 <div class="line"><a name="l01031"></a><span class="lineno"> 1031</span>&#160;  <a class="code" href="structtestutils_1_1BlendTestData.html">testutils::BlendTestData</a> dataset;</div>
-<div class="line"><a name="l01032"></a><span class="lineno"> 1032</span>&#160;  <span class="keyword">auto</span> get_parameter = [&amp;](<span class="keyword">const</span> std::string&amp; name, std::vector&lt;double&gt;&amp; parameter,</div>
+<div class="line"><a name="l01032"></a><span class="lineno"> 1032</span>&#160;  <span class="keyword">auto</span> get_parameter = [&amp;](<span class="keyword">const</span> std::string&amp; <a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>, std::vector&lt;double&gt;&amp; parameter,</div>
 <div class="line"><a name="l01033"></a><span class="lineno"> 1033</span>&#160;                           <span class="keyword">const</span> rclcpp::Node::SharedPtr&amp; node) {</div>
-<div class="line"><a name="l01034"></a><span class="lineno"> 1034</span>&#160;    <span class="keywordflow">if</span> (node-&gt;has_parameter(name))</div>
+<div class="line"><a name="l01034"></a><span class="lineno"> 1034</span>&#160;    <span class="keywordflow">if</span> (node-&gt;has_parameter(<a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>))</div>
 <div class="line"><a name="l01035"></a><span class="lineno"> 1035</span>&#160;    {</div>
-<div class="line"><a name="l01036"></a><span class="lineno"> 1036</span>&#160;      node-&gt;get_parameter&lt;std::vector&lt;double&gt;&gt;(name, parameter);</div>
+<div class="line"><a name="l01036"></a><span class="lineno"> 1036</span>&#160;      node-&gt;get_parameter&lt;std::vector&lt;double&gt;&gt;(<a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>, parameter);</div>
 <div class="line"><a name="l01037"></a><span class="lineno"> 1037</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l01038"></a><span class="lineno"> 1038</span>&#160;    }</div>
 <div class="line"><a name="l01039"></a><span class="lineno"> 1039</span>&#160;    <span class="keywordflow">else</span></div>
@@ -1577,6 +1578,7 @@ $(function() {
 <div class="ttc" id="astructjoint__limits_1_1JointLimits_html_a018cee1ccfd11f274c2f05c09d0e6377"><div class="ttname"><a href="structjoint__limits_1_1JointLimits.html#a018cee1ccfd11f274c2f05c09d0e6377">joint_limits::JointLimits::max_velocity</a></div><div class="ttdeci">double max_velocity</div><div class="ttdef"><b>Definition:</b> <a href="joint__limits_8hpp_source.html#l00050">joint_limits.hpp:50</a></div></div>
 <div class="ttc" id="aclasspilz__industrial__motion__planner_1_1JointLimitsContainer_html"><div class="ttname"><a href="classpilz__industrial__motion__planner_1_1JointLimitsContainer.html">pilz_industrial_motion_planner::JointLimitsContainer</a></div><div class="ttdoc">Container for JointLimits, essentially a map with convenience functions. Adds the ability to as for l...</div><div class="ttdef"><b>Definition:</b> <a href="joint__limits__container_8h_source.html#l00083">joint_limits_container.h:83</a></div></div>
 <div class="ttc" id="astructpilz__industrial__motion__planner_1_1joint__limits__interface_1_1JointLimits_html_a0bad9925dd3e5cff03307acad71c8df7"><div class="ttname"><a href="structpilz__industrial__motion__planner_1_1joint__limits__interface_1_1JointLimits.html#a0bad9925dd3e5cff03307acad71c8df7">pilz_industrial_motion_planner::joint_limits_interface::JointLimits::has_deceleration_limits</a></div><div class="ttdeci">bool has_deceleration_limits</div><div class="ttdef"><b>Definition:</b> <a href="joint__limits__extension_8h_source.html#l00157">joint_limits_extension.h:157</a></div></div>
+<div class="ttc" id="anamespacesetup_html_ab3a7a0638d76a01367c5bc3cc699447f"><div class="ttname"><a href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">setup.name</a></div><div class="ttdeci">name</div><div class="ttdef"><b>Definition:</b> <a href="moveit__configs__utils_2setup_8py_source.html#l00006">setup.py:6</a></div></div>
 <div class="ttc" id="anamespacetestutils_html_a3604c25908da745d6e201a35db05a990"><div class="ttname"><a href="namespacetestutils.html#a3604c25908da745d6e201a35db05a990">testutils::createDummyRequest</a></div><div class="ttdeci">void createDummyRequest(const moveit::core::RobotModelConstPtr &amp;robot_model, const std::string &amp;planning_group, planning_interface::MotionPlanRequest &amp;req)</div><div class="ttdoc">create a dummy motion plan request with zero start state No goal constraint is given.</div><div class="ttdef"><b>Definition:</b> <a href="test__utils_8cpp_source.html#l00512">test_utils.cpp:512</a></div></div>
 <div class="ttc" id="anamespaceplanning__request__adapter_html_af64b3fa8ebc256d9c5133c6c80ade28f"><div class="ttname"><a href="namespaceplanning__request__adapter.html#af64b3fa8ebc256d9c5133c6c80ade28f">planning_request_adapter::LOGGER</a></div><div class="ttdeci">rclcpp::Logger LOGGER</div><div class="ttdef"><b>Definition:</b> <a href="planning__request__adapter_8cpp_source.html#l00078">planning_request_adapter.cpp:78</a></div></div>
 <div class="ttc" id="anamespacetestutils_html_aee400d4013caab0af4681d89dc96d66c"><div class="ttname"><a href="namespacetestutils.html#aee400d4013caab0af4681d89dc96d66c">testutils::checkRobotModel</a></div><div class="ttdeci">void checkRobotModel(const moveit::core::RobotModelConstPtr &amp;robot_model, const std::string &amp;group_name, const std::string &amp;link_name)</div><div class="ttdef"><b>Definition:</b> <a href="test__utils_8cpp_source.html#l01265">test_utils.cpp:1265</a></div></div>

@@ -13,6 +13,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="theme.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -118,10 +119,10 @@ $(function() {
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;{</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  moveit_controller_manager::MoveItControllerHandlePtr <a class="code" href="classmoveit__ros__control__interface_1_1GripperControllerAllocator.html#af1da39839fd91677c5e9c46f01da70be">alloc</a>(<span class="keyword">const</span> rclcpp::Node::SharedPtr&amp; node,</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                                                             <span class="keyword">const</span> std::string&amp; name,</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                                                             <span class="keyword">const</span> std::string&amp; <a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>,</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                                                             <span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; <span class="comment">/* resources */</span>)<span class="keyword"> override</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">  </span>{</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">return</span> std::make_shared&lt;moveit_simple_controller_manager::GripperControllerHandle&gt;(node, name, <span class="stringliteral">&quot;gripper_cmd&quot;</span>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">return</span> std::make_shared&lt;moveit_simple_controller_manager::GripperControllerHandle&gt;(node, <a class="code" href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">name</a>, <span class="stringliteral">&quot;gripper_cmd&quot;</span>);</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  }</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;};</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
@@ -132,6 +133,7 @@ $(function() {
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="anamespacemoveit__ros__control__interface_html"><div class="ttname"><a href="namespacemoveit__ros__control__interface.html">moveit_ros_control_interface</a></div><div class="ttdef"><b>Definition:</b> <a href="ControllerHandle_8h_source.html#l00042">ControllerHandle.h:42</a></div></div>
 <div class="ttc" id="aclassmoveit__ros__control__interface_1_1GripperControllerAllocator_html"><div class="ttname"><a href="classmoveit__ros__control__interface_1_1GripperControllerAllocator.html">moveit_ros_control_interface::GripperControllerAllocator</a></div><div class="ttdoc">Simple allocator for moveit_simple_controller_manager::FollowJointTrajectoryControllerHandle instance...</div><div class="ttdef"><b>Definition:</b> <a href="gripper__controller__plugin_8cpp_source.html#l00080">gripper_controller_plugin.cpp:80</a></div></div>
+<div class="ttc" id="anamespacesetup_html_ab3a7a0638d76a01367c5bc3cc699447f"><div class="ttname"><a href="namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f">setup.name</a></div><div class="ttdeci">name</div><div class="ttdef"><b>Definition:</b> <a href="moveit__configs__utils_2setup_8py_source.html#l00006">setup.py:6</a></div></div>
 <div class="ttc" id="agripper__controller__plugin_8cpp_html_a41d235cba63f4b4bf89d49eca5d8f636"><div class="ttname"><a href="gripper__controller__plugin_8cpp.html#a41d235cba63f4b4bf89d49eca5d8f636">PLUGINLIB_EXPORT_CLASS</a></div><div class="ttdeci">PLUGINLIB_EXPORT_CLASS(moveit_ros_control_interface::GripperControllerAllocator, moveit_ros_control_interface::ControllerHandleAllocator)</div></div>
 <div class="ttc" id="aclassmoveit__ros__control__interface_1_1ControllerHandleAllocator_html"><div class="ttname"><a href="classmoveit__ros__control__interface_1_1ControllerHandleAllocator.html">moveit_ros_control_interface::ControllerHandleAllocator</a></div><div class="ttdef"><b>Definition:</b> <a href="ControllerHandle_8h_source.html#l00081">ControllerHandle.h:81</a></div></div>
 <div class="ttc" id="agripper__controller__handle_8h_html"><div class="ttname"><a href="gripper__controller__handle_8h.html">gripper_controller_handle.h</a></div></div>
