@@ -10,7 +10,7 @@
       <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/override.css" type="text/css" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
-    <link rel="canonical" href="https://moveit.picknik.ai/humble//humble/doc/tutorials/getting_started/getting_started.html" />
+    <link rel="canonical" href="https://moveit.picknik.ai/rolling//humble/doc/tutorials/getting_started/getting_started.html" />
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -102,7 +102,7 @@
 <p>Building all the source code of MoveIt can take 20-30 minutes, depending on the CPU speed and available RAM of your computer. If you are on a less performant system, or generally just want to get started quicker, checkout our <a class="reference internal" href="../../how_to_guides/how_to_setup_docker_containers_in_ubuntu.html"><span class="doc">Docker Guide</span></a>.</p>
 <div class="section" id="install-ros-2-and-colcon">
 <h2>Install ROS 2 and Colcon<a class="headerlink" href="#install-ros-2-and-colcon" title="Permalink to this headline"></a></h2>
-<p><a class="reference external" href="https://docs.ros.org/en/humble/Installation.html">Install ROS 2 Humble</a>.
+<p><a class="reference external" href="https://docs.ros.org/en/rolling/Installation.html">Install ROS 2 Humble</a>.
 It is easy to miss steps when going through the ROS 2 installation tutorial. If you run into errors in the next few steps, a good place to start is to go back and make sure you have installed ROS 2 correctly.  One that users commonly forget is to source the ROS 2 install itself.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">ros</span><span class="o">/</span><span class="n">humble</span><span class="o">/</span><span class="n">setup</span><span class="o">.</span><span class="n">bash</span>
 </pre></div>
@@ -122,7 +122,7 @@ It is easy to miss steps when going through the ROS 2 installation tutorial. If 
 <span class="n">sudo</span> <span class="n">apt</span> <span class="n">dist</span><span class="o">-</span><span class="n">upgrade</span>
 </pre></div>
 </div>
-<p>Install <a class="reference external" href="https://docs.ros.org/en/humble/Tutorials/Colcon-Tutorial.html#install-colcon">Colcon</a> the ROS 2 build system with <a class="reference external" href="https://github.com/colcon/colcon-mixin-repository">mixin</a>:</p>
+<p>Install <a class="reference external" href="https://docs.ros.org/en/rolling/Tutorials/Colcon-Tutorial.html#install-colcon">Colcon</a> the ROS 2 build system with <a class="reference external" href="https://github.com/colcon/colcon-mixin-repository">mixin</a>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">python3</span><span class="o">-</span><span class="n">colcon</span><span class="o">-</span><span class="n">common</span><span class="o">-</span><span class="n">extensions</span>
 <span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">python3</span><span class="o">-</span><span class="n">colcon</span><span class="o">-</span><span class="n">mixin</span>
 <span class="n">colcon</span> <span class="n">mixin</span> <span class="n">add</span> <span class="n">default</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">colcon</span><span class="o">/</span><span class="n">colcon</span><span class="o">-</span><span class="n">mixin</span><span class="o">-</span><span class="n">repository</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">yaml</span>
@@ -136,7 +136,7 @@ It is easy to miss steps when going through the ROS 2 installation tutorial. If 
 </div>
 <div class="section" id="create-a-colcon-workspace-and-download-tutorials">
 <h2>Create A Colcon Workspace and Download Tutorials<a class="headerlink" href="#create-a-colcon-workspace-and-download-tutorials" title="Permalink to this headline"></a></h2>
-<p>For tutorials you will need to have a <a class="reference external" href="https://docs.ros.org/en/humble/Tutorials/Colcon-Tutorial.html#install-colcon">colcon</a> workspace setup.</p>
+<p>For tutorials you will need to have a <a class="reference external" href="https://docs.ros.org/en/rolling/Tutorials/Colcon-Tutorial.html#install-colcon">colcon</a> workspace setup.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">~/</span><span class="n">ws_moveit2</span><span class="o">/</span><span class="n">src</span>
 </pre></div>
 </div>
