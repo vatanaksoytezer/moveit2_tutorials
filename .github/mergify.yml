@@ -10,7 +10,7 @@ pull_request_rules:
         labels:
           - humble
         title:
-          - Backport of {{ title }} ('#'{{ number }}) to {{ destination_branch }}
+          - Backport of {{ title }} ('#'{{ number }}) to humble
 
   - name: backport to galactic at reviewers discretion
     conditions:
